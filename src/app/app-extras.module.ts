@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 
-import { SkyModule } from '@blackbaud/skyux/dist/core';
 import { StacheModule } from '@blackbaud/stache';
 
 import { SkyDemoTitleService } from './shared/title.service';
@@ -36,12 +35,10 @@ require('style-loader!./styles.scss');
     SkySectionedModalFormDemoComponent
   ],
   imports: [
-    SkyModule,
     StacheModule,
     SkyDemoComponentsModule
   ],
   exports: [
-    SkyModule,
     StacheModule
   ],
   providers: [
