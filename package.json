@@ -9,7 +9,7 @@
     "test": "skyux lint && skyux test && skyux e2e && skyux build"
   },
   "keywords": [],
-  "author": "Blackbaud",
+  "author": "Blackbaud, Inc.",
   "license": "MIT",
   "dependencies": {
     "@blackbaud/skyux": "2.4.1",
