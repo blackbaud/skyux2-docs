@@ -1,0 +1,28 @@
+{
+  "name": "blackbaud-skyux-spa-docs",
+  "version": "1.0.0",
+  "description": "Single-page-application for skyux-spa-docs",
+  "main": "index.js",
+  "engines": {
+    "node": ">=6.11.1"
+  },
+  "scripts": {
+    "skyux": "skyux",
+    "test": "skyux lint && skyux test && skyux e2e && skyux build"
+  },
+  "keywords": [],
+  "author": "Blackbaud",
+  "license": "MIT",
+  "dependencies": {
+    "@blackbaud/skyux": "2.4.1",
+    "@blackbaud/skyux-design-tokens": "0.0.8",
+    "@blackbaud/stache": "2.2.0"
+  },
+  "devDependencies": {
+    "@blackbaud/skyux-builder": "1.7.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  }
+}
