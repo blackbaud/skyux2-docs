@@ -6,7 +6,6 @@ import { Component } from '@angular/core';
 })
 export class SkyRepeaterDemoComponent {
   public items: any[];
-
   public expandMode = 'single';
   public selectable = false;
 

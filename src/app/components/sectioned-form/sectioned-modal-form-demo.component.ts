@@ -23,7 +23,9 @@ export class SkySectionedModalFormDemoComponent implements AfterContentChecked {
 
   private _activeIndex: number = undefined;
 
-  constructor(public instance: SkyModalInstance) {}
+  constructor(
+    public instance: SkyModalInstance
+  ) { }
 
   public ngAfterContentChecked() {
     this.activeIndexDisplay = this._activeIndex;

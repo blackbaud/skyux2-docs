@@ -6,10 +6,7 @@ import { Component } from '@angular/core';
 })
 export class SkyCardDemoComponent {
   public showTitle = true;
-
   public showContent = true;
-
   public showAction = true;
-
   public showCheckbox = true;
 }

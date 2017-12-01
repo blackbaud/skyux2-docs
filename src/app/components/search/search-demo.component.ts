@@ -40,17 +40,19 @@ export class SkySearchDemoComponent {
     this.searchText = searchText;
     if (searchText) {
       filteredItems = this.items.filter(function (item: any) {
-          let property: any;
-          for (property in item) {
-              if (item.hasOwnProperty(property) && (property === 'title' || property === 'note')) {
-                  if (item[property].indexOf(searchText) > -1) {
-                      return true;
-                  }
-              }
+        let property: any;
+        for (property in item) {
+          if (item.hasOwnProperty(property) && (property === 'title' || property === 'note')) {
+            if (item[property].indexOf(searchText) > -1) {
+              return true;
+            }
           }
-          return false;
+        }
+
+        return false;
       });
     }
+
     this.displayedItems = filteredItems;
   }
 }

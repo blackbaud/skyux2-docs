@@ -4,14 +4,13 @@ import { Observable } from 'rxjs/Observable';
 
 import {
   ListItemModel
-} from '../../../core';
+} from '@blackbaud/skyux/dist/core';
 
 @Component({
   selector: 'sky-list-filters-inline-demo',
   templateUrl: './list-filters-inline-demo.component.html'
 })
 export class SkyListFiltersInlineDemoComponent {
-
   public items: Observable<any> = Observable.of([
     {
       id: 0,
@@ -57,5 +56,4 @@ export class SkyListFiltersInlineDemoComponent {
   public hideOrangeFilterFunction(item: ListItemModel, filterValue: any): boolean {
     return !filterValue || (filterValue && item.data.color !== 'orange');
   }
-
 }

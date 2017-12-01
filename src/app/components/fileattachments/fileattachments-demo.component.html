@@ -12,12 +12,15 @@
     [alertType]="'danger'"
     [closeable]="true"
     *ngIf="rejectedFiles.length > 0">
-        The file <strong>{{rejectedFiles[rejectedFiles.length - 1].file.name}}</strong> is invalid.
-              Reason: {{rejectedFiles[rejectedFiles.length - 1].errorType}} violation.
-              Error param: {{rejectedFiles[rejectedFiles.length - 1].errorParam}}
+    The file <strong>{{rejectedFiles[rejectedFiles.length - 1].file.name}}</strong> is invalid.
+    Reason: {{rejectedFiles[rejectedFiles.length - 1].errorType}} violation.
+    Error param: {{rejectedFiles[rejectedFiles.length - 1].errorParam}}
   </sky-alert>
 
   <div *ngFor="let file of allItems">
-    <sky-file-item [fileItem]="file" (deleteFile)="deleteFile($event)"></sky-file-item>
+    <sky-file-item
+      [fileItem]="file"
+      (deleteFile)="deleteFile($event)">
+    </sky-file-item>
   </div>
 </div>

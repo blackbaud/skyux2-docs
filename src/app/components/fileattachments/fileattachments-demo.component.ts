@@ -4,7 +4,7 @@ import {
   SkyFileItem,
   SkyFileDropChange,
   SkyFileLink
-} from '../../../core';
+} from '@blackbaud/skyux/dist/core';
 
 @Component({
   selector: 'sky-fileattachments-demo',
@@ -12,16 +12,11 @@ import {
 })
 export class SkyFileattachmentsDemoComponent {
   public filesToUpload: SkyFileItem[];
-
   public allItems: (SkyFileItem | SkyFileLink)[];
-
   public linksToUpload: SkyFileLink[];
-
   public rejectedFiles: SkyFileItem[];
-
-  public maxFileSize: number = 4000000;
-
-  public acceptedTypes: string = 'image/png,image/jpeg';
+  public maxFileSize = 4000000;
+  public acceptedTypes = 'image/png,image/jpeg';
 
   constructor() {
     this.filesToUpload = [];

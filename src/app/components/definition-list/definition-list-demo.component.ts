@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './definition-list-demo.component.html'
 })
 export class SkyDefinitionListDemoComponent {
-  public personalInfo: {label: string, value: string}[] = [
+  public personalInfo: { label: string, value: string }[] = [
     {
       label: 'Job title',
       value: 'Engineer'
@@ -20,7 +20,7 @@ export class SkyDefinitionListDemoComponent {
     }
   ];
 
-  public systemInfo: {label: string, value?: string}[] = [
+  public systemInfo: { label: string, value?: string }[] = [
     {
       label: 'Username',
       value: 'user1'

@@ -11,7 +11,6 @@ import {
 } from '@blackbaud/skyux/dist/core';
 
 export class DemoListProvider extends ListDataProvider {
-
   public items: Observable<Array<ListItemModel>>;
   public remoteCount: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
@@ -79,8 +78,10 @@ export class DemoListProvider extends ListDataProvider {
   private fakeHttpRequest(request: ListDataRequestModel): Observable<ListDataResponseModel> {
     return this.items.map((items: Array<ListItemModel>) => {
       let searchedList = items;
+
       if (request.search.searchText) {
         let searchText = request.search.searchText.toLowerCase();
+
         searchedList = items.filter((item) => {
           return item.data.column2.toLowerCase().indexOf(searchText) > -1 ||
             item.data.column3.toLowerCase().indexOf(searchText) > -1;
@@ -89,7 +90,9 @@ export class DemoListProvider extends ListDataProvider {
 
       let itemStart = (request.pageNumber - 1) * request.pageSize;
       let pagedResult = searchedList.slice(itemStart, itemStart + request.pageSize);
+
       this.remoteCount.next(searchedList.length);
+
       return new ListDataResponseModel({
         count: searchedList.length,
         items: pagedResult

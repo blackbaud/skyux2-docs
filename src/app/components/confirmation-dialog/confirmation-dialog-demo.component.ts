@@ -9,7 +9,9 @@ import { SkyConfirmationDialogService } from '@blackbaud/skyux/dist/core';
 export class SkyConfirmationDialogDemoComponent {
   public action: string;
 
-  constructor(private confirmService: SkyConfirmationDialogService) {}
+  constructor(
+    private confirmService: SkyConfirmationDialogService
+  ) { }
 
   public openConfirmationDialog(type: number) {
     const config: any = {

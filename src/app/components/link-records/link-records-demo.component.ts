@@ -15,12 +15,17 @@ import {
   templateUrl: './link-records-demo.component.html'
 })
 export class SkyLinkRecordsDemoComponent {
-  @ViewChild(SkyLinkRecordsComponent) public item: SkyLinkRecordsComponent;
+  @ViewChild(SkyLinkRecordsComponent)
+  public item: SkyLinkRecordsComponent;
+
   public window: any;
-
-  public matchFields: Array<any> = [{key: 'description'}, {key: 'name'}];
-
-  public newItem: any = { id: '99', address: 999, name: 'Lime', description: 'Laura eats limes.' };
+  public matchFields: any[] = [{ key: 'description' }, { key: 'name' }];
+  public newItem: any = {
+    id: '99',
+    address: 999,
+    name: 'Lime',
+    description: 'Laura eats limes.'
+  };
 
   public items: Observable<any> = Observable.of([
     { id: '1', address: 101, name: 'Apple', description: 'Anne eats apples' },

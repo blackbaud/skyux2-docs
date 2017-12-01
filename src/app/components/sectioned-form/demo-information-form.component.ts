@@ -6,7 +6,6 @@ import { SkySectionedFormService } from '@blackbaud/skyux/dist/core';
   templateUrl: './demo-information-form.component.html'
 })
 export class SkyDemoInformationFormComponent {
-
   private _nameRequired: boolean;
 
   public get nameRequired() {
@@ -45,7 +44,9 @@ export class SkyDemoInformationFormComponent {
     this.sectionedFormService.invalidFieldChanged(!valid);
   }
 
-  constructor(private sectionedFormService: SkySectionedFormService) {}
+  constructor(
+    private sectionedFormService: SkySectionedFormService
+  ) { }
 
   private idValid(value: string) {
     if (value) {

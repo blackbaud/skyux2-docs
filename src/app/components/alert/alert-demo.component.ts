@@ -6,9 +6,7 @@ import { Component } from '@angular/core';
 })
 export class SkyAlertDemoComponent {
   public closeable = true;
-
   public closed = false;
-
   public alertType = 'warning';
 
   public openAlert() {

@@ -9,13 +9,18 @@ import { SkyFilterDemoModalContext } from './filter-demo-modal-context';
   templateUrl: './filter-demo-modal.component.html'
 })
 export class SkyFilterDemoModalComponent {
-
-  public fruitType: string = 'any';
-
+  public fruitType = 'any';
   public hideOrange: boolean;
 
-  constructor(public context: SkyFilterDemoModalContext, public instance: SkyModalInstance) {
-    if (this.context && this.context.appliedFilters && this.context.appliedFilters.length > 0) {
+  constructor(
+    public context: SkyFilterDemoModalContext,
+    public instance: SkyModalInstance
+  ) {
+    if (
+      this.context &&
+      this.context.appliedFilters &&
+      this.context.appliedFilters.length > 0
+    ) {
       this.setFormFilters(this.context.appliedFilters);
     } else {
       this.clearAllFilters();

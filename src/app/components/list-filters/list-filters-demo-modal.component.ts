@@ -6,22 +6,28 @@ import {
   ListItemModel
 } from '@blackbaud/skyux/dist/core';
 
-import { SkyListFiltersModalDemoContext } from './list-filters-demo-modal-context';
+import {
+  SkyListFiltersModalDemoContext
+} from './list-filters-demo-modal-context';
 
 @Component({
   selector: 'sky-demo-filter-modal-form',
   templateUrl: './list-filters-demo-modal.component.html'
 })
 export class SkyListFiltersModalDemoComponent {
-
-  public fruitType: string = 'any';
-
+  public fruitType = 'any';
   public hideOrange: boolean;
+  public headerText = 'Filters';
 
-  public headerText: string = 'Filters';
-
-  constructor(public context: SkyListFiltersModalDemoContext, public instance: SkyModalInstance) {
-    if (this.context && this.context.appliedFilters && this.context.appliedFilters.length > 0) {
+  constructor(
+    public context: SkyListFiltersModalDemoContext,
+    public instance: SkyModalInstance
+  ) {
+    if (
+      this.context &&
+      this.context.appliedFilters &&
+      this.context.appliedFilters.length > 0
+    ) {
       this.setFormFilters(this.context.appliedFilters);
     } else {
       this.clearAllFilters();
@@ -74,7 +80,7 @@ export class SkyListFiltersModalDemoComponent {
     return appliedFilters;
   }
 
-  private setFormFilters(appliedFilters: Array<any>) {
+  private setFormFilters(appliedFilters: any[]) {
     for (let i = 0; i < appliedFilters.length; i++) {
       if (appliedFilters[i].name === 'fruitType') {
         this.fruitType = appliedFilters[i].value;

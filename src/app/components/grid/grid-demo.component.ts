@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ListSortFieldSelectorModel } from '../../../core';
+import { ListSortFieldSelectorModel } from '@blackbaud/skyux/dist/core';
 
 @Component({
   selector: 'sky-grid-demo',
@@ -32,6 +32,7 @@ export class SkyGridDemoComponent {
       if (value2 && typeof value2 === 'string') {
         value2 = value2.toLowerCase();
       }
+
       if (value1 === value2) {
         return 0;
       }
@@ -41,6 +42,7 @@ export class SkyGridDemoComponent {
       if (descending) {
         result *= -1;
       }
+
       return result;
     }).slice();
   }

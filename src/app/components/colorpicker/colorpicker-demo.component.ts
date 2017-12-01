@@ -7,8 +7,8 @@ import { Component } from '@angular/core';
 export class SkyColorpickerDemoComponent {
   public color1: any;
   public color2: any;
-  public selectedColor1: string = '#2889e5';
-  public selectedOutputFormat1: string = 'rgba';
+  public selectedColor1 = '#2889e5';
+  public selectedOutputFormat1 = 'rgba';
   public presetColors1 = [
     '#333333',
     '#888888',
@@ -23,6 +23,4 @@ export class SkyColorpickerDemoComponent {
     '#A1B1A7',
     '#68AFEF'
   ];
-
-  public constructor() { }
 }

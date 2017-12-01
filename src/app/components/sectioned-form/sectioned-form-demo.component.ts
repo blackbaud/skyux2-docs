@@ -7,12 +7,13 @@ import { SkySectionedModalFormDemoComponent } from './sectioned-modal-form-demo.
   templateUrl: './sectioned-form-demo.component.html'
 })
 export class SkySectionedFormDemoComponent implements AfterContentChecked {
+  public activeIndexDisplay: number;
 
-  public activeIndexDisplay: number = undefined;
+  private _activeIndex: number;
 
-  private _activeIndex: number = undefined;
-
-  constructor(private modal: SkyModalService) { }
+  constructor(
+    private modal: SkyModalService
+  ) { }
 
   public openModal() {
     let modalInstance = this.modal.open(SkySectionedModalFormDemoComponent);

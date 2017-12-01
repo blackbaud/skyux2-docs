@@ -10,6 +10,4 @@ import { Component } from '@angular/core';
       overflow-wrap: break-word;
     }`]
 })
-export class SkyFluidGridDemoComponent {
-
-}
+export class SkyFluidGridDemoComponent { }

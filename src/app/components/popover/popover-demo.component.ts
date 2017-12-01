@@ -13,7 +13,8 @@ export class SkyPopoverDemoComponent implements OnInit {
 
   constructor(
     private windowRef: SkyAppWindowRef,
-    private sanitizer: DomSanitizer) { }
+    private sanitizer: DomSanitizer
+  ) { }
 
   public ngOnInit() {
     this.outOfBoundsDemoUrl = this.sanitizer

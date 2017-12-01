@@ -11,5 +11,8 @@ import { SkyModalDemoContext } from './modal-demo-context';
 export class SkyModalDemoTiledFormComponent {
   public title = 'Hello world';
 
-  constructor(public context: SkyModalDemoContext, public instance: SkyModalInstance) { }
+  constructor(
+    public context: SkyModalDemoContext,
+    public instance: SkyModalInstance
+  ) { }
 }

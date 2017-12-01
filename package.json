@@ -1,13 +1,11 @@
 {
-  "name": "blackbaud-skyux-spa-docs",
+  "name": "skyux2-docs",
   "version": "1.0.0",
-  "description": "Single-page-application for skyux-spa-docs",
-  "main": "index.js",
+  "description": "Documentation for SKY UX",
   "engines": {
     "node": ">=6.11.1"
   },
   "scripts": {
-    "skyux": "skyux",
     "test": "skyux lint && skyux test && skyux e2e && skyux build"
   },
   "keywords": [],
@@ -23,6 +21,6 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/blackbaud/skyux2-docs"
   }
 }
