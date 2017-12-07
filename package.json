@@ -6,6 +6,7 @@
     "node": ">=6.11.1"
   },
   "scripts": {
+    "serve": "node ./scripts/serve.js",
     "test": "skyux lint && skyux test && skyux e2e && skyux build"
   },
   "keywords": [],
