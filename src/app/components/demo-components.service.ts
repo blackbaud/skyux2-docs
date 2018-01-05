@@ -387,8 +387,7 @@ export class SkyDemoComponentsService {
       {
         name: 'URL validation',
         icon: 'check',
-        // tslint:disable-next-line
-        summary: `The URL validation module allows users to validate URL format.`,
+        summary: 'The URL validation module allows users to validate URL format.',
         url: '/components/url-validation',
         getCodeFiles: () => this.getDemoFiles('SkyUrlValidationDemoComponent')
       },
