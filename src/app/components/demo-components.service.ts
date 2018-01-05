@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { SkyDemoService } from '@blackbaud/skyux/dist/demo';
+import { SkyDemoService } from '../../demo';
 
 import { SkyDemoComponent } from './demo-component';
 
@@ -66,12 +66,11 @@ export class SkyDemoComponentsService {
         getCodeFiles: () => this.getDemoFiles('SkyColorpickerDemoComponent')
       },
       {
-        name: 'Confirmation dialog',
+        name: 'Confirm',
         icon: 'list-alt',
-        // tslint:disable-next-line
-        summary: `The confirmation dialog component launches simple confirmation dialogs to allow users to confirm actions.`,
-        url: '/components/confirmation-dialog',
-        getCodeFiles: () => this.getDemoFiles('SkyConfirmationDialogDemoComponent')
+        summary: 'The confirm component launches simple confirmation dialogs to allow users to confirm actions.',
+        url: '/components/confirm',
+        getCodeFiles: () => this.getDemoFiles('SkyConfirmDemoComponent')
       },
       {
         name: 'Datepicker',
@@ -127,7 +126,10 @@ export class SkyDemoComponentsService {
         // tslint:disable-next-line
         summary: `The filter module provides components that allow users to select filter criteria.`,
         url: '/components/filter',
-        getCodeFiles: () => this.getDemoFiles('SkyFilterDemoComponent')
+        getCodeFiles: () => [
+          ...this.getDemoFiles('SkyFilterDemoComponent'),
+          ...this.getDemoFiles('SkyFilterInlineDemoComponent')
+        ]
       },
       {
         name: 'Fluid grid',
@@ -162,9 +164,9 @@ export class SkyDemoComponentsService {
       {
         name: 'Highlight',
         icon: 'paint-brush',
-        summary: `The highlight component highlights text within DOM elements.`,
+        summary: 'The highlight component highlights text within DOM elements.',
         url: '/components/text-highlight',
-        getCodeFiles: () => this.getDemoFiles('SkyHighlightDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('SkyTextHighlightDemoComponent')
       },
       {
         name: 'Key info',
@@ -196,7 +198,10 @@ export class SkyDemoComponentsService {
         // tslint:disable-next-line
         summary: `The list component displays data in a consistent and flexible way.`,
         url: '/components/list',
-        getCodeFiles: () => this.getDemoFiles('SkyListDemoComponent')
+        getCodeFiles: () => [
+          ...this.getDemoFiles('SkyListDemoComponent'),
+          ...this.getDemoFiles('SkyListProviderDemoComponent')
+        ]
       },
       {
         name: 'List filters',
@@ -204,7 +209,10 @@ export class SkyDemoComponentsService {
         // tslint:disable-next-line
         summary: `The list filter module provides components that allow users to select filter criteria.`,
         url: '/components/list-filters',
-        getCodeFiles: () => this.getDemoFiles('SkyListFiltersDemoComponent')
+        getCodeFiles: () => [
+          ...this.getDemoFiles('SkyListFiltersDemoComponent'),
+          ...this.getDemoFiles('SkyListFiltersInlineDemoComponent')
+        ]
       },
       {
         name: 'List paging',
@@ -221,7 +229,10 @@ export class SkyDemoComponentsService {
         summary:
         `The list toolbar component displays a SKY UX-themed toolbar for a list.`,
         url: '/components/list-toolbar',
-        getCodeFiles: () => this.getDemoFiles('SkyListToolbarDemoComponent')
+        getCodeFiles: () => [
+          ...this.getDemoFiles('SkyListToolbarDemoComponent'),
+          ...this.getDemoFiles('SkyListToolbarCustomDemoComponent')
+        ]
       },
       {
         name: 'List view checklist',
@@ -300,7 +311,7 @@ export class SkyDemoComponentsService {
         // tslint:disable-next-line
         summary: `The radio button component renders a SKY UX-themed radio button.`,
         url: '/components/radio',
-        getCodeFiles: () => this.getDemoFiles('SkyRadioButtonDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('SkyRadioDemoComponent')
       },
       {
         name: 'Repeater',

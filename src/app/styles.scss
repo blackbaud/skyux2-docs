@@ -1,4 +1,4 @@
-@import '~@blackbaud/skyux-design-tokens/scss/mixins';
+@import '../scss/mixins';
 
 body {
   background-color: #fff !important;
@@ -57,7 +57,7 @@ code {
 
 .sky-demo-bg-gray {
   background-color: $sky-border-color-neutral-light !important;
-  padding: 10px !important;
+  padding: $sky-padding !important;
 }
 
 .stache-hero {

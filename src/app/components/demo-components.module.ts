@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 
-import { SkyDemoModule } from '@blackbaud/skyux/dist/demo';
+import { SkyDemoModule } from '../../demo';
 
 import { SkyDemoComponentsService } from './demo-components.service';
 
