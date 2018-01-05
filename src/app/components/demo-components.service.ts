@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { SkyDemoService } from '../../demo';
+import { SkyDemoService } from '@blackbaud/skyux/dist/demo';
 
 import { SkyDemoComponent } from './demo-component';
 
