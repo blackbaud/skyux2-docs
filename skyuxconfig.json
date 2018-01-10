@@ -2,6 +2,16 @@
   "name": "skyux",
   "mode": "easy",
   "compileMode": "aot",
+  "host": {
+    "url": "https://developer.blackbaud.com"
+  },
+  "appSettings": {
+    "stache": {
+      "searchConfig": {
+        "is_internal": false
+      }
+    }
+  },
   "omnibar": {
     "experimental": true,
     "nav": {
