@@ -73,5 +73,10 @@
     "design/motion": "design/styles/motion",
     "design/spacing": "design/styles/spacing",
     "design/typography": "design/styles/typography"
+  },
+  "appSettings": {
+    "stache": {
+      "is_internal": false
+    }
   }
 }
