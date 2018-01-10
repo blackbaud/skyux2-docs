@@ -2,6 +2,13 @@
   "name": "skyux",
   "mode": "easy",
   "compileMode": "aot",
+  "appSettings": {
+    "stache": {
+      "searchConfig": {
+        "is_internal": false
+      }
+    }
+  },
   "omnibar": {
     "experimental": true,
     "nav": {
@@ -73,10 +80,5 @@
     "design/motion": "design/styles/motion",
     "design/spacing": "design/styles/spacing",
     "design/typography": "design/styles/typography"
-  },
-  "appSettings": {
-    "stache": {
-      "is_internal": false
-    }
   }
 }
