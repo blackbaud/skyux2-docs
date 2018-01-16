@@ -32,6 +32,39 @@
     The SKY UX CLI provides a command line interface for the SKY UX Builder that builds the output for SKY UX applications. To install the CLI from the command line, run <stache-code>npm install -g @blackbaud/skyux-cli</stache-code>.
   </p>
   
+  <stache-page-anchor>
+    Recommended tools
+  </stache-page-anchor>
+
+  <h3>
+    Visual Studio Code setup
+  </h3>
+
+  <p>
+    Like Angular 2, SKY UX 2 is written in <a href="https://www.typescriptlang.org/">TypeScript</a>, and the free <a href="https://code.visualstudio.com/">Visual Studio Code editor</a> is one of the best options for working with TypeScript. It supports code navigation, refactoring tools, and a host of other features that are usually only found in richer IDEs. The SKY UX team uses Visual Studio Code and has some recommendations for configuring it to work best with Angular 2 and SKY UX 2. Even if you do not want to use Visual Studio Code as your editor, some of the following information will still be useful as many of the extensions and other tips are available for other popular editors such as <a href="https://atom.io/">Atom</a>, <a href="http://brackets.io/">Brackets</a>, and <a href="https://www.sublimetext.com/">Sublime Text</a>.
+  </p>
+
+  <h4>
+    Visual Studio Code extensions
+  </h4>
+
+  <p>
+    The following VS Code extensions are highly recommended:
+  </p>
+
+  <ul>
+    <li>
+      <p>
+        <a href="https://marketplace.visualstudio.com/items?itemName=eg2.tslint">TSLint</a>: This extension validates your TypeScript code against the rules specified in the <stache-code>tslint.json</stache-code> file in the SKY UX 2 repo. TSLint runs during the CI build, so if your code does not validate in VS Code with the use of this extension, the CI build will fail.
+      </p>
+    </li>
+    <li>
+      <p>
+        <a href="https://github.com/editorconfig/editorconfig-vscode">EditorConfig</a>: This extension allows VS Code to recognize this project's <stache-code>.editorconfig</stache-code> file so that many of the coding conventions used by the SKY UX team can be enforced automatically, such as indent size, trailing whitespace rules, etc. If you do not use this extension, then you will find yourself fixing a lot of TSLint errors manually instead of letting VS Code do it for you.
+      </p>
+    </li>
+  </ul>
+  
   <stache-row>
     <stache-column screenSmall="6">
       <div class="tutorial-previous-button">
