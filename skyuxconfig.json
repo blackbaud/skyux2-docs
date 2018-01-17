@@ -82,6 +82,7 @@
     "design/icons": "design/styles/icons",
     "design/motion": "design/styles/motion",
     "design/spacing": "design/styles/spacing",
-    "design/typography": "design/styles/typography"
+    "design/typography": "design/styles/typography",
+		"design/guidelines/form-containers": "design/guidelines/form-design"
   }
 }
