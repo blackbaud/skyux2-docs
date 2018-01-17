@@ -74,4 +74,46 @@
     </li>
   </ol>
 
+  <stache-page-anchor>
+    Using the default locale provider
+  </stache-page-anchor>
+
+  <p>If your application is deployed using SKY UX Host and you want to use the locale provided by the browser, there are no additional configuration steps needed.
+
+  <stache-page-anchor>
+    Providing a custom locale provider
+  </stache-page-anchor>
+
+  <p>If your application uses a different mechanism to determine the locale, for example via a setting stored in a database, you can provide a custom mplementation of the <stache-code>SkyAppLocaleProvider</stache-code>.</p>
+
+  <stache-code-block languageType="typescript">
+import { NgModule } from '@angular/core';
+import { TestLocalProvider } from './testlocal-provider'
+
+@NgModule({
+  providers: [{
+    provide: SkyAppLocalProvider,
+    useClass: TestLocalProvider
+  }]
+})
+export class AppExtrasModule { }
+  </stache-code-block>
+
+  <stache-code-block languageType="typescript">
+import { NgModule } from '@angular/core';
+
+import { SkyAppLocaleProvider } from '@blackbaud/skyux-builder/runtime/i18n';
+
+import { Observable } from 'rxjs/Observable';
+
+export class TestLocaleProvider extends SkyAppLocaleProvider {
+  public getLocaleInfo() {
+    return Observable.of({
+      locale: 'en-GB'
+    });
+  }
+}
+  </stache-code-block>
+
+
 </stache>
