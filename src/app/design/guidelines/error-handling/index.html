@@ -5,17 +5,29 @@
 
 <stache-page-summary><p>Guidance on how to present error messages depending on the context.</p></stache-page-summary>
 
+<stache-page-anchor>Style and tone</stache-page-anchor>
+	
+	<p>Error and warning message wording should be short and succinct and use a conversational, human-voice approach. When possible, try to not only explain why the error/warning is occurring, but offer a solution. Use the <a routerLink="/components/error">Error component</a> to provide a consistent user experience with error messaging.</p>
+	<p>Errors can frustrate a user and sometimes indicate a serious problem, so be thoughtful and helpful with the wording. Limit the use of please/sorry, be careful how you use can't/don't (try to avoid you can't or you don't), and avoid humor.</p>
+
+<stache-page-anchor>Accessibility guidelines</stache-page-anchor>	
+	
+	<p>Don't rely on a single sensory characteristic of components such as shape, size, visual location, orientation, or sound when describing an error or offering a solution for an error. Using "above" and "below" is fine when referencing content in the appropriate reading order for the language used as long as the reference isn't ambiguous.</p>
+	
 <stache-page-anchor>Page errors</stache-page-anchor>
 	
-	<p>There are a variety of page-level errors that can happen, usually due to a system failure rather than a user action. <a routerLink="/components/error">Standard error messaging</a> is available for these scenarios, although the content can be customized if it needs to be more precise or prescriptive. </p>
+	<p>There are a variety of page-level errors that can happen, usually due to a system failure rather than a user action. The Error component has default content applicable to most scenarios, although the content can be customized if it needs to be more precise or prescriptive. </p>
 	
-<stache-page-anchor>Sub-page errors</stache-page-anchor>
-	
-	<div class="sky-subsection-heading">List</div>
+<stache-page-anchor>Page element errors</stache-page-anchor>
 	
 	<div class="sky-subsection-heading">Modal</div>
+	<p>Modals will usually have a lot of available space for displaying error messaging. In these cases you should use the Error component.</p>
+	
+	<div class="sky-subsection-heading">Tab</div>
+	<p>Tabs that are used as a secondary navigation will usually have views with a lot of available space for displaying error messaging. In these cases you should use the Error component.</p>
 	
 	<div class="sky-subsection-heading">Tile</div>
+	<p>Since tiles have limited space you should not include an image or button with the error message.</p>
 	
-<stache-page-anchor>Form errors</stache-page-anchor>
+	<div class="sky-subsection-heading">Form</div>
 	<p>See the <a routerLink="/design/guidelines/form-design" fragment="validation-and-error-handling">form design guidelines</a> for information about validation and error handling on forms.</p>

@@ -87,10 +87,13 @@
 <stache-page-anchor>Validation and error handling</stache-page-anchor>	
 	
 	<p>When a user is filling out a form, they should be notified as soon as possible to errors so they can be corrected within the flow of their task rather than being collected until they think they are finished. If possible a field should be validated when the field loses focus. If that isn’t possible, the validation should run when the form is submitted.</p> 
+	
 	<div class="sky-subsection-heading">Required fields</div>
 	<p>Required fields are denoted with a red asterisk to the right of the field label. Adding the "<a routerLink="/components/form" fragment="required-fields">sky-control-label-required</a>" class to the label will apply this styling.</p>
+	
 	<div class="sky-subsection-heading">Other validation</div>
 	<p>You should use the <a routerLink="/components/datepicker">datepicker</a>, <a routerLink="/components/timepicker">timepicker</a>, <a routerLink="/components/email-validation">email validation</a>, and <a routerLink="/components/url-validation">URL validation</a> components when collecting those types of data. You can also create custom validation as needed.</p>
+	
 	<div class="sky-subsection-heading">Error states</div>
 	<p><code>input</code> and <code>select</code> fields that use Angular validation are <a routerLink="/components/form" fragment="error-states">automatically styled</a> with a red glow when in an error state.</p>
 	<p>A validation error should be accompanied by a message letting the user know how to correct the error. This message will generally be one of two types, although there will certainly be cases where a different message is needed:</p> 
@@ -101,5 +104,7 @@
 	<p>The error message should be displayed below the field with the error, with a prepended red warning icon to draw attention. Adding the "<a routerLink="/components/form" fragment="error-states">sky-error-label</a>" class to the message will apply the correct styling.</p>
 	<p>It is sometimes the case that a form is quite long and the field that is triggering an error is scrolled out of view. To help the user identify what needs to be corrected, autoscroll to the first field that is causing an error.</p>
 
-  
+	<div class="sky-subsection-heading">Form-level errors</div>
+	<p>If the form content fails to load, follow the <a routerLink="/design/guidelines/error-handling" fragment="page-element-errors">error handling guidelines</a> for the relevant page-level element.</p>
+	<p>If the form-level actions break (such as the Save action not working), include an error message with the "<a routerLink="/design/styles/typography">sky-text-danger</a>" class at the top left of the form action bar.</p>
 </stache>
