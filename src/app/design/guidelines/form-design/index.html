@@ -1,6 +1,6 @@
 <stache
     layout="container"
-    pageTitle="Forms"
+    pageTitle="Form design"
     showTableOfContents="true">
 
 <stache-page-summary><p>Form design patterns to accommodate different scenarios and workflow requirements.</p></stache-page-summary>
@@ -55,8 +55,8 @@
 <stache-page-anchor>Field layout</stache-page-anchor>
 
 	<div class="sky-subsection-heading">General field layout</div>
-	<p>Fields should generally flow vertically. Wrapping fields in the “sky-form-group” class will provide the correct amount of vertical padding between fields.</p> 
-	<p>The most common exception is closely-related fields (such as First Name/Last Name) which can follow a horizontal flow. When using a horizontal flow you should use a fluid grid layout to ensure that the form scales properly to smaller viewports.</p> 
+	<p>Fields should generally flow vertically. Wrapping fields in the "<a routerLink="/components/form" fragment="form-group">sky-form-group</a>" class will provide the correct amount of vertical padding between fields.</p> 
+	<p>The most common exception is closely-related fields (such as First Name/Last Name) which can follow a horizontal flow. When using a horizontal flow you should use a <a routerLink="/components/fluid-grid">fluid grid layout</a> to ensure that the form scales properly to smaller viewports.</p> 
 	<p>The width of the input depends upon the type of data being entered into the form and should feel like a natural width. To avoid inconsistent input sizing, please use one of the following three input widths when designing a form:</p>
 	<ul>
 		<li>Small: 33% (4 fluid grid columns)</li>
@@ -65,40 +65,41 @@
 	</ul>
 	
 	<div class="sky-subsection-heading">Subsections</div> 
-	<p>For cases where you want to visually separate a small set of fields (e.g. address fields) from the preceding/following fields you can use 20px of vertical spacing and use the “sky-subsection-heading” class for the subsection header.</p> 
+	<p>For cases where you want to visually separate a small set of fields (e.g. address fields) from the preceding/following fields you can use 20px of vertical spacing and use the "<a routerLink="/design/styles/typography">sky-subsection-heading</a>" class for the subsection header.</p> 
 
 	<div class="sky-subsection-heading">Tiles</div>
 	<p>If a form collects multiple facets of information and the user needs to fill out all of them, you can use tiles to group the fields of those facets.</p> 
 	
 	<div class="sky-subsection-heading">Sub-forms</div> 
-	<p>For cases where you need to use a sub-form (e.g. when adding mulitple instances of a child record), follow the Form Container guidelines. It’s acceptable to launch modal forms from within a modal form if alternate workflows are not feasible.</p> 
+	<p>For cases where you need to use a sub-form (e.g. when adding mulitple instances of a child record), follow the form container guidelines above. It’s acceptable to launch modal forms from within a modal form if alternate workflows are not feasible.</p> 
 
 <stache-page-anchor>Field usability</stache-page-anchor>
 	
 	<div class="sky-subsection-heading">Labels</div>
-	<p>All fields should be labeled, with the label normally located to the top left of the input. Adding the “sky-control-label” class to the label will apply the correct styling.</p>
+	<p>All fields should be labeled, with the label normally located to the top left of the input. Adding the "<a routerLink="/components/form" fragment="control-label">sky-control-label</a>" class to the label will apply the correct styling.</p>
 
 	<div class="sky-subsection-heading">Placeholder text</div>
 	<p>You can use a small amount of placeholder text to help users with data entry. The placeholder text shouldn’t be used in place of a label.</p>
 	
 	<div class="sky-subsection-heading">Inline help</div>
-	<p>Refer to the User Assistance guidelines for information about when to use persistent or invoked inline help content.</p>
+	<p>Refer to the <a routerLink="/design/guidelines/user-assistance">user assistance guidelines</a> for information about when to use persistent or invoked inline help content.</p>
 
 <stache-page-anchor>Validation and error handling</stache-page-anchor>	
 	
 	<p>When a user is filling out a form, they should be notified as soon as possible to errors so they can be corrected within the flow of their task rather than being collected until they think they are finished. If possible a field should be validated when the field loses focus. If that isn’t possible, the validation should run when the form is submitted.</p> 
 	<div class="sky-subsection-heading">Required fields</div>
-	<p>Required fields are denoted with a red asterisk to the right of the field label. Adding the “sky-control-label-required” class to the label will apply this styling.</p>
+	<p>Required fields are denoted with a red asterisk to the right of the field label. Adding the "<a routerLink="/components/form" fragment="required-fields">sky-control-label-required</a>" class to the label will apply this styling.</p>
 	<div class="sky-subsection-heading">Other validation</div>
-	<p>You should use the datepicker, timepicker  email validation, and URL validation components when collecting those types of data. You can also create custom validation as needed.</p>
+	<p>You should use the <a routerLink="/components/datepicker">datepicker</a>, <a routerLink="/components/timepicker">timepicker</a>, <a routerLink="/components/email-validation">email validation</a>, and <a routerLink="/components/url-validation">URL validation</a> components when collecting those types of data. You can also create custom validation as needed.</p>
 	<div class="sky-subsection-heading">Error states</div>
-	<p><code>input</code> and <code>select</code> fields that use Angular validation are automatically styled with a red glow when in an error state.</p>
+	<p><code>input</code> and <code>select</code> fields that use Angular validation are <a routerLink="/components/form" fragment="error-states">automatically styled</a> with a red glow when in an error state.</p>
 	<p>A validation error should be accompanied by a message letting the user know how to correct the error. This message will generally be one of two types, although there will certainly be cases where a different message is needed:</p> 
 	<ol>	
 		<li>[Item] is required.</li>
 		<li>Please enter a valid [item].</li>
 	</ol>
-	<p>The error message should be displayed below the field with the error, with a prepended red warning icon to draw attention. Adding the “sky-error-label” class to the message will apply the correct styling.</p> 
+	<p>The error message should be displayed below the field with the error, with a prepended red warning icon to draw attention. Adding the "<a routerLink="/components/form" fragment="error-states">sky-error-label</a>" class to the message will apply the correct styling.</p>
+	<p>It is sometimes the case that a form is quite long and the field that is triggering an error is scrolled out of view. To help the user identify what needs to be corrected, autoscroll to the first field that is causing an error.</p>
 
   
 </stache>

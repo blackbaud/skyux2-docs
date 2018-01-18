@@ -27,6 +27,13 @@ export class GuidelineActionButtonsComponent {
       // tslint:disable-next-line
       summary: 'Describes the contexts in which to use different types of content containers.'
     },
+		{
+      name: 'Error handling',
+      path: '/design/guidelines/error-handling',
+      icon: 'warning',
+      // tslint:disable-next-line
+      summary: 'Error handling patterns provide guidance on how to present error messages in various contexts.'
+    },
     {
       name: 'Filter lists',
       path: '/design/guidelines/filtering-lists',
@@ -39,7 +46,7 @@ export class GuidelineActionButtonsComponent {
       path: '/design/guidelines/form-design',
       icon: 'clone',
       // tslint:disable-next-line
-      summary: 'Form design patterns to accommodate different scenarios and workflow requirements..'
+      summary: 'Form design patterns to accommodate different scenarios and workflow requirements.'
     },
     {
       name: 'Manage records',
