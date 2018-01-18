@@ -75,35 +75,37 @@
   </ol>
 
   <stache-page-anchor>
-    Using the default locale provider
+    Use the default locale provider
   </stache-page-anchor>
 
-  <p>If your application is deployed using SKY UX Host and you want to use the locale provided by the browser, there are no additional configuration steps needed.
+  <p>If you use SKY UX Host to deploy your application and you want to use the locale provided by the browser, no additional configuration is necessary.
 
   <stache-page-anchor>
-    Providing a custom locale provider
+    Provide a custom locale provider
   </stache-page-anchor>
 
-  <p>If your application uses a different mechanism to determine the locale, for example via a setting stored in a database, you can provide a custom mplementation of the <stache-code>SkyAppLocaleProvider</stache-code>.</p>
+  <p>If your application determines the locale through a different mechanism, such as a setting stored in a database, you can provide a custom implementation of the <stache-code>SkyAppLocaleProvider</stache-code>.</p>
+  
+  <p>For example, here is a sample <stache-code>app-extras.module.ts</stache-coe> file:</p>
 
   <stache-code-block languageType="typescript">
 import { NgModule } from '@angular/core';
-import { TestLocalProvider } from './testlocal-provider'
+import { TestLocaleProvider } from './test-locale-provider'
 
 @NgModule({
   providers: [{
-    provide: SkyAppLocalProvider,
-    useClass: TestLocalProvider
+    provide: SkyAppLocaleProvider,
+    useClass: TestLocaleProvider
   }]
 })
 export class AppExtrasModule { }
   </stache-code-block>
+  
+  <p>And here is a sample <stache-code>test-locale-provider.ts</stache-code> file:</p>
 
   <stache-code-block languageType="typescript">
 import { NgModule } from '@angular/core';
-
 import { SkyAppLocaleProvider } from '@blackbaud/skyux-builder/runtime/i18n';
-
 import { Observable } from 'rxjs/Observable';
 
 export class TestLocaleProvider extends SkyAppLocaleProvider {
