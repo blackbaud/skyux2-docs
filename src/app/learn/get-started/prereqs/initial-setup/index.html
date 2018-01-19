@@ -12,7 +12,7 @@
   </stache-page-anchor>
   <p>Install <a href="https://nodejs.org/en/">Node.js version 6+</a>. To check your version, run <stache-code>node –v</stache-code> from the command line.</p>
   <sky-alert alertType="danger">Do not use Node.js version 7+.</sky-alert>
-  <sky-alert alertType="info">For Mac OS X and Linux, we recommend that you use <a href="https://github.com/creationix/nvm">Node Version Manager (nvm)</a> to wrap your NodeJS installation so that it installs in your user directory and avoids permissions-related issues.</sky-alert>
+  <p>For Mac OS X and Linux, we recommend that you use <a href="https://github.com/creationix/nvm">Node Version Manager (nvm)</a> to wrap your NodeJS installation so that it installs in your user directory and avoids permissions-related issues.</p>
   
   <stache-page-anchor>
     NPM
@@ -41,7 +41,7 @@
   </h3>
 
   <p>
-    Like Angular 2, SKY UX 2 is written in <a href="https://www.typescriptlang.org/">TypeScript</a>, and the free <a href="https://code.visualstudio.com/">Visual Studio Code editor</a> is one of the best options for working with TypeScript. It supports code navigation, refactoring tools, and a host of other features that are usually only found in richer IDEs. The SKY UX team uses Visual Studio Code and has some recommendations for configuring it to work best with Angular 2 and SKY UX 2. Even if you do not want to use Visual Studio Code as your editor, some of the following information will still be useful as many of the extensions and other tips are available for other popular editors such as <a href="https://atom.io/">Atom</a>, <a href="http://brackets.io/">Brackets</a>, and <a href="https://www.sublimetext.com/">Sublime Text</a>.
+    Like Angular, SKY UX is written in <a href="https://www.typescriptlang.org/">TypeScript</a>, and the free <a href="https://code.visualstudio.com/">Visual Studio Code editor</a> is one of the best options for working with TypeScript. It supports code navigation, refactoring tools, and a host of other features that are usually only found in richer IDEs. The SKY UX team uses Visual Studio Code and has some recommendations for configuring it to work best with Angular and SKY UX. Even if you do not want to use Visual Studio Code as your editor, some of the following information will still be useful as many of the extensions and other tips are available for other popular editors such as <a href="https://atom.io/">Atom</a>, <a href="http://brackets.io/">Brackets</a>, and <a href="https://www.sublimetext.com/">Sublime Text</a>.
   </p>
 
   <h4>
@@ -55,7 +55,7 @@
   <ul>
     <li>
       <p>
-        <a href="https://marketplace.visualstudio.com/items?itemName=eg2.tslint">TSLint</a>: This extension validates your TypeScript code against the rules specified in the <stache-code>tslint.json</stache-code> file in the SKY UX 2 repo. TSLint runs during the CI build, so if your code does not validate in VS Code with the use of this extension, the CI build will fail.
+        <a href="https://marketplace.visualstudio.com/items?itemName=eg2.tslint">TSLint</a>: This extension validates your TypeScript code against the rules specified in <a href="https://github.com/blackbaud/skyux2/blob/master/tslint.json">the <stache-code>tslint.json</stache-code> file in the SKY UX repo</a>. TSLint runs during the CI build, so if your code does not validate in VS Code with the use of this extension, the CI build will fail.
       </p>
     </li>
     <li>
