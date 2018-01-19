@@ -70,7 +70,7 @@
     <ol>
         <li><p>Download the <a href="https://raw.githubusercontent.com/blackbaud/skyux-builder/master/ssl/skyux-ca.crt">skyux-ca.crt</a>.</p></li>
         <li><p>Move the <stache-code>skyux-ca.crt</stache-code> to <stache-code>/usr/local/share/ca-certificates</stache-code>.</p></li>
-        <li><p>From the command prompt, run <stache-code>sudo update-ca-certificates</stache-code>.</p>
+        <li><p>From the command terminal, run <stache-code>sudo update-ca-certificates</stache-code>.</p>
           <sky-alert alertType="info">When you use products that use their own certificate stores, you also need to add the certificate to those certificate stores. For example, follow the instructions above to install the certificate for Firefox, <a href="http://blogmines.com/blog/how-to-import-a-certificate-in-google-chrome/">import the certificate in Google Chrome</a>, or <a href="https://docs.microsoft.com/en-us/azure/java-add-certificate-ca-store">add the certificate to the Java certificates tore</a>.</sky-alert>
         </li>
         <li><p>To confirm that the certificate installed successfully, verify that it is included in the concatenated list of trusted certificates in <stache-code>/etc/ssl/certs/ca-certificates.crt</stache-code>.</p></li>
