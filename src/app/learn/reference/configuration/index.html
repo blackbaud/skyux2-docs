@@ -73,6 +73,7 @@
         <li><stache-code>standard</stache-code>: 80 percent</li>
         <li><stache-code>strict</stache-code>: 100 percent</li>
       </ul>
+      <p>To exclude files from code coverage, place them in the <stache-code>src/app/lib</stache-code> folder.</p>
     </li>
     <li>
       <p><stache-code>compileMode</stache-code> — Specifies how to compile the project's code. By default, the <stache-code>skyuxconfig.json</stache-code> file sets this property to <stache-code>aot</stache-code> to specify ahead-of-time compilation, which runs the compiler once at build time using one set of libraries. You can change this setting to <stache-code>jit</stache-code> to specify just-in-time compilation, which runs the compiler at run time for every user using a different set of libraries. SKY UX uses ahead-of-time compilation by default because it is typically more performant and has less to handle at run-time. For more information about the difference, see the <a href="https://angular.io/docs/ts/latest/cookbook/aot-compiler.html#!#aot-jit">Angular documentation</a></p>
