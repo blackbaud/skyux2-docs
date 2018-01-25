@@ -6,7 +6,7 @@
   <p>When you <a routerLink="/learn/get-started/basics/create-project">create a SKY UX project</a>, the SKY UX template provides a <stache-code>skyuxconfig.json</stache-code> file in your project's directory to enable you to configure settings for SKY UX. All properties in <stache-code>skyuxconfig.json</stache-code> are optional, and by default, the file only specifies values for the <stache-code>mode</stache-code> and <stache-code>compileMode</stache-code> settings.</p>
   <p>SKY UX enables you to create additional configuration files as necessary <a routerLink="/learn/reference/configuration/additional-config-files">to apply settings to specific SKY UX CLI commands</a> using the <stache-code>skyuxconfig.[COMMAND].json</stache-code> naming convention.</p>
   <p>The configuration options that are available in the <stache-code>skyuxconfig.json</stache-code> file include:</p>
-  
+
   <ul>
     <li>
       <p><stache-code>a11y</stache-code> — Enables or disables accessibility test rules. You can manage rules individually, or you can enable or disable all rules in bulk. For examples of how to enable and disable rules, see <a routerLink="/learn/get-started/advanced/accessibility-analyzer">accessibility analyzer</a>.</p>
@@ -65,6 +65,14 @@
     </li>
     <li>
       <p><stache-code>auth</stache-code> — Indicates whether the application requires an authenticated Blackbaud ID. This property is for internal Blackbaud use only. By default, this property is set to <stache-code>false</stache-code>. To require authentication, set this property to <stache-code>true</stache-code>. For Blackbaud developers, <a routerLink="/learn/reference/helpers">the helpers reference</a> provides information about how to make authenticated HTTP requests.</p>
+    </li>
+    <li>
+      <p><stache-code>codeCoverageThreshold</stache-code> — Specifies the minimum code coverage threshold that is required to pass the <stache-code>skyux test</stache-code> command. The available values and their corresponding thresholds are:</p>
+      <ul>
+        <li><stache-code>none</stache-code>: 0 percent</li>
+        <li><stache-code>standard</stache-code>: 80 percent</li>
+        <li><stache-code>strict</stache-code>: 100 percent</li>
+      </ul>
     </li>
     <li>
       <p><stache-code>compileMode</stache-code> — Specifies how to compile the project's code. By default, the <stache-code>skyuxconfig.json</stache-code> file sets this property to <stache-code>aot</stache-code> to specify ahead-of-time compilation, which runs the compiler once at build time using one set of libraries. You can change this setting to <stache-code>jit</stache-code> to specify just-in-time compilation, which runs the compiler at run time for every user using a different set of libraries. SKY UX uses ahead-of-time compilation by default because it is typically more performant and has less to handle at run-time. For more information about the difference, see the <a href="https://angular.io/docs/ts/latest/cookbook/aot-compiler.html#!#aot-jit">Angular documentation</a></p>
