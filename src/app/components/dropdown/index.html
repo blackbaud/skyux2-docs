@@ -47,7 +47,7 @@
     <sky-demo-page-property
       propertyName="menuChanges"
       isOptional="true">
-      Provides an observable to emit changes when the menu's active index changes. The response is of type <stache-code>SkyDropdownMenuChanges</stache-code> (see below).
+      Provides an observable to emit changes when the menu's active index or selected item changes. The response is of type <stache-code>SkyDropdownMenuChange</stache-code> (see below).
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -73,15 +73,22 @@
         <li>
           <stache-code>SkyDropdownMessageType.FocusPreviousItem</stache-code> &mdash; Puts focus on the previous item in the dropdown menu.
         </li>
+        <li>
+          <stache-code>SkyDropdownMessageType.Reposition</stache-code> &mdash; If the menu is open, this command will reposition the dropdown next to the dropdown button. (Useful for when the dropdown's width and height change while open.)
+        </li>
       </ul>
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
   <sky-demo-page-properties
-    sectionHeading="SkyDropdownMenuChanges">
+    sectionHeading="SkyDropdownMenuChange">
     <sky-demo-page-property
       propertyName="activeIndex">
       Indicates the active menu index.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="selectedItem">
+      Indicates the selected item in the menu. The value of the field is of type <stache-code>SkyDropdownItemComponent</stache-code>.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
