@@ -22,6 +22,9 @@
       <p><stache-code>src/app/shared</stache-code> folder — This folder is the recommended location for components and services that are shared across an application.</p>
     </li>
     <li>
+      <p><stache-code>src/app/lib</stache-code> folder — This folder is the recommended location for files to exclude from code coverage. SKY UX's code coverage instrumentation ignores all files in the <stache-code>lib</stache-code> folder.</p>
+    </li>
+    <li>
       <p><stache-code>src/assets</stache-code> folder — To <a routerLink="/learn/get-started/advanced/include-static-assets">include static assets</a> such as images in your SPA, place them in the <stache-code>assets</stache-code> folder in the <stache-code>src</stache-code> directory. To reference files in this folder in your HTML, CSS, or SCSS, insert <stache-code>&#126;/assets/</stache-code> before the filename. For example, <stache-code>&#60;img src="&#126;/assets/photo.jpg" alt="Photo" /&#62;</stache-code> references a <stache-code>photo.jpg</stache-code> file in <stache-code>src/assets</stache-code>. You must reference static assets this way because the filenames are updated at build time to include hashes that represent the content of the files. During the CI build, files in the <stache-code>src/assets</stache-code> folder are automatically uploaded to the CDN if they are referenced in your HTML, CSS, or SCSS. Also during the CI build, all instances of <stache-code>&#126;/assets/</stache-code> are replaced with the CDN. To replace <stache-code>&#126;/assets/</stache-code> with a different value when <stache-code>skyux build</stache-code> runs, you can use the <stache-code>--assets</stache-code> option <a routerLink="/learn/reference/cli-commands">in the SKY UX CLI</a>.</p>
     </li>
     <li>
