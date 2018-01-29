@@ -105,6 +105,30 @@
       <p><stache-code>omnibar</stache-code> — Specifies an object to pass to the omnibar's <stache-code>load</stache-code> method. This property is for internal Blackbaud use only. The omnibar provides a common UI element for Blackbaud applications that allows users to navigate between applications. For Blackbaud developers, <a href="http://authsvc.docs.blackbaudhosting.com/components/omnibar/configuration_options/">the omnibar configuration options documentation</a> describes the available options to pass to the omnibar.</p>
     </li>
     <li>
+      <p><stache-code>pacts</stache-code> — Specifies configuration options for pact testing when running <stache-code>skyux pact</stache-code>.</p>
+      <ul>
+        <li><p><stache-code>consumer</stache-code> — </p></li>
+        <li><p><stache-code>host</stache-code> — </p></li>
+        <li><p><stache-code>log</stache-code> — </p></li>
+        <li><p><stache-code>logLevel</stache-code> — </p></li>
+        <li><p><stache-code>port</stache-code> — </p></li>
+        <li><p><stache-code>provider</stache-code> — </p></li>
+        <li><p><stache-code>spec</stache-code> — </p></li>
+        <li><p><stache-code></stache-code> — </p></li>
+      </ul>
+      <p>The following example illustrates a sample configuration for pact testing:</p>
+      <stache-code-block>
+        "pacts": [
+          {
+            "consumer": "{consumer}",
+            "provider": "{provider}",
+            "logLevel": "DEBUG",
+            "spec": "1",
+          }
+        ]
+      </stache-code-block>
+    </li>
+    <li>
       <p><stache-code>params</stache-code> — Specifies a list of parameters that are allowed at runtime. You can list parameters as an array of strings, specify parameters as key-value pairs with boolean values that indicate whether the parameters are allowed, or specify parameters as objects to provide default values for the parameters.</p>
       <p>By default, Builder’s <stache-code>skyuxconfig.json</stache-code> lists the <stache-code>svcid</stache-code> and <stache-code>envid</stache-code> parameters and sets them to <stache-code>true</stache-code>. This allows the SPA to track the querystring parameters of svcid and envid in the URL and exposes them through the <stache-code>SkyAppConfig</stache-code> in runtime.</p>
       <ul>
