@@ -1,0 +1,182 @@
+<stache
+  pageTitle="SKY UX accessibility design guidelines"
+  showTableOfContents="false"
+  navTitle="Design guidelines">
+  
+  <stache-page-summary>
+    Designers should follow these guidelines when designing for SKY UX.
+  </stache-page-summary>
+  
+  <stache-page-anchor>
+    Text contrast ratio
+  </stache-page-anchor>
+  
+  <ul>
+    <li>
+      <p>
+        If text is less than 18 points (or less than 14 points for bold text), then the contrast ratio of background to text should be greater than 4.5:1. <a href="https://www.w3.org/TR/WCAG20-TECHS/G145.html">See 1.4.3.</a>.
+      </p>
+    </li>
+    <li>
+      <p>
+        If text is greater than 18 points (or greater than 14 points for bold text), then the contrast ratio of background to text should be greater than 3:1. <a href="https://www.w3.org/TR/WCAG20-TECHS/G145.html">see 1.4.3.</a>
+      </p>
+    </li>
+  </ul>
+  
+  <stache-page-anchor>
+    Links
+  </stache-page-anchor>
+  
+  <ul>
+    <li>
+      <p>
+        If links within text (such as paragraphs) are not underlined, then the link color to text color contrast should be greater than 3:1, and links should have additional visual indication when hovered or focused. <a href="https://www.w3.org/TR/WCAG20-TECHS/G183.html">See 1.4.1.</a>
+      </p>
+    </li>
+  </ul>
+  
+  <stache-page-anchor>
+    Images
+  </stache-page-anchor>
+  
+  <ul>
+    <li>
+      <p>
+        Images and nontext content such as icons should have text alternatives defined. (If images are decorative, indicate alt attribute would be blank.) <a href="https://www.w3.org/WAI/WCAG20/quickref/?showtechniques=11%2C141#text-equiv-all">See 1.1.1.</a> 
+      </p>
+    </li>
+    <li>
+      <p>
+        If images and nontext content such as icons invoke functions, then they should have text alternatives that communicate the function. <a href="https://www.w3.org/WAI/WCAG20/quickref/?showtechniques=11%2C141#text-equiv-all">See 1.1.1.</a>
+      </p>
+    </li>
+  </ul>
+  
+  <stache-page-anchor>
+    Color
+  </stache-page-anchor>
+  
+  <ul>
+    <li>
+      <p>
+        If color is used to convey information, it should not be the only means of communicating the information. <a href="https://www.w3.org/WAI/WCAG20/quickref/?showtechniques=11%2C141#visual-audio-contrast-without-color">See 1.4.1.</a>
+      </p>
+    </li>
+  </ul>
+  
+  <stache-page-anchor>
+    Motion and animations
+  </stache-page-anchor>
+  
+  <ul>
+    <li>
+      <p>
+        Flashing motions and animations, should not flash more than 3 times in any 1 second period. <a href="https://www.w3.org/WAI/WCAG20/quickref/?showtechniques=11%2C141#seizure-does-not-violate">See 2.3.1.</a>
+      </p>
+    </li>
+    <li>
+      <p>
+        For motion, blinking, or scrolling that starts automatically and lasts more than 5 seconds, a mechanism should allow users to pause, stop, or hide the motion unless it is essential. <a href="https://www.w3.org/WAI/WCAG20/quickref/?showtechniques=11%2C141#time-limits-pause">See 2.2.2.</a>
+      </p>
+    </li>
+    <li>
+      <p>
+        For auto-updating content that automatically starts, a mechanism should allow users to pause, stop, or hide the motion unless it is essential. <a href="https://www.w3.org/WAI/WCAG20/quickref/?showtechniques=11%2C141#time-limits-pause">See 2.2.2.</a>
+      </p>
+    </li>
+  </ul>
+  
+  <stache-page-anchor>
+    Forms and input elements
+  </stache-page-anchor>
+  
+  <ul>
+    <li>
+      <p>
+        All input elements should have text labels onscreen or specified off-screen. <a href="https://www.w3.org/WAI/WCAG20/quickref/?showtechniques=11%2C141%2C222%2C332#minimize-error-cues">See 3.3.0.</a>
+      </p>
+    </li>
+    <li>
+      <p>
+        If form input elements and input formats are required, the requirement should be communicated visually and textually. <a href="https://www.w3.org/WAI/WCAG20/quickref/?showtechniques=11%2C141%2C222%2C332#minimize-error-cues">See 3.3.2</a>, and <a href="https://www.w3.org/TR/WCAG20-TECHS/F81.html">see 1.4.1.</a>
+      </p>
+    </li>
+  </ul>
+  
+  <stache-page-anchor>
+    Error states and messages
+  </stache-page-anchor>
+  
+  <ul>
+    <li>
+      <p>
+        When users are notified of errors and given instructions on how to fix errors, a method should ideally exist to navigate directly to errors from error messages. <a href="https://www.w3.org/WAI/WCAG20/quickref/?showtechniques=11%2C141%2C222%2C331#minimize-error-identified">See 3.3.1</a>, and <a href="https://www.w3.org/WAI/WCAG20/quickref/?showtechniques=11%2C141%2C333#minimize-error-suggestions">see 3.3.3.</a>
+      </p>
+    </li>
+  </ul>
+  
+  <stache-page-anchor>
+    Interactions
+  </stache-page-anchor>
+  
+  <ul>
+    <li>
+      <p>
+        Interactions that are mouse or touch-only, such as drag and drop actions, should inclue keyboard operation alternatives in the design proposal. <a href="https://www.w3.org/WAI/WCAG20/quickref/?showtechniques=11%2C141%2C211#keyboard-operation-keyboard-operable">See 2.1.1.</a>
+      </p>
+    </li>
+    <li>
+      <p>
+        When focus is placed on interactive elements such as links, buttons, and input elements, no unexpected or non-browser-default behaviors should be specified. <a href="https://www.w3.org/WAI/WCAG20/quickref/?showtechniques=11%2C141#consistent-behavior-receive-focus">See 3.2.1.</a>
+      </p>
+    </li>
+    <li>
+      <p>
+        When focus is placed on interactive elements such as links, buttons, and input elements, additional focus state visual indicators should specified as necessary. <a href="https://www.w3.org/WAI/WCAG20/quickref/?showtechniques=11%2C141%2C247#navigation-mechanisms-focus-visible">See 2.4.7.</a>
+      </p>
+    </li>
+    <li>
+      <p>
+        During text entry or input selection for interactive elements such as links, buttons, and input elements, no unexpected behavior should be invoked. If unexpected behavior must be invoked, a warning should be communicated to users ahead of time. <a href="https://www.w3.org/WAI/WCAG20/quickref/?showtechniques=11%2C141%2C322#consistent-behavior-unpredictable-change">See 3.2.2.</a>
+      </p>
+    </li>
+  </ul>
+  
+  <stache-page-anchor>
+    Page titles
+  </stache-page-anchor>
+  
+  <ul>
+    <li>
+      <p>
+        Titles should be unique and should describe the contents and purpose of the page.
+      </p>
+    </li>
+  </ul>
+  
+  <stache-page-anchor>
+    Keyboard support
+  </stache-page-anchor>
+  
+  <ul>
+    <li>
+      <p>
+        Interactions for keyboard and focus indication should be defined following <a href="https://www.w3.org/TR/wai-aria-practices-1.1/">WAI-ARIA Authoring Practices for non-standard HTML component patterns</a>. <a href="https://www.w3.org/WAI/WCAG20/quickref/#keyboard-operation-keyboard-operable">See 2.1.1</a>, and <a href="https://www.w3.org/WAI/WCAG20/quickref/#navigation-mechanisms-focus-visible">see 2.4.7.</a>
+      </p>
+    </li>
+  </ul>
+  
+  <stache-page-anchor>
+    Headings
+  </stache-page-anchor>
+  
+  <ul>
+    <li>
+      <p>
+        Heading levels should be specified and should follow hierarchical order from H1 to H6. <a href="https://www.w3.org/TR/WCAG20-TECHS/H42.html">See 1.3.1.</a>
+      </p>
+    </li>
+  </ul>
+  
+</stache>
