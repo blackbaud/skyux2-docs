@@ -1,57 +1,102 @@
 <sky-demo-page pageTitle="Dropdown">
   <sky-demo-page-summary>
     <p>
-      The dropdown component renders a button that displays a menu when users click it. The menu displays a set of actions or functions. It is <strong>not a select input</strong> for users to set the menu's value to one of the options. If you need a selection input, see the <a routerLink="/design/guidelines/select-items">options to select items from lists</a>.
+      The dropdown component renders a button that displays a menu when users click it. The menu displays a set of actions or functions. <strong>Do not use the dropdown component as a select input</strong> for users to set the menu's value to one of the options. If you need a select input, see the <a routerLink="/design/guidelines/select-items">options to select items from lists</a>.
     </p>
   </sky-demo-page-summary>
 
-  <sky-demo-page-properties>
+  <sky-demo-page-properties
+    sectionHeading="Dropdown button properties">
     <sky-demo-page-property
-        propertyName="buttonType"
-        isOptional="true"
-        defaultValue="select"
-    >
-      Specifies the type of button to render as the dropdown's trigger element.  Specify <stache-code>select</stache-code> to display a button with text and a caret or <stache-code>context-menu</stache-code> to display a round button containing an ellipsis.  You can also specify a font-awesome icon as the content of the dropdown by passing the class name to the <stache-code>buttonType</stache-code> attribute. For example, setting <stache-code>buttonType</stache-code> to <stache-code>filter</stache-code> would set the <stache-code>fa-filter</stache-code> icon as the content of the dropdown button. If you use the <stache-code>select</stache-code> style you will need to include a <stache-code>sky-dropdown-button</stache-code> element to specify the text for the button.
-    </sky-demo-page-property>
-    <sky-demo-page-property 
-        propertyName="buttonStyle"
-        isOptional="true"
-        defaultValue="default"
-    >
-      Specifies the background color of the dropdown's trigger element. if unspecified it is set to <stache-code>default</stache-code> for background color <stache-code>sky-color-white</stache-code>. Specify <stache-code>primary</stache-code> to change color to <stache-code>sky-color-blue</stache-code>.
+      propertyName="buttonType"
+      isOptional="true"
+      defaultValue="select">
+      Specifies the type of button to render as the dropdown's trigger element. To display a button with text and a caret, specify <stache-code>select</stache-code> and then enter the button text in a <stache-code>sky-dropdown-button</stache-code> element. To display a round button with an ellipsis, specify <stache-code>context-menu</stache-code>. And to display a button with <a href="http://fontawesome.io/icons/">a Font Awesome icon</a>, specify the icon's class name. For example, to display the <stache-code>fa-filter</stache-code> icon, specify <stache-code>filter</stache-code>.
     </sky-demo-page-property>
     <sky-demo-page-property
-        propertyName="label"
-        isOptional="true"
-    >
-      Specifies the accessibility label text for the dropdown button when the dropdown button has no text.
+      propertyName="buttonStyle"
+      isOptional="true"
+      defaultValue="default">
+      Specifies a background color for the dropdown button. If unspecified, the <stache-code>default</stache-code> value sets the background color to <stache-code>sky-color-white</stache-code>. To change the background color to <stache-code>sky-color-blue</stache-code>, specify <stache-code>primary</stache-code>.
     </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="label"
+      isOptional="true">
+      Specifies an accessibility label to provide a text equivalent for screen readers when the dropdown button has no text.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="title"
+      isOptional="true">
+      Specifies a title to display in a tooltip when users hover the mouse over the dropdown button.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="messageStream"
+      isOptional="true">
+      Provides an observable to send commands to the dropdown. The commands should respect the <stache-code>SkyDropdownMessage</stache-code> type (see below).
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
 
-      <sky-demo-page-property
-        propertyName="title"
-        isOptional="true"
-    >
-      Specifies a title for the dropdown button when no text exists.
+  <sky-demo-page-properties
+    sectionHeading="Dropdown menu properties">
+    <sky-demo-page-property
+      propertyName="useNativeFocus"
+      isOptional="true"
+      defaultValue="true">
+      Indicates whether to use the browser's native focus function when users navigate through menu items with the keyboard. To disable the native focus function, set this property to <stache-code>false</stache-code>. For example, if you want to interact with the dropdown menu but keep the keyboard focus on a different element, set this property to <stache-code>false</stache-code>.
     </sky-demo-page-property>
     <sky-demo-page-property
-        propertyName="trigger"
-        isOptional="true"
-        defaultValue="click"
-    >
-      Specifies what user action will cause the dropdown to open.  Possible values are <stache-code>click</stache-code> or <stache-code>hover</stache-code>.
+      propertyName="menuChanges"
+      isOptional="true">
+      Provides an observable to emit changes when the menu's active index or selected item changes. The response is of type <stache-code>SkyDropdownMenuChange</stache-code> (see below).
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-properties
+    sectionHeading="SkyDropdownMessage type">
+    <sky-demo-page-property
+      propertyName="type"
+      isOptional="true">
+        Sets the message to one of the following <stache-code>SkyDropdownMessage</stache-code> types:
+      <ul>
+        <li>
+          <stache-code>SkyDropdownMessageType.Open</stache-code> &mdash; Opens the dropdown menu.
+        </li>
+        <li>
+          <stache-code>SkyDropdownMessageType.Close</stache-code> &mdash; Closes the dropdown menu.
+        </li>
+        <li>
+          <stache-code>SkyDropdownMessageType.FocusTriggerButton</stache-code> &mdash; Puts focus the dropdown button.
+        </li>
+        <li>
+          <stache-code>SkyDropdownMessageType.FocusNextItem</stache-code> &mdash; Puts focus on the next item in the dropdown menu.
+        </li>
+        <li>
+          <stache-code>SkyDropdownMessageType.FocusPreviousItem</stache-code> &mdash; Puts focus on the previous item in the dropdown menu.
+        </li>
+        <li>
+          <stache-code>SkyDropdownMessageType.Reposition</stache-code> &mdash; Repositions the dropdown next to the dropdown button. This is useful for when the dropdown's width and height change while open.
+        </li>
+      </ul>
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-properties
+    sectionHeading="SkyDropdownMenuChange">
+    <sky-demo-page-property
+      propertyName="activeIndex">
+      Indicates the active menu index.
     </sky-demo-page-property>
     <sky-demo-page-property
-        propertyName="selected"
-        isOptional="true"
-        defaultValue="false"
-    >
-      Specifies whether the card is selected.  This property only applies when the card's <stache-code>selectable</stache-code> property is <stache-code>true</stache-code>.
+      propertyName="selectedItem">
+      Indicates the selected item in the menu. The value of the field is of type <stache-code>SkyDropdownItemComponent</stache-code>.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
   <sky-demo-page-example>
-    <sky-dropdown-demo></sky-dropdown-demo>
-    <sky-demo-page-code demoName="Dropdown"></sky-demo-page-code>
+    <sky-dropdown-demo>
+    </sky-dropdown-demo>
+    <sky-demo-page-code
+      demoName="Dropdown">
+    </sky-demo-page-code>
   </sky-demo-page-example>
-
 </sky-demo-page>

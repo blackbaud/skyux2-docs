@@ -7,6 +7,10 @@
   },
   "appSettings": {
     "stache": {
+      "editButton": {
+        "text": "Suggest edit",
+        "url": "https://github.com/blackbaud/skyux2-docs"
+      },
       "searchConfig": {
         "is_internal": false
       }
