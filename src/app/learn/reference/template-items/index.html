@@ -8,13 +8,13 @@
   <p>After you <a routerLink="/learn/get-started/basics/create-project">create a SKY UX project</a>, a variety of files and folders are already in place, and some SKY UX CLI commands create additional items in the project. This topic explains the purpose of these files and folders to provide guidance to developers on which items to edit and which items to ignore.</p>
   <p>The default items that the SKY UX template provides in a SPA include:</p>
   <ul>
-    <li><p><stache-code>.vscode</stache-code> folder — Contains 2 <stache-code>.json</stache-code> files to configure settings that are included for the developer's convenience.</p>
+    <li><p><stache-code>.vscode</stache-code> folder — Contains two <stache-code>.json</stache-code> files to configure settings that are included for the developer's convenience.</p>
       <ul>
         <li><p><stache-code>launch.json</stache-code> — A launch configuration file that provides settings on how to debug the build process for the SPA.</p></li>
         <li><p><stache-code>settings.json</stache-code> — A file that controls editor settings for VSCode.</p></li>
       </ul>
     </li>
-    <li><p><stache-code>coverage</stache-code> folder — Stores code coverage results for unit tests. This folder is generated when you run <stache-code>skyux test</stache-code> or <stache-code>skyux watch</stache-code>, and it provides a convenient way for developers to see what code the tests reached and what code they did not reach. We recommend that all new code should have 100 percent unit test code coverage. For information about the code coverage requirements to contribute to SKY UX, see the <a href="https://github.com/blackbaud/skyux2/blob/master/CONTRIBUTING.md">SKY UX 2 contribution guidelines</a>.</p></li>
+    <li><p><stache-code>coverage</stache-code> folder — Stores code coverage results for unit tests. This folder is generated when you run <stache-code>skyux test</stache-code> or <stache-code>skyux watch</stache-code>, and it provides a convenient way for developers to see what code the tests reached and what code they did not reach. We recommend that all new code should have 100 percent unit test code coverage. For information about the code coverage requirements to contribute to SKY UX, see the <a href="https://github.com/blackbaud/skyux2/blob/master/CONTRIBUTING.md">SKY UX contribution guidelines</a>.</p></li>
     <li><p><stache-code>dist</stache-code> folder — Contains files that are deployed through the continuous integration pipeline. This folder is generated when you run <stache-code>skyux build</stache-code>.</p></li>
     <li><p><stache-code>e2e</stache-code> folder — The required location <a routerLink="/learn/reference/tests">to store end-to-end tests</a>. As a convenience, this folder contains sample tests.</p></li>
     <li><p><stache-code>node_modules</stache-code> folder — Stores the external dependencies for SKY UX components and SKY UX Builder. This includes system files to build the single-page application. The folder is listed in the <stache-code>.gitignore</stache-code> file. Do not place it into source code control.</p></li>
