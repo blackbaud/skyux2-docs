@@ -18,7 +18,8 @@
             </ul>
             <p>By default, the SPA automatically opens in the default browser, but you can specify a different browser with the <stache-code>--browser</stache-code> option. This option is useful for cross-browser manual testing, and the available values are <stache-code>chrome</stache-code>, <stache-code>edge</stache-code>, <stache-code>firefox</stache-code>, <stache-code>iexplore</stache-code>, and <stache-code>safari</stache-code>. For example, <stache-code>skyux serve --browser firefox</stache-code>.</p>
         </li>
-        <li><p>In the command prompt, <stache-code>skyux serve</stache-code> continues to run, and changes to your project are automatically displayed as you save them.</p></li>
+        <li><p>In the command prompt, <stache-code>skyux serve</stache-code> continues to run, and changes to your project are automatically displayed as you save them.</p>
+          <sky-alert alertType="info">To serve multiple SPAs at the same time, you must specify different ports for each SPA. In the <stache-code>skyuxconfig.json</stache-code> file, specify ports for the SPAs in the <stache-code>port</stache-code> property of the <stache-code>app</stache-code> configuration setting. For information about this setting, see the <a routerLink="/learn/reference/configuration">SKY UX configuration options reference</a>.</sky-alert></li>
     </ol>
 
   <stache-row>
