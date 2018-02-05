@@ -9,7 +9,7 @@
 
     <ol>
         <li><p>From the command prompt, <stache-code>cd</stache-code> into the root directory for the SKY UX project from <a routerLink="/learn/get-started/basics/create-project">the previous tutorial</a>.</p></li>
-        <li><p>Enter <stache-code>skyux serve</stache-code> to launch the SPA in your default browser. This opens the <stache-code>host</stache-code> endpoint and instructs SKY UX Host to pull files from the local machine instead of the CDN.</p>
+        <li><p>Enter <stache-code>skyux serve</stache-code> to launch the SPA in your default browser. By default, SKY UX Builder dynamically finds an available port starting with 8000, and the command opens the <stache-code>host</stache-code> endpoint and instructs SKY UX Host to pull files from the local machine instead of the CDN.</p>
             <p>By default, <stache-code>skyux serve</stache-code> launches the Host URL, which means that it reaches out to SKY UX Host for an HTML page to host your local files. However, you can use the <stache-code>-l</stache-code> or <stache-code>--launch</stache-code> options to specify the URL to launch.</p>
             <ul>
                 <li><p><stache-code>skyux serve --launch local</stache-code> — Launches the local URL. This creates a local HTML page that is roughly the same as the HTML file that SKY UX Host builds for production. This option is useful for serving the SPA when you don't have Internet access.</p></li>
@@ -18,8 +18,7 @@
             </ul>
             <p>By default, the SPA automatically opens in the default browser, but you can specify a different browser with the <stache-code>--browser</stache-code> option. This option is useful for cross-browser manual testing, and the available values are <stache-code>chrome</stache-code>, <stache-code>edge</stache-code>, <stache-code>firefox</stache-code>, <stache-code>iexplore</stache-code>, and <stache-code>safari</stache-code>. For example, <stache-code>skyux serve --browser firefox</stache-code>.</p>
         </li>
-        <li><p>In the command prompt, <stache-code>skyux serve</stache-code> continues to run, and changes to your project are automatically displayed as you save them.</p>
-          <sky-alert alertType="info">To serve multiple SPAs at the same time, you must specify different ports for each SPA. In the <stache-code>skyuxconfig.json</stache-code> file, specify ports for the SPAs in the <stache-code>port</stache-code> property of the <stache-code>app</stache-code> configuration setting. For information about this setting, see the <a routerLink="/learn/reference/configuration">SKY UX configuration options reference</a>.</sky-alert></li>
+        <li><p>In the command prompt, <stache-code>skyux serve</stache-code> continues to run, and changes to your project are automatically displayed as you save them.</p></li>
     </ol>
 
   <stache-row>
