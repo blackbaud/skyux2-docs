@@ -4,7 +4,9 @@
   showTableOfContents="true">
 
   <stache-page-summary>
-    <p>SKY UX Builder provides the capability to declare localization strings <a routerLink="/learn/reference/naming-and-placement">in a JSON file </a> and then reference those strings throughout your SPA using the <stache-code>skyAppResources</stache-code> pipe or the <stache-code>SkyAppResourcesService</stache-code> service in <stache-code>@blackbaud/skyux-builder/runtime/i18n</stache-code>.</p>
+    <p>
+      SKY UX Builder provides the capability to declare localization strings <a routerLink="/learn/reference/naming-and-placement">in a JSON file </a> and then reference those strings throughout your SPA using the <stache-code>skyAppResources</stache-code> pipe or the <stache-code>SkyAppResourcesService</stache-code> service in <stache-code>@blackbaud/skyux-builder/runtime/i18n</stache-code>.
+    </p>
   </stache-page-summary>
 
   <stache-page-anchor>
@@ -12,8 +14,15 @@
   </stache-page-anchor>
 
   <ol>
-    <li><p>In the <stache-code>src/assets/locales</stache-code> folder, open the <stache-code>resources_en_US.json</stache-code> file.</p></li>
-    <li><p>Declare the localization strings to reuse throughout your SPA. Using JSON structure, specify a string name and then provide the string and a description.</p>
+    <li>
+      <p>
+        In the <stache-code>src/assets/locales</stache-code> folder, open the <stache-code>resources_en_US.json</stache-code> file.
+      </p>
+    </li>
+    <li>
+      <p>
+        Declare the localization strings to reuse throughout your SPA. Using JSON structure, specify a string name and then provide the string and a description.
+      </p>
       <stache-code-block languageType="markup">
         {
           "string_name": {
@@ -23,13 +32,24 @@
         }
       </stache-code-block>
     </li>
-    <li><p>Reference the localization strings using the <stache-code>skyAppResources</stache-code> pipe or the <stache-code>SkyAppResourcesService</stache-code> service.</p>
+    <li>
+      <p>
+        Reference the localization strings using the <stache-code>skyAppResources</stache-code> pipe or the <stache-code>SkyAppResourcesService</stache-code> service.
+      </p>
+
       <ul>
-        <li><p>For the <stache-code>skyAppResources</stache-code> pipe, pull the string into your template by name.</p>
+        <li>
+          <p>
+            For the <stache-code>skyAppResources</stache-code> pipe, pull the string into your template by name.
+          </p>
           <stache-code-block>
             {{ 'string_name' | skyAppResources }}
-          </stache-code-block></li>
-        <li><p>For the <stache-code>SkyAppResourcesService</stache-code> service in <stache-code>@blackbaud/skyux-builder/runtime/i18n</stache-code>, pull the string using <stache-code>getString</stache-code>.</p>
+          </stache-code-block>
+        </li>
+        <li>
+          <p>
+            For the <stache-code>SkyAppResourcesService</stache-code> service in <stache-code>@blackbaud/skyux-builder/runtime/i18n</stache-code>, pull the string using <stache-code>getString</stache-code>.
+          </p>
           <stache-code-block>
             this.resources.getString('string_name')
               .subscribe((value) => {
@@ -45,8 +65,15 @@
   </stache-page-anchor>
 
   <ol>
-    <li><p>In the <stache-code>src/assets/locales</stache-code> folder, open the <stache-code>resources_en_US.json</stache-code> file.</p></li>
-    <li><p>Declare templated localization strings with .NET-style tokens in the string that you can replace with dynamic values. For example:</p>
+    <li>
+      <p>
+        In the <stache-code>src/assets/locales</stache-code> folder, open the <stache-code>resources_en_US.json</stache-code> file.
+      </p>
+    </li>
+    <li>
+      <p>
+        Declare templated localization strings with .NET-style tokens in the string that you can replace with dynamic values. For example:
+      </p>
       <stache-code-block languageType="markup">
         {
           "string_name": {
@@ -56,20 +83,31 @@
         }
       </stache-code-block>
     </li>
-    <li><p>Reference the localization string using the <stache-code>skyAppResources</stache-code> pipe or the <stache-code>SkyAppResourcesService</stache-code> service and supply values to replace the .NET-style tokens in the string.</p>
+    <li>
+      <p>
+        Reference the localization string using the <stache-code>skyAppResources</stache-code> pipe or the <stache-code>SkyAppResourcesService</stache-code> service and supply values to replace the .NET-style tokens in the string.
+      </p>
+
       <ul>
-        <li><p>For the <stache-code>skyAppResources</stache-code> pipe, place <stache-code>{{ 'string_name' | skyAppResources }}</stache-code> in your template and insert values for the .NET-style tokens. For example:</p>
+        <li>
+          <p>
+            For the <stache-code>skyAppResources</stache-code> pipe, place <stache-code>{{ 'string_name' | skyAppResources }}</stache-code> in your template and insert values for the .NET-style tokens. For example:
+          </p>
           <stache-code-block>
             {{ 'string_name' | skyAppResources:constituentName:fundName }}
           </stache-code-block>
         </li>
-        <li><p>For the <stache-code>SkyAppResourcesService</stache-code> service in <stache-code>@blackbaud/skyux-builder/runtime/i18n</stache-code>, pull the string using <stache-code>getString</stache-code> and insert values for the .NET-style tokens. For example:</p>
+        <li>
+          <p>
+            For the <stache-code>SkyAppResourcesService</stache-code> service in <stache-code>@blackbaud/skyux-builder/runtime/i18n</stache-code>, pull the string using <stache-code>getString</stache-code> and insert values for the .NET-style tokens. For example:
+          </p>
           <stache-code-block>
             this.resources.getString('string_name',constituentName,fundName);
               .subscribe((value) => {
                 /*do something with the string*/
             });
-          </stache-code-block></li>
+          </stache-code-block>
+        </li>
       </ul>
     </li>
   </ol>
@@ -78,16 +116,21 @@
     Use the default locale provider
   </stache-page-anchor>
 
-  <p>If you deploy your application through SKY UX Host and want to use the locale provided by the browser, no additional configuration is necessary.
+  <p>
+    If you deploy your application through SKY UX Host and want to use the locale provided by the browser, no additional configuration is necessary.
+  </p>
 
   <stache-page-anchor>
     Provide a custom locale provider
   </stache-page-anchor>
 
-  <p>If your application determines the locale through a different mechanism, such as a setting stored in a database, you can provide a custom implementation of the <stache-code>SkyAppLocaleProvider</stache-code>.</p>
+  <p>
+    If your application determines the locale through a different mechanism, such as a setting stored in a database, you can provide a custom implementation of the <stache-code>SkyAppLocaleProvider</stache-code>.
+  </p>
   
-  <p>For example, here is a sample <stache-code>app-extras.module.ts</stache-coe> file:</p>
-
+  <p>
+    For example, here is a sample <stache-code>app-extras.module.ts</stache-coe> file:
+  </p>
   <stache-code-block languageType="typescript">
 import { NgModule } from '@angular/core';
 import { TestLocaleProvider } from './test-locale-provider'
@@ -100,9 +143,9 @@ import { TestLocaleProvider } from './test-locale-provider'
 })
 export class AppExtrasModule { }
   </stache-code-block>
-  
-  <p>And here is a sample <stache-code>test-locale-provider.ts</stache-code> file:</p>
-
+  <p>
+    And here is a sample <stache-code>test-locale-provider.ts</stache-code> file:
+  </p>
   <stache-code-block languageType="typescript">
 import { NgModule } from '@angular/core';
 import { SkyAppLocaleProvider } from '@blackbaud/skyux-builder/runtime/i18n';
@@ -116,6 +159,5 @@ export class TestLocaleProvider extends SkyAppLocaleProvider {
   }
 }
   </stache-code-block>
-
-
+  
 </stache>

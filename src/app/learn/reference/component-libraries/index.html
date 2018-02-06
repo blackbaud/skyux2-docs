@@ -1,17 +1,23 @@
 <stache
-    pageTitle="Create and publish SKY UX libraries"
-    navTitle="Libraries"
-    showTableOfContents="true"
-    navOrder="11">
+  pageTitle="Create and publish SKY UX libraries"
+  navTitle="Libraries"
+  showTableOfContents="true"
+  navOrder="11">
 
   <stache-page-summary>
-    When you create components and services with SKY UX, you can organize them into reusable front-end libraries that you can publish for other SPAs to consume.
+    <p>
+      When you create components and services with SKY UX, you can organize them into reusable front-end libraries that you can publish for other SPAs to consume.
+    </p>
   </stache-page-summary>
-  <sky-alert alertType="info">Blackbaud developers must follow a different workflow to create internal Blackbaud libraries and publish them to an internal NPM stream. Documentation on this process is available on <a href="https://host.nxt.blackbaud.com/engineering-system-docs/learn/spa/spa-component-libraries">the Engineering System website</a>. This site is for Blackbaud internal use only and is not available to external developers.</sky-alert>
+
+  <sky-alert alertType="info">
+    Blackbaud developers must follow a different workflow to create internal Blackbaud libraries and publish them to an internal NPM stream. Documentation on this process is available on <a href="https://host.nxt.blackbaud.com/engineering-system-docs/learn/spa/spa-component-libraries">the Engineering System website</a>. This site is for Blackbaud internal use only and is not available to external developers.
+  </sky-alert>
 
   <stache-page-anchor>
     Install dependencies
   </stache-page-anchor>
+
   <p>
     To create a SKY UX library, you must first create a SPA for the library and specify a base template with a starter module for front-end libraries. From the SKY UX CLI, run <stache-code>skyux new</stache-code> and use the <stache-code>--template</stache-code> option to specify the <stache-code>library</stache-code> template. This creates a SPA with the library template and places source files in <stache-code>/src/app/public</stache-code>.
   </p>
@@ -25,6 +31,7 @@
   <stache-page-anchor>
     Create the library
   </stache-page-anchor>
+  
   <p>
     In the SPA for your library, create your components and services. SKY UX Builder ignores components in <stache-code>/src/app/public</stache-code>, so they are not automatically declared in <stache-code>SkyModule</stache-code>. This allows you to write Angular modules, components, and services outside of SKY UX's scope.
   </p>
@@ -34,15 +41,20 @@
   <p>
     To serve your SPA locally during development, you must configure the name and import and export your module.
   </p>
+  
   <ul>
     <li>
-      <p>The <stache-code>name</stache-code> property in <stache-code>skyuxconfig.json</stache-code> specifies the name of the project when running in SKY UX Host. You must update this property to the name of your library. For more information about configuration options, see the <a routerLink="/learn/reference/configuration">configuration options reference</a>.</p>
+      <p>
+        The <stache-code>name</stache-code> property in <stache-code>skyuxconfig.json</stache-code> specifies the name of the project when running in SKY UX Host. You must update this property to the name of your library. For more information about configuration options, see the <a routerLink="/learn/reference/configuration">configuration options reference</a>.
+      </p>
       <stache-code-block>
         "name": "your-library"
       </stache-code-block>
     </li>
     <li>
-      <p>The <stache-code>app-extras.module.ts</stache-code> file in <stache-code>/src/app</stache-code> handles tasks such as registering providers and entry components, and SKY UX Builder automatically imports it into the build process. You must import and export your module in this file.</p>
+      <p>
+        The <stache-code>app-extras.module.ts</stache-code> file in <stache-code>/src/app</stache-code> handles tasks such as registering providers and entry components, and SKY UX Builder automatically imports it into the build process. You must import and export your module in this file.
+      </p>
       <stache-code-block>
 import { NgModule } from '@angular/core';
 
@@ -66,6 +78,7 @@ export class AppExtrasModule { }
   <stache-page-anchor>
     Bundle the library
   </stache-page-anchor>
+
   <p>
     After you create your library, you are ready to bundle it into a consumable NPM module that you can publish to an NPM stream such as <a href="https://www.npmjs.com/">npmjs.org</a>. From the SKY UX CLI, run <stache-code>skyux build-public-library</stache-code>.
   </p>
@@ -79,14 +92,18 @@ export class AppExtrasModule { }
   <stache-page-anchor>
     Publish the library
   </stache-page-anchor>
+
   <p>
     After you bundle the library into a consumable NPM module, you can publish it to an NPM stream to allow other SKY UX SPAs to install the library. We recommend that you publish public libraries to <a href="https://www.npmjs.com/">npmjs.org</a>. You can use Travis-CI, a free GitHub continuous integration service, to publish the component library to npmjs.org.
   </p>
-  <sky-alert alertType="info">Blackbaud developers publish private libraries to an internal Blackbaud NPM stream using a process that is documented on <a href="https://host.nxt.blackbaud.com/engineering-system-docs/learn/spa/spa-component-libraries">the Engineering System website</a>. This site is for Blackbaud internal use only and is not available to external developers.</sky-alert>
+  <sky-alert alertType="info">
+    Blackbaud developers publish private libraries to an internal Blackbaud NPM stream using a process that is documented on <a href="https://host.nxt.blackbaud.com/engineering-system-docs/learn/spa/spa-component-libraries">the Engineering System website</a>. This site is for Blackbaud internal use only and is not available to external developers.
+  </sky-alert>
   
   <stache-page-anchor>
     Consume the library in another SPA
   </stache-page-anchor>
+  
   <p>
     After you publish a front-end library, other SKY UX SPAs can install it. To consume a SKY UX library, import the library into your SPA through <stache-code>/app/src/app-extras.module.ts</stache-code>
   </p>
@@ -109,6 +126,7 @@ export class AppExtrasModule { }
   <stache-page-anchor>
     Access the consuming SPA's configuration
   </stache-page-anchor>
+  
   <p>
     After a SPA consumes a SKY UX library, the library requires an adapter to access <stache-code>SkyAppConfig</stache-code> in the consuming SPA.
   </p>
@@ -146,6 +164,7 @@ export class AppExtrasModule { }
   <stache-page-anchor>
     Provide configuration for the library
   </stache-page-anchor>
+  
   <p>
     After you create an adaptor in the consuming SPA's <stache-code>/app/src/app-extras.module.ts</stache-code> file, you can provide configuration for the library through the <stache-code>skyuxconfig.json</stache-code> file in the project's directory. In this file, the <stache-code>appSettings</stache-code> property specifies data that is available for reuse throughout the application, and you can use it to add any properties that are necessary for the library.
   </p>
@@ -171,7 +190,6 @@ export class AppExtrasModule { }
         console.log(configService.appSettings.myLibrary.foo); // "bar"
       }
     }
-
   </stache-code-block>
 
 </stache>
