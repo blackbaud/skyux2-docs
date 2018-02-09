@@ -164,14 +164,14 @@
     <li>
       <p><stache-code>pacts</stache-code> — Specifies configuration options for pact testing when running <stache-code>skyux pact</stache-code>.</p>
       <ul>
-        <li><p><stache-code>consumer</stache-code> — </p></li>
-        <li><p><stache-code>host</stache-code> — </p></li>
-        <li><p><stache-code>log</stache-code> — </p></li>
-        <li><p><stache-code>logLevel</stache-code> — </p></li>
-        <li><p><stache-code>port</stache-code> — </p></li>
-        <li><p><stache-code>provider</stache-code> — </p></li>
-        <li><p><stache-code>spec</stache-code> — </p></li>
-        <li><p><stache-code></stache-code> — </p></li>
+        <li><p><stache-code>consumer</stache-code> — Specifies the consumer that calls the provider's API.</p></li>
+        <li><p><stache-code>dir</stache-code> — Specifies where to place the log file. The default location is the <stache-code>app/pacts</stache-code> directory.</p></li>
+        <li><p><stache-code>host</stache-code> — Specifies a host for pact testing. The default host is <stache-code>localhost</stache-code>.</p></li>
+        <li><p><stache-code>log</stache-code> — Specifies a name for the log file. The default name is <stache-code>pact-&#123;provider}.log</stache-code>.</p></li>
+        <li><p><stache-code>logLevel</stache-code> — Specifies XXXXXXX for the log file. The default XXXXXX is <stache-code>XXXXXXX</stache-code>.</p></li>
+        <li><p><stache-code>port</stache-code> — Specifies a port to use for pact testing. By default, SKY UX Builder dynamically finds the next available port.</p></li>
+        <li><p><stache-code>provider</stache-code> — Specifies the service that exposes an API.</p></li>
+        <li><p><stache-code>spec</stache-code> — Specifies XXXXXXX for the log file. The default XXXXX is <stache-code>2</stache-code>.</p></li>
       </ul>
       <p>The following example illustrates a sample configuration for pact testing:</p>
       <stache-code-block>

@@ -56,6 +56,13 @@ export class CLICommandsActionButtonsComponent {
       summary: 'Initializes a new local SKY UX project.'
     },
     {
+      name: 'pact',
+      path: '/learn/reference/cli-commands/pact',
+      icon: 'tachometer',
+      // tslint:disable-next-line
+      summary: 'Runs any pact unit tests in the src/app folder.'
+    },
+    {
       name: 'serve',
       path: '/learn/reference/cli-commands/serve',
       icon: 'cog',
