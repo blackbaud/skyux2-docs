@@ -83,6 +83,12 @@
 
   <sky-demo-page-properties sectionHeading="SkyDropdownMenuChange">
     <sky-demo-page-property
+      propertyName="trigger"
+      isOptional="true"
+      defaultValue="click">
+      This property is deprecated, and we recommend against using it. It specifies the user action that opens the dropdown, and the valid options are <stache-code>click</stache-code> or <stache-code>hover</stache-code>. We recommend the default <stache-code>click</stache-code> value because the <stache-code>hover</stache-code> option can pose accessibility issues for users on touch devices such as phones and tablets.
+    </sky-demo-page-property>
+    <sky-demo-page-property
       propertyName="activeIndex">
       Indicates the active menu index.
     </sky-demo-page-property>
@@ -99,5 +105,12 @@
       demoName="Dropdown">
     </sky-demo-page-code>
   </sky-demo-page-example>
+
+
+  <sky-demo-page-content sectionHeading="Accessibility">
+    <p>
+      For a group of checkboxes, use <stache-code>fieldset</stache-code> and <stache-code>legend</stache-code> elements to provide semantic structure. For people using assistive technology, the <stache-code>fieldset</stache-code> element groups the checkboxes to indicate the number of items in the group, and the <stache-code>legend</stache-code> element provides a description for the group. For more information on how to use <stache-code>fieldset</stache-code> and <stache-code>legend</stache-code>, see <a href="http://webaim.org/techniques/forms/controls#radio">WebAIM examples and guidance</a>.
+    </p>
+  </sky-demo-page-content>
 
 </sky-demo-page>
