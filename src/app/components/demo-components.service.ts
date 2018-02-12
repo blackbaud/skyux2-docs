@@ -143,7 +143,7 @@ export class SkyDemoComponentsService {
         name: 'Flyout',
         icon: 'columns',
         // tslint:disable-next-line
-        summary: `The flyout service launches a container that overlays the page content to show larger amounts of supplementary information related to the user's task.`,
+        summary: `The flyout service launches a container to display supplementary information related to a task.`,
         url: '/components/flyout',
         getCodeFiles: () => this.getDemoFiles('SkyFlyoutDemoComponent')
       },
