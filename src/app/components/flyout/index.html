@@ -41,7 +41,7 @@
     <sky-demo-page-property
       propertyName="ariaDescribedBy"
       isOptional="true">
-      Sets the flyout's <stache-code>aria-describedby</stache-code> attribute to support accessibility. The value should be the HTML element ID (without the leading <stache-code>#</stache-code>) of the element that describes the flyout. Typically, this is the text on the flyout, not including items that users interact with such as buttons and forms.
+      Sets the flyout's <stache-code>aria-describedby</stache-code> attribute to support accessibility. The value should be the HTML element ID (without the leading <stache-code>#</stache-code>) of the element that describes the flyout. Typically, this is the text on the flyout but does not include items that users interact with such as buttons and forms.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -80,7 +80,7 @@
         When a flyout opens, place focus on the first focusable item. If the flyout does not include focusable items, then place focus on the flyout container element.
       </li>
       <li>
-        While a flyout is open, limit focus to elements in the flyout when using Tab key to navigate. Do not move focus back to the initiating page behind the flyout. On the last focusable item, the Tab key should return focus to the first focusable item. Conversely, on the first focusable item, the Shift+Tab keys should switch focus to the last focusable item.
+        While a flyout is open, limit focus to elements in the flyout. Do not move focus back to the initiating page behind the flyout. On the last focusable item, the Tab key should return focus to the first focusable item. And on the first focusable item, the Shift+Tab keys should switch focus to the last focusable item.
       </li>
       <li>
         When a flyout closes, return focus to the element that had focus before the flyout opened. This is usually the element that opened the flyout.
@@ -112,7 +112,7 @@
 
     <ul>
       <li>
-        Users need to navigate from one record to another instance of the same record type.
+        Users need to navigate from one record to another record of the same type.
       </li>
       <li>
         Users need to navigate from a child page to its parent page.
@@ -121,19 +121,19 @@
         A detail panel is already open.
       </li>
       <li>
-        A page would not make sense without the detail panel open.
+        A page would not make sense without the detail panel.
       </li>
       <li>
-        You only need to display a small amount of supplementary information.
+        Users need to view a small quantity of supplementary information.
       </li>
       <li>
-        You need to display items that take a long time to load such as system-generated reports.
+        Users need to view items such as system-generated reports that take a long time to load.
       </li>
       <li>
-        You need to link to external sites
+        Users need to view supplementary information from external sites.
       </li>
       <li>
-        Users need to open tasks where they always need to see the full screen view of the details.
+        Users need to open tasks where they always need to view the full screen view of the details.
       </li>
       <li>
         The screen size is 480px or smaller.
