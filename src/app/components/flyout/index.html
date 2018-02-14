@@ -1,74 +1,65 @@
 <sky-demo-page
   pageTitle="Flyout">
+
   <sky-demo-page-summary>
     <p>
-      The flyout service launches a container that lays over the page content to show larger amounts of supplementary information related to the user's task. The <stache-code>SkyFlyoutService</stache-code> provider lauches the flyouts with a common look-and-feel for given inner content. The <stache-code>SkyFlyoutInstance</stache-code> class allows you to watch for and trigger flyout events.
+      The flyout service launches a container over a page's content to display large quantities of supplementary information related to a task. The <stache-code>SkyFlyoutService</stache-code> provider lauches flyouts and provides a common look-and-feel. The <stache-code>SkyFlyoutInstance</stache-code> class watches for and triggers flyout events.
     </p>
     <sky-alert
       alertType="info">
-      The flyout component is generated dynamically using the <stache-code>SkyFlyoutService</stache-code> and appended directly to the document's body element.
+      The <stache-code>SkyFlyoutService</stache-code> dynamically generates the flyout component and appends it directly to the document's <stache-code>body</stache-code> element.
     </sky-alert>
   </sky-demo-page-summary>
 
-  <sky-demo-page-properties
-    sectionHeading="Flyout service methods">
+  <sky-demo-page-properties sectionHeading="Flyout service methods">
     <sky-demo-page-property
       propertyName="open(component, config?)">
-      Opens a flyout using the specified component as the contents of the flyout. The optional <stache-code>config</stache-code> parameter is of type <stache-code>SkyFlyoutConfig</stache-code>, which will be passed to the provided component's constructor. This method returns the flyout instance.
+      Opens a flyout and displays the specified component. The optional <stache-code>config</stache-code> parameter is of type <stache-code>SkyFlyoutConfig</stache-code> and is passed to the specified component's constructor. This method returns the flyout instance.
     </sky-demo-page-property>
-
     <sky-demo-page-property
       propertyName="close()">
-      Closes the currently opened flyout. This method also removes the flyout's respective HTML elements from the DOM.
+      Closes the flyout. This method also removes the flyout's HTML elements from the DOM.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
-  <sky-demo-page-properties
-    sectionHeading="SkyFlyoutConfig type">
-
+  <sky-demo-page-properties sectionHeading="SkyFlyoutConfig type">
     <sky-demo-page-property
       propertyName="providers"
       isOptional="true">
-      An array of custom providers to be passed to the content component's constructor.
+      Specifies an array of custom providers to pass to the component's constructor.
     </sky-demo-page-property>
-
     <sky-demo-page-property
       propertyName="ariaRole"
       isOptional="true">
-      Sets the <stache-code>role</stache-code> attribute for the flyout for accessibility support.
+      Sets the flyout's <stache-code>role</stache-code> attribute to support accessibility.
     </sky-demo-page-property>
-
     <sky-demo-page-property
       propertyName="ariaLabelledBy"
       isOptional="true">
-      Sets the <stache-code>aria-labelledby</stache-code> attribute for the flyout for accessibility support. The value should be an HTML element ID (without the leading <stache-code>#</stache-code>) pointing to the element that labels your flyout.
+      Sets the flyout's <stache-code>aria-labelledby</stache-code> attribute to support accessibility. The value should be the HTML element ID (without the leading <stache-code>#</stache-code>) of the element that labels the flyout.
     </sky-demo-page-property>
-
     <sky-demo-page-property
       propertyName="ariaDescribedBy"
       isOptional="true">
-      Sets the <stache-code>aria-describedby</stache-code> attribute for the flyout for accessibility support. The value should be an HTML element ID (without the leading <stache-code>#</stache-code>) pointing to the element that describes your flyout. Typically, this will be the text on your flyout, but does not include something the user would interact with, like buttons or a form.
+      Sets the flyout's <stache-code>aria-describedby</stache-code> attribute to support accessibility. The value should be the HTML element ID (without the leading <stache-code>#</stache-code>) of the element that describes the flyout. Typically, this is the text on the flyout but does not include items that users interact with such as buttons and forms.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
-  <sky-demo-page-properties
-    sectionHeading="Flyout instance properties">
+  <sky-demo-page-properties sectionHeading="Flyout instance properties">
      <sky-demo-page-property
       propertyName="close()">
-      Closes the flyout instance. The <stache-code>closed</stache-code> event of the flyout instance will be emmitted.
+      Closes the flyout instance and emits its <stache-code>closed</stache-code> event.
     </sky-demo-page-property>
-
     <sky-demo-page-property
       propertyName="componentInstance">
-      The instance of the component that makes up the contents of the opened flyout.
+      Specifies the instance of the component to display in the flyout.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
-  <sky-demo-page-properties
-    sectionHeading="Flyout instance events">
+  <sky-demo-page-properties sectionHeading="Flyout instance events">
     <sky-demo-page-property
       propertyName="closed">
-      An event that is emitted by the flyout instance when it is closed.
+      An event that the flyout instance emits when it is closed.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -80,77 +71,72 @@
     </sky-demo-page-code>
   </sky-demo-page-example>
 
-  <sky-demo-page-content
-    sectionHeading="Accessibility">
+  <sky-demo-page-content sectionHeading="Accessibility">
     <p>
       Follow these guidelines to ensure that people can use flyouts with assistive technology or keyboards.
     </p>
     <ul>
       <li>
-        When a flyout opens, focus should be on the first focusable item in the flyout. If the flyout does not include focusable items, then focus should be on the flyout container element.
+        When a flyout opens, place focus on the first focusable item. If the flyout does not include focusable items, then place focus on the flyout container element.
       </li>
       <li>
-        While a flyout is open, focus should remain on elements in the flyout when using Tab key to navigate. Focus should not move back to the initiating page behind the flyout. At the end of the flyout, the Tab key should return focus to the first focusable item in the flyout. Conversely, at the top of the flyout, the Shift+Tab keys should switch focus to the last focusable item in the flyout.
+        While a flyout is open, limit focus to elements in the flyout. Do not move focus back to the initiating page behind the flyout. On the last focusable item, the Tab key should return focus to the first focusable item. And on the first focusable item, the Shift+Tab keys should switch focus to the last focusable item.
       </li>
       <li>
-        When a flyout closes, focus should return to the element that had focus before the flyout opened. Usually this is the element that opened the flyout.
+        When a flyout closes, return focus to the element that had focus before the flyout opened. This is usually the element that opened the flyout.
       </li>
     </ul>
   </sky-demo-page-content>
 
-  <sky-demo-page-content
-    sectionHeading="UX guidelines">
-  	<h3 class="sky-subsection-heading">
-      Flyout
-    </h3>
+  <sky-demo-page-content sectionHeading="UX guidelines">
 
     <p>
-      A flyout is appropriate for content that meet any of the following criteria:
+      Flyouts are appropriate for the following scenarios:
     </p>
 
     <ul>
       <li>
-        When opening records in lists to allow a user to return to the list view after completing a quick task on the record page
+        Users need to open records in lists and return to the list views after quick tasks on the record pages.
       </li>
       <li>
-        When drilling into an analytical insight to allow a user to quickly glance into what makes up that insight without spawning another workflow
+        Users need to drill into analytical insights and quickly research those insights without creating additional workflows.
       </li>
       <li>
-        When drilling into child records to allow a user to retain the context of the parent record
+        Users need to drill into child records and retain the context of the parent record.
       </li>
     </ul>
 
     <p>
-      A flyout is not appropriate for content that meet any of the following criteria:
+      Flyouts are not appropriate for the following scenarios:
     </p>
 
     <ul>
       <li>
-        When navigating from one record to another instance of the same record type
+        Users need to navigate from one record to another record of the same type.
       </li>
       <li>
-        When navigating from a child page back to the parent page
+        Users need to navigate from a child page to its parent page.
       </li>
       <li>
-        When there is already a detail panel open
+        A detail panel is already open.
       </li>
       <li>
-        When the page would not make sense without the panel open
+        A page would not make sense without the detail panel.
       </li>
       <li>
-        When there is only a small amount of supplementary information to display
+        Users need to view a small quantity of supplementary information.
       </li>
       <li>
-        When displaying items that need a considerable amount of time to load, such as a system generated report
+        Users need to view items such as system-generated reports that take a long time to load.
       </li>
       <li>
-        When linking to external sites
+        Users need to view supplementary information from external sites.
       </li>
       <li>
-        When opening a task where the user will always need to see the full screen view of the details
+        Users need to open tasks that always require the full screen view of details.
       </li>
       <li>
-        When the screen size is 480px or smaller
+        The screen size is 480px or smaller.
       </li>
     </ul>
   </sky-demo-page-content>
