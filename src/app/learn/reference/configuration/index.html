@@ -162,28 +162,54 @@
       </p>
     </li>
     <li>
-      <p><stache-code>pacts</stache-code> — Specifies configuration options for pact testing when running <stache-code>skyux pact</stache-code>.</p>
+      <p>
+        <stache-code>pacts</stache-code> — Specifies configuration settings for pact testing. Pact is a testing framework that you can use to test a SPA's integration with the services that it consumes. You create a separate entry for each provider in the <stache-code>pacts</stache-code> option. The settings for each entry are generally the same except that the <stache-code>provider</stache-code> value is different.
+      </p>
       <ul>
-        <li><p><stache-code>consumer</stache-code> — Specifies the consumer that calls the provider's API.</p></li>
-        <li><p><stache-code>dir</stache-code> — Specifies where to place the log file. The default location is the <stache-code>app/pacts</stache-code> directory.</p></li>
-        <li><p><stache-code>host</stache-code> — Specifies a host for pact testing. The default host is <stache-code>localhost</stache-code>.</p></li>
-        <li><p><stache-code>log</stache-code> — Specifies a name for the log file. The default name is <stache-code>pact-&#123;provider}.log</stache-code>.</p></li>
-        <li><p><stache-code>logLevel</stache-code> — Specifies XXXXXXX for the log file. The default XXXXXX is <stache-code>XXXXXXX</stache-code>.</p></li>
-        <li><p><stache-code>port</stache-code> — Specifies a port to use for pact testing. By default, SKY UX Builder dynamically finds the next available port.</p></li>
-        <li><p><stache-code>provider</stache-code> — Specifies the service that exposes an API.</p></li>
-        <li><p><stache-code>spec</stache-code> — Specifies XXXXXXX for the log file. The default XXXXX is <stache-code>2</stache-code>.</p></li>
+        <li>
+          <p>
+            <stache-code>consumer</stache-code> — Specifies the consumer that calls the provider's API.
+          </p>
+        </li>
+        <li>
+          <p>
+            <stache-code>dir</stache-code> — Specifies where to place the log file. By default, the <stache-code>pact</stache-code> command places the log file in the <stache-code>app/pacts</stache-code> directory.
+          </p>
+        </li>
+        <li>
+          <p>
+            <stache-code>host</stache-code> — Specifies a host for pact testing. By default, the host is <stache-code>localhost</stache-code>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <stache-code>log</stache-code> — Specifies a name for the log file. By default, the filename is <stache-code>pact-&#123;provider}.log</stache-code>, where <stache-code>&#123;provider}</stache-code> is the name of the provider.
+          </p>
+        </li>
+        <li>
+          <p>
+            <stache-code>logLevel</stache-code> — Specifies XXXXXXX for the log file. By default, the XXXXXX is <stache-code>XXXXXXX</stache-code>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <stache-code>port</stache-code> — Specifies a port to use for pact testing. By default, SKY UX Builder dynamically finds the next available port.
+          </p>
+        </li>
+        <li>
+          <p>
+            <stache-code>provider</stache-code> — Specifies the service that exposes an API.
+          </p>
+        </li>
+        <li>
+          <p>
+            <stache-code>spec</stache-code> — Specifies XXXXXXX for the log file. By default, the XXXXX is <stache-code>2</stache-code>.
+          </p>
+        </li>
       </ul>
-      <p>The following example illustrates a sample configuration for pact testing:</p>
-      <stache-code-block>
-        "pacts": [
-          {
-            "consumer": "{consumer}",
-            "provider": "{provider}",
-            "logLevel": "DEBUG",
-            "spec": "1",
-          }
-        ]
-      </stache-code-block>
+      <p>
+        To run pact tests, use <a routerLink="/learn/reference/cli-commands/pact">the <stache-code>skyux pact</stache-code> SKY UX CLI command</a>. And for additional information on configuration settings and guidance on how to write pact tests, see <a routerLink="/learn/get-started/advanced/pact-tests">the pact testing tutorial</a>.
+      </p>
     </li>
     <li>
       <p>
