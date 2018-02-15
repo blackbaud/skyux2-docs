@@ -140,6 +140,14 @@ export class SkyDemoComponentsService {
         getCodeFiles: () => this.getDemoFiles('SkyFluidGridDemoComponent')
       },
       {
+        name: 'Flyout',
+        icon: 'columns',
+        // tslint:disable-next-line
+        summary: `The flyout service launches a container to display supplementary information related to a task.`,
+        url: '/components/flyout',
+        getCodeFiles: () => this.getDemoFiles('SkyFlyoutDemoComponent')
+      },
+      {
         name: 'Form',
         icon: 'keyboard-o',
         // tslint:disable-next-line

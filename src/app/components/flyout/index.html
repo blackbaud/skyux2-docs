@@ -1,0 +1,144 @@
+<sky-demo-page
+  pageTitle="Flyout">
+
+  <sky-demo-page-summary>
+    <p>
+      The flyout service launches a container over a page's content to display large quantities of supplementary information related to a task. The <stache-code>SkyFlyoutService</stache-code> provider lauches flyouts and provides a common look-and-feel. The <stache-code>SkyFlyoutInstance</stache-code> class watches for and triggers flyout events.
+    </p>
+    <sky-alert
+      alertType="info">
+      The <stache-code>SkyFlyoutService</stache-code> dynamically generates the flyout component and appends it directly to the document's <stache-code>body</stache-code> element.
+    </sky-alert>
+  </sky-demo-page-summary>
+
+  <sky-demo-page-properties sectionHeading="Flyout service methods">
+    <sky-demo-page-property
+      propertyName="open(component, config?)">
+      Opens a flyout and displays the specified component. The optional <stache-code>config</stache-code> parameter is of type <stache-code>SkyFlyoutConfig</stache-code> and is passed to the specified component's constructor. This method returns the flyout instance.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="close()">
+      Closes the flyout. This method also removes the flyout's HTML elements from the DOM.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-properties sectionHeading="SkyFlyoutConfig type">
+    <sky-demo-page-property
+      propertyName="providers"
+      isOptional="true">
+      Specifies an array of custom providers to pass to the component's constructor.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="ariaRole"
+      isOptional="true">
+      Sets the flyout's <stache-code>role</stache-code> attribute to support accessibility.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="ariaLabelledBy"
+      isOptional="true">
+      Sets the flyout's <stache-code>aria-labelledby</stache-code> attribute to support accessibility. The value should be the HTML element ID (without the leading <stache-code>#</stache-code>) of the element that labels the flyout.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="ariaDescribedBy"
+      isOptional="true">
+      Sets the flyout's <stache-code>aria-describedby</stache-code> attribute to support accessibility. The value should be the HTML element ID (without the leading <stache-code>#</stache-code>) of the element that describes the flyout. Typically, this is the text on the flyout but does not include items that users interact with such as buttons and forms.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-properties sectionHeading="Flyout instance properties">
+     <sky-demo-page-property
+      propertyName="close()">
+      Closes the flyout instance and emits its <stache-code>closed</stache-code> event.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="componentInstance">
+      Specifies the instance of the component to display in the flyout.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-properties sectionHeading="Flyout instance events">
+    <sky-demo-page-property
+      propertyName="closed">
+      An event that the flyout instance emits when it is closed.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-example>
+    <sky-flyout-demo>
+    </sky-flyout-demo>
+    <sky-demo-page-code
+      demoName="Flyout">
+    </sky-demo-page-code>
+  </sky-demo-page-example>
+
+  <sky-demo-page-content sectionHeading="Accessibility">
+    <p>
+      Follow these guidelines to ensure that people can use flyouts with assistive technology or keyboards.
+    </p>
+    <ul>
+      <li>
+        When a flyout opens, place focus on the first focusable item. If the flyout does not include focusable items, then place focus on the flyout container element.
+      </li>
+      <li>
+        While a flyout is open, limit focus to elements in the flyout. Do not move focus back to the initiating page behind the flyout. On the last focusable item, the Tab key should return focus to the first focusable item. And on the first focusable item, the Shift+Tab keys should switch focus to the last focusable item.
+      </li>
+      <li>
+        When a flyout closes, return focus to the element that had focus before the flyout opened. This is usually the element that opened the flyout.
+      </li>
+    </ul>
+  </sky-demo-page-content>
+
+  <sky-demo-page-content sectionHeading="UX guidelines">
+
+    <p>
+      Flyouts are appropriate for the following scenarios:
+    </p>
+
+    <ul>
+      <li>
+        Users need to open records in lists and return to the list views after quick tasks on the record pages.
+      </li>
+      <li>
+        Users need to drill into analytical insights and quickly research those insights without creating additional workflows.
+      </li>
+      <li>
+        Users need to drill into child records and retain the context of the parent record.
+      </li>
+    </ul>
+
+    <p>
+      Flyouts are not appropriate for the following scenarios:
+    </p>
+
+    <ul>
+      <li>
+        Users need to navigate from one record to another record of the same type.
+      </li>
+      <li>
+        Users need to navigate from a child page to its parent page.
+      </li>
+      <li>
+        A detail panel is already open.
+      </li>
+      <li>
+        A page would not make sense without the detail panel.
+      </li>
+      <li>
+        Users need to view a small quantity of supplementary information.
+      </li>
+      <li>
+        Users need to view items such as system-generated reports that take a long time to load.
+      </li>
+      <li>
+        Users need to view supplementary information from external sites.
+      </li>
+      <li>
+        Users need to open tasks that always require the full screen view of details.
+      </li>
+      <li>
+        The screen size is 480px or smaller.
+      </li>
+    </ul>
+  </sky-demo-page-content>
+
+</sky-demo-page>
