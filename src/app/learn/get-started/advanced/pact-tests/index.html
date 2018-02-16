@@ -5,7 +5,7 @@ showTableOfContents="true">
 
   <stache-page-summary>
     <p>
-      Pact is a testing framework that supports Consumer-Driven Contract Testing between dependent systems where the integration is based on HTTP. It uses contracts between interdependent services that are designed from the perspective of the consumer. We recommend creating pact tests for all services that a SPA consumes to confirm that the SPA can call out to the provider services and vice versa. This topic describes how to configure the SPA for pact testing, write pact tests, and run tests with the <stache-code>skyux pact</stache-code> command.
+      Pact is a testing framework that supports Consumer-Driven Contract Testing between dependent systems where the integration is based on HTTP. It uses contracts between interdependent services that are designed from the perspective of the consumer. We recommend creating pact tests for all services that a SPA consumes to confirm that the SPA can call the services and that the providers can call the SPA. This topic describes how to configure your SPA for pact testing, write pact tests, and run tests with the <stache-code>skyux pact</stache-code> command.
     </p>
   </stache-page-summary>
 
@@ -14,7 +14,7 @@ showTableOfContents="true">
   </stache-page-anchor>
   
   <p>
-    The first step to implement pact testing for a SPA is to specify configuration options in <a routerLink="/learn/reference/configuration">the <stache-code>skyuxconfig.json</stache-code> file</a> within the <stache-code>pacts</stache-code> property. In this property, you create a separate entry for each provider to test. Settings are generally the same for each entry except that the <stache-code>provider</stache-code> value is different. When you run <stache-code>skyux pact</stache-code>, the command reads the <stache-code>pacts</stache-code> setting and spins up an individual pact server for each provider service that you specify.
+    The first step to implement pact testing for a SPA is to specify configuration options in <a routerLink="/learn/reference/configuration">the <stache-code>skyuxconfig.json</stache-code> file</a> with the <stache-code>pacts</stache-code> property. In this property, you create a separate entry for each provider to test. Settings are generally the same for each entry except that the <stache-code>provider</stache-code> value is different. When you run <stache-code>skyux pact</stache-code>, the command reads the <stache-code>pacts</stache-code> setting and spins up an individual pact server for each provider service that you specify.
   </p>
   <p>
     For each service provider that you need to configure settings for, you can include the following properties: 
@@ -22,7 +22,7 @@ showTableOfContents="true">
   <ul>
     <li>
       <p>
-        To specify the consumer and provider of a service, add the <stache-code>consumer</stache-code> and <stache-code>provider</stache-code> settings. The provider is the service that exposes an API, while the consumer is the SPA component or service that calls the provider's API.
+        To specify the consumer and provider of a service, add the <stache-code>consumer</stache-code> and <stache-code>provider</stache-code> settings. The provider is the service that exposes an API, while the consumer is the component or service in the SPA that calls the provider's API.
       </p>
       <stache-code-block>
         {
@@ -54,7 +54,7 @@ showTableOfContents="true">
     </li>
     <li>
       <p>
-        You can configure several properties for the log file:
+        Configure the log file as necessary:
       </p>
       <ul>
         <li>
@@ -100,10 +100,7 @@ showTableOfContents="true">
   </h3>
 
   <p>
-    After you create an entry for the provider in <a routerLink="/learn/reference/configuration">the <stache-code>skyuxconfig.json</stache-code> file</a>, you need to override the provider URL to be <stache-code>SkyAppConfig.runtime.pactConfig.pactProxyServer/&#123;provider}</stache-code>. A proxy will redirect this URL to the proper pact server. To fufill CORS, the proxy server sets the <stache-code>Origin</stache-code> header to the value that you define in the config under host.url. Otherwise, it defaults to <stache-code>https://host.nxt.blackbaud.com</stache-code>.
-  </p>
-  <p>
-    After you set up configuration settings, it's time to create pact tests to confirm integration with the services that the SPA consumes. We recommend creating pact tests for all provider services.
+    After you create an entry for the provider in <a routerLink="/learn/reference/configuration">the <stache-code>skyuxconfig.json</stache-code> file</a>, you need to override the provider URL to be <stache-code>SkyAppConfig.runtime.pactConfig.pactProxyServer/&#123;provider}</stache-code>. A proxy redirects this URL to the proper pact server. To fufill CORS, the proxy server sets the <stache-code>Origin</stache-code> header to the <stache-code>url</stache-code> value that the <stache-code>host</stache-code> property defines in <stache-code>skyuxconfig.json</stache-code>. The <stache-code>url</stache-code> setting specifies a base URL to pass information from <stache-code>skyux serve</stache-code> to the SKY UX Host, and the default value is <stache-code>https://host.nxt.blackbaud.com</stache-code>.
   </p>
 
   <stache-page-anchor>
@@ -111,105 +108,95 @@ showTableOfContents="true">
   </stache-page-anchor>
 
   <p>
-    To create a pact test, add a new file and end the filename with <stache-code>.pact-spec.ts</stache-code>.
+    After you configure settings for a provider, your next step is to create pact tests to confirm integration between the provider services and your SPA. We recommend creating pact tests for all services that your SPA consumes.
   </p>
-  <p>
-    <strong>****My notes from Josh don't include anything else about how to name the file or where to place it. Need to add that here and also in the File conventions reference topic. Probably also need to add something about e2e vs unit tests.****</strong>
-  </p>
-<p>
-  Pact tests must include a <stache-code>beforeAll</stache-code> block.
-</p>
-<stache-code-block>
-    TestBed.configureTestingModule({
-      imports: [SkyAppTestModule]
-    });
-</stache-code-block>
-<p>The <stache-code>SkyPactService</stache-code> must include the following methods:</p>
-<ul>
-  <li>
-    <p>
-      addInteraction
-    </p>
-  </li>
-  <li>
-    <p>
-      removeInteractions
-    </p>
-  </li>
-  <li>
-    <p>
-      finalize
-    </p>
-  </li>
-  <li>
-    <p>
-      verify
-    </p>
-  </li>
+
+  <ul>
+    <li>
+      <p>
+        To create the pact test, add a new file with a filename that ends with <stache-code>.pact-spec.ts</stache-code>. SKY UX automatically configures Karma to run pact tests in the <stache-code>src/app</stache-code> folder that match the <stache-code>.pact-spec.ts</stache-code> pattern. We recommend that SKY UX pact tests use the same name as the components or services where they test integration with consumed services and that you place the spec files in the same folder as the components or services that they test. 
+      </p>
+    </li>
+    <li>
+      <p>
+        Pact tests must include a <stache-code>beforeAll</stache-code> block. Within the <stache-code>beforeAll</stache-code> block, import <stache-code>SkyAppTestModule</stache-code> and provide access to <stache-code>SkyPactService</stache-code>.
+      </p>
+      <stache-code-block>
+        TestBed.configureTestingModule({
+          imports: [SkyAppTestModule]
+          });
+          skyPactService = TestBed.get(SkyPactService);
+      </stache-code-block>
+      <p>
+        With the <stache-code>beforeAll</stache-code> block in place, you can call <stache-code>skyPactService.addInteraction(&#123;provider-name-here}, &#123;})</stache-code>.</p>
+      <p>
+        Similarly for all the other functions, the name of the provider must be passed in as a parameter.
+      </p>
+    </li>
+    <li>
+      <p>
+        The <stache-code>SkyPactService</stache-code> includes the following methods:
+      </p>
+      <ul>
+        <li>
+          <p>
+            <stache-code>addInteraction</stache-code>
+          </p>
+          <p>
+            Call the <stache-code>addInteraction</stache-code> method with an input similar to this:
+          </p>
+          <stache-code-block>
+            {
+              uponReceiving: '{description}',
+              state: `{provider_state}`,
+              withRequest: {
+                method: 'get',
+                path: '/api/path',
+                headers: {
+                  'Origin': 'https://host.nxt.blackbaud.com (or whatever your SPA domain is)
+                }
+              },
+              willRespondWith: {
+                status: 200,
+                headers: {
+                  'Content-Type': {expected content type},
+                  'Access-Control-Allow-Origin': 'host.nxt.blackbaud.com' (or whatever your SPA domain is)
+                }
+              }
+            }
+          </stache-code-block>
+        </li>
+        <li>
+          <p>
+            <stache-code>removeInteractions</stache-code>
+          </p>
+        </li>
+        <li>
+          <p>
+            <stache-code>finalize</stache-code>
+          </p>
+        </li>
+        <li>
+          <p>
+            <stache-code>verify</stache-code>
+          </p>
+        </li>
+      </ul>
+    </li>
   </ul>
-  <p>
-    <strong>****This is all I have in my notes, but it seems like we should have a description for these methods and any instructions to highlight.****</strong>
-  </p>
-    <p>
-    <strong>****Should we have a separate section about the SkyPactService? Seems to me like that's a separate piece, but the notes Josh provided jsut called it out as part of writing the test. Separate step?****</strong>
-  </p>
-  <p>Call the <stache-code>addInteraction</stache-code> method with an input similar to this:</p>
-  <stache-code-block>
-    {
-      uponReceiving: '{description}',
-      state: `{provider_state}`,
-      withRequest: {
-        method: 'get',
-        path: '/api/path',
-        headers: {
-          'Origin': 'https://host.nxt.blackbaud.com (or whatever your SPA domain is)
-        }
-      },
-      willRespondWith: {
-        status: 200,
-        headers: {
-          'Content-Type': {expected content type},
-          'Access-Control-Allow-Origin': 'host.nxt.blackbaud.com' (or whatever your SPA domain is)
-        }
-      }
-    }
-  </stache-code-block>
-  <p>
-     After your pact tests are in place, you can run the <stache-code>skyux pact</stache-code> command to run your pact tests.
-  </p>
 
   <stache-page-anchor>
     Run pact tests
   </stache-page-anchor>
 
   <p>
-    To run pact tests after you configure pact settings for your SPA and create the tests, open the command prompt from your SPA's directory and enter <stache-code>skyux pact</stache-code>.
+    After you create your pact tests, your next step is to use the SKY UX CLI to run the tests and confirm integration between the provider services and your SPA. you can use the <stache-code>skyux pact</stache-code> command to run your pact tests.
   </p>
   <p>
-    SKY UX automatically configures Karma to run all pact tests in the <stache-code>src/app</stache-code> folder that match the <stache-code>.pact-spec.ts</stache-code> pattern. The command spins up a pact server for each test and also spins up a pact server for the proxy server. The proxy server takes requests from the browser that runs in the host and port specified in the configuration settings, and it also changes the CORS headers to the values that you define in the config under host.url or to the default of <stache-code>https://host.nxt.blackbaud.com</stache-code>. 
+    From the command prompt, navigate to your SPA's directory and run <a routerLink="/learn/reference/cli-commands/pact">the <stache-code>skyux pact</stache-code> command</a>.
   </p>
-
-
-
-So as far as the details I meant to send you.  
-```    TestBed.configureTestingModule({
-      imports: [SkyAppTestModule]
-    });
-    skyPactService = TestBed.get(SkyPactService);
-```
-This is basically what they'll need to do to get access to the service.  From there al they'll need to do is call `skyPactService.addInteraction({provider-name-here}, {})`.  Similarly for all the other functions, the name of the provider will need to be passed in as a parameter.  The format of the interaction object when calling `addInteraction` can be found in the pact docs
-
-
-  <stache-page-anchor>
-    Placeholder
-  </stache-page-anchor>
-
   <p>
-    placeholder section to plug in if I missed anything
+    SKY UX automatically configures Karma to run all pact tests in the <stache-code>src/app</stache-code> folder that match the <stache-code>.pact-spec.ts</stache-code> pattern. The <stache-code>pact</stache-code> command spins up a pact server for each test and also spins up a pact server for the proxy server. The proxy server takes requests from the browser that runs in the host and port specified in your configuration settings, and it changes the CORS headers to the <stache-code>host</stache-code> property's <stache-code>url</stache-code> value in <stache-code>skyuxconfig.json</stache-code>, which defaults to <stache-code>https://host.nxt.blackbaud.com</stache-code>. 
   </p>
-  <stache-code-block>
-    placeholder
-    placeholder
-  </stache-code-block>
 
 </stache>

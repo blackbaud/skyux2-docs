@@ -76,6 +76,11 @@
     </li>
     <li>
       <p>
+        Pact tests — We recommend that you follow the <a href="https://angular.io/styleguide#!#naming">Angular naming guidelines</a> on how to name spec files and where to store them. SKY UX pact tests should use the same name as the components or services where they test integration with consumed services, but they should end with <stache-code>.pact-spec.ts.</stache-code> Place the spec files in the same folder as the components or services that they test. SKY UX automatically configures Karma to run pact tests in the <stache-code>src/app</stache-code> folder that match the <stache-code>.pact-spec.ts</stache-code> pattern. When you run <stache-code>skyux pact</stache-code, log files are placeed in the location that you specify in <stache-code>skyuxconfig.json</stache-code> or in the default <stache-code>app/pacts</stache-code> directory.
+      </p>
+    </li>
+    <li>
+      <p>
         Modules — If a module is shared across an application, place it in the <stache-code>src/app/shared</stache-code> folder. Otherwise, place it in the same folder as its page’s <stache-code>index.html</stache-code> file.
       </p>
     </li>
