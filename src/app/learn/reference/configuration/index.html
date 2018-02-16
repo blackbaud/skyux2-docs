@@ -163,7 +163,7 @@
     </li>
     <li>
       <p>
-        <stache-code>pacts</stache-code> — Specifies configuration settings for pact testing. Pact is a testing framework that you can use to test a SPA's integration with the services that it consumes. You create a separate entry for each provider in the <stache-code>pacts</stache-code> option. The settings for each entry are generally the same except that the <stache-code>provider</stache-code> value is different.
+        <stache-code>pacts</stache-code> — Specifies configuration settings for pact testing. Pact is a testing framework that you can use to test a SPA's integration with the services that it consumes. In the <stache-code>pacts</stache-code> option, you create a separate entry for each provider to test. Settings are generally the same for each entry except that the <stache-code>provider</stache-code> value is different. Then when you run <stache-code>skyux pact</stache-code>, the command reads the <stache-code>pacts</stache-code> setting and spins up an individual pact server for each provider service that you specify.
       </p>
       <ul>
         <li>
@@ -208,7 +208,7 @@
         </li>
       </ul>
       <p>
-        To run pact tests, use <a routerLink="/learn/reference/cli-commands/pact">the <stache-code>skyux pact</stache-code> SKY UX CLI command</a>. And for additional information on configuration settings and guidance on how to write pact tests, see <a routerLink="/learn/get-started/advanced/pact-tests">the pact testing tutorial</a>.
+        For information about how to run pact tests with the SKY UX CLI, see <a routerLink="/learn/reference/cli-commands/pact">the <stache-code>skyux pact</stache-code> command</a>. And for more information on configuration settings and guidance on how to write pact tests, see <a routerLink="/learn/get-started/advanced/pact-tests">the pact testing tutorial</a>.
       </p>
     </li>
     <li>
