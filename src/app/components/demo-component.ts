@@ -5,4 +5,5 @@ export interface SkyDemoComponent {
   url?: string;
   path?: string[];
   getCodeFiles?: () => any[];
+  children?: SkyDemoComponent[];
 }
