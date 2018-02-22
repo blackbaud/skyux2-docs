@@ -204,7 +204,7 @@ export class SkyDemoComponentsService {
         name: 'List',
         icon: 'list',
         // tslint:disable-next-line
-        summary: `The list module displays a SKY UX-themed list of data and includes several related components for use within the list.`,
+        summary: `The list module displays a SKY UX-themed list of data in a consistent, flexible way.`,
         url: '/components/list',
         getCodeFiles: () => [
           ...this.getDemoFiles('SkyListDemoComponent'),

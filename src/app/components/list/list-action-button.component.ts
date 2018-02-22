@@ -7,46 +7,46 @@ import { Component } from '@angular/core';
 export class ListActionButtonsComponent {
   public routes = [
     {
-      name: 'List',
-      path: '/components/list/list',
+      name: 'Overview',
+      path: '/components/list/overview',
       icon: 'list',
       // tslint:disable-next-line
-      summary: 'The list component displays data a SKY UX-themed list of data in a consistent and flexible way.'
+      summary: 'The list component displays a SKY UX-themed list of data in a consistent and flexible way.'
     },
     {
-      name: 'List filters',
-      path: '/components/list/list-filters',
+      name: 'Filters',
+      path: '/components/list/filters',
       icon: 'filter',
       // tslint:disable-next-line
-      summary: 'The list filter module provides components that allow users to select filter criteria.'
+      summary: 'The list filters module provides components that allow users to select filter criteria.'
     },
     {
-      name: 'List paging',
-      path: '/components/list/list-paging',
+      name: 'Paging',
+      path: '/components/list/paging',
       icon: 'file-o',
       // tslint:disable-next-line
       summary: 'The list paging component displays a SKY UX-themed pagination control for a list.'
     },
     {
-      name: 'List toolbar',
-      path: '/components/list/list-toolbar',
+      name: 'Toolbar',
+      path: '/components/list/toolbar',
       icon: 'wrench',
       // tslint:disable-next-line
       summary: 'The list toolbar component displays a SKY UX-themed toolbar for a list.'
     },
     {
-      name: 'List view checklist',
-      path: '/components/list/list-view-checklist',
+      name: 'Checklist',
+      path: '/components/list/checklist',
       icon: 'list-ul',
       // tslint:disable-next-line
       summary: 'The list view checklist component builds a filterable checkbox list of data.'
     },
     {
-      name: 'List view grid',
-      path: '/components/list/list-view-grid',
+      name: 'Grid',
+      path: '/components/list/grid',
       icon: 'table',
       // tslint:disable-next-line
-      summary: 'The list view grid component displays a SKY UX-themed grid for a list of data.'
+      summary: 'The list view grid component provides a SKY UX-themed grid for a list of data.'
     }
   ];
 }

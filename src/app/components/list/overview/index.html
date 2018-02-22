@@ -3,10 +3,10 @@
 
   <sky-demo-page-summary>
     <p>
-      The list component displays a SKY UX-themed list of data in a consistent and flexible way. It includes options to add, search, and page.
+      The list component displays a SKY UX-themed list of data in a consistent, flexible way.<!-- It includes options to add, search, and page. -->
     </p>
     <sky-alert alertType="info">
-      Several related components are available for use within the list component, including the <a routerLink="/components/list/list-paging">list paging (sky-list-paging)</a>, <a routerLink="/components/list/list-filters">list filters</a>, <a routerLink="/components/list/list-toolbar">list toolbar (includes sorting) (sky-list-toolbar)</a>, <a routerLink="/components/list/list-view-checklist">List view checklist (sky-list-view-checklist)</a>, and <a routerLink="/components/list/list-view-grid">List view grid (sky-list-view-grid)</a> components.
+      Several related components are available for use within the list component, including the <a routerLink="/components/list/filters">list filters module</a>, the <a routerLink="/components/list/paging">list paging component</a>, the <a routerLink="/components/list/toolbar">list toolbar component</a>, the <a routerLink="/components/list/checklist">list view checklist component</a>, and the <a routerLink="/components/list/grid">list view grid component</a>.
     </sky-alert>
   </sky-demo-page-summary>
   
@@ -16,7 +16,7 @@
       defaultValue="[]"
       isOptional="true"
     >
-    Specifies the data to display. Must provide <stache-code>data</stache-code> or <stache-code>dataProvider</stache-code>. Acceptable values: <stache-code>Observable Array</stache-code> or <stache-code>Array</stache-code> (to update data in your view outside of a dataProvider you must use an Observable instead of a static array).
+    Specifies the data to display. Must provide <stache-code>data</stache-code> or <stache-code>dataProvider</stache-code>. Acceptable values: <stache-code>Observable Array</stache-code> or <stache-code>Array</stache-code>. To update data in your view outside of a <stache-code>dataProvider</stache-code>, you must use an observable instead of a static array).
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="dataProvider"
@@ -29,7 +29,7 @@
       propertyName="initialTotal"
       isOptional="true"
     >
-    Specifies the total number of items for the initial data set when initialized. When used in conjunction with <stache-code>data</stache-code> and <stache-code>dataProvider</stache-code>, it allows an initial data to be set with the need to call the dataProvider.
+    Specifies the total number of items for the initial data set when initialized. When used in conjunction with <stache-code>data</stache-code> and <stache-code>dataProvider</stache-code>, it allows an initial data to be set with the need to call the <stache-code>dataProvider</stache-code>.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="search"
@@ -41,7 +41,7 @@
       propertyName="sortFields"
       isOptional="true"
     >
-    Specifies a set of fields to sort by. If array of fields then sorted by order of array. Acceptable values: <stache-code>ListFieldSelectorModel</stache-code>, <stache-code>Observable ListFieldSelectorModel</stache-code>, <stache-code>Array of ListFieldSelectorModel</stache-code>, or <stache-code>Observable Array of ListFieldSelectorModel</stache-code>. Where <stache-code>ListFieldSelectorModel</stache-code> is an object with the <stache-code>fieldSelector</stache-code> property (a string specifying which property of the data is actively being sorted upon) and the <stache-code>descending</stache-code> property (a boolean indicating the active sort is descending).
+    Specifies a set of fields to sort by. If array of fields then sorted by order of array. Acceptable values: <stache-code>ListFieldSelectorModel</stache-code>, <stache-code>Observable ListFieldSelectorModel</stache-code>, <stache-code>Array of ListFieldSelectorModel</stache-code>, or <stache-code>Observable Array of ListFieldSelectorModel</stache-code>. Where <stache-code>ListFieldSelectorModel</stache-code> is an object with the <stache-code>fieldSelector</stache-code> property (a string that specifies the property of the data that is actively being sorted upon) and the <stache-code>descending</stache-code> property (a boolean that indicates the active sort is descending).
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="selectedIds"
@@ -53,7 +53,7 @@
       propertyName="appliedFilters"
       isOptional="true"
     >
-      Specifies a set of filters to apply to list data. These filters will also create a filter summary if the <a routerLink="../list-filters">sky-list-filter-summary</a> component is included. Acceptable values: <stache-code>Array of ListFilterModel</stache-code>.
+      Specifies a set of filters to apply to list data. These filters also create a filter summary if <a routerLink="../filter">the <stache-code>sky-list-filter-summary</stache-code> component</a> is included. Acceptable values: <stache-code>Array of ListFilterModel</stache-code>.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
