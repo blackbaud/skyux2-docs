@@ -210,7 +210,7 @@ export class SkyDemoComponentsService {
           ...this.getDemoFiles('SkyListDemoComponent'),
           ...this.getDemoFiles('SkyListProviderDemoComponent')
         ],
-        children: [
+        components: [
           {
             name: 'List',
             icon: 'list',

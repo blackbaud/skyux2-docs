@@ -24,9 +24,8 @@ export class SkyDemoPageCodeComponent {
   public set demoName(value: string) {
 
     const items = this.getItems(this.componentsService.getComponents(), value);
-    console.log(items);
+
     items.map((item: SkyDemoComponent) => {
-      console.log(item.getCodeFiles());
       this.codeFilesForBinding = item.getCodeFiles().map((codeFile: any) => {
         return new SkyDemoPageCodeFile(
           codeFile.name,
@@ -39,10 +38,9 @@ export class SkyDemoPageCodeComponent {
   }
 
   public get plunkerFiles(): any[] {
-    // return [
-    //   ...this.plunkerService.getFiles(this.codeFilesForBinding)
-    // ];
-    return [];
+    return [
+      ...this.plunkerService.getFiles(this.codeFilesForBinding)
+    ];
   }
 
   constructor(
@@ -54,8 +52,8 @@ export class SkyDemoPageCodeComponent {
     let items: SkyDemoComponent[] = [];
 
     components.forEach((item: SkyDemoComponent) => {
-      if (item.children) {
-        items.concat(this.getItems(item.children, value));
+      if (item.components) {
+        items = items.concat(this.getItems(item.components, value));
       }
 
       if (item.name === value) {
