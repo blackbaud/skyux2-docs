@@ -11,7 +11,7 @@ export class ListActionButtonsComponent {
       path: '/components/list/overview',
       icon: 'list',
       // tslint:disable-next-line
-      summary: 'The list component displays a SKY UX-themed list of data in a consistent and flexible way.'
+      summary: 'The list component displays a SKY UX-themed list of data in a consistent, flexible way.'
     },
     {
       name: 'Filters',
