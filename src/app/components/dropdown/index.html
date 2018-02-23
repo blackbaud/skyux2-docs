@@ -1,4 +1,6 @@
-<sky-demo-page pageTitle="Dropdown">
+<sky-demo-page
+  pageTitle="Dropdown">
+
   <sky-demo-page-summary>
     <p>
       The dropdown component renders a button that displays a menu when users click it. The menu displays a set of actions or functions. <strong>Do not use the dropdown component as a select input</strong> for users to set the menu's value to one of the options. If you need a select input, see the <a routerLink="/design/guidelines/select-items">options to select items from lists</a>.
@@ -51,12 +53,11 @@
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
-  <sky-demo-page-properties
-    sectionHeading="SkyDropdownMessage type">
+  <sky-demo-page-properties sectionHeading="SkyDropdownMessage type">
     <sky-demo-page-property
       propertyName="type"
       isOptional="true">
-        Sets the message to one of the following <stache-code>SkyDropdownMessage</stache-code> types:
+      Sets the message to one of the following <stache-code>SkyDropdownMessage</stache-code> types:
       <ul>
         <li>
           <stache-code>SkyDropdownMessageType.Open</stache-code> &mdash; Opens the dropdown menu.
@@ -80,8 +81,13 @@
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
-  <sky-demo-page-properties
-    sectionHeading="SkyDropdownMenuChange">
+  <sky-demo-page-properties sectionHeading="SkyDropdownMenuChange">
+    <sky-demo-page-property
+      propertyName="trigger"
+      isOptional="true"
+      defaultValue="click">
+      This property is deprecated, and we recommend against using it. It specifies the user action that opens the dropdown, and the valid options are <stache-code>click</stache-code> or <stache-code>hover</stache-code>. We recommend the default <stache-code>click</stache-code> value because the <stache-code>hover</stache-code> option can pose accessibility issues for users on touch devices such as phones and tablets.
+    </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="activeIndex">
       Indicates the active menu index.
@@ -99,4 +105,5 @@
       demoName="Dropdown">
     </sky-demo-page-code>
   </sky-demo-page-example>
+
 </sky-demo-page>
