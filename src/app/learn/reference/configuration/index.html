@@ -163,12 +163,12 @@
     </li>
     <li>
       <p>
-        <stache-code>pacts</stache-code> — Specifies configuration settings for pact testing. Pact is a testing framework that you can use to test a SPA's integration with the services that it consumes. In the <stache-code>pacts</stache-code> option, you create a separate entry for each provider to test. Settings are generally the same for each entry except that the <stache-code>provider</stache-code> value is different. Then when you run <a routerLink="/learn/reference/cli-commands/pact">the <stache-code>skyux pact</stache-code> command</a>, it reads the <stache-code>pacts</stache-code> setting and spins up an individual pact server for each provider service that you specify.
+        <stache-code>pacts</stache-code> — Specifies configuration settings for pact testing. Pact is a testing framework that you can use to test a SPA's integration with the services that it consumes. In the <stache-code>pacts</stache-code> option, you create separate entries for each provider to test. Settings are generally the same for each entry except that the <stache-code>provider</stache-code> value is different. When you run <a routerLink="/learn/reference/cli-commands/pact">the <stache-code>skyux pact</stache-code> command</a>, it reads the <stache-code>pacts</stache-code> setting and spins up an individual pact server for each provider service that you specify.
       </p>
       <ul>
         <li>
           <p>
-            <stache-code>consumer</stache-code> — Specifies the consumer that calls the provider's API.
+            <stache-code>consumer</stache-code> — Specifies the consumer that calls the provider's API. This is a string value that the developer uses to represent the consumer in the consumer-provider relationship. Blackbaud developers register their consumer with the pact broker at https://host.nxt.blackbaud.com/pact/. This site is for Blackbaud internal use only and is not available to external developers.
           </p>
         </li>
         <li>
@@ -178,7 +178,7 @@
         </li>
         <li>
           <p>
-            <stache-code>host</stache-code> — Specifies a host for pact testing. By default, the host is <stache-code>localhost</stache-code>.
+            <stache-code>host</stache-code> — Specifies a host for pact testing. By default, the host is <stache-code>localhost</stache-code>. ... o	I suppose we could let them know what potential values there are.  Either host.nxt.blackbaud.com, or whatever they set their `host` configuration setting to in skyuxconfig.json.  Here’s where I think maybe this command isn’t useful for external users.  Since the command by default uses host.nxt.blackbaud.com as the host, if someone tries to use this from outside the context of a SKYUX SPA it won’t work.  What I don’t know is, would someone external ever be using SKYUX CLI for anything other than a SKYUX SPA? 
           </p>
         </li>
         <li>
@@ -188,7 +188,7 @@
         </li>
         <li>
           <p>
-            <stache-code>logLevel</stache-code> — Specifies XXXXXXX for the log file. By default, the XXXXXX is <stache-code>XXXXXXX</stache-code>.
+            <stache-code>logLevel</stache-code> — Specifies the log level for the log file. The available options are <stache-code>trace</stache-code>, <stache-code>debug</stache-code>, <stache-code>info</stache-code>, <stache-code>error</stache-code>, <stache-code>fatal</stache-code>, and <stache-code>warn</stache-code>,.
           </p>
         </li>
         <li>
@@ -198,12 +198,12 @@
         </li>
         <li>
           <p>
-            <stache-code>provider</stache-code> — Specifies the service that exposes an API.
+            <stache-code>provider</stache-code> — Specifies the provider of a service that exposes an API. This is a string value that the developer uses to represent the provider in the consumer-provider relationship. Blackbaud developers register the provider with the pact broker at https://host.nxt.blackbaud.com/pact/. This site is for Blackbaud internal use only and is not available to external developers.
           </p>
         </li>
         <li>
           <p>
-            <stache-code>spec</stache-code> — Specifies XXXXXXX for the log file. By default, the XXXXX is <stache-code>2</stache-code>.
+            <stache-code>spec</stache-code> — Specifies the pact specification version for the log file. By default, the version is <stache-code>2</stache-code>.
           </p>
         </li>
       </ul>
