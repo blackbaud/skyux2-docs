@@ -7,6 +7,7 @@ import {
 import { SkyDemoPageCodeFile } from './demo-page-code-file';
 import { SkyDemoPagePlunkerService } from './demo-page-plunker-service';
 import { SkyDemoComponentsService } from '../demo-components.service';
+import { SkyDemoComponent } from '../demo-component';
 
 @Component({
   selector: 'sky-demo-page-code',
@@ -22,17 +23,17 @@ export class SkyDemoPageCodeComponent {
   @Input()
   public set demoName(value: string) {
 
-    let items = this.componentsService.getComponents().find((item) => {
-      return item.name === value;
-    });
+    const items = this.getItems(this.componentsService.getComponents(), value);
 
-    this.codeFilesForBinding = items.getCodeFiles().map((item) => {
-      return new SkyDemoPageCodeFile(
-        item.name,
-        item.fileContents,
-        item.componentName,
-        item.bootstrapSelector
-      );
+    items.map((item: SkyDemoComponent) => {
+      this.codeFilesForBinding = item.getCodeFiles().map((codeFile: any) => {
+        return new SkyDemoPageCodeFile(
+          codeFile.name,
+          codeFile.fileContents,
+          codeFile.componentName,
+          codeFile.bootstrapSelector
+        );
+      });
     });
   }
 
@@ -46,4 +47,20 @@ export class SkyDemoPageCodeComponent {
     private plunkerService: SkyDemoPagePlunkerService,
     private componentsService: SkyDemoComponentsService
   ) { }
+
+  private getItems(components: SkyDemoComponent[], value: string): SkyDemoComponent[] {
+    let items: SkyDemoComponent[] = [];
+
+    components.forEach((item: SkyDemoComponent) => {
+      if (item.components) {
+        items = items.concat(this.getItems(item.components, value));
+      }
+
+      if (item.name === value) {
+        items.push(item);
+      }
+    });
+
+    return items;
+  }
 }

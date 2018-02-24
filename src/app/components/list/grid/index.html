@@ -2,7 +2,12 @@
   pageTitle="List view grid">
 
   <sky-demo-page-summary>
-    This list view grid component displays a SKY UX-themed grid for a list of data. Internally, the <stache-code>sky-list-view-grid</stache-code> uses the <a routerLink="../grid">sky-grid</a> component, which contains documentation for <stache-code>sky-grid-column</stache-code>.
+    <p>
+      This list view grid component displays a grid for a SKY UX-themed list of data. Internally, the <stache-code>sky-list-view-grid</stache-code> uses <a routerLink="../overview">the <stache-code>sky-grid</stache-code> component</a>, which contains documentation for <stache-code>sky-grid-column</stache-code>.
+    </p>
+    <p>
+      The list view grid component is designed for use within <a routerLink="../overview">a list component</a>.
+    </p>
   </sky-demo-page-summary>
 
   <sky-demo-page-properties>
@@ -16,13 +21,13 @@
       propertyName="hiddenColumns"
       isOptional="true"
     >
-    Specifies the columns to be hidden by default. Will match off of the id or field of the item. Acceptable values: <stache-code>Array of strings or Observable Array of strings</stache-code>.
+    Specifies the columns to hide by default. Will match off of the ID or field of the item. Acceptable values: <stache-code>Array of strings or Observable Array of strings</stache-code>.
     </sky-demo-page-property>
     <sky-demo-page-property
         propertyName="displayedColumns"
         isOptional="true"
     >
-    Specifies columns to be displayed by default. Will match off of the id or field of the item. Acceptable values: <stache-code>Array of strings or Observable Array of strings</stache-code>.
+    Specifies columns to display by default. Will match off of the ID or field of the item. Acceptable values: <stache-code>Array of strings or Observable Array of strings</stache-code>.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="fit"

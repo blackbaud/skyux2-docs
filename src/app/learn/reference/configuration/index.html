@@ -162,30 +162,6 @@
       </p>
     </li>
     <li>
-      <p><stache-code>pacts</stache-code> — Specifies configuration options for pact testing when running <stache-code>skyux pact</stache-code>.</p>
-      <ul>
-        <li><p><stache-code>consumer</stache-code> — </p></li>
-        <li><p><stache-code>host</stache-code> — </p></li>
-        <li><p><stache-code>log</stache-code> — </p></li>
-        <li><p><stache-code>logLevel</stache-code> — </p></li>
-        <li><p><stache-code>port</stache-code> — </p></li>
-        <li><p><stache-code>provider</stache-code> — </p></li>
-        <li><p><stache-code>spec</stache-code> — </p></li>
-        <li><p><stache-code></stache-code> — </p></li>
-      </ul>
-      <p>The following example illustrates a sample configuration for pact testing:</p>
-      <stache-code-block>
-        "pacts": [
-          {
-            "consumer": "{consumer}",
-            "provider": "{provider}",
-            "logLevel": "DEBUG",
-            "spec": "1",
-          }
-        ]
-      </stache-code-block>
-    </li>
-    <li>
       <p>
         <stache-code>params</stache-code> — Specifies a list of parameters that are allowed at runtime. You can list parameters as an array of strings, specify parameters as key-value pairs with boolean values that indicate whether the parameters are allowed, or specify parameters as objects to provide default values for the parameters.
       </p>
@@ -239,12 +215,12 @@
     </li>
     <li>
       <p>
-        <stache-code>redirects</stache-code> — Specifies redirects for pages within an application. When a project's folder structure changes, you can specify redirects for files that moved so that existing links will continue to work. In the <stache-code>redirects</stache-code> property, you create a comma-separated list of paths and their redirects.
+        <stache-code>redirects</stache-code> — Specifies redirects for pages within an application. When a project's folder structure changes, you can specify redirects for the files that move so that existing links continue to work. In the <stache-code>redirects</stache-code> property, you create a comma-separated list where you specify the original paths followed by the redirect paths.
       </p>
       <stache-code-block>
   "redirects": {
-    "folder-1/subfolder-1": "new-folder/new-subfolder-1",
-    "folder-1/subfolder-2": "folder-1/subfolder-2/new-subfolder-2"
+    "old-folder-1/old-subfolder-1": "new-folder/new-subfolder-1",
+    "old-folder-1/old-subfolder-2": "old-folder-1/old-subfolder-2/new-subfolder-2"
   }
       </stache-code-block>
     </li>
