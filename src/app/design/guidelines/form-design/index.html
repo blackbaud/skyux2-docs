@@ -8,11 +8,11 @@
 <stache-page-anchor>Form containers</stache-page-anchor>
 	
 	<div class="sky-subsection-heading">Inline panel</div>
-	<p>An inline panel is appropriate for simple forms that meet the following criteria:</p>
+	<p>An <a href="https://github.com/blackbaud/skyux2/issues/575">inline panel</a> (component is not developed yet) is appropriate for simple forms that meet the following criteria:</p>
 	<ul>
-		<li>The form has few fields, and its input controls are not complex.</li>
+		<li>The form has few fields, its input controls are not complex, and the form will not cause significant page morphing.</li>
 		<li>The content that surrounds the form will not distract users.</li>
-		<li>The task is functionally non-modal, and users can abandon it while the form is open.</li>
+		<li>The task is functionally non-modal.</li>
 	</ul>
 
 	<div class="sky-subsection-heading">Modal dialog</div>
@@ -20,7 +20,6 @@
 	<ul>
 		<li>The task is functionally modal, and users must finish it before doing anything else.</li>
 		<li>Displaying the form inline would lead to substantial content shifting or require users to scroll to complete the form.</li>
-		<li>The form adds records from a paginated list or an infinite scroll list.</li>
 	</ul>
   
 	<div class="sky-subsection-heading">Full-page modal</div>
@@ -29,7 +28,7 @@
 		<li>The task is functionally modal, and users must finish it before doing anything else.</li>
 		<li>Users usually perform the task in a large viewport, and a full-page modal can optimize the use of space.</li>
 		<li>The context of the task is self-contained.</li>
-		<li>The form displays ancillary information or previews such as running totals or an email being constructed.</li>
+		<li>The form displays feedback based on the user entering data or making choices, such as showing running totals or a preview of an email being constructed.</li>
 		<li>The form supports a complex task for a list of objects such as filling out report cards for a class.</li>
 		<li>The task includes subtasks that need to be completed in context.</li>
 	</ul>
@@ -37,8 +36,8 @@
 	<div class="sky-subsection-heading">Sectioned form</div>
 	<p>A <a routerLink="/components/sectioned-form">sectioned form</a> is appropriate for forms that meet the following criteria:</p>
 	<ul>
-		<li>Users are navigating into a hierarchy and can be expected to know what they are looking for. This is common for editing pieces of a larger record and for tasks such as applying filters.</li>
-		<li>It’s beneficial to group related but independent forms to simplify the UI on the page. For example, one “Add filters” button instead of “Filter by giving,” “Filter by status,” “Filter by constituent code,” “Filter by ratings,” etc.</li>
+		<li>Users are adding or editing a complex object and can be expected to know what they are looking for. This is common for editing pieces of a larger record and for tasks such as applying filters.</li>
+		<li>It’s beneficial to group related but independent forms to minimize the number of form-launching buttons on the page.</li>
 	</ul>
   <p>Sectioned forms are not appropriate when choices on one tab can affect other tabs because changes are potentially invisible or unpredictable to users.</p>
 
@@ -59,12 +58,14 @@
     <stache-column screenSmall="6">
 			<p>Fields should generally flow vertically. Wrapping fields in the "<a routerLink="/components/form" fragment="form-group">sky-form-group</a>" class will provide the correct amount of vertical padding between fields.</p> 
 			<p>The most common exception is closely-related fields (such as First Name/Last Name) which can follow a horizontal flow. When using a horizontal flow you should use a <a routerLink="/components/fluid-grid">fluid grid layout</a> to ensure that the form scales properly to smaller viewports.</p> 
-			<p>The width of the input depends upon the type of data being entered into the form and should feel like a natural width. To avoid inconsistent input sizing, please use one of the following three input widths when designing a form:</p>
+			<p>You should use the following three column widths when designing a form:</p>
 			<ul>
-				<li>Small: 33% (4 fluid grid columns)</li>
-				<li>Medium: 50% (6 fluid grid columns)</li>
-				<li>Large: 100% (12 fluid grid columns)</li>
+				<li>1/3 width (4 fluid grid columns)</li>
+				<li>1/2 width (6 fluid grid columns)</li>
+				<li>Full width</li>
 			</ul>
+			<p>Single-line alphanumeric inputs can use the appropriate column width above based on the expected content.</p>
+			<p>Multi-line alphanumeric inputs, checkboxes and radio buttons should generally be full width.</p>
 
 			<div class="sky-subsection-heading">Subsections</div> 
 			<p>For cases where you want to visually separate a small set of fields (e.g. address fields) from the preceding/following fields you can use 20px of vertical spacing and use the "<a routerLink="/design/styles/typography">sky-subsection-heading</a>" class for the subsection header.</p> 
@@ -74,6 +75,7 @@
 
 			<div class="sky-subsection-heading">Sub-forms</div> 
 			<p>For cases where you need to use a sub-form (e.g. when adding mulitple instances of a child record), follow the form container guidelines above. It’s acceptable to launch modal forms from within a modal form if alternate workflows are not feasible.</p>
+			<p>When you use a subform it's likely that the data for that subform will not be saved until the underlying form is saved. In those cases the subform submit button should be worded as "Done" instead of "Save" to make it clear to the user that the data is not yet saved.</p>
 		</stache-column>
 		<stache-column screenSmall="6">
 			<div class="screenshot screenshot-info"><img src="~/assets/img/guidelines/formdesign/form-layout.png" style="width: 100%;" /></div>
@@ -81,22 +83,56 @@
 	</stache-row>
 
 <stache-page-anchor>Field usability</stache-page-anchor>
-	
-	<div class="sky-subsection-heading">Labels</div>
-	<p>All fields should be labeled, with the label normally located to the top left of the input. Adding the "<a routerLink="/components/form" fragment="control-label">sky-control-label</a>" class to the label will apply the correct styling.</p>
+	<stache-row>
+    <stache-column screenSmall="8">
+			<div class="sky-subsection-heading">Labels</div>
+			<p>All fields should be labeled, with the label normally located to the top left of the input. You shouldn't use a colon after the label text. Adding the "<a routerLink="/components/form" fragment="control-label">sky-control-label</a>" class to the label will apply the correct styling.</p>
 
-	<div class="sky-subsection-heading">Placeholder text</div>
-	<p>You can use a small amount of placeholder text to help users with data entry. The placeholder text shouldn’t be used in place of a label.</p>
-	
-	<div class="sky-subsection-heading">Inline help</div>
-	<p>Refer to the <a routerLink="/design/guidelines/user-assistance">user assistance guidelines</a> for information about when to use persistent or invoked inline help content.</p>
+			<div class="sky-subsection-heading">Placeholder text</div>
+			<p>You can use a small amount of placeholder text to help users with data entry. The placeholder text shouldn’t be used in place of a label.</p>
 
+			<div class="sky-subsection-heading">Inline help</div>
+			<p>Refer to the <a routerLink="/design/guidelines/user-assistance">user assistance guidelines</a> for information about when to use persistent or invoked inline help content.</p>
+		</stache-column>
+		<stache-column screenSmall="4">
+			<div class="screenshot screenshot-info"><img src="~/assets/img/guidelines/formdesign/field-example-detailed.png" style="width: 100%;" /></div>
+		</stache-column>
+	</stache-row>
+
+<stache-page-anchor>Selection inputs</stache-page-anchor>
+	 <p>To provide a consistent experience for users when they need to select items from a list of items, follow these guidelines to determine which controls to use.</p>
+	
+	<div class="sky-subsection-heading">Radio buttons</div>
+		<p>Use <a routerLink="/components/radio">radio buttons</a> when you have 2-5 options and users can only select one value.</p>
+	
+	<div class="sky-subsection-heading">HTML &lt;select&gt; field</div>
+		<p>Use an HTML <stache-code>&lt;select&gt;</stache-code> field when you have 6-20 values and users do not need to search for items.</p>
+	
+	<div class="sky-subsection-heading">Checkboxes</div>
+		<p>Use <a routerLink="/components/checkbox">checkboxes</a> when you have 2-5 values and users can select multiple values.</p>
+	
+	<div class="sky-subsection-heading">SKY UX Select Field</div>
+		<p>Use a <a href="https://github.com/blackbaud/skyux2/issues/155">SKY UX select field</a> (component not developed yet) when:</p>
+			<ul>
+				<li>You have user-defined values that can accumulate and become too cumbersome for the other controls.</li>
+				<li>You have more than 5 values and users can select multiple values.</li>
+				<li>You have more than 20 values and users can only select one value.</li>
+				<li>You need to display items with titles and descriptions.</li>
+			</ul>
+	
 <stache-page-anchor>Validation and error handling</stache-page-anchor>	
 	
-	<p>When a user is filling out a form, they should be notified as soon as possible to errors so they can be corrected within the flow of their task rather than being collected until they think they are finished. If possible a field should be validated when the field loses focus. If that isn’t possible, the validation should run when the form is submitted.</p> 
+	<div class="sky-subsection-heading">Validation timing</div>
+	<p>When a user is filling out a form, they should be notified as soon as possible to errors so they can be corrected within the flow of their task rather than being collected until they think they are finished. The preference ranking for validation timing is:</p>
+	<ol>
+		<li>As the user is typing if there is a clear check that can be made before the typing is complete (e.g. they are typing text into a numeric input).</li>
+		<li>When the field loses focus.</li>
+		<li>When the form is submitted.</li>
+	</ol>
 	
 	<div class="sky-subsection-heading">Required fields</div>
-	<p>Required fields are denoted with a red asterisk to the right of the field label. Adding the "<a routerLink="/components/form" fragment="required-fields">sky-control-label-required</a>" class to the label will apply this styling.</p>
+	<p>Required fields are denoted with a red asterisk to the right of the field label. Adding the "<a routerLink="/components/form" fragment="required-fields">sky-control-label-required</a>" class to the label will apply this styling. You also need to add the <code>aria-required=true</code> property to the input to make the field accessible.</p>
+	<p>The <a routerLink="/components/sectioned-form">sectioned form</a> component includes a property to display the red asterisk in the tab panel for tabs that contain required fields.</p>
 	
 	<div class="sky-subsection-heading">Other validation</div>
 	<p>You should use the <a routerLink="/components/datepicker">datepicker</a>, <a routerLink="/components/timepicker">timepicker</a>, <a routerLink="/components/email-validation">email validation</a>, and <a routerLink="/components/url-validation">URL validation</a> components when collecting those types of data. You can also create custom validation as needed.</p>
@@ -108,10 +144,11 @@
 			<p>A validation error should be accompanied by a message letting the user know how to correct the error. This message will generally be one of two types, although there will certainly be cases where a different message is needed:</p> 
 			<ol>	
 				<li>[Item] is required.</li>
-				<li>Please enter a valid [item].</li>
+				<li>Enter a valid [item].</li>
 			</ol>
 			<p>The error message should be displayed below the field with the error, with a prepended red warning icon to draw attention. Adding the "<a routerLink="/components/form" fragment="error-states">sky-error-label</a>" class to the message will apply the correct styling.</p>
-			<p>It is sometimes the case that a form is quite long and the field that is triggering an error is scrolled out of view. To help the user identify what needs to be corrected, autoscroll to the first field that is causing an error.</p>
+			<p>It is sometimes the case that a form is quite long and the field that is triggering an error is scrolled out of view. To help the user identify what needs to be corrected, autoscroll to the first field that is causing an error and set focus on that field.</p>
+			<p>The <a routerLink="/components/sectioned-form">sectioned form</a> component includes a property to display a danger icon in the tab panel for tabs that contain fields with validation errors.</p>
 		</stache-column>
 		<stache-column screenSmall="6">
 			<div class="screenshot screenshot-info"><img src="~/assets/img/guidelines/formdesign/field-level-error.png" style="width: 100%;" /></div>

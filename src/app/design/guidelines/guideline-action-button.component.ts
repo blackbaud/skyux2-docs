@@ -63,13 +63,6 @@ export class GuidelineActionButtonsComponent {
       summary: 'Responsive, mobile-first page layouts provide flexibility while conforming to SKY UX standards.'
     },
     {
-      name: 'Select items from lists',
-      path: '/design/guidelines/select-items',
-      icon: 'list',
-      // tslint:disable-next-line
-      summary: 'A variety of controls are available to present lists and allow users to select list items.'
-    },
-    {
       name: 'User assistance',
       path: '/design/guidelines/user-assistance',
       icon: 'question-circle-o',
