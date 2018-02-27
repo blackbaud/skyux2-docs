@@ -2,7 +2,7 @@
   pageTitle="Autocomplete">
   <sky-demo-page-summary>
     <p>
-      The autocomplete component creates a text input that filters a data source based on user entries and then displays search results in a dropdown list. Users enter text in the text input, and then the component searches the data source. Search results appear in a dropdown list, and users can select items from the filtered list. The selected item appears in the text input, and the autocomplete component stores and saves the entire object in its value.
+      The autocomplete component creates a text input that filters a data source based on user entries and then displays search results in a dropdown list. Users enter text in the text input, and then the component searches the data source. Search results appear in a dropdown list, and users can select items from the filtered list. The selected item appears in the text input, and the autocomplete component stores and saves the entire object.
     </p>
   </sky-demo-page-summary>
 
@@ -11,23 +11,23 @@
       propertyName="data"
       defaultValue="[]"
       isOptional="true">
-      Specifies the data source that users can search to select items from a filtered list. You can specify static data such as an array of objects, or you can pull data from a database.
+      Specifies a data source for the autocomplete component to search when users enter text. You can specify static data such as an array of objects, or you can pull data from a database.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="search"
       isOptional="true">
-      Specifies a function to dynamically manage a data source when users change the text in the autocomplete field. The search function must return an array or a promise of an array. The <stache-code>search</stache-code> property is particularly useful when you use a data source that does not live in the source code. Acceptable value: <stache-code>(searchText: string, data?: any[]) => any[] | Promise&lt;any[]&gt;</stache-code>. 
+      Specifies a function to dynamically manage the data source when users change the text in the autocomplete field. The search function must return an array or a promise of an array. The <stache-code>search</stache-code> property is particularly useful when the data source does not live in the source code. Acceptable value: <stache-code>(searchText: string, data?: any[]) => any[] | Promise&lt;any[]&gt;</stache-code>. 
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="searchFilters"
       isOptional="true">
-      Specifies an array of functions to call against each search result in order to filter the search results. The function must return <stache-code>true</stache-code> or <stache-code>false</stache-code> for each result to indicate whether to display it in the dropdown. Acceptable value: <stache-code>(searchText: string, item: any) => boolean</stache-code>.
+      Specifies an array of functions to call against each search result in order to filter the search results. The function must return <stache-code>true</stache-code> or <stache-code>false</stache-code> for each result to indicate whether to display it in the dropdown list. Acceptable value: <stache-code>(searchText: string, item: any) => boolean</stache-code>.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="searchTextMinimumCharacters"
       isOptional="true"
       defaultValue="1">
-      Specifies the minimum number of characters that users must enter before the autocomplete field searches the data source and displays search results in a dropdown list.
+      Specifies the minimum number of characters that users must enter before the autocomplete component searches the data source and displays search results in the dropdown list.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="propertiesToSearch"
@@ -39,7 +39,7 @@
       propertyName="descriptorProperty"
       isOptional="true"
       defaultValue="name">
-      Specifies the property of the object to display in the autocomplete field after users select an item in the dropdown list.
+      Specifies an object property to display in the text input after users select an item in the dropdown list.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="searchResultsLimit"
@@ -57,7 +57,7 @@
     sectionHeading="Autocomplete events">
     <sky-demo-page-property
       propertyName="selectionChange">
-      Fires when users select an item in the dropdown list and provides an argument of type <stache-code>SkyAutocompleteSelectionChange</stache-code>.
+      Fires when users select items in the dropdown list and provides an argument of type <stache-code>SkyAutocompleteSelectionChange</stache-code>.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -65,7 +65,7 @@
     sectionHeading="SkyAutocompleteSelectionChange type">
     <sky-demo-page-property
       propertyName="selectedItem">
-      References the search result object that users select in the dropdown list.
+      References a search result object that users select in the dropdown list.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
