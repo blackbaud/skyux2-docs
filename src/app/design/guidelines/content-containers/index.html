@@ -131,13 +131,31 @@
       </p>
     </li>
 	</ul>
+	
+	<h3 class="sky-subsection-heading">
+    <a routerLink="/components/flyout">Flyout</a>
+  </h3>
+	
+	<p>A flyout is a non-modal container that slides out from the side of the page to show additional information to support the user's task without requiring the user to navigate to another page. They can contain large amounts of content, including full records. Flyouts are appropriate in these scenarios:</p>
+	
+	<ul>
+		<li>
+			Users need to open records from a list and return to the list view after a quick task on the record page.
+		</li>
+		<li>
+			Users need to drill into detail data from a summary number.
+		</li>
+		<li>
+			Users need to drill into child records while retaining the context of the parent record.
+		</li>
+	</ul>
 
   <h3 class="sky-subsection-heading">
     <a routerLink="/components/popover">Popover</a>
   </h3>
 
   <p>
-    Popovers show small chunks of information that are only occasionally relevant to the user. If the content is relevant most of the time, it should be presented in-page instead. If the amount of content would require scrolling on a mobile device, use a modal instead.
+    Popovers show small chunks of information that are only occasionally relevant to the user. If the content is relevant most of the time, it should be presented in-page instead. If the amount of content would require scrolling on a mobile device, use a flyout instead.
   </p>
   
 </stache>
