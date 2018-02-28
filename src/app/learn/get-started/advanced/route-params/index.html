@@ -201,6 +201,14 @@ export class AboutUserComponent implements OnInit {
     </li>
     <li>
       <p>
+        Update index.html to use the about user component selector
+      </p>
+      <stache-code-block>
+        <my-about-user [userid]="id"></my-about-user>
+      </stache-code-block>
+    </li>
+    <li>
+      <p>
         Save the new files and changes, and then run <stache-code>skyux serve</stache-code> from the command prompt to launch the SPA in your default browser. The SPA's About page is updated, and you can click <strong>Learn More</strong> to access more information about team members.
       </p>
     </li>
