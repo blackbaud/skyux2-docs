@@ -90,6 +90,11 @@
     "design/spacing": "design/styles/spacing",
     "design/typography": "design/styles/typography",
 		"design/guidelines/form-containers": "design/guidelines/form-design",
-		"design/guidelines/select-items": "design/guidelines/form-design"
+		"design/guidelines/select-items": "design/guidelines/form-design",
+    "components/list-filters": "components/list/filters",
+    "components/list-paging": "components/list/paging",
+    "components/list-toolbar": "components/list/toolbar",
+    "components/list-view-checklist": "components/list/checklist",
+    "components/list-view-grid": "components/list/grid"
   }
 }

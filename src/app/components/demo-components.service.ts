@@ -204,59 +204,72 @@ export class SkyDemoComponentsService {
         name: 'List',
         icon: 'list',
         // tslint:disable-next-line
-        summary: `The list component displays data in a consistent and flexible way.`,
+        summary: `The list module displays a SKY UX-themed list of data in a consistent, flexible way.`,
         url: '/components/list',
         getCodeFiles: () => [
           ...this.getDemoFiles('SkyListDemoComponent'),
           ...this.getDemoFiles('SkyListProviderDemoComponent')
+        ],
+        components: [
+          {
+            name: 'List',
+            icon: 'list',
+            // tslint:disable-next-line
+            summary: `The list component displays data in a consistent and flexible way.`,
+            url: '/components/list',
+            getCodeFiles: () => [
+              ...this.getDemoFiles('SkyListDemoComponent'),
+              ...this.getDemoFiles('SkyListProviderDemoComponent')
+            ]
+          },
+          {
+            name: 'List filters',
+            icon: 'filter',
+            // tslint:disable-next-line
+            summary: `The list filter module provides components that allow users to select filter criteria.`,
+            url: '/components/list-filters',
+            getCodeFiles: () => [
+              ...this.getDemoFiles('SkyListFiltersDemoComponent'),
+              ...this.getDemoFiles('SkyListFiltersInlineDemoComponent')
+            ]
+          },
+          {
+            name: 'List paging',
+            icon: 'file-o',
+            // tslint:disable-next-line
+            summary: `The list paging component displays a SKY UX-themed pagination control for a list.`,
+            url: '/components/list-paging',
+            getCodeFiles: () => this.getDemoFiles('SkyListPagingDemoComponent')
+          },
+          {
+            name: 'List toolbar',
+            icon: 'wrench',
+            // tslint:disable-next-line
+            summary:
+            `The list toolbar component displays a SKY UX-themed toolbar for a list.`,
+            url: '/components/list-toolbar',
+            getCodeFiles: () => [
+              ...this.getDemoFiles('SkyListToolbarDemoComponent'),
+              ...this.getDemoFiles('SkyListToolbarCustomDemoComponent')
+            ]
+          },
+          {
+            name: 'List view checklist',
+            icon: 'list-ul',
+            // tslint:disable-next-line
+            summary: `The list view checklist component builds a filterable checkbox list of data.`,
+            url: '/components/list-view-checklist',
+            getCodeFiles: () => this.getDemoFiles('SkyListViewChecklistDemoComponent')
+          },
+          {
+            name: 'List view grid',
+            icon: 'table',
+            // tslint:disable-next-line
+            summary: `The list view grid component displays a SKY UX-themed grid for a list of data.`,
+            url: '/components/list-view-grid',
+            getCodeFiles: () => this.getDemoFiles('SkyListViewGridDemoComponent')
+          }
         ]
-      },
-      {
-        name: 'List filters',
-        icon: 'filter',
-        // tslint:disable-next-line
-        summary: `The list filter module provides components that allow users to select filter criteria.`,
-        url: '/components/list-filters',
-        getCodeFiles: () => [
-          ...this.getDemoFiles('SkyListFiltersDemoComponent'),
-          ...this.getDemoFiles('SkyListFiltersInlineDemoComponent')
-        ]
-      },
-      {
-        name: 'List paging',
-        icon: 'file-o',
-        // tslint:disable-next-line
-        summary: `The list paging component displays a SKY UX-themed pagination control for a list.`,
-        url: '/components/list-paging',
-        getCodeFiles: () => this.getDemoFiles('SkyListPagingDemoComponent')
-      },
-      {
-        name: 'List toolbar',
-        icon: 'wrench',
-        // tslint:disable-next-line
-        summary:
-        `The list toolbar component displays a SKY UX-themed toolbar for a list.`,
-        url: '/components/list-toolbar',
-        getCodeFiles: () => [
-          ...this.getDemoFiles('SkyListToolbarDemoComponent'),
-          ...this.getDemoFiles('SkyListToolbarCustomDemoComponent')
-        ]
-      },
-      {
-        name: 'List view checklist',
-        icon: 'list-ul',
-        // tslint:disable-next-line
-        summary: `The list view checklist component builds a filterable checkbox list of data.`,
-        url: '/components/list-view-checklist',
-        getCodeFiles: () => this.getDemoFiles('SkyListViewChecklistDemoComponent')
-      },
-      {
-        name: 'List view grid',
-        icon: 'table',
-        // tslint:disable-next-line
-        summary: `The list view grid component displays a SKY UX-themed grid for a list of data.`,
-        url: '/components/list-view-grid',
-        getCodeFiles: () => this.getDemoFiles('SkyListViewGridDemoComponent')
       },
       {
         name: 'Media queries',
