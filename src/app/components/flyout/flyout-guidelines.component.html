@@ -139,6 +139,7 @@
 	<header><div class="sky-section-heading">Interactions</div></header>
 		<div class="sky-subsection-heading">Background page remains active</div>
 			<p>The background page is active behind the panel. Clicking on a link for another record in the background page will update the panel to load the new record. This is different than clicking on a link inside the detail panel which will navigate away from the current page.</p>
+			<p>Clicking on a non-interactive element on the background page should close the flyout. On touch devices, touching a non-interactive element on the background page should not close the flyout, since the user will need to touch the background page in order to scroll.</p>
 			<stache-row>
     		<stache-column screenMedium="4">
 					<div class="screenshot screenshot-info">
