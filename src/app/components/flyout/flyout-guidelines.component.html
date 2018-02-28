@@ -2,7 +2,7 @@
   <header><div class="sky-section-heading">Usage</div></header>
   <stache-row>
     <stache-column screenSmall="6">
-			<p>A detail panel is a container that lays over the page content to show larger amounts of supplementary information related to the user's task.  The detail panel may contain lists, record views, graphs, or bespoke information displays.</p>
+			<p>A flyout is a container that lays over the page content to show larger amounts of supplementary information related to the user's task.  The flyout may contain lists, record views, graphs, or bespoke information displays.</p>
 		</stache-column>
 		<stache-column screenSmall="6">
 			<div class="screenshot screenshot-info">
@@ -11,11 +11,11 @@
 		</stache-column>
 	</stache-row>
 	
-	<div class="sky-subsection-heading">When to use a detail panel</div>
+	<div class="sky-subsection-heading">When to use a flyout</div>
 	
 	<stache-row>
     <stache-column screenSmall="6">
-			<p>Use a detail panel when opening records in lists to allow a user to return to the list view after completing a quick task on the record page.</p>
+			<p>Use a flyout when opening records in lists to allow a user to return to the list view after completing a quick task on the record page.</p>
 		</stache-column>
 		<stache-column screenSmall="6">
 			<div class="screenshot screenshot-success">
@@ -26,7 +26,7 @@
 	
 	<stache-row>
     <stache-column screenSmall="6">
-			<p>Use a detail panel when drilling into an analytical insight to allow a user to quickly glance into what makes up that insight without spawning another workflow.</p>
+			<p>Use a flyout when drilling into an analytical insight to allow a user to quickly glance into what makes up that insight without spawning another workflow.</p>
 		</stache-column>
 		<stache-column screenSmall="6">
 			<div class="screenshot screenshot-success">
@@ -37,7 +37,7 @@
 	
 	<stache-row>
     <stache-column screenSmall="6">
-			<p>Use a detail panel when drilling into child records to allow a user to retain the context of the parent record. Since the detail panel only covers part of the current page, the user can still refer back to the current page for context.</p>
+			<p>Use a flyout when drilling into child records to allow a user to retain the context of the parent record. Since the flyout only covers part of the current page, the user can still refer back to the current page for context.</p>
 		</stache-column>
 		<stache-column screenSmall="6">
 			<div class="screenshot screenshot-success">
@@ -46,11 +46,11 @@
 		</stache-column>
 	</stache-row>
 	
-	<div class="sky-subsection-heading">When not to use a detail panel</div>
+	<div class="sky-subsection-heading">When not to use a flyout</div>
 	
 	<stache-row>
     <stache-column screenSmall="6">
-			<p>Do not use the detail panel when navigating from one record to another instance of the same record type. For example, if a user is on a constituent record and clicks a link to a different constituent record the system should navigate to the new record instead of opening it in the detail panel.</p>
+			<p>Do not use the flyout when navigating from one record to another instance of the same record type. For example, if a user is on a constituent record and clicks a link to a different constituent record the system should navigate to the new record instead of opening it in the flyout.</p>
 		</stache-column>
 		<stache-column screenSmall="6">
 			<div class="screenshot screenshot-danger">
@@ -61,7 +61,7 @@
 	
 	<stache-row>
     <stache-column screenSmall="6">
-			<p>Do not use the detail panel when navigating from a child page back to the parent page. For example, if a user is on a gift record and clicks on the link to return to the constituent record the system should navigate to a full page view of the constituent record instead of opening it in the detail panel.</p>
+			<p>Do not use the flyout when navigating from a child page back to the parent page. For example, if a user is on a gift record and clicks on the link to return to the constituent record the system should navigate to a full page view of the constituent record instead of opening it in the flyout.</p>
 		</stache-column>
 		<stache-column screenSmall="6">
 			<div class="screenshot screenshot-danger">
@@ -72,7 +72,7 @@
 	
 	<stache-row>
     <stache-column screenSmall="6">
-			<p>Do not use another detail panel when there is already a detail panel open. Instead, if a user clicks on a link in the detail panel the panel will close and the page will navigate to the new link location. In other words, the detail panel is limited to a single drill in and any further drilling will open in a full page.</p>
+			<p>Do not use another flyout when there is already a flyout open. Instead, if a user clicks on a link in the flyout the panel will close and the page will navigate to the new link location. In other words, the flyout is limited to a single drill in and any further drilling will open in a full page.</p>
 		</stache-column>
 		<stache-column screenSmall="6">
 			<div class="screenshot screenshot-danger">
@@ -83,7 +83,7 @@
 	
 	<stache-row>
     <stache-column screenSmall="6">
-			<p>Do not use the detail panel on pages that don't make sense without the panel open. For example, when entering grades for your class of students, just showing the names of the students in your class doesn't provide any value without having the grade entry form open as well.</p>
+			<p>Do not use the flyout on pages that don't make sense without the panel open. For example, when entering grades for your class of students, just showing the names of the students in your class doesn't provide any value without having the grade entry form open as well.</p>
 		</stache-column>
 		<stache-column screenSmall="6">
 			<div class="screenshot screenshot-danger">
@@ -94,7 +94,7 @@
 	
 	<stache-row>
     <stache-column screenSmall="6">
-			<p>The detail panel works best when displaying large amounts of supplementary information. In cases where there is a small amount of additional information to display, consider using a <a routerLink="popover">popover</a> or an expandable <a routerLink="repeater">repeater</a> instead of a detail panel.</p>
+			<p>The flyout works best when displaying large amounts of supplementary information. In cases where there is a small amount of additional information to display, consider using a <a routerLink="popover">popover</a> or an expandable <a routerLink="repeater">repeater</a> instead of a flyout.</p>
 		</stache-column>
 		<stache-column screenSmall="6">
 			<div class="screenshot screenshot-danger">
@@ -105,7 +105,7 @@
 	
 	<stache-row>
     <stache-column screenSmall="6">
-			<p>Do not use the detail panel to display items that need a considerable amount of time to load, such as a system generated report. Instead, allow the user to continue using the system while the information is generated, and use an alert to let the user know that the content is available.</p>
+			<p>Do not use the flyout to display items that need a considerable amount of time to load, such as a system generated report. Instead, allow the user to continue using the system while the information is generated, and use an alert to let the user know that the content is available.</p>
 		</stache-column>
 		<stache-column screenSmall="6">
 			<div class="screenshot screenshot-danger">
@@ -116,7 +116,7 @@
 	
 	<stache-row>
     <stache-column screenSmall="6">
-			<p>Do not use the detail panel to link to external sites. Instead, open the external site in a new tab.  For example, when clicking on a constituent's address, the Google map of that address will open in a new tab.</p>
+			<p>Do not use the flyout to link to external sites. Instead, open the external site in a new tab.  For example, when clicking on a constituent's address, the Google map of that address will open in a new tab.</p>
 		</stache-column>
 		<stache-column screenSmall="6">
 			<div class="screenshot screenshot-danger">
@@ -127,7 +127,7 @@
 	
 	<stache-row>
     <stache-column screenSmall="6">
-			<p>Do not use the detail panel for tasks where the user will always need to see the full screen view of the details, such as the expanded view of a tile. In these cases, the system should navigate to a full page instead.</p>
+			<p>Do not use the flyout for tasks where the user will always need to see the full screen view of the details, such as the expanded view of a tile. In these cases, the system should navigate to a full page instead.</p>
 		</stache-column>
 		<stache-column screenSmall="6">
 			<div class="screenshot screenshot-danger">
@@ -138,7 +138,7 @@
 	
 	<header><div class="sky-section-heading">Interactions</div></header>
 		<div class="sky-subsection-heading">Background page remains active</div>
-			<p>The background page is active behind the panel. Clicking on a link for another record in the background page will update the panel to load the new record. This is different than clicking on a link inside the detail panel which will navigate away from the current page.</p>
+			<p>The background page is active behind the panel. Clicking on a link for another record in the background page will update the panel to load the new record. This is different than clicking on a link inside the flyout which will navigate away from the current page.</p>
 			<p>Clicking on a non-interactive element on the background page should close the flyout. On touch devices, touching a non-interactive element on the background page should not close the flyout, since the user will need to touch the background page in order to scroll.</p>
 			<stache-row>
     		<stache-column screenMedium="4">
@@ -159,7 +159,7 @@
 			</stache-row>
 
 		<div class="sky-subsection-heading">Independent scrolling</div>
-			<p>The panel and the page scroll independently without clicking. If a user touches, hovers, or focuses on the background page when scrolling, only the background content  will scroll. Similarly, if a user touches, hovers, or focuses on the detail panel when scrolling, only the detail panel will scroll. This allows the user to get to the content they want in the panel without losing any context of the page they are on.</p>
+			<p>The panel and the page scroll independently without clicking. If a user touches, hovers, or focuses on the background page when scrolling, only the background content  will scroll. Similarly, if a user touches, hovers, or focuses on the flyout when scrolling, only the flyout will scroll. This allows the user to get to the content they want in the panel without losing any context of the page they are on.</p>
 			<stache-row>
     		<stache-column screenMedium="4">
 					<div class="screenshot screenshot-info">
@@ -179,7 +179,7 @@
 			</stache-row>
 
 		<div class="sky-subsection-heading">Drag to resize</div>
-			<p>The detail panel has a left border which can be clicked and dragged to expand the size of the panel. The panel can be resized anywhere between 320px and the full screen size. When the panel is dragged to the full size of the screen, it will automatically slide back 20px to the right so that a portion of the original page is still in view. The default size of the panel is 50% of the screen (or 320px, whichever is larger). A user can resize the panel, and the system will remember their new preferred size globally.</p>
+			<p>The flyout has a left border which can be clicked and dragged to expand the size of the panel. The panel can be resized anywhere between 320px and the full screen size. When the panel is dragged to the full size of the screen, it will automatically slide back 20px to the right so that a portion of the original page is still in view. The default size of the panel is 50% of the screen (or 320px, whichever is larger). A user can resize the panel, and the system will remember their new preferred size globally.</p>
 			<stache-row>
     		<stache-column screenMedium="4">
 					<div class="screenshot screenshot-info">
@@ -199,7 +199,7 @@
 			</stache-row>
 
 		<div class="sky-subsection-heading">Help panel</div>
-			<p>The detail panel covers the omnibar, but the help remains visible in the upper right corner of the screen. The help topic should understand that the detail panel is open and provide appropriate guidance based on the context.</p>
+			<p>The flyout covers the omnibar, but the help remains visible in the upper right corner of the screen. The help topic should understand that the flyout is open and provide appropriate guidance based on the context.</p>
 			<stache-row>
     		<stache-column screenSmall="6">
 					<div class="screenshot screenshot-info">
@@ -216,7 +216,7 @@
 		<div class="sky-subsection-heading">Modal dialog behavior</div>
 			<stache-row>
 				<stache-column screenSmall="6">
-					<p>When a user takes an action in the detail panel that launches a modal dialog, the modal dialog should cover the entire page.</p>
+					<p>When a user takes an action in the flyout that launches a modal dialog, the modal dialog should cover the entire page.</p>
 				</stache-column>
 				<stache-column screenSmall="6">
 					<div class="screenshot screenshot-info">
@@ -230,7 +230,7 @@
 		<div class="sky-subsection-heading">Next/previous row buttons</div>
 			<stache-row>
 				<stache-column screenSmall="6">
-					<p>When the detail panel is used in a list to view records, there are buttons in the panel toolbar to go to the next record or the previous record. Clicking on the next button will open the record in the next row that shares a type with the list. For example, in a gifts list, if a user has the detail panel open on the constituent record for the first gift in the list, clicking on the next button will open the gift record of the second row in the list. When the next/previous option is turned on, there is a visual indicator on the row in the list to show which row is currently selected.</p>
+					<p>When the flyout is used in a list to view records, there are buttons in the panel toolbar to go to the next record or the previous record. Clicking on the next button will open the record in the next row that shares a type with the list. For example, in a gifts list, if a user has the flyout open on the constituent record for the first gift in the list, clicking on the next button will open the gift record of the second row in the list. When the next/previous option is turned on, there is a visual indicator on the row in the list to show which row is currently selected.</p>
 				</stache-column>
 				<stache-column screenSmall="6">
 					<div class="screenshot screenshot-info">
@@ -242,7 +242,7 @@
 		<div class="sky-subsection-heading">List toolbar</div>
 			<stache-row>
 				<stache-column screenSmall="6">
-					<p>When viewing a list in the detail panel, the toolbar should give users the option to leave the "preview" list and create a new list for further manipulation. Clicking on the create list button will navigate to a new page containing the new list.</p>
+					<p>When viewing a list in the flyout, the toolbar should give users the option to leave the "preview" list and create a new list for further manipulation. Clicking on the create list button will navigate to a new page containing the new list.</p>
 				</stache-column>
 				<stache-column screenSmall="6">
 					<div class="screenshot screenshot-info">
@@ -255,7 +255,7 @@
 		<div class="sky-subsection-heading">Mobile behavior</div>
 			<stache-row>
     		<stache-column screenSmall="6">
-					<p>The detail panel should only be used when the screen is larger than 480px because it covers too much of the screen at smaller resolutions, thus losing much of its value.  For smaller screen sizes, the system should navigate directly to the appropriate record or list.</p>
+					<p>The flyout should only be used when the screen is larger than 480px because it covers too much of the screen at smaller resolutions, thus losing much of its value.  For smaller screen sizes, the system should navigate directly to the appropriate record or list.</p>
 				</stache-column>
 				<stache-column screenSmall="6">
 					<div class="screenshot screenshot-info">
