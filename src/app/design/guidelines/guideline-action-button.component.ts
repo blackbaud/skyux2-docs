@@ -27,7 +27,7 @@ export class GuidelineActionButtonsComponent {
       // tslint:disable-next-line
       summary: 'Describes the contexts in which to use different types of content containers.'
     },
-		{
+    {
       name: 'Error handling',
       path: '/design/guidelines/error-handling',
       icon: 'warning',
