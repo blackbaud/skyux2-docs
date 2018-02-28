@@ -5,7 +5,7 @@ showTableOfContents="true">
 
   <stache-page-summary>
     <p>
-      Pact is a testing framework that supports Consumer-Driven Contract Testing between dependent systems where the integration is based on HTTP. It uses contracts between interdependent services that are designed from the perspective of the consumer. We recommend creating pact tests for all services that a SPA consumes to confirm that the SPA can call the services and that the providers can call the SPA. This topic describes how to configure your SPA for pact testing, write pact tests, and run tests with the <stache-code>skyux pact</stache-code> command.
+      Pact is a testing framework that supports Consumer-Driven Contract Testing between dependent systems where the integration is based on HTTP. It uses contracts between interdependent services that are designed from the perspective of the consumer. We recommend creating pact tests for all services that a SPA consumes to confirm that the SPA can call the services and that the providers can call the SPA. Use this tutorial to configure your SPA for pact testing, write pact tests, and run tests with the <stache-code>skyux pact</stache-code> command.
     </p>
   </stache-page-summary>
 
@@ -14,7 +14,7 @@ showTableOfContents="true">
   </stache-page-anchor>
   
   <p>
-    The first step to implement pact testing for a SPA is to specify configuration options in <a routerLink="/learn/reference/configuration">the <stache-code>skyuxconfig.json</stache-code> file</a> with the <stache-code>pacts</stache-code> property. In this property, you create a separate entry for each provider to test. Settings are generally the same for each entry except that the <stache-code>provider</stache-code> value is different. When you run <stache-code>skyux pact</stache-code>, the command reads the <stache-code>pacts</stache-code> setting and spins up an individual pact server for each provider service that you specify.
+    The first step to implement pact testing for a SPA is to specify configuration options <a routerLink="/learn/reference/configuration">with the <stache-code>pacts</stache-code> property in the <stache-code>skyuxconfig.json</stache-code> file</a>. In this property, you create a separate entry for each provider to test. Settings are generally the same for each entry except for the <stache-code>provider</stache-code> setting. When you run <stache-code>skyux pact</stache-code>, the command reads the <stache-code>pacts</stache-code> setting and spins up an individual pact server for each provider service that you specify.
   </p>
   <p>
     For each service provider that you need to configure settings for, you can include the following properties: 
@@ -54,25 +54,37 @@ showTableOfContents="true">
     </li>
     <li>
       <p>
+        To specify a directory for the pact file that the pact server generates to describe the behaviors that the consumer expects from the provider service, add the <stache-code>log</stache-code> setting. By default, the pact server stores the JSON file in the <stache-code>app/pacts</stache-code> directory.
+      </p>
+      <stache-code-block>
+        {
+          "pacts": [
+            {
+              "consumer": "{consumer}",
+              "provider": "{provider}",
+              "host": "{host}",
+              "port": "{port}",
+              "dir": "{directory}",
+            }
+          ]
+        }
+        </stache-code-block>
+    <li>
+      <p>
         Configure the log file as necessary:
       </p>
       <ul>
         <li>
           <p>
-            To specify a name for the log file, add the <stache-code>log</stache-code> setting. By default, the name is <stache-code>pact-&#123;provider}.log</stache-code>.
-          </p>
+            To specify a location for the log file that includes debug output to help diagnose issues, add the <stache-code>dir</stache-code> setting. By default, the file is placed in the <stache-code>app/pacts</stache-code> directory.</p>
         </li>
         <li>
           <p>
-            To specify a location for the log file, add the <stache-code>dir</stache-code> setting. By default, the file is placed in the <stache-code>app/pacts</stache-code> directory.</p>
+            To specify the log level for the log file, add the <stache-code>logLevel</stache-code> setting. The available values are <stache-code>trace</stache-code>, <stache-code>debug</stache-code>, <stache-code>info</stache-code>, <stache-code>error</stache-code>, <stache-code>fatal</stache-code>, and <stache-code>warn</stache-code>.
         </li>
         <li>
           <p>
-            To specify XXXXXXX for the log file, add the <stache-code>logLevel</stache-code> setting. By default, the XXXXXX is <stache-code>XXXXXXX</stache-code>.</p>
-        </li>
-        <li>
-          <p>
-            To specify XXXXXXX for the log file, add the <stache-code>spec</stache-code> setting. By default, the XXXXX is <stache-code>2</stache-code>.
+            To specify the pact specification version for the log file, add the <stache-code>spec</stache-code> setting. By default, the version is <stache-code>2</stache-code>.
           </p>
         </li>
       </ul>
@@ -84,8 +96,8 @@ showTableOfContents="true">
               "provider": "{provider}",
               "host": "{host}",
               "port": "{port}",
-              "log": "{name}",
               "dir": "{directory}",
+              "log": "{name}",
               "logLevel": "{XXXXXX}",
               "spec": "{XXXXX}"
             }
@@ -94,13 +106,15 @@ showTableOfContents="true">
         </stache-code-block>
     </li>
   </ul>
+  <p>
+    For more information about these configuration settings, see <a routerLink="/learn/reference/configuration">the <stache-code>pacts</stache-code> entry in the configuration reference.</p>
 
   <h3>
     Override the provider URL
   </h3>
 
   <p>
-    After you create an entry for the provider in <a routerLink="/learn/reference/configuration">the <stache-code>skyuxconfig.json</stache-code> file</a>, you need to override the provider URL to be <stache-code>SkyAppConfig.runtime.pactConfig.pactProxyServer/&#123;provider}</stache-code>. A proxy redirects this URL to the proper pact server. To fufill CORS, the proxy server sets the <stache-code>Origin</stache-code> header to the <stache-code>url</stache-code> value that the <stache-code>host</stache-code> property defines in <stache-code>skyuxconfig.json</stache-code>. The <stache-code>url</stache-code> setting specifies a base URL to pass information from <stache-code>skyux serve</stache-code> to the SKY UX Host, and the default value is <stache-code>https://host.nxt.blackbaud.com</stache-code>.
+    After you create an entry for the provider in <a routerLink="/learn/reference/configuration">the <stache-code>pacts</stache-code> property</a>, you need to override the provider URL to be <stache-code>SkyAppConfig.runtime.pactConfig.pactProxyServer/&#123;provider}</stache-code> in the configuration file where you set the base URL for the provider API. A proxy redirects this provider URL to the proper pact server. To fufill CORS, the proxy server sets the <stache-code>Origin</stache-code> header to the <stache-code>url</stache-code> value that the <stache-code>host</stache-code> property defines in <stache-code>skyuxconfig.json</stache-code>. This <stache-code>url</stache-code> setting specifies a base URL to pass information from <stache-code>skyux serve</stache-code> to the SKY UX Host, and the default value is <stache-code>https://host.nxt.blackbaud.com</stache-code>.
   </p>
 
   <stache-page-anchor>
@@ -108,7 +122,7 @@ showTableOfContents="true">
   </stache-page-anchor>
 
   <p>
-    After you configure settings for a provider, your next step is to create pact tests to confirm integration between the provider services and your SPA. We recommend creating pact tests for all services that your SPA consumes.
+    After you configure settings for a provider, the next step is to create pact tests to confirm integration between provider services and your SPA. We recommend creating pact tests for all services that your SPA consumes.
   </p>
 
   <ul>
@@ -119,7 +133,7 @@ showTableOfContents="true">
     </li>
     <li>
       <p>
-        Pact tests must include a <stache-code>beforeAll</stache-code> block. Within the <stache-code>beforeAll</stache-code> block, import <stache-code>SkyAppTestModule</stache-code> and provide access to <stache-code>SkyPactService</stache-code>.
+        In the pact test file, create a <stache-code>beforeAll</stache-code> block. Within the <stache-code>beforeAll</stache-code> block, import <stache-code>SkyAppTestModule</stache-code> and provide access to <stache-code>SkyPactService</stache-code>. <stache-code>SkyPactService</stache-code> allows you to interact with the pact server from within a unit test, which allows you to test endpoints without end-to-end tests.
       </p>
       <stache-code-block>
         TestBed.configureTestingModule({
@@ -130,7 +144,7 @@ showTableOfContents="true">
       <p>
         With the <stache-code>beforeAll</stache-code> block in place, you can call <stache-code>skyPactService.addInteraction(&#123;provider-name-here}, &#123;})</stache-code>.</p>
       <p>
-        Similarly for all the other functions, the name of the provider must be passed in as a parameter.
+        Similarly for all other functions, the name of the provider must be passed in as a parameter.
       </p>
     </li>
     <li>
@@ -140,7 +154,7 @@ showTableOfContents="true">
       <ul>
         <li>
           <p>
-            <stache-code>addInteraction</stache-code>
+            <stache-code>addInteraction(provider, interactionObject)</stache-code> — Adds an expected interaction to the server.
           </p>
           <p>
             Call the <stache-code>addInteraction</stache-code> method with an input similar to this:
@@ -168,17 +182,17 @@ showTableOfContents="true">
         </li>
         <li>
           <p>
-            <stache-code>removeInteractions</stache-code>
+            <stache-code>removeInteractions(provider)</stache-code> — Removes all interactions from server. This is useful to start a new test file in a suite of tests to make sure no clash between occurs expected interactions.
           </p>
         </li>
         <li>
           <p>
-            <stache-code>finalize</stache-code>
+            <stache-code>finalize(provider)</stache-code> — Ends pact test run and outputs interactions that have been met to the <stache-code>&#123;consumer}-&#123;provider}.json</stache-code> file.
           </p>
         </li>
         <li>
           <p>
-            <stache-code>verify</stache-code>
+            <stache-code>verify(provider)</stache-code> — Verifies that all interactions are specified. Call this once per test to ensure that your expectations were correct.
           </p>
         </li>
       </ul>
@@ -190,13 +204,10 @@ showTableOfContents="true">
   </stache-page-anchor>
 
   <p>
-    After you create your pact tests, your next step is to use the SKY UX CLI to run the tests and confirm integration between the provider services and your SPA. you can use the <stache-code>skyux pact</stache-code> command to run your pact tests.
+    After you create your pact tests, the next step is to run the tests from the SKY UX CLI to confirm integration between provider services and your SPA. From the command prompt, navigate to your SPA's directory and run <a routerLink="/learn/reference/cli-commands/pact">the <stache-code>skyux pact</stache-code> command</a>.
   </p>
   <p>
-    From the command prompt, navigate to your SPA's directory and run <a routerLink="/learn/reference/cli-commands/pact">the <stache-code>skyux pact</stache-code> command</a>.
-  </p>
-  <p>
-    SKY UX automatically configures Karma to run all pact tests in the <stache-code>src/app</stache-code> folder that match the <stache-code>.pact-spec.ts</stache-code> pattern. The <stache-code>pact</stache-code> command spins up a pact server for each test and also spins up a pact server for the proxy server. The proxy server takes requests from the browser that runs in the host and port specified in your configuration settings, and it changes the CORS headers to the <stache-code>host</stache-code> property's <stache-code>url</stache-code> value in <stache-code>skyuxconfig.json</stache-code>, which defaults to <stache-code>https://host.nxt.blackbaud.com</stache-code>. 
+    SKY UX automatically configures Karma to run all pact tests in the <stache-code>src/app</stache-code> folder that match the <stache-code>.pact-spec.ts</stache-code> pattern. The <stache-code>pact</stache-code> command spins up an individual pact server for each provider, as well as one for the proxy server. The proxy server takes requests from the browser that runs in the host and port specified in your configuration settings, and it changes the CORS headers to the <stache-code>url</stache-code> value in the <stache-code>host</stache-code> property of <stache-code>skyuxconfig.json</stache-code>, which defaults to <stache-code>https://host.nxt.blackbaud.com</stache-code>. 
   </p>
 
 </stache>
