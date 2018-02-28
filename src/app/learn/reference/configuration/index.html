@@ -163,17 +163,17 @@
     </li>
     <li>
       <p>
-        <stache-code>pacts</stache-code> — Specifies configuration settings for pact testing. Pact is a testing framework that you can use to test a SPA's integration with the services that it consumes. In the <stache-code>pacts</stache-code> option, you create separate entries for each provider to test. Settings are generally the same for each entry except that the <stache-code>provider</stache-code> value is different. When you run <a routerLink="/learn/reference/cli-commands/pact">the <stache-code>skyux pact</stache-code> command</a>, it reads the <stache-code>pacts</stache-code> setting and spins up an individual pact server for each provider service that you specify.
+        <stache-code>pacts</stache-code> — Specifies configuration settings for pact testing. Pact is a testing framework that you can use to test a SPA's integration with the services that it consumes. In the <stache-code>pacts</stache-code> option, you create a separate entry for each provider to test. Settings are generally the same for each entry except for the <stache-code>provider</stache-code>. When you run <a routerLink="/learn/reference/cli-commands/pact">the <stache-code>skyux pact</stache-code> command</a>, it reads the <stache-code>pacts</stache-code> setting and spins up an individual pact server for each provider service that you specify.
       </p>
       <ul>
         <li>
           <p>
-            <stache-code>consumer</stache-code> — Specifies the consumer that calls the provider's API. This is a string value that the developer uses to represent the consumer in the consumer-provider relationship. Blackbaud developers register their consumer with the pact broker at https://host.nxt.blackbaud.com/pact/. This site is for Blackbaud internal use only and is not available to external developers.
+            <stache-code>consumer</stache-code> — Specifies the consumer that calls the provider's API. This is a string value that the developer uses to represent the consumer in the consumer-provider relationship. Blackbaud developers register their consumer with the pact broker at <a href="https://host.nxt.blackbaud.com/pact/">https://host.nxt.blackbaud.com/pact/</a>. This site is for Blackbaud internal use only and is not available to external developers.
           </p>
         </li>
         <li>
           <p>
-            <stache-code>dir</stache-code> — Specifies where to place the log file. By default, the <stache-code>pact</stache-code> command places the log file in the <stache-code>app/pacts</stache-code> directory.
+            <stache-code>dir</stache-code> — Specifies a directory for the log file. By default, the pact server stores the log file in the <stache-code>app/pacts</stache-code> directory.
           </p>
         </li>
         <li>
