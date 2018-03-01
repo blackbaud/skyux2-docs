@@ -163,6 +163,56 @@
     </li>
     <li>
       <p>
+        <stache-code>pacts</stache-code> — Specifies configuration settings for pact testing. Pact is a testing framework that you can use to test a SPA's integration with the services that it consumes. In the <stache-code>pacts</stache-code> option, you create a separate entry for each provider to test. Settings are generally the same for each entry except for the <stache-code>provider</stache-code> setting. When you run <a routerLink="/learn/reference/cli-commands/pact">the <stache-code>skyux pact</stache-code> command</a>, it reads the <stache-code>pacts</stache-code> setting and spins up an individual pact server for each provider service that you specify.
+      </p>
+      <ul>
+        <li>
+          <p>
+            <stache-code>consumer</stache-code> — Specifies the consumer that calls the provider's API. This is a string value that the developer uses to represent the consumer in the consumer-provider relationship. Blackbaud developers register their consumer with the pact broker at <a href="https://host.nxt.blackbaud.com/pact/">https://host.nxt.blackbaud.com/pact/</a>. This internal Blackbaud-only site is not available to external developers.
+          </p>
+        </li>
+        <li>
+          <p>
+            <stache-code>dir</stache-code> — Specifies a directory for the pact file that the pact server generates when <stache-code>skyux pact</stache-code> runs. By default, the pact server stores the JSON file in the <stache-code>app/pacts</stache-code> directory. The file includes an array of request/response pairs called interactions to describe the behaviors that the consumer expects from the provider service. The file name follows the format of <stache-code>&#123;consumer}-&#123;provider}.json</stache-code>, where <stache-code>&#123;consumer}</stache-code> is the name of the consumer and <stache-code>&#123;provider}</stache-code> is the name of the provider. The pact file needs to be uploaded to the pact broker, which for Blackbaud developers is at <a href="https://host.nxt.blackbaud.com/pact/">https://host.nxt.blackbaud.com/pact/</a>. This internal Blackbaud-only site is not available to external developers.
+          </p>
+        </li>
+        <li>
+          <p>
+            <stache-code>host</stache-code> — Specifies a host for the pact server. By default, the host is <stache-code>localhost</stache-code>. The other valid value for this setting is the base URL to communicate with SKY UX Host, which you specify in the <stache-code>url</stache-code> setting of the <stache-code>host</stache-code> property in <stache-code>skyuxconfig.json</stache-code>. (The <stache-code>url</stache-code> setting defaults to <stache-code>https://host.nxt.blackbaud.com</stache-code>.) The <stache-code>skyux pact</stache-code> command uses the <stache-code>pacts</stache-code> property's <stache-code>host</stache-code> value for CORS to ensure that mocked requests work like normal requests. The proxy server sets the <stache-code>Origin</stache-code> header on the request to the <stache-code>host</stache-code> value. 
+          </p>
+        </li>
+        <li>
+          <p>
+            <stache-code>log</stache-code> — Specifies a directory for the log file that the pact server generates when <stache-code>skyux pact</stache-code> runs. By default, the pact server stores the log file in a <stache-code>logs</stache-code> folder in the root directory. The log file includes debug output to help diagnose issues. The file name follows the format of <stache-code>pact-&#123;provider}.log</stache-code>, where <stache-code>&#123;provider}</stache-code> is the name of the provider.
+          </p>
+        </li>
+        <li>
+          <p>
+            <stache-code>logLevel</stache-code> — Specifies the log level for the log file. The available values are <stache-code>trace</stache-code>, <stache-code>debug</stache-code>, <stache-code>info</stache-code>, <stache-code>error</stache-code>, <stache-code>fatal</stache-code>, and <stache-code>warn</stache-code>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <stache-code>port</stache-code> — Specifies a port to use for pact testing. By default, SKY UX Builder dynamically finds the next available port.
+          </p>
+        </li>
+        <li>
+          <p>
+            <stache-code>provider</stache-code> — Specifies the provider of a service that exposes an API to the consumer. This is a string value that the developer uses to represent the provider in the consumer-provider relationship. Blackbaud developers register the provider with the pact broker at <a href="https://host.nxt.blackbaud.com/pact/">https://host.nxt.blackbaud.com/pact/</a>. This internal Blackbaud-only site is not available to external developers.
+          </p>
+        </li>
+        <li>
+          <p>
+            <stache-code>spec</stache-code> — Specifies the pact specification version for the log file. By default, the version is <stache-code>2</stache-code>.
+          </p>
+        </li>
+      </ul>
+      <p>
+        For information about how to run pact tests with the SKY UX CLI, see <a routerLink="/learn/reference/cli-commands/pact">the <stache-code>skyux pact</stache-code> command</a>. And for more information on configuration settings and guidance on how to write pact tests, see <a routerLink="/learn/get-started/advanced/pact-tests">the pact testing tutorial</a>.
+      </p>
+    </li>
+    <li>
+      <p>
         <stache-code>params</stache-code> — Specifies a list of parameters that are allowed at runtime. You can list parameters as an array of strings, specify parameters as key-value pairs with boolean values that indicate whether the parameters are allowed, or specify parameters as objects to provide default values for the parameters.
       </p>
       <p>
