@@ -61,11 +61,13 @@ export class SkyDemoPageComponent implements OnInit, AfterContentInit {
       });
     });
 
-    this.tableOfContentsRoutes.push({
-      name: 'Code',
-      fragment: 'code',
-      path: ''
-    });
+    if (this.contentComponents.length) {
+      this.tableOfContentsRoutes.push({
+        name: 'Code',
+        fragment: 'code',
+        path: ''
+      });
+    }
 
     this.contentComponents.map((component: any) => {
       this.tableOfContentsRoutes.push({

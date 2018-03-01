@@ -88,6 +88,11 @@
     "design/icons": "design/styles/icons",
     "design/motion": "design/styles/motion",
     "design/spacing": "design/styles/spacing",
-    "design/typography": "design/styles/typography"
+    "design/typography": "design/styles/typography",
+    "components/list-filters": "components/list/filters",
+    "components/list-paging": "components/list/paging",
+    "components/list-toolbar": "components/list/toolbar",
+    "components/list-view-checklist": "components/list/checklist",
+    "components/list-view-grid": "components/list/grid"
   }
 }
