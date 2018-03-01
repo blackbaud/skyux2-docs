@@ -54,7 +54,7 @@
     </li>
     <li>
       <p>
-        To specify a directory for the pact file that the pact server generates to describe the behaviors that the consumer expects from the provider service, add the <stache-code>log</stache-code> setting. By default, the pact server stores the JSON file in the <stache-code>app/pacts</stache-code> directory.
+        To specify a directory for the pact file that the pact server generates to describe the behaviors that the consumer expects from the provider service, add the <stache-code>dir</stache-code> setting. By default, the pact server stores the JSON file in the <stache-code>app/pacts</stache-code> directory.
       </p>
       <stache-code-block>
         {
@@ -76,7 +76,7 @@
       <ul>
         <li>
           <p>
-            To specify a location for the log file that includes debug output to help diagnose issues, add the <stache-code>dir</stache-code> setting. By default, the file is placed in the <stache-code>app/pacts</stache-code> directory.</p>
+            To specify a location for the log file that includes debug output to help diagnose issues, add the <stache-code>log</stache-code> setting. By default, the file is placed in the <stache-code>app/logs</stache-code> directory.</p>
         </li>
         <li>
           <p>
@@ -183,7 +183,7 @@
         </li>
         <li>
           <p>
-            <stache-code>removeInteractions(provider)</stache-code> — Removes all interactions from server. This is useful to start a new test file in a suite of tests to make sure no clash between occurs expected interactions.
+            <stache-code>removeInteractions(provider)</stache-code> — Removes all interactions from server. This is useful to start a new test file in a suite of tests to make sure no clash occurs between expected interactions.
           </p>
         </li>
         <li>
