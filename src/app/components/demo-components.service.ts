@@ -373,6 +373,13 @@ export class SkyDemoComponentsService {
         url: '/components/sort',
         getCodeFiles: () => this.getDemoFiles('SkySortDemoComponent')
       },
+			{
+        name: 'Status indicator',
+        icon: 'exclamation-triangle',
+        // tslint:disable-next-line
+        summary: `The status indicator classes provide styled icons to draw attention to important statuses.`,
+        url: '/components/status-indicator'
+      },
       {
         name: 'Tabs',
         icon: 'folder-open-o',
