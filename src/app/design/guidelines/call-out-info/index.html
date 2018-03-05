@@ -14,7 +14,7 @@
   </stache-page-anchor>
 
   <p>
-    To highlight critical information that users absolutely must see, use an <a routerLink="/components/alert">alert</a> component. Depending on the nature of the message, you can specify whether the alert is dismissible. In general, make an alert dismissible if users only need to see it once, although you might want to include a way for users to reopen it. Meanwhile, do not make an alert dismissible if it is important for users see every time or if it is triggered by underlying data.
+    To highlight critical information that users absolutely must see when visiting a page, use an <a routerLink="/components/alert">alert</a> component. Depending on the nature of the message, you can specify whether the alert is dismissible. In general, make an alert dismissible if users only need to see it once, although you might want to include a way for users to reopen it. Meanwhile, do not make an alert dismissible if it is important for users see every time or if it is triggered by underlying data.
   </p>
 
   <stache-page-anchor>
@@ -28,10 +28,23 @@
   <stache-page-anchor>
     Status
   </stache-page-anchor>
-
-  <p>
-    To communicate the status of a record when it is important enough to highlight, use a <a routerLink="/components/label">label</a> component. The bold styling catches the eye without distracting users. In general, labels communicate binary information or values from a small, system-defined list. You should only use labels for information that is important enough to warrant the bold treatment. If you use too many labels, they become distracting and lose their ability to grab user attention.
-  </p>
+	
+	<p>
+		A status is "a state or condition at a particular time". Statuses fall into four categories: success, warning, danger, and info. Examples include late, submitted, awaiting approval, etc.
+	</p>
+		
+	<div class="sky-subsection-heading">Status importance</div>
+		<p>Some statuses are crucial to a user's task, while others are no more important than other information on the page or page area. If they are crucial to a user's task you should call attention to them using a label or a status indicator. If they are ancillary, treat them as regular text. It's better to err on the side of using fewer labels and status indicators; if you use too many they become distracting and lose their ability to grab the user's attention.</p>
+		<p>Just because one status in an area is crucial, does not mean they all are. For example, a list of invoices could show a mix of paid, unpaid and overdue invoices. It's likely that in that case only the overdue invoices would need a status indicator if they are the only invoices that need immediate attention and action.</p>
+			
+	<div class="sky-subsection-heading">Placement</div>
+		<ul>
+			<li>You should use a <a routerLink="/components/label">label</a> in a summary context. For example, you can place a label in a page summary.</li> 
+			<li>You should use a <a routerLink="/components/status-indicator">status indicator</a> in an inline context tied to a specific piece of data. For example, you can place an indicator in a grid cell.</li>
+		</ul>
+	
+	<div class="sky-subsection-heading">Status presentation decision tree</div>
+		<div class="screenshot screenshot-info"><img src="~/assets/img/guidelines/calloutinfo/status-decision-tree.png" style="width: 100%;" /></div>
 
   <stache-page-anchor>
     Process updates
