@@ -68,14 +68,17 @@
 			<p>Multi-line alphanumeric inputs, checkboxes and radio buttons should generally be full width.</p>
 
 			<div class="sky-subsection-heading">Subsections</div> 
-			<p>For cases where you want to visually separate a small set of fields (e.g. address fields) from the preceding/following fields you can use 20px of vertical spacing and use the "<a routerLink="/design/styles/typography">sky-subsection-heading</a>" class for the subsection header.</p> 
+				<p>For cases where you want to visually separate a small set of fields (e.g. address fields) from the preceding/following fields you can use 20px of vertical spacing and use the "<a routerLink="/design/styles/typography">sky-subsection-heading</a>" class for the subsection header.</p> 
 
 			<div class="sky-subsection-heading">Tiles</div>
-			<p>If a form collects multiple facets of information and the user needs to fill out all of them, you can use tiles to group the fields of those facets.</p> 
+				<p>If a form collects multiple facets of information and the user needs to fill out all of them, you can use tiles to group the fields of those facets.</p> 
 
 			<div class="sky-subsection-heading">Sub-forms</div> 
-			<p>For cases where you need to use a sub-form (e.g. when adding mulitple instances of a child record), follow the form container guidelines above. It’s acceptable to launch modal forms from within a modal form if alternate workflows are not feasible.</p>
-			<p>When you use a subform it's likely that the data for that subform will not be saved until the underlying form is saved. In those cases the subform submit button should be worded as "Done" instead of "Save" to make it clear to the user that the data is not yet saved.</p>
+				<p>For cases where you need to use a sub-form (e.g. when adding mulitple instances of a child record), follow the form container guidelines above. It’s acceptable to launch modal forms from within a modal form if alternate workflows are not feasible.</p>
+				<p>When you use a subform it's likely that the data for that subform will not be saved until the underlying form is saved. In those cases the subform submit button should be worded as "Done" instead of "Save" to make it clear to the user that the data is not yet saved.</p>
+			
+			<div class="sky-subsection-heading">Conditionally applicable fields</div> 
+				<p>If you have fields that are only applicable if another field meets a certain condition (e.g. if a checkbox is checked) you should display but disable those fields if the condition is not met.</p>
 		</stache-column>
 		<stache-column screenSmall="6">
 			<div class="screenshot screenshot-info"><img src="~/assets/img/guidelines/formdesign/form-layout.png" style="width: 100%;" /></div>
