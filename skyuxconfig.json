@@ -43,6 +43,10 @@
             {
               "title": "Contribute",
               "route": "/contribute"
+            },
+						{
+              "title": "Blog",
+              "route": "/blog"
             }
           ]
         }
