@@ -373,7 +373,7 @@ export class SkyDemoComponentsService {
         url: '/components/sort',
         getCodeFiles: () => this.getDemoFiles('SkySortDemoComponent')
       },
-			{
+      {
         name: 'Status indicator',
         icon: 'exclamation-triangle',
         // tslint:disable-next-line
