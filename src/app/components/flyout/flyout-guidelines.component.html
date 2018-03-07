@@ -2,7 +2,7 @@
   <header><div class="sky-section-heading">Usage</div></header>
   <stache-row>
     <stache-column screenSmall="6">
-			<p>A flyout is a container that lays over the page content to show larger amounts of supplementary information related to the user's task.  The flyout may contain lists, record views, graphs, or bespoke information displays.</p>
+			<p>A flyout is a container that slides out from the side of the page and lays over page content to display large amounts of supplementary information related to user tasks. A flyout can contain lists, record views, graphs, or bespoke information displays.</p>
 		</stache-column>
 		<stache-column screenSmall="6">
 			<div class="screenshot screenshot-info">
@@ -15,7 +15,7 @@
 	
 	<stache-row>
     <stache-column screenSmall="6">
-			<p>Use a flyout when opening records in lists to allow a user to return to the list view after completing a quick task on the record page.</p>
+			<p>Use a flyout to open records in a list so that users can return to the list view after completing quick tasks on the record pages.</p>
 		</stache-column>
 		<stache-column screenSmall="6">
 			<div class="screenshot screenshot-success">
@@ -26,7 +26,7 @@
 	
 	<stache-row>
     <stache-column screenSmall="6">
-			<p>Use a flyout when drilling into an analytical insight to allow a user to quickly glance into what makes up that insight without spawning another workflow.</p>
+			<p>Use a flyout to drill into an analytical insight so that users can quickly glance into what makes up that insight without spawning another workflow.</p>
 		</stache-column>
 		<stache-column screenSmall="6">
 			<div class="screenshot screenshot-success">
@@ -37,7 +37,7 @@
 	
 	<stache-row>
     <stache-column screenSmall="6">
-			<p>Use a flyout when drilling into child records to allow a user to retain the context of the parent record. Since the flyout only covers part of the current page, the user can still refer back to the current page for context.</p>
+			<p>Use a flyout to drill into child records so that users can retain the context of the parent record. The flyout only covers part of the current page, so users can refer back to it for context.</p>
 		</stache-column>
 		<stache-column screenSmall="6">
 			<div class="screenshot screenshot-success">
@@ -50,7 +50,7 @@
 	
 	<stache-row>
     <stache-column screenSmall="6">
-			<p>Do not use the flyout when navigating from one record to another instance of the same record type. For example, if a user is on a constituent record and clicks a link to a different constituent record the system should navigate to the new record instead of opening it in the flyout.</p>
+			<p>Do not use a flyout to navigate from one record to another instance of the same record type. For example, if users on a constituent record select a link to a different constituent record, navigate to the new record. Do not open it in a flyout.</p>
 		</stache-column>
 		<stache-column screenSmall="6">
 			<div class="screenshot screenshot-danger">
@@ -61,7 +61,7 @@
 	
 	<stache-row>
     <stache-column screenSmall="6">
-			<p>Do not use the flyout when navigating from a child page back to the parent page. For example, if a user is on a gift record and clicks on the link to return to the constituent record the system should navigate to a full page view of the constituent record instead of opening it in the flyout.</p>
+			<p>Do not use a flyout to navigate from a child page to its parent page. For example, if users on a gift record select a link to return to a constituent record, navigate to a full-page view of the constituent record. Do not open it in a flyout.</p>
 		</stache-column>
 		<stache-column screenSmall="6">
 			<div class="screenshot screenshot-danger">
@@ -72,7 +72,7 @@
 	
 	<stache-row>
     <stache-column screenSmall="6">
-			<p>Do not use another flyout when there is already a flyout open. Instead, if a user clicks on a link in the flyout the panel will close and the page will navigate to the new link location. In other words, the flyout is limited to a single drill in and any further drilling will open in a full page.</p>
+			<p>Do not use a flyout when another flyout is already open. If users select a link in a flyout, close the flyout and navigate to the new link location. In other words, limit flyouts to a single drill-in. On further drilling, open a full page.</p>
 		</stache-column>
 		<stache-column screenSmall="6">
 			<div class="screenshot screenshot-danger">
@@ -83,7 +83,7 @@
 	
 	<stache-row>
     <stache-column screenSmall="6">
-			<p>Do not use the flyout on pages that don't make sense without the panel open. For example, when entering grades for your class of students, just showing the names of the students in your class doesn't provide any value without having the grade entry form open as well.</p>
+			<p>Do not use a flyout on pages that don't make sense when it closes. For example, on a page to enter grades for a class of students, displaying the names of students doesn't provide value without the grade entry form, so don't use a flyout to display the grade entry form.</p>
 		</stache-column>
 		<stache-column screenSmall="6">
 			<div class="screenshot screenshot-danger">
@@ -94,7 +94,7 @@
 	
 	<stache-row>
     <stache-column screenSmall="6">
-			<p>The flyout works best when displaying large amounts of supplementary information. In cases where there is a small amount of additional information to display, consider using a <a routerLink="popover">popover</a> or an expandable <a routerLink="repeater">repeater</a> instead of a flyout.</p>
+			<p>Do not use a flyout to display a small amount of additional information. Flyouts are for large amounts of supplementary information. To display smaller amounts of information, use <a routerLink="../popover">a popover component</a> or <a routerLink="../repeater">an expandable repeater</a>.</p>
 		</stache-column>
 		<stache-column screenSmall="6">
 			<div class="screenshot screenshot-danger">
@@ -105,7 +105,7 @@
 	
 	<stache-row>
     <stache-column screenSmall="6">
-			<p>Do not use the flyout to display items that need a considerable amount of time to load, such as a system generated report. Instead, allow the user to continue using the system while the information is generated, and use an alert to let the user know that the content is available.</p>
+			<p>Do not use a flyout to display items that need a long time to load such as system-generated reports. Instead, let users continue to use the system, and use <a routerLink="../alert">an alert component</a> to let them know when the content is available.</p>
 		</stache-column>
 		<stache-column screenSmall="6">
 			<div class="screenshot screenshot-danger">
@@ -116,7 +116,7 @@
 	
 	<stache-row>
     <stache-column screenSmall="6">
-			<p>Do not use the flyout to link to external sites. Instead, open the external site in a new tab.  For example, when clicking on a constituent's address, the Google map of that address will open in a new tab.</p>
+			<p>Do not use a flyout to link to external sites. Open external sites in new tabs. For example, when users select a constituent address, a Google map of that address opens in a new tab.</p>
 		</stache-column>
 		<stache-column screenSmall="6">
 			<div class="screenshot screenshot-danger">
@@ -127,7 +127,7 @@
 	
 	<stache-row>
     <stache-column screenSmall="6">
-			<p>Do not use the flyout for tasks where the user will always need to see the full screen view of the details, such as the expanded view of a tile. In these cases, the system should navigate to a full page instead.</p>
+			<p>Do not use a flyout for tasks where users always need a full-screen view of details, such as expanded views of tiles. Navigate to a full page instead.</p>
 		</stache-column>
 		<stache-column screenSmall="6">
 			<div class="screenshot screenshot-danger">
@@ -137,9 +137,10 @@
 	</stache-row>
 	
 	<header><div class="sky-section-heading">Interactions</div></header>
+		<p class="sky-text-warning">This section describes the intended behavior of the flyout component. However, the component remains in development and some of the behaviors described in this section are not yet implemented.</p>
 		<div class="sky-subsection-heading">Background page remains active</div>
-			<p>The background page is active behind the panel. Clicking on a link for another record in the background page will update the panel to load the new record. This is different than clicking on a link inside the flyout which will navigate away from the current page.</p>
-			<p>Clicking on a non-interactive element on the background page should close the flyout. On touch devices, touching a non-interactive element on the background page should not close the flyout, since the user will need to touch the background page in order to scroll.</p>
+			<p>The background page remains active behind a flyout. When users select a link on the background page to open another record in a list, the flyout loads the new record. When users select a link inside the flyout, the system navigates away from the current page.</p>
+			<p>When users select a non-interactive element on the background page, the flyout closes. However, when users select a non-interactive element on the background page on touch devices, the flyout does not close because users need to be able touch the background page in order to scroll.</p>
 			<stache-row>
     		<stache-column screenMedium="4">
 					<div class="screenshot screenshot-info">
@@ -159,7 +160,7 @@
 			</stache-row>
 
 		<div class="sky-subsection-heading">Independent scrolling</div>
-			<p>The panel and the page scroll independently without clicking. If a user touches, hovers, or focuses on the background page when scrolling, only the background content  will scroll. Similarly, if a user touches, hovers, or focuses on the flyout when scrolling, only the flyout will scroll. This allows the user to get to the content they want in the panel without losing any context of the page they are on.</p>
+			<p>The flyout and its background page scroll independently. When users touch, hover, or focus on the background page, only the background content scrolls. Similarly, when users touch, hover, or focus on the flyout, only the flyout scrolls. This allows users to adjust the content in the flyout without losing context from the page.</p>
 			<stache-row>
     		<stache-column screenMedium="4">
 					<div class="screenshot screenshot-info">
@@ -179,7 +180,7 @@
 			</stache-row>
 
 		<div class="sky-subsection-heading">Drag to resize</div>
-			<p>The flyout has a left border which can be clicked and dragged to expand the size of the panel. The panel can be resized anywhere between 320px and the full screen size. When the panel is dragged to the full size of the screen, it will automatically slide back 20px to the right so that a portion of the original page is still in view. The default size of the panel is 50% of the screen (or 320px, whichever is larger). A user can resize the panel, and the system will remember their new preferred size globally.</p>
+			<p>Users can select the flyout's left border and drag it to adjust the size. The size can range from 320px to 20px less than the full screen size. If users expand the flyout to the full screen size, it slides 20px to the right to keep a portion of the background page in view. The default size is 50 percent of the screen or 320px, whichever is larger. When users resize the panel, the system remembers their preferred size globally.</p>
 			<stache-row>
     		<stache-column screenMedium="4">
 					<div class="screenshot screenshot-info">
@@ -199,7 +200,7 @@
 			</stache-row>
 
 		<div class="sky-subsection-heading">Help panel</div>
-			<p>The flyout covers the omnibar, but the help remains visible in the upper right corner of the screen. The help topic should understand that the flyout is open and provide appropriate guidance based on the context.</p>
+			<p>The flyout covers the omnibar, but the help panel remains visible in the upper right corner of the screen. The help panel should recognize that the flyout is open and provide appropriate guidance based on the context.</p>
 			<stache-row>
     		<stache-column screenSmall="6">
 					<div class="screenshot screenshot-info">
@@ -216,7 +217,7 @@
 		<div class="sky-subsection-heading">Modal dialog behavior</div>
 			<stache-row>
 				<stache-column screenSmall="6">
-					<p>When a user takes an action in the flyout that launches a modal dialog, the modal dialog should cover the entire page.</p>
+					<p>When users perform actions in the flyout to launch modal dialogs, the modal dialogs should cover the entire page.</p>
 				</stache-column>
 				<stache-column screenSmall="6">
 					<div class="screenshot screenshot-info">
@@ -224,13 +225,13 @@
 					</div>
 				</stache-column>
 			</stache-row>
-	
+
 	<header><div class="sky-section-heading">Options</div></header>
-	
-		<div class="sky-subsection-heading">Next/previous row buttons</div>
+		<p class="sky-text-warning">This section describes future options for the flyout component. The component remains in development and the options described in this section are not yet available.</p>
+		<div class="sky-subsection-heading">Next/previous buttons</div>
 			<stache-row>
 				<stache-column screenSmall="6">
-					<p>When the flyout is used in a list to view records, there are buttons in the panel toolbar to go to the next record or the previous record. Clicking on the next button will open the record in the next row that shares a type with the list. For example, in a gifts list, if a user has the flyout open on the constituent record for the first gift in the list, clicking on the next button will open the gift record of the second row in the list. When the next/previous option is turned on, there is a visual indicator on the row in the list to show which row is currently selected.</p>
+					<p>When a flyout opens records in a list, you can include buttons in the toolbar to open the next record or previous record. For example, if users open a flyout on a constituent record to view the first gift in a list of gifts, the next button opens the second gift in the list. When you include the next and previous buttons in the flyout toolbar, a visual indicator highlights the currently selected row on the page.</p>
 				</stache-column>
 				<stache-column screenSmall="6">
 					<div class="screenshot screenshot-info">
@@ -242,7 +243,7 @@
 		<div class="sky-subsection-heading">List toolbar</div>
 			<stache-row>
 				<stache-column screenSmall="6">
-					<p>When viewing a list in the flyout, the toolbar should give users the option to leave the "preview" list and create a new list for further manipulation. Clicking on the create list button will navigate to a new page containing the new list.</p>
+					<p>When a flyout displays a list, you can include an option in the toolbar to leave the "preview" list and create a new list for further manipulation. The create list button navigates to a new page that contains the new list.</p>
 				</stache-column>
 				<stache-column screenSmall="6">
 					<div class="screenshot screenshot-info">
@@ -255,7 +256,7 @@
 		<div class="sky-subsection-heading">Mobile behavior</div>
 			<stache-row>
     		<stache-column screenSmall="6">
-					<p>The flyout should only be used when the screen is larger than 480px because it covers too much of the screen at smaller resolutions, thus losing much of its value.  For smaller screen sizes, the system should navigate directly to the appropriate record or list.</p>
+					<p>Do not use a flyout when a screen is smaller than 480px. At smaller resolutions, the flyout covers too much of the screen and loses much of its value. For smaller screen sizes, navigate directly to the appropriate record or list.</p>
 				</stache-column>
 				<stache-column screenSmall="6">
 					<div class="screenshot screenshot-info">
