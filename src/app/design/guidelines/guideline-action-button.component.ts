@@ -32,7 +32,7 @@ export class GuidelineActionButtonsComponent {
       path: '/design/guidelines/error-handling',
       icon: 'warning',
       // tslint:disable-next-line
-      summary: 'Error handling patterns provide guidance on how to present error messages in various contexts.'
+      summary: 'Error handling patterns provide guidance on how to present error messages.'
     },
     {
       name: 'Filter lists',
@@ -46,7 +46,7 @@ export class GuidelineActionButtonsComponent {
       path: '/design/guidelines/form-design',
       icon: 'clone',
       // tslint:disable-next-line
-      summary: 'Form design patterns to accommodate different scenarios and workflow requirements.'
+      summary: 'Form design patterns accommodate different scenarios and workflows.'
     },
     {
       name: 'Manage records',
@@ -60,7 +60,7 @@ export class GuidelineActionButtonsComponent {
       path: '/design/guidelines/page-layouts',
       icon: 'columns',
       // tslint:disable-next-line
-      summary: 'Responsive, mobile-first page layouts provide flexibility while conforming to SKY UX standards.'
+      summary: 'Responsive, mobile-first layouts provide flexibility and conform to SKY UX standards.'
     },
     {
       name: 'User assistance',
