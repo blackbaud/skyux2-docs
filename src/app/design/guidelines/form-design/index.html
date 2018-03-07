@@ -271,56 +271,25 @@
 		To provide a consistent experience when users when select items from lists, follow these guidelines to determine which controls to use.
 	</p>
 	
-	<div class="sky-subsection-heading">
-		Radio buttons
-	</div>
-	<p>
-		Use <a routerLink="/components/radio">radio buttons</a> when you have 2-5 options and users can only select one value.
-	</p>
-	
-	<div class="sky-subsection-heading">
-		HTML &lt;select&gt; field
-	</div>
-	<p>
-		Use an HTML <stache-code>&lt;select&gt;</stache-code> field when you have 6-20 values and users don't need to search for items.
-	</p>
-	
-	<div class="sky-subsection-heading">
-		Checkboxes
-	</div>
-	<p>
-		Use <a routerLink="/components/checkbox">checkboxes</a> when you have 2-5 values and users can select multiple values.
-	</p>
-	
-	<div class="sky-subsection-heading">
-		SKY UX Select Field
-	</div>
-	<p>
-		Use a <a href="https://github.com/blackbaud/skyux2/issues/155">SKY UX select field</a> (component not developed yet) when:
-	</p>
-	<ul>
-		<li>
-			<p>
-				You have user-defined values that can accumulate and become too cumbersome for the other controls.
-			</p>
-		</li>
-		<li>
-			<p>
-				You have more than 5 values and users can select multiple values.
-			</p>
-		</li>
-		<li>
-			<p>
-				You have more than 20 values and users can only select one value.
-			</p>
-		</li>
-		<li>
-			<p>
-				You need to display items with titles and descriptions.
-			</p>
-		</li>
-	</ul>
-	
+	<stache-row>
+		<stache-column screenMedium="2">
+			<div class="sky-subsection-heading">Item selection components</div>
+			<ul>
+				<li><a routerLink="/components/autocomplete">Autocomplete</a></li>
+				<li><a routerLink="/components/checkbox">Checkbox</a></li>
+				<li>HTML <stache-code>&lt;select&gt;</stache-code> field</li>
+				<li>Lookup (component is not yet developed)</li>
+				<li><a routerLink="/components/radio">Radio button</a></li>
+				<li>SkyUX Select field (component is not yet developed)</li>
+			</ul>
+		</stache-column>
+		<stache-column screenMedium="10">
+			<div class="screenshot screenshot-info" style="min-width: 700px;">
+				<img src="~/assets/img/guidelines/formdesign/select-items-decision-tree.png" style="width: 100%;" />
+			</div>
+		</stache-column>
+	</stache-row>
+		
 	<stache-page-anchor>
 		Validation and error handling
 	</stache-page-anchor>	
