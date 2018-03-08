@@ -1,12 +1,11 @@
 <stache
   pageTitle="Status indicator"
   windowTitle="Status indicator"
-  layout="container"
-	showTableOfContents="true">
+  layout="container">
 
-<p>
-	The status indicator classes create styled text to draw attention to data that needs to be addressed. A status is "a state or condition at a particular time". Statuses fall into four categories: success, warning, danger, and info. Examples include late, submitted, awaiting approval, etc.
-</p>
+<sky-demo-page-summary>
+	The status indicator classes provide icons to draw attention to status information that users need to address. Statuses indicate a state or condition at a particular time and fall into four categories: info, success, warning, and danger. For example, a status can indicate that a submission is late, submitted, or awaiting approval.
+</sky-demo-page-summary>
 
 <stache-page-anchor>
 	Status indicator classes
@@ -19,11 +18,11 @@
     <div class="definition-props">
       <div class="definition-usage">
         <div class="sky-field-label">Usage</div>
-        <div>This class prepends a blue info icon to provide a compact way to indicate a "info" status.</div>
+        <div>This class prepends a blue info icon to provide a compact way to indicate an "info" status.</div>
       </div>
       <div class="definition-code">
         <div class="sky-field-label">Code</div>
-        <stache-code>&lt;div class=&quot;sky-text-info&quot;&gt;Field label&lt;/div&gt;</stache-code>
+        <stache-code>&lt;div class=&quot;sky-text-info&quot;&gt;Info&lt;/div&gt;</stache-code>
       </div>
       <div class="definition-styling">
         <div class="sky-field-label">Styling</div>
@@ -43,7 +42,7 @@
       </div>
       <div class="definition-code">
         <div class="sky-field-label">Code</div>
-        <stache-code>&lt;div class=&quot;sky-text-success&quot;&gt;Field label&lt;/div&gt;</stache-code>
+        <stache-code>&lt;div class=&quot;sky-text-success&quot;&gt;Success&lt;/div&gt;</stache-code>
       </div>
       <div class="definition-styling">
         <div class="sky-field-label">Styling</div>
@@ -63,7 +62,7 @@
       </div>
       <div class="definition-code">
         <div class="sky-field-label">Code</div>
-        <stache-code>&lt;div class=&quot;sky-text-warning&quot;&gt;Field label&lt;/div&gt;</stache-code>
+        <stache-code>&lt;div class=&quot;sky-text-warning&quot;&gt;Warning&lt;/div&gt;</stache-code>
       </div>
       <div class="definition-styling">
         <div class="sky-field-label">Styling</div>
@@ -83,7 +82,7 @@
       </div>
       <div class="definition-code">
         <div class="sky-field-label">Code</div>
-        <stache-code>&lt;div class=&quot;sky-text-danger&quot;&gt;Field label&lt;/div&gt;</stache-code>
+        <stache-code>&lt;div class=&quot;sky-text-danger&quot;&gt;Danger&lt;/div&gt;</stache-code>
       </div>
       <div class="definition-styling">
         <div class="sky-field-label">Styling</div>
@@ -97,11 +96,11 @@
 </stache-page-anchor>
 	
 	<div class="sky-subsection-heading">Status importance</div>
-		<p>Some statuses are crucial to a user's task, while others are no more important than other information on the page or page area. If they are crucial to a user's task you should use a status indicator. If they are ancillary, treat them as regular text.</p>
-		<p>Just because one status in an area is crucial, does not mean they all are. For example, a list of invoices could show a mix of paid, unpaid and overdue invoices. It's likely that in that case only the overdue invoices would need a status indicator if they are the only invoices that need immediate attention and action.</p>
+		<p>Some statuses are crucial to user tasks, while others are no more important than other information on a page. If statuses are crucial to user tasks, use status indicators. If not, use regular text.</p>
+		<p>If one status in an area is crucial, that does not mean all statuses are. For example, in a list of invoices with a mix of paid, unpaid, and overdue invoices, it's likely that only overdue invoices require status indicators because they are the only items that require immediate attention.</p>
 			
 	<div class="sky-subsection-heading">Status indicator placement</div>
-		<p>Status indicators should be used in an inline context tied to a specific piece of data, rather than in a summary area. For example, an indicator can be placed in a grid cell or card. If you need to convey a higher-level status in a summary area, use a <a routerLink="label">label</a> instead.</p>
+		<p>Use status indicators inline to indicate that they are tied to specific pieces of data. Don't use them in summary areas. For example, you can place status indicators in grid cells or cards. To convey higher-level statuses in summary areas, use <a routerLink="../label">labels</a> instead.</p>
 	
 	<div class="sky-subsection-heading">Related guidelines</div>
 		<ul>

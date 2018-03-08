@@ -377,7 +377,7 @@ export class SkyDemoComponentsService {
         name: 'Status indicator',
         icon: 'exclamation-triangle',
         // tslint:disable-next-line
-        summary: `The status indicator classes provide styled icons to draw attention to important statuses.`,
+        summary: `The status indicator classes provide icons to draw attention to status information.`,
         url: '/components/status-indicator'
       },
       {
