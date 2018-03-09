@@ -267,28 +267,23 @@
 	<stache-page-anchor>
 		Selection inputs
 	</stache-page-anchor>
+	<p>There are several different approaches you can take when having a user pick an item from a list of items.</p>	
+	<ul>
+		<li>The <a routerLink="/components/autocomplete">autocomplete</a> component provides a typeahead search input, effective when the user knows what they are looking for and can select a single item.</li>
+		<li><a routerLink="/components/checkbox">Checkboxes</a> are effective when the user can select multiple items from a short list of items.</li>
+		<li>HTML <stache-code>&lt;select&gt;</stache-code> fields are effective when the user is not sure of the exact value they are looking for and can select a single item from a moderately-sized list of items.</li>
+		<li>The lookup component (<a href="https://github.com/blackbaud/skyux2/pull/1495">component is being developed</a>) provides a typeahead search input, effective when the user knows what they are looking for and can select multiple items.</li>
+		<li><a routerLink="/components/radio">Radio buttons</a> are effective when the user can select a single item from a short list of items.</li>
+		<li>The SKY UX select field (<a href="https://github.com/blackbaud/skyux2/pull/1496">component is being developed</a>) provides a searchable, browsable and filterable list of items, effective when a user is not sure of the exact value they are looking for within a long list of items.</li>
+	</ul>
 	<p>
-		To provide a consistent experience when users when select items from lists, follow these guidelines to determine which controls to use.
+		To provide a consistent experience when users when select items from lists, follow these guidelines to determine which controls to use:
 	</p>
 	
-	<stache-row>
-		<stache-column screenMedium="2">
-			<div class="sky-subsection-heading">Item selection components</div>
-			<ul>
-				<li><a routerLink="/components/autocomplete">Autocomplete</a></li>
-				<li><a routerLink="/components/checkbox">Checkbox</a></li>
-				<li>HTML <stache-code>&lt;select&gt;</stache-code> field</li>
-				<li>Lookup (component is not yet developed)</li>
-				<li><a routerLink="/components/radio">Radio button</a></li>
-				<li>SkyUX Select field (component is not yet developed)</li>
-			</ul>
-		</stache-column>
-		<stache-column screenMedium="10">
-			<div class="screenshot screenshot-info" style="min-width: 700px;">
-				<img src="~/assets/img/guidelines/formdesign/select-items-decision-tree.png" style="width: 100%;" />
-			</div>
-		</stache-column>
-	</stache-row>
+	<div class="screenshot screenshot-info">
+		<img src="~/assets/img/guidelines/formdesign/select-items-decision-tree.png" style="width: 100%;" />
+	</div>
+
 		
 	<stache-page-anchor>
 		Validation and error handling
