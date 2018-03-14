@@ -28,6 +28,13 @@ export class GuidelineActionButtonsComponent {
       summary: 'Describes the contexts in which to use different types of content containers.'
     },
     {
+      name: 'Error handling',
+      path: '/design/guidelines/error-handling',
+      icon: 'warning',
+      // tslint:disable-next-line
+      summary: 'Error handling patterns provide guidance on how to present error messages.'
+    },
+    {
       name: 'Filter lists',
       path: '/design/guidelines/filtering-lists',
       icon: 'filter',
@@ -35,11 +42,11 @@ export class GuidelineActionButtonsComponent {
       summary: 'Filter patterns provide guidance on how to display filter options in various scenarios.'
     },
     {
-      name: 'Form containers',
-      path: '/design/guidelines/form-containers',
+      name: 'Form design',
+      path: '/design/guidelines/form-design',
       icon: 'clone',
       // tslint:disable-next-line
-      summary: 'Form container patterns determine the type of form to use to meet different workflow requirements.'
+      summary: 'Form design patterns accommodate different scenarios and workflows.'
     },
     {
       name: 'Manage records',
@@ -53,14 +60,7 @@ export class GuidelineActionButtonsComponent {
       path: '/design/guidelines/page-layouts',
       icon: 'columns',
       // tslint:disable-next-line
-      summary: 'Responsive, mobile-first page layouts provide flexibility while conforming to SKY UX standards.'
-    },
-    {
-      name: 'Select items from lists',
-      path: '/design/guidelines/select-items',
-      icon: 'list',
-      // tslint:disable-next-line
-      summary: 'A variety of controls are available to present lists and allow users to select list items.'
+      summary: 'Responsive, mobile-first layouts provide flexibility and conform to SKY UX standards.'
     },
     {
       name: 'User assistance',
