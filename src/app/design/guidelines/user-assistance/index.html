@@ -3,34 +3,76 @@
   pageTitle="User assistance"
   showTableOfContents="true">
 
-  <stache-page-anchor>
-    Persistent inline help
+	<stache-page-anchor>
+  	Page- and modal-level help
   </stache-page-anchor>
 
   <p>
-    Sometimes a small amount of persistent inline explanatory text can help users understand tasks. For example, persistent inline help is very useful for tasks that are complex and infrequently performed. It is also helpful for tasks where user actions have far-reaching consequences that are not obvious.
-  </p>
-  <p>
-    However, the scenarios that require persistent inline help text are fairly rare. For example, persistent inline help text is not appropriate for frequently performed tasks because the value diminishes over time even though the text continues to take up screen space.
-  </p>
-  <p>
-    You should limit persistent inline help to one or two sentences because blocks of persistent text can clutter pages and because users almost always ignore large blocks of text. To minimize visual clutter, you should use the "<a routerLink="/design/styles/typography">sky-deemphasized</a>" class to reduce the weight of persistent inline text.
-  </p>
+    When users perform complex tasks, they may require comprehensive documentation for the entire task instead of inline help for individual components of the task. Users should invoke it at the page or modal level, depending on the context. In Blackbaud products, users can invoke the help service from the omnibar or a <a routerLink="/components/modal">modal</a> header bar.
+  </p>  
 
   <stache-page-anchor>
     Invoked inline help
   </stache-page-anchor>
-
-  <p>
-    For scenarios where inline help text should not be persistent, you can give users the ability to invoke it. For example, in scenarios where explanatory text is useful when users first perform tasks but the ramifications of mistakes are small, you can provide a <a routerLink="/components/help-inline">help button</a> to invoke explanatory help text. Depending on the complexity of the help text, you can display it in a <a routerLink="/components/popover">popover</a> or the help panel. Invoked inline help text allows users to access to the help text as necessary but avoids most of the visual clutter from persistent inline help.
-  </p>
-
+	<stache-row>
+		<stache-column screenSmall="6">
+			<div class="sky-subsection-heading">Usage</div>
+			<p>
+				Invoked inline help gives users access to help content when needed while avoiding most of the visual noise that comes with persistent inline help text. It's appropriate to use in cases where the user may need initial assistance but:
+			</p>
+			<ul>
+				<li>The task is frequently performed.</li>
+				<li>Ramifications of mistakes are small.</li>
+			</ul>
+			<p>
+				Use a <a routerLink="/components/help-inline">help button</a> to invoke the help content.
+			</p>
+			<p>
+				Depending on the complexity of the help content, you can display it in a <a routerLink="/components/popover">popover</a> or the help panel.
+			</p>
+			<div class="sky-subsection-heading">Layout</div>
+			<p>Place the help button to the right of the label of the element the help content supports.</p>
+		</stache-column>
+		<stache-column screenSmall="6">
+			<div class="screenshot screenshot-info">
+				<img src="~/assets/img/guidelines/userassistance/form-inline-help-button.png" />
+			</div>
+			<div class="screenshot screenshot-info" style="margin-top: 20px;">
+				<img src="~/assets/img/guidelines/userassistance/data-inline-help-button.png" style="width: 100%;" />
+			</div>
+		</stache-column>
+	</stache-row>
+  	
   <stache-page-anchor>
-      Page- and modal-level help
+    Persistent inline help
   </stache-page-anchor>
 
-  <p>
-    When users perform complex tasks, they may require comprehensive documentation for the entire task instead of inline help for individual components of the task. Since this documentation applies to more than a single field, users should invoke it at the page or modal level, depending on the context. In Blackbaud products, users can invoke the help service from the omnibar or a <a routerLink="/components/modal">modal</a> header bar.
-  </p>  
+	<stache-row>
+		<stache-column screenSmall="6">
+			<div class="sky-subsection-heading">Usage</div>
+			<p>
+				Sometimes a small amount of persistent inline explanatory text can help users understand tasks. It is appropriate to use in cases where:
+			</p>
+			<ul>
+				<li>The task is complex and infrequently performed.</li>
+				<li>User actions have far-reaching consequences that are not obvious.</li>
+			</ul>
+			<p>
+				Limit persistent inline help to one or two sentences and use the "<a routerLink="/design/styles/typography">sky-deemphasized</a>" class to reduce the weight of the text.
+			</p>
+			<div class="sky-subsection-heading">Layout</div>
+			<p>Placement of the inline help text will depend on what aspect of the task the help text supports.</p>
+			<ul>
+				<li>Place overarching task help at the top of the form.</li>
+				<li>Place help relating to a section of the form below the section heading.</li>
+				<li>Place help specific to a field below the input.</li>
+			</ul>
+		</stache-column>
+		<stache-column screenSmall="6">
+			<div class="screenshot screenshot-info">
+				<img src="~/assets/img/guidelines/userassistance/form-inline-help-text.png" style="width: 100%;" />
+			</div>
+		</stache-column>
+	</stache-row>
   
 </stache>
