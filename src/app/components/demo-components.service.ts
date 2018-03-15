@@ -374,6 +374,13 @@ export class SkyDemoComponentsService {
         getCodeFiles: () => this.getDemoFiles('SkySortDemoComponent')
       },
       {
+        name: 'Status indicator',
+        icon: 'exclamation-triangle',
+        // tslint:disable-next-line
+        summary: `The status indicator classes provide icons to draw attention to status information.`,
+        url: '/components/status-indicator'
+      },
+      {
         name: 'Tabs',
         icon: 'folder-open-o',
         summary: `The tabs module contains components to render a tabset.`,

@@ -1,8 +1,9 @@
 <sky-demo-page
-  pageTitle="Label">
+  pageTitle="Label"
+	showTableOfContents="true">
 
   <sky-demo-page-summary>
-    The label component calls out important status information.
+    The label component provides a compact, eye catching design element to draw attention to status information that users need to address. Statuses indicate a state or condition at a particular time and fall into four categories: info, success, warning, and danger. 
   </sky-demo-page-summary>
 
   <sky-demo-page-properties>
@@ -17,5 +18,17 @@
     <sky-label-demo></sky-label-demo>
     <sky-demo-page-code demoName="Label"></sky-demo-page-code>
   </sky-demo-page-example>
+	
+	<sky-demo-page-content sectionHeading="UX guidelines">
+		<p>Some statuses are crucial to user tasks, while others are no more important than other information on a page. If statuses are crucial to user tasks, use labels. If not, use regular text.</p>
+					
+		<div class="sky-subsection-heading">Label placement</div>
+			<p>Use labels in a summary context. For example, you can place a label in a page summary. To convey statuses inline to indicate that they are tied to specific pieces of data, use <a routerLink="../status-indicator">status indicators</a> instead.</p>
+
+		<div class="sky-subsection-heading">Related guidelines</div>
+			<ul>
+				<li><a routerLink="/design/guidelines/call-out-info">Calling out information</a></li>
+			</ul>
+	</sky-demo-page-content>
 
 </sky-demo-page>
