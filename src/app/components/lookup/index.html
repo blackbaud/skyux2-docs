@@ -2,7 +2,7 @@
   pageTitle="Lookup">
 
   <sky-demo-page-summary>
-    The lookup component provides a typeahead search input that lets users select multiple items. Users enter text in the lookup field, and then the component searches the data source. Search results appear in a dropdown list, and users can select items from the filtered list. The selected items appear in the lookup field, and the lookup component stores and saves the entire objects.
+    The lookup component creates a typeahead search input that filters a data source based on user entries and then displays search results in a dropdown list where users can select multiple items. Users enter text in the lookup field, and then the component searches the data source. Search results appear in a dropdown list, and users can select multiple items from the filtered list. The selected items appear in the lookup field, and the lookup component stores and saves the entire objects.
   </sky-demo-page-summary>
 
   <sky-demo-page-properties>
@@ -17,7 +17,7 @@
         propertyName="placeholderText"
         isOptional="true"
     >
-      Specifies placeholder text to display in the lookup field before users enter text.
+      Specifies placeholder text to display in the lookup field.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="data"
@@ -74,6 +74,7 @@
   </sky-demo-page-properties>
 
   <sky-demo-page-example>
+    <p>The lookup component shares many properties with the autocomplete component. For more examples of those properties, see the <a routerLink="../autocomplete" fragment="demo">autocomplete component demos</a>.</p>
     <sky-lookup-demo></sky-lookup-demo>
     <sky-demo-page-code demoName="Lookup"></sky-demo-page-code>
   </sky-demo-page-example>
@@ -84,7 +85,7 @@
         <div class="sky-section-heading">Usage</div>
       </header>
 			<p>
-        The lookup component is effective for scenarios where users know what they are looking for and can select multiple items. For guidance on which selection inputs to use in other scenarios, see the <a routerLink="/learn/design/guidelines/form-design">form design guidelines</a>.
+        The lookup component is effective for scenarios where users know what they are looking for and can select multiple items. For guidance on which selection inputs to use in other scenarios, see the <a routerLink="/design/guidelines/form-design" fragment="selection-inputs">form design guidelines</a>.
       </p>
 		</section>
 	</sky-demo-page-content>
