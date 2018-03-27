@@ -9,6 +9,14 @@
       As a general rule, SKY UX uses color to convey meaning and not as pure decoration. You should rarely apply colors directly to elements because components incorporate colors as necessary. If a need for color arises outside of a component, you likely need to create a component for that scenario.
     </p>
   </stache-page-summary>
+
+  <p>
+    To import the color variables, add <stache-code>@import '~@blackbaud/skyux/dist/scss/mixins';</stache-code> to the top of your SCSS file. Do not include <stache-code>node_modules</stache-code> in the path because the SKY UX package may not always be in the root of <stache-code>node_modules</stache-code> and <stache-code>~</stache-code> resolves the dependency in those cases.
+  </p>
+  <p>
+    After you import the colors, you can reference them by the variable names that are listed in the <strong>Code</strong> columns below.
+  </p>
+
   
   <stache-page-anchor>
     Text
