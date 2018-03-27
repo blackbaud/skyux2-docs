@@ -1,62 +1,108 @@
 <stache
-  pageTitle="Include a static asset on an existing page"
-  showTableofContents="true"
-  navTitle="Static assets">
+  pageTitle="Static assets"
+  showTableOfContents="true">
 
-  <p>
-    After you <a routerLink="/learn/get-started/basics/create-project">create a SKY UX project</a>, <a routerLink="/learn/get-started/basics/serve-project">serve the default single-page application</a>, <a routerLink="/learn/get-started/basics/edit-project">edit pages and components in the project</a>, and <a routerLink="/learn/get-started/basics/run-tests">run tests for the project</a>, you can include a static asset such as an image in in HTML, CSS, and SCSS files.
-  </p>
+  <stache-page-summary>
+    <p>
+      To include static assets such as images in your SPA, you place them in the <stache-code>assets</stache-code> folder in the <stache-code>src</stache-code> directory. You can then reference the files in your HTML, CSS, or SCSS. If you need programmatic access to the files, you can use the <stache-code>SkyAppAssetsService</stache-code>. For more information about static assets, see the <stache-code>src/assets</stache-code> entry in <a routerLink="/learn/reference/naming-and-placement">the file name and placement reference.
+    </p>
+  </stache-page-summary>
   
+  <stache-page-anchor>
+    Include a static asset on a page
+  </stache-page-anchor>
+
   <ol>
     <li>
       <p>
-        Place a static asset in the <stache-code>src/assets</stache-code> folder. For this tutorial, we’ll add an <stache-code>example.jpg</stache-code> file to the folder.
+        Store the static asset in the <stache-code>src/assets</stache-code> folder or a subfolder. If your SPA includes many static assets, we recommend organizing them in subfolders.
       </p>
     </li>
     <li>
       <p>
-        Return to the project’s <stache-code>about.component.html</stache-code> file.
+        On the file where you want to include the static asset, reference the static asset with <stache-code>&#126;/assets/</stache-code> before the filename and path.
       </p>
-    </li>
-    <li>
       <p>
-        Between the card and avatar components, add a <stache-code>p</stache-code> element.
+        References to static assets must start with <stache-code>&#126;/assets/</stache-code> for the <stache-code>SkyAppAssetsService</stache-code> to retrieve the assets from the <stache-code>src/assets</stache-code> folder because the filenames are updated at build time to include hashes that represent the content of the files.
       </p>
-    </li>
-    <li>
       <p>
-        Within the <stache-code>p</stache-code> element, add an <stache-code>img</stache-code> element.
-      </p>
-    </li>
-    <li>
-      <p>
-        In the <stache-code>img</stache-code> element, add a <stache-code>src</stache-code> attribute to map the element to the <stache-code>example.jpg</stache-code> file in <stache-code>src/assets</stache-code> and place <stache-code>&#126;/assets/</stache-code> before the filename.
+        For example, you can display an image on a page.
       </p>
       <stache-code-block>
-        <img src="&#126;/assets/example.jpg" alt="Photo" />
+        <p>
+          <img src="&#126;/assets/img/example.jpg" alt="Photo" />
+        </p>
       </stache-code-block>
       <p>
-        You must reference static assets with <stache-code>&#126;/assets/</stache-code> before the filename because the filenames are updated at build time to include hashes that represent the content of the files.
+        Or you can insert an image in the background.
       </p>
-    </li>
-    <li>
-      <p>
-        Save the changes.
-      </p>
-    </li>
-    <li>
-      <p>
-        If <stache-code>skyux serve</stache-code> is running, it recognizes the changes and updates the SPA. If not, open the command prompt and enter <stache-code>skyux serve</stache-code> to launch the SPA.
-      </p>
-    </li>
-    <li>
-      <p>
-        Return to the About page in the web browser to see the new image between the card and avatar components.
-      </p>
-      <sky-alert alertType="info">
-        For more information about static assets, see the <stache-code>src/assets</stache-code> entry in <a routerLink="/learn/reference/naming-and-placement">the file name and placement reference.</a>
-      </sky-alert>
+      <stache-code-block>
+        <div [ngStyle]="&#123;
+          'background-image': 'url(&#126;/assets/img/example.jpg)',
+          'height': '500px',
+          'width': '500px'
+        }">
+          Foreground content goes here
+        </div>
+      </stache-code-block>
     </li>
   </ol>
+
+  <stache-page-anchor>
+    Retrieve a static asset with <stache-code>SkyAppAssetsService</stache-code>
+  </stache-page-anchor>
+
+  <p>
+    For programmatic access to static assets during runtime outside of your template, you can use the <stache-code>SkyAppAssetsService</stache-code>. The service's only method is <stache-code>getUrl</stache-code>, which takes a string value with the path and file name, relative to the <stache-code>assets</stache-code> folder. 
+  </p>
+  <ol>
+    <li>
+      <p>
+        Store the static asset in the <stache-code>src/assets</stache-code> folder or a subfolder.
+      </p>
+    </li>
+    <li>
+      <p>
+        In the file where you want to access the static asset, import the <stache-code>SkyAppAssetsService</stache-code>.
+      </p>
+      <stache-code-block>
+        import &#123; SkyAppAssetsService } from '@blackbaud/skyux-builder/runtime';
+      </stache-code-block>
+    </li>
+    <li>
+      <p>
+        Specify the path and file name for the static asset in the <stache-code>getUrl</stache-code> method.
+      </p>
+      <stache-code-block>
+        skyAppAssetsService.getUrl('json/example.json')
+      </stache-code-block>
+      <p>
+        For example, you can use the <stache-code>SkyAppAssetsService</stache-code> to display data from a JSON file.
+      </p>
+      <stache-code-block>
+        import &#123; Component } from '@angular/core';
+        import &#123; Http } from '@angular/http';
+        import &#123; SkyAppAssetsService } from '@blackbaud/skyux-builder/runtime';
+        
+        @Component(&#123;
+          selector: 'my-home',
+          templateUrl: './home.component.html'
+        })
+        export class HomeComponent &#123;
+          constructor(
+            http: Http,
+            skyAppAssetsService: SkyAppAssetsService
+          ) &#123;
+            const exampleUrl = skyAppAssetsService.getUrl('json/example.json');
+            http.get(exampleUrl)
+              .subscribe(res => &#123;
+                console.log(res.json());
+              });
+          }
+        }
+      </stache-code-block>
+    </li>
+  </ol>
+
   
 </stache>
