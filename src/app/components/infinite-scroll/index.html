@@ -1,0 +1,29 @@
+<sky-demo-page
+  pageTitle="Infinite scroll">
+
+  <sky-demo-page-summary>
+    The infinite scroll component allows users to load data as the page scrolls.
+  </sky-demo-page-summary>
+
+  <sky-demo-page-properties>
+    <sky-demo-page-property
+      propertyName="hasMore"
+      defaultValue="false"
+      isOptional="true"
+    >
+    A boolean specifying whether there is more data to load. If this is false, infinite scroll will hide and stop calling the load function.
+    </sky-demo-page-property>
+
+    <sky-demo-page-property
+      propertyName="onLoad"
+      isOptional="false"
+    >
+    This is an event that fires when when the load more button is clicked or a scroll triggers a need to load more data. This will only emit an event when the hasMore property is `true` and data is not currently loading.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-example>
+    <sky-infinite-scroll-demo></sky-infinite-scroll-demo>
+    <sky-demo-page-code demoName="Infinite scroll"></sky-demo-page-code>
+  </sky-demo-page-example>
+</sky-demo-page>
