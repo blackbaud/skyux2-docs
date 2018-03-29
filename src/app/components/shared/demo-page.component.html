@@ -3,6 +3,12 @@
   [pageTitle]="pageTitle">
 
   <stache-page-summary>
+    <h4 *ngIf="skyuxModulesForDisplay">
+      Defined in
+      <span *ngFor="let moduleName of skyuxModulesForDisplay">
+        <stache-code>{{ moduleName }}</stache-code>
+      </span>
+    </h4>
     <ng-content select="sky-demo-page-summary"></ng-content>
   </stache-page-summary>
 
