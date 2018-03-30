@@ -1,8 +1,10 @@
 <sky-demo-page
-  pageTitle="Autocomplete">
+  pageTitle="Autocomplete"
+  skyuxModule="SkyAutocompleteModule"
+>
   <sky-demo-page-summary>
     <p>
-      The autocomplete component creates a text input that filters a data source based on user entries and then displays search results in a dropdown list. Users enter text in the text input, and then the component searches the data source. Search results appear in a dropdown list, and users can select items from the filtered list. The selected item appears in the text input, and the autocomplete component stores and saves the entire object.
+      The autocomplete component creates a text input that filters a data source based on user entries and then displays search results in a dropdown list. Users enter text in the text input, and then the component searches the data source. Search results appear in a dropdown list, and users can select an item from the filtered list. The selected item appears in the text input, and the autocomplete component stores and saves the entire object.
     </p>
   </sky-demo-page-summary>
 
@@ -16,7 +18,7 @@
     <sky-demo-page-property
       propertyName="search"
       isOptional="true">
-      Specifies a function to dynamically manage the data source when users change the text in the autocomplete field. The search function must return an array or a promise of an array. The <stache-code>search</stache-code> property is particularly useful when the data source does not live in the source code. Acceptable value: <stache-code>(searchText: string, data?: any[]) => any[] | Promise&lt;any[]&gt;</stache-code>. 
+      Specifies a function to dynamically manage the data source when users change the text in the autocomplete field. The search function must return an array or a promise of an array. The <stache-code>search</stache-code> property is particularly useful when the data source does not live in the source code. Acceptable value: <stache-code>(searchText: string, data?: any[]) => any[] | Promise&lt;any[]&gt;</stache-code>.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="searchFilters"
