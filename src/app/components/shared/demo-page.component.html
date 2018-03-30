@@ -4,7 +4,7 @@
 
   <stache-page-summary>
     <h4 *ngIf="skyuxModulesForDisplay">
-      Defined in
+      <span class="sky-field-label">Defined in</span>
       <span *ngFor="let moduleName of skyuxModulesForDisplay">
         <stache-code>{{ moduleName }}</stache-code>
       </span>
