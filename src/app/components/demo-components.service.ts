@@ -279,6 +279,14 @@ export class SkyDemoComponentsService {
         ]
       },
       {
+        name: 'Lookup',
+        icon: 'search',
+        // tslint:disable-next-line
+        summary: `The lookup component provides a typeahead search input that lets users select multiple items.`,
+        url: '/components/lookup',
+        getCodeFiles: () => this.getDemoFiles('SkyLookupDemoComponent')
+      },
+      {
         name: 'Media queries',
         icon: 'mobile',
         // tslint:disable-next-line
