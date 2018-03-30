@@ -196,3 +196,9 @@ code {
     font-style: italic;
   }
 }
+
+// Blog styling
+article.blog-post {
+	@include sky-border(row)
+	margin-bottom: 20px;
+}
