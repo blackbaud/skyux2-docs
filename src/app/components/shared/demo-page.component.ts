@@ -24,9 +24,24 @@ export class SkyDemoPageComponent implements OnInit, AfterContentInit {
   public pageTitle: string;
 
   @Input()
+  public set skyuxModule(value: string | string[]) {
+    if (value) {
+      if (Array.isArray(value)) {
+        this.skyuxModulesForDisplay = value;
+      } else {
+        this.skyuxModulesForDisplay = [value];
+      }
+    } else {
+      this.skyuxModulesForDisplay = undefined;
+    }
+  }
+
+  @Input()
   public summary: string;
 
   public tableOfContentsRoutes: any[] = [];
+
+  public skyuxModulesForDisplay: string[];
 
   @ContentChildren(SkyDemoPagePropertiesComponent)
   private propertiesComponents: QueryList<SkyDemoPagePropertiesComponent>;
