@@ -19,6 +19,13 @@ export class DesignActionButtonsComponent {
       icon: 'paint-brush',
       // tslint:disable-next-line
       summary: 'Core design elements that provide the building blocks for SKY UX components.'
+    },
+    {
+      name: 'Downloads',
+      path: '/design/downloads',
+      icon: 'file-o',
+      // tslint:disable-next-line
+      summary: 'Design templates to help make prototyping more efficient and accurate.'
     }
   ];
 }
