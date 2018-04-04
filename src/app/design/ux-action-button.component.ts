@@ -21,11 +21,11 @@ export class DesignActionButtonsComponent {
       summary: 'Core design elements that provide the building blocks for SKY UX components.'
     },
     {
-      name: 'Downloads',
-      path: '/design/downloads',
+      name: 'Resources',
+      path: '/design/resources',
       icon: 'file-o',
       // tslint:disable-next-line
-      summary: 'Design templates to help make prototyping more efficient and accurate.'
+      summary: 'Design resources to help make prototyping more efficient and accurate.'
     }
   ];
 }
