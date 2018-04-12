@@ -12,9 +12,9 @@
   <p>
     To use the accessibilty analyzer, you add <stache-code>SkyA11y</stache-code> to e2e specs. And to manage rules for accessibility tests, you use the <stache-code>a11y</stache-code> property in the <stache-code>skyuxconfig.json</stache-code> file.
   </p>
-  <sky-alert alertType="info">
+  <p>
     For SKY UX guidance on accessibility best practices, see <a routerLink="/learn/accessibility">accessibility recommendations</a>.
-  </sky-alert>
+  </p>
   
   <stache-page-anchor>
     Add accessibility analyzer to e2e specs
@@ -26,6 +26,7 @@
   <stache-code-block>
     import { SkyA11y } from '@blackbaud/skyux-builder/runtime/testing/e2e';
   </stache-code-block>
+  <stache-include fileName="e2e-recommendation-accessibility.html"></stache-include>
 
   <stache-page-anchor>
     Use accessibility analyzer in e2e specs

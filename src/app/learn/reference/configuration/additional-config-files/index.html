@@ -18,7 +18,7 @@
     <li>
       <p>
         In a local editor, create a configuration file in the root directory alongside the project's default <stache-code>skyuxconfig.json</stache-code> file. Follow the <stache-code>skyuxconfig.[COMMAND].json</stache-code> naming convention.</p>
-        <p>For example, to apply configuration settings when <stache-code>skyux e2e</stache-code> runs, create <stache-code>skyuxconfig.e2e.json</stache-code>.
+        <p>For example, to apply configuration settings when <stache-code>skyux test</stache-code> runs, create <stache-code>skyuxconfig.test.json</stache-code>.
         </p>
       </li>
       <li>
@@ -26,7 +26,7 @@
           In the new file, specify the configuration settings to apply when the command runs.
         </p>
         <p>
-          For example, you can specify a mock server URL to use when you run <stache-code>skyux e2e</stache-code>.
+          For example, you can specify a mock server URL to use when you run <stache-code>skyux test</stache-code>.
         </p>
         <stache-code-block languageType="js">{
   "appSettings": {
@@ -40,7 +40,7 @@
         Save your changes. When you run SKY UX CLI commands, SKY UX automatically reads any files with the <stache-code>skyuxconfig.[COMMAND].json</stache-code> naming convention.
       </p>
       <p>
-        For example, SKY UX includes and merges the settings in <stache-code>skyuxconfig.e2e.json</stache-code> when you run <stache-code>skyux e2e</stache-code>.
+        For example, SKY UX includes and merges the settings in <stache-code>skyuxconfig.test.json</stache-code> when you run <stache-code>skyux tests</stache-code>.
       </p>
     </li>
   </ol>
@@ -62,7 +62,7 @@
     </li>
     <li>
       <p>
-        <stache-code>skyuxconfig.e2e.json</stache-code> — Specifies configuration settings for end-to-end tests.
+        <stache-code>skyuxconfig.e2e.json</stache-code> — Specifies configuration settings for end-to-end tests, although SKY UX generally recommends using unit tests instead of end-to-end tests based on <a href="https://angular.io/guide/testing#why-not-rely-on-e2e-tests-of-dom-integration">Angular’s guidance on testing</a>.
       </p>
     </li>
     <li>
