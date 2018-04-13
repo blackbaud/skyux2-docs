@@ -1,5 +1,7 @@
 <sky-demo-page
-  pageTitle="Tile">
+  pageTitle="Tile"
+  skyuxModule="SkyTilesModule"
+>
 
   <sky-demo-page-summary>
     <p>
@@ -15,13 +17,20 @@
     >
       Indicates whether the tile is in a collapsed state.
     </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="showSettings"
+      isOptional="true"
+      defaultValue="true"
+    >
+      Indicates whether to display the settings button on the tile.
+    </sky-demo-page-property>
   </sky-demo-page-properties>
 
   <sky-demo-page-properties sectionHeading="Tile events">
     <sky-demo-page-property
       propertyName="settingsClick"
     >
-    Event emitted when the settings button on the tile is clicked. The settings button only appears if this output is placed on the tile.
+    Event emitted when users click the settings button on the tile. The settings button only appears on the tile if the <stache-code>showSettings</stache-code> is set to <stache-code>true</stache-code>.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="isCollapsedChange"

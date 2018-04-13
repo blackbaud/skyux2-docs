@@ -13,6 +13,15 @@ export class SkyDemoComponentsService {
   public getComponents(filter?: string): SkyDemoComponent[] {
     return [
       {
+        name: 'Action button',
+        icon: 'square-o',
+        // tslint:disable-next-line
+        summary:
+        `The action button component creates a large button with an icon, heading, and details.`,
+        url: '/components/action-button',
+        getCodeFiles: () => this.getDemoFiles('SkyActionButtonDemoComponent')
+      },
+      {
         name: 'Alert',
         icon: 'bell',
         summary: 'The alert component displays a SKY UX-themed alert.',
@@ -33,15 +42,6 @@ export class SkyDemoComponentsService {
         summary: `The avatar component displays an image and allows users to change the image.`,
         url: '/components/avatar',
         getCodeFiles: () => this.getDemoFiles('SkyAvatarDemoComponent')
-      },
-      {
-        name: 'Action button',
-        icon: 'square-o',
-        // tslint:disable-next-line
-        summary:
-        `The action button component creates a large button with an icon, heading, and details.`,
-        url: '/components/action-button',
-        getCodeFiles: () => this.getDemoFiles('SkyActionButtonDemoComponent')
       },
       {
         name: 'Button',
@@ -284,6 +284,14 @@ export class SkyDemoComponentsService {
             getCodeFiles: () => this.getDemoFiles('SkyListViewGridDemoComponent')
           }
         ]
+      },
+      {
+        name: 'Lookup',
+        icon: 'search',
+        // tslint:disable-next-line
+        summary: `The lookup component provides a typeahead search input that lets users select multiple items.`,
+        url: '/components/lookup',
+        getCodeFiles: () => this.getDemoFiles('SkyLookupDemoComponent')
       },
       {
         name: 'Media queries',
