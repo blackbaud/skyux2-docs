@@ -37,11 +37,8 @@
         If the SPA has a <stache-code>svcid</stache-code> of "abc" and an <stache-code>envid</stache-code> of "1234," this sample directs users to <stache-code>/sample-spa/sample-route?svid=abc&envid=1234</stache-code>.
       </p>
       <p>
-        You can also use <stache-code>routerLink</stache-code> to specify the path to link to and then use the <stache-code>queryParams</stache-code> attribute to manually specify the SPA's parameters, but the <stache-code>SkyAppLink</stache-code> directive handles this step for you.
+        You can also use <stache-code>routerLink</stache-code> to specify the path to link to and then use the <stache-code>queryParams</stache-code> attribute to manually specify the SPA's parameters, but we recommend letting the <stache-code>SkyAppLink</stache-code> directive handle this step for you.
       </p>
-      <stache-code-block>
-        <a routerLink="my-route" queryParams="{ envid: skyAppConfig.runtime.params.get('envid'), svcid: skyAppConfig.runtime.params.get('svcid')}">My Route</a>
-      </stache-code-block>
     </li>
   </ul>
 
