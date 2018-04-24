@@ -1,0 +1,80 @@
+<stache
+  navOrder="8"
+  pageTitle="Navigation"
+  showTableOfContents="true">
+
+  <stache-page-summary>
+    SKY UX takes advantage of <a href="https://angular.io/api/router/Router">the Angular Router class</a> to enable navigation within a SPA, and you can use <a href="https://angular.io/api/router/RouterLink">Angular's <stache-code>RouterLink</stache-code> directive</a> to create links between pages in a SPA. In addition, SKY UX's <stache-code>SkyAppLink</stache-code> and <stache-code>SkyAppLinkExternal</stache-code> directives extend the <stache-code>RouterLink</stache-code> directive and allow you to create links that automatically include parameters in the URL.
+  </stache-page-summary>
+
+  <stache-page-anchor>
+    Create internal links within a SPA
+  </stache-page-anchor>
+
+  <p>
+    To create links between pages in a SPA, use the HTML <stache-code>a</stache-code> element.
+  </p>
+  <ul>
+    <li>
+      <p>
+        If the SPA's URL does not include parameters, you can use the <stache-code>routerLink</stache-code> attribute to specify the path to link to.
+      </p>
+      <stache-code-block>
+        <a routerLink="sample-route">Sample Link 1</a>
+      </stache-code-block>
+      <p>
+        This sample directs users to <stache-code>/sample-spa/sample-route</stache-code> and does not include any parameters in the URL.
+      </p>
+    </li>
+    <li>
+      <p>
+        If the SPA's URL includes parameters, you can use the <stache-code>skyAppLink</stache-code> attribute to specify the path to link to. The <stache-code>SkyAppLink</stache-code> directive automatically includes the SPA's parameters in the URL. The most common parameters are <stache-code>envid</stache-code> and <stache-code>svcid</stache-code>, but the URL can include any parameters that are provided to the SPA when it loads.
+      </p>
+      <stache-code-block>
+        <a skyAppLink="sample-route">Sample Link 2</a>
+      </stache-code-block>
+      <p>
+        If the SPA has a <stache-code>svcid</stache-code> of "abc" and an <stache-code>envid</stache-code> of "1234," this sample directs users to <stache-code>/sample-spa/sample-route?svid=abc&envid=1234</stache-code>.
+      </p>
+      <p>
+        You can also use <stache-code>routerLink</stache-code> to specify the path to link to and then use the <stache-code>queryParams</stache-code> attribute to manually specify the SPA's parameters, but the <stache-code>SkyAppLink</stache-code> directive handles this step for you.
+      </p>
+      <stache-code-block>
+        <a routerLink="my-route" queryParams="{ envid: skyAppConfig.runtime.params.get('envid'), svcid: skyAppConfig.runtime.params.get('svcid')}">My Route</a>
+      </stache-code-block>
+    </li>
+  </ul>
+
+
+
+  <stache-page-anchor>
+    Create external links to another SPA
+  </stache-page-anchor>
+
+  <p>
+    To create links to other SPAs, use the HTML <stache-code>a</stache-code> element.
+  </p>
+  <ul>
+    <li>
+      <p>
+        If the external SPA's URL does not include parameters, you can use the standard HTML <stache-code>href</stache-code> attribute to specify the URL to link to.
+      </p>
+      <stache-code-block>
+        <a href="https://www.external-spa.com/sample-path">Sample Link 3</a>
+      </stache-code-block>
+      <p>
+        This sample leaves the current SPA and directs users to <stache-code>https://www.external-spa.com/sample-path</stache-code>. It does not include any parameters in the URL.
+      </p>
+    </li>
+    <li>
+      <p>
+        If the SPA's URL includes parameters, you can use the <stache-code>skyAppLinkExternal</stache-code> attribute to specify the path to link to. The <stache-code>SkyAppLinkExternal</stache-code> directive automatically includes the external SPA's parameters in the URL. The most common parameters are <stache-code>envid</stache-code> and <stache-code>svcid</stache-code>, but the URL can include any parameters that are provided to the SPA when it loads.
+      </p>
+      <stache-code-block>
+        <a skyAppLinkExternal="/another-spa/sample-route">Sample Link 4</a>
+      </stache-code-block>
+      <p>
+        If the external SPA has a <stache-code>svcid</stache-code> of "abc" and an <stache-code>envid</stache-code> of "1234," this sample directs users to <stache-code>/another-spa/sample-route?svid=abc&envid=1234</stache-code>.
+      </p>
+    </li>
+  </ul>
