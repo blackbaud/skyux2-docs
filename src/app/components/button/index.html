@@ -1,12 +1,16 @@
 <stache
   pageTitle="Button"
   windowTitle="Button"
-  layout="container">
+  layout="container"
+	showTableOfContents="true">
 
   <p>
     The button classes create buttons to trigger actions from within an interface.
   </p>
-
+	
+	<div>
+	<stache-page-anchor>Classes</stache-page-anchor>
+	
   <div class="definition-table">
     <div class="definition-item">
       <button type="button" class="sky-btn sky-btn-primary">Primary</button>
@@ -105,5 +109,22 @@
       </div>
     </div>
   </div>
-
+		
+	</div>
+	
+	<div>
+	<stache-page-anchor>UX guidelines</stache-page-anchor>
+	<p>Button text should follow the format:</p>
+	<p>&lt;Verb&gt;&lt;direct object&gt;</p>
+	<div style="margin-bottom: 20px;">
+		<button type="button" class="sky-btn sky-btn-primary"><i class="fa fa-plus-circle"></i> Add constituent</button>
+	</div>
+	
+	<div class="sky-subsection-heading">Related guidelines</div>
+		<ul>
+			<li><a routerLink="/design/guidelines/buttons-links">Buttons and links</a></li>
+		</ul>	
+		
+	</div>
+	
 </stache>
