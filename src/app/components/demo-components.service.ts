@@ -420,6 +420,14 @@ export class SkyDemoComponentsService {
         getCodeFiles: () => this.getDemoFiles('SkyTimepickerDemoComponent')
       },
       {
+        name: 'Toast',
+        icon: 'envelope',
+        // tslint:disable-next-line
+        summary: `The toast module allows users to create toast messages on the fly.`,
+        url: '/components/toast',
+        getCodeFiles: () => this.getDemoFiles('SkyToastDemoComponent')
+      },
+      {
         name: 'Toolbar',
         icon: 'bars',
         // tslint:disable-next-line
