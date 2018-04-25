@@ -125,7 +125,7 @@
     <sky-demo-page-code demoName="Modal"></sky-demo-page-code>
   </sky-demo-page-example>
 
-  <!-- <sky-demo-page-content sectionHeading="Accessibility">
+  <sky-demo-page-content sectionHeading="Accessibility">
     <p>Follow these guidelines to ensure that people can use modals with assistive technology or keyboards.</p>
     <ul>
       <li>When a modal opens, focus should be on the first focusable item in the modal. If the modal does not include focusable items, then focus should be on the modal container element.</li>
@@ -135,14 +135,26 @@
   </sky-demo-page-content>
 
 	<sky-demo-page-content sectionHeading="UX guidelines">
-  	<div class="sky-subsection-heading">Modal</div>
+		<div class="sky-subsection-heading">Modal title wording</div>
+			<p>In general you should use the following format for modal titles:</p>
+			<p><span class="sky-emphasized">&lt;Verb&gt;&lt;direct object&gt; for &lt;indirect object&gt;</span></p>
+			<div style="margin-bottom: 20px;">
+				<img class="screenshot screenshot-info" src="~/assets/img/guidelines/wording/modal-with-object.png" alt="modal title: Edit address for Robert Hernandez"/>
+			</div>
+			<p>If there is not an indirect object, or if the user is the implied indirect object it can be left off:</p>
+			<p><span class="sky-emphasized">&lt;Verb&gt;&lt;direct object&gt;</span></p>
+			<div style="margin-bottom: 20px;">
+				<img class="screenshot screenshot-info" src="~/assets/img/guidelines/wording/modal-without-object.png" alt="modal title: Manage bank feeds"/>
+			</div>
+  	<div class="sky-subsection-heading">Usage</div>
+			<div class="sky-emphasized">Modal</div>
 			<p>A modal dialog is appropriate for forms that meet any of the following criteria:</p>
 			<ul>
 				<li>The task is functionally modal, and users must finish it before doing anything else.</li>
 				<li>Displaying the form inline would lead to substantial content shifting or require users to scroll to complete the form.</li>
 				<li>The form adds records from a paginated list or an infinite scroll list.</li>
 			</ul>
-		<div class="sky-subsection-heading">Full-page modal</div>
+			<div class="sky-emphasized">Full-page modal</div>
 			<p>A full-page modal is appropriate for forms that meet the following criteria:</p>
 			<ul>
 				<li>The task is functionally modal, and users must finish it before doing anything else.</li>
@@ -152,6 +164,6 @@
 				<li>The form supports a complex task for a list of objects such as filling out report cards for a class.</li>
 				<li>The task includes subtasks that need to be completed in context.</li>
 			</ul>
-  </sky-demo-page-content> -->
+  </sky-demo-page-content>
 
 </sky-demo-page>
