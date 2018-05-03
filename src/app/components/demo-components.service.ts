@@ -366,12 +366,20 @@ export class SkyDemoComponentsService {
         getCodeFiles: () => this.getDemoFiles('SkySearchDemoComponent')
       },
       {
+        name: 'Select field',
+        icon: 'search',
+        // tslint:disable-next-line
+        summary: `The search component creates a mobile-responsive input control for users to enter search criteria.`,
+        url: '/components/search',
+        getCodeFiles: () => this.getDemoFiles('SkySearchDemoComponent')
+      },
+      {
         name: 'Sectioned form',
         icon: 'object-group',
         // tslint:disable-next-line
-        summary: `The sectioned form component combines forms and lets users target specific areas.`,
-        url: '/components/sectioned-form',
-        getCodeFiles: () => this.getDemoFiles('SkySectionedFormDemoComponent')
+        summary: `The select field component launches a modal that displays items for users to select.`,
+        url: '/components/select-field',
+        getCodeFiles: () => this.getDemoFiles('SkySelectFieldDemoComponent')
       },
       {
         name: 'Sort',
