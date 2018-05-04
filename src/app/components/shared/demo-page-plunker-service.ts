@@ -2,11 +2,22 @@
 
 import { Injectable } from '@angular/core';
 
+import { SkyAppConfig } from '@blackbaud/skyux-builder/runtime';
+
 import { SkyDemoPageCodeFile } from './demo-page-code-file';
 
 @Injectable()
 export class SkyDemoPagePlunkerService {
+
+  constructor(
+    private skyAppConfig: SkyAppConfig
+  ) { }
+
   public getFiles(codeFiles: SkyDemoPageCodeFile[]): any[] {
+    const skyuxDistPath = this.skyAppConfig.runtime.command === 'serve'
+      ? 'dev:dist/bundles/core.umd.js'
+      : 'npm:@blackbaud/skyux/dist/bundles/core.umd.js';
+
     let declarations: string[] = [];
     let bootstrapSelectors: string[] = [];
     let entryComponents: string[] = [];
@@ -54,7 +65,8 @@ export class SkyDemoPagePlunkerService {
     emitDecoratorMetadata: true
   },
   paths: {
-    'npm:': 'https://unpkg.com/'
+    'npm:': 'https://unpkg.com/',
+    'dev:': 'https://localhost:5000/'
   },
   //map tells the System loader where to look for things
   map: {
@@ -74,9 +86,9 @@ export class SkyDemoPagePlunkerService {
     '@angular/animations/browser': 'npm:@angular/animations@4.2.5/bundles/animations-browser.umd.js',
     'tslib': 'npm:tslib@1.6.1',
 
-    'rxjs': 'npm:rxjs',
+    'rxjs': 'npm:rxjs@5.4.3',
     'typescript': 'npm:typescript@2.2.1/lib/typescript.js',
-    '@blackbaud/skyux/dist/core': 'npm:@blackbaud/skyux/dist/bundles/core.umd.js',
+    '@blackbaud/skyux/dist/core': '${skyuxDistPath}',
 
     'moment': 'npm:moment/moment.js',
 
@@ -166,9 +178,7 @@ export class AppComponent() { }`
       },
       {
         name: 'main.ts',
-        content:
-`
-import { Component, NgModule } from '@angular/core';
+        content: `import { Component, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { SkyModule } from '@blackbaud/skyux/dist/core';
@@ -177,6 +187,10 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 ${imports.join('\n')}
 
 import { AppComponent } from './app.component';
+
+// This is temporary to get list-view-grid functioning properly
+// A future relese of SKY UX components would fix this.
+import 'rxjs/add/operator/takeUntil';
 
 @NgModule({
   imports: [

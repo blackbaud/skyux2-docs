@@ -11,10 +11,26 @@
           [name]="'files[' + plunkerFile.name + ']'"
           [value]="plunkerFile.content"
         >
-        <button type="submit" class="sky-btn sky-btn-primary">
-          <i class="fa fa-pencil"></i>
-          Run in Plunker
-        </button>
+        <sky-dropdown>
+          <sky-dropdown-button>
+            <i class="fa fa-pencil"></i> Run Demo
+          </sky-dropdown-button>
+          <sky-dropdown-menu>
+            <sky-dropdown-item>
+              <button
+                type="submit">
+                Run in Plunker
+              </button>
+            </sky-dropdown-item>
+            <sky-dropdown-item>
+              <button
+                type="button"
+                (click)="runInStackBlitz()">
+                Run in StackBlitz
+              </button>
+            </sky-dropdown-item>
+          </sky-dropdown-menu>
+        </sky-dropdown>
       </form>
     </div>
   </div>

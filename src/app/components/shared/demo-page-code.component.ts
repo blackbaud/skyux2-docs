@@ -6,6 +6,7 @@ import {
 
 import { SkyDemoPageCodeFile } from './demo-page-code-file';
 import { SkyDemoPagePlunkerService } from './demo-page-plunker-service';
+import { SkyDemoPageStackBlitzService } from './demo-page-stackblitz-service';
 import { SkyDemoComponentsService } from '../demo-components.service';
 import { SkyDemoComponent } from '../demo-component';
 
@@ -14,7 +15,10 @@ import { SkyDemoComponent } from '../demo-component';
   templateUrl: './demo-page-code.component.html',
   styleUrls: ['./demo-page-code.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [SkyDemoPagePlunkerService]
+  providers: [
+    SkyDemoPagePlunkerService,
+    SkyDemoPageStackBlitzService
+  ]
 })
 export class SkyDemoPageCodeComponent {
   @Input()
@@ -45,8 +49,13 @@ export class SkyDemoPageCodeComponent {
 
   constructor(
     private plunkerService: SkyDemoPagePlunkerService,
+    private stackBlitzService: SkyDemoPageStackBlitzService,
     private componentsService: SkyDemoComponentsService
   ) { }
+
+  public runInStackBlitz() {
+    this.stackBlitzService.openProject(this.codeFilesForBinding);
+  }
 
   private getItems(components: SkyDemoComponent[], value: string): SkyDemoComponent[] {
     let items: SkyDemoComponent[] = [];
