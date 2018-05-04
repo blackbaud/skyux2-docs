@@ -1,12 +1,23 @@
 /* tslint:disable max-line-length */
 
-import { Injectable } from '@angular/core';
+import { Injectable, VERSION } from '@angular/core';
+
+import { SkyAppConfig } from '@blackbaud/skyux-builder/runtime';
 
 import { SkyDemoPageCodeFile } from './demo-page-code-file';
 
 @Injectable()
 export class SkyDemoPagePlunkerService {
+
+  constructor(
+    private skyAppConfig: SkyAppConfig
+  ) { }
+
   public getFiles(codeFiles: SkyDemoPageCodeFile[]): any[] {
+    const skyuxDistPath = this.skyAppConfig.runtime.command === 'serve'
+      ? 'dev:dist/bundles/core.umd.js'
+      : 'npm:@blackbaud/skyux/dist/bundles/core.umd.js';
+
     let declarations: string[] = [];
     let bootstrapSelectors: string[] = [];
     let entryComponents: string[] = [];
@@ -45,8 +56,9 @@ export class SkyDemoPagePlunkerService {
       ...files,
       {
         name: 'config.js',
-        content:
-`System.config({
+        content: `
+var ngVersion = '@${VERSION.full}';
+System.config({
   //use typescript for compilation
   transpiler: 'typescript',
   //typescript compiler options
@@ -54,29 +66,30 @@ export class SkyDemoPagePlunkerService {
     emitDecoratorMetadata: true
   },
   paths: {
-    'npm:': 'https://unpkg.com/'
+    'npm:': 'https://unpkg.com/',
+    'dev:': 'https://localhost:5000/'
   },
   //map tells the System loader where to look for things
   map: {
 
     'app': '.',
 
-    '@angular/core': 'npm:@angular/core@4.2.5/bundles/core.umd.js',
-    '@angular/common': 'npm:@angular/common@4.2.5/bundles/common.umd.js',
-    '@angular/compiler': 'npm:@angular/compiler@4.2.5/bundles/compiler.umd.js',
-    '@angular/platform-browser': 'npm:@angular/platform-browser@4.2.5/bundles/platform-browser.umd.js',
-    '@angular/platform-browser-dynamic': 'npm:@angular/platform-browser-dynamic@4.2.5/bundles/platform-browser-dynamic.umd.js',
-    '@angular/http': 'npm:@angular/http@4.2.5/bundles/http.umd.js',
-    '@angular/router': 'npm:@angular/router@4.2.5/bundles/router.umd.js',
-    '@angular/forms': 'npm:@angular/forms@4.2.5/bundles/forms.umd.js',
-    '@angular/animations': 'npm:@angular/animations@4.2.5/bundles/animations.umd.js',
-    '@angular/platform-browser/animations': 'npm:@angular/platform-browser@4.2.5/bundles/platform-browser-animations.umd.js',
-    '@angular/animations/browser': 'npm:@angular/animations@4.2.5/bundles/animations-browser.umd.js',
+    '@angular/core': 'npm:@angular/core' + ngVersion + '/bundles/core.umd.js',
+    '@angular/common': 'npm:@angular/common' + ngVersion + '/bundles/common.umd.js',
+    '@angular/compiler': 'npm:@angular/compiler' + ngVersion + '/bundles/compiler.umd.js',
+    '@angular/platform-browser': 'npm:@angular/platform-browser' + ngVersion + '/bundles/platform-browser.umd.js',
+    '@angular/platform-browser-dynamic': 'npm:@angular/platform-browser-dynamic' + ngVersion + '/bundles/platform-browser-dynamic.umd.js',
+    '@angular/http': 'npm:@angular/http' + ngVersion + '/bundles/http.umd.js',
+    '@angular/router': 'npm:@angular/router' + ngVersion + '/bundles/router.umd.js',
+    '@angular/forms': 'npm:@angular/forms' + ngVersion + '/bundles/forms.umd.js',
+    '@angular/animations': 'npm:@angular/animations' + ngVersion + '/bundles/animations.umd.js',
+    '@angular/platform-browser/animations': 'npm:@angular/platform-browser' + ngVersion + '/bundles/platform-browser-animations.umd.js',
+    '@angular/animations/browser': 'npm:@angular/animations' + ngVersion + '/bundles/animations-browser.umd.js',
     'tslib': 'npm:tslib@1.6.1',
 
-    'rxjs': 'npm:rxjs',
+    'rxjs': 'npm:rxjs@5.4.3',
     'typescript': 'npm:typescript@2.2.1/lib/typescript.js',
-    '@blackbaud/skyux/dist/core': 'npm:@blackbaud/skyux/dist/bundles/core.umd.js',
+    '@blackbaud/skyux/dist/core': '${skyuxDistPath}',
 
     'moment': 'npm:moment/moment.js',
 
@@ -166,9 +179,7 @@ export class AppComponent() { }`
       },
       {
         name: 'main.ts',
-        content:
-`
-import { Component, NgModule } from '@angular/core';
+        content: `import { Component, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { SkyModule } from '@blackbaud/skyux/dist/core';
@@ -177,6 +188,10 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 ${imports.join('\n')}
 
 import { AppComponent } from './app.component';
+
+// This is temporary to get list-view-grid functioning properly
+// A future relese of SKY UX components would fix this.
+import 'rxjs/add/operator/takeUntil';
 
 @NgModule({
   imports: [
