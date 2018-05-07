@@ -5,28 +5,8 @@
 
   <sky-demo-page-summary>
     <p>
-      The action button component creates a large button with an icon, header, and details. These buttons are used in sets to present the user with multiple branching options for moving forward with a task. They should be used in situations where:
+      The action button component creates a large button with an icon, header, and details. These buttons are used in sets to present the user with multiple branching options for moving forward with a task.
     </p>
-      <ul>
-                <li>The user has initiated a task or workflow</li>
-                    <ul>
-                        <li>This is often done via a page's primary action</li>
-                    </ul>
-                <li>The task has between 2 and 6 methods of completion</li>
-                    <ul>
-                        <li>The user must choose exactly one option</li>
-                        <li>If there are more relevant choices, consider a different <a routerLink="/design/guidelines/form-design" fragment="selection-inputs">selection input</a> and interaction</li>
-                    </ul>
-                <li>The choices are system-defined, not user-defined</li>
-                <li>The choice of method will determine how the majority of the workflow will proceed</li>
-                    <ul>
-                        <li>This choice is made at or near the beginning of the task</li>
-                    </ul>
-                <li>The outcome of end result will be largely the same, regardless of the method</li>
-            </ul>
-            <p>
-                Action buttons must represent a necessary step in any workflow they inhabit - they should not be used in ways where they can be skipped, avoided, or answered later. Present them in a way that isolates the choice they represent and removes other decisions, different tasks, or other content. Take advantage of the "details" line in the button to give users context or explain the differences between the options.
-            </p>
     <p>
       The <stache-code>sky-action-button-container</stache-code> component insures that all inner <stache-code>sky-action-button</stache-code> coponents have consistent height and spacing. The <stache-code>sky-action-button</stache-code> component consists of three inner components: <stache-code>sky-action-button-icon</stache-code>, <stache-code>sky-action-button-header</stache-code>, and <stache-code>sky-action-button-details</stache-code>.
     </p>
@@ -51,7 +31,33 @@
     <sky-demo-page-code demoName="Action button"></sky-demo-page-code>
   </sky-demo-page-example>
 
-    <header><div class="sky-section-heading">When to use action buttons</div></header>
+  <sky-demo-page-content sectionHeading="UX guidelines">
+		
+	<header><div class="sky-section-heading">Usage</div></header>
+		<p>Use action buttons when:</p>
+		<ul>
+			<li>The user has initiated a task or workflow</li>
+					<ul>
+							<li>This is often done via a page's primary action</li>
+					</ul>
+			<li>The task has between 2 and 6 methods of completion</li>
+					<ul>
+							<li>The user must choose exactly one option</li>
+							<li>If there are more relevant choices, consider a different <a routerLink="/design/guidelines/form-design" fragment="selection-inputs">selection input</a> and interaction</li>
+					</ul>
+			<li>The choices are system-defined, not user-defined</li>
+			<li>The choice of method will determine how the majority of the workflow will proceed</li>
+					<ul>
+							<li>This choice is made at or near the beginning of the task</li>
+					</ul>
+			<li>The outcome of end result will be largely the same, regardless of the method</li>
+		</ul>
+		<p>
+			Action buttons must represent a necessary step in any workflow they inhabit - they should not be used in ways where they can be skipped, avoided, or answered later. Present them in a way that isolates the choice they represent and removes other decisions, different tasks, or other content. Take advantage of the "details" line in the button to give users context or explain the differences between the options.
+		</p>	
+		
+	<header><div class="sky-subsection-heading">When to use action buttons</div></header>
+			
   <stache-row>
     <stache-column screenSmall="6">
 			<p>Use action buttons immediately after a user has initiated a task, to differentiate between different branches the task may follow.</p>
@@ -76,7 +82,7 @@
         </stache-column>
     </stache-row>
     
-    <header><div class="sky-section-heading">When not to use action buttons</div></header>
+    <header><div class="sky-subsection-heading">When not to use action buttons</div></header>
     
     <stache-row>
         <stache-column screenSmall="6">
@@ -180,5 +186,7 @@
             </div>
         </stache-column>
     </stache-row>
+		
+	</sky-demo-page-content>
     
 </sky-demo-page>

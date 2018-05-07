@@ -50,7 +50,7 @@
     </li>
     <li>
       <p>
-        <stache-code>e2e</stache-code> folder — This folder is the required location to store end-to-end tests.
+        <stache-code>e2e</stache-code> folder — This folder is the required location to store end-to-end tests. However, we strongly recommend that you use unit tests instead of end-to-end tests based on <a href="https://angular.io/guide/testing#why-not-rely-on-e2e-tests-of-dom-integration">Angular’s guidance on testing</a>.
       </p>
     </li>
     <li>
@@ -66,17 +66,17 @@
     </li>
     <li>
       <p>
-        Unit tests — We recommend that you follow the <a href="https://angular.io/styleguide#!#naming">Angular naming guidelines</a> on how to name spec files and where to store them. SKY UX unit tests should use the same name as the components or services that they test, but they should end with <stache-code>.spec.ts.</stache-code> Place the spec files in the same folder as the components or services that they test. SKY UX automatically configures Karma to run unit tests in the <stache-code>src/app</stache-code> folder that match the <stache-code>.spec.ts</stache-code> pattern. When you run <stache-code>skyux test</stache-code> or <stache-code>skyux watch</stache-code>, code coverage results are stored in the <stache-code>coverage</stache-code> folder.
+        Unit tests — Unit tests should follow <a href="https://angular.io/styleguide#!#naming">the Angular guidelines</a> on naming and storing spec files. Name them after the components or services that they test, and place them in the same folders as their components or services. SKY UX automatically configures Karma to run unit tests in the <stache-code>src/app</stache-code> folder that end with <stache-code>.spec.ts</stache-code>. When you run <stache-code>skyux test</stache-code> or <stache-code>skyux watch</stache-code>, code coverage results are stored in the <stache-code>coverage</stache-code> folder.
       </p>
     </li>
     <li>
       <p>
-        End-to-end tests — We recommend that you follow the <a href="https://angular.io/styleguide#!#naming">Angular naming guidelines</a> on how to name spec files and where to store them. SKY UX end-to-end tests should use the same name as the components or services that they test, but they should end with <stache-code>.e2e-spec.ts.</stache-code> Place spec files for end-to-end tests in the <stache-code>e2e</stache-code> folder in the root of your project. SKY UX automatically configures Protractor to run end-to-end tests in the <stache-code>e2e</stache-code> folder that match the <stache-code>.e2e-spec.ts</stache-code> pattern.
+        End-to-end tests — We strongly recommend that you use unit tests instead of end-to-end tests based on <a href="https://angular.io/guide/testing#why-not-rely-on-e2e-tests-of-dom-integration">Angular’s guidance on testing</a>. If you must use end-to-end tests, they should follow <a href="https://angular.io/styleguide#!#naming">the Angular guidelines</a> on naming and storing spec files. Name them after the components or services that they test, and place them in the <stache-code>e2e</stache-code> folder in the root of your project. SKY UX automatically configures Protractor to run end-to-end tests in the <stache-code>e2e</stache-code> folder that end with <stache-code>.e2e-spec.ts</stache-code>.
       </p>
     </li>
     <li>
       <p>
-        Pact tests — We recommend that you follow the <a href="https://angular.io/styleguide#!#naming">Angular naming guidelines</a> on how to name spec files and where to store them. SKY UX pact tests should use the same name as the components or services where they test integration with consumed services, but they should end with <stache-code>.pact-spec.ts.</stache-code> Place the spec files in the same folder as the components or services that they test. SKY UX automatically configures Karma to run pact tests in the <stache-code>src/app</stache-code> folder that match the <stache-code>.pact-spec.ts</stache-code> pattern. When you run <stache-code>skyux pact</stache-code>, log files are placed in the directory that you specify in <stache-code>skyuxconfig.json</stache-code> and pact files are stored in the <stache-code>app/pacts</stache-code> directory.
+        Pact tests — Pact tests should follow <a href="https://angular.io/styleguide#!#naming">the Angular naming guidelines</a> on naming and storing spec files. Name them after the components or services where they test integration with consumed services, and place them in the same folder as their components or services. SKY UX automatically configures Karma to run pact tests in the <stache-code>src/app</stache-code> folder that match the <stache-code>.pact-spec.ts</stache-code> pattern. When you run <stache-code>skyux pact</stache-code>, log files are placed in the directory that you specify in <stache-code>skyuxconfig.json</stache-code>, and pact files are stored in the <stache-code>app/pacts</stache-code> directory.
       </p>
     </li>
     <li>
