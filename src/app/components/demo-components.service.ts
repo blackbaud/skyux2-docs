@@ -374,6 +374,14 @@ export class SkyDemoComponentsService {
         getCodeFiles: () => this.getDemoFiles('SkySectionedFormDemoComponent')
       },
       {
+        name: 'Select field',
+        icon: 'search',
+        // tslint:disable-next-line
+        summary: `The select field component launches a modal that displays items for users to select.`,
+        url: '/components/select-field',
+        getCodeFiles: () => this.getDemoFiles('SkySelectFieldDemoComponent')
+      },
+      {
         name: 'Sort',
         icon: 'sort',
         // tslint:disable-next-line
