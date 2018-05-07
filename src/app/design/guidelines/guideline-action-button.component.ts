@@ -56,7 +56,7 @@ export class GuidelineActionButtonsComponent {
       summary: 'Record management patterns provide guidance on how to add, edit and remove records.'
     },
     {
-      name: 'Page layouts',
+      name: 'Page design',
       path: '/design/guidelines/page-layouts',
       icon: 'columns',
       // tslint:disable-next-line

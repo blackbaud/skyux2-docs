@@ -55,7 +55,7 @@
             }
         ],
         after: [
-            {}
+            {
                 url: 'f2.css'
             }
         ]
@@ -277,6 +277,17 @@
     <li>
       <p>
         <stache-code>routes</stache-code> — Allows you to use the omnibar but still define navigation items. This property is for internal Blackbaud use only. For Blackbaud developers, the Engineering System website describes how to <a href="https://host.nxt.blackbaud.com/engineering-system-docs/learn/spa/spa-global-navigation">add your SPA to global navigation</a>.
+      </p>
+    </li>
+    <li>
+      <p>
+        <stache-code>skyuxModules</stache-code> — Allows you to specify the SKY UX modules to import into your application. By default, the SPA imports the entire SKY UX library. The <stache-code>skyuxModules</stache-code> property allows you to optimize performance for an application that only uses a small subset of SKY UX components. For example, specifying modules can improve the performance of unit tests and speed up the reload time when running <stache-code>skyux serve</stache-code>.
+      </p>
+      <p>
+        To identify the modules for the SKY UX components that you use in your application, see <a routerLink="/components">the SKY UX components documentation</a>. The module that defines each component is listed at the top of the documentation for that component. 
+      </p>
+      <p>
+        Keep in mind that this property does not reduce the code in your application’s JavaScript bundles. And it does not affect performance in production because applications are compiled “ahead-of-time” (AoT) and optimizations occur during the build step.
       </p>
     </li>
     <li>

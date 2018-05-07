@@ -82,6 +82,9 @@ code {
 /* Design documentation flex table layout */
 .definition-table {
   border-bottom: 1px dotted #ccc;
+	&:last-of-type {
+		border-bottom: none;
+	}
 }
 
 .definition-code,
@@ -195,4 +198,10 @@ code {
     font-size: 14px;
     font-style: italic;
   }
+}
+
+// Blog styling
+article.blog-post {
+	@include sky-border(row);
+	margin-bottom: 20px;
 }
