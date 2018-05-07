@@ -190,7 +190,7 @@ ${imports.join('\n')}
 import { AppComponent } from './app.component';
 
 // This is temporary to get list-view-grid functioning properly
-// A future relese of SKY UX components would fix this.
+// A future release of SKY UX components would fix this.
 import 'rxjs/add/operator/takeUntil';
 
 @NgModule({
