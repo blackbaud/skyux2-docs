@@ -5,7 +5,7 @@
 
   <sky-demo-page-summary>
     <p>
-      The toast service launches a container over a page's content to display small messages. The <stache-code>SkyToastService</stache-code> provider launches toast messages and provides a common look-and-feel. The <stache-code>SkyToastMessage</stache-code> class watches for and triggers toast events. It also allows you to close messages.
+      The toast module launches a container to display a message over a page's content. The <stache-code>SkyToastService</stache-code> provider launches toast messages and provides a common look and feel. The <stache-code>SkyToastMessage</stache-code> class triggers and watches for toast events. It also allows users to close messages.
     </p>
     <sky-alert
       alertType="info">
@@ -19,7 +19,7 @@
       Opens a message and displays the configured content. The <stache-code>config</stache-code> parameter is of type <stache-code>SkyToastConfig</stache-code>. This method returns the SkyToastMessage instance.
     </sky-demo-page-property>
     <sky-demo-page-property
-      propertyName="openMesage(message, config?)">
+      propertyName="openMessage(message, config?)">
       Opens a message toast and displays the provided message. The <stache-code>message</stache-code> parameter is of type <stache-code>string</stache-code> and determines the message to be displayed. The optional <stache-code>config</stache-code> parameter is of type <stache-code>SkyToastConfig</stache-code> and adds additional configuration options to the toast. This method returns the SkyToastMessage instance.
     </sky-demo-page-property>
     <sky-demo-page-property
@@ -58,11 +58,11 @@
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="isClosing">
-      An observable boolean showing if the toast is currently closing.
+      An observable boolean that indicates the toast is currently closing.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="isClosed">
-      An observable boolean showing if the toast is closed.
+      An observable boolean that indicates the toast is closed.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="message">

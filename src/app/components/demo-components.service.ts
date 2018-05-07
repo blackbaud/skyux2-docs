@@ -423,7 +423,7 @@ export class SkyDemoComponentsService {
         name: 'Toast',
         icon: 'envelope',
         // tslint:disable-next-line
-        summary: `The toast module allows users to create toast messages on the fly.`,
+        summary: `The toast module launches a container to display a message over a page's content.`,
         url: '/components/toast',
         getCodeFiles: () => this.getDemoFiles('SkyToastDemoComponent')
       },
