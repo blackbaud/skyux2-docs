@@ -59,19 +59,37 @@ export class SkyDemoPagePlunkerService {
         content: `
 var ngVersion = '@${VERSION.full}';
 System.config({
-  //use typescript for compilation
+  // use typescript for compilation
   transpiler: 'typescript',
-  //typescript compiler options
+
+  // typescript compiler options
   typescriptOptions: {
     emitDecoratorMetadata: true
   },
+
   paths: {
     'npm:': 'https://unpkg.com/',
     'dev:': 'https://localhost:5000/'
   },
-  //map tells the System loader where to look for things
-  map: {
 
+  // See: https://embed.plnkr.co/4Y6KAJ28Wwua8RSVaV8A/
+  bundles: {
+    "npm:rxjs-system-bundle@5.4.3/Rx.system.js": [
+      "rxjs",
+      "rxjs/*",
+      "rxjs/operator/*",
+      "rxjs/operators/*",
+      "rxjs/observable/*",
+      "rxjs/scheduler/*",
+      "rxjs/symbol/*",
+      "rxjs/add/operator/*",
+      "rxjs/add/observable/*",
+      "rxjs/util/*"
+    ]
+  },
+
+  // map tells the System loader where to look for things
+  map: {
     'app': '.',
 
     '@angular/core': 'npm:@angular/core' + ngVersion + '/bundles/core.umd.js',
@@ -85,17 +103,13 @@ System.config({
     '@angular/animations': 'npm:@angular/animations' + ngVersion + '/bundles/animations.umd.js',
     '@angular/platform-browser/animations': 'npm:@angular/platform-browser' + ngVersion + '/bundles/platform-browser-animations.umd.js',
     '@angular/animations/browser': 'npm:@angular/animations' + ngVersion + '/bundles/animations-browser.umd.js',
-    'tslib': 'npm:tslib@1.6.1',
-
-    'rxjs': 'npm:rxjs@5.4.3',
-    'typescript': 'npm:typescript@2.2.1/lib/typescript.js',
     '@blackbaud/skyux/dist/core': '${skyuxDistPath}',
-
-    'moment': 'npm:moment/moment.js',
-
     'microedge-rxstate/dist': 'npm:microedge-rxstate/dist/index.js',
+    'moment': 'npm:moment/moment.js',
+    'tslib': 'npm:tslib@1.6.1',
+    'typescript': 'npm:typescript@2.2.1/lib/typescript.js',
 
-    //dragula packages
+    // dragula packages
     'ng2-dragula/ng2-dragula': 'npm:ng2-dragula',
     'dragula': 'npm:dragula',
     'contra': 'npm:contra',
@@ -104,14 +118,12 @@ System.config({
     'crossvent': 'npm:crossvent/src',
     'custom-event': 'npm:custom-event'
   },
-  //packages defines our app package
+
+  // packages defines our app package
   packages: {
     app: {
       main: './main.ts',
       defaultExtension: 'ts'
-    },
-    rxjs: {
-      defaultExtension: 'js'
     },
     '@blackbaud/skyux/dist/core': {
        format: 'cjs'
@@ -119,7 +131,9 @@ System.config({
     'ng2-dragula/ng2-dragula': {
       main: 'ng2-dragula.js',
       defaultExtension: 'js'
-
+    },
+    'rxjs': {
+      defaultExtension: false
     },
     'dragula': { main: 'dragula.js', defaultExtension: 'js' },
     'contra': { main: 'contra.js', defaultExtension: 'js' },
@@ -181,7 +195,7 @@ export class AppComponent() { }`
         name: 'main.ts',
         content: `import { Component, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SkyModule } from '@blackbaud/skyux/dist/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
@@ -189,14 +203,11 @@ ${imports.join('\n')}
 
 import { AppComponent } from './app.component';
 
-// This is temporary to get list-view-grid functioning properly
-// A future release of SKY UX components would fix this.
-import 'rxjs/add/operator/takeUntil';
-
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     SkyModule
   ],
   declarations: [
