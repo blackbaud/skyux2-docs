@@ -29,6 +29,9 @@
   </sky-demo-page-properties>
 
   <sky-demo-page-properties sectionHeading="SkyToastConfig type">
+    <p>
+      The configuration used to set up a toast.
+    </p>
     <sky-demo-page-property
       propertyName="message"
       isOptional="true">
@@ -47,12 +50,15 @@
     <sky-demo-page-property
       propertyName="toastType"
       isOptional="true">
-      Sets the type of the toast and determines the color and icon displayed. Available values are: <em>info, success, warning, and danger</em>.
+      The type of toast that determines the color and icon displayed. Available values are: <stache-code>info, success, warning, and danger</stache-code>.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
   <sky-demo-page-properties sectionHeading="SkyToastMessage type">
-     <sky-demo-page-property
+    <p>
+      The current state of an existing toast.
+    </p>
+    <sky-demo-page-property
       propertyName="close()">
       Closes the linked toast and activates its <stache-code>closing</stache-code> and then <stache-code>closed</stache-code> states.
     </sky-demo-page-property>
