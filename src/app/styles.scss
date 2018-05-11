@@ -8,53 +8,6 @@ p {
   line-height: 1.6em !important;
 }
 
-code {
-  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-  font-size: 90%;
-  background-color: scale-color($color: $sky-highlight-color-danger, $lightness: 90%);
-  border-radius: 4px;
-  color: scale-color($color: $sky-color-red-50, $lightness: -20%);
-  padding: 2px 4px;
-}
-
-/* Prism overrides */
-/* All colors were chosen to meet accessibility contrast ratio requirements */
-.token {
-  &.atrule,
-  &.attr-value,
-  &.keyword {
-    color: scale-color($color: $sky-color-blue-50, $lightness: -20%);
-  }
-
-  &.selector,
-  &.attr-name,
-  &.string,
-  &.char,
-  &.builtin,
-  &.inserted {
-    color: scale-color($color: $sky-color-green-50, $lightness: -30%);
-  }
-
-  &.property,
-  &.tag,
-  &.boolean,
-  &.number,
-  &.constant,
-  &.symbol,
-  &.deleted {
-    color: scale-color($color: $sky-color-red-50, $lightness: -20%);
-  }
-
-  &.function {
-    color: scale-color($color: $sky-color-purple-50, $lightness: -20%);
-  }
-
-  &.punctuation,
-  &.operator {
-    color: scale-color($color: $sky-color-gray-70, $lightness: -20%);
-  }
-}
-
 .sky-demo-bg-gray {
   background-color: $sky-border-color-neutral-light !important;
   padding: 10px !important;
@@ -166,7 +119,7 @@ code {
   }
 }
 
-// Start content tables 
+// Start content tables
 .content-table {
   border-collapse: collapse;
   td, th {
