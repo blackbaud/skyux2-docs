@@ -62,7 +62,7 @@ export class GuidelineActionButtonsComponent {
       // tslint:disable-next-line
       summary: 'Responsive, mobile-first layouts provide flexibility and conform to SKY UX standards.'
     },
-		{
+    {
       name: 'Spacing & layout',
       path: '/design/guidelines/spacing-layout',
       icon: 'th-large',
