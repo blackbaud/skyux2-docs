@@ -64,7 +64,7 @@ export class SkyDemoPageComponent implements OnInit, AfterContentInit {
       this.tableOfContentsRoutes.push({
         name: component.sectionHeading,
         fragment: this.getFragment(component.sectionHeading),
-        path: ''
+        path: '.'
       });
     });
 
@@ -72,7 +72,7 @@ export class SkyDemoPageComponent implements OnInit, AfterContentInit {
       this.tableOfContentsRoutes.push({
         name: 'Demo',
         fragment: 'demo',
-        path: ''
+        path: '.'
       });
     });
 
@@ -80,7 +80,7 @@ export class SkyDemoPageComponent implements OnInit, AfterContentInit {
       this.tableOfContentsRoutes.push({
         name: 'Code',
         fragment: 'code',
-        path: ''
+        path: '.'
       });
     }
 
@@ -88,7 +88,7 @@ export class SkyDemoPageComponent implements OnInit, AfterContentInit {
       this.tableOfContentsRoutes.push({
         name: component.sectionHeading,
         fragment: this.getFragment(component.sectionHeading),
-        path: ''
+        path: '.'
       });
     });
   }
