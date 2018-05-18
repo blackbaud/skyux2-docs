@@ -7,7 +7,28 @@
     The colorpicker module allows users to use a button to select a color.
   </sky-demo-page-summary>
 
-  <sky-demo-page-properties sectionHeading="color picker input directive properties">
+  <sky-demo-page-properties sectionHeading="Colorpicker properties">
+    <sky-demo-page-property
+      propertyName="messageStream"
+      isOptional="true">
+      Specifies ...
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="showResetButton"
+      defaultValue="true"
+      isOptional="true">
+      Indicates whether to display a reset button.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-properties sectionHeading="Colorpicker events">
+    <sky-demo-page-property
+      propertyName="selectedColorChanged">
+      Fires when user select a color.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-properties sectionHeading="Colorpicker input directive properties">
     <sky-demo-page-property
       propertyName="skyColorpickerInput">
       When this attribute is placed on an (input or button) element and wrapped in a <stache-code>sky-colorpicker</stache-code> component,
