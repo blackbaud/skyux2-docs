@@ -27,23 +27,72 @@
   <sky-demo-page-properties sectionHeading="SkyFlyoutConfig type">
     <sky-demo-page-property
       propertyName="providers"
-      isOptional="true">
+      isOptional="true"
+    >
       Specifies an array of custom providers to pass to the component's constructor.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="ariaRole"
-      isOptional="true">
+      isOptional="true"
+    >
       Sets the flyout's <stache-code>role</stache-code> attribute to support accessibility.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="ariaLabelledBy"
-      isOptional="true">
+      isOptional="true"
+    >
       Sets the flyout's <stache-code>aria-labelledby</stache-code> attribute to support accessibility. The value should be the HTML element ID (without the leading <stache-code>#</stache-code>) of the element that labels the flyout.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="ariaDescribedBy"
-      isOptional="true">
+      isOptional="true"
+    >
       Sets the flyout's <stache-code>aria-describedby</stache-code> attribute to support accessibility. The value should be the HTML element ID (without the leading <stache-code>#</stache-code>) of the element that describes the flyout. Typically, this is the text on the flyout but does not include items that users interact with such as buttons and forms.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="defaultWidth"
+      isOptional="true"
+    >
+      The default width of the flyout container. (defaults to <stache-code>500</stache-code>)
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="minWidth"
+      isOptional="true"
+    >
+      The minimum resize width of the flyout container. (defaults to <stache-code>320</stache-code>)
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="maxWidth"
+      isOptional="true"
+    >
+      The maximum resize width of the flyout container. (defaults to <stache-code>defaultWidth</stache-code>)
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="permalink"
+      isOptional="true"
+    >
+      Displays a permalink button in the flyout's header. When clicked, the user is navigated to the URL (or application route) representative of the flyout's contents. This value is of type <stache-code>SkyFlyoutPermalink</stache-code>.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-properties sectionHeading="SkyFlyoutPermalink type">
+    <sky-demo-page-property
+      propertyName="label"
+      isOptional="true"
+    >
+      The text used for the permalink button.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="route"
+      isOptional="true"
+    >
+      An object that represents the Angular application route. The object includes two properties, both of which are mapped to Angular's <a href="https://angular.io/api/router/Router#navigate"><stache-code>Router.navigate(commands, extras?)</stache-code></a> method.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="url"
+      isOptional="true"
+    >
+      Specifies an external URL for the permalink.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
