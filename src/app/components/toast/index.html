@@ -5,57 +5,52 @@
 
   <sky-demo-page-summary>
     <p>
-      The toast module displays messages over the page's content.
+      The toast module launches a container to display a message over a page's content. The <stache-code>SkyToastService</stache-code> provider lauches toasts and provides a common look-and-feel.
     </p>
   </sky-demo-page-summary>
 
-  <sky-demo-page-properties sectionHeading="SkyToastService">
+  <sky-demo-page-properties sectionHeading="Toast service methods">
     <p>
       The <stache-code>SkyToastService</stache-code> launches toast messages and provides a common look and feel.
     </p>
     <sky-demo-page-property
       propertyName="openMessage(message, config?)">
-      Opens a message toast and displays the provided message. The <stache-code>message</stache-code> parameter is of type <stache-code>string</stache-code> and determines the message to be displayed. The optional <stache-code>config</stache-code> parameter is of type <stache-code>SkyToastConfig</stache-code> and adds additional configuration options to the toast. This method returns a <stache-code>SkyToastInstance</stache-code> instance.
+      Opens a message toast and displays the specified message. The <stache-code>message</stache-code> parameter is of type <stache-code>string</stache-code> and determines the message to display. The optional <stache-code>config</stache-code> parameter is of type <stache-code>SkyToastConfig</stache-code> and adds additional configuration options to the toast. This method returns a <stache-code>SkyToastInstance</stache-code> instance.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="openComponent(component, config?, providers?)"
     >
-      Opens a custom toast and renders the provided component in a toast. The <stache-code>component</stache-code> parameter determines the component to be rendered. The optional <stache-code>config</stache-code> parameter is of type <stache-code>SkyToastConfig</stache-code> and adds additional configuration options to the toast. The optional <stache-code>providers</stache-code> parameter is of type <stache-code>StaticProvider[]</stache-code> and specifies an array of custom providers to pass to the <stache-code>component</stache-code>'s constructor. This method returns a <stache-code>SkyToastInstance</stache-code> instance.
+      Opens a custom toast and displays the specified component. The <stache-code>component</stache-code> parameter determines the component to render. The optional <stache-code>config</stache-code> parameter is of type <stache-code>SkyToastConfig</stache-code> and adds additional configuration options to the toast. The optional <stache-code>providers</stache-code> parameter is of type <stache-code>StaticProvider[]</stache-code> and specifies an array of custom providers to pass to the <stache-code>component</stache-code>'s constructor. This method returns a <stache-code>SkyToastInstance</stache-code> instance.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="closeAll()"
     >
-      Closes all open toasts at once.
+      Closes all open toasts.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
-  <sky-demo-page-properties sectionHeading="SkyToastConfig">
+  <sky-demo-page-properties sectionHeading="SkyToastConfig type">
     <p>
-      The configuration used to set up a toast.
+      Specifies the configuration options to set up a toast.
     </p>
     <sky-demo-page-property
       propertyName="type"
+      defaultValue="SkyToastType.Info"
       isOptional="true"
     >
-      The type of toast that determines the color and icon displayed. Available values are:
-      <ul>
-        <li><stache-code>SkyToastType.Info</stache-code></li>
-        <li><stache-code>SkyToastType.Success</stache-code></li>
-        <li><stache-code>SkyToastType.Warning</stache-code></li>
-        <li><stache-code>SkyToastType.Danger</stache-code></li>
-      </ul>
+      Specifies the type of toast and determines the color and icon to display. Available values are: <stache-code>SkyToastType.Info</stache-code>, <stache-code>SkyToastType.Success</stache-code>, <stache-code>SkyToastType.Warning</stache-code>, and <stache-code>SkyToastType.Danger</stache-code>.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
-  <sky-demo-page-properties sectionHeading="SkyToastInstance">
+  <sky-demo-page-properties sectionHeading="SkyToastInstance properties">
     <p>
-      An object representing a single, displayed toast.
+      An object that represents a single displayed toast.
     </p>
     <sky-demo-page-property propertyName="close()">
-      Closes the respective toast.
+      Closes the toast.
     </sky-demo-page-property>
     <sky-demo-page-property propertyName="closed">
-      An observable that indicates when the toast has been closed.
+      An observable that indicates when the toast is closed.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
