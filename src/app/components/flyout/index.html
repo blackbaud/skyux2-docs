@@ -51,27 +51,30 @@
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="defaultWidth"
+      defaultValue="500px"
       isOptional="true"
     >
-      The default width of the flyout container. (defaults to <stache-code>500</stache-code>)
+      Specifies the default width of the flyout container.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="minWidth"
+      defaultValue="320px"
       isOptional="true"
     >
-      The minimum resize width of the flyout container. (defaults to <stache-code>320</stache-code>)
+      Specifies the minimum resize width of the flyout container.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="maxWidth"
+      defaultValue="defaultWidth"
       isOptional="true"
     >
-      The maximum resize width of the flyout container. (defaults to <stache-code>defaultWidth</stache-code>)
+      Specifies the maximum resize width of the flyout container.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="permalink"
       isOptional="true"
     >
-      Displays a permalink button in the flyout's header. When clicked, the user is navigated to the URL (or application route) representative of the flyout's contents. This value is of type <stache-code>SkyFlyoutPermalink</stache-code>.
+      Displays a permalink button in the flyout header that navigates users to the URL (or application route) representative of the flyout's contents. This value is of type <stache-code>SkyFlyoutPermalink</stache-code>.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -80,13 +83,13 @@
       propertyName="label"
       isOptional="true"
     >
-      The text used for the permalink button.
+      Specifies a text label for the permalink button.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="route"
       isOptional="true"
     >
-      An object that represents the Angular application route. The object includes two properties, both of which are mapped to Angular's <a href="https://angular.io/api/router/Router#navigate"><stache-code>Router.navigate(commands, extras?)</stache-code></a> method.
+      An object that represents the Angular application route. The object includes two properties that are mapped to Angular's <a href="https://angular.io/api/router/Router#navigate"><stache-code>Router.navigate(commands, extras?)</stache-code></a> method.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="url"
