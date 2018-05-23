@@ -428,6 +428,14 @@ export class SkyDemoComponentsService {
         getCodeFiles: () => this.getDemoFiles('SkyTimepickerDemoComponent')
       },
       {
+        name: 'Toast',
+        icon: 'envelope',
+        // tslint:disable-next-line
+        summary: `The toast module launches a container to display a message over a page's content.`,
+        url: '/components/toast',
+        getCodeFiles: () => this.getDemoFiles('SkyToastDemoComponent')
+      },
+      {
         name: 'Toolbar',
         icon: 'bars',
         // tslint:disable-next-line
