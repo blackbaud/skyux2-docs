@@ -14,9 +14,12 @@
   </sky-demo-page-summary>
 
   <sky-demo-page-properties sectionHeading="Flyout service methods">
+    <p>
+      The <stache-code>SkyFlyoutService</stache-code> launches flyouts and provides a common look and feel.
+    </p>
     <sky-demo-page-property
       propertyName="open(component, config?)">
-      Opens a flyout and displays the specified component. The optional <stache-code>config</stache-code> parameter is of type <stache-code>SkyFlyoutConfig</stache-code> and is passed to the specified component's constructor. This method returns the flyout instance.
+      Opens a flyout and displays the specified component. The <stache-code>component</stache-code> parameter determines the component to render. The optional <stache-code>config</stache-code> parameter is of type <stache-code>SkyFlyoutConfig</stache-code> and is passed to the specified component's constructor. This method returns a <stache-code>SkyFlyoutInstance</stache-code> instance.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="close()">
@@ -25,6 +28,9 @@
   </sky-demo-page-properties>
 
   <sky-demo-page-properties sectionHeading="SkyFlyoutConfig type">
+    <p>
+      Specifies the configuration options to set up a flyout.
+    </p>
     <sky-demo-page-property
       propertyName="providers"
       isOptional="true"
@@ -99,21 +105,21 @@
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
-  <sky-demo-page-properties sectionHeading="Flyout instance properties">
+  <sky-demo-page-properties sectionHeading="SkyFlyoutInstance properties">
+    <p>
+      An object that represents a single displayed flyout.
+    </p>
      <sky-demo-page-property
       propertyName="close()">
       Closes the flyout instance and emits its <stache-code>closed</stache-code> event.
     </sky-demo-page-property>
     <sky-demo-page-property
-      propertyName="componentInstance">
-      Specifies the instance of the component to display in the flyout.
-    </sky-demo-page-property>
-  </sky-demo-page-properties>
-
-  <sky-demo-page-properties sectionHeading="Flyout instance events">
-    <sky-demo-page-property
       propertyName="closed">
       An event that the flyout instance emits when it is closed.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="componentInstance">
+      Specifies the instance of the component to display in the flyout.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
