@@ -1,5 +1,6 @@
 <sky-demo-page-content [sectionHeading]="sectionHeading">
+  <ng-content></ng-content>
   <ul>
-    <ng-content></ng-content>
+    <ng-content select="sky-demo-page-property"></ng-content>
   </ul>
 </sky-demo-page-content>
