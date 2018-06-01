@@ -155,16 +155,16 @@
   </h3>
 
   <p>
-    Popovers show small chunks of information that are only occasionally relevant to the user. Popovers are appropriate when:
+    Popovers display small chunks of contextual content that do not always need to be visible. Popovers are appropriate when:
   </p>
 	
 	<ul>
-		<li>The trigger is client-side, a direct result of a user interaction with an element (such as a click) that does not lead to a change in system state.</li>
-		<li>The content is directly related to the user's current task.</li>
-		<li>The content will not require scrolling on a mobile device.</li>
+		<li>Users select a button or link to display the popover, and the interaction does not change the system state.</li>
+		<li>The popover content directly relates to the user's current task.</li>
+		<li>The popover content does not require scrolling on a mobile device.</li>
 	</ul>
 	
-	<p>If the content is relevant most of the time, present it <a routerLink="/design/guidelines/user-assistance" fragment="persistent-inline-help">in-page</a> instead. If the amount of content would require scrolling on a mobile device, use a <a routerLink="/components/flyout">flyout</a> instead.</p>
+	<p>If the content is valuable to see most of the time, use <a routerLink="/design/guidelines/user-assistance" fragment="persistent-inline-help">presistent inline help</a> instead. If the amount of content requires scrolling on a mobile device, use a <a routerLink="/components/flyout">flyout</a> instead.</p>
 	
 	<h3 class="sky-subsection-heading">
     <a routerLink="/components/toast">Toast</a>
@@ -175,8 +175,8 @@
   </p>
 	
 	<ul>
-		<li>The trigger is server-side, indicating that a state in the system has changed.</li>
-		<li>The content is immediately important such that the user needs to know the information regardless of their current task or context in the system.</li>
+		<li>The user needs to know about a change in system state due to a background process.</li>
+		<li>The information is important enough to notify the user regardless of their current task or context in the system.</li>
 	</ul>
   
 </stache>
