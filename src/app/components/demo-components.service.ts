@@ -381,6 +381,14 @@ export class SkyDemoComponentsService {
         getCodeFiles: () => this.getDemoFiles('SkySectionedFormDemoComponent')
       },
       {
+        name: 'Select field',
+        icon: 'search',
+        // tslint:disable-next-line
+        summary: `The select field component launches a modal that displays items for users to select.`,
+        url: '/components/select-field',
+        getCodeFiles: () => this.getDemoFiles('SkySelectFieldDemoComponent')
+      },
+      {
         name: 'Sort',
         icon: 'sort',
         // tslint:disable-next-line
@@ -425,6 +433,14 @@ export class SkyDemoComponentsService {
         summary: `The timepicker module allows users to use an input to select times.`,
         url: '/components/timepicker',
         getCodeFiles: () => this.getDemoFiles('SkyTimepickerDemoComponent')
+      },
+      {
+        name: 'Toast',
+        icon: 'envelope',
+        // tslint:disable-next-line
+        summary: `The toast module launches a container to display a message over a page's content.`,
+        url: '/components/toast',
+        getCodeFiles: () => this.getDemoFiles('SkyToastDemoComponent')
       },
       {
         name: 'Toolbar',

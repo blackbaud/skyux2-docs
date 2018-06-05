@@ -5,7 +5,7 @@
 
   <sky-demo-page-summary>
     <p>
-      The modal directive and service allow you to launch modals in a consistent way in SKY UX applications. The <stache-code>SkyModalService</stache-code> provider lauches the modals, while the <stache-code>sky-modal</stache-code> directive provides a common look-and-feel for modal content. Within the <stache-code>sky-modal</stache-code> directive, you have options to display a common modal header, specify body content, and display a common modal footer and buttons. The <stache-code>SkyModalInstance</stache-code> class allows you to close the modal and return data from the launched modal. For information about how to test modals in SKY UX, see <a routerLink="/learn/get-started/advanced/unit-test-modals">write unit tests for modals</a>.
+      The modal component and service allow you to launch modals in a consistent way in SKY UX applications. The <stache-code>SkyModalService</stache-code> provider lauches modals, and the <stache-code>sky-modal</stache-code> component provides a common look-and-feel for modal content. Within the <stache-code>sky-modal</stache-code> component, you have options to display a common modal header, specify body content, and display a common modal footer and buttons. The <stache-code>SkyModalInstance</stache-code> class allows you to close the modal and return data from the launched modal. For information about how to test modals in SKY UX, see <a routerLink="/learn/get-started/advanced/unit-test-modals">write unit tests for modals</a>.
     </p>
     <sky-alert alertType="info">
       Keep in mind that modals are not child components. Any component in a SPA can use <stache-code>SkyModalService</stache-code> to launch a modal, but the modal is launched independently through the service.
@@ -23,20 +23,23 @@
   <sky-demo-page-properties sectionHeading="Modal service config properties">
     <sky-demo-page-property
       propertyName="fullPage"
+      defaultValue="false"
+      isOptional="true"
     >
-    A Boolean property of <stache-code>config</stache-code> with a default of false. When set to true, the modal will become full screen.
+    Indicates whether to display the modal full screen.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="tiledBody"
       defaultValue="false"
       isOptional="true"
     >
-    Indicates whether the modal uses tiles. When set to true, the modal's background switches to <stache-code>$sky-background-color-neutral-light</stache-code> and tile headings are styled as subsection headings.
+    Indicates whether the modal uses tiles. When set to <stache-code>true</stache-code>, the modal's background switches to <stache-code>$sky-background-color-neutral-light</stache-code> and tile headings are styled as subsection headings.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="providers"
     >
-    A array property of <stache-code>providers</stache-code> This can be used to pass context values from the component launching the modal to the modal component.
+    An array property of <stache-code>providers</stache-code>. In Angular, a provider is something that can create or deliver a service. This property can be used to pass context values from the component that launches the modal to the modal component.
+    A 
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="size"
@@ -50,19 +53,19 @@
       propertyName="ariaLabelledBy"
       isOptional="true"
     >
-    Sets the <stache-code>aria-labelledby</stache-code> attribute for the modal dialog for accessibility support. The value should be an ID (without the leading <stache-code>#</stache-code>) pointing to the element that labels your modal. Typically, this will be a header element. If not provided, this will default to the content of the <stache-code>sky-modal-header</stache-code> component.
+    Sets the <stache-code>aria-labelledby</stache-code> attribute for the modal dialog to support accessibility. The value should be an ID (without the leading <stache-code>#</stache-code>) that points to the element that labels the modal. Typically this is a header element. If no ID is specified, the default value is the content of the <stache-code>sky-modal-header</stache-code> component.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="ariaDescribedBy"
       isOptional="true"
     >
-    Sets the <stache-code>aria-describedby</stache-code> attribute for the modal dialog for accessibility support. The value should be an id (without the leading <stache-code>#</stache-code>) pointing to the element that describes your modal. Typically, this will be the text on your modal, but does not include something the user would interact with, like buttons or a form. If not provided, this will default to the content of the <stache-code>sky-modal-content</stache-code> component.
+    Sets the <stache-code>aria-describedby</stache-code> attribute for the modal dialog to support accessibility. The value should be an ID (without the leading <stache-code>#</stache-code>) that points to the element that describes the modal. Typically, this is the text on the modal, not including anything that users interact with such as buttons or a form. If no ID is specified, the default value is the content of the <stache-code>sky-modal-content</stache-code> component.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="helpKey"
       isOptional="true"
     >
-    Specifies a <stache-code>helpKey</stache-code> string. This property dispays the <i class="fa fa-question-circle" aria-hidden="true"></i> button in the modal header. When users click this button, the <stache-code>helpOpened</stache-code> event broadcasts the helpKey.
+    Specifies a <stache-code>helpKey</stache-code> string. This property dispays the <i class="fa fa-question-circle" aria-hidden="true"></i> button in the modal header. When users click this button, the <stache-code>helpOpened</stache-code> event broadcasts the <stache-code>helpKey</stache-code> parameter.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -84,7 +87,7 @@
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
-  <sky-demo-page-properties sectionHeading="Modal instance properties">
+  <sky-demo-page-properties sectionHeading="Modal instance methods">
     <sky-demo-page-property
       propertyName="save(result?)"
     >
@@ -93,12 +96,12 @@
     <sky-demo-page-property
       propertyName="cancel(result?)"
     >
-    Closes the modal instance with <stache-code>reason=cancel</stache-code>. The optional <stache-code>result</stache-code> parameter specifies an object that will be emitted to subscribers of the <stache-code>closed</stache-code> event of the modal instance. The <stache-code>SkyModalInstance</stache-code> provider can be injected into a component's constructor so that this <stache-code>close</stache-code> function can be called from a button in the <stache-code>sky-modal-footer</stache-code>.
+    Closes the modal instance with <stache-code>reason=cancel</stache-code>. The optional <stache-code>result</stache-code> parameter specifies an object that will be emitted to subscribers of the <stache-code>closed</stache-code> event of the modal instance. The <stache-code>SkyModalInstance</stache-code> provider can be injected into a component's constructor so that this <stache-code>cancel</stache-code> function can be called from a button in the <stache-code>sky-modal-footer</stache-code>.
     </sky-demo-page-property>
      <sky-demo-page-property
       propertyName="close(result?, reason?)"
     >
-    Closes the modal instance. The optional <stache-code>result</stache-code> parameter specifies an object that will be emitted to subscribers of the <stache-code>closed</stache-code> event of the modal instance. The optional <stache-code>reason</stache-code> parameter specifies a string indicatinng the reason for the modal closing. The <stache-code>SkyModalInstance</stache-code> provider can be injected into a component's constructor so that this <stache-code>close</stache-code> function can be called from a button in the <stache-code>sky-modal-footer</stache-code>.
+    Closes the modal instance. The optional <stache-code>result</stache-code> parameter specifies an object that will be emitted to subscribers of the <stache-code>closed</stache-code> event of the modal instance, and it specifies a string that indicates the reason for the modal closing, with the default reason of <stache-code>close</stache-code>. The <stache-code>SkyModalInstance</stache-code> provider can be injected into a component's constructor so that this <stache-code>close</stache-code> function can be called from a button in the <stache-code>sky-modal-footer</stache-code>.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="openHelp(helpKey?)"
@@ -111,12 +114,12 @@
     <sky-demo-page-property
       propertyName="closed"
     >
-    An event that is emitted by the modal instance when it is closed. It emits a <stache-code>SkyCloseModalArgs</stache-code> object that has a <stache-code>data</stache-code> property with data passed from the user on close or save and a <stache-code>reason</stache-code> property which indicates whether the modal was saved or closed without saving.
+    An event that the modal instance emits when it closes. It emits a <stache-code>SkyCloseModalArgs</stache-code> object with a <stache-code>data</stache-code> property that includes data passed from users on close or save and a <stache-code>reason</stache-code> property that indicates whether the modal was saved or closed without saving.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="helpOpened"
     >
-    Emitted by the modal instance when users click the <i class="fa fa-question-circle" aria-hidden="true"></i> button. When a <stache-code>helpKey</stache-code> is specified, it gets broadcast with the <stache-code>helpOpened</stache-code> event.
+    An event that the modal instance emits when users click the <i class="fa fa-question-circle" aria-hidden="true"></i> button. If a <stache-code>helpKey</stache-code> parameter was specified, the <stache-code>helpOpened</stache-code> event broadcasts the <stache-code>helpKey</stache-code>.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -125,7 +128,7 @@
     <sky-demo-page-code demoName="Modal"></sky-demo-page-code>
   </sky-demo-page-example>
 
-  <!-- <sky-demo-page-content sectionHeading="Accessibility">
+  <sky-demo-page-content sectionHeading="Accessibility">
     <p>Follow these guidelines to ensure that people can use modals with assistive technology or keyboards.</p>
     <ul>
       <li>When a modal opens, focus should be on the first focusable item in the modal. If the modal does not include focusable items, then focus should be on the modal container element.</li>
@@ -135,14 +138,26 @@
   </sky-demo-page-content>
 
 	<sky-demo-page-content sectionHeading="UX guidelines">
-  	<div class="sky-subsection-heading">Modal</div>
+		<div class="sky-subsection-heading">Modal title text</div>
+			<p>In general, use the following format for modal titles:</p>
+			<p><span class="sky-emphasized">&lt;Verb&gt; &lt;direct object&gt; for &lt;indirect object&gt;</span></p>
+			<div style="margin-bottom: 20px;">
+				<img class="screenshot screenshot-info" src="~/assets/img/guidelines/wording/modal-with-object.png" alt="modal title: Edit address for Robert Hernandez"/>
+			</div>
+			<p>If there is not an indirect object or the user is the implied indirect object, you can exclude it:</p>
+			<p><span class="sky-emphasized">&lt;Verb&gt; &lt;direct object&gt;</span></p>
+			<div style="margin-bottom: 20px;">
+				<img class="screenshot screenshot-info" src="~/assets/img/guidelines/wording/modal-without-object.png" alt="modal title: Manage bank feeds"/>
+			</div>
+  	<div class="sky-subsection-heading">Usage</div>
+			<div class="sky-emphasized">Modal</div>
 			<p>A modal dialog is appropriate for forms that meet any of the following criteria:</p>
 			<ul>
 				<li>The task is functionally modal, and users must finish it before doing anything else.</li>
 				<li>Displaying the form inline would lead to substantial content shifting or require users to scroll to complete the form.</li>
 				<li>The form adds records from a paginated list or an infinite scroll list.</li>
 			</ul>
-		<div class="sky-subsection-heading">Full-page modal</div>
+			<div class="sky-emphasized">Full-page modal</div>
 			<p>A full-page modal is appropriate for forms that meet the following criteria:</p>
 			<ul>
 				<li>The task is functionally modal, and users must finish it before doing anything else.</li>
@@ -152,6 +167,6 @@
 				<li>The form supports a complex task for a list of objects such as filling out report cards for a class.</li>
 				<li>The task includes subtasks that need to be completed in context.</li>
 			</ul>
-  </sky-demo-page-content> -->
+  </sky-demo-page-content>
 
 </sky-demo-page>

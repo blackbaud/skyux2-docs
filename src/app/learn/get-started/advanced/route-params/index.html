@@ -21,11 +21,11 @@
   <stache-code-block>
     You are viewing dog 42.
   </stache-code-block>
-  
+
   <p>
     To demonstrate how to use route parameters, let's modify the About page that the template includes in your SPA when you create an application. For this example, we'll create a service to mimic communication with a database, and then we'll create an <stache-code>_id</stache-code> subfolder for the route parameters.
   </p>
-  
+
   <ol>
     <li>
       <p>
@@ -58,9 +58,9 @@ export class AboutService {
       email: 'michael@jordon.net'
     }
   ];
-  
+
   public getUsers = () => this.users;
-  
+
   public getUserById = (id: string) => this.users.filter(user => user.id === id)[0];
 }
 </stache-code-block>
@@ -131,13 +131,13 @@ export class AboutUserComponent implements OnInit {
 
   @Input()
   public userId: string;
-  
+
   public user: any;
-  
+
   constructor(
     private aboutService: AboutService
   ) { }
-  
+
   public ngOnInit() {
     this.user = this.aboutService.getUserById(this.userId);
   }
