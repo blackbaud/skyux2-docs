@@ -7,20 +7,20 @@
 
   <sky-demo-page-properties>
     <sky-demo-page-property
-      propertyName="hasMore"
+      propertyName="enabled"
       defaultValue="false"
       isOptional="true"
     >
-    Indicates whether more data is available to load. If set to <stache-code>false</stache-code>, infinite scroll hides and stops calling the load function.
+    Indicates whether the infinite scroll component should be active such as when more data is available to load. If set to <stache-code>false</stache-code>, infinite scroll hides and stops calling the load function.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
   <sky-demo-page-properties sectionHeading='Events'>
     <sky-demo-page-property
-      propertyName="onLoad"
+      propertyName="scrollEnd"
       isOptional="false"
     >
-    Fires when users click the load more button or a scroll triggers the need to load more data. This only emits an event when the <stache-code>hasMore</stache-code> property is <stache-code>true</stache-code> and data is not loading.
+    Fires when a scroll triggers the need to load more data or users click the load more button. This only emits an event when the <stache-code>enabled</stache-code> property is <stache-code>true</stache-code> and data is not already loading.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
