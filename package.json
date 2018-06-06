@@ -12,7 +12,7 @@
   "author": "Blackbaud, Inc.",
   "license": "MIT",
   "dependencies": {
-    "@blackbaud/skyux": "2.13.0",
+    "@blackbaud/skyux": "2.14.0",
     "@blackbaud/skyux-design-tokens": "0.0.8",
     "@blackbaud/stache": "2.7.2"
   },
