@@ -186,7 +186,7 @@ export class SkyDemoComponentsService {
       {
         name: 'Infinite scroll',
         icon: 'refresh',
-        summary: 'The infinite scroll component dynamically loads data as the user scrolls.',
+        summary: 'The infinite scroll component dynamically loads data as users scroll.',
         url: '/components/infinite-scroll',
         getCodeFiles: () => this.getDemoFiles('SkyInfiniteScrollDemoComponent')
       },
