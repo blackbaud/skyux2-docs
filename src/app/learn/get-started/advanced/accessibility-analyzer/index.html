@@ -4,6 +4,9 @@
   showTableOfContents="true">
   
   <stache-page-summary>
+  <sky-alert alertType="warning">
+    <stache-include fileName="e2e-recommendation.html"></stache-include> If you must use e2e tests, the deprecated accessibilty analyzer described here lets you add accessibility checks to e2e specs and manage rules for accessibility If not, we recommend <a routerLink="/learn/get-started/advanced/accessibility-unit-tests">running accessibility checks in SKY UX unit tests</a>.
+  </sky-alert>
     <p>
       The SKY UX accessibility analyzer tool allows you to run <a href="https://github.com/dequelabs/axe-core">aXe automated accessibility tests</a> as part of your end-to-end testing. aXe is an open source library of automated accessibility rules that is integrated into SKY UX to identify potential issues for a subset of the <a href="https://www.w3.org/TR/WCAG20/">Web Content Accessibility Guidelines 2.0 Level A and AA success criteria</a>.
     </p>
