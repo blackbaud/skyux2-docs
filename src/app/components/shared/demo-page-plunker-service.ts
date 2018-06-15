@@ -194,10 +194,12 @@ export class AppComponent() { }`
       {
         name: 'main.ts',
         content: `import { Component, NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SkyModule } from '@blackbaud/skyux/dist/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { RouterModule } from '@angular/router';
+
+import { SkyModule } from '@blackbaud/skyux/dist/core';
 
 ${imports.join('\n')}
 
@@ -208,6 +210,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    RouterModule.forRoot([]),
     SkyModule
   ],
   declarations: [
