@@ -1,6 +1,6 @@
 <stache
   pageTitle="Accessibility Tests"
-  navTitle="Accessibilty tests"
+  navTitle="Accessibility tests"
   showTableOfContents="true"
   navOrder="1">
   
@@ -11,7 +11,7 @@
   </stache-page-summary>
 
   <p>
-    <stache-include fileName="e2e-recommendation.html"></stache-include> If you must use e2e tests, the deprecated accessibilty analyzer lets you add accessibility checks to e2e specs and manage rules for accessibility tests with an <stache-code>a11y</stache-code> configuration property. For more information, see <a routerLink="/learn/get-started/advanced/accessibility-analyzer">the accessibility analyzer</a> and <a routerLink="/learn/reference/configuration">the configuration guidelines</a>.
+    <stache-include fileName="e2e-recommendation.html"></stache-include> If you must use e2e tests, the deprecated accessibility analyzer lets you add accessibility checks to e2e specs and manage rules for accessibility tests with an <stache-code>a11y</stache-code> configuration property. For more information, see <a routerLink="/learn/get-started/advanced/accessibility-analyzer">the accessibility analyzer</a> and <a routerLink="/learn/reference/configuration">the configuration guidelines</a>.
   </p>
   
   <stache-page-anchor>
@@ -28,7 +28,7 @@
     npm install @blackbaud/skyux-lib-testing --save-dev --save-exact
   </stache-code-block>
   <p>
-    By default, the <stache-code>skyA11yAnalyzerConfig</stache-code> interface specifies <a href="https://github.com/blackbaud/skyux-lib-testing/blob/master/src/app/public/src/a11y/a11y-analyzer.ts">configuration settings for <stache-code>toBeAccessible</stache-code> to indicate which accessibility checks to run</a>. To overwrite the default acccessibility checks, you can modify <a stacheRouterLink="." fragment="specify-parameters-for-tobeaccessible">a parameter for the <stache-code>toBeAccessible</stache-code> matcher</a>.
+    By default, the <stache-code>SkyA11yAnalyzerConfig</stache-code> interface specifies <a href="https://github.com/blackbaud/skyux-lib-testing/blob/master/src/app/public/src/a11y/a11y-analyzer.ts">configuration settings for <stache-code>toBeAccessible</stache-code> to indicate which accessibility checks to run</a>. To overwrite the default acccessibility checks, you can modify <a stacheRouterLink="." fragment="specify-parameters-for-tobeaccessible">a parameter for the <stache-code>toBeAccessible</stache-code> matcher</a>.
   </p>
   
 
@@ -67,7 +67,7 @@
   </stache-page-anchor>
   
   <p>
-    Finally, you can specify two optional parameters within the <stache-code>toBeAccessible</stache-code> matcher. The first parameter is a callback that lets you execute code after accessibility checks run. The second parameter is an option that lets you overwrite <a href="https://github.com/blackbaud/skyux-lib-testing/blob/master/src/app/public/src/a11y/a11y-analyzer.ts">the default accessibilty checks that <stache-code>skyA11yAnalyzerConfig</stache-code> specifies</a>. 
+    Finally, you can specify two optional parameters within the <stache-code>toBeAccessible</stache-code> matcher. The first parameter is a callback that lets you execute code after accessibility checks run. The second parameter is an option that lets you overwrite <a href="https://github.com/blackbaud/skyux-lib-testing/blob/master/src/app/public/src/a11y/a11y-analyzer.ts">the default accessibility checks that <stache-code>SkyA11yAnalyzerConfig</stache-code> specifies</a>. 
   </p>
 
   <h3 class="sky-subsection-heading">
@@ -91,7 +91,7 @@
     Overwrite accessibility checks
   </h3>
   <p>
-    In the second <stache-code>toBeAccessible</stache-code> parameter, you can adjust configuration settings to turn off accessibility checks. <a href="https://github.com/blackbaud/skyux-lib-testing/blob/master/src/app/public/src/a11y/a11y-analyzer.ts">The <stache-code>skyA11yAnalyzerConfig</stache-code> interface</a> specifies configuration settings, and it turns all checks on by default. To turn off accessibility checks, you set them to <stache-code>false</stache-code>:
+    In the second <stache-code>toBeAccessible</stache-code> parameter, you can adjust configuration settings to turn off accessibility checks. <a href="https://github.com/blackbaud/skyux-lib-testing/blob/master/src/app/public/src/a11y/a11y-analyzer.ts">The <stache-code>SkyA11yAnalyzerConfig</stache-code> interface</a> specifies configuration settings, and it turns all checks on by default. To turn off accessibility checks, you set them to <stache-code>false</stache-code>:
   </p>
   <stache-code-block>
     it('should pass accessibility', async(() => {
@@ -103,7 +103,7 @@
     }));
   </stache-code-block>
   <p>
-    You can also use the SKY UX <stache-code>a11y</stache-code> configuration property to overwrite accessibilty checks. This option is useful if you need to turn off a set of accessibility checks in multiple spec files.
+    You can also use the SKY UX <stache-code>a11y</stache-code> configuration property to overwrite accessibility checks. This option is useful if you need to turn off a set of accessibility checks in multiple spec files.
   </p>
   <p>
     In the <stache-code>skyuxconfig.json</stache-code> file, you specify the accessibility checks to overwrite and set them to <stache-code>false</stache-code>:
