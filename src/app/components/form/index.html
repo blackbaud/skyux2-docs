@@ -81,6 +81,15 @@
       <input class="sky-form-control ng-invalid ng-touched" id="input-with-error-example" type="text" />
 			<div class="sky-error-label">Please enter a valid value.</div>
     </div>
+
+    <stache-code>
+      <label for="input-with-error-example" class="sky-control-label">
+        Age
+      </label>
+      <input class="sky-form-control ng-invalid ng-touched" id="input-with-error-example" type="text" />
+
+      <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger"> 
+    </stache-code>
 	
 	</div>
 
