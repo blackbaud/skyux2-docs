@@ -110,11 +110,11 @@
   </sky-alert>
   
   <stache-page-anchor>
-    Review accessibility failures
+    Accessibility analyzer output
   </stache-page-anchor>
   
   <p>
-    When you include accessibility rules in your e2e tests, you may run into errors that uncover accessibility issues. Here is an example of an error message that appears in the command log when you run <stache-code>skyux e2e</stache-code>:
+    When you include accessibility rules in your e2e tests, you may run into errors that uncover accessibility issues. Here is an example:
   </p>
   <stache-code-block>
     info: Starting accessibility checks for https://host.nxt.blackbaud.com/builder-allytest/...
@@ -127,7 +127,7 @@
     <input id="thefirstname" type="text">
   </stache-code-block>
   <p>
-    The first line of the error message indicates what failed. It lists the name of the rule that failed and a detailed description that includes the WCAG 2.0 success criteria numbers. On the next line, the error message provides the URL for the rule definition to help address the failure. And finally, the error message lists the DOM elements where the failure was identified.
+    The first line of the error indicates what failed by listing the name of the rule, a description, and the WCAG 2.0 success criteria numbers. Next, the error provides a URL to get help to address the failure. And then the error lists the DOM elements where the failure was identified.
   </p>
 
 </stache>
