@@ -61,6 +61,14 @@
       expect(element).toBeAccessible();
     }));
   </stache-code-block>
+
+  <p>
+    Keep in mind that <stache-code>async</stache-code> is also a native JavaScript label, so you need to explicitly import the Angular <stache-code>async</stache-code> method at the top of the unit test spec file.
+  </p>
+
+  <stache-code-block>
+    import { async } from ‘@angular/core/testing’;
+  </stache-code-block>
   
   <stache-page-anchor>
     Specify parameters for <stache-code>toBeAccessible</stache-code>
