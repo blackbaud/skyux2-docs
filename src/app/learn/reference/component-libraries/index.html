@@ -31,7 +31,7 @@
   <stache-page-anchor>
     Create the library
   </stache-page-anchor>
-  
+
   <p>
     In the SPA for your library, create your components and services. SKY UX Builder ignores components in <stache-code>/src/app/public</stache-code>, so they are not automatically declared in <stache-code>SkyModule</stache-code>. This allows you to write Angular modules, components, and services outside of SKY UX's scope.
   </p>
@@ -41,7 +41,7 @@
   <p>
     To serve your SPA locally during development, you must configure the name and import and export your module.
   </p>
-  
+
   <ul>
     <li>
       <p>
@@ -99,11 +99,11 @@ export class AppExtrasModule { }
   <sky-alert alertType="info">
     Blackbaud developers publish private libraries to an internal Blackbaud NPM stream using a process that is documented on <a href="https://host.nxt.blackbaud.com/engineering-system-docs/learn/spa/spa-component-libraries">the Engineering System website</a>. This site is for Blackbaud internal use only and is not available to external developers.
   </sky-alert>
-  
+
   <stache-page-anchor>
     Consume the library in another SPA
   </stache-page-anchor>
-  
+
   <p>
     After you publish a front-end library, other SKY UX SPAs can install it. To consume a SKY UX library, import the library into your SPA through <stache-code>/app/src/app-extras.module.ts</stache-code>
   </p>
@@ -124,49 +124,11 @@ export class AppExtrasModule { }
   </stache-code-block>
 
   <stache-page-anchor>
-    Access the consuming SPA's configuration
-  </stache-page-anchor>
-  
-  <p>
-    After a SPA consumes a SKY UX library, the library requires an adapter to access <stache-code>SkyAppConfig</stache-code> in the consuming SPA.
-  </p>
-  <p>
-    SKY UX does not transpile source files in <stache-code>@blackbaud/skyux-builder/runtime</stache-code> as a <a href="http://davidbcalhoun.com/2014/what-is-amd-commonjs-and-umd/">UMD module</a>, so they cannot be <a href="https://www.npmjs.com/package/codelyzer">analyzed statically</a>. Therefore, a library cannot directly reference <stache-code>@blackbaud/skyux-builder/runtime</stache-code> files such as <stache-code>SkyAppConfig</stache-code> because the library will eventually become a UMD module. Instead, the component library requires an adaptor class in the consuming SPA that can be provided in the transpiled version of <stache-code>SkyAppConfig</stache-code> at runtime.
-  </p>
-  <p>
-    The following code sample demonstrates how to create an adaptor in the <stache-code>/app/src/app-extras.module.ts</stache-code> file in a consuming SPA.
-  </p>
-  <stache-code-block languageType="typescript">
-    import { NgModule } from '@angular/core';
-
-    import { SkyAppConfig } from '@blackbaud/skyux-builder/runtime';
-
-    import { LibraryModule, LibraryConfigService } from 'my-component-library';
-
-    @NgModule({
-      imports: [
-        LibraryModule
-      ],
-      exports: [
-        LibraryModule
-      ],
-      providers: [
-        // The config service acts as an adaptor for skyuxconfig.json:
-        {
-          provide: LibraryConfigService,
-          useExisting: SkyAppConfig
-        }
-      ]
-    })
-    export class AppExtrasModule { }
-  </stache-code-block>
-
-  <stache-page-anchor>
     Provide configuration for the library
   </stache-page-anchor>
-  
+
   <p>
-    After you create an adaptor in the consuming SPA's <stache-code>/app/src/app-extras.module.ts</stache-code> file, you can provide configuration for the library through the <stache-code>skyuxconfig.json</stache-code> file in the project's directory. In this file, the <stache-code>appSettings</stache-code> property specifies data that is available for reuse throughout the application, and you can use it to add any properties that are necessary for the library.
+    You can provide configuration for the library through the <stache-code>skyuxconfig.json</stache-code> file in the project's directory. In this file, the <stache-code>appSettings</stache-code> property specifies data that is available for reuse throughout the application, and you can use it to add any properties that are necessary for the library.
   </p>
   <stache-code-block languageType="json">
     {
@@ -179,15 +141,30 @@ export class AppExtrasModule { }
     }
   </stache-code-block>
   <p>
-    After you add properties through <stache-code>appSettings</stache-code> for the library, you can access them in your components and services by injecting the <stache-code>LibraryConfigService</stache-code> in <stache-code>/app/src/public/src/modules/shared/config.service.ts</stache-code>.
+    After you add properties through <stache-code>appSettings</stache-code> for the library, you can access them in your components and services by injecting <stache-code>SkyAppConfig</stache-code> from <stache-code>@blackbaud/skyux-builder/runtime/config</stache-code>.
   </p>
   <stache-code-block languageType="typescript">
-    import { LibraryConfigService } from '../shared';
+    import { SkyAppConfig } from '@blackbaud/skyux-builder/runtime/config';
 
     @Component({ ... })
     export class MyLibraryComponent {
-      constructor(public configService: LibraryConfigService) {
-        console.log(configService.appSettings.myLibrary.foo); // "bar"
+      // The defaults for your library component:
+      private defaults: any = {
+        foo: 'baz'
+      };
+
+      private config: any = {};
+
+      constructor(
+        private appConfig: SkyAppConfig
+      ) {
+        Object.assign(
+          this.config,
+          this.defaults,
+          this.appConfig.skyux.appSettings.myLibrary
+        );
+
+        console.log(this.config.foo); // "bar"
       }
     }
   </stache-code-block>
