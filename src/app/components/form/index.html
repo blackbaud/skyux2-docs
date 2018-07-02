@@ -9,7 +9,7 @@
   <div>
     <stache-page-anchor>Form control</stache-page-anchor>
 
-    <p>The <stache-code>sky-form-control</stache-code> class consistently styles the input and allows it to fill the width of its container.</p>
+    <p>The <stache-code>sky-form-control</stache-code> class consistently styles an input and allows it to fill the width of its container.</p>
     <div style="max-width: 50%">
       <input type="text" class="sky-form-control" aria-label="basic-input-example" placeholder="Enter text" />
     </div>
@@ -22,8 +22,7 @@
    <div>
     <stache-page-anchor>Control label</stache-page-anchor>
 
-    <p>The <stache-code>sky-control-label</stache-code> class consistently styles labels for form input.</p>
-		<p>Form field labels should be nouns.</p>
+    <p>The <stache-code>sky-control-label</stache-code> class consistently styles the label for an input. For guidance on the wording for labels, see <a stacheRouterLink="/design/guidelines/form-design" fragment="field-usability">the form design guidelines</a>.</p>
     <div style="max-width: 50%">
       <label for="basic-input-with-label-example" class="sky-control-label">
         Phone number
@@ -42,7 +41,7 @@
   <div>
     <stache-page-anchor>Required fields</stache-page-anchor>
 
-    <p>The <stache-code>sky-control-label-required</stache-code> class indicates that a given input is required to submit a form.</p>
+    <p>The <stache-code>sky-control-label-required</stache-code> class indicates that an input is required to submit a form.</p>
     <div style="max-width: 50%">
       <label for="required-input-with-label-example" class="sky-control-label sky-control-label-required">
         Last name
@@ -68,12 +67,8 @@
 	
 	<div>
 	<stache-page-anchor>Error states</stache-page-anchor>
-	<p>Form fields that use Angular validation are styled with a red glow when they are in an invalid state.</p>
-		<ul>
-			<li><stache-code>input</stache-code> fields with <stache-code>ng-invalid</stache-code> and <stache-code>ng-touched</stache-code> classes</li>
-			<li><stache-code>select</stache-code> fields with <stache-code>ng-invalid</stache-code> and <stache-code>submitted</stache-code> classes</li>
-		</ul>
-	<p>The <stache-code>sky-error-label</stache-code> class provides styling for error messages for form fields in an invalid state. Place the message below the form field, and include logic to display the message when the conditions for invalid styling are met.</p>
+	<p>If a form field that uses Angular validation is in an invalid state, the input is styled with a red glow. The <stache-code>ng-invalid</stache-code> and <stache-code>ng-touched</stache-code> control status CSS classes indicate when the input is in an invalid state. For more information, see <a href="https://angular.io/guide/form-validation">the Angular form validation docs</a>.</p>
+	<p>In addition, the <stache-code>sky-error-label</stache-code> class provides styling for the error message when an input is in an invalid state. Place the message below the form field, and include logic to display the message when the conditions for invalid styling are met.</p>
 	<div style="max-width: 50%">
       <label for="input-with-error-example" class="sky-control-label">
         Age
@@ -81,6 +76,19 @@
       <input class="sky-form-control ng-invalid ng-touched" id="input-with-error-example" type="text" />
 			<div class="sky-error-label">Please enter a valid value.</div>
     </div>
+
+    <stache-code-block>
+      <label for="input-with-error-example" class="sky-control-label">
+        Age
+      </label>
+      <input class="sky-form-control ng-invalid ng-touched" id="input-with-error-example" type="text" />
+
+      <div *ngIf="age.invalid && (age.dirty || age.touched)" class="alert alert-danger">
+
+      <div *ngIf="age.errors.invalid" class="sky-error-label">
+        Please enter a valid value.
+      </div> 
+    </stache-code-block>
 	
 	</div>
 
@@ -96,7 +104,7 @@
     </div>
     <div class="sky-form-group" style="max-width: 50%">
       <label for="form-group-second-input-example" class="sky-control-label">
-        Lastname
+        Last name
       </label>
       <input class="sky-form-control" id="form-group-second-input-example" type="text" />
     </div>
@@ -110,7 +118,7 @@
       </div>
       <div class="sky-form-group" style="max-width: 50%">
         <label for="form-group-second-input-example" class="sky-control-label">
-          Lastname
+          Last name
         </label>
         <input class="sky-form-control" id="form-group-second-input-example" type="text" />
       </div>

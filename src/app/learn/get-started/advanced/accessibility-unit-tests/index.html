@@ -61,6 +61,14 @@
       expect(element).toBeAccessible();
     }));
   </stache-code-block>
+
+  <p>
+    Keep in mind that <stache-code>async</stache-code> is also a native JavaScript declaration, so you need to explicitly import the Angular <stache-code>async</stache-code> method at the top of the unit test spec file.
+  </p>
+
+  <stache-code-block>
+    import { async } from ‘@angular/core/testing’;
+  </stache-code-block>
   
   <stache-page-anchor>
     Specify parameters for <stache-code>toBeAccessible</stache-code>
@@ -142,4 +150,25 @@
     );
   </stache-code-block>
   
+  <stache-page-anchor>
+    Review accessibility failures
+  </stache-page-anchor>
+  
+  <p>
+    When you include accessibility rules in your unit tests, you may run into errors that uncover accessibility issues. Here is an example of an error message that appears in the command log when you run <stache-code>skyux test</stache-code>:
+  </p>
+  <stache-code-block>
+    info: Starting accessibility checks for https://host.nxt.blackbaud.com/builder-allytest/...
+    info: Accessibility checks finished with 1 violation.
+    
+    error: aXe - [Rule: 'label'] Form elements must have labels - WCAG: wcag332, wcag131
+    Get help at: https://dequeuniversity.com/rules/axe/2.3/label?application=webdriverjs
+    Elements:
+    
+    <input id="thefirstname" type="text">
+  </stache-code-block>
+  <p>
+    The first line of the error message indicates what failed. It lists the name of the rule that failed and a detailed description that includes the WCAG 2.0 success criteria numbers. On the next line, the error message provides the URL for the rule definition to help address the failure. And finally, the error message lists the DOM elements where the failure was identified.
+  </p>
+
 </stache>
