@@ -14,7 +14,7 @@
   "dependencies": {
     "@blackbaud/skyux": "2.15.0",
     "@blackbaud/skyux-design-tokens": "0.0.8",
-    "@blackbaud/stache": "2.8.1"
+    "@blackbaud/stache": "2.9.2"
   },
   "devDependencies": {
     "@blackbaud/skyux-builder": "1.18.0"
