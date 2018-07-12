@@ -40,7 +40,7 @@
         Save your changes. When you run SKY UX CLI commands, SKY UX automatically reads any files with the <stache-code>skyuxconfig.[COMMAND].json</stache-code> naming convention.
       </p>
       <p>
-        For example, SKY UX includes and merges the settings in <stache-code>skyuxconfig.test.json</stache-code> when you run <stache-code>skyux tests</stache-code>.
+        For example, SKY UX includes and merges the settings in <stache-code>skyuxconfig.test.json</stache-code> when you run <stache-code>skyux test</stache-code>.
       </p>
     </li>
   </ol>
@@ -62,7 +62,7 @@
     </li>
     <li>
       <p>
-        <stache-code>skyuxconfig.e2e.json</stache-code> — Specifies configuration settings for end-to-end tests, although SKY UX generally recommends using unit tests instead of end-to-end tests based on <a href="https://angular.io/guide/testing#why-not-rely-on-e2e-tests-of-dom-integration">Angular’s guidance on testing</a>.
+        <stache-code>skyuxconfig.e2e.json</stache-code> — Specifies configuration settings for end-to-end tests, although SKY UX recommends using unit tests instead of end-to-end tests based on <a href="https://angular.io/guide/testing#why-not-rely-on-e2e-tests-of-dom-integration">Angular’s guidance on testing</a>.
       </p>
     </li>
     <li>
@@ -83,11 +83,15 @@
   </ul>
 
   <stache-page-anchor>
-    Default <stache-code>svcid</stache-code> and <stache-code>envid</stache-code> for local development
+    <stache-code>svcid</stache-code> and <stache-code>envid</stache-code> settings
   </stache-page-anchor>
 
   <p>
-    If you need to track the <stache-code>svcid</stache-code> and <stache-code>envid</stache-code> querystring parameters and expose them through the <stache-code>SkyAppConfig</stache-code> for local development, we recommend creating a <stache-code>skyuxconfig.serve.json</stache-code> file and adding the <stache-code>svcid</stache-code> and <stache-code>envid</stache-code> settings to the <stache-code>params</stache-code> property. In addition, if you use the global nav exclusively and don’t want the local nav alongside it, you can set the <stache-code>routes</stache-code> property to <stache-code>false</stache-code>.
+    To track <stache-code>svcid</stache-code> and <stache-code>envid</stache-code> querystring parameters and expose them through <stache-code>SkyAppConfig</stache-code> for a particular CLI command, create a <stache-code>skyuxconfig.[COMMAND].json</stache-code> file and add the <stache-code>svcid</stache-code> and <stache-code>envid</stache-code> settings to the <stache-code>params</stache-code> property.
+  </p>
+
+  <p>
+    For example, if you need to track the <stache-code>svcid</stache-code> and <stache-code>envid</stache-code> querystring parameters for local development, create a <stache-code>skyuxconfig.serve.json</stache-code> file and add the settings for local development runs. In addition, if you use the global nav exclusively and don’t want the local nav alongside it, set the <stache-code>routes</stache-code> property to <stache-code>false</stache-code>.
   </p>
 
   <stache-code-block>
