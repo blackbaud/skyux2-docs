@@ -13,7 +13,7 @@ export class DesignActionButtonsComponent {
       // tslint:disable-next-line
       summary: 'Instructions on how to consistently design for specific scenarios.'
     },
-		{
+    {
       name: 'Guidelines',
       path: '/design/guidelines',
       icon: 'map-o',
