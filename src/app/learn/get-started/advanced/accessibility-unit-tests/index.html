@@ -53,12 +53,14 @@
   </stache-page-anchor>
   
   <p>
-    After you import the <stache-code>expect</stache-code> function into spec files, the next step is to wrap the <stache-code>expect</stache-code> function around the elements to test for accessibility. Accessibility checks are asynchronous, so it's important to wrap your tests in Angular's <stache-code>async</stache-code> method.
+    After you import the <stache-code>expect</stache-code> function into spec files, the next step is to wrap the <stache-code>expect</stache-code> function around the elements to test for accessibility. Accessibility checks are asynchronous, so it's important to wrap your tests in Angular's <stache-code>async</stache-code> method. And to break the linear flow of control when using <stache-code>async</stache-code>, it's also important to wrap <stache-code>toBeAccessible</stache-code> in Angular's <stache-code>whenStable</stache-code> method. 
   </p>
   
   <stache-code-block>
     it('should pass accessibility', async(() => {
-      expect(element).toBeAccessible();
+      fixture.whenStable().then(() => {
+        expect(element).toBeAccessible();
+      });
     }));
   </stache-code-block>
 
@@ -86,8 +88,10 @@
   </p>
   <stache-code-block>
     it('should pass accessibility', async(() => {
-      expect(element).toBeAccessible(() => {
-        // Do something else after the accessibility checks run...
+      fixture.whenStable().then(() => {
+        expect(element).toBeAccessible(() => {
+          // Do something else after the accessibility checks run...
+        });
       });
     }));
   </stache-code-block>
@@ -103,10 +107,12 @@
   </p>
   <stache-code-block>
     it('should pass accessibility', async(() => {
-      expect(element).toBeAccessible(() => {}, {
-        rules: {
-          'color-contrast': {enabled: false }
-        }
+      fixture.whenStable().then(() => {
+        expect(element).toBeAccessible(() => {}, {
+          rules: {
+            'color-contrast': {enabled: false }
+          }
+        });
       });
     }));
   </stache-code-block>
@@ -145,7 +151,9 @@
   <stache-code-block>
     it('should pass accessibility', async(
       inject([SkyAppConfig], (appConfig: SkyAppConfig) => {
-        expect(element).toBeAccessible(() => {}, config.skyux.a11y);
+        fixture.whenStable().then(() => {
+          expect(element).toBeAccessible(() => {}, config.skyux.a11y);
+        });
       }))
     );
   </stache-code-block>
