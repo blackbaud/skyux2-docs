@@ -28,7 +28,7 @@ export class SkyDemoPageStackBlitzService {
         '@angular/platform-browser': angularVersion,
         '@angular/platform-browser-dynamic': angularVersion,
         '@angular/router': angularVersion,
-        '@blackbaud/skyux': '2.12.1',
+        '@blackbaud/skyux': '2.18.0',
         'core-js': '2.4.1',
         'rxjs': '5.4.3',
         'zone.js': '0.8.10'
