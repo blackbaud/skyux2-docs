@@ -1,0 +1,26 @@
+<stache
+  pageTitle="Route wildcard"
+  showTableofContents="true">
+
+  <p>By default, SKY UX Builder creates a <a href="https://angular.io/guide/router#wildcard-route">wildcard route</a> to handle any unknown requested routes - affectionaly known as the "404 page."  On the component for this page, we also use an iFrame to display the "Errors SPA", ultimately using the <a routerLink="/components/error">error component</a> with an <stache-code>errorType</stache-code> of <stache-code>notfound</stache-code>.</p>
+
+  <p>In order to customize this route, create <stache-code>src/app/not-found.component.ts</stache-code> with the following contents:</p>
+
+  <stache-code-block languageType="typescript">
+import { Component } from '@angular/core';
+
+@Component({
+  templateUrl: './not-found.component.html'
+})
+export class NotFoundComponent {}
+  </stache-code-block>
+
+  <p>Next, create <stache-code>src/app/not-found.component.html</stache-code> with the following contents:</p>
+
+  <stache-code-block languageType="markup">
+This is my custom 404 page.
+  </stache-code-block>
+
+  <p>Please note, the filename is technically not important to this functionality, but the component name is crucial.  It must export <stache-code>NotFoundComponent</stache-code>.</p>
+
+</stache>
