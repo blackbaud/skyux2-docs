@@ -83,6 +83,30 @@
   </ul>
 
   <stache-page-anchor>
+    Parameters
+  </stache-page-anchor>
+
+  <p>
+    <a routerLink="/learn/reference/configuration">The <stache-code>params</stache-code> configuration property</a> allows you to specify querystring parameters to track and exposes them through <stache-code>SkyAppConfig</stache-code>. To apply parameters to specific SKY UX CLI commands or apply specific values to CLI commands, you can create <stache-code>skyuxconfig.[COMMAND].json</stache-code> files and add your querystring parameters to the <stache-code>params</stache-code> property.
+  </p>
+  <p>
+    For example, if you use a specific environment ID and service ID for testing, you can specify default <stache-code>svcid</stache-code> and <stache-code>envid</stache-code> values for local development in <stache-code>skyuxconfig.serve.json</stache-code>. This allows you to include the environment ID and service ID for testing in the querystring when you serve without pasting the values in the URL. In addition, if you use the global nav exclusively and don’t want the local nav alongside it, you can set the <stache-code>routes</stache-code> property to <stache-code>false</stache-code>.
+  </p>
+  <stache-code-block>
+{
+  "routes": false,
+  "params": {
+    "envid": {
+      "value": "[default envid]"
+    },
+    "svcid": {
+      "value": "[default svcid]"
+    }
+  }
+}
+  </stache-code-block>
+
+  <stache-page-anchor>
     <stache-code>svcid</stache-code> and <stache-code>envid</stache-code> settings
   </stache-page-anchor>
 
