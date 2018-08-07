@@ -110,7 +110,7 @@ System.config({
     'typescript': 'npm:typescript@2.2.1/lib/typescript.js',
 
     // dragula packages
-    'ng2-dragula/ng2-dragula': 'npm:ng2-dragula',
+    'ng2-dragula/ng2-dragula': 'npm:ng2-dragula@1.5.0',
     'dragula': 'npm:dragula',
     'contra': 'npm:contra',
     'atoa': 'npm:atoa',
