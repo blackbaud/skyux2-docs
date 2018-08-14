@@ -1,0 +1,27 @@
+<stache
+  pageTitle="SkyAppConfig Params"
+  navTitle="SkyAppConfig Params"
+  showTableOfContents="true"
+  navOrder="1">
+
+  <p>SKY UX Builder allows you to track parameters in the URL and expose them through your app via the <stache-code>SkyAppConfig</stache-code> class.  Below is an example.</p>
+
+<stache-code-block languageType="typescript">
+import { Component } from '@angular/core';
+import { SkyAppConfig } from '@blackbaud/skyux-builder/runtime';
+
+@Component({
+  selector: 'my-home',
+  templateUrl: './home.component.html'
+})
+export class HomeComponent {
+  public envId: string;
+  constructor(skyAppConfig: SkyAppConfig) {
+    this.envId = skyAppConfig.params.get('envid');
+  }
+}
+</stache-code-block>
+
+Learn more about the <a routerLink="/learn/reference/configuration">params property</a> in our technical reference.
+
+</stache>
