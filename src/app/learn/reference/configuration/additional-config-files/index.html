@@ -106,30 +106,4 @@
 }
   </stache-code-block>
 
-  <stache-page-anchor>
-    <stache-code>svcid</stache-code> and <stache-code>envid</stache-code> settings
-  </stache-page-anchor>
-
-  <p>
-    To track <stache-code>svcid</stache-code> and <stache-code>envid</stache-code> querystring parameters and expose them through <stache-code>SkyAppConfig</stache-code> for a particular CLI command, create a <stache-code>skyuxconfig.[COMMAND].json</stache-code> file and add the <stache-code>svcid</stache-code> and <stache-code>envid</stache-code> settings to the <stache-code>params</stache-code> property.
-  </p>
-
-  <p>
-    For example, if you need to track the <stache-code>svcid</stache-code> and <stache-code>envid</stache-code> querystring parameters for local development, create a <stache-code>skyuxconfig.serve.json</stache-code> file and add the settings for local development runs. In addition, if you use the global nav exclusively and don’t want the local nav alongside it, set the <stache-code>routes</stache-code> property to <stache-code>false</stache-code>.
-  </p>
-
-  <stache-code-block>
-{
-  "routes": false,
-  "params": {
-    "envid": {
-      "value": "[default envid]"
-    },
-    "svcid": {
-      "value": "[default svcid]"
-    }
-  }
-}
-  </stache-code-block>
-
 </stache>
