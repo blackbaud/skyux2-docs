@@ -1,1 +1,13 @@
-<stache-code>--template</stache-code> or <stache-code>-t</stache-code> — Specifies the base template to use to create items through the CLI. For example, when creating a SKY UX application with <stache-code>skyux new</stache-code>, you can specify a template for the SPA. Currently, the <stache-code>skyux new</stache-code> command supports the <a href="https://github.com/blackbaud/skyux-template-addin">SKY UX Add-in template</a> to create <a href="https://developer.blackbaud.com/skyapi/docs/addins">SKY Add-ins for building features that integrate with Blackbaud solutions</a> and the Stache template to create technical documentation websites that use <a href="https://host.nxt.blackbaud.com/stache/">the Stache component library</a>. To use the SKY UX Add-in template, specify <stache-code>--template addin</stache-code> or <stache-code>-t addin</stache-code>. To use the Stache template, specify <stache-code>--template stache</stache-code> or <stache-code>-t stache</stache-code>. <!-- Likewise, you can specify a template to create specific components with <stache-code>skyux generate</stache-code>. -->
+<stache-code>--template</stache-code> or <stache-code>-t</stache-code> — Specifies the base template to use to create items through the CLI. Supported values include:
+
+<ul>
+  <li>
+    <stache-code>-t addin</stache-code> — References the <a href="https://github.com/blackbaud/skyux-template-addin">SKY UX Add-in template</a> to create <a href="https://developer.blackbaud.com/skyapi/docs/addins">SKY Add-ins</a> that allow developers to build features that integrate with Blackbaud solutions.
+  </li>
+  <li>
+    <stache-code>-t stache</stache-code> — References the <a href="https://github.com/blackbaud/skyux-template-stache">Stache template</a> to create <a href="https://developer.blackbaud.com/stache/learn/get-started"><strong>public</strong> Stache sites</a> for technical documentation.
+  </li>
+  <li>
+    <stache-code>-t &lt;ANY-GIT-URL&gt;</stache-code> — Allows for complete flexibility by cloning any valid Git URL.
+  </li>
+</ul>
