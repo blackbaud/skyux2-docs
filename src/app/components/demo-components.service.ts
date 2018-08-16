@@ -443,6 +443,14 @@ export class SkyDemoComponentsService {
         getCodeFiles: () => this.getDemoFiles('SkyToastDemoComponent')
       },
       {
+        name: 'Tokens',
+        icon: 'th-large',
+        // tslint:disable-next-line
+        summary: `The tokens component displays a series of selected objects that users can interact with.`,
+        url: '/components/tokens',
+        getCodeFiles: () => this.getDemoFiles('SkyTokensDemoComponent')
+      },
+      {
         name: 'Toolbar',
         icon: 'bars',
         // tslint:disable-next-line

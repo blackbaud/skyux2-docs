@@ -1,0 +1,128 @@
+<sky-demo-page
+  pageTitle="Tokens"
+  skyuxModule="SkyTokensModule"
+>
+
+  <sky-demo-page-summary>
+    <p>
+      The tokens component displays a series of specified objects that users can interact with. Users can navigate through the list of tokens and remove tokens from the list. Tokens can be also added to the list through the tokens component's message stream.
+    </p>
+  </sky-demo-page-summary>
+
+  <sky-demo-page-properties sectionHeading="Tokens list properties">
+    <sky-demo-page-property
+      propertyName="disabled"
+      defaultValue="true"
+      isOptional="true"
+    >
+      Indicates whether to disable the tokens list to prevent users from selecting tokens, dismissing tokens, or navigating through the list with the arrow keys. When the tokens list is disabled, users can still place focus on items in the list using the Tab key.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="dismissible"
+      defaultValue="true"
+    >
+      Indicates whether the tokens list is dismissable so that users can close the entire list.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="displayWith"
+      defaultValue="name"
+      isOptional="true"
+    >
+      Specifies the token property to display in the tokens list.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="focusable"
+      defaultValue="true"
+      isOptional="true"
+    >
+      Indicates whether users can focus on items in the list using the Tab key. This does not affect the ability of users to select tokens, dismiss tokens, or navigate through the list with the arrow keys.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="messageStream"
+    >
+      Specifies ...
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="tokens"
+      defaultValue="true"
+    >
+      Specifies an array of tokens to include in the list. 
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-properties sectionHeading="Tokens list events">
+    <sky-demo-page-property
+      propertyName="tokensChange"
+    >
+      Fires when the tokens in the list change. This event emits an array of the tokens in the updated list.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="focusIndexOverRange"
+    >
+      Fires when ...
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="focusIndexUnderRange"
+    >
+      Fires when ...
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="tokenSelected"
+    >
+      Fires when users select a token in the list. This event emits the selected token.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-properties sectionHeading="Token properties">
+    <sky-demo-page-property
+      propertyName="disabled"
+      defaultValue="true"
+      isOptional="true"
+    >
+      Indicates whether to disable the token to prevent users from selecting it, dismissing it, or navigating to it with the arrow keys. When the token is disabled, users can still place focus on it using the Tab key.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="ariaLabel"
+      defaultValue="Remove item"
+      isOptional="true"
+    >
+      Sets the <stache-code>aria-label</stache-code> and <stache-code>title</stache-code> attributes for the token's close button to support accessibility.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="dismissible"
+      defaultValue="true"
+      isOptional="true"
+    >
+      Indicates whether the token is dismissible. When set to <stache-code>true</stache-code>, the token includes a close button, and users can also press the Backspace button to remove the token from the list.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="focusable"
+      defaultValue="true"
+      isOptional="true"
+    >
+      Indicates whether users can place focus on the token using the Tab key. This does not affect the ability to select the token, dismiss it, or navigate to it with the arrow keys.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-properties sectionHeading="Token events">
+    <sky-demo-page-property
+      propertyName="dismiss"
+    >
+      Fires when users click the close button or press the Backspace key to dismiss the token.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="tokenFocus"
+    >
+      Fires when users place focus on the token by navigating to it with the Tab key.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-example>
+    <sky-tokens-demo>
+    </sky-tokens-demo>
+    <sky-demo-page-code
+      demoName="Tokens">
+    </sky-demo-page-code>
+  </sky-demo-page-example>
+
+</sky-demo-page>
