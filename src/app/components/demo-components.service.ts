@@ -422,7 +422,7 @@ export class SkyDemoComponentsService {
         name: 'Tile',
         icon: 'th-large',
         // tslint:disable-next-line
-        summary: `The tile directive provides a container that is the building block for pages and forms.`,
+        summary: `The tile directive component creates a collapsible container that is a building block for pages and forms.`,
         url: '/components/tile',
         getCodeFiles: () => this.getDemoFiles('SkyTileDemoComponent')
       },
