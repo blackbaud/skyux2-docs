@@ -43,15 +43,31 @@
   <sky-demo-page-properties
     sectionHeading="Dropdown menu properties">
     <sky-demo-page-property
+      propertyName="ariaLabelledBy"
+      isOptional="true"
+    >
+      Sets the dropdown menu's <stache-code>aria-labelledby</stache-code> attribute to support accessibility. The value should be the HTML element ID (without the leading <stache-code>#</stache-code>) of the element that labels the dropdown menu.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="ariaRole"
+      isOptional="true"
+    >
+      Sets the dropdown's <stache-code>role</stache-code> attribute to support accessibility. For information about ARIA roles, see the <a href="https://www.w3.org/WAI/PF/aria/roles">WAI-ARIA roles model</a>.
+     </sky-demo-page-property>
+    <sky-demo-page-property
       propertyName="useNativeFocus"
       isOptional="true"
       defaultValue="true">
       Indicates whether to use the browser's native focus function when users navigate through menu items with the keyboard. To disable the native focus function, set this property to <stache-code>false</stache-code>. For example, if you want to interact with the dropdown menu but keep the keyboard focus on a different element, set this property to <stache-code>false</stache-code>.
     </sky-demo-page-property>
+  </sky-demo-page-properties>
+  
+  <sky-demo-page-properties
+    sectionHeading="Dropdown menu events">
     <sky-demo-page-property
       propertyName="menuChanges"
       isOptional="true">
-      Provides an observable to emit changes when the menu's active index or selected item changes. The response is of type <stache-code>SkyDropdownMenuChange</stache-code> (see below).
+      Fires when the dropdown menu's active index or selected item changes. This event provides an observable to emit changes, and the response is of type <stache-code>SkyDropdownMenuChange</stache-code> (see below).
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
