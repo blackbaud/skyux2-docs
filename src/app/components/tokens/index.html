@@ -5,7 +5,7 @@
 
   <sky-demo-page-summary>
     <p>
-      The tokens component displays a series of specified objects that users can interact with. Users can navigate through the list of tokens and remove tokens from the list. Tokens can be also added to the list through the tokens component's message stream.
+      The tokens component displays a series of specified objects for users to interact with. Users can navigate through the list of tokens and remove tokens from the list. The tokens component's message stream can add tokens to the list.
     </p>
   </sky-demo-page-summary>
 
@@ -20,8 +20,9 @@
     <sky-demo-page-property
       propertyName="dismissible"
       defaultValue="true"
+      isOptional="true"
     >
-      Indicates whether the tokens list is dismissable so that users can close the entire list.
+      Indicates whether tokens are dismissable to allow users to remove them from the list.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="displayWith"
@@ -40,11 +41,10 @@
     <sky-demo-page-property
       propertyName="messageStream"
     >
-      Specifies ...
+      Specifies an observable of <stache-code>SkyTokenMessageTypes</stache-code> that indicates which token to place focus on and whether to remove the active token.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="tokens"
-      defaultValue="true"
     >
       Specifies an array of tokens to include in the list. 
     </sky-demo-page-property>
@@ -59,17 +59,45 @@
     <sky-demo-page-property
       propertyName="focusIndexOverRange"
     >
-      Fires when ...
+      Fires when users are using the Tab key to navigate through the token list and attempt to move past the final token in the list.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="focusIndexUnderRange"
     >
-      Fires when ...
+      Fires when users are using the Tab key to navigate through the token list and attempt to move before the first token in the list.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="tokenSelected"
     >
       Fires when users select a token in the list. This event emits the selected token.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-properties sectionHeading="SkyTokenMessageTypes properties">
+    <sky-demo-page-property
+      propertyName="FocusActiveToken"
+    >
+    Places focus on the token that is currently selected.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="FocusLastToken"
+    >
+    Places focus on the last token in the list. 
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="FocusNextToken"
+    >
+    Places focus on the token after the currently selected token.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="FocusPreviousToken"
+    >
+    Places focus on the token before the currently selected token.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="RemoveActiveToken"
+    >
+    Removes the token that is currently selected from the list of tokens. 
     </sky-demo-page-property>
   </sky-demo-page-properties>
 

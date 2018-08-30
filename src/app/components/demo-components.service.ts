@@ -446,7 +446,7 @@ export class SkyDemoComponentsService {
         name: 'Tokens',
         icon: 'th-large',
         // tslint:disable-next-line
-        summary: `The tokens component displays a series of selected objects that users can interact with.`,
+        summary: `The tokens component displays a series of selected objects for users to interact with.`,
         url: '/components/tokens',
         getCodeFiles: () => this.getDemoFiles('SkyTokensDemoComponent')
       },
