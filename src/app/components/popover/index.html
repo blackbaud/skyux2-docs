@@ -92,9 +92,24 @@
   </sky-demo-page-example>
 
 	<sky-demo-page-content sectionHeading="UX guidelines">
-    <p>
+    <div class="sky-subsection-heading">Usage</div>
+		<p>Popovers display small chunks of contextual content that do not always need to be visible. Popovers are appropriate when:</p>
+		<ul>
+			<li>Users select a button or link to display the popover, and the interaction does not change the system state.</li>
+			<li>The popover content directly relates to the user's current task.</li>
+			<li>The popover content does not require scrolling on a mobile device.</li>
+		</ul>
+		<p>If the content is valuable to see most of the time, use <a routerLink="/design/guidelines/user-assistance" fragment="persistent-inline-help">presistent inline help</a> instead. If the amount of content requires scrolling on a mobile device, use a <a routerLink="/components/flyout">flyout</a> instead.</p>
+
+		<div class="sky-subsection-heading">Interaction</div>
+		<p>
       To ensure usability on touch devices, you should generally trigger popovers on <stache-code>click</stache-code> rather than <stache-code>mouseenter</stache-code>.
     </p>
+
+		<div class="sky-subsection-heading">Related guidelines</div>
+		<ul>
+			<li><a routerLink="/design/guidelines/content-containers">Content containers</a></li>
+		</ul>
 	</sky-demo-page-content>
 
 </sky-demo-page>

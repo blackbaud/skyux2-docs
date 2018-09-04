@@ -104,13 +104,13 @@ System.config({
     '@angular/platform-browser/animations': 'npm:@angular/platform-browser' + ngVersion + '/bundles/platform-browser-animations.umd.js',
     '@angular/animations/browser': 'npm:@angular/animations' + ngVersion + '/bundles/animations-browser.umd.js',
     '@blackbaud/skyux/dist/core': '${skyuxDistPath}',
-    'microedge-rxstate/dist': 'npm:microedge-rxstate/dist/index.js',
+    'microedge-rxstate': 'npm:microedge-rxstate',
     'moment': 'npm:moment/moment.js',
     'tslib': 'npm:tslib@1.6.1',
     'typescript': 'npm:typescript@2.2.1/lib/typescript.js',
 
     // dragula packages
-    'ng2-dragula/ng2-dragula': 'npm:ng2-dragula',
+    'ng2-dragula/ng2-dragula': 'npm:ng2-dragula@1.5.0',
     'dragula': 'npm:dragula',
     'contra': 'npm:contra',
     'atoa': 'npm:atoa',
@@ -126,8 +126,10 @@ System.config({
       defaultExtension: 'ts'
     },
     '@blackbaud/skyux/dist/core': {
-       format: 'cjs'
-     },
+      format: 'cjs'
+    },
+    'microedge-rxstate/dist': { main: 'index.js', defaultExtension: 'js' },
+    'microedge-rxstate': { main: 'index.js', defaultExtension: 'js' },
     'ng2-dragula/ng2-dragula': {
       main: 'ng2-dragula.js',
       defaultExtension: 'js'
@@ -194,12 +196,17 @@ export class AppComponent() { }`
       {
         name: 'main.ts',
         content: `import { Component, NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SkyModule } from '@blackbaud/skyux/dist/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { RouterModule } from '@angular/router';
+
+import { SkyModule } from '@blackbaud/skyux/dist/core';
 
 ${imports.join('\n')}
+
+import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/operator/takeWhile';
 
 import { AppComponent } from './app.component';
 
@@ -208,6 +215,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    RouterModule.forRoot([]),
     SkyModule
   ],
   declarations: [

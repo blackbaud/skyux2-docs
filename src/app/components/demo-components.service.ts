@@ -184,6 +184,13 @@ export class SkyDemoComponentsService {
         getCodeFiles: () => this.getDemoFiles('SkyTextHighlightDemoComponent')
       },
       {
+        name: 'Infinite scroll',
+        icon: 'refresh',
+        summary: 'The infinite scroll component dynamically loads data as users scroll.',
+        url: '/components/infinite-scroll',
+        getCodeFiles: () => this.getDemoFiles('SkyInfiniteScrollDemoComponent')
+      },
+      {
         name: 'Key info',
         icon: 'key',
         // tslint:disable-next-line
@@ -426,6 +433,14 @@ export class SkyDemoComponentsService {
         summary: `The timepicker module allows users to use an input to select times.`,
         url: '/components/timepicker',
         getCodeFiles: () => this.getDemoFiles('SkyTimepickerDemoComponent')
+      },
+      {
+        name: 'Toast',
+        icon: 'envelope',
+        // tslint:disable-next-line
+        summary: `The toast module launches a container to display a message over a page's content.`,
+        url: '/components/toast',
+        getCodeFiles: () => this.getDemoFiles('SkyToastDemoComponent')
       },
       {
         name: 'Toolbar',
