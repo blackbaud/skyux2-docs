@@ -27,4 +27,4 @@ before_install:
   - npm install -g @blackbaud/skyux-cli
 
 # Identical to package.json except for travis wait
-script: skyux lint && skyux test && skyux e2e && npm run travisBuild
+script: skyux lint && skyux test && skyux e2e && travis_wait npm run build
