@@ -6,7 +6,8 @@
     "node": ">=6.11.1"
   },
   "scripts": {
-    "test": "skyux lint && skyux test && skyux e2e && skyux build"
+    "test": "skyux lint && skyux test && skyux e2e && skyux build",
+    "build": "NODE_OPTIONS=\"--max_old_space_size=4096\" skyux build"
   },
   "keywords": [],
   "author": "Blackbaud, Inc.",
