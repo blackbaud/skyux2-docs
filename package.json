@@ -12,12 +12,12 @@
   "author": "Blackbaud, Inc.",
   "license": "MIT",
   "dependencies": {
-    "@blackbaud/skyux": "2.19.0",
+    "@blackbaud/skyux": "2.22.0",
     "@blackbaud/skyux-design-tokens": "0.0.8",
     "@blackbaud/stache": "2.11.3"
   },
   "devDependencies": {
-    "@blackbaud/skyux-builder": "1.19.2"
+    "@blackbaud/skyux-builder": "1.20.0"
   },
   "repository": {
     "type": "git",

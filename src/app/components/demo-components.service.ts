@@ -349,6 +349,14 @@ export class SkyDemoComponentsService {
         getCodeFiles: () => this.getDemoFiles('SkyPopoverDemoComponent')
       },
       {
+        name: 'Progress indicator',
+        icon: 'tasks',
+        // tslint:disable-next-line
+        summary: 'The progress indicator component represents user progress through a series of sequential steps.',
+        url: '/components/progress-indicator',
+        getCodeFiles: () => this.getDemoFiles('SkyProgressIndicatorDemoComponent')
+      },
+      {
         name: 'Radio button',
         icon: 'circle-o',
         // tslint:disable-next-line

@@ -1,0 +1,91 @@
+<sky-demo-page
+  pageTitle="Progress indicator"
+  skyuxModule="SkyProgressIndicatorModule"
+>
+
+  <sky-demo-page-summary>
+    <p>
+      The <stache-code>sky-progress-indicator</stache-code> component represents user progress through a series of sequential steps. ...
+    </p>
+  </sky-demo-page-summary>
+
+  <sky-demo-page-properties sectionHeading="Progress indicator properties">
+    <sky-demo-page-property
+      propertyName="startingIndex"
+      isOptional="true"
+      defaultValue="false"
+    >
+      xxx.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="displayMode()"
+      isOptional="true"
+      defaultValue="false"
+    >
+      xxx.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="messageStream"
+      isOptional="true"
+      defaultValue="false"
+    >
+      Specifies an observable of <stache-code>SkyProgressIndicatorMessageType</stache-code> that indicates the type of message to display in the progress indicator.
+      Specifies an observable of <stache-code>SkyTokensMessageType</stache-code> that can place focus on a particular token or remove the active token from the list.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-properties sectionHeading="Progress indicator events">
+    <sky-demo-page-property
+      propertyName="progressChanges"
+    >
+      Fires when ...
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-properties sectionHeading="SkyProgressIndicatorMessageType properties">
+    <sky-demo-page-property
+      propertyName="Progress"
+    >
+    Indicates that the current step is in progress.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="Regress"
+    >
+    Places focus on the last token in the list. 
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="Reset"
+    >
+    Indicates that the current step is in progress. 
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+  
+  <sky-demo-page-properties sectionHeading="Progress indicator properties">
+    <sky-demo-page-property
+      propertyName="xxx"
+      isOptional="true"
+      defaultValue="false"
+    >
+      xxx.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-properties sectionHeading="Progress indicator events">
+    <sky-demo-page-property
+      propertyName="xxx"
+      isOptional="true"
+      defaultValue="false"
+    >
+      xxx.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-example>
+    <div class="sky-demo-bg-gray">
+      <app-progress-indicator-demo>
+      </app-progress-indicator-demo>
+    </div>
+    <sky-demo-page-code demoName="Progress indicator"></sky-demo-page-code>
+  </sky-demo-page-example>
+
+</sky-demo-page>
