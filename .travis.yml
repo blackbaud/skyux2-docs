@@ -27,4 +27,5 @@ before_install:
   - npm install -g @blackbaud/skyux-cli
 
 # Identical to package.json except for travis wait
-script: skyux lint && skyux test && skyux e2e && travis_wait npm run build
+script:
+  - skyux lint && skyux test && skyux e2e && NODE_OPTIONS="--max_old_space_size=4096" skyux build --logFormat none --output-keep-alive
