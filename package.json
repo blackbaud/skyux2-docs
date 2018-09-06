@@ -7,7 +7,7 @@
   },
   "scripts": {
     "test": "skyux lint && skyux test && skyux e2e && skyux build",
-    "build": "NODE_OPTIONS=\"--max_old_space_size=4096\" skyux build --logFormat none --output-keep-alive"
+    "build": "NODE_OPTIONS=\"--max_old_space_size=4096\" skyux build --logFormat none --output-keep-alive --profiler"
   },
   "keywords": [],
   "author": "Blackbaud, Inc.",
@@ -18,7 +18,7 @@
     "@blackbaud/stache": "2.11.3"
   },
   "devDependencies": {
-    "@blackbaud/skyux-builder": "1.19.2"
+    "@blackbaud/skyux-builder": "blackbaud/skyux-builder#profiler"
   },
   "repository": {
     "type": "git",
