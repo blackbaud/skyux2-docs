@@ -25,3 +25,7 @@ before_install:
   - sudo dpkg -i google-chrome*.deb
   - rm google-chrome*.deb
   - npm install -g @blackbaud/skyux-cli
+
+# Identical to package.json except for travis wait
+script:
+  - skyux lint && skyux test && skyux e2e && NODE_OPTIONS="--max_old_space_size=4096" skyux build --logFormat none --output-keep-alive

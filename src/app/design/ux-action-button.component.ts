@@ -7,6 +7,13 @@ import { Component } from '@angular/core';
 export class DesignActionButtonsComponent {
   public routes = [
     {
+      name: 'Principles',
+      path: '/design/principles',
+      icon: 'list-ol',
+      // tslint:disable-next-line
+      summary: 'Instructions on how to consistently design for specific scenarios.'
+    },
+    {
       name: 'Guidelines',
       path: '/design/guidelines',
       icon: 'map-o',
