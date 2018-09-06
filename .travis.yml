@@ -28,4 +28,4 @@ before_install:
 
 # Identical to package.json except for travis wait
 script:
-  - skyux lint --profiler && skyux test --profiler && skyux e2e --profiler && travis_wait npm run build
+  - skyux lint --profiler && skyux test --profiler && skyux e2e --profiler && travis_wait skyux build --logFormat none --output-keep-alive --profiler
