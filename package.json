@@ -6,15 +6,14 @@
     "node": ">=6.11.1"
   },
   "scripts": {
-    "test": "skyux lint && skyux test && skyux e2e && skyux build",
-    "build": "NODE_OPTIONS=\"--max_old_space_size=4096\" skyux build"
+    "test": "skyux lint && skyux test && skyux e2e && skyux build"
   },
   "keywords": [],
   "author": "Blackbaud, Inc.",
   "license": "MIT",
   "dependencies": {
-    "@blackbaud/skyux": "2.19.0",
-    "@blackbaud/skyux-design-tokens": "0.0.8",
+    "@blackbaud/skyux": "2.22.0",
+    "@blackbaud/skyux-design-tokens": "0.0.9",
     "@blackbaud/stache": "2.11.3"
   },
   "devDependencies": {
