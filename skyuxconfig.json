@@ -53,11 +53,6 @@
       ]
     }
   },
-  "params": {
-    "svcid": {
-      "value": "skyux"
-    }
-  },
   "routes": {
     "public": [
       {
