@@ -205,6 +205,9 @@ import { SkyModule } from '@blackbaud/skyux/dist/core';
 
 ${imports.join('\n')}
 
+import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/operator/takeWhile';
+
 import { AppComponent } from './app.component';
 
 @NgModule({
