@@ -53,6 +53,40 @@
       ]
     }
   },
+  "routes": {
+    "public": [
+      {
+        "title": "Home",
+        "route": "/",
+        "global": true
+      },
+      {
+        "title": "Learn",
+        "route": "/learn",
+        "global": true
+      },
+      {
+        "title": "Components",
+        "route": "/components",
+        "global": true
+      },
+      {
+        "title": "Design",
+        "route": "/design",
+        "global": true
+      },
+      {
+        "title": "Contribute",
+        "route": "/contribute",
+        "global": true
+      },
+      {
+        "title": "Blog",
+        "route": "/blog",
+        "global": true
+      }
+    ]
+  },
   "plugins": [
     "@blackbaud/skyux-builder-plugin-stache"
   ],
