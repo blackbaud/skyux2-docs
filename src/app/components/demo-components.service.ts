@@ -422,7 +422,7 @@ export class SkyDemoComponentsService {
         name: 'Tile',
         icon: 'th-large',
         // tslint:disable-next-line
-        summary: `The tile directive provides a container that is the building block for pages and forms.`,
+        summary: `The tile component creates a collapsible container that is a building block for pages and forms.`,
         url: '/components/tile',
         getCodeFiles: () => this.getDemoFiles('SkyTileDemoComponent')
       },
@@ -441,6 +441,14 @@ export class SkyDemoComponentsService {
         summary: `The toast module launches a container to display a message over a page's content.`,
         url: '/components/toast',
         getCodeFiles: () => this.getDemoFiles('SkyToastDemoComponent')
+      },
+      {
+        name: 'Tokens',
+        icon: 'th-large',
+        // tslint:disable-next-line
+        summary: `The tokens component displays a series of objects for users to interact with.`,
+        url: '/components/tokens',
+        getCodeFiles: () => this.getDemoFiles('SkyTokensDemoComponent')
       },
       {
         name: 'Toolbar',
