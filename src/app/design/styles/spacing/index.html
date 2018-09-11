@@ -4,13 +4,13 @@
   windowTitle="Spacing"
   showTableOfContents="true">
 
-<p>
-	SKY UX provides two spacing approaches that can be used together when laying out content: <a routerLink="/components/fluid-grid">fluid grid</a> and spacing classes. Fluid grid works well when laying out containers and sections within containers, and the spacing classes work well when laying out content within a section.
-</p>	
+<stache-page-summary>
+	SKY UX provides two spacing approaches that can be used together when laying out content: <a routerLink="/components/fluid-grid">fluid grid</a> and spacing classes. Fluid grid works well when laying out containers and sections within containers, and the spacing classes work well when laying out content within sections.
+</stache-page-summary>	
 	
 <stache-page-anchor>Pages</stache-page-anchor>	
 <p>
-	You should use fluid grid layouts when placing containers on a page. A common example of a one-column layout is a list page – the list takes up the full width. A common example of a two-column layout is a record page – there are two columns of tiles.
+	You should use fluid grid layouts when placing containers on a page. A common example of a one-column layout is a list page, where the list takes up the full width. A common example of a two-column layout is a record page with two columns of tiles.
 </p>
 	
 <sky-row>
@@ -31,7 +31,7 @@
 <stache-page-anchor>Containers</stache-page-anchor>
 <div>
 	<p>
-		Padding will generally be handled by the SkyUX components you are using. Containers should have padding to set their content away from the container edge. The amount of padding will differ based on the size of the container.
+		Containers require padding to set their content away from the container edge. The amount of padding differs based on the size of the container. In general, SKY UX components handle padding for you.
 	</p>
 
   <div class="definition-table definition-table-wide">
@@ -41,12 +41,12 @@
     <div class="definition-props">
       <div class="definition-usage">
         <div class="sky-field-label">Usage</div>
-        <div>Large containers often run near the edge of the viewport so significant padding is needed to prevent the content from feeling crunched in the viewport. Examples include:</div>
+        <div>Large containers often run near the edge of the viewport, so significant padding is necessary to prevent the content from feeling crunched. Examples include:</div>
         <ul>
-          <li>Page</li>
-          <li><a routerLink="/components/modal">Modal</a></li>
-					<li><a routerLink="/components/tile">Tile</a></li>
-					<li><a routerLink="/components/sectioned-form">Sectioned form</a> content area</li>
+          <li>Pages</li>
+          <li><a routerLink="/components/modal">Modals</a></li>
+					<li><a routerLink="/components/tile">Tiles</a></li>
+					<li><a routerLink="/components/sectioned-form">Sectioned forms</a></li>
         </ul>
       </div>
       <div class="definition-code">
@@ -66,12 +66,12 @@
     <div class="definition-props">
       <div class="definition-usage">
         <div class="sky-field-label">Usage</div>
-        <div>Smaller containers that are placed inside larger containers need less padding to set the content apart from its surrounding since the larger containers also have padding. Examples include:</div>
+        <div>Small containers within larger containers require less padding to set the content apart from its surroundings because the larger containers already have padding. Examples include:</div>
         <ul>
-          <li><a routerLink="/components/alert">Alert</a></li>
-					<li><a routerLink="/components/card">Card</a></li>
-					<li><a routerLink="/components/popover">Popover</a></li>
-					<li><a routerLink="/components/repeater">Repeater</a></li>
+          <li><a routerLink="/components/alert">Alerts</a></li>
+					<li><a routerLink="/components/card">Cards</a></li>
+					<li><a routerLink="/components/popover">Popovers</a></li>
+					<li><a routerLink="/components/repeater">Repeaters</a></li>
         </ul>
       </div>
       <div class="definition-code">
@@ -88,7 +88,7 @@
 	
 <stache-page-anchor>Content</stache-page-anchor>
 <div style="margin-bottom: 20px;">
-	<div class="sky-subsection-heading">Vertically-arranged content</div>
+	<div class="sky-subsection-heading">Vertically arranged content</div>
 	
   <div class="definition-table definition-table-wide">
     <div class="definition-item">
@@ -98,10 +98,10 @@
     <div class="definition-props">
       <div class="definition-usage">
         <div class="sky-field-label">Usage</div>
-        <div>Closely-related elements have a small amount of margin between them so that they stay visually linked. Examples include:</div>
+        <div>Closely related elements have a small amount of margin between them to stay visually linked. Examples include:</div>
         <ul>
-          <li><a routerLink="/components/form" fragment="control-label">Form field labels</a></li>
-					<li>Section header and the first element in that section</li>
+          <li><a routerLink="/components/form" fragment="control-label">Form fields and their labels</a></li>
+					<li>Section headers and the first elements in sections</li>
         </ul>
       </div>
       <div class="definition-code">
@@ -123,9 +123,9 @@
     <div class="definition-props">
       <div class="definition-usage">
         <div class="sky-field-label">Usage</div>
-        <div>Multiple instances of a type of object need enough vertical spacing so that the objects can be distinguished from each other, but not so much that they seem unrelated. Examples include:</div>
+        <div>Multiple related elements need enough vertical spacing to be distinguished from each other but still visually linked. Examples include:</div>
         <ul>
-          <li>Form inputs</li>
+					<li><a routerLink="/components/form">Form inputs</a></li>
         </ul>
       </div>
       <div class="definition-code">
@@ -147,7 +147,7 @@
     <div class="definition-props">
       <div class="definition-usage">
         <div class="sky-field-label">Usage</div>
-        <div>Sections of loosely-related content need extra spacing to make them easier for the user to discern. Too little spacing will make the sections visually run together.</div>
+        <div>Sections of loosely related content require extra vertical spacing to prevent them from running together visually.</div>
       </div>
       <div class="definition-code">
         <div class="sky-field-label">Code</div>
@@ -162,7 +162,7 @@
 </div>
 	
 <div>
-	<div class="sky-subsection-heading">Horizontally-arranged content</div>
+	<div class="sky-subsection-heading">Horizontally arranged content</div>
 	
   <div class="definition-table definition-table-wide">
     <div class="definition-item">
@@ -172,11 +172,11 @@
     <div class="definition-props">
       <div class="definition-usage">
         <div class="sky-field-label">Usage</div>
-        <div>Closely-related elements have a small amount of margin between them so that they stay visually linked. Examples include:</div>
+        <div>Closely related elements have a small amount of margin between them to stay visually linked. Examples include:</div>
         <ul>
-					<li><a routerLink="/components/status-indicator">Status indicators</a> and text</li>
-					<li><a routerLink="/components/form" fragment="required-field">Required form field indicator</a></li>
-					<li>Button icon and text</li>
+					<li><a routerLink="/components/status-indicator">Status indicator icons and labels</a></li>
+					<li><a routerLink="/components/form" fragment="required-field">Required form field indicators</a></li>
+					<li>Button icons and labels</li>
         </ul>
       </div>
       <div class="definition-code">
@@ -198,9 +198,9 @@
     <div class="definition-props">
       <div class="definition-usage">
         <div class="sky-field-label">Usage</div>
-        <div>Multiple instances of a type of object need enough horizontal spacing so that the objects can be distinguished from each other, but not so much that they seem unrelated. Examples include:</div>
+        <div>Multiple related elements need enough horizontal spacing to be distinguished from each other but still visually linked. Examples include:</div>
         <ul>
-          <li><a routerLink="/components/toolbar">Toolbar</a> buttons</li>
+          <li><a routerLink="/components/toolbar">Toolbar buttons</a></li>
 					<li>Related form fields, such as "First name" and "Last name"</li>
         </ul>
       </div>
@@ -231,7 +231,7 @@
     <div class="definition-props">
       <div class="definition-usage">
         <div class="sky-field-label">Usage</div>
-        <div>Content sections that are laid out horizontally should use a fluid grid so that they are responsive on smaller viewports. The sections should switch from a horizontal to vertical layout when there is not enough horizontal space to accommodate the width of the content.</div>
+        <div>Use a fluid grid to lay out loosely related content sections horizontally so that they are responsive on smaller viewports. The sections should switch from a horizontal to vertical layout when there is not enough horizontal space to accommodate the width of the content.</div>
       </div>
       <div class="definition-code">
         <div class="sky-field-label">Code</div>
@@ -239,7 +239,7 @@
       </div>
       <div class="definition-styling">
         <div class="sky-field-label">Styling</div>
-				<div>N/A</div>
+				<div>Not applicable</div>
       </div>
     </div>
 	</div>
