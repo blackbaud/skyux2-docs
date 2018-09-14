@@ -41,6 +41,43 @@
   <p>
     We rely on the column drop pattern to create responsive designs. This pattern utilizes a multi-column layout and the full width of the screen. The column drop pattern displays columns horizontally at full width and then stacks columns vertically when the screen width becomes too narrow for the content. When and how to stack columns at different breakpoints depends on the content.
   </p>
+	<p>
+		As an example, a tile-based page with column-based content layout within the tiles would respond as follows:
+	</p>
+
+	<div class="sky-subsection-heading">Tile-based page</div>
+
+	<sky-row>
+		<sky-column screenSmall="8">
+			<p class="sky-emphasized">Large viewport</p>
+			<div class="screenshot screenshot-info">
+				<img src="~/assets/img/guidelines/spacing/page-two-column-desktop.png" style="width: 100%;" />
+			</div>
+		</sky-column>
+		<sky-column screenSmall="4">
+			<p class="sky-emphasized">Small viewport</p>
+			<div class="screenshot screenshot-info">
+				<img src="~/assets/img/guidelines/spacing/page-two-column-mobile.png" style="width: 100%;" />
+			</div>
+		</sky-column>
+	</sky-row>
+
+	<div class="sky-subsection-heading">Tile content</div>	
+
+	<sky-row>
+		<sky-column screenSmall="8">
+			<p class="sky-emphasized">Large viewport</p>
+			<div class="screenshot screenshot-info">
+				<img src="~/assets/img/guidelines/spacing/tile-multi-column-desktop.png" style="width: 100%;" />
+			</div>
+		</sky-column>
+		<sky-column screenSmall="4">
+			<p class="sky-emphasized">Small viewport</p>
+			<div class="screenshot screenshot-info">
+				<img src="~/assets/img/guidelines/spacing/tile-multi-column-mobile.png" style="width: 100%;" />
+			</div>
+		</sky-column>
+	</sky-row>
 
   <stache-page-anchor>
     Page layout templates
