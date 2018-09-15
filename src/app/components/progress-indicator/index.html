@@ -5,32 +5,30 @@
 
   <sky-demo-page-summary>
     <p>
-      The <stache-code>sky-progress-indicator</stache-code> component represents user progress through a series of sequential steps. ...
+      The progress indicator component visually represents progress through a series of sequential steps toward a final goal. The progress indicator can represent a series of user actions that are a part of direct workflow, or it can represent passive progress through steps that concern users but that they do not directly act upon.
     </p>
+
   </sky-demo-page-summary>
 
   <sky-demo-page-properties sectionHeading="Progress indicator properties">
     <sky-demo-page-property
-      propertyName="startingIndex"
-      isOptional="true"
-      defaultValue="false"
-    >
-      xxx.
-    </sky-demo-page-property>
-    <sky-demo-page-property
       propertyName="displayMode()"
       isOptional="true"
-      defaultValue="false"
+      defaultValue="Vertical"
     >
-      xxx.
+      Specifies whether to display the progress indicator vertically or horizontally.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="messageStream"
       isOptional="true"
-      defaultValue="false"
     >
-      Specifies an observable of <stache-code>SkyProgressIndicatorMessageType</stache-code> that indicates the type of message to display in the progress indicator.
-      Specifies an observable of <stache-code>SkyTokensMessageType</stache-code> that can place focus on a particular token or remove the active token from the list.
+      Specifies an observable of <stache-code>SkyProgressIndicatorMessageType</stache-code> that determines the status to display for progress items in the progress indicator. The message stream is a queue of commanding messages to change the state of the progress indicator based on one of the three message types.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="startingIndex"
+      isOptional="true"
+    >
+      Specifies the index for the first progress item to make active when the progress indicator loads.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -38,7 +36,7 @@
     <sky-demo-page-property
       propertyName="progressChanges"
     >
-      Fires when ...
+      Fires when the progress indicator changes the status of a progress item.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -46,37 +44,79 @@
     <sky-demo-page-property
       propertyName="Progress"
     >
-    Indicates that the current step is in progress.
+    Indicates that the current step is complete. This completes the active progress item and moves to the next progress item.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="Regress"
     >
-    Places focus on the last token in the list. 
+    Indicates that progress should return to the previous item. This moves from the currently active item to the item that precedes it. 
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="Reset"
     >
-    Indicates that the current step is in progress. 
-    </sky-demo-page-property>
-  </sky-demo-page-properties>
-  
-  <sky-demo-page-properties sectionHeading="Progress indicator properties">
-    <sky-demo-page-property
-      propertyName="xxx"
-      isOptional="true"
-      defaultValue="false"
-    >
-      xxx.
+    Indicates that progress is incomplete. This marks all items as incomplete and sets the active item to the first progress item. 
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
-  <sky-demo-page-properties sectionHeading="Progress indicator events">
+  <sky-demo-page-properties sectionHeading="Progress indicator item properties">
     <sky-demo-page-property
-      propertyName="xxx"
+      propertyName="title"
+    >
+      Specifies the title to display with the progress item.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-properties sectionHeading="Progress indicator reset button properties">
+    <sky-demo-page-property
+      propertyName="disabled"
       isOptional="true"
       defaultValue="false"
     >
-      xxx.
+      Indicates whether the reset button is disabled.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="progressIndicator"
+      isOptional="true"
+    >
+      Specifies the progress indicator component to associate with the reset button.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-properties sectionHeading="Progress indicator reset button events">
+    <sky-demo-page-property
+      propertyName="resetClick"
+    >
+      Fires when users select the reset button to mark all items as incomplete and set the active item to the first progress item.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-properties sectionHeading="Progress indicator nav button properties">
+    <sky-demo-page-property
+      propertyName="buttonText"
+      isOptional="true"
+      defaultValue="Text displayed on a wizard's next button."
+    >
+      Specifies the label to display on the navigation button.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="buttonType"
+      isOptional="true"
+      defaultValue="next"
+    >
+      Specifies the type of navigation button to include with the progress indicator when it is used with a wizard component. Options include <stache-code>finish</stache-code>, <stache-code>next</stache-code>, and <stache-code>previous</stache-code>.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="disabled"
+      isOptional="true"
+      defaultValue="false"
+    >
+      Indicates whether the nav button is disabled.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="progressIndicator"
+      isOptional="true"
+    >
+      Specifies the progress indicator component to associate with the nav button.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 

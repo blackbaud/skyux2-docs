@@ -352,7 +352,7 @@ export class SkyDemoComponentsService {
         name: 'Progress indicator',
         icon: 'tasks',
         // tslint:disable-next-line
-        summary: 'The progress indicator component represents user progress through a series of sequential steps.',
+        summary: 'The progress indicator component represents progress through a series of sequential steps toward a final goal.',
         url: '/components/progress-indicator',
         getCodeFiles: () => this.getDemoFiles('SkyProgressIndicatorDemoComponent')
       },
