@@ -5,10 +5,9 @@
 
   <sky-demo-page-summary>
     <p>
-      The progress indicator component visually represents progress through a series of sequential steps toward a final goal. The progress indicator can represent a series of user actions that are a part of direct workflow, or it can represent passive progress through steps that concern users but that they do not directly act upon.
+      The progress indicator component visually represents progress through a series of sequential steps toward a final goal. The progress indicator can represent a series of user actions that are a part of direct workflow, or it can represent passive progress through steps that concern users but that they do not directly act upon. Active progress indicators can be used in modal wizards or directly on pages to represent progress as users complete each step of a process. Passive progress indicators represent progress in the individual context of record pages and detail panels and should not be used in collective contexts such as lists, repeaters, and tables.
     </p>
-
-  </sky-demo-page-summary>
+ </sky-demo-page-summary>
 
   <sky-demo-page-properties sectionHeading="Progress indicator properties">
     <sky-demo-page-property
@@ -94,7 +93,7 @@
     <sky-demo-page-property
       propertyName="buttonText"
       isOptional="true"
-      defaultValue="Text displayed on a wizard's next button."
+      defaultValue="Next"
     >
       Specifies the label to display on the navigation button.
     </sky-demo-page-property>
@@ -103,7 +102,7 @@
       isOptional="true"
       defaultValue="next"
     >
-      Specifies the type of navigation button to include with the progress indicator when it is used with a wizard component. Options include <stache-code>finish</stache-code>, <stache-code>next</stache-code>, and <stache-code>previous</stache-code>.
+      Specifies the type of navigation button to include with the progress indicator as part of a modal wizard. Options include <stache-code>finish</stache-code>, <stache-code>next</stache-code>, and <stache-code>previous</stache-code>.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="disabled"
