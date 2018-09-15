@@ -79,7 +79,7 @@ public sortButtonInfo: {label: string, value: string}[] = [
   },
   {
     label: 'Dropdown',
-    value: 'None'
+    value: 'Yes'
   }
 ];
 public columnsButtonInfo: {label: string, value: string}[] = [
@@ -143,7 +143,7 @@ public moreButtonInfo: {label: string, value: string}[] = [
   },
   {
     label: 'Dropdown',
-    value: 'None'
+    value: 'Yes'
   },
   {
     label: 'Notes',
