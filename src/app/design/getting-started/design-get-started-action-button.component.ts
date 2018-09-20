@@ -4,32 +4,32 @@ import { Component } from '@angular/core';
   selector: 'design-get-started-action-buttons',
   templateUrl: 'design-get-started-action-button.component.html'
 })
-export class GuidelineActionButtonsComponent {
+export class DesignGetStartedActionButtonsComponent {
   public routes = [
     {
       name: 'Overview',
-      path: '/design/get-started/overview',
+      path: '/design/getting-started/overview',
       icon: 'sitemap',
       // tslint:disable-next-line
       summary: 'Describes the contexts in which to use different types of buttons and hyperlinks.'
     },
     {
       name: 'Principles',
-      path: '/design/get-started/principles',
+      path: '/design/getting-started/principles',
       icon: 'list-ol',
       // tslint:disable-next-line
       summary: 'Guiding principles for designing with SKY UX.'
     },
 		{
       name: 'Fundamental patterns',
-      path: '/design/get-started/fundamental-patterns',
+      path: '/design/getting-started/fundamental-patterns',
       icon: 'map-o',
       // tslint:disable-next-line
       summary: 'The patterns you will use most often.'
     },
 		{
       name: 'Prototyping resources',
-      path: '/design/get-started/prototyping-resources',
+      path: '/design/getting-started/prototyping-resources',
       icon: 'wrench',
       // tslint:disable-next-line
       summary: 'Resources to help make prototyping more efficient and accurate.'
