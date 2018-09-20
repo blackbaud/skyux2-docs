@@ -7,6 +7,13 @@ import { Component } from '@angular/core';
 export class DesignActionButtonsComponent {
   public routes = [
     {
+      name: 'Getting started',
+      path: '/design/getting-started',
+      icon: 'play',
+      // tslint:disable-next-line
+      summary: 'Quickly get up to speed on the fundamentals of designing with SKY UX.'
+    },
+		{
       name: 'Principles',
       path: '/design/principles',
       icon: 'list-ol',
