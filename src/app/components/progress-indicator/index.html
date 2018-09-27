@@ -5,7 +5,10 @@
 
   <sky-demo-page-summary>
     <p>
-      The progress indicator component visually represents progress through a series of sequential steps toward a final goal. The progress indicator can represent a series of user actions that are a part of direct workflow, or it can represent passive progress through steps that concern users but that they do not directly act upon. Active progress indicators can be used in modal wizards or directly on pages to represent progress as users complete each step of a process. Passive progress indicators represent progress in the individual context of record pages and detail panels and should not be used in collective contexts such as lists, repeaters, and tables.
+      The progress indicator component visually represents progress through a series of sequential steps toward a final goal. Progress indicators can represent active progress in scenarios where user tasks are broken into discrete steps, or they can represent passive progress through steps that users do not directly act upon.
+    </p>
+    <p>
+      Active progress indicators can be modal wizards or waterfall pages. For <a routerLink="/components/wizard">modal wizards</a>, place progress indicator components within modal components to guide users through tasks that require a series of related decisions. For waterfall pages, place progress indicator components on pages where records or system settings are in an incomplete state until users complete steps to activate them.
     </p>
  </sky-demo-page-summary>
 
@@ -15,7 +18,7 @@
       isOptional="true"
       defaultValue="Vertical"
     >
-      Specifies whether to display the progress indicator vertically or horizontally.
+      Specifies whether to display the progress indicator vertically or horizontally. For <a routerLink="/components/wizard">modal wizards</a>, use the horizontal display mode. For waterfall pages, use the vertical display mode. And for passive progress indicators, we recommend the vertical display mode.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="messageStream"
@@ -53,7 +56,7 @@
     <sky-demo-page-property
       propertyName="Reset"
     >
-    Indicates that progress is incomplete. This marks all items as incomplete and sets the active item to the first progress item. 
+    Indicates that progress is incomplete. This marks all items as incomplete and sets the first progress item as the active item.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -71,7 +74,7 @@
       isOptional="true"
       defaultValue="false"
     >
-      Indicates whether the reset button is disabled.
+      Indicates whether to disable the reset button.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="progressIndicator"
@@ -85,31 +88,34 @@
     <sky-demo-page-property
       propertyName="resetClick"
     >
-      Fires when users select the reset button to mark all items as incomplete and set the active item to the first progress item.
+      Fires when users select the reset button that marks all items as incomplete and sets the first progress item as the active item.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
   <sky-demo-page-properties sectionHeading="Progress indicator nav button properties">
+    <p>
+      The progress indicator nav button component allows users to navigate the steps in modal wizards. We recommend against using it in waterfall pages and passive progress indicators.
+    </p>
     <sky-demo-page-property
       propertyName="buttonText"
       isOptional="true"
       defaultValue="Next"
     >
-      Specifies the label to display on the navigation button.
+      Specifies the label to display on the nav button.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="buttonType"
       isOptional="true"
       defaultValue="next"
     >
-      Specifies the type of navigation button to include with the progress indicator as part of a modal wizard. Options include <stache-code>finish</stache-code>, <stache-code>next</stache-code>, and <stache-code>previous</stache-code>.
+      Specifies the type of nav button to include. Options include <stache-code>finish</stache-code>, <stache-code>next</stache-code>, and <stache-code>previous</stache-code>.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="disabled"
       isOptional="true"
       defaultValue="false"
     >
-      Indicates whether the nav button is disabled.
+      Indicates whether to disable the nav button.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="progressIndicator"
@@ -126,5 +132,141 @@
     </div>
     <sky-demo-page-code demoName="Progress indicator"></sky-demo-page-code>
   </sky-demo-page-example>
+
+  <sky-demo-page-content sectionHeading="UX guidelines">
+    <header><div class="sky-section-heading">Active progress indicators</div></header>
+  	<p>
+      Active progress indicators illustrate the step-wise nature of tasks and reinforce progress as users complete steps, so they should isolate users inside the scope of tasks, contain the interactions necessary for each step, and provide controls to move through the steps.
+    </p>
+    <p>
+      Use active progress indicators when:
+    </p>
+    <ul>
+			<li>
+        Tasks can be broken into discrete, predetermined steps.
+      </li>
+			<li>
+        The order of decisions within tasks matters because the system requires decisions in a certain order or because early decisions affect later decisions.
+      </li>
+		</ul>
+    <p>
+      Do not use active progress indicators when:
+    </p>
+    <ul>
+      <li>
+        <p>
+          The best experience requires fewer than three mandatory steps.
+        </p>
+      </li>
+      <li>
+        <p>
+          Decisions within tasks change the number of steps or the order of steps. Instead, move decisions that affect the number or order of steps to the start of workflows and branch users to different active progress contexts.
+        </p>
+      </li>
+      <li>
+        <p>
+          Users need to edit properties that are already set.
+        </p>
+      </li>
+      </li>
+    </ul>
+    <header><div class="sky-subsection-heading">Modal wizards vs. waterfall pages</div></header>
+    <p>
+      Modal wizards guide users through tasks that require a series of related decisions. Waterfall pages walk users through the steps to activate records or system settings that are created in an incomplete state.
+    </p>
+    <p>
+      Use modal wizards when:
+    </p>
+    <ul>
+			<li>
+        <p>
+          Tasks do not result in records or settings with page-level views.
+        </p>
+      </li>
+			<li>
+        <p>
+          Tasks are best presented as multiple steps that users can complete in a single sitting.
+        </p>
+      </li>
+			<li>
+        <p>
+          The interaction complexity of each step is low. For example, when each step uses standard form inputs and controls.
+        </p>
+      </li>
+			<li>
+        <p>
+          Tasks include six or fewer steps.
+        </p>
+      </li>
+		</ul>
+    <p>
+      Use waterfall pages when:
+    </p>
+    <ul>
+			<li>
+        <p>
+          Tasks result in records or settings with page-level views.
+        </p>
+      </li>
+			<li>
+        <p>
+          Tasks complete initial setup or configuration for records or system settings that do not work until users complete steps that are infrequently revisited.
+        </p>
+      </li>
+			<li>
+        <p>
+          Tasks take a significant amount of time and may not be completed in a single sitting.
+        </p>
+      </li>
+			<li>
+        <p>
+          The irreducible complexity of steps warrants a multi-step approach.
+        </p>
+      </li>
+			<li>
+        <p>
+          Steps in tasks have drastic asymmetry in the interaction complexity. For example, when one step involves interactions best performed in a full-screen modal while another step requires a small number of inputs or selections.
+        </p>
+      </li>
+		</ul>
+    <header><div class="sky-section-heading">Passive progress indicators</div></header>
+  	<p>
+      Passive progress indicators inform users of progress that concerns them but that they are not responsible for, such as steps that other users in the system perform and steps that are completed externally from the system. They provide details on an individually scoped level such as record pages, detail panels, or popovers.
+    </p>
+    <p>
+      Use passive progress indicators when:
+    </p>
+    <ul>
+			<li>
+        Steps represent stages of completion that are essentially invisible to users because they take place outside of user control.
+      </li>
+			<li>
+        The stages of progression are known in advance and branching does not dynamically route processes.
+      </li>
+			<li>
+        Progress is represented in the individual context of record pages, detail panels, etc.
+      </li>
+		</ul>
+    <p>
+      Do not use passive progress indicators when:
+    </p>
+    <ul>
+			<li>
+        Steps represent multiple independent statuses that are not sequentially related.
+      </li>
+			<li>
+        Progress is represented in the collective context of lists, repeaters, tables, etc.
+      </li>
+			<li>
+        User interaction is required.
+      </li>
+			<li>
+        Statuses drive decision-making or user responses.
+      </li>
+			<li>
+        Other passive indicators are present and create excessive noise for information that does not drive user action.
+      </li>
+		</ul>
+  </sky-demo-page-content>
 
 </sky-demo-page>

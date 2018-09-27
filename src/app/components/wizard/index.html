@@ -4,27 +4,54 @@
 >
 
   <sky-demo-page-summary>
-    A wizard uses tabs to guide users through a set of pre-defined steps. A wizard is useful when users need to perform steps in a particular order. To display a series of tabs as a wizard, set <stache-code>tabStyle="wizard"</stache-code> on the <stache-code>sky-tabset</stache-code> component. To include buttons for users to navigate through the wizard, use the <stache-code>sky-tabset-nav-button</stache-code> component. For more information about tabs, see the <a routerLink="/components/tabs">tabs module</a>.
+    <p>
+      A wizard guides users through a set of pre-defined steps in a particular order. It uses a progress indicator component within a modal component to represent the steps in a task as a series of related decisions in a user’s direct workflow. The wizard illustrates the step-wise nature of a task and reinforces the progress towards the final goal as users complete each step. Wizards are most useful when users must perform steps in a particular order.
+    </p>
+    <p>
+      To create a wizard, place a progress indicator inside a modal and set its <stache-code>displayMode</stache-code> property to <stache-code>Horizontal</stache-code>. For more information about progress indicators, see the <a routerLink="/components/progress-indicator">progress indicator component</a>, And for more information about modals, see the <a routerLink="/components/modal">modal component</a>.
+    </p>
   </sky-demo-page-summary>
 
-  <sky-demo-page-properties sectionHeading="Wizard tabset properties">
+  <sky-demo-page-properties sectionHeading="Progress indicator properties">
     <sky-demo-page-property
-      propertyName="tabStyle"
+      propertyName="displayMode()"
+      isOptional="true"
+      defaultValue="Vertical"
     >
-    Specifies the behavior for a series of tabs. To display tabs as steps in a wizard, set <stache-code>tabStyle="wizard"</stache-code> on the <stache-code>sky-tabset</stache-code> component.
+      Specifies whether to display the progress indicator vertically or horizontally. For modal wizards, you must set the display mode to <stache-code>Horizontal</stache-code>. For information about other types of progress indicators, see <a routerLink="/components/wizard">the progress indicator component</a>.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
-  <sky-demo-page-properties sectionHeading="Tabset nav button properties">
+  <sky-demo-page-properties sectionHeading="Progress indicator nav button properties">
+    <p>
+      The progress indicator nav button component allows users to navigate the steps in modal wizards. We recommend against using it in waterfall pages and passive progress indicators.
+    </p>
     <sky-demo-page-property
-      propertyName="buttonType"
+      propertyName="buttonText"
+      isOptional="true"
+      defaultValue="Next"
     >
-    Specifies the button type for a tabset nav button. To create a <strong>Previous</strong> button, set <stache-code>buttonType="previous"</stache-code> on the <stache-code>sky-tabset-nav-button</stache-code> component. To create a <strong>Next</strong> button, set <stache-code>buttonType="next"</stache-code> on the <stache-code>sky-tabset-nav-button</stache-code> component.
+      Specifies the label to display on the nav button.
     </sky-demo-page-property>
     <sky-demo-page-property
-      propertyName="tabset"
+      propertyName="buttonType"
+      isOptional="true"
+      defaultValue="next"
     >
-    Specifies the <stache-code>sky-tabset</stache-code> component that the tabset nav button controls.
+      Specifies the type of nav button to include. Options include <stache-code>finish</stache-code>, <stache-code>next</stache-code>, and <stache-code>previous</stache-code>.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="disabled"
+      isOptional="true"
+      defaultValue="false"
+    >
+      Indicates whether to disable the nav button.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="progressIndicator"
+      isOptional="true"
+    >
+      Specifies the progress indicator component to associate with the nav button.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
