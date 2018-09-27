@@ -8,7 +8,7 @@ export class DesignActionButtonsComponent {
   public routes = [
     {
       name: 'Getting started',
-      path: '/design/getting-started/overview',
+      path: '/design/getting-started/',
       icon: 'play',
       // tslint:disable-next-line
       summary: 'Quickly get up to speed on the fundamentals of designing with SKY UX.'
@@ -19,13 +19,6 @@ export class DesignActionButtonsComponent {
       icon: 'map-o',
       // tslint:disable-next-line
       summary: 'Instructions on how to consistently design for specific scenarios.'
-    },
-    {
-      name: 'Styles',
-      path: '/design/styles',
-      icon: 'paint-brush',
-      // tslint:disable-next-line
-      summary: 'Core design elements that provide the building blocks for SKY UX components.'
     }
   ];
 }

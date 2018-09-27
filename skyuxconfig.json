@@ -28,17 +28,21 @@
               "title": "Home",
               "route": "/"
             },
+						{
+              "title": "Design",
+              "route": "/design"
+            },
             {
-              "title": "Learn",
+              "title": "Develop",
               "route": "/learn"
             },
             {
               "title": "Components",
               "route": "/components"
             },
-            {
-              "title": "Design",
-              "route": "/design"
+						{
+              "title": "Style",
+              "route": "/styles"
             },
             {
               "title": "Contribute",
@@ -60,8 +64,13 @@
         "route": "/",
         "global": true
       },
+			{
+        "title": "Design",
+        "route": "/design",
+        "global": true
+      },
       {
-        "title": "Learn",
+        "title": "Develop",
         "route": "/learn",
         "global": true
       },
@@ -70,9 +79,9 @@
         "route": "/components",
         "global": true
       },
-      {
-        "title": "Design",
-        "route": "/design",
+			{
+        "title": "Style",
+        "route": "/styles",
         "global": true
       },
       {
