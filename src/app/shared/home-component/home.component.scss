@@ -1,0 +1,67 @@
+@import "~@skyux/theme/scss/mixins";
+
+$app-font-size-large: 18px;
+$app-info-padding: 45px;
+
+.info {
+  h3 {
+    font-weight: bold;
+  }
+}
+
+.lead {
+  font-size: $app-font-size-large;
+}
+
+.h-center {
+  justify-content: center;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.btn-large {
+  display: inline-block;
+  font-size: $app-font-size-large;
+  margin: $sky-margin-inline-default;
+  padding: $sky-padding-even-large;
+}
+
+.row-welcome ::ng-deep .sky-column,
+.row-features ::ng-deep .sky-column,
+.row-opensource ::ng-deep .sky-column,
+.row-developer ::ng-deep .sky-column {
+  align-items: center;
+  display: flex;
+}
+
+.row-welcome {
+  margin-top: 30px;
+}
+
+.row-opensource {
+  box-shadow: inset 0 7px 40px -7px rgba(0, 0, 0, .2);
+}
+
+.row-features ::ng-deep .sky-row {
+  border-top: solid 1px $sky-color-gray-10;
+}
+
+.row-features ::ng-deep .sky-row,
+.row-developer ::ng-deep .sky-row {
+  padding-bottom: $app-info-padding;
+  padding-top: $app-info-padding;
+}
+
+.row-features ::ng-deep .stache-wrapper,
+.row-opensource ::ng-deep .stache-wrapper {
+  background: none;
+}
+
+.row-opensource {
+  background: #EFEFEF;
+  padding-top: 20px;
+}
+
+::ng-deep .stache-layout-wrapper {
+  min-height: auto !important;
+}
