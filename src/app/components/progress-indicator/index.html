@@ -5,7 +5,7 @@
 
   <sky-demo-page-summary>
     <p>
-      The progress indicator component visually represents progress through a series of sequential steps toward a final goal. Progress indicators can represent active progress in scenarios where user tasks are broken into discrete steps, or they can represent passive progress through steps that users do not directly act upon.
+      The progress indicator component visually represents progress through a series of sequential steps toward a final goal. Active progress indicators represent tasks where user actions are broken into discrete steps, and passive progress indicators represent tasks that concern users but where they do not directly act upon the steps.
     </p>
     <p>
       Active progress indicators can be modal wizards or waterfall pages. For <a routerLink="/components/wizard">modal wizards</a>, place progress indicator components within modal components to guide users through tasks that require a series of related decisions. For waterfall pages, place progress indicator components on pages where records or system settings are in an incomplete state until users complete steps to activate them.
@@ -136,7 +136,7 @@
   <sky-demo-page-content sectionHeading="UX guidelines">
     <header><div class="sky-section-heading">Active progress indicators</div></header>
   	<p>
-      Active progress indicators illustrate the step-wise nature of tasks and reinforce progress as users complete steps, so they should isolate users inside the scope of tasks, contain the interactions necessary for each step, and provide controls to move through the steps.
+      Active progress indicators illustrate the step-wise nature of tasks and reinforce progress as users complete steps. They isolate users inside the scope of tasks, contain all interactions necessary for each step, and provide controls to move through the steps.
     </p>
     <p>
       Use active progress indicators when:
@@ -172,7 +172,7 @@
     </ul>
     <header><div class="sky-subsection-heading">Modal wizards vs. waterfall pages</div></header>
     <p>
-      Modal wizards guide users through tasks that require a series of related decisions. Waterfall pages walk users through the steps to activate records or system settings that are created in an incomplete state.
+      Modal wizards guide users through tasks that require a series of related decisions, while waterfall pages walk users through the steps to activate records or system settings that are created in an incomplete state.
     </p>
     <p>
       Use modal wizards when:
@@ -180,22 +180,22 @@
     <ul>
 			<li>
         <p>
-          Tasks do not result in records or settings with page-level views.
-        </p>
-      </li>
-			<li>
-        <p>
           Tasks are best presented as multiple steps that users can complete in a single sitting.
         </p>
       </li>
 			<li>
         <p>
-          The interaction complexity of each step is low. For example, when each step uses standard form inputs and controls.
+          Tasks do not result in records or settings with page-level views.
         </p>
       </li>
 			<li>
         <p>
-          Tasks include six or fewer steps.
+          The interaction complexity of each step is low. For example, steps use standard form inputs and controls.
+        </p>
+      </li>
+			<li>
+        <p>
+          Tasks include no more than six steps.
         </p>
       </li>
 		</ul>
@@ -203,6 +203,16 @@
       Use waterfall pages when:
     </p>
     <ul>
+			<li>
+        <p>
+          The complexity of tasks warrants a multi-step approach.
+        </p>
+      </li>
+			<li>
+        <p>
+          Tasks take a significant amount of time, and users may not complete the steps in a single sitting.
+        </p>
+      </li>
 			<li>
         <p>
           Tasks result in records or settings with page-level views.
@@ -215,36 +225,32 @@
       </li>
 			<li>
         <p>
-          Tasks take a significant amount of time and may not be completed in a single sitting.
-        </p>
-      </li>
-			<li>
-        <p>
-          The irreducible complexity of steps warrants a multi-step approach.
-        </p>
-      </li>
-			<li>
-        <p>
-          Steps in tasks have drastic asymmetry in the interaction complexity. For example, when one step involves interactions best performed in a full-screen modal while another step requires a small number of inputs or selections.
+          The complexity of steps varies drastically. For example, one step may involve interactions that are best performed in a full-screen modal while another step may require a small number of inputs or selections.
         </p>
       </li>
 		</ul>
     <header><div class="sky-section-heading">Passive progress indicators</div></header>
   	<p>
-      Passive progress indicators inform users of progress that concerns them but that they are not responsible for, such as steps that other users in the system perform and steps that are completed externally from the system. They provide details on an individually scoped level such as record pages, detail panels, or popovers.
+      Passive progress indicators inform users of progress that concerns them but that they are not responsible for. For example, passive progress indicators can track the progress of steps that other users in the system perform or steps that are completed outside the system. They provide details on an individually scoped level such as record pages, detail panels, or popovers.
     </p>
     <p>
       Use passive progress indicators when:
     </p>
     <ul>
 			<li>
-        Steps represent stages of completion that are essentially invisible to users because they take place outside of user control.
+        <p>
+          Steps represent stages of completion that are essentially invisible to users because they take place outside of user control.
+        </p>
       </li>
 			<li>
-        The stages of progression are known in advance and branching does not dynamically route processes.
+        <p>
+          The stages of progression are known in advance and branching does not dynamically route processes.
+        </p>
       </li>
 			<li>
-        Progress is represented in the individual context of record pages, detail panels, etc.
+        <p>
+          Progress is represented in the individual context of record pages, detail panels, etc.
+        </p>
       </li>
 		</ul>
     <p>
@@ -252,19 +258,29 @@
     </p>
     <ul>
 			<li>
-        Steps represent multiple independent statuses that are not sequentially related.
+        <p>
+          User interaction is required.
+        </p>
       </li>
 			<li>
-        Progress is represented in the collective context of lists, repeaters, tables, etc.
+        <p>
+          Steps represent multiple independent statuses that are not sequentially related.
+        </p>
       </li>
 			<li>
-        User interaction is required.
+        <p>
+          Progress is represented in collective context such as lists, repeaters, and tables.
+        </p>
       </li>
 			<li>
-        Statuses drive decision-making or user responses.
+        <p>
+          Statuses drive decision-making or user responses.
+        </p>
       </li>
 			<li>
-        Other passive indicators are present and create excessive noise for information that does not drive user action.
+        <p>
+          Combined with other passive indicators to create excessive noise for information that does not drive user action.
+        </p>
       </li>
 		</ul>
   </sky-demo-page-content>
