@@ -30,7 +30,7 @@
             },
 						{
               "title": "Design",
-              "route": "/design"
+              "route": "/design/get-started"
             },
             {
               "title": "Develop",

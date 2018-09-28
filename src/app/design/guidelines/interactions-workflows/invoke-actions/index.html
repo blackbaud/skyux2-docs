@@ -1,0 +1,287 @@
+<stache
+  pageTitle="Invoking actions"
+  showTableOfContents="true">
+  
+  <stache-page-summary>
+    <p>
+      Two interacting principles guide SKY UX hyperlinks and <a routerLink="/components/button">buttons</a>: style and implementation. Style determines the appropriate appearance of an affordance to the user, while implementation involves the core HTML decision to use the <stache-code>&lt;a&gt;</stache-code> element or the <stache-code>&lt;button&gt;</stache-code> element. In SKY UX, these guidelines overlap and interact: Differences in styling do not need to correspond to the use of different tags.
+    </p>
+  </stache-page-summary>
+
+  <stache-page-anchor>
+    Style
+  </stache-page-anchor>
+  
+  <p>
+    SKY UX uses several styles for hyperlinks and buttons. The differences in appearance carry meaning about roles in the system, distinguish between navigation and action, or convey different levels of emphasis or priority.
+  </p>
+  
+  <h3 class="sky-subsection-heading">
+    Primary actions
+  </h3>
+  
+  <p>
+    The style for a primary action is a bold, saturated color that conveys importance and drives user workflows. Only use one primary action in any given system state. Use primary actions for the most important action on a page, the most frequently used action on a page, or the progressive terminal action on a dialogue (such as 'Save' or 'Done'). For information about how to use primary actions, see the <a routerLink="/design/guidelines/page-layouts" fragment="primary-action-guidelines">primary action guidelines</a>.
+  </p>
+  
+  <h3 class="sky-subsection-heading">
+    Secondary actions
+  </h3>
+  
+  <p>
+    Secondary actions are less important or less frequently used than primary actions, so SKY UX reduces the visual weight to make them noticeable but not attention-drawing. Use secondary actions for:
+  </p>
+  
+  <ul>
+    <li>
+      <p>
+        Toolbar or action bar buttons
+      </p>
+    </li>
+    <li>
+      <p>
+        Actions that are relevant to only part of a page’s content, such as actions in <a routerLink="/components/card">cards</a> or <a routerLink="/components/tile">tiles</a>
+      </p>
+    </li>
+  </ul>
+  
+  <h3 class="sky-subsection-heading">
+    Tertiary actions
+  </h3>
+  
+  <p>
+    Tertiary actions receive a lighter visual weight but invisibly occupy the same amount of space as primary and secondary actions. Use tertiary actions for:
+  </p>
+  
+  <ul>
+    <li>
+      <p>
+        Infrequently used actions or options on a page
+      </p>
+    </li>
+    <li>
+      <p>
+        The “regressive” action on a dialogue, such as a cancel action
+      </p>
+    </li>
+  </ul>
+  
+  <h3 class="sky-subsection-heading">
+    Inline links
+  </h3>
+  
+  <p>
+    Inline links receive the least visual weight and appear inline with text instead of in their own rectangular space. They have no button padding or spacing and should not be used in groups with other buttons. Do not “stack” multiple inline links too close together because this creates a usability risk of mis-clicks or mis-touches. Use inline links for pure navigation:
+  </p>
+  
+  <ul>
+    <li>
+      <p>
+        Parent-to-parent
+      </p>
+    </li>
+    <li>
+      <p>
+        Parent-to-child
+      </p>
+    </li>
+    <li>
+      <p>
+        Links to external applications or services, such as a street address that links to a map application
+      </p>
+    </li>
+  </ul>  
+
+  <stache-page-anchor>
+    Implementation
+  </stache-page-anchor>
+  
+  <p>
+    While SKY UX styling properties allow <stache-code>&lt;a&gt;</stache-code> and <stache-code>&lt;button&gt;</stache-code> elements to appear interchangeable, subtle differences in their behavior make it important to select the correct implementation. Most notably, these elements differ in:
+  </p>
+  
+  <ul>
+    <li>
+      <p>
+        Right-click options
+      </p>
+    </li>
+    <li>
+      <p>
+        Long-touch and force-touch behaviors for mobile browsers
+      </p>
+    </li>
+    <li>
+      <p>
+        Keyboard shortcuts
+      </p>
+    </li>
+    <li>
+      <p>
+        Behavior with screen readers and other accessibility software
+      </p>
+    </li>
+  </ul>
+  
+  <p>
+    To determine the correct HTML tag for an affordance in SKY UX, follow this guidance:
+  </p>
+  
+  <ol>
+    <li>
+      <p>
+        If the ONLY result when users click, tap, or select the affordance is loading a new URL in the browser, then implement the affordance as an <stache-code>&lt;a&gt;</stache-code> element.
+      </p>
+    </li>
+    <li>
+      <p>
+        Otherwise, implement the affordance as a <stache-code>&lt;button&gt;</stache-code> element.
+      </p>
+    </li>
+  </ol>
+  
+  <p>
+    In other words, <stache-code>&lt;a&gt;</stache-code> elements are only appropriate when an affordance changes nothing about the state of the system and the only result is that the user traverses from one view of content to another. For example, a record page may contain an affordance to delete the record. If a user activates this affordance, the browser redirects to a new URL because the existing page presumably ceases to exist. However, since this also impacts the system by deleting data, you should implement the affordance as a <stache-code>&lt;button&gt;</stache-code> element.
+  </p>
+  
+<stache-page-anchor>
+    Primary action guidelines
+  </stache-page-anchor>
+    
+  <p>
+    No matter the page layout, SKY UX designs should follow consistent guidelines for the placement and styling of primary actions.
+  </p>
+    
+  <ul>
+    <li>Primary actions belong in the top-left of pages underneath the page titles.</li>
+      <ul>
+        <li>For some page types, primary actions are placed within containers on the page. For details, see "How to use primary actions" below.</li>
+      </ul>
+    <li>Pages should only include 1 primary action so that it stands out.</li>
+      <ul>
+        <li>The primary action should be the most important or most frequently used action on a page.</li>
+          <ul>
+            <li>Common examples include adding a new child record, or performing an important status change on a record page.</li>
+          </ul>
+        <li>If pages have child records with important actions, don't expose all of them as primary actions. Even if actions are primary to child records, they cannot all be primary to the parent record.</li>
+        <li>Many pages have no primary action.</li>
+          <ul>
+            <li>Don't force it - if it isn't fairly obvious what a page's primary action should be, it probably doesn't have one.</li>
+          </ul>
+        <li>If users can accomplish a primary action in multiple ways, don't expose all of them as primary actions.</li>
+          <ul>
+            <li>Instead, present that decision after the user has started taking the primary action (see <a routerLink="/components/action-button">Action button</a>).</li>
+          </ul>
+        <li>Use SKY iconography when appropriate.</li>
+      </ul>
+  </ul>
+  
+  <header><div class="sky-subsection-heading">How to use primary actions</div></header>
+    
+  <stache-row>
+    <stache-column screenSmall="6">
+      <p>
+        For work centers or other pages that do not have page summaries, primary actions belong in the top-left under page titles and above all other content.
+      </p>
+    </stache-column>
+    <stache-column screenSmall="6">
+      <div class="screenshot screenshot-success">
+				<img src="~/assets/img/guidelines/pagelayout/primary-action-outside-summary.png" style="width: 100%;" />
+      </div>
+    </stache-column>
+  </stache-row>
+    
+  <stache-row>
+    <stache-column screenSmall="6">
+      <p>
+        For work centers or other pages with page summaries, primary actions belong under page titles inside the summary. Other content in the summary belongs to the right or under the primary action.
+      </p>
+    </stache-column>
+    <stache-column screenSmall="6">
+      <div class="screenshot screenshot-success">
+				<img src="~/assets/img/guidelines/pagelayout/primary-action-in-summary.png" style="width: 100%;" />
+      </div>
+    </stache-column>
+  </stache-row>
+    
+  <stache-row>
+    <stache-column screenSmall="6">
+      <p>
+        For work centers or other pages with page summaries and page-level toolbars, primary actions belong in the leftmost position inside the page toolbar.
+      </p>
+    </stache-column>
+    <stache-column screenSmall="6">
+      <div class="screenshot screenshot-success">
+				<img src="~/assets/img/guidelines/pagelayout/primary-action-in-toolbar.png" style="width: 100%;" />
+      </div>
+    </stache-column>
+  </stache-row>
+    
+  <stache-row>
+    <stache-column screenSmall="6">
+      <p>
+        For list pages that contain a single list, primary actions belong in the leftmost position inside the list toolbar. Likewise, if pages consist entirely of tabs and have no other content, primary actions on tabs that contain a single list belong in the leftmost position inside the list toolbar.
+      </p>
+    </stache-column>
+    <stache-column screenSmall="6">
+      <div class="screenshot screenshot-success">
+				<img src="~/assets/img/guidelines/pagelayout/primary-action-on-list-page.png" style="width: 100%;" />
+      </div>
+    </stache-column>
+  </stache-row>
+    
+  <header><div class="sky-subsection-heading">How not to use primary actions</div></header>
+    
+  <stache-row>
+    <stache-column screenSmall="6">
+      <p>
+        Do not use multiple primary actions on pages.
+      </p>
+    </stache-column>
+    <stache-column screenSmall="6">
+      <div class="screenshot screenshot-danger">
+				<img src="~/assets/img/guidelines/pagelayout/multiple-primary-actions-dont.png" style="width: 100%;" />
+      </div>
+    </stache-column>
+  </stache-row>
+    
+  <stache-row>
+    <stache-column screenSmall="6">
+      <p>
+        Do not use primary actions for child-specific actions on parent pages. The only exception is for adding child records.
+      </p>
+    </stache-column>
+    <stache-column screenSmall="6">
+      <div class="screenshot screenshot-danger">
+				<img src="~/assets/img/guidelines/pagelayout/primary-actions-on-children-dont.png" style="width: 100%;" />
+      </div>
+    </stache-column>
+  </stache-row>
+    
+  <stache-row>
+    <stache-column screenSmall="6">
+      <p>
+        Do not use other button styles or arrangements to represent primary actions.
+      </p>
+    </stache-column>
+    <stache-column screenSmall="6">
+      <div class="screenshot screenshot-danger">
+				<img src="~/assets/img/guidelines/pagelayout/primary-action-in-other-styles-dont.png" style="width: 100%;" />
+      </div>
+    </stache-column>
+  </stache-row>
+    
+  <stache-row>
+    <stache-column screenSmall="6">
+      <p>
+        Do not use primary buttons outside of page-level toolbars when pages include them. 
+      </p>
+    </stache-column>
+    <stache-column screenSmall="6">
+      <div class="screenshot screenshot-danger">
+				<img src="~/assets/img/guidelines/pagelayout/primary-action-outside-toolbar-dont.png" style="width: 100%;" />
+      </div>
+    </stache-column>
+  </stache-row>	
+
+</stache>
