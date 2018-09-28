@@ -13,7 +13,7 @@
   "license": "MIT",
   "dependencies": {
     "@blackbaud/skyux": "2.26.0",
-    "@blackbaud/stache": "2.11.3"
+    "@blackbaud/stache": "2.12.0"
   },
   "devDependencies": {
     "@blackbaud/skyux-builder": "1.23.1"

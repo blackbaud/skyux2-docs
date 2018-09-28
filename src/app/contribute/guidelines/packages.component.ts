@@ -151,6 +151,11 @@ export class PackagesComponent {
       id: '@blackbaud/skyux-builder',
       provider: 'github',
       repo: 'blackbaud/skyux-builder'
+    },
+    {
+      id: '@blackbaud/skyux-cli',
+      provider: 'github',
+      repo: 'blackbaud/skyux-cli'
     }
   ];
 
