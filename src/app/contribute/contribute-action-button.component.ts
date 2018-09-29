@@ -10,15 +10,19 @@ export class ContributeActionButtonsComponent {
       name: 'Contributors',
       path: '/contribute/contributors',
       icon: 'address-card',
-      // tslint:disable-next-line
       summary: 'View SKY UX team members as well as key contributors.'
     },
     {
       name: 'Guidelines',
       path: '/contribute/guidelines',
       icon: 'file',
-      // tslint:disable-next-line
-      summary: 'See how our packages are organized and our guidelines for contributing to them.'
+      summary: 'View our contribution guidelines.'
+    },
+    {
+      name: 'Organization',
+      path: '/contribute/organizsation',
+      icon: 'file',
+      summary: 'View our package organization.'
     }
   ];
 }

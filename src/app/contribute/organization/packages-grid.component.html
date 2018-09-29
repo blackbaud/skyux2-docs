@@ -1,0 +1,42 @@
+<sky-grid
+  [data]="packages"
+  (sortFieldChange)="sortChanged($event)">
+  <sky-grid-column
+    field="id"
+    heading="Package Name"
+    [template]="templateColumnPackage">
+  </sky-grid-column>
+  <sky-grid-column
+    field="repo"
+    heading="Repository"
+    [template]="templateColumnRepository">
+  </sky-grid-column>
+  <sky-grid-column
+    field="id"
+    heading="Version"
+    [isSortable]="false"
+    [template]="templateColumnVersion">
+  </sky-grid-column>
+</sky-grid>
+
+<ng-template
+  let-value="value"
+  #templateColumnPackage>
+  <a [href]="'https://npmjs.com/package/' + value">
+    {{ value }}
+  </a>
+</ng-template>
+
+<ng-template
+  let-value="value"
+  #templateColumnVersion>
+  <img [src]="'https://img.shields.io/npm/v/' + value + '.svg'">
+</ng-template>
+
+<ng-template
+  let-row="row"
+  #templateColumnRepository>
+  <a [href]="row.repoUrl" *ngIf="row.repo && row.repoUrl">
+    {{ row.repo }}
+  </a>
+</ng-template>
