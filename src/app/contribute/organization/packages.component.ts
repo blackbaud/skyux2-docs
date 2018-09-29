@@ -2,10 +2,6 @@ import {
   Component
 } from '@angular/core';
 
-import {
-  ListSortFieldSelectorModel
-} from '@blackbaud/skyux/dist/core';
-
 @Component({
   selector: 'app-packages',
   templateUrl: './packages.component.html',
