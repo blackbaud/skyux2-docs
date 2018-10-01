@@ -20,7 +20,7 @@ export class ContributeActionButtonsComponent {
     },
     {
       name: 'Organization',
-      path: '/contribute/organizsation',
+      path: '/contribute/organization',
       icon: 'file',
       summary: 'View our package organization.'
     }
