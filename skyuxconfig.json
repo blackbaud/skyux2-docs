@@ -87,8 +87,33 @@
       },
 			{
         "title": "Design",
-        "route": "/design",
-        "global": true
+        "items": [
+								{
+									"title": "Get started",
+									"route": "/design/overview",
+									"global": "true"
+								},
+								{
+									"title": "Principles",
+									"route": "/design/principles",
+									"global": "true"
+								},
+								{
+									"title": "Guidelines",
+									"route": "/design/guidelines",
+									"global": "true"
+								},
+								{
+									"title": "Prototyping resources",
+									"route": "/design/prototyping-resources",
+									"global": "true"
+								},
+								{
+									"title": "Tutorials",
+									"route": "/design/tutorials",
+									"global": "true"
+								}
+							]
       },
       {
         "title": "Develop",
