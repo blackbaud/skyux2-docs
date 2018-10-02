@@ -18,7 +18,14 @@
       isOptional="true"
       defaultValue="Vertical"
     >
-      Specifies whether to display the progress indicator vertically or horizontally. For <a routerLink="/components/wizard">modal wizards</a>, use the horizontal display mode. For waterfall pages, use the vertical display mode. And for passive progress indicators, we recommend the vertical display mode.
+      Specifies whether to display the progress indicator vertically or horizontally. For <a routerLink="/components/wizard">modal wizards</a>, use the horizontal display mode. For waterfall pages and passive progress indicators, use the vertical display mode.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="isPassive"
+      isOptional="true"
+      defaultValue="false"
+    >
+      Indicates whether the progress indicator is passive. Passive progress indicators inform users of progress that concerns them but that they are not responsible for, and they must use the vertical display mode.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="messageStream"
