@@ -28,6 +28,13 @@ export class DesignActionButtonsComponent {
       summary: 'Instructions on how to consistently design for specific scenarios.'
     },
 		{
+      name: 'Tutorials',
+      path: '/design/tutorials',
+      icon: 'graduation-cap',
+      // tslint:disable-next-line
+      summary: 'Tutorials walking through design decisions for example applications.'
+    },
+		{
       name: 'Prototyping resources',
       path: '/design/prototyping-resources/',
       icon: 'wrench',

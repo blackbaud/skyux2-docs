@@ -30,7 +30,28 @@
             },
 						{
               "title": "Design",
-              "route": "/design/get-started"
+              "items": [
+								{
+									"title": "Get started",
+									"route": "/design/overview"
+								},
+								{
+									"title": "Principles",
+									"route": "/design/principles"
+								},
+								{
+									"title": "Guidelines",
+									"route": "/design/guidelines"
+								},
+								{
+									"title": "Prototyping resources",
+									"route": "/design/prototyping-resources"
+								},
+								{
+									"title": "Tutorials",
+									"route": "/design/tutorials"
+								}
+							]
             },
             {
               "title": "Develop",
