@@ -2,30 +2,32 @@
   pageTitle="Page layout"
   showTableOfContents="true"
 	navOrder="1">
-	
-	<stache-page-anchor>
-    Page <stache-code>&lt;title&gt;</stache-code>
-  </stache-page-anchor>
-	
-	<p>Use the following format for the page's HTML <stache-code>&lt;title&gt;</stache-code> element:</p>
-	<p><span class="sky-emphasized">&lt;Page title&gt; - &lt;Product title&gt;</span></p>
-	<p>Example: <span class="sky-emphasized">Gifts list - Raiser's Edge NXT</span></p>
-	
-	<p>For pages with tabbed subnavigation, use the following format:</p>
-	<p><span class="sky-emphasized">&lt;Tab title&gt; - &lt;Page title&gt; - &lt;Product title&gt;</span></p>
-	<p>Example: <span class="sky-emphasized">Portfolio - Work center - Raiser's Edge NXT</span></p>
-	
-	<p>Additional page title guidelines:</p>
-	<ul>
-		<li>Keep titles short.</li>
-		<li>Make titles unique.</li>
-		<li>Provide concise descriptions of each page's contents or purpose. Titles should stand on their own and make sense out of context.</li>
-		<li>Start with the most meaningful, differentiating terms so that they can be scanned in browser tabs, window lists, and browser bookmarks.</li>
-	</ul>
-  
+		
 	<stache-page-anchor>
 		Page structure
 	</stache-page-anchor>
+	
+	<sky-fluid-grid>
+		<sky-row>
+			<sky-column screenSmall="6">
+				<div class="sky-subsection-heading">Navigation</div>
+					<p></p>
+
+				<div class="sky-subsection-heading">Page title</div>
+					<p></p>
+
+				<div class="sky-subsection-heading">Page summary</div>
+					<p></p>
+
+				<div class="sky-subsection-heading">Main content</div>
+					<p></p>
+
+				<div class="sky-subsection-heading">Multiple views</div>
+					<p></p>
+			</sky-column>
+			<sky-column screenSmall="6"></sky-column>
+		</sky-row>
+	</sky-fluid-grid>
 	
   <stache-page-anchor>
     Page layout templates
@@ -35,22 +37,22 @@
     SKY UX is a flexible system that allows for a variety of page layouts to solve workflow needs while maintaining a consistent feel across an application.
   </p>
   <p>
-    The following sections describe the standard SKY UX page layouts. These layouts show how to package components to suit a variety of user needs, but the system can accommodate alternate layouts as necessary.
+    The following sections describe some common SKY UX page layouts. These layouts show how to package components to suit a variety of user needs, but the system can accommodate alternate layouts as necessary.
   </p>
 
-  <div class="sky-subsection-heading" style="margin-top: 20px;">
-    Work center
+	<div class="sky-subsection-heading" style="margin-top: 20px;">
+    <a stacheRouterLink="/design/guidelines/page-layouts/record-page">Record page</a>
   </div>
 
   <p>
-    The work center layout provides a <a routerLink="/components/tiles">tile-based</a> page that surfaces time-sensitive information and allows users to quickly navigate to the most recent information in an application. It can contain a <a routerLink="/components/page-summary">page summary</a> to highlight the most important information, a <a routerLink="/components/tabs">tabbed layout</a> to support different tasks, and a carousel to feature high-priority items.
+    The record page layout provides a <a routerLink="/components/tiles">tile-based</a> page that displays a <a routerLink="/components/page-summary">page summary</a> and a main content area. The page summary at the top of the page provides an overview of a record. The main content area usually consists of two columns of tiles (or one column on extra small screens) that display information about the record in logical sections. The content to include in each area depends on the page's use case.
   </p>
   <div class="screenshot screenshot-info">
-    <img src="~/assets/img/guidelines/pagelayout/workcenter.png" alt="Work center page wireframe" style="width: 100%" />
+    <img src="~/assets/img/guidelines/pagelayout/record.png" alt="Record page wireframe" style="width: 100%" />
   </div>
 
   <div class="sky-subsection-heading" style="margin-top: 20px;">
-    List page
+    <a stacheRouterLink="/design/guidelines/page-layouts/list-page">List page</a>
   </div>
 
   <p>
@@ -61,14 +63,40 @@
   </div>
 
   <div class="sky-subsection-heading" style="margin-top: 20px;">
-    Record page
+    <a stacheRouterLink="/design/guidelines/page-layouts/workcenter-page">Workcenter page</a>
   </div>
 
   <p>
-    The record page layout provides a <a routerLink="/components/tiles">tile-based</a> page that displays a <a routerLink="/components/page-summary">page summary</a> and a main content area. The page summary at the top of the page provides an overview of a record. The main content area usually consists of two columns of tiles (or one column on extra small screens) that display information about the record in logical sections. The content to include in each area depends on the page's use case.
+    The workcenter layout provides a <a routerLink="/components/tiles">tile-based</a> page that surfaces time-sensitive information and allows users to quickly navigate to the most recent information in an application. It can contain a <a routerLink="/components/page-summary">page summary</a> to highlight the most important information, a <a routerLink="/components/tabs">tabbed layout</a> to support different tasks, and a carousel to feature high-priority items.
   </p>
   <div class="screenshot screenshot-info">
-    <img src="~/assets/img/guidelines/pagelayout/record.png" alt="Record page wireframe" style="width: 100%" />
+    <img src="~/assets/img/guidelines/pagelayout/workcenter.png" alt="Work center page wireframe" style="width: 100%" />
   </div>
-   
+	
+	<div class="sky-subsection-heading" style="margin-top: 20px;">
+    <a stacheRouterLink="/design/guidelines/page-layouts/split-view-page">Split view page</a>
+  </div>
+
+<stache-page-anchor>
+	Accessibility
+</stache-page-anchor>
+	
+	<div class="sky-subsection-heading">HTML <stache-code>&lt;title&gt;</stache-code></div>
+	
+	<p>Wording guidelines:</p>
+	<ul>
+		<li>Keep titles short.</li>
+		<li>Make titles unique.</li>
+		<li>Provide concise descriptions of each page's contents or purpose. Titles should stand on their own and make sense out of context.</li>
+		<li>Start with the most meaningful, differentiating terms so that they can be scanned in browser tabs, window lists, and browser bookmarks.</li>
+	</ul>
+	
+	<p>Use the following format for the page's HTML <stache-code>&lt;title&gt;</stache-code> element:</p>
+	<p><span class="sky-emphasized">&lt;Page title&gt; - &lt;Product title&gt;</span></p>
+	<p>Example: <span class="sky-emphasized">Gifts list - Raiser's Edge NXT</span></p>
+	
+	<p>For pages with tabbed subnavigation, use the following format:</p>
+	<p><span class="sky-emphasized">&lt;Tab title&gt; - &lt;Page title&gt; - &lt;Product title&gt;</span></p>
+	<p>Example: <span class="sky-emphasized">Portfolio - Work center - Raiser's Edge NXT</span></p>
+
 </stache>
