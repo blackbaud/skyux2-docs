@@ -55,7 +55,24 @@
             },
             {
               "title": "Develop",
-              "route": "/learn"
+              "items": [
+								{
+									"title": "Overview",
+									"route": "/learn/overview"
+								},
+								{
+									"title": "Get started",
+									"route": "/learn/get-started"
+								},
+								{
+									"title": "Reference",
+									"route": "/learn/reference"
+								},
+								{
+									"title": "Accessibility",
+									"route": "/learn/accessibility"
+								}
+							]
             },
             {
               "title": "Components",
@@ -63,14 +80,47 @@
             },
 						{
               "title": "Style",
-              "route": "/styles"
+              "items": [
+								{
+									"title": "Borders",
+									"route": "/styles/borders"
+								},
+								{
+									"title": "Colors",
+									"route": "/styles/color"
+								},
+								{
+									"title": "Content",
+									"route": "/styles/content"
+								},
+								{
+									"title": "Grid system",
+									"route": "/styles/grid-system"
+								},
+								{
+									"title": "Icons",
+									"route": "/styles/icons"
+								},
+								{
+									"title": "Motion",
+									"route": "/styles/motion"
+								},
+								{
+									"title": "Spacing",
+									"route": "/styles/spacing"
+								},
+								{
+									"title": "Typography",
+									"route": "/styles/typography"
+								}
+							]
             },
             {
               "title": "Contribute",
               "route": "/contribute"
             },
             {
-              "title": "Blog",
+              "title": "What's new",
               "route": "/blog"
             }
           ]
@@ -136,7 +186,7 @@
         "global": true
       },
       {
-        "title": "Blog",
+        "title": "What's new",
         "route": "/blog",
         "global": true
       }
@@ -182,12 +232,18 @@
     "design/motion": "design/styles/motion",
     "design/spacing": "design/styles/spacing",
     "design/typography": "design/styles/typography",
-    "design/guidelines/form-containers": "design/guidelines/form-design",
+		"design/guidelines/form-containers": "design/guidelines/form-design",
     "design/guidelines/select-items": "design/guidelines/form-design",
     "components/list-filters": "components/list/filters",
     "components/list-paging": "components/list/paging",
     "components/list-toolbar": "components/list/toolbar",
     "components/list-view-checklist": "components/list/checklist",
-    "components/list-view-grid": "components/list/grid"
+    "components/list-view-grid": "components/list/grid",
+		"design/styles/borders": "styles/borders",
+    "design/styles/color": "styles/color",
+    "design/styles/icons": "styles/icons",
+    "design/styles/motion": "styles/motion",
+    "design/styles/spacing": "styles/spacing",
+    "design/styles/typography": "styles/typography"
   }
 }

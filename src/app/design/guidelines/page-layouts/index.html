@@ -9,23 +9,28 @@
 	
 	<sky-fluid-grid>
 		<sky-row>
-			<sky-column screenSmall="6">
-				<div class="sky-subsection-heading">Navigation</div>
-					<p></p>
+			<sky-column screenSmall="3">
+				<div class="sky-subsection-heading">1. Primary navigation</div>
+					<p>SKY UX places primary navigation at the top of the page.</p>
 
-				<div class="sky-subsection-heading">Page title</div>
-					<p></p>
+				<div class="sky-subsection-heading">2. Page title</div>
+					<p>The page title uniquely identifies the page so the user knows exactly where they are.</p>
+				
+				<div class="sky-subsection-heading">3. Page summary (optional)</div>
+					<p>Place important information in the page summary. If the information will be important to see every time the user views the page, or would cause them to take action upon seeing the information, it's a good candidate for the page summary.</p>
 
-				<div class="sky-subsection-heading">Page summary</div>
-					<p></p>
+				<div class="sky-subsection-heading">4. Page toolbar (optional)</div>
+					<p>Place buttons invoking page-level actions in the page toolbar. Actions related to child data should be placed with that data rather than in the page toolbar.</p>
 
-				<div class="sky-subsection-heading">Main content</div>
-					<p></p>
+				<div class="sky-subsection-heading">5. Multiple views (optional)</div>
+					<p>Some pages will have a large amount of content that can be divided among multiple views to support different tasks.</p>
 
-				<div class="sky-subsection-heading">Multiple views</div>
-					<p></p>
+				<div class="sky-subsection-heading">6. Main content</div>
+					<p>The main content area can take many different forms, depending on the scenario you are designing for.</p>
 			</sky-column>
-			<sky-column screenSmall="6"></sky-column>
+			<sky-column screenSmall="9">
+				<div class="screenshot screenshot-info"><img src="~/assets/img/guidelines/pagelayout/page-structure.png" alt="page structure" style="width: 100%" /></div>
+			</sky-column>
 		</sky-row>
 	</sky-fluid-grid>
 	
@@ -48,7 +53,7 @@
     The record page layout provides a <a routerLink="/components/tiles">tile-based</a> page that displays a <a routerLink="/components/page-summary">page summary</a> and a main content area. The page summary at the top of the page provides an overview of a record. The main content area usually consists of two columns of tiles (or one column on extra small screens) that display information about the record in logical sections. The content to include in each area depends on the page's use case.
   </p>
   <div class="screenshot screenshot-info">
-    <img src="~/assets/img/guidelines/pagelayout/record.png" alt="Record page wireframe" style="width: 100%" />
+    <img src="~/assets/img/guidelines/pagelayout/record-abstract.png" alt="Record page wireframe" style="width: 100%" />
   </div>
 
   <div class="sky-subsection-heading" style="margin-top: 20px;">
@@ -59,7 +64,7 @@
     The list page layout provides a page that displays a list of related data. Common controls allow users to select the columns to display, sort the list, filter the list, search, and switch views. List pages can use tabs to display multiple lists or pre-filtered instances of a single list.
   </p>
   <div class="screenshot screenshot-info">
-    <img src="~/assets/img/guidelines/pagelayout/list.png" alt="List page wireframe" style="width: 100%" />
+    <img src="~/assets/img/guidelines/pagelayout/list-abstract.png" alt="List page wireframe" style="width: 100%" />
   </div>
 
   <div class="sky-subsection-heading" style="margin-top: 20px;">
@@ -70,11 +75,17 @@
     The workcenter layout provides a <a routerLink="/components/tiles">tile-based</a> page that surfaces time-sensitive information and allows users to quickly navigate to the most recent information in an application. It can contain a <a routerLink="/components/page-summary">page summary</a> to highlight the most important information, a <a routerLink="/components/tabs">tabbed layout</a> to support different tasks, and a carousel to feature high-priority items.
   </p>
   <div class="screenshot screenshot-info">
-    <img src="~/assets/img/guidelines/pagelayout/workcenter.png" alt="Work center page wireframe" style="width: 100%" />
+    <img src="~/assets/img/guidelines/pagelayout/workcenter-abstract.png" alt="Work center page wireframe" style="width: 100%" />
   </div>
 	
 	<div class="sky-subsection-heading" style="margin-top: 20px;">
     <a stacheRouterLink="/design/guidelines/page-layouts/split-view-page">Split view page</a>
+  </div>
+	<p>
+		Split views are used in scenarios where the user will be performing a task for each of a set of records. The left panel contains the records the user will work through, and the right panel contains the information and actions they need to complete the task for the selected record.
+	</p>
+	<div class="screenshot screenshot-info">
+    <img src="~/assets/img/guidelines/pagelayout/split-view-abstract.png" alt="Split view page wireframe" style="width: 100%" />
   </div>
 
 <stache-page-anchor>
