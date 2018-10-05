@@ -143,6 +143,16 @@ export class PackagesComponent {
 
   public blackbaudPackages = [
     {
+      id: '@blackbaud/auth-client',
+      provider: 'github',
+      repo: 'blackbaud/auth-client'
+    },
+    {
+      id: '@blackbaud/help-client',
+      provider: 'github',
+      repo: 'blackbaud/help-client'
+    },
+    {
       id: '@blackbaud/skyux',
       provider: 'github',
       repo: 'blackbaud/skyux2'
@@ -153,10 +163,43 @@ export class PackagesComponent {
       repo: 'blackbaud/skyux-builder'
     },
     {
+      id: '@blackbaud/skyux-builder-plugin-auth-email-whitelist',
+      provider: 'github',
+      repo: 'blackbaud/skyux-builder-plugin-auth-email-whitelist'
+    },
+    {
+      id: '@blackbaud/skyux-builder-plugin-stache',
+      provider: 'github',
+      repo: 'blackbaud/skyux-builder-plugin-stache'
+    },
+    {
       id: '@blackbaud/skyux-cli',
       provider: 'github',
       repo: 'blackbaud/skyux-cli'
-    }
+    },
+    {
+      id: '@blackbaud/skyux-deploy',
+      provider: 'github',
+      repo: 'blackbaud/skyux-deploy'
+    },
+    {
+      id: '@blackbaud/skyux-logger',
+      provider: 'github',
+      repo: 'blackbaud/skyux-logger'
+    },
+    {
+      id: '@blackbaud/stache',
+      provider: 'github',
+      repo: 'blackbaud/stache2'
+    },
+
+    // @blackbaud/skyux-design-tokens
+    // @blackbaud/sky-api-addin
+    // @blackbaud/sky-addin-client
+    // @blackbaud/skyux-lib-help
+    // @blackbaud/skyux-builder-stache-search
+    // @blackbaud/skyux-lib-testing
+    // @blackbaud/skyux-builder-plugin-addin-client
   ];
 
   constructor() {
