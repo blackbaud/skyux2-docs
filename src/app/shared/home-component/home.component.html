@@ -1,0 +1,156 @@
+<stache-hero
+  overlayOpacity="0"
+  backgroundImageUrl="~/assets/home/skyux-background.jpg">
+
+  <stache-hero-heading>
+    <img src="~/assets/home/skyux-logo.png" alt="SKY UX">
+  </stache-hero-heading>
+
+  <stache-hero-subheading>
+    A user experience framework to build web applications that leverage common Blackbaud design patterns.
+  </stache-hero-subheading>
+</stache-hero>
+
+<stache
+layout="container"
+showBreadcrumbs="false"
+showEditButton="false">
+  <div class="row-welcome">
+    <sky-fluid-grid>
+      <sky-row>
+        <sky-column screenSmall="7">
+          <div class="info">
+            <stache-page-title>
+              Welcome to Blackbaud's user experience framework!
+            </stache-page-title>
+            <p class="lead">
+              SKY UX brings a consistent, cohesive experience to Blackbaud products and allows third-party developers to provide the same consistent experience in their customizations and applications. SKY UX provides guidelines and tooling for the entire application lifecycle.
+            </p>
+          </div>
+        </sky-column>
+        <sky-column screenSmall="1">
+          &nbsp;
+        </sky-column>
+        <sky-column screenSmall="4">
+          <div class="h-center">
+            <a routerLink="/learn/get-started" class="sky-btn sky-btn-primary btn-large">
+              Get Started
+            </a>
+            <a routerLink="/learn/overview" class="sky-btn sky-btn-secondary btn-large">
+              SKY UX Overview
+            </a>
+          </div>
+        </sky-column>
+      </sky-row>
+    </sky-fluid-grid>
+  </div>
+
+  <div class="row-features">
+    <sky-fluid-grid>
+      <sky-row>
+        <sky-column screenSmall="4">
+          <a routerLink="/components" class="screenshot screenshot-success">
+            <img src="~/assets/home/blackbaud-mission-subset.jpg" alt="Blackbaud Mission" />
+          </a>
+        </sky-column>
+        <sky-column screenSmall="2">
+          &nbsp;
+        </sky-column>
+        <sky-column screenSmall="6">
+          <div class="info">
+            <h3>
+              Open Source
+            </h3>
+            <p class="lead">
+              SKY UX is proudly open sourced and hosted on GitHub.  Check out our <a routerLink="/contribute">contributing page</a> for information on our guidelines for contributing, past contributors, and a list of repositories available for contribution.
+            </p>
+          </div>
+        </sky-column>
+      </sky-row>
+      <sky-row>
+        <sky-column screenSmall="6">
+          <div class="info">
+            <h3>
+              SKY UX Design Patterns
+            </h3>
+            <p class="lead">
+              Driven by design patterns. The <strong>core</strong> of SKY UX is defined by our design patterns, ensuring a consistent, cohesive experience. <a routerLink="design">Learn more</a>.
+            </p>
+          </div>
+        </sky-column>
+        <sky-column screenSmall="2">
+          &nbsp;
+        </sky-column>
+        <sky-column screenSmall="4">
+          <a routerLink="/design" class="screenshot screenshot-info">
+            <img src="~/assets/img/guidelines/pagelayout/record.png" alt="SKY UX Record Page" />
+          </a>
+        </sky-column>
+      </sky-row>
+
+      <sky-row>
+        <sky-column screenSmall="4">
+          <a routerLink="/components" class="screenshot screenshot-info">
+            <img src="~/assets/home/feature-components.png" alt="Example Components" />
+          </a>
+        </sky-column>
+        <sky-column screenSmall="2">
+          &nbsp;
+        </sky-column>
+        <sky-column screenSmall="6">
+            <div class="info">
+              <h3>
+                Angular Components
+              </h3>
+              <p class="lead">
+                Our design patterns are implemented as Angular Components. This allows developers to quickly create
+                applications which provide a common user experience. These components are grouped into several modules for
+                best performance. <a routerLink="/components">Learn more</a>.
+              </p>
+            </div>
+          </sky-column>
+      </sky-row>
+
+      <sky-row>
+        <sky-column screenSmall="6">
+          <div class="info">
+            <h3>
+              SDK
+            </h3>
+            <p class="lead">
+              Additional tooling is providing in the form of several SDK and CLI libraries. These ensure rapid application
+              development, as well as reliable testing and hosting of our front-end applications. <a routerLink="/sdk">Learn
+                more</a>.
+            </p>
+          </div>
+        </sky-column>
+        <sky-column screenSmall="2">
+          &nbsp;
+        </sky-column>
+        <sky-column screenSmall="4">
+          <a routerLink="/learn/get-started" class="screenshot screenshot-info">
+            <img src="~/assets/home/feature-sdk-cli.png" alt="Example SDK" />
+          </a>
+        </sky-column>
+      </sky-row>
+    </sky-fluid-grid>
+  </div>
+</stache>
+
+<div class="row-developer">
+  <stache
+    layout="container"
+    showBreadcrumbs="false"
+    showEditButton="false">
+
+    <sky-fluid-grid>
+      <sky-row>
+        <sky-column screenSmall="12">
+          <a href="https://developer.blackbaud.com/" class="screenshot screenshot-info">
+            <img src="~/assets/home/sky-developer.jpg" alt="SKY Developer">
+          </a>
+        </sky-column>
+      </sky-row>
+    </sky-fluid-grid>
+  </stache>
+</div>
