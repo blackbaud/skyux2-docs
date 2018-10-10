@@ -44,6 +44,10 @@
 									"route": "/design/guidelines"
 								},
 								{
+									"title": "Accessibility",
+									"route": "/design/accessibility"
+								},
+								{
 									"title": "Prototyping resources",
 									"route": "/design/prototyping-resources"
 								},
@@ -153,6 +157,11 @@
 									"route": "/design/guidelines",
 									"global": "true"
 								},
+					{
+									"title": "Accessibility",
+									"route": "/design/accessibility",
+									"global": "true"
+								},
 								{
 									"title": "Prototyping resources",
 									"route": "/design/prototyping-resources",
@@ -205,7 +214,6 @@
     "learn/get-started/7.-run-tests": "learn/get-started/basics/run-tests",
     "learn/get-started/8.-unit-test-modals": "learn/get-started/advanced/unit-test-modals",
     "learn/get-started/9.-include-static-asset": "learn/get-started/advanced/include-static-assets",
-    "design/accessibility": "learn/accessibility",
     "learn/accessibility/code-review": "learn/accessibility/test",
     "design/accessibility/code-review": "learn/accessibility/test",
     "learn/accessibility/keyboard-testing": "learn/accessibility/test",

@@ -7,13 +7,6 @@ import { Component } from '@angular/core';
 export class LearnA11yActionButtonsComponent {
   public routes = [
     {
-      name: 'Design for accessibility',
-      path: '/learn/accessibility/design',
-      icon: 'rocket',
-      // tslint:disable-next-line
-      summary: 'Principles and tools to design highly accessible experiences with SKY UX.'
-    },
-    {
       name: 'Code for accessibility',
       path: '/learn/accessibility/code',
       icon: 'code',

@@ -27,6 +27,14 @@ export class DesignActionButtonsComponent {
       // tslint:disable-next-line
       summary: 'Instructions on how to consistently design for specific scenarios.'
     },
+		,
+    {
+      name: 'Accessibility',
+      path: '/learn/accessibility/design',
+      icon: 'rocket',
+      // tslint:disable-next-line
+      summary: 'Principles and tools to design highly accessible experiences with SKY UX.'
+    }
 		{
       name: 'Prototyping resources',
       path: '/design/prototyping-resources/',
