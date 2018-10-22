@@ -494,7 +494,7 @@ export class SkyDemoComponentsService {
         // tslint:disable-next-line
         summary: `The wizard guides users through a set of pre-defined steps in a particular order.`,
         url: '/components/wizard',
-        getCodeFiles: () => this.getDemoFiles('SkyWizardDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('SkyWizardDemoModalComponent')
       }
     ];
   }
