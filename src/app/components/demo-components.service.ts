@@ -494,12 +494,19 @@ export class SkyDemoComponentsService {
         // tslint:disable-next-line
         summary: `The wizard guides users through a set of pre-defined steps in a particular order.`,
         url: '/components/wizard',
-        getCodeFiles: () => this.getDemoFiles('SkyWizardDemoModalComponent')
+        getCodeFiles: () => this.getDemoFiles('SkyWizardDemoComponent')
       }
     ];
   }
 
   public getDemoFiles(componentConstructorName: string): any {
+    const config = this.demoService.getComponent(componentConstructorName);
+
+    if (!config) {
+      console.warn('No demo files found for:', componentConstructorName);
+      return [];
+    }
+
     return this.demoService.getComponent(componentConstructorName).files;
   }
 }
