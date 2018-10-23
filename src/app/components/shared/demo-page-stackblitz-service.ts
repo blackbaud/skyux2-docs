@@ -6,39 +6,44 @@ import sdk from '@stackblitz/sdk';
 
 import { SkyDemoPageCodeFile } from './demo-page-code-file';
 
+import { EmbedOptions } from '@stackblitz/sdk/typings/interfaces';
+
 @Injectable()
 export class SkyDemoPageStackBlitzService {
 
-  public openProject(codeFiles: SkyDemoPageCodeFile[]) {
-    const angularVersion = '4.3.6';
+  public embedProject(
+    elementOrId: string | HTMLElement,
+    codeFiles: SkyDemoPageCodeFile[],
+    embedOptions?: EmbedOptions
+  ) {
+    sdk.embedProject(
+      elementOrId,
+      this.getPayload(codeFiles),
+      embedOptions
+    );
+  }
 
-    sdk.openProject({
-      files: this.getFiles(codeFiles),
-      title: 'SKY UX Demo',
-      description: 'SKY UX Demo',
-      template: 'angular-cli',
-      dependencies: {
-        '@angular/animations': angularVersion,
-        '@angular/common': angularVersion,
-        '@angular/compiler': angularVersion,
-        '@angular/compiler-cli': angularVersion,
-        '@angular/core': angularVersion,
-        '@angular/forms': angularVersion,
-        '@angular/http': angularVersion,
-        '@angular/platform-browser': angularVersion,
-        '@angular/platform-browser-dynamic': angularVersion,
-        '@angular/router': angularVersion,
-        '@blackbaud/skyux': '2.18.0',
-        'core-js': '2.4.1',
-        'rxjs': '5.4.3',
-        'zone.js': '0.8.10'
-      }
-    }, {
+  public openProject(codeFiles: SkyDemoPageCodeFile[]) {
+    sdk.openProject(this.getPayload(codeFiles), {
       openFile: 'app/' + codeFiles[0].name
     });
   }
 
+  private getPayload(codeFiles: SkyDemoPageCodeFile[]) {
+    const payload = {
+      files: this.getFiles(codeFiles),
+      title: 'SKY UX Demo',
+      description: 'SKY UX Demo',
+      template: 'angular-cli'
+    };
+
+    return payload;
+  }
+
   private getFiles(codeFiles: SkyDemoPageCodeFile[]) {
+    const angularVersion = '4.3.6';
+    const demoFolderName = '__demo-files__/';
+
     let declarations: string[] = [];
     let bootstrapSelectors: string[] = [];
     let entryComponents: string[] = [];
@@ -80,7 +85,7 @@ export class SkyDemoPageStackBlitzService {
 
     files['index.html'] = `<sky-demo-app>loading...</sky-demo-app>`;
 
-    files['needed-for-demo/app.component.ts'] = `${banner}
+    files[`${demoFolderName}app.component.ts`] = `${banner}
 import { Component } from '@angular/core';
 
 @Component({
@@ -89,7 +94,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent { }`;
 
-    files['needed-for-demo/app.module.ts'] = `import { Component, NgModule } from '@angular/core';
+    files[`${demoFolderName}app.module.ts`] = `import { Component, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { SkyModule } from '@blackbaud/skyux/dist/core';
@@ -118,25 +123,25 @@ import { AppComponent } from './app.component';
 })
 export class AppModule { }`;
 
-    files['needed-for-demo/polyfills.ts'] = `${banner}
+    files[`${demoFolderName}polyfills.ts`] = `${banner}
 import 'core-js/es6/reflect';
 import 'core-js/es7/reflect';
 import 'zone.js/dist/zone';`;
 
-    files['.angular-cli.json'] = `
-{
-  "apps": [{
-    "styles": ["needed-for-demo/styles.scss"]
-  }]
-}`;
+//     files['.angular-cli.json'] = `
+// {
+//   "apps": [{
+//     "styles": ["${demoFolderName}styles.css"]
+//   }]
+// }`;
 
-    files['needed-for-demo/styles.scss'] = `@import '~@blackbaud/skyux/dist/css/sky';`;
+//     files[`${demoFolderName}styles.css`] = `@import '~@blackbaud/skyux/dist/css/sky';`;
 
     files['main.ts'] = `${banner}
-import './needed-for-demo/polyfills';
+import './${demoFolderName}polyfills';
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { AppModule } from './needed-for-demo/app.module';
+import { AppModule } from './${demoFolderName}app.module';
 
 platformBrowserDynamic().bootstrapModule(AppModule).then(ref => {
   if (window['ngRef']) {
@@ -146,6 +151,27 @@ platformBrowserDynamic().bootstrapModule(AppModule).then(ref => {
   window['ngRef'] = ref;
 }).catch(err => console.error(err));
 `;
+
+  files['package.json'] = JSON.stringify({
+    dependencies: {
+      '@angular/animations': angularVersion,
+      '@angular/common': angularVersion,
+      '@angular/compiler': angularVersion,
+      '@angular/compiler-cli': angularVersion,
+      '@angular/core': angularVersion,
+      '@angular/forms': angularVersion,
+      '@angular/http': angularVersion,
+      '@angular/platform-browser': angularVersion,
+      '@angular/platform-browser-dynamic': angularVersion,
+      '@angular/router': angularVersion,
+      '@blackbaud/skyux': '2.27.2',
+      'moment': '*',
+      '@skyux/l18n': '*',
+      'core-js': '2.4.1',
+      'rxjs': '5.4.3',
+      'zone.js': '0.8.10'
+    }
+  }, undefined, 2);
 
     return files;
   }

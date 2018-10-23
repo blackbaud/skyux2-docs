@@ -1,7 +1,10 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  Input
+  ElementRef,
+  Input,
+  ViewChild,
+  AfterViewInit
 } from '@angular/core';
 
 import { SkyDemoPageCodeFile } from './demo-page-code-file';
@@ -20,7 +23,7 @@ import { SkyDemoComponent } from '../demo-component';
     SkyDemoPageStackBlitzService
   ]
 })
-export class SkyDemoPageCodeComponent {
+export class SkyDemoPageCodeComponent implements AfterViewInit {
   @Input()
   public codeFilesForBinding: SkyDemoPageCodeFile[];
 
@@ -41,6 +44,9 @@ export class SkyDemoPageCodeComponent {
     });
   }
 
+  @ViewChild('embed')
+  public embedRef: ElementRef;
+
   public get plunkerFiles(): any[] {
     return [
       ...this.plunkerService.getFiles(this.codeFilesForBinding)
@@ -52,6 +58,18 @@ export class SkyDemoPageCodeComponent {
     private stackBlitzService: SkyDemoPageStackBlitzService,
     private componentsService: SkyDemoComponentsService
   ) { }
+
+  public ngAfterViewInit() {
+    this.stackBlitzService.embedProject(
+      this.embedRef.nativeElement,
+      this.codeFilesForBinding,
+      {
+        openFile: this.codeFilesForBinding[0].name,
+        height: 600,
+        hideDevTools: true
+      }
+    );
+  }
 
   public runInStackBlitz() {
     this.stackBlitzService.openProject(this.codeFilesForBinding);
