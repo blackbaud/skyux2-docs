@@ -29,64 +29,70 @@
 					<p>The main content area can take many different forms, depending on the scenario you are designing for.</p>
 			</sky-column>
 			<sky-column screenSmall="9">
-				<div class="screenshot screenshot-info"><img src="~/assets/img/guidelines/pagelayout/page-structure.png" alt="page structure" style="width: 100%" /></div>
+				<div class="screenshot screenshot-info">
+					<img class="sky-shadow sky-margin-stacked-default" src="~/assets/img/guidelines/pagelayout/page-structure.png" alt="page structure" style="width: 100%" />
+					<div class="screenshot-caption sky-deemphasized">Page anatomy</div>
+				</div>
 			</sky-column>
 		</sky-row>
 	</sky-fluid-grid>
 	
-  <stache-page-anchor>
-    Page layout templates
-  </stache-page-anchor>
-
-  <p>
-    SKY UX is a flexible system that allows for a variety of page layouts to solve workflow needs while maintaining a consistent feel across an application.
+	
+<stache-page-anchor>Grid system</stache-page-anchor>
+	<p>
+    SKY UX layouts use a 12-column <a routerLink="/components/fluid-grid">fluid grid</a> system that can respond as the size of devices or viewports change. Grid columns have 15px in padding on both sides to create 30px gutters between columns and 15px gutters at the edges of the grid. The columns are fluid, but the gutters remain constant.
   </p>
   <p>
-    The following sections describe some common SKY UX page layouts. These layouts show how to package components to suit a variety of user needs, but the system can accommodate alternate layouts as necessary.
-  </p>
+    This grid system allows for a variety of page layouts but still conforms to our design and coding standards.
+  </p>	
+	
+	<div class="sky-subsection-heading sky-margin-stacked-default">Examples</div>
+	
 
-	<div class="sky-subsection-heading" style="margin-top: 20px;">
-    <a stacheRouterLink="/design/guidelines/page-layouts/record-page">Record page</a>
-  </div>
-
-  <p>
-    The record page layout provides a <a routerLink="/components/tiles">tile-based</a> page that displays a <a routerLink="/components/page-summary">page summary</a> and a main content area. The page summary at the top of the page provides an overview of a record. The main content area usually consists of two columns of tiles (or one column on extra small screens) that display information about the record in logical sections. The content to include in each area depends on the page's use case.
-  </p>
-  <div class="screenshot screenshot-info">
-    <img src="~/assets/img/guidelines/pagelayout/record-abstract.png" alt="Record page wireframe" style="width: 100%" />
-  </div>
-
-  <div class="sky-subsection-heading" style="margin-top: 20px;">
-    <a stacheRouterLink="/design/guidelines/page-layouts/list-page">List page</a>
-  </div>
-
-  <p>
-    The list page layout provides a page that displays a list of related data. Common controls allow users to select the columns to display, sort the list, filter the list, search, and switch views. List pages can use tabs to display multiple lists or pre-filtered instances of a single list.
-  </p>
-  <div class="screenshot screenshot-info">
-    <img src="~/assets/img/guidelines/pagelayout/list-abstract.png" alt="List page wireframe" style="width: 100%" />
-  </div>
-
-  <div class="sky-subsection-heading" style="margin-top: 20px;">
-    <a stacheRouterLink="/design/guidelines/page-layouts/workcenter-page">Workcenter page</a>
-  </div>
-
-  <p>
-    The workcenter layout provides a <a routerLink="/components/tiles">tile-based</a> page that surfaces time-sensitive information and allows users to quickly navigate to the most recent information in an application. It can contain a <a routerLink="/components/page-summary">page summary</a> to highlight the most important information, a <a routerLink="/components/tabs">tabbed layout</a> to support different tasks, and a carousel to feature high-priority items.
-  </p>
-  <div class="screenshot screenshot-info">
-    <img src="~/assets/img/guidelines/pagelayout/workcenter-abstract.png" alt="Work center page wireframe" style="width: 100%" />
+	<div class="screenshot screenshot-info sky-margin-stacked-separate">
+    <img class="sky-shadow sky-margin-stacked-default" src="~/assets/img/guidelines/pagelayout/grid-system-4-col.png" alt="Grid system wireframe - 4 column" style="width: 100%" />
+		<div class="screenshot-caption sky-deemphasized">4-column layout</div>
   </div>
 	
-	<div class="sky-subsection-heading" style="margin-top: 20px;">
-    <a stacheRouterLink="/design/guidelines/page-layouts/split-view-page">Split view page</a>
+	<div class="screenshot screenshot-info sky-margin-stacked-separate">
+    <img class="sky-shadow sky-margin-stacked-default" src="~/assets/img/guidelines/pagelayout/grid-system-tiles.png" alt="Grid system wireframe - 2 column tiles" style="width: 100%" />
+		<div class="screenshot-caption sky-deemphasized">2-column tile layout</div>
   </div>
-	<p>
-		Split views are used in scenarios where the user will be performing a task for each of a set of records. The left panel contains the records the user will work through, and the right panel contains the information and actions they need to complete the task for the selected record.
-	</p>
-	<div class="screenshot screenshot-info">
-    <img src="~/assets/img/guidelines/pagelayout/split-view-abstract.png" alt="Split view page wireframe" style="width: 100%" />
-  </div>
+	
+<stache-page-anchor>Responsive design</stache-page-anchor>
+	<p>In general, try to provide all functionality at all screen sizes. However, you may run into cases where the interface or workflow are too complex to work well at small sizes. If the experience will be extremely poor, it's better to prevent access to the functionality.</p>
+
+	<div class="sky-subsection-heading">Breakpoints</div>
+		<p>The SKY UX <a stacheRouterLink="/components/media-queries">media query</a> service detects breakpoint changes.</p>
+		<ul>
+			<li>&lt;=767px</li>
+			<li>768-991px</li>
+			<li>992-1199px</li>
+			<li>&gt;=1200px</li>
+		</ul>
+
+	<div class="sky-subsection-heading">Responsiveness pattern</div>
+		<p>
+			SKY UX uses the column drop pattern to create responsive designs. This pattern utilizes a multi-column layout and the full width of the screen. The column drop pattern displays columns horizontally at full width and then stacks columns vertically when the screen width becomes too narrow for the content. When and how to stack columns at different breakpoints depends on the content.
+		</p>
+		<p>
+			As an example, a tile-based page would respond as follows:
+		</p>
+
+		<sky-row>
+			<sky-column screenSmall="8">
+				<div class="sky-emphasized sky-margin-stacked-compact">Large viewport</div>
+				<div class="screenshot screenshot-info">
+					<img class="sky-shadow sky-margin-stacked-default" src="~/assets/img/guidelines/spacing/page-two-column-desktop.png" style="width: 100%;" />
+				</div>
+			</sky-column>
+			<sky-column screenSmall="4">
+				<div class="sky-emphasized sky-margin-stacked-compact">Small viewport</div>
+				<div class="screenshot screenshot-info">
+					<img class="sky-shadow sky-margin-stacked-default" src="~/assets/img/guidelines/spacing/page-two-column-mobile.png" style="width: 100%;" />
+				</div>
+			</sky-column>
+		</sky-row>
 
 <stache-page-anchor>
 	Accessibility

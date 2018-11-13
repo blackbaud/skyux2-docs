@@ -104,18 +104,29 @@ p {
 
 .screenshot {
   box-sizing: border-box;
-  border: 30px solid;
+	
+	.screenshot-caption{
+		border-top: 5px solid;
+		padding-top: 5px;
+	}
 
   &.screenshot-info {
-    border-color: $sky-background-color-info-light;
+    
+		.screenshot-caption{
+			border-color: $sky-highlight-color-info;
+		}
   }
 
   &.screenshot-success {
-    border-color: $sky-background-color-success;
+    .screenshot-caption{
+			border-color: $sky-highlight-color-success;
+		}
   }
 
   &.screenshot-danger {
-    border-color: $sky-background-color-danger;
+    .screenshot-caption{
+			border-color: $sky-highlight-color-danger;
+		}
   }
 }
 
