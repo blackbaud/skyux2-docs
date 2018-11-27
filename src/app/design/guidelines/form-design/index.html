@@ -1,157 +1,14 @@
 <stache
-    layout="container"
     pageTitle="Form design"
     showTableOfContents="true"
-		navOrder="4">
+		navOrder="5">
 		
 		<stache-page-summary>
 			<p>
 				Form design patterns provide guidance to accommodate a wide variety scenarios and workflow requirements.
 			</p>
 		</stache-page-summary>
-		
-		<stache-page-anchor>
-			Form containers
-		</stache-page-anchor>
-		
-		<div class="sky-subsection-heading">
-			Inline panel
-		</div>
-		<p>
-			An inline panel (<a href="https://github.com/blackbaud/skyux2/issues/575">the component is not developed yet</a>) is appropriate for simple forms that meet the following criteria:
-		</p>
-		<ul>
-			<li>
-				<p>
-					The form has few fields, its input controls are not complex, and it does not cause significant page morphing.
-				</p>
-			</li>
-			<li>
-				<p>
-					The content that surrounds the form will not distract users.
-				</p>
-			</li>
-			<li>
-				<p>
-					The task is functionally non-modal.
-				</p>
-			</li>
-		</ul>
-		
-		<div class="sky-subsection-heading">
-			Modal dialog
-		</div>
-		<p>
-			A <a routerLink="/components/modal">modal dialog</a> is appropriate for forms that meet any of the following criteria:
-		</p>
-		<ul>
-			<li>
-				<p>
-					The task is functionally modal, and users must finish it before doing anything else.
-				</p>
-			</li>
-			<li>
-				<p>
-					Displaying the form inline would lead to substantial content shifting or require users to scroll to complete the form.
-				</p>
-			</li>
-		</ul>
-		
-		<div class="sky-subsection-heading">
-			Full-page modal
-		</div>
-		<p>
-			A <a routerLink="/components/modal">full-page modal</a> is appropriate for forms that meet the following criteria:
-		</p>
-		<ul>
-			<li>
-				<p>
-					The task is functionally modal, and users must finish it before doing anything else.
-				</p>
-			</li>
-			<li>
-				<p>
-					Users usually perform the task in a large viewport, and a full-page modal can optimize the use of space.
-				</p>
-			</li>
-			<li>
-				<p>
-					The context of the task is self-contained.
-				</p>
-			</li>
-			<li>
-				<p>
-					The form displays feedback based on users entering data or making choices. For example, the form may display running totals or preview emails as they are constructed.
-				</p>
-			</li>
-			<li>
-				<p>
-					The form supports a complex task for a list of objects such as filling out report cards for a class.
-				</p>
-			</li>
-			<li>
-				<p>
-					The task includes subtasks that need to be completed in context.
-				</p>
-			</li>
-	</ul>
-    
-	<div class="sky-subsection-heading">
-		Sectioned form
-	</div>
-	<p>
-		A <a routerLink="/components/sectioned-form">sectioned form</a> is appropriate for forms that meet the following criteria:
-	</p>
-	<ul>
-		<li>
-			<p>
-				Users add or edit complex objects and can be expected to know what they are looking for. This is common for editing pieces of larger records and for tasks such as applying filters.
-			</p>
-		</li>
-		<li>
-			<p>
-				It’s beneficial to group related but independent forms to minimize the number of form-launching buttons on a page.
-			</p>
-		</li>
-	</ul>
-	<p>
-		Sectioned forms are not appropriate when choices on one tab can affect other tabs because changes are potentially invisible or unpredictable to users.
-	</p>
-	
-	<div class="sky-subsection-heading">
-		Wizard
-	</div>
-	<p>
-		A <a routerLink="/components/wizard">wizard</a> is appropriate for forms that meet the following criteria:
-	</p>
-	<ul>
-		<li>
-			<p>
-				The task can be divided into discrete steps that are completed in a single sitting. If a task is more than six steps, try to refactor the task into fewer steps or split it into multiple tasks.
-			</p>
-		</li>
-		<li>
-			<p>
-				The order of the steps is important.
-			</p>
-		</li>
-		<li>
-			<p>
-				The interaction complexity of each step is low.
-			</p>
-		</li>
-		<li>
-			<p>
-				User actions in earlier steps affect later steps.
-			</p>
-		</li>
-		<li>
-			<p>
-				Users must complete or review the fields in every step.
-			</p>
-		</li>
-	</ul>
-	
+
 	<stache-page-anchor>
 		Field layout
 	</stache-page-anchor>
@@ -227,7 +84,7 @@
 		</stache-column>
 		<stache-column screenSmall="6">
 			<div class="screenshot screenshot-info">
-				<img src="~/assets/img/guidelines/formdesign/form-layout.png" style="width: 100%;" />
+				<img class="sky-shadow" src="~/assets/img/guidelines/formdesign/form-layout.png" style="width: 100%;" />
 			</div>
 		</stache-column>
 	</stache-row>
@@ -270,31 +127,10 @@
 		</stache-column>
 		<stache-column screenSmall="4">
 			<div class="screenshot screenshot-info">
-				<img src="~/assets/img/guidelines/formdesign/field-example-detailed.png" style="width: 100%;" />
+				<img class="sky-shadow" class="sky-shadow" src="~/assets/img/guidelines/formdesign/field-example-detailed.png" style="width: 100%;" />
 			</div>
 		</stache-column>
 	</stache-row>
-	
-	<stache-page-anchor>
-		Selection inputs
-	</stache-page-anchor>
-	<p>You can take several different approaches to allow users to select items from a list of items.</p>	
-	<ul>
-		<li>The <a routerLink="/components/autocomplete">autocomplete</a> component provides a typeahead search input that is effective when users know what they are looking for and can select a single item.</li>
-		<li><a routerLink="/components/checkbox">Checkboxes</a> are effective when users can select multiple items from a short list of items.</li>
-		<li>The HTML <stache-code>&lt;select&gt;</stache-code> field is effective when users are not sure of the exact value they are looking for and can select a single item from a moderately sized list of items.</li>
-		<li>The <a routerLink="/components/lookup">lookup component</a> provides a typeahead search input that is effective when users know what they are looking for and can select multiple items.</li>
-		<li><a routerLink="/components/radio">Radio buttons</a> are effective when users can select a single item from a short list of items.</li>
-		<li>The <a routerLink="/components/select-field">SKY UX select field</a> provides a searchable, browsable, and filterable list of items that is effective when users are not sure of the exact value they are looking for within a long list of items.</li>
-	</ul>
-	<p>
-		To provide a consistent experience when users select items from lists, follow these guidelines to determine which controls to use:
-	</p>
-	
-	<div class="screenshot screenshot-info">
-		<img src="~/assets/img/guidelines/formdesign/select-items-decision-tree.png" />
-	</div>
-
 		
 	<stache-page-anchor>
 		Validation and error handling
@@ -376,7 +212,7 @@
 		</stache-column>
 		<stache-column screenSmall="6">
 			<div class="screenshot screenshot-info">
-				<img src="~/assets/img/guidelines/formdesign/field-level-error.png" style="width: 100%;" />
+				<img class="sky-shadow" class="sky-shadow" src="~/assets/img/guidelines/formdesign/field-level-error.png" style="width: 100%;" />
 			</div>
 		</stache-column>
 	</stache-row>
@@ -395,7 +231,7 @@
 		</stache-column>
 		<stache-column screenSmall="6">
 			<div class="screenshot screenshot-info">
-				<img src="~/assets/img/guidelines/formdesign/form-level-error.png" style="width: 100%;" />
+				<img class="sky-shadow" class="sky-shadow" src="~/assets/img/guidelines/formdesign/form-level-error.png" style="width: 100%;" />
 			</div>
 		</stache-column>
 	</stache-row>

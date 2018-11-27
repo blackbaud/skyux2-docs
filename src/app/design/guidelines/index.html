@@ -1,6 +1,5 @@
 <stache 
   pageTitle="Guidelines"
-	showTableOfContents="true"
 	navOrder="3">
   
   <stache-page-summary>
@@ -9,38 +8,60 @@
     </p>
   </stache-page-summary>
 
-	<stache-page-anchor><a stacheRouterLink="/design/guidelines/page-layouts">Page layout</a></stache-page-anchor>
-		<p>Pages should be designed to match the usage you are designing for. While there are some common layout patterns, a single page template will not work for all scenarios.</p>
-		<sky-repeater>
-			<sky-repeater-item>
-				<sky-repeater-item-title><a stacheRouterLink="/design/guidelines/page-layouts">Overview</a></sky-repeater-item-title>
-				<sky-repeater-item-content>A high-level overview of page structure, the grid system, and responsiveness.</sky-repeater-item-content>
-			</sky-repeater-item>
-			<sky-repeater-item>
-				<sky-repeater-item-title><a stacheRouterLink="/design/guidelines/page-layouts/page-templates">Page templates</a></sky-repeater-item-title>
-				<sky-repeater-item-content>Templates for common types of pages.</sky-repeater-item-content>
-			</sky-repeater-item>
-		</sky-repeater>
-	
-	<stache-page-anchor><a stacheRouterLink="/design/guidelines/error-handling">Error handling</a></stache-page-anchor>
-  
-	
-	<stache-page-anchor><a stacheRouterLink="/design/guidelines/form-design">Form design</a></stache-page-anchor>
-	
-	
-	<stache-page-anchor><a stacheRouterLink="/design/guidelines/invoke-actions">Invoking actions</a></stache-page-anchor>
-	
-	
-	<stache-page-anchor><a stacheRouterLink="/design/guidelines/managing-records">Managing records</a></stache-page-anchor>
-	
-	
-	<stache-page-anchor><a stacheRouterLink="/design/guidelines/navigation">Navigation</a></stache-page-anchor>
-	
-	
-	<stache-page-anchor><a stacheRouterLink="/design/guidelines/show-more-info">Showing additional information</a></stache-page-anchor>
-	
-	
-	<stache-page-anchor><a stacheRouterLink="/design/guidelines/user-assistance">User assistance</a></stache-page-anchor>
-	
+	<sky-repeater expandMode="none">
+		<sky-repeater-item>
+			<sky-repeater-item-title>Page layout</sky-repeater-item-title>
+			<sky-repeater-item-content>
+				<div class="sky-margin-stacked-default">Pages should be designed to match the usage you are designing for. While there are some common layout patterns, a single page template will not work for all scenarios.</div>
+				<div class="sky-padding-even-default">
+					<div class="sky-emphasized"><a stacheRouterLink="/design/guidelines/page-layouts">Overview</a></div>
+						<div class="sky-margin-stacked-default">A high-level overview of page structure, the grid system, and responsiveness.</div>
+					<div class="sky-emphasized"><a stacheRouterLink="/design/guidelines/page-layouts/page-templates">Page templates</a></div>
+						<div>Templates for common types of pages.</div>
+				</div>
+			</sky-repeater-item-content>
+		</sky-repeater-item>
+
+		<sky-repeater-item>
+			<sky-repeater-item-title><a stacheRouterLink="/design/guidelines/invoke-actions">Invoke actions</a></sky-repeater-item-title>
+			<sky-repeater-item-content>There are multiple ways to invoke actions, the correct one depending on the context.</sky-repeater-item-content>	
+		</sky-repeater-item>
+
+
+		<sky-repeater-item>
+			<sky-repeater-item-title><a stacheRouterLink="/design/guidelines/managing-records">Manage records</a></sky-repeater-item-title>
+			<sky-repeater-item-content>Basic interaction patterns for managing records in different contexts.</sky-repeater-item-content>
+		</sky-repeater-item>
+
+
+		<sky-repeater-item>
+			<sky-repeater-item-title><a stacheRouterLink="/design/guidelines/navigation">Navigation</a></sky-repeater-item-title>
+			<sky-repeater-item-content>Navigation patterns combine to provide the user with a natural flow through their task.</sky-repeater-item-content>
+		</sky-repeater-item>
+
+
+		<sky-repeater-item>
+			<sky-repeater-item-title><a stacheRouterLink="/design/guidelines/form-design">Form design</a></sky-repeater-item-title>
+			<sky-repeater-item-content>Form design patterns to accommodate different scenarios and workflows.</sky-repeater-item-content>
+		</sky-repeater-item>
+
+		<sky-repeater-item>
+			<sky-repeater-item-title><a stacheRouterLink="/design/guidelines/show-more-info">Show additional information</a></sky-repeater-item-title>
+			<sky-repeater-item-content>Techniques to provide the user access to more detail without leaving their current context.</sky-repeater-item-content>
+		</sky-repeater-item>
+
+
+		<sky-repeater-item>
+			<sky-repeater-item-title><a stacheRouterLink="/design/guidelines/user-assistance">User assistance</a></sky-repeater-item-title>
+			<sky-repeater-item-content>Help the user get started with their task and provide answers to questions they may have as they go.</sky-repeater-item-content>
+		</sky-repeater-item>
+
+
+		<sky-repeater-item>
+			<sky-repeater-item-title><a stacheRouterLink="/design/guidelines/error-handling">Error handling</a></sky-repeater-item-title>
+			<sky-repeater-item-content>While you should strive to avoid errors, they will undoubtedly occur. Gracefully help the user get back on track.</sky-repeater-item-content>
+		</sky-repeater-item>
+
+	</sky-repeater>
 	
 </stache>
