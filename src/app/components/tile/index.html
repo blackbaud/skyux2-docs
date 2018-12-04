@@ -18,6 +18,13 @@
       Indicates whether the tile is in a collapsed state.
     </sky-demo-page-property>
     <sky-demo-page-property
+      propertyName="showHelp"
+      isOptional="true"
+      defaultValue="false"
+    >
+      Indicates whether to display a help button in the tile's header.
+    </sky-demo-page-property>
+    <sky-demo-page-property
       propertyName="showSettings"
       isOptional="true"
       defaultValue="true"
@@ -28,6 +35,11 @@
 
   <sky-demo-page-properties sectionHeading="Tile events">
     <sky-demo-page-property
+      propertyName="helpClick"
+    >
+    Fires when users select the help button in the tile header. The help button only appears if the <stache-code>showHelp</stache-code> property is set to <stache-code>true</stache-code>.
+    </sky-demo-page-property>
+    <sky-demo-page-property
       propertyName="isCollapsedChange"
     >
     Fires when the tile's collapsed state changes. Returns <stache-code>true</stache-code> when the tile is collapsed and <stache-code>false</stache-code> when it is not.
@@ -35,7 +47,7 @@
     <sky-demo-page-property
       propertyName="settingsClick"
     >
-    Fires when users select the settings button on the tile. The settings button only appears on the tile when the <stache-code>showSettings</stache-code> property is set to <stache-code>true</stache-code>.
+    Fires when users select the settings button on the tile. The settings button only appears if the <stache-code>showSettings</stache-code> property is set to <stache-code>true</stache-code>.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
