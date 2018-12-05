@@ -2,5 +2,36 @@
   pageTitle="Workcenter page"
   showTableOfContents="true"
 	navOrder="3">
+
+<stache-page-anchor>Usage</stache-page-anchor>
+	<div>The workcenter layout surfaces time-sensitive information and allows users to quickly navigate to the most tasks and information in the application.</div>
+	
+<stache-page-anchor>Anatomy</stache-page-anchor>
+	<div class="sky-margin-stacked-default">
+		Workcenters are a flexible layout concept, adaptable to the specific role or task being supported. Some common page elements include a <a routerLink="/components/page-summary">page summary</a> to highlight the most important information; a <a routerLink="/components/tabs">tabbed layout</a> to support different tasks within a role; and tiles to allow the user to arrange the page in the way that best suits their usage.
+	</div>
+	
+	<sky-fluid-grid>
+		<sky-row>
+			<sky-column screenSmall="3">
+				<ol>
+					<li>Page summary</li>
+					<li><span class="sky-deemphasized">Tabbed views (optional)</span></li>
+					<li>Content area</li>
+				</ol>
+			</sky-column>
+			<sky-column screenSmall="9">
+				<div class="screenshot screenshot-info">
+					<img class="sky-shadow" src="~/assets/img/guidelines/pagelayout/workcenter-anatomy.png" style="width: 100%;" />
+				</div>
+			</sky-column>
+		</sky-row>
+	</sky-fluid-grid>
+	
+<stache-page-anchor>Examples</stache-page-anchor>
+	<div class="sky-subsection-heading">Role-based</div>
+	
+	
+	<div class="sky-subsection-heading">Task-based</div>
 	
 </stache>
