@@ -130,48 +130,58 @@
 
 
   <sky-demo-page-content sectionHeading="UX guidelines">
-
-	<header><div class="sky-section-heading">Related components</div></header>
-		<ul>
-			<li><a routerLink="/components/list/grid">List view grid</a></li>
-			<li><a routerLink="/components/card">Card</a></li>
-			<li><a routerLink="/components/repeater">Repeater</a></li>
-			<li><a routerLink="/components/summary-actionbar">Summary action bar</a></li>
-			<li><a routerLink="/components/toolbar">Toolbar</a></li>
-		</ul>
-
-		<header><div class="sky-section-heading">Related guidelines</div></header>
-		<ul>
-			<li>List page template</li>
-		</ul>
-
-	<header><div class="sky-section-heading">Usage</div></header>
-  <p>Grid provides a table-based layout.</p>
-
+	
+	
+		<stache-row>
+			<stache-column screenSmall="4" screenMedium="6">
+				<header><div class="sky-section-heading">Usage</div></header>
+				<p>Grid provides a table-based layout.</p>
+			</stache-column>
+			<stache-column screenSmall="4" screenMedium="3">
+				<header><div class="sky-section-heading">Related components</div></header>
+				<ul>
+					<li><a routerLink="/components/list/grid">List view grid</a></li>
+					<li><a routerLink="/components/card">Card</a></li>
+					<li><a routerLink="/components/repeater">Repeater</a></li>
+					<li><a routerLink="/components/summary-actionbar">Summary action bar</a></li>
+					<li><a routerLink="/components/toolbar">Toolbar</a></li>
+				</ul>
+			</stache-column>		
+			<stache-column screenSmall="4" screenMedium="3">
+				<header><div class="sky-section-heading">Related guidelines</div></header>
+				<ul>
+					<li><a routerLink="/design/guidelines/page-layouts">Page layout</a></li>
+				</ul>
+			</stache-column>
+		</stache-row>
+		
+		
+	<header><div class="sky-subsection-heading">When to use grids</div></header>
+		
   <stache-row>
     <stache-column screenSmall="6">
 			<p>It’s beneficial for the user to visually scan down acolumn to look for certain values or outliers.</p>
 		</stache-column>
 		<stache-column screenSmall="6">
 			<div class="screenshot screenshot-success">
-				<img src="~/assets/img/guidelines/actionbutton/action-buttons-in-modal.png" style="width: 100%;" />
+				<img src="~/assets/img/guidelines/grid/grid-use-when.png" style="width: 100%;" />
 			</div>
 		</stache-column>
 	</stache-row>
     
-	<header><div class="sky-section-heading">When not to use grids</div></header>
+	<header><div class="sky-subsection-heading">When not to use grids</div></header>
 
   <stache-row>
     <stache-column screenSmall="6">
 			<ul>
-        <li>You need to show visual content such as graphs or images.Use a repeater or card view instead.</li>
+        <li>You need to show visual content such as graphs or images. Use a repeater or card view instead.</li>
         <li>The content calls for a more complex layout. If you are using a grid with a lot of templated columns, try a repeater instead.</li>
         <li>You need to show a lot of fields and there is a high likelihood of use in a smaller viewport, such as on a phone. Try a repeater instead.</li>
       </ul>
 		</stache-column>
 		<stache-column screenSmall="6">
-			<div class="screenshot screenshot-success">
-				<img src="~/assets/img/guidelines/actionbutton/action-buttons-in-modal.png" style="width: 100%;" />
+			<div class="screenshot screenshot-danger">
+				<img src="~/assets/img/guidelines/grid/grid-dont-use-complex.png" style="width: 100%;" />
 			</div>
 		</stache-column>
 	</stache-row>
@@ -185,8 +195,8 @@
 			<p>Use a context menu in the first column if the user needs to access multiple actions to take on the row.</p>
 		</stache-column>
 		<stache-column screenSmall="6">
-			<div class="screenshot screenshot-success">
-				<img src="~/assets/img/guidelines/actionbutton/action-buttons-in-modal.png" style="width: 100%;" />
+			<div class="screenshot screenshot-info">
+				<img src="~/assets/img/guidelines/grid/grid-option-context-menu.png" style="width: 100%;" />
 			</div>
 		</stache-column>
 	</stache-row>
@@ -199,8 +209,8 @@
       <p>When the user selects a row, the summary action bar should fly in from the bottom of the page. Place actions that can be taken in bulk on the selected items in the summary action bar.</p>
 		</stache-column>
 		<stache-column screenSmall="6">
-			<div class="screenshot screenshot-success">
-				<img src="~/assets/img/guidelines/actionbutton/action-buttons-in-modal.png" style="width: 100%;" />
+			<div class="screenshot screenshot-info">
+				<img src="~/assets/img/guidelines/grid/grid-option-multi.png" style="width: 100%;" />
 			</div>
 		</stache-column>
 	</stache-row>
@@ -212,8 +222,8 @@
 			<p>If the user is likely to need to sort based on the data in a column, you can enable sorting so that the user can click the header of the column to toggle between sorting ascending and descending for the specified field in that column.</p>
 		</stache-column>
 		<stache-column screenSmall="6">
-			<div class="screenshot screenshot-success">
-				<img src="~/assets/img/guidelines/actionbutton/action-buttons-in-modal.png" style="width: 100%;" />
+			<div class="screenshot screenshot-info">
+				<img src="~/assets/img/guidelines/grid/grid-option-sort.png" style="width: 100%;" />
 			</div>
 		</stache-column>
 	</stache-row>
@@ -225,8 +235,8 @@
 			<p>Some columns may need to represent composite information rather than a single value. You can use templated columns to lay the content out as needed.</p>
 		</stache-column>
 		<stache-column screenSmall="6">
-			<div class="screenshot screenshot-success">
-				<img src="~/assets/img/guidelines/actionbutton/action-buttons-in-modal.png" style="width: 100%;" />
+			<div class="screenshot screenshot-info">
+				<img src="~/assets/img/guidelines/grid/grid-option-template-column.png" style="width: 100%;" />
 			</div>
 		</stache-column>
 	</stache-row>
@@ -234,13 +244,37 @@
 	<header><div class="sky-section-heading">Behavior</div></header>
 
 	<header><div class="sky-subsection-heading">Fit</div></header>
-
-	<header><div class="sky-section-heading">Scroll</div></header>
-  <p>Setting fit to “scroll” lets the grid take as much space as needed by adding a horizontal scrollbar. This is most useful for grids with large numbers of columns.</p>
-
-	<header><div class="sky-section-heading">Width</div></header>
-  <p>Setting fit to “width” fixes the width of the grid to that of its container. Columns resize themselves to fit. This is most useful for simple grids in smaller containers such as tiles, where the content will fit neatly in the allotted space.</p>
-
+	
+	<header><div class="sky-emphasized">Scroll</div></header>	
+		
+	
+		<stache-row>
+			<stache-column screenSmall="6">
+				<p>Setting fit to “scroll” lets the grid take as much space as needed by adding a horizontal scrollbar. This is most useful for grids with large numbers of columns.</p>
+			</stache-column>
+			<stache-column screenSmall="6">
+			<div class="screenshot screenshot-info">
+				<img src="~/assets/img/guidelines/grid/grid-fit-scroll.png" style="width: 100%;" />
+			</div>
+		</stache-column>
+		</stache-row>	
+		
+	
+	<header><div class="sky-emphasized">Width</div></header>
+  
+	
+		<stache-row>
+			<stache-column screenSmall="6">
+				<p>Setting fit to “width” fixes the width of the grid to that of its container. Columns resize themselves to fit. This is most useful for simple grids in smaller containers such as tiles, where the content will fit neatly in the allotted space.</p>
+			</stache-column>
+			<stache-column screenSmall="6">
+			<div class="screenshot screenshot-info">
+				<img src="~/assets/img/guidelines/grid/grid-fit-width.png" style="width: 100%;" />
+			</div>
+		</stache-column>
+		</stache-row>	
+		
+	
 	<header><div class="sky-subsection-heading">Reordering columns</div></header>
 
   <stache-row>
@@ -249,7 +283,7 @@
 		</stache-column>
 		<stache-column screenSmall="6">
 			<div class="screenshot screenshot-success">
-				<img src="~/assets/img/guidelines/actionbutton/action-buttons-in-modal.png" style="width: 100%;" />
+				<img src="~/assets/img/guidelines/grid/grid-reorder.png" style="width: 100%;" />
 			</div>
 		</stache-column>
 	</stache-row>
@@ -262,7 +296,7 @@
 		</stache-column>
 		<stache-column screenSmall="6">
 			<div class="screenshot screenshot-success">
-				<img src="~/assets/img/guidelines/actionbutton/action-buttons-in-modal.png" style="width: 100%;" />
+				<img src="~/assets/img/guidelines/grid/grid-resize.png" style="width: 100%;" />
 			</div>
 		</stache-column>
 	</stache-row>
@@ -271,39 +305,50 @@
   <p>Grids tend to perform poorly in small viewports. The columns in fixed width grids will shrink down to the point of being unreadable. Scrolling grids will require a lot of interaction to see all the content.</p>
 
 	<header><div class="sky-section-heading">Anatomy</div></header>
-
-    <ol>
-			<li>
-        Toolbar
-      </li>
-			<li>
-        List count
-      </li>
-			<li>
-        Header row
-      </li>
-			<li>
-        Row selection checkbox–optional
-      </li>
-			<li>
-        Context menu button –optional
-      </li>
-			<li>
-        Data
-      </li>
-			<li>
-        Alternate row striping
-      </li>
-			<li>
-        Row divider
-      </li>
-			<li>
-        Selected row background
-      </li>
-			<li>
-        Summary action bar
-      </li>
-		</ol>
+	
+		<stache-row>
+			<stache-column screenSmall="3">
+				<ol>
+					<li>
+						<span class="sky-deemphasized">List count (optional)</span>
+					</li>
+					<li>
+						<span class="sky-deemphasized">Toolbar (optional)</span>
+					</li>
+					<li>
+						Header row
+					</li>
+					<li>
+						<span class="sky-deemphasized">Row selection checkbox (optional)</span>
+					</li>
+					<li>
+						<span class="sky-deemphasized">Context menu button (optional)</span>
+					</li>
+					<li>
+						Data
+					</li>
+					<li>
+						Alternate row striping
+					</li>
+					<li>
+						Row divider
+					</li>
+					<li>
+						Selected row background
+					</li>
+					<li>
+						<span class="sky-deemphasized">Summary action bar (optional)</span>
+					</li>
+				</ol>
+			</stache-column>
+			<stache-column screenSmall="9">
+				<div class="screenshot screenshot-info">
+				<img src="~/assets/img/guidelines/grid/grid-annotated.png" style="width: 100%;" />
+			</div>
+			</stache-column>
+		</stache-row>	
+	
+    
   </sky-demo-page-content>
 
 </sky-demo-page>
