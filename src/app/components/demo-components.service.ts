@@ -412,6 +412,13 @@ export class SkyDemoComponentsService {
         url: '/components/status-indicator'
       },
       {
+        name: 'Summary action bar',
+        icon: 'sun-o',
+        // tslint:disable-next-line
+        summary: `The summary action bar provides a docked container for actions and summary information related.`,
+        url: '/components/summary-actionbar'
+      },
+      {
         name: 'Tabs',
         icon: 'folder-open-o',
         summary: `The tabs module contains components to render a tabset.`,
