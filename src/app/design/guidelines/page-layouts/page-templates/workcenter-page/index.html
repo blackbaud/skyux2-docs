@@ -4,7 +4,7 @@
 	navOrder="3">
 
 <stache-page-anchor>Usage</stache-page-anchor>
-	<div>The workcenter layout surfaces time-sensitive information and allows users to quickly navigate to the most tasks and information in the application.</div>
+	<div>The workcenter layout surfaces time-sensitive information and allows users to quickly access the most important tasks and information in the application.</div>
 	
 <stache-page-anchor>Anatomy</stache-page-anchor>
 	<div class="sky-margin-stacked-default">
@@ -29,9 +29,72 @@
 	</sky-fluid-grid>
 	
 <stache-page-anchor>Examples</stache-page-anchor>
-	<div class="sky-subsection-heading">Role-based</div>
+	<div class="sky-subsection-heading">Simple</div>
+		<sky-fluid-grid>
+		<sky-row>
+			<sky-column screenSmall="6">
+				<p>A simple fluid grid-based layout is appropriate when:</p>
+				<ol>
+					<li>Important information can be presented in a compact format.</li>
+					<li>User does not need to rearrange content.</li>
+				</ol>
+			</sky-column>
+			<sky-column screenSmall="6">
+				<div class="screenshot screenshot-info">
+					<img class="sky-shadow" src="~/assets/img/guidelines/pagelayout/workcenter-simple.png" style="width: 100%;" />
+				</div>
+			</sky-column>
+		</sky-row>
+	</sky-fluid-grid>
 	
+	<div class="sky-subsection-heading">Multiple tasks</div>
+		<sky-fluid-grid>
+		<sky-row>
+			<sky-column screenSmall="6">
+				<p>A tile-based layout is appropriate when:</p>
+				<ol>
+					<li>The page is supporting multiple tasks which each have important information to show.</li>
+					<li>Certain tasks may be more or less important to an individual user, so being able to rearrange content is valuable.</li>
+				</ol>
+			</sky-column>
+			<sky-column screenSmall="6">
+				<div class="screenshot screenshot-info">
+					<img class="sky-shadow" src="~/assets/img/guidelines/pagelayout/workcenter-tiles.png" style="width: 100%;" />
+				</div>
+			</sky-column>
+		</sky-row>
+	</sky-fluid-grid>
 	
-	<div class="sky-subsection-heading">Task-based</div>
+	<div class="sky-subsection-heading">Multiple responsibilities</div>
+		<sky-fluid-grid>
+		<sky-row>
+			<sky-column screenSmall="6">
+				<p>A tab-based layout is appropriate when:</p>
+				<ol>
+					<li>The page is supporting a role with multiple responsibilities which each have a lot of important information to show.</li>
+				</ol>
+			</sky-column>
+			<sky-column screenSmall="6">
+				<div class="screenshot screenshot-info">
+					<img class="sky-shadow" src="~/assets/img/guidelines/pagelayout/workcenter-multi.png" style="width: 100%;" />
+				</div>
+			</sky-column>
+		</sky-row>
+	</sky-fluid-grid>
+
+<stache-page-anchor>Interactions</stache-page-anchor>
+	<div class="sky-subsection-heading">Accessing details</div>
+		<sky-fluid-grid>
+			<sky-row>
+				<sky-column screenSmall="6">
+					<p>To keep the user in context, use a flyout to show the details behind summary information.</p>
+				</sky-column>
+				<sky-column screenSmall="6">
+					<div class="screenshot screenshot-info">
+						<img class="sky-shadow" src="~/assets/img/guidelines/pagelayout/workcenter-flyout.png" style="width: 100%;" />
+					</div>
+				</sky-column>
+			</sky-row>
+		</sky-fluid-grid>
 	
 </stache>
