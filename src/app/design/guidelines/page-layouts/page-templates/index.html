@@ -34,12 +34,26 @@
   </stache-page-anchor>
 
   <p>
-    The workcenter layout provides a <a routerLink="/components/tiles">tile-based</a> page that surfaces time-sensitive information and allows users to quickly navigate to the most recent information in an application. It can contain a <a routerLink="/components/page-summary">page summary</a> to highlight the most important information, a <a routerLink="/components/tabs">tabbed layout</a> to support different tasks, and a carousel to feature high-priority items.
+    A workcenter page surfaces time-sensitive information and allows users to quickly access the most important tasks and information in the application. The layout of a workcenter is flexible and should be tailored to match the task or role being supported. 
   </p>
-  <div class="screenshot screenshot-info sky-margin-stacked-separate">
-    <img class="sky-shadow" src="~/assets/img/guidelines/pagelayout/workcenter-abstract.png" alt="Work center page wireframe" style="width: 100%" />
-  </div>
-	
+	<stache-row class="sky-margin-stacked-separate">
+		<stache-column screenMedium="6" screenLarge="4">
+			<div class="screenshot screenshot-info sky-margin-stacked-separate">
+				<img class="sky-shadow" src="~/assets/img/guidelines/pagelayout/workcenter-simple.png" alt="Work center simple page wireframe" style="width: 100%" />
+			</div>
+		</stache-column>
+		<stache-column screenMedium="6" screenLarge="4">
+			<div class="screenshot screenshot-info sky-margin-stacked-separate">
+				<img class="sky-shadow" src="~/assets/img/guidelines/pagelayout/workcenter-tiles.png" alt="Work center tile page wireframe" style="width: 100%" />
+			</div>
+		</stache-column>	
+		<stache-column screenMedium="6" screenLarge="4">
+			<div class="screenshot screenshot-info sky-margin-stacked-separate">
+				<img class="sky-shadow" src="~/assets/img/guidelines/pagelayout/workcenter-multi.png" alt="Work center tabbed page wireframe" style="width: 100%" />
+			</div>
+		</stache-column>	
+	</stache-row>
+  	
 	<stache-page-anchor>
     <a stacheRouterLink="/design/guidelines/page-layouts/page-templates/split-view-page">Split view page</a>
   </stache-page-anchor>
