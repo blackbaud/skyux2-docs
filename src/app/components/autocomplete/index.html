@@ -19,19 +19,19 @@
       propertyName="debounceTime"
       defaultValue="0"
       isOptional="true">
-      Specifies how many milliseconds to wait before searching after users enter text in the autocomplete field.
+      Specifies how many milliseconds to wait before searching while users enter text in the autocomplete field. This property accepts <stache-code>number</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="descriptorProperty"
       isOptional="true"
       defaultValue="name">
-      Specifies an object property to display in the text input after users select an item in the dropdown list.
+      Specifies an object property to display in the text input after users select an item in the dropdown list. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="propertiesToSearch"
       isOptional="true"
       defaultValue="['name']">
-      Specifies an array of object properties to search.
+      Specifies the object properties to search. This property accepts an array of <stache-code>string</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="search"
@@ -41,12 +41,12 @@
     <sky-demo-page-property
       propertyName="searchFilters"
       isOptional="true">
-      Specifies an array of functions to call against each search result in order to filter the search results when using the default search function. When using a custom search function via the <stache-code>searc</stache-code> property filters must be applied manually inside that function. The function must return <stache-code>true</stache-code> or <stache-code>false</stache-code> for each result to indicate whether to display it in the dropdown list. Acceptable value: <stache-code>(searchText: string, item: any) => boolean</stache-code>.
+      Specifies an array of functions to call against each search result in order to filter the search results when using the default search function. When using the <stache-code>search</stache-code> property to specify a custom search function, you must manually apply filters inside that function. The function must return <stache-code>true</stache-code> or <stache-code>false</stache-code> for each result to indicate whether to display it in the dropdown list. Acceptable value: <stache-code>(searchText: string, item: any) => boolean</stache-code>.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="searchResultsLimit"
       isOptional="true">
-      Specifies the maximum number of search results to display in the dropdown list. By default, the component displays all matching results.
+      Specifies the maximum number of search results to display in the dropdown list. By default, the component displays all matching results. This property accepts <stache-code>number</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="searchResultTemplate"
@@ -57,7 +57,7 @@
       propertyName="searchTextMinimumCharacters"
       isOptional="true"
       defaultValue="1">
-      Specifies the minimum number of characters that users must enter before the autocomplete component searches the data source and displays search results in the dropdown list.
+      Specifies the minimum number of characters that users must enter before the autocomplete component searches the data source and displays search results in the dropdown list. This property accepts <stache-code>number</stache-code> values.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
