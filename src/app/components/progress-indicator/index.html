@@ -141,39 +141,59 @@
   	<p>
       Active progress indicators illustrate the step-wise nature of tasks and reinforce progress as users complete steps. They isolate users inside the scope of tasks, contain all interactions necessary for each step, and provide controls to move through the steps.
     </p>
-    <p>
+    <div class="sky-subsection-heading sky-margin-stacked-default">
       Use active progress indicators when:
-    </p>
-    <ul>
-			<li>
-        Tasks can be broken into discrete, predetermined steps.
-      </li>
-			<li>
-        The order of decisions within tasks matters because the system requires decisions in a certain order or because early decisions affect later decisions.
-      </li>
-		</ul>
-    <p>
+    </div>
+    <stache-row>
+			<stache-column screenMedium="6">
+				<ul>
+					<li>
+						Tasks can be broken into discrete, predetermined steps.
+					</li>
+					<li>
+						The order of decisions within tasks matters because the system requires decisions in a certain order or because early decisions affect later decisions.
+					</li>
+				</ul>
+			</stache-column>
+			<stache-column screenMedium="6">
+				<div class="screenshot screenshot-success sky-margin-stacked-default">
+					<img src="~/assets/img/guidelines/progress-indicator/active-do.png" style="width: 100%;" />
+				</div>
+			</stache-column>
+		</stache-row>
+    <div class="sky-subsection-heading sky-margin-stacked-default">
       Do not use active progress indicators when:
-    </p>
-    <ul>
-      <li>
-        The best experience requires fewer than three mandatory steps.
-      </li>
-      <li>
-        Decisions within tasks change the number of steps or the order of steps. Instead, move decisions that affect the number or order of steps to the start of workflows and branch users to different active progress contexts.
-      </li>
-      <li>
-        Users need to edit properties that are already set.
-      </li>
-      </li>
-    </ul>
+    </div>
+		<stache-row>
+			<stache-column screenLarge="6">
+				<ul>
+					<li>
+						The best experience requires fewer than three mandatory steps.
+					</li>
+					<li>
+						Decisions within tasks change the number of steps or the order of steps. Instead, move decisions that affect the number or order of steps to the start of workflows and branch users to different active progress contexts.
+					</li>
+					<li>
+						Users need to edit properties that are already set.
+					</li>
+				</ul>
+			</stache-column>
+			<stache-column screenLarge="6">
+				<div class="screenshot screenshot-danger sky-margin-stacked-separate">
+					<img src="~/assets/img/guidelines/progress-indicator/active-dont-twostep.png" style="width: 100%;" />
+				</div>
+				<div class="screenshot screenshot-danger sky-margin-stacked-default">
+					<img src="~/assets/img/guidelines/progress-indicator/active-dont-changesteps.png" style="width: 100%;" />
+				</div>
+			</stache-column>
+		</stache-row>
     <header><div class="sky-subsection-heading">Modal wizards vs. waterfall pages</div></header>
     <p>
       Modal wizards guide users through tasks that require a series of related decisions, while waterfall pages walk users through the steps to activate records or system settings that are created in an incomplete state. For more information about modal wizards, see the <a stacheRouterLink="/components/wizard">wizard component</a>.
     </p>
-    <p>
+    <div class="sky-subsection-heading sky-margin-stacked-default">
       Use modal wizards when:
-    </p>
+    </div>
     <ul>
 			<li>
         Tasks are best presented as multiple steps that users can complete in a single sitting.
@@ -188,9 +208,9 @@
         Tasks include no more than six steps.
       </li>
 		</ul>
-    <p>
+    <div class="sky-subsection-heading sky-margin-stacked-default">
       Use waterfall pages when:
-    </p>
+    </div>
     <ul>
 			<li>
         The complexity of tasks warrants a multi-step approach.
@@ -212,40 +232,58 @@
   	<p>
       Passive progress indicators inform users of progress that concerns them but that they are not responsible for. For example, passive progress indicators can track the progress of steps that other users in the system perform or steps that are completed outside the system. They provide details on an individually scoped level such as record pages, detail panels, or popovers.
     </p>
-    <p>
+    <div class="sky-subsection-heading sky-margin-stacked-default">
       Use passive progress indicators when:
-    </p>
-    <ul>
-			<li>
-        Steps represent stages of completion that are essentially invisible to users because they take place outside of user control.
-      </li>
-			<li>
-        The stages of progression are known in advance and branching does not dynamically route processes.
-      </li>
-			<li>
-        Progress is represented in the individual context of record pages, detail panels, etc.
-      </li>
-		</ul>
-    <p>
+    </div>
+		<stache-row>
+			<stache-column screenMedium="6">
+				<ul>
+					<li>
+						Steps represent stages of completion that are essentially invisible to users because they take place outside of user control.
+					</li>
+					<li>
+						The stages of progression are known in advance and branching does not dynamically route processes.
+					</li>
+					<li>
+						Progress is represented in the individual context of record pages, detail panels, etc.
+					</li>
+				</ul>
+			</stache-column>
+			<stache-column screenMedium="6">
+				<div class="screenshot screenshot-success sky-margin-stacked-default">
+					<img src="~/assets/img/guidelines/progress-indicator/passive-do.png" style="width: 100%;" />
+				</div>
+			</stache-column>
+		</stache-row>
+    <div class="sky-subsection-heading sky-margin-stacked-default">
       Do not use passive progress indicators when:
-    </p>
-    <ul>
-			<li>
-        User interaction is required.
-      </li>
-			<li>
-        Steps represent multiple independent statuses that are not sequentially related.
-      </li>
-			<li>
-        Progress is represented in collective context such as lists, repeaters, and tables.
-      </li>
-			<li>
-        Statuses drive decision-making or user responses.
-      </li>
-			<li>
-        Combined with other passive indicators to create excessive noise for information that does not drive user action.
-      </li>
-		</ul>
+    </div>
+		<stache-row>
+			<stache-column screenMedium="6">
+				<ul>
+					<li>
+						User interaction is required.
+					</li>
+					<li>
+						Steps represent multiple independent statuses that are not sequentially related.
+					</li>
+					<li>
+						Progress is represented in collective context such as lists, repeaters, and tables.
+					</li>
+					<li>
+						Statuses drive decision-making or user responses.
+					</li>
+					<li>
+						Combined with other passive indicators to create excessive noise for information that does not drive user action.
+					</li>
+				</ul>
+			</stache-column>
+			<stache-column screenMedium="6">
+				<div class="screenshot screenshot-danger sky-margin-stacked-default">
+					<img src="~/assets/img/guidelines/progress-indicator/passive-dont.png" style="width: 100%;" />
+				</div>
+			</stache-column>
+		</stache-row>
   </sky-demo-page-content>
 
 </sky-demo-page>
