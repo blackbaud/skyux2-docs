@@ -8,10 +8,10 @@
       <span *ngFor="let moduleName of skyuxModulesForDisplay">
         <stache-code>{{ moduleName }}</stache-code>
       </span>
-      <ng-container *ngIf="packageName">
+      <!-- <ng-container *ngIf="packageName">
         <span class="sky-field-label">in NPM package</span>
         <a href="https://github.com"><stache-code>{{ packageName }}</stache-code></a>
-      </ng-container>
+      </ng-container> -->
     </h4>
     <ng-content select="sky-demo-page-summary"></ng-content>
   </stache-page-summary>
