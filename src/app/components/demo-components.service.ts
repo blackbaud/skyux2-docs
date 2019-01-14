@@ -510,19 +510,19 @@ export class SkyDemoComponentsService {
   }
 
   public getDemoFiles(componentConstructorName: string): any {
-    const skyDemo = this.skyDemoService.getComponent(componentConstructorName);
+    const docsDemo = this.docsDemoService.getComponent(componentConstructorName);
 
-    if (!skyDemo) {
-      const docsDemo = this.docsDemoService.getComponent(componentConstructorName);
+    if (!docsDemo) {
+      const skyDemo = this.skyDemoService.getComponent(componentConstructorName);
 
-      if (!docsDemo) {
+      if (!skyDemo) {
         console.warn('No demo files found for:', componentConstructorName);
         return [];
       } else {
-        return this.docsDemoService.getComponent(componentConstructorName).files;
+        return this.skyDemoService.getComponent(componentConstructorName).files;
       }
     } else {
-      return this.skyDemoService.getComponent(componentConstructorName).files;
+      return this.docsDemoService.getComponent(componentConstructorName).files;
     }
   }
 }
