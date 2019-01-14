@@ -3,11 +3,13 @@ import { Injectable } from '@angular/core';
 import { SkyDemoService } from '@blackbaud/skyux/dist/demo';
 
 import { SkyDemoComponent } from './demo-component';
+import { SkyDocsDemoCodeService } from '../demos/demos.service';
 
 @Injectable()
 export class SkyDemoComponentsService {
   public constructor(
-    private demoService: SkyDemoService
+    private skyDemoService: SkyDemoService,
+    private docsDemoService: SkyDocsDemoCodeService
   ) { }
 
   public getComponents(filter?: string): SkyDemoComponent[] {
@@ -416,7 +418,8 @@ export class SkyDemoComponentsService {
         icon: 'sun-o',
         // tslint:disable-next-line
         summary: `The summary action bar provides a docked container for actions and summary information related.`,
-        url: '/components/summary-actionbar'
+        url: '/components/summary-actionbar',
+        getCodeFiles: () => this.getDemoFiles('SkySummaryActionBarDemoComponent')
       },
       {
         name: 'Tabs',
@@ -507,13 +510,19 @@ export class SkyDemoComponentsService {
   }
 
   public getDemoFiles(componentConstructorName: string): any {
-    const config = this.demoService.getComponent(componentConstructorName);
+    const skyDemo = this.skyDemoService.getComponent(componentConstructorName);
 
-    if (!config) {
-      console.warn('No demo files found for:', componentConstructorName);
-      return [];
+    if (!skyDemo) {
+      const docsDemo = this.docsDemoService.getComponent(componentConstructorName);
+
+      if (!docsDemo) {
+        console.warn('No demo files found for:', componentConstructorName);
+        return [];
+      } else {
+        return this.docsDemoService.getComponent(componentConstructorName).files;
+      }
+    } else {
+      return this.skyDemoService.getComponent(componentConstructorName).files;
     }
-
-    return this.demoService.getComponent(componentConstructorName).files;
   }
 }
