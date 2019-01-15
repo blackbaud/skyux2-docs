@@ -12,34 +12,19 @@
   </stache-page-summary>
 
   <stache-page-anchor>
-    What's changed
+    Introduction
   </stache-page-anchor>
 
   <p>
-    SKY UX 3 seeks to address the following issues with SKY UX 2:
+    SKY UX 3 is the next major version of SKY UX.  Unlike the migration from SKY UX 1 to SKY UX 2, migrating from SKY UX 2 to SKY UX 3 does not require a complete rewrite.  Instead, the migration mainly consists of updating import paths and package references and fixing the handful of breaking changes that were introduced with the latest versions of Angular and RxJS.  In fact, the majority of the changes can be done for you by running the SKY UX CLI migration plugin.
   </p>
-
-  <ul>
-    <li>
-      SKY UX Core Components/Builder use hard dependencies on specific versions of Angular, RxJS, etc., requiring consumers to wait for SKY UX to upgrade those dependencies. SKY UX 3 moves all dependencies to peer dependencies with a minimum version requirement to allow consumers to upgrade dependencies at will (e.g. consumers can update to a new minor version of Angular on their own).
-    </li>
-    <li>
-      Because SKY UX Core Components is one library, the release cycle increases in size with each new component. SKY UX 3 splits the SKY UX Core Components library up into multiple libraries, each with their own release cycle.
-    </li>
-    <li>
-      New components always start life in the one open-source SKY UX Core Components library, making contributions difficult as contributors either wait for their component to meet the contribution model for SKY UX or to simply not contribute the component back to SKY UX at all. SKY UX 3 will offer new SKY UX Component Library Pipeline that allows for components to start out as private NPM libraries maintained solely by the contributors which can then “graduate” to an open-source library maintained by the SKY UX team.
-    </li>
-    <li>
-      Because SPAs pull in all SKY UX components, load times continue to increase as SKY UX grows. With SKY UX 3, consumers can pull in SKY UX libraries à la carte, decreasing load times and test run times.
-    </li>
-  </ul>
 
   <stache-page-anchor>
     About the migration plugin
   </stache-page-anchor>
 
   <p>
-    Most of the work to update your SKY UX application to SKY UX 3 can be done automatically using the SKY UX CLI's migration plugin.  The plugin takes care of the following:
+    Running the SKY UX migration plugin does the following:
   </p>
 
   <ul>
