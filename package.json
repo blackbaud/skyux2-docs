@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Documentation for SKY UX",
   "engines": {
-    "node": ">=6.12.0"
+    "node": ">=6.11.1"
   },
   "scripts": {
     "test": "skyux lint && skyux test && skyux e2e && skyux build"
@@ -13,7 +13,8 @@
   "license": "MIT",
   "dependencies": {
     "@blackbaud/skyux": "2.39.0",
-    "@blackbaud/stache": "2.12.0"
+    "@blackbaud/skyux-design-tokens": "0.0.8",
+    "@blackbaud/stache": "2.7.2"
   },
   "devDependencies": {
     "@blackbaud/skyux-builder": "1.30.0"
