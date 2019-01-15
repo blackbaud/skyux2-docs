@@ -4,53 +4,116 @@
 >
 
   <sky-demo-page-summary>
-    This grid component displays a SKY UX-themed grid of data. The grid should contain <stache-code>sky-grid-column</stache-code> components that specify column information. The <stache-code>sky-grid</stache-code> component can provide a view of a searchable, paginated list component when used within the <a routerLink="../list-view-grid">sky-list</a> component.
+    This grid component displays a SKY UX-themed grid of data. The grid should contain <stache-code>sky-grid-column</stache-code> components that specify column information. The <stache-code>sky-grid</stache-code> component can provide a view of a searchable, paginated list component when used within <a routerLink="../list-view-grid">the <stache-code>sky-list</stache-code> component</a>.
   </sky-demo-page-summary>
 
   <sky-demo-page-properties sectionHeading="Grid component properties">
     <sky-demo-page-property
-      propertyName="data"
+      propertyName="columns"
     >
-    Specifies an array of data for the grid. Each item in the array should have an ID and a property that maps to either the <stache-code>field</stache-code> or <stache-code>id</stache-code> property of each column in the grid.
+    Specifies columns and column properties for the grid. This property accepts an array of <stache-code>SkyGridColumnModel</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
-      propertyName="selectedColumnIds"
+      propertyName="data"
+    >
+    Specifies the data for the grid. Each item requires an <stache-code>id</stache-code> and a property that maps to the <stache-code>field</stache-code> or <stache-code>id</stache-code> property of each column in the grid. This property accepts an array of <stache-code>any</stache-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="enableMultiselect"
+      defaultValue="false"
       isOptional="true"
     >
-    Specifies an array of columns to display in the grid. Will match the <stache-code>id</stache-code> or <stache-code>field</stache-code> properties of the columns. If no array is provided, then the grid displays all columns. Acceptable values: <stache-code>Array of strings</stache-code>.
+    Indicates whether to enable the multiselect feature to display a column of checkboxes on the left side of the grid. You can specify a unique ID with the <stache-code>multiselectRowId</stache-code> property; if not, then multiselect defaults to the <stache-code>id</stache-code> property on the <stache-code>data</stache-code> object. This property accepts <stache-code>boolean</stache-code> values. If you need to include options to select and clear all multiselect checkboxes, we recommend using the <a routerLink="/components/list/grid">list view grid</a> component.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="fit"
       defaultValue="width"
       isOptional="true"
     >
-    Specifies how the grid should fit to its parent. Acceptable values: <stache-code>'width'</stache-code> or <stache-code>'scroll'</stache-code>.
+    Specifies how the grid fits to its parent. The valid options are <stache-code>width</stache-code>, which fits the grid to the parent's full width, and <stache-code>scroll</stache-code>, which allows the grid to exceed the parent's width. If the grid does not have enough columns to fill the parent's width, it always stretches to the parent's full width. This property accepts <stache-code>string</stache-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="hasToolbar"
+      defaultValue="false"
+      isOptional="true"
+    >
+    Indicates whether to display a toolbar with the grid. This property accepts <stache-code>boolean</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="height"
       isOptional="true"
     >
-    Specifies the height of the grid. Acceptable values: <stache-code>number</stache-code>.
+    Specifies the height of the grid. This property accepts <stache-code>number</stache-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="highlightText"
+      isOptional="true"
+    >
+    Specifies text to highlight within the grid. Typically, this property is used in conjunction with search. The property accepts <stache-code>string</stache-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="messageStream"
+      isOptional="true"
+    >
+    Provides an observable to send commands to the grid. The commands should respect the <stache-code>SkyGridMessage</stache-code> type. (See below.)
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="multiselectRowId"
+      isOptional="true"
+    >
+    Specifies a unique ID that matches a property on the <stache-code>data</stache-code> object. This property accepts <stache-code>string</stache-code> values. By default, the property defaults to the <stache-code>id</stache-code> property on the <stache-code>data</stache-code> object. 
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="selectedColumnIds"
+      isOptional="true"
+    >
+    Specifies the columns to display in the grid based on the <stache-code>id</stache-code> or <stache-code>field</stache-code> properties of the columns. If no columns are specified, then the grid displays all columns. This property accepts an array of <stache-code>string</stache-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="sortField"
+      isOptional="true"
+    >
+    Specifies the field to use to sort the grid. This property accepts a <stache-code>ListSortFieldSelectorModel</stache-code> value that contains a <stache-code>fieldSelector</stache-code> string to represent the current sort field and a <stache-code>descending</stache-code> boolean to indicate whether to sort in descending order.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="width"
       isOptional="true"
     >
-    Specifies the width of the grid. Acceptable values: <stache-code>number</stache-code>.
+    Specifies the width of the grid. This property accepts <stache-code>number</stache-code> values.
     </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-properties sectionHeading="SkyGridMessage type">
     <sky-demo-page-property
-      propertyName="sortField"
-      [isOptional]="true"
-    >
-    Specifies the field to use to sort the grid. Acceptable values: <stache-code>ListSortFieldSelectorModel</stache-code>. <stache-code>ListSortFieldSelectorModel</stache-code> contains the <stache-code>fieldSelector</stache-code> string that represents the current sort field and the <stache-code>descending</stache-code> boolean that indicates whether to sort in descending order.
+      propertyName="type"
+      isOptional="true">
+      Sets the message to one of the following <stache-code>SkyGridMessage</stache-code> types:
+      <ul>
+        <li>
+          <stache-code>SkyGridMessageType.ClearAll</stache-code> &mdash; Clears the multiselect checkboxes for all rows in the grid.
+        </li>
+        <li>
+          <stache-code>SkyGridMessageType.SelectAll</stache-code> &mdash; Selects the multiselect checkboxes for all rows in the grid.
+        </li>
+      </ul>
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
   <sky-demo-page-properties sectionHeading="Grid component events">
     <sky-demo-page-property
+      propertyName="columnWidthChange"
+    >
+    Fires when the width of a column changes. Emits an array of <stache-code>SkyGridColumnWidthModelChange</stache-code>.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="multiselectSelectionChange"
+    >
+    Fires when the selection of multiselect checkboxes changes. Emits an array of IDs for the selected rows based on the <stache-code>multiselectRowId</stache-code> property that the consumer provides.
+    </sky-demo-page-property>
+    <sky-demo-page-property
       propertyName="selectedColumnIdsChange"
     >
-    Fires when the columns change. This includes changes to the columns to display in the grid and changes to the order of columns. The event emits an array of IDs for the displayed columns that reflects the column order.
+    Fires when the columns to display in the grid change or when the order of the columns changes. The event emits an array of IDs for the displayed columns that reflects the column order.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="sortFieldChange"
@@ -61,16 +124,9 @@
 
   <sky-demo-page-properties sectionHeading="Grid column component properties">
     <sky-demo-page-property
-      propertyName="id"
-      isOptional="true"
+      propertyName="description"
     >
-    Specifies a unique ID for the column. You must provide either the <stache-code>id</stache-code> or <stache-code>field</stache-code> property for every column, but do not provide both. If <stache-code>field</stache-code> does not exist on a column, then the <stache-code>id</stache-code> property retrieves cell information from an entry on the grid <stache-code>data</stache-code> array.
-    </sky-demo-page-property>
-    <sky-demo-page-property
-      propertyName="field"
-      isOptional="true"
-    >
-    Specifies the property to retrieve cell information from an entry on the grid <stache-code>data</stache-code> array. You must provide either the <stache-code>id</stache-code> or <stache-code>field</stache-code> property for every column, but do not provide both. If <stache-code>id</stache-code> does not exist on a column, then <stache-code>field</stache-code> is the entry for the grid <stache-code>selectedColumnIds</stache-code> array.
+    Specifies a description for the column.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="heading"
@@ -78,29 +134,10 @@
     Specifies text to display in the column header.
     </sky-demo-page-property>
     <sky-demo-page-property
-      propertyName="description"
-    >
-    Specifies a description for the column.
-    </sky-demo-page-property>
-    <sky-demo-page-property
-      propertyName="width"
+      propertyName="field"
       isOptional="true"
     >
-    Specifies the width of the column.
-    </sky-demo-page-property>
-    <sky-demo-page-property
-      propertyName="locked"
-      isOptional="true"
-      defaultValue="false"
-    >
-    Indicates whether the column is locked. If set to <stache-code>true</stache-code>, then users cannot drag the column to another position and or drag other columns before the locked column.
-    </sky-demo-page-property>
-    <sky-demo-page-property
-      propertyName="isSortable"
-      [isOptional]="true"
-      defaultValue="true"
-    >
-    Indicates whether the column sorts the grid when users click the column header.
+    Specifies the property to retrieve cell information from an entry on the grid <stache-code>data</stache-code> array. You must provide either the <stache-code>id</stache-code> or <stache-code>field</stache-code> property for every column, but do not provide both. If <stache-code>id</stache-code> does not exist on a column, then <stache-code>field</stache-code> is the entry for the grid <stache-code>selectedColumnIds</stache-code> array.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="hidden"
@@ -110,16 +147,42 @@
     Indicates whether the column is initially hidden when grid <stache-code>selectedColumnIds</stache-code> are not provided.
     </sky-demo-page-property>
     <sky-demo-page-property
+      propertyName="id"
+      isOptional="true"
+    >
+    Specifies a unique ID for the column. You must provide either the <stache-code>id</stache-code> or <stache-code>field</stache-code> property for every column, but do not provide both. If <stache-code>field</stache-code> does not exist on a column, then the <stache-code>id</stache-code> property retrieves cell information from an entry on the grid <stache-code>data</stache-code> array.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="isSortable"
+      [isOptional]="true"
+      defaultValue="true"
+    >
+    Indicates whether the column sorts the grid when users click the column header.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="locked"
+      isOptional="true"
+      defaultValue="false"
+    >
+    Indicates whether the column is locked. If set to <stache-code>true</stache-code>, then users cannot drag the column to another position and or drag other columns before the locked column.
+    </sky-demo-page-property>
+    <sky-demo-page-property
       propertyName="search"
       isOptional="true"
     >
     Specifies a search function to apply for the specific column. By default, the column executes a string compare on the column data. Acceptable values: <stache-code>(data: any, searchText: string) => boolean</stache-code>
     </sky-demo-page-property>
-     <sky-demo-page-property
+    <sky-demo-page-property
       propertyName="template"
       isOptional="true"
     >
     Specifies a template for a column. This can be assigned as a reference to the <stache-code>template</stache-code> attribute, or it can be assigned as a child of the <stache-code>template</stache-code> element inside the <stache-code>sky-grid-column</stache-code> component. The template has access to the <stache-code>value</stache-code> variable, which contains the value passed to the column, and the <stache-code>row</stache-code> variable, which contains the entire row data.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="width"
+      isOptional="true"
+    >
+    Specifies the width of the column.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -127,5 +190,251 @@
     <sky-grid-demo></sky-grid-demo>
     <sky-demo-page-code demoName="Grid"></sky-demo-page-code>
   </sky-demo-page-example>
+
+
+  <sky-demo-page-content sectionHeading="UX guidelines">
+	
+	
+		<stache-row>
+			<stache-column screenSmall="4" screenMedium="6">
+				<header><div class="sky-section-heading">Usage</div></header>
+				<p>The grid provides a layout for tabular data.</p>
+			</stache-column>
+			<stache-column screenSmall="4" screenMedium="3">
+				<header><div class="sky-section-heading">Related components</div></header>
+				<ul>
+					<li><a routerLink="/components/list/grid">List view grid</a></li>
+					<li><a routerLink="/components/card">Card</a></li>
+					<li><a routerLink="/components/repeater">Repeater</a></li>
+					<!-- Activate the summary action bar link once page is added -->
+					<!-- <li><a routerLink="/components/summary-actionbar">Summary action bar</a></li> -->
+					<li><a routerLink="/components/infinite-scroll">Infinite scroll</a></li>
+					<li><a routerLink="/components/pagination">Pagination</a></li>
+					<li><a routerLink="/components/toolbar">Toolbar</a></li>
+					<li><a routerLink="/components/filter">Filter</a></li>
+					<li><a routerLink="/components/sort">Sort</a></li>
+				</ul>
+			</stache-column>		
+			<stache-column screenSmall="4" screenMedium="3">
+				<header><div class="sky-section-heading">Related guidelines</div></header>
+				<ul>
+					<li><a routerLink="/design/guidelines/page-layouts">Page layout</a></li>
+				</ul>
+			</stache-column>
+		</stache-row>
+		
+		
+	<header><div class="sky-subsection-heading">When to use grids</div></header>
+		
+  <stache-row>
+    <stache-column screenSmall="6">
+			<p>Use grids to display tabular data when: </p>
+			<ul>
+				<li>There is a large amount of data that needs to be visible at once.</li>
+				<li>Users need to visually scan a column to look for certain values or outliers.</li>
+				<li>Users need to compare values between rows.</li>
+			</ul>
+		</stache-column>
+		<stache-column screenSmall="6">
+			<div class="screenshot screenshot-success">
+				<img src="~/assets/img/guidelines/grid/grid-use-when.png" />
+			</div>
+		</stache-column>
+	</stache-row>
+    
+	<header><div class="sky-subsection-heading">When not to use grids</div></header>
+
+  <stache-row>
+    <stache-column screenSmall="6">
+			<ul>
+        <li>Do not use grids when you need to display visual content such as graphs or images. Use <a routerLink="/components/repeater">repeaters</a> or <a routerLink="/components/card">card</a> views instead.</li>
+        <li>Do not use grids when the content calls for a more complex layout. If a grid requires a lot of templated columns, try a repeater instead.</li>
+        <li>Do not use grids when you need to display many fields and it is likely that users will view the grids in a small viewport, such as on a phone. Try repeaters instead.</li>
+      </ul>
+		</stache-column>
+		<stache-column screenSmall="6">
+			<div class="screenshot screenshot-danger">
+				<img src="~/assets/img/guidelines/grid/grid-dont-use-complex.png" style="width: 100%;" />
+			</div>
+		</stache-column>
+	</stache-row>
+		
+	<header><div class="sky-section-heading">Anatomy</div></header>
+	
+		<stache-row>
+			<stache-column screenSmall="3">
+				<ol>
+					<li>
+						<span class="sky-deemphasized">List count (optional)</span>
+					</li>
+					<li>
+						<span class="sky-deemphasized">Toolbar (optional)</span>
+					</li>
+					<li>
+						Header row
+					</li>
+					<li>
+						<span class="sky-deemphasized">Row selection checkbox (optional)</span>
+					</li>
+					<li>
+						<span class="sky-deemphasized">Context menu button (optional)</span>
+					</li>
+					<li>
+						Data
+					</li>
+					<li>
+						Alternate row striping
+					</li>
+					<li>
+						Row divider
+					</li>
+					<li>
+						Selected row background
+					</li>
+					<li>
+						<span class="sky-deemphasized">Pagination (optional)</span>
+					</li>
+					<li>
+						<span class="sky-deemphasized">Summary action bar (optional)</span>
+					</li>
+				</ol>
+			</stache-column>
+			<stache-column screenSmall="9">
+				<div class="screenshot screenshot-info">
+				<img src="~/assets/img/guidelines/grid/grid-annotated.png" style="width: 100%;" />
+			</div>
+			</stache-column>
+		</stache-row>		
+    
+	<header><div class="sky-section-heading">Options</div></header>
+
+	<header><div class="sky-subsection-heading">Context menu</div></header>
+
+  <stache-row>
+    <stache-column screenSmall="6">
+			<p>Use context menus in the first column when users need to access multiple actions in the rows.</p>
+		</stache-column>
+		<stache-column screenSmall="6">
+			<div class="screenshot screenshot-info">
+				<img src="~/assets/img/guidelines/grid/grid-option-context-menu.png" style="width: 100%;" />
+			</div>
+		</stache-column>
+	</stache-row>
+    
+	<header><div class="sky-subsection-heading">Multiselect</div></header>
+
+  <stache-row>
+    <stache-column screenSmall="6">
+			<p>Use multiselect when:</p>
+				<ul>
+					<li>Users need to act on more than one row at a time.</li>
+					<li>The list is presented as a full page, a full page modal or a full page within a flyout.</li>
+				</ul>
+			<p>Don't use multiselect when:</p>
+			<ul>
+				<li>The list is presented in a tile, page section, or other container that might flow off the screen.</li>
+			</ul>
+      <p>When users select rows, the summary action bar should fly in from the bottom of the page. Place actions that can be taken on the selected items in the summary action bar.</p>
+		</stache-column>
+		<stache-column screenSmall="6">
+			<div class="screenshot screenshot-info sky-margin-stacked-separate">
+				<img src="~/assets/img/guidelines/grid/grid-option-multi.png" style="width: 100%;" />
+			</div>
+			<div class="screenshot screenshot-danger">
+				<img src="~/assets/img/guidelines/grid/grid-option-multi-dont-tile.png" style="width: 100%;" />
+			</div>
+		</stache-column>
+	</stache-row>
+    
+	<header><div class="sky-subsection-heading">Sorting</div></header>
+
+  <stache-row>
+    <stache-column screenSmall="6">
+			<p>If users are likely to sort based on the data in columns, enable sorting so that they can click column headers to toggle between sorting in ascending and descending order for the specified fields in columns. If users need to sort by data in a templated column, use the <a routerLink="/components/sort">sort</a> component instead to allow them to choose the data being sorted on.</p>
+		</stache-column>
+		<stache-column screenSmall="6">
+			<div class="screenshot screenshot-info">
+				<img src="~/assets/img/guidelines/grid/grid-option-sort.png" style="width: 100%;" />
+			</div>
+		</stache-column>
+	</stache-row>
+    
+	<header id="option-templated-columns"><div class="sky-subsection-heading">Templated columns</div></header>
+
+  <stache-row>
+    <stache-column screenSmall="6">
+			<p>When columns need to represent composite information instead of single values, use templated columns to lay out content as necessary.</p>
+		</stache-column>
+		<stache-column screenSmall="6">
+			<div class="screenshot screenshot-info">
+				<img src="~/assets/img/guidelines/grid/grid-option-template-column.png" style="width: 100%;" />
+			</div>
+		</stache-column>
+	</stache-row>
+    
+	<header><div class="sky-section-heading">Behavior</div></header>
+
+	<header><div class="sky-subsection-heading">Fit</div></header>
+	
+	<header><div class="sky-emphasized">Scroll</div></header>	
+		
+	
+		<stache-row>
+			<stache-column screenSmall="6">
+				<p>Setting the <stache-code>fit</stache-code> property to <stache-code>scroll</stache-code> allows the grid to take as much space as necessary by adding a horizontal scrollbar. This is most useful for grids with large numbers of columns.</p>
+			</stache-column>
+			<stache-column screenSmall="6">
+			<div class="screenshot screenshot-info">
+				<img src="~/assets/img/guidelines/grid/grid-fit-scroll.png" style="width: 100%;" />
+			</div>
+		</stache-column>
+		</stache-row>	
+		
+	
+	<header><div class="sky-emphasized">Width</div></header>
+  
+	
+		<stache-row>
+			<stache-column screenSmall="6">
+				<p>Setting the <stache-code>fit</stache-code> property to <stache-code>width</stache-code> fixes the width of the grid to that of its container. Columns resize themselves to fit. This is most useful for simple grids in smaller containers such as tiles where the content fits neatly in the allotted space.</p>
+			</stache-column>
+			<stache-column screenSmall="6">
+			<div class="screenshot screenshot-info">
+				<img src="~/assets/img/guidelines/grid/grid-fit-width.png" style="width: 100%;" />
+			</div>
+		</stache-column>
+		</stache-row>	
+		
+	
+	<header><div class="sky-subsection-heading">Reordering columns</div></header>
+
+  <stache-row>
+    <stache-column screenSmall="6">
+			<p>Users can reorder columns by dragging and dropping.</p>
+		</stache-column>
+		<stache-column screenSmall="6">
+			<div class="screenshot screenshot-success">
+				<img src="~/assets/img/guidelines/grid/grid-reorder.png" style="width: 100%;" />
+			</div>
+		</stache-column>
+	</stache-row>
+    
+	<header><div class="sky-subsection-heading">Resizing columns</div></header>
+
+  <stache-row>
+    <stache-column screenSmall="6">
+			<p>Users can resize columns by clicking and dragging or by using the keyboard.</p>
+		</stache-column>
+		<stache-column screenSmall="6">
+			<div class="screenshot screenshot-success">
+				<img src="~/assets/img/guidelines/grid/grid-resize.png" style="width: 100%;" />
+			</div>
+		</stache-column>
+	</stache-row>
+    
+	<header><div class="sky-section-heading">Responsiveness</div></header>
+  <p>Grids tend to perform poorly in small viewports. The columns in fixed width grids will shrink down to the point of being unreadable. Scrolling grids will require a lot of interaction to see all the content. Use a <a routerLink="/components/repeater">repeater</a> instead if possible.</p>
+    
+  </sky-demo-page-content>
 
 </sky-demo-page>
