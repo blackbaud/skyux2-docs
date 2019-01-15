@@ -4,21 +4,22 @@
 >
 
   <sky-demo-page-summary>
-    The datepicker module renders an input and calendar for users to select dates. The datepicker input directive uses <stache-code>NgModel</stache-code> to bind data.
+    The datepicker module contains directives to let users select dates.  It is a SKY UX-themed replacement for the HTML <stache-code>input</stache-code> element with <stache-code>type="date"</stache-code>. The value that users select is driven through the <stache-code>ngModel</stache-code> attribute
+    specified on the <stache-code>input</stache-code> element.
   </sky-demo-page-summary>
 
   <sky-demo-page-properties sectionHeading="Datepicker input directive properties">
     <sky-demo-page-property
       propertyName="skyDatepickerInput"
     >
-      Creates the datepicker input and calendar. Place this attribute on an input element, and wrap the input in a <stache-code>sky-datepicker</stache-code> component. The attribute must be set to the instance of the <stache-code>sky-datepicker</stache-code> component.
+      Creates the datepicker input and calendar. Place this attribute on an <stache-code>input</stache-code> element, and wrap the input in a <stache-code>sky-datepicker</stache-code> component. The attribute must be set to the instance of the <stache-code>sky-datepicker</stache-code> component.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="dateFormat"
       isOptional="true"
       defaultValue="MM/DD/YYYY"
     >
-      Specifies the date format for the input. Place this attribute on the input element to override the default date format in <stache-code>SkyDatepickerConfigService</stache-code>. This property accepts <stache-code>string</stache-code> values.
+      Specifies the date format for the input. Place this attribute on the <stache-code>input</stache-code> element to override the default date format in <stache-code>SkyDatepickerConfigService</stache-code>. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="disabled"
@@ -29,12 +30,12 @@
     <sky-demo-page-property
       propertyName="maxDate"
       isOptional="true">
-      Specifies the maximum selectable date in the calendar. Place this attribute on the input element to override the default maximum in <stache-code>SkyDatepickerConfigService</stache-code>. This property accepts <stache-code>Date</stache-code> values.
+      Specifies the maximum selectable date in the calendar. Place this attribute on the <stache-code>input</stache-code> element to override the default maximum in <stache-code>SkyDatepickerConfigService</stache-code>. This property accepts <stache-code>Date</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="minDate"
       isOptional="true"    >
-      Specifies the minimum selectable date in the calendar. Place this attribute on the input element to override the default minimum in <stache-code>SkyDatepickerConfigService</stache-code>. This property accepts <stache-code>Date</stache-code> values.
+      Specifies the minimum selectable date in the calendar. Place this attribute on the <stache-code>input</stache-code> element to override the default minimum in <stache-code>SkyDatepickerConfigService</stache-code>. This property accepts <stache-code>Date</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="skyDatepickerNoValidate"
@@ -46,7 +47,7 @@
       propertyName="startingDay"
       isOptional="true"
       defaultValue="0">
-      Specifies the starting day of the week in the calendar, where <stache-code>0</stache-code> sets the starting day to Sunday. Place this attribute on the input element to override the default starting day in <stache-code>SkyDatepickerConfigService</stache-code>. This property accepts <stache-code>number</stache-code> values.
+      Specifies the starting day of the week in the calendar, where <stache-code>0</stache-code> sets the starting day to Sunday. Place this attribute on the <stache-code>input</stache-code> element to override the default starting day in <stache-code>SkyDatepickerConfigService</stache-code>. This property accepts <stache-code>number</stache-code> values.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -60,12 +61,12 @@
     <sky-demo-page-property
       propertyName="maxDate"
       isOptional="true">
-      Specifies a maximum selectable date in the calendar. This property accepts <stache-code>Date</stache-code> values.
+      Specifies the maximum selectable date in the calendar. This property accepts <stache-code>Date</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="minDate"
       isOptional="true"    >
-      Specifies a minimum selectable date in the calendar. This property accepts <stache-code>Date</stache-code> values.
+      Specifies the minimum selectable date in the calendar. This property accepts <stache-code>Date</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="startingDay"
