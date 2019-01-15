@@ -59,7 +59,7 @@
       propertyName="icon"
       isOptional="true"
     >
-    Specifies an icon to display in place of the radio button. This property accepts <stache-code>string</stache-code> values.
+    Specifies an icon to display in place of the radio button. This property accepts <stache-code>string</stache-code> values. If you want to use the icon radio button group display in the demo, the <stache-code>sky-switch-icon-group</stache-code> class can be placed on the direct parent element of the radio buttons.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="id"
@@ -71,7 +71,7 @@
       propertyName="label"
       isOptional="true"
     >
-    Defines an ARIA label for the radio button to support accessibility. If the radio button includes a visible label on the screen, use the <stache-code>labelledBy</stache-code> property instead. This property accepts <stache-code>string</stache-code> values. 
+    Defines an ARIA label for the radio button to support accessibility when the radio button does not include a visible label. This property must be set if you are using an icon radio button (see <a href="skyux/components/radio#accessibility">accessibility</a>). This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="labelledBy"
@@ -81,8 +81,8 @@
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="radioType"
-      defaultValue="false"
-      isOptional="info"
+      defaultValue="info"
+      isOptional="true"
     >
     Specifies a type for a radio button that uses the <stache-code>icon</stache-code> property. When users select the icon, this property changes its background color. The valid options correspond to the label types from the <a stacheRouterLink="/components/label">label component</a>, and they include <stache-code>info</stache-code>, which creates a blue background, <stache-code>success</stache-code>, which creates a green background, <stache-code>warning</stache-code>, which creates an orange background, and <stache-code>danger</stache-code>, which creates a red background. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
@@ -110,7 +110,11 @@
 
   <sky-demo-page-content sectionHeading="Accessibility">
     <p>
-      For a group of radio buttons, use <stache-code>fieldset</stache-code> and <stache-code>legend</stache-code> elements to provide semantic structure. For people using assistive technology, the <stache-code>fieldset</stache-code> element groups the radio buttons to indicate the number of items in the group, and the <stache-code>legend</stache-code> element provides a description for the group. For more information on how to use <stache-code>fieldset</stache-code> and <stache-code>legend</stache-code>, see <a href="http://webaim.org/techniques/forms/controls#radio">WebAIM examples and guidance</a>.</p>
+      For a group of radio buttons, use <stache-code>fieldset</stache-code> and <stache-code>legend</stache-code> elements to provide semantic structure. For people using assistive technology, the <stache-code>fieldset</stache-code> element groups the radio buttons to indicate the number of items in the group, and the <stache-code>legend</stache-code> element provides a description for the group. For more information on how to use <stache-code>fieldset</stache-code> and <stache-code>legend</stache-code>, see <a href="http://webaim.org/techniques/forms/controls#radio">WebAIM examples and guidance</a>.
+    </p>
+    <p>
+      For icon radio buttons, the <stache-code>label</stache-code> or <stache-code>labelledby</stache-code> input must be set. For people using assistive technology, the visible icon may not convey sufficient information.
+    </p>
   </sky-demo-page-content>
 
 </sky-demo-page>
