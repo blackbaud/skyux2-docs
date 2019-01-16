@@ -29,13 +29,13 @@
 
   <ul>
     <li>
-      <strong>Updates your application's <stache-code>package.json</stache-code> to the latest version of SKY UX and its dependencies</strong> - Since SKY UX no longer has hard dependencies on Angular, RxJS, etc., your application will need to add these as separate dependencies.  The migration plugin will add all of the appropriate dependencies for you.
+      <strong>Updates your application's <stache-code>package.json</stache-code> to the latest version of SKY UX and its dependencies</strong> - Since SKY UX no longer has hard dependencies on Angular, RxJS, etc., your application will need to cite these as separate dependencies.  The migration plugin will add all of the appropriate dependencies for you.
     </li>
     <li>
-      <strong>Adds the appropriate SKY UX modules to your application</strong> - The migration plugin searches your project's source code for known SKY UX components and types, then imports the approprate SKY UX Angular modules to your application's <stache-code>AppExtrasModule</stache-code>.
+      <strong>Adds the appropriate SKY UX modules to your application</strong> - In SKY UX 2, all SKY UX Angular modules were imported by default.  With SKY UX 3, your application will need to import the specific SKY UX modules that it uses.  The migration plugin searches your project's source code for known SKY UX components and types, then imports the approprate SKY UX modules to your application's <stache-code>AppExtrasModule</stache-code>.
     </li>
     <li>
-      <strong>Updates SKY UX import paths</strong> - Since all SKY UX types have moved to new packages, the migration plugin will find SKY UX imports in your TypeScript files and updates the import path to each type's new location.
+      <strong>Updates SKY UX import paths</strong> - Since all SKY UX types have moved to new packages, the migration plugin will find SKY UX imports in your TypeScript files and update the import path to each type's new location.
     </li>
   </ul>
 
@@ -44,14 +44,26 @@
   </stache-page-anchor>
 
   <p>
-    Before running the migration plugin, make sure your application's repo is in the appropriate state.  You should create a new branch with no other pending changes.  This way, if an error occurs during the migration, you can simply discard your branch's changes.  Also note that the migration plugin will delete both the <stache-code>node_modules</stache-code> folder, so make sure you haven't copied any files into this directory for testing purposes that you don't have backed up in another location.
+    Before running the migration plugin, make sure your application's repo is in the appropriate state.  You should create a new branch with no other pending changes.  This way, if an error occurs during the migration, you can simply discard your branch's changes.  Also note that the migration plugin will delete the <stache-code>node_modules</stache-code> folder, so make sure you haven't copied any files into this directory for testing purposes that you don't have backed up in another location.
   </p>
+
+  <stache-page-anchor>
+    Installing the latest CLI
+  </stache-page-anchor>
+
+  <p>
+    First, install the latest version of the SKY UX CLI:
+  </p>
+
+  <stache-code-block>
+    npm i @blackbaud/skyux-cli -g
+  </stache-code-block>
 
   <stache-page-anchor>
     Installing the migration plugin
   </stache-page-anchor>
 
-  To install the SKY UX CLI migration plugin, run the following command:
+  Next, install the migration plugin:
 
   <stache-code-block>
     npm i @blackbaud/skyux-builder-plugin-migrate -g
@@ -74,7 +86,7 @@
   </p>
 
   <p>
-    Once the migration process has completed, you will need to run <stache-code>npm install</stache-code> to install your project's new dependencies.
+    Once the migration process has completed, you will need to run <stache-code>skyux install</stache-code> to install your project's new dependencies.
   </p>
 
   <stache-page-anchor>
@@ -87,10 +99,10 @@
 
   <ul>
     <li>
-      <strong>Run <stache-code>skyux watch</stache-code> to launch your appliction</strong> - Successfully launching your application will be the first step in verifying the migration worked properly. Check your browser to see that your application is runnning properly.  If instead of seeing your application running, you see the green wait indicator, this means something likely went wrong.  Consult the troubleshooting guide below for steps to fix it.
+      <strong>Run <stache-code>skyux serve</stache-code> to launch your appliction</strong> - Successfully launching your application will be the first step in verifying the migration worked properly. Check your browser to see that your application is runnning properly.  If instead of seeing your application running, you see the green wait indicator, this means something went wrong.  Consult the troubleshooting guide below for steps to fix it.
     </li>
     <li>
-      <strong>Run <stache-code>skyux build</stache-code></strong> - This will ensure there are no problems <a href="https://angular-2-training-book.rangle.io/handout/aot/">AoT-compiling</a> your project.  Sometimes problems that do no present themselves during JIT compilation (such as during <stache-code>skyux watch</stache-code>) will occur during AoT compilation.
+      <strong>Run <stache-code>skyux build</stache-code></strong> - This will ensure there are no problems <a href="https://angular-2-training-book.rangle.io/handout/aot/">AoT-compiling</a> your project.  Sometimes problems that do no present themselves during JIT compilation (such as during <stache-code>skyux serve</stache-code>) will occur during AoT compilation.
     </li>
     <li>
       <strong>Run <stache-code>skyux test</stache-code></strong> - Ensure all of your unit tests continue to pass after the migration.
@@ -98,29 +110,44 @@
     <li>
       <strong>Run <stache-code>skyux e2e</stache-code> (if applicable)</strong> - If you have e2e tests in your project, you'll want to run those, too.
     </li>
+    <li>
+      <strong>Visually inspect your application in the browser</strong> - In Angular 6, the default value for the <stache-code>preserveWhitespaces</stache-code> Angular compiler option was changed from <stache-code>true</stache-code> to <stache-code>false</stache-code>.  This compiler option determines whether extra whitespace in an Angular component's template should be preserved or discarded when the template is compiled.  As a result of the change to the option's default value, you may have instances in your components where discarding this whitespace causes visual changes in your application.  If you can update these instances to not rely on preserving the template's whitespace, you should do so.  Otherwise, you may add the following to your application's <stache-code>tsconfig.json</stache-code> file:
+
+      <stache-code-block>
+        "angularCompilerOptions": {
+          "preserveWhitespaces": true
+        }
+      </stache-code-block>
+    </li>
+    <li>
+      <strong>Review each source file changed by the migration process</strong> - Review the diffs between each file and its previous version to ensure the files are formatted the way you expect. The migration plugin does its best to preserve existing whitespace when updating your project's import paths; however, f you find any odd whitespace issues, like imports being on the same line, it means the migration utility was unable to preserve the file's whitespace.  Fortunately, this does not mean that the migration process itself failed, so you may fix these instances manually without re-running the migration.
+    </li>
   </ul>
+
+  <stache-page-anchor>
+    Completing the migration
+  </stache-page-anchor>
+
+  <p>
+    If you've completed the above steps with no errors, then congratulations!  Your migration was a success, and you may commit, merge and publish your application as usual.  If you encountered one or more errors during the process, please see the troubleshooting guide below.
+  </p>
 
   <stache-page-anchor>
     Troubleshooting the migration
   </stache-page-anchor>
 
-  If you experience any problems during the migration process, look for your issue below along with steps to fix it.  Note that in some cases after identifying the issue and resolving it, you will need to discard your branch's changes and re-run the migration.
+  If you experience any problems during the migration process, see the common issues below along with their potential fixes.  Note that in some cases after identifying the issue and resolving it, you will need to discard your branch's changes and re-run the migration.
 
   <h3>
     The migration plugin reports the error <stache-code>Error: No package found for &lt;Type&gt;!</stache-code>
   </h3>
 
-  <ul>
-    <li>
-      Check the name of the type in the error message.  The migration plugin looks for types that are prefixed with <stache-code>Sky</stache-code> and assumes that they are part of the SKY UX library, and if the migration plugin cannot determine which SKY UX library defines that type, it will throw an error.  If the type is one that is defined in your own project, ensure that the type's name does not start with <stache-code>Sky</stache-code>.  If it does, discard your branch's changes, rename the type so that it does not start with <stache-code>Sky</stache-code>, then re-run the migration.
-    </li>
-    <li>
-      If the type is one that is defined by a SKY UX library, it is likely that the type was not accounted for in the migration plugin.  Take note of the type and report it to the SKY UX team by filing an issue on the <a href="https://github.com/blackbaud/skyux-builder-plugin-migrate">migration plugin's GitHub repo</a>.
-    </li>
-  </ul>
+  <p>
+    This error occurs when a type is imported from SKY UX in a TypeScript file, but the type is not accounted for by the migration plugin.  Take note of the type and report it to the SKY UX team by filing an issue on the <a href="https://github.com/blackbaud/skyux-builder-plugin-migrate">migration plugin's GitHub repo</a>.  Note that this error might occur when an application imports individual SKY UX modules into their unit test's <stache-code>TestBed</stache-code> configuration, and the imported module is not intended to be used on its own.  For example, there is a <stache-code>SkyListColumnSelectorActionModule</stache-code> that is exported by the higher-level <stache-code>SkyListBuilderViewGridModule</stache-code>.  In these cases, you should import the higher-level module instead.  Alternately, you can import <stache-code>SkyAppTestModule</stache-code> from <stache-code>@blackbaud/skyux-builder/runtime/testing/browser</stache-code> which will import all SKY UX modules used by your application along with all components.  This approach results in less code and complexity in your tests but also causes a slight increase in test run time.
+  </p>
 
   <h3>
-    Running <stache-code>npm install</stache-code> results in an unmet peer dependency warning
+    Running <stache-code>npm install</stache-code> or <stache-code>skyux install</stache-code> results in an unmet peer dependency warning
   </h3>
 
   <p>
@@ -136,11 +163,11 @@
   </p>
 
   <h3>
-    The whitespace around TypeScript files' <stache-code>import</stache-code> statements is wonky
+    Errors involving RxJS occur, such as <stache-code>Observable.&lt;foo&gt; is not a function</stache-code>
   </h3>
 
   <p>
-    The migration plugin does its best to preserve existing whitespace when updating your project's import paths.  If you find any odd whitespace issues, like imports being on the same line, it means the migration utility was unable to preserve the file's whitespace.  Fortunately, this does not mean that the migration process itself failed, so you may just fix these instances manually without re-running the migration.
+    When Angular 6 was released, its peer dependency on RxJS was upgraded from version 5 to version 6.  Since SKY UX 3 depends on Angular 7, that means your application will now also use RxJS 6.  While the <stache-code>rxjs-compat</stache-code> library included in the migration will allow your application to continue to function for the most part, there are <a href="https://github.com/ReactiveX/rxjs/blob/master/docs_app/content/guide/v6/migration.md#breaking-changes">some breaking changes</a> that will need to be address manually.  It is recommended that you take the opporutnity to migrate your application to the new <a href="https://github.com/ReactiveX/rxjs/blob/master/docs_app/content/guide/v6/migration.md#operator-pipe-syntax">operator pipe syntax</a> during this migration process as it will bring the code up-to-date with the latest RxJS standards and documentation.  See the <a href="https://github.com/ReactiveX/rxjs/blob/master/docs_app/content/guide/v6/migration.md">RxJS v5.x to v6 Update Guide</a> for all you need to know about migrating to RxJS 6.  Note that the RxJS migration guide mentions using <stache-code>rxjs-tslint</stache-code> to automatically refactor code to not depend on <stache-code>rxjs-compat</stache-code>, but this did not prove to be true in our tests.  It seemed to simply combine all RxJS import statements into one import, and it left the non-pipe syntax intact.  It is recommended you not use this library and instead update your code manually.
   </p>
 
 </stache>
