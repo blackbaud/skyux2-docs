@@ -24,20 +24,26 @@
 
   <sky-demo-page-properties sectionHeading="Colorpicker events">
     <sky-demo-page-property
+      propertyName="selectedColorApplied">
+      Fires when users click <strong>Apply</strong> in the colorpicker to apply a color.
+    </sky-demo-page-property>
+    <sky-demo-page-property
       propertyName="selectedColorChanged">
-      Fires when users select a color. Returns an object with the following properties:
-    <div><pre>
-{{'{'}}
-  hslaText: string
-  rgbaText: string
-  cmykText: string
-  hsva: {{'{'}} hue:  number, saturation: number, value: number,      alpha: number{{'}'}}
-  rgba: {{'{'}} red:  number, green: number,      blue: number,       alpha: number{{'}'}}
-  hsla: {{'{'}} hue:  number, saturation: number, lightness: number,  alpha: number{{'}'}}
-  cmyk: {{'{'}} cyan: number, magenta: number,    yellow: number,     key: number  {{'}'}}
-  hex:  string
-{{'}'}}</pre></div>
-      </sky-demo-page-property>
+      Fires when users select a color within the colorpicker.
+      <div style="margin-top: 10px;">Both events return an object with the following properties:
+        <pre>
+        {{'{'}}
+          hslaText: string
+          rgbaText: string
+          cmykText: string
+          hsva: {{'{'}} hue:  number, saturation: number, value: number,      alpha: number{{'}'}}
+          rgba: {{'{'}} red:  number, green: number,      blue: number,       alpha: number{{'}'}}
+          hsla: {{'{'}} hue:  number, saturation: number, lightness: number,  alpha: number{{'}'}}
+          cmyk: {{'{'}} cyan: number, magenta: number,    yellow: number,     key: number  {{'}'}}
+          hex:  string
+        {{'}'}}
+        </pre></div>
+    </sky-demo-page-property>
   </sky-demo-page-properties>
 
   <sky-demo-page-properties sectionHeading="Colorpicker input directive properties">
