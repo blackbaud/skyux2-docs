@@ -24,6 +24,12 @@
       Sets the radio button group's <stache-code>aria-labelledby</stache-code> attribute to support accessibility. The value should be the HTML element ID (without the leading #) of the element that labels the radio button group. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
+      propertyName="tabIndex"
+      isOptional="true"
+    >
+       Specifies an index for the radio button. If the index is not defined, it is set to the position of the radio button on load.
+    </sky-demo-page-property>
+    <sky-demo-page-property
       propertyName="value"
       isOptional="true"
     >
@@ -92,7 +98,7 @@
       defaultValue="0"
       isOptional="true"
     >
-    This property is deprecated. It specifies an index for the radio button. If the index is not defined, it is set to the position of the radio button on load.
+    This property is deprecated in favor of using the <stache-code>tabIndex</stache-code> on the <stache-code>radio-group</stache-code> element. It specifies an index for the radio button. If the index is not defined, it is set to the position of the radio button on load.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -115,6 +121,9 @@
     </p>
     <p>
       For icon radio buttons, the <stache-code>label</stache-code> or <stache-code>labelledby</stache-code> input must be set. For people using assistive technology, the visible icon may not convey sufficient information.
+    </p>
+    <p>
+      According to accessibility guidelines, focus on a group of radio button elements should only ever focus the currently selected radio button or if one isn't selected, the first/last button depending on the direction navigated from. So the <stache-code>tabIndex</stache-code> of a group of radio buttons should be placed on the <stache-code>radio-group</stache-code> element.
     </p>
   </sky-demo-page-content>
 
