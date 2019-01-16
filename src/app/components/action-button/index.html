@@ -13,6 +13,15 @@
     </p>
   </sky-demo-page-summary>
 
+  <sky-demo-page-properties sectionHeading="Action button properties">
+    <sky-demo-page-property
+      propertyName="permalink"
+      isOptional="true"
+    >
+      Sets the action button to be a link. This property accepts the <stache-code>SkyActionButtonPermalink</stache-code> object type. You can either set the <stache-code>route</stache-code> property or the <stache-code>url</stache-code> property of <stache-code>SkyActionButtonPermalink</stache-code>. If both are set, the <stache-code>route</stache-code> property will be used.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
   <sky-demo-page-properties sectionHeading="Action button events">
     <sky-demo-page-property
       propertyName="actionClick">
@@ -24,6 +33,21 @@
     <sky-demo-page-property
       propertyName="iconType">
       Specifies an icon to be used from the Font Awesome library. For example, to use the <stache-code>fa-filter</stache-code> icon, use <stache-code>filter</stache-code> as the <stache-code>iconType</stache-code>.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-properties sectionHeading="SkyActionButtonPermalink properties">
+    <sky-demo-page-property
+      propertyName="route"
+      isOptional="true"
+    >
+      Sets the action button to use an Angular Router link. A custom object with a <stache-code>commands</stache-code> property for router commands and a <stache-code>extras</stache-code> property for angular <a href="https://angular.io/api/router/NavigationExtras">NavigationExtras</a>.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="url"
+      isOptional="true"
+    >
+      Sets the action button to use a direct link. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
