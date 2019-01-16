@@ -37,7 +37,19 @@ export class SkyDemoPageComponent implements OnInit, AfterContentInit {
   }
 
   @Input()
+  public set packageName(value: string) {
+    this._packageName = value;
+    this.npmInstall = value && `npm install ${value} --save --save-exact`;
+  }
+
+  public get packageName(): string {
+    return this._packageName;
+  }
+
+  @Input()
   public summary: string;
+
+  public npmInstall: string;
 
   public tableOfContentsRoutes: any[] = [];
 
@@ -52,8 +64,11 @@ export class SkyDemoPageComponent implements OnInit, AfterContentInit {
   @ContentChildren(SkyDemoPageContentComponent)
   private contentComponents: QueryList<SkyDemoPageContentComponent>;
 
+  private _packageName: string;
+
   constructor(
-    private titleService: SkyDemoTitleService) { }
+    private titleService: SkyDemoTitleService
+  ) { }
 
   public ngOnInit() {
     this.updateTitle();
