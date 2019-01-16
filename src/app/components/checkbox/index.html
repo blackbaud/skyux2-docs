@@ -12,6 +12,13 @@
 
   <sky-demo-page-properties sectionHeading="Checkbox properties">
     <sky-demo-page-property
+      propertyName="checkboxType"
+      defaultValue="info"
+      isOptional="true"
+    >
+    Specifies a type for a checkbox that uses the <stache-code>icon</stache-code> property. When users select the icon, this property changes its background color. The valid options correspond to the label types from the <a stacheRouterLink="/components/label">label component</a>, and they include <stache-code>info</stache-code>, which creates a blue background, <stache-code>success</stache-code>, which creates a green background, <stache-code>warning</stache-code>, which creates an orange background, and <stache-code>danger</stache-code>, which creates a red background. This property accepts <stache-code>string</stache-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
       propertyName="checked"
       defaultValue="false"
       isOptional="true"
@@ -54,13 +61,6 @@
       isOptional="true"
     >
     Specifies a name for a group of checkboxes. This property accepts <stache-code>string</stache-code> values. If you do not specify an ID, an auto-incrementing integer generates unique IDs.
-    </sky-demo-page-property>
-    <sky-demo-page-property
-      propertyName="checkboxType"
-      defaultValue="info"
-      isOptional="true"
-    >
-    Specifies a type for a checkbox that uses the <stache-code>icon</stache-code> property. When users select the icon, this property changes its background color. The valid options correspond to the label types from the <a stacheRouterLink="/components/label">label component</a>, and they include <stache-code>info</stache-code>, which creates a blue background, <stache-code>success</stache-code>, which creates a green background, <stache-code>warning</stache-code>, which creates an orange background, and <stache-code>danger</stache-code>, which creates a red background. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="tabIndex"
