@@ -1,17 +1,12 @@
 <sky-demo-page
   pageTitle="Flyout"
   skyuxModule="SkyFlyoutModule"
-  packageName="@skyux/flyout"
 >
 
   <sky-demo-page-summary>
     <p>
-      The flyout service launches a container over a page's content to display large quantities of supplementary information related to a task. The <stache-code>SkyFlyoutService</stache-code> provider lauches flyouts and provides a common look-and-feel. The <stache-code>SkyFlyoutInstance</stache-code> class watches for and triggers flyout events.
+      The flyout service launches a container over a page's content to display large quantities of supplementary information related to a task. The <stache-code>SkyFlyoutService</stache-code> provider gives flyouts a common look and feel. This service dynamically generates the flyout component and appends it directly to the document's <stache-code>body</stache-code> element. The <stache-code>SkyFlyoutInstance</stache-code> class watches for and triggers flyout events.
     </p>
-    <sky-alert
-      alertType="info">
-      The <stache-code>SkyFlyoutService</stache-code> dynamically generates the flyout component and appends it directly to the document's <stache-code>body</stache-code> element.
-    </sky-alert>
   </sky-demo-page-summary>
 
   <sky-demo-page-properties sectionHeading="Flyout service methods">
@@ -19,12 +14,14 @@
       The <stache-code>SkyFlyoutService</stache-code> launches flyouts and provides a common look and feel.
     </p>
     <sky-demo-page-property
-      propertyName="open(component, config?)">
-      Opens a flyout and displays the specified component. The <stache-code>component</stache-code> parameter determines the component to render. The optional <stache-code>config</stache-code> parameter is of type <stache-code>SkyFlyoutConfig</stache-code> and is passed to the specified component's constructor. This method returns a <stache-code>SkyFlyoutInstance</stache-code> instance.
+      propertyName="close()"
+    >
+      Closes the flyout. This method also removes the flyout's HTML elements from the DOM.
     </sky-demo-page-property>
     <sky-demo-page-property
-      propertyName="close()">
-      Closes the flyout. This method also removes the flyout's HTML elements from the DOM.
+      propertyName="open(component, config?)"
+    >
+      Opens a flyout and displays the specified component. The <stache-code>component</stache-code> parameter determines the component to render. The optional <stache-code>config</stache-code> parameter is of type <stache-code>SkyFlyoutConfig</stache-code> and is passed to the specified component's constructor. This method returns a <stache-code>SkyFlyoutInstance</stache-code> object.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -32,56 +29,78 @@
     <p>
       Specifies the configuration options to set up a flyout.
     </p>
+
     <sky-demo-page-property
-      propertyName="providers"
+      propertyName="ariaDescribedBy"
       isOptional="true"
     >
-      Specifies an array of custom providers to pass to the component's constructor.
-    </sky-demo-page-property>
-    <sky-demo-page-property
-      propertyName="ariaRole"
-      isOptional="true"
-    >
-      Sets the flyout's <stache-code>role</stache-code> attribute to support accessibility.
+      Sets the flyout's <stache-code>aria-describedby</stache-code> attribute to support accessibility. The value should be the HTML element ID (without the leading <stache-code>#</stache-code>) of the element that describes the flyout. Typically, the description includes text on the flyout but not on items that users interact with such as buttons and forms. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="ariaLabelledBy"
       isOptional="true"
     >
-      Sets the flyout's <stache-code>aria-labelledby</stache-code> attribute to support accessibility. The value should be the HTML element ID (without the leading <stache-code>#</stache-code>) of the element that labels the flyout.
+      Sets the flyout's <stache-code>aria-labelledby</stache-code> attribute to support accessibility. The value should be the HTML element ID (without the leading <stache-code>#</stache-code>) of the element that labels the flyout. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
-      propertyName="ariaDescribedBy"
+      propertyName="ariaRole"
       isOptional="true"
     >
-      Sets the flyout's <stache-code>aria-describedby</stache-code> attribute to support accessibility. The value should be the HTML element ID (without the leading <stache-code>#</stache-code>) of the element that describes the flyout. Typically, this is the text on the flyout but does not include items that users interact with such as buttons and forms.
+      Specifies an ARIA role for the flyout to support accessibility by indicating how the flyout functions and what it controls. The ARIA role indicates what the flyout represents on the web page. For information about ARIA roles, see the <a href="https://www.w3.org/WAI/PF/aria/roles">WAI-ARIA roles model</a>. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="defaultWidth"
-      defaultValue="500px"
+      defaultValue="500"
       isOptional="true"
     >
-      Specifies the default width of the flyout container.
+      Specifies the default width of the flyout container. This property accepts <stache-code>number</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
-      propertyName="minWidth"
-      defaultValue="320px"
+      propertyName="iteratorNextButtonDisabled"
+      defaultValue="false"
       isOptional="true"
     >
-      Specifies the minimum resize width of the flyout container.
+      Disables the next iterator button in the flyout header that accesses the next record in a record set. This property accepts <stache-code>boolean</stache-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="iteratorPreviousButtonDisabled"
+      defaultValue="false"
+      isOptional="true"
+    >
+      Disables the previous iterator button in the flyout header that accesses the previous record in a record set. This property accepts <stache-code>boolean</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="maxWidth"
       defaultValue="defaultWidth"
       isOptional="true"
     >
-      Specifies the maximum resize width of the flyout container.
+      Specifies the maximum resize width of the flyout container. This property accepts <stache-code>number</stache-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="minWidth"
+      defaultValue="320"
+      isOptional="true"
+    >
+      Specifies the minimum resize width of the flyout container. This property accepts <stache-code>number</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="permalink"
       isOptional="true"
     >
       Displays a permalink button in the flyout header that navigates users to the URL (or application route) representative of the flyout's contents. This value is of type <stache-code>SkyFlyoutPermalink</stache-code>.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="providers"
+      isOptional="true"
+    >
+      Specifies an array of custom providers to pass to the component's constructor. This property accepts an array of <stache-code>any</stache-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="showIterator"
+      defaultValue="false"
+      isOptional="true"
+    >
+      Indicates whether to display iterator buttons in the flyout header to allow users to access the next and previous records in a record set. This property accepts <stache-code>boolean</stache-code> values.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -90,37 +109,66 @@
       propertyName="label"
       isOptional="true"
     >
-      Specifies a text label for the permalink button.
+      Specifies a text label for the permalink button. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="route"
       isOptional="true"
     >
-      An object that represents the Angular application route. The object includes two properties that are mapped to Angular's <a href="https://angular.io/api/router/Router#navigate"><stache-code>Router.navigate(commands, extras?)</stache-code></a> method.
+      Specifies an object that represents the Angular application route. The object includes two properties that are mapped to Angular's <a href="https://angular.io/api/router/Router#navigate"><stache-code>Router.navigate(commands, extras?)</stache-code></a> method.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="url"
       isOptional="true"
     >
-      Specifies an external URL for the permalink.
+      Specifies an external URL for the permalink. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
   <sky-demo-page-properties sectionHeading="SkyFlyoutInstance properties">
     <p>
-      An object that represents a single displayed flyout.
+      The <stache-code>SkyFlyoutService</stache-code> launches flyouts and returns a <stache-code>SkyFlyoutInstance</stache-code> object to represent a single displayed flyout.
     </p>
      <sky-demo-page-property
-      propertyName="close()">
+      propertyName="close()"
+    >
       Closes the flyout instance and emits its <stache-code>closed</stache-code> event.
     </sky-demo-page-property>
     <sky-demo-page-property
-      propertyName="closed">
-      An event that the flyout instance emits when it is closed.
+      propertyName="closed"
+    >
+      An event that the flyout instance emits when it closes.
     </sky-demo-page-property>
     <sky-demo-page-property
-      propertyName="componentInstance">
+      propertyName="componentInstance"
+    >
       Specifies the instance of the component to display in the flyout.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="isOpen"
+      defaultValue="true"
+    >
+      A <stache-code>boolean</stache-code> value that returns <stache-code>true</stache-code> if the flyout is open.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="iteratorNextButtonClick"
+    >
+      An event that the flyout instance emits when users click the next iterator button.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="iteratorNextButtonDisabled"
+    >
+      Disables the next iterator button. This property accepts <stache-code>boolean</stache-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="iteratorPreviousButtonClick"
+    >
+      An event that the flyout instance emits when users click the previous iterator button.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="iteratorPreviousButtonDisabled"
+    >
+      Disables the previous iterator button. This property accepts <stache-code>boolean</stache-code> values.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
