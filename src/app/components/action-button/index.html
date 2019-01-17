@@ -6,10 +6,10 @@
 
   <sky-demo-page-summary>
     <p>
-      The action button component creates a large button with an icon, header, and details. These buttons are used in sets to present users with multiple, branching options to move forward with a task.
+      The action button component creates a large button with an icon, header, and description. Action buttons present users with multiple, branching options to move forward with tasks.
     </p>
     <p>
-      The <stache-code>sky-action-button-container</stache-code> component insures that all inner <stache-code>sky-action-button</stache-code> coponents have consistent height and spacing. The <stache-code>sky-action-button</stache-code> component consists of three inner components: <stache-code>sky-action-button-icon</stache-code>, <stache-code>sky-action-button-header</stache-code>, and <stache-code>sky-action-button-details</stache-code>.
+      The <stache-code>sky-action-button-container</stache-code> component wraps <stache-code>sky-action-button</stache-code> components and ensures that they have consistent height and spacing. The <stache-code>sky-action-button</stache-code> component consists of three inner components: <stache-code>sky-action-button-icon</stache-code>, <stache-code>sky-action-button-header</stache-code>, and <stache-code>sky-action-button-details</stache-code>.
     </p>
   </sky-demo-page-summary>
 
@@ -18,21 +18,21 @@
       propertyName="permalink"
       isOptional="true"
     >
-      Sets the action button to be a link. This property accepts the <stache-code>SkyActionButtonPermalink</stache-code> object type. You can either set the <stache-code>route</stache-code> property or the <stache-code>url</stache-code> property of <stache-code>SkyActionButtonPermalink</stache-code>. If both are set, the <stache-code>route</stache-code> property will be used.
+      Specifies a link for the action button. This property accepts the <stache-code>SkyActionButtonPermalink</stache-code> object type, which specifies an Angular router link with the <stache-code>route</stache-code> property or a direct link the <stache-code>url</stache-code> property. If <stache-code>SkyActionButtonPermalink</stache-code> provides both, the action button uses the <stache-code>route</stache-code> property.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
   <sky-demo-page-properties sectionHeading="Action button events">
     <sky-demo-page-property
       propertyName="actionClick">
-      Fires when the user clicks the action button.
+      Fires when users click the action button.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
   <sky-demo-page-properties sectionHeading="Action button icon properties">
     <sky-demo-page-property
       propertyName="iconType">
-      Specifies an icon to be used from the Font Awesome library. For example, to use the <stache-code>fa-filter</stache-code> icon, use <stache-code>filter</stache-code> as the <stache-code>iconType</stache-code>.
+      Specifies an icon from the Font Awesome library. For example, to display the <stache-code>fa-filter</stache-code> icon on the action button, set <stache-code>iconType</stache-code> to <stache-code>filter</stache-code>. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -41,13 +41,13 @@
       propertyName="route"
       isOptional="true"
     >
-      Sets the action button to use an Angular Router link. A custom object with a <stache-code>commands</stache-code> property for router commands and a <stache-code>extras</stache-code> property for angular <a href="https://angular.io/api/router/NavigationExtras">NavigationExtras</a>.
+      Specifies an Angular router link for the action button. This property accepts a custom object with a <stache-code>commands</stache-code> property for router commands and an <stache-code>extras</stache-code> property for Angular <a href="https://angular.io/api/router/NavigationExtras"><stache-code>NavigationExtras</stache-code></a>.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="url"
       isOptional="true"
     >
-      Sets the action button to use a direct link. This property accepts <stache-code>string</stache-code> values.
+      Specifies a direct link for the action button. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
