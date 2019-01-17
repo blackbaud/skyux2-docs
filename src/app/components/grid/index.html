@@ -24,7 +24,7 @@
       defaultValue="false"
       isOptional="true"
     >
-    Indicates whether to enable the multiselect feature to display a column of checkboxes on the left side of the grid. You can specify a unique ID with the <stache-code>multiselectRowId</stache-code> property; if not, then multiselect defaults to the <stache-code>id</stache-code> property on the <stache-code>data</stache-code> object. This property accepts <stache-code>boolean</stache-code> values. If you need to include options to select and clear all multiselect checkboxes, we recommend using the <a routerLink="/components/list/grid">list view grid</a> component.
+    Indicates whether to enable the multiselect feature to display a column of checkboxes on the left side of the grid. You can specify a unique ID with the <stache-code>multiselectRowId</stache-code> property; if not, then multiselect defaults to the <stache-code>id</stache-code> property on the <stache-code>data</stache-code> object. This property accepts <stache-code>boolean</stache-code> values. If you need to include options to select and clear all multiselect checkboxes, we recommend using the <a routerLink="/components/list/grid">list view grid</a> component. This property accepts <stache-code>boolean</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="fit"
@@ -62,7 +62,13 @@
       propertyName="multiselectRowId"
       isOptional="true"
     >
-    Specifies a unique ID that matches a property on the <stache-code>data</stache-code> object. This property accepts <stache-code>string</stache-code> values. By default, the property defaults to the <stache-code>id</stache-code> property on the <stache-code>data</stache-code> object. 
+    Specifies a unique ID that matches a property on the <stache-code>data</stache-code> object. By default, the property defaults to the <stache-code>id</stache-code> property on the <stache-code>data</stache-code> object. This property accepts <stache-code>string</stache-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="rowHighlightedId"
+      isOptional="true"
+    >
+    Specifies the ID of the row to highlight. The ID matches the <stache-code>id</stache-code> property of the <stache-code>data</stache-code> object. Typically, this property is used in conjunction with the flyout component to indicate the currently selected row. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="selectedColumnIds"
