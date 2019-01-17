@@ -6,64 +6,66 @@
 
   <sky-demo-page-summary>
     <p>
-      This list view grid component displays a grid for a SKY UX-themed list of data. Internally, the <stache-code>sky-list-view-grid</stache-code> uses <a routerLink="../../grid">the <stache-code>sky-grid</stache-code> component</a>, which contains documentation for <stache-code>sky-grid-column</stache-code>.
-    </p>
-    <p>
-      The list view grid component is designed for use within <a routerLink="../overview">a list component</a>.
+      The list view grid component displays a grid for a SKY UX-themed list of data. It is designed for use within <a routerLink="../overview">a list component</a>. Internally, the <stache-code>sky-list-view-grid</stache-code> uses <a routerLink="../../grid">the <stache-code>sky-grid</stache-code> component</a>, which contains documentation for <stache-code>sky-grid-column</stache-code>.
     </p>
   </sky-demo-page-summary>
 
   <sky-demo-page-properties>
     <sky-demo-page-property
+      propertyName="name"
+      [isOptional]="false"
+    >
+    Specifies the name of the view. This property accepts <stache-code>string</stache-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
       propertyName="displayedColumns"
       isOptional="true"
     >
-    Specifies columns to display by default. Will match off of the ID or field of the item. Acceptable values: <stache-code>Array of strings or Observable Array of strings</stache-code>.
+    Specifies the columns to display by default based on the ID or field of the item. This property accepts an array or Observable array of <stache-code>string</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="fit"
       defaultValue="width"
       isOptional="true"
     >
-    Specifies how the grid should fit to its parent.
-    Acceptable values: <stache-code>'width' or 'scroll'</stache-code>.
+    Specifies how the grid fits to its parent. The valid options are <stache-code>width</stache-code>, which fits the grid to the parent's full width, and <stache-code>scroll</stache-code>, which allows the grid to exceed the parent's width. If the grid does not have enough columns to fill the parent's width, it always stretches to the parent's full width. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="height"
       isOptional="true"
     >
-    Specifies the height of the grid. Acceptable values: <stache-code>number or Observable number</stache-code>.
+    Specifies the height of the grid. This property accepts <stache-code>number</stache-code> or <stache-code>Observable number</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="hiddenColumns"
       isOptional="true"
     >
-    Specifies the columns to hide by default. Will match off of the ID or field of the item. Acceptable values: <stache-code>Array of strings or Observable Array of strings</stache-code>.
+    Specifies the columns to hide by default based on the ID or field of the item. This property accepts an array or Observable array of <stache-code>string</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
-      propertyName="name"
-      [isOptional]="false"
+      propertyName="highlightSearchText"
+      defaultValue="true"
+      isOptional="true"
     >
-    Specifies the name of the view. Acceptable values: <stache-code>string</stache-code>.
+    Indicates whether to highlight search text within the grid. The property accepts <stache-code>boolean</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="rowHighlightedId"
       isOptional="true"
     >
-    Specifies the id of the row to highlight. Will match the <stache-code>id</stache-code> property of the <stache-code>data</stache-code> object. Typically used in conjunction with the flyout component to indicate which row is currently selected. Acceptable values: <stache-code>string</stache-code>.
+    Specifies the ID of the row to highlight. The ID matches the <stache-code>id</stache-code> property of the <stache-code>data</stache-code> object. Typically, this property is used in conjunction with the flyout component to indicate the currently selected row. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="search"
       isOptional="true"
     >
-    Specify a search function to apply on the view data. Acceptable value: <stache-code>(data: any, searchText: string) => boolean</stache-code>.
+    Specifies a search function to apply on the view data. This property accepts of type <stache-code>(data: any, searchText: string) => boolean</stache-code>.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="width"
-      defaultValue="category"
       isOptional="true"
     >
-    Specifies the width of the grid. Acceptable values: <stache-code>number or Observable number</stache-code>.
+    Specifies the width of the grid. This property accepts <stache-code>number</stache-code> or <stache-code>Observable number</stache-code> values.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -71,7 +73,7 @@
     <sky-demo-page-property
       propertyName="selectedColumnIdsChange"
     >
-    Fires when the columns change. This includes changes to the columns to display in the list view grid and changes to the order of columns. The event emits an array of IDs for the displayed columns that reflects the column order.
+    Fires when columns change. This includes changes to hide or display columns and changes to the order of columns. The event emits an array of IDs for the displayed columns that reflects the column order.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -79,7 +81,7 @@
     <sky-demo-page-property
       propertyName="sky-list-column-selector-action"
     >
-    The <stache-code>sky-list-column-selector-action</stache-code> component can be used within the list toolbar component to provide a column selector modal for a grid view. Set the <stache-code>gridView</stache-code> property of the <stache-code>sky-list-column-selector-action</stache-code> to enable the column selector.
+    The <stache-code>sky-list-column-selector-action</stache-code> component is available in the list toolbar component to provide a column selector modal for a grid view. To enable the column selector, set the <stache-code>gridView</stache-code> property of the <stache-code>sky-list-column-selector-action</stache-code>.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
