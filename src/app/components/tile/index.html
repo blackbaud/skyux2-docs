@@ -106,6 +106,24 @@
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
+  <sky-demo-page-properties sectionHeading="Tile dashboard service methods">
+    <sky-demo-page-property
+      propertyName="addTileComponent(tile: SkyTileDashboardConfigLayoutTile, component: ComponentRef<SkyTileComponent>): void"
+    >
+      Adds a new tile to the tile dashboard. The <stache-code>tile</stache-code> parameter specifies the added tile's configuration. The <stache-code>component</stache-code> parameter specifies the added tile's component.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="tileIsCollapsed(tile: SkyTileComponent): boolean"
+    >
+      Gets whether a specified tile is collapsed. The <stache-code>tile</stache-code> parameter specifies the tile to check. This method returns a <stache-code>boolean</stache-code> value.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="setTileCollapsed(tile: SkyTileComponent, isCollapsed: boolean): void"
+    >
+      Sets the collapsed state of a specified tile. The <stache-code>tile</stache-code> parameter specifies the tile to set. The <stache-code>isCollapsed</stache-code> parameter specifies whether the tile should be collapsed.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
   <sky-demo-page-properties sectionHeading="Tile dashboard service events">
     <sky-demo-page-property
       propertyName="dashboardInitialized"
