@@ -6,7 +6,7 @@
 
   <sky-demo-page-summary>
     <p>
-      The checkbox component is a SKY UX-themed replacement for the HTML <stache-code>input</stache-code> element of <stache-code>type="checkbox"</stache-code>. The value that is selected is driven through the <stache-code>ngModel</stache-code> attribute that you specify on the <stache-code>sky-checkbox</stache-code> element.
+      The checkbox component is a SKY UX-themed replacement for the HTML <stache-code>input</stache-code> element of <stache-code>type="checkbox"</stache-code>. When users select a checkbox, its value is driven through an <stache-code>ngModel</stache-code> attribute that you specify on the <stache-code>sky-checkbox</stache-code> element.
     </p>
   </sky-demo-page-summary>
 
@@ -16,58 +16,58 @@
       defaultValue="info"
       isOptional="true"
     >
-    Specifies a type for a checkbox that uses the <stache-code>icon</stache-code> property. When users select the icon, this property changes its background color. The valid options correspond to the label types from the <a stacheRouterLink="/components/label">label component</a>, and they include <stache-code>info</stache-code>, which creates a blue background, <stache-code>success</stache-code>, which creates a green background, <stache-code>warning</stache-code>, which creates an orange background, and <stache-code>danger</stache-code>, which creates a red background. This property accepts <stache-code>string</stache-code> values.
+    Specifies a type to set the background color after users select a checkbox where the <stache-code>icon</stache-code> property displays an icon in place of the checkbox. The valid options correspond to <a stacheRouterLink="/components/label">the label component's</a> label types. <stache-code>info</stache-code> creates a blue background, <stache-code>success</stache-code> creates a green background, <stache-code>warning</stache-code> creates an orange background, and <stache-code>danger</stache-code> creates a red background. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="checked"
       defaultValue="false"
       isOptional="true"
     >
-    Indicates whether the checkbox is selected. This property accepts <stache-code>boolean</stache-code> values.
+    Indicates whether to select the checkbox. This property accepts <stache-code>boolean</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="disabled"
       defaultValue="false"
       isOptional="true"
     >
-    Indicates whether the checkbox is disabled. This property accepts <stache-code>boolean</stache-code> values.
+    Indicates whether to disable the checkbox. This property accepts <stache-code>boolean</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="icon"
       isOptional="true"
     >
-    Specifies an icon to display in place of the checkbox. This property accepts <stache-code>string</stache-code> values. If you want to use the icon checkbox group display in the demo, the <stache-code>sky-switch-icon-group</stache-code> class can be placed on the direct parent element of the checkboxes.
+    Specifies an icon to display in place of the checkbox. To group icon checkboxes like <a stacheRouterLink="." fragment="demo">the demo below</a>, place the <stache-code>sky-switch-icon-group</stache-code> class on the direct parent element of the checkboxes. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="id"
       isOptional="true"
     >
-    Specifies an ID for the checkbox. If you do not specify an ID, an auto-incrementing integer generates unique IDs.
+    Specifies an ID for the checkbox. If you do not specify an ID, an auto-incrementing integer generates a unique ID.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="label"
       isOptional="true"
     >
-    Defines an ARIA label for the checkbox to support accessibility when the checkbox does not include a visible label. This property must be set if you are using an icon checkbox (see <a href="skyux/components/checkbox#accessibility">accessibility</a>). This property accepts <stache-code>string</stache-code> values.
+    Defines an ARIA label for the checkbox to support <a stacheRouterLink="." fragment="accessibility">accessibility</a>. If the checkbox includes a visible label on the screen, use the <stache-code>labelledBy</stache-code> property instead. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="labelledBy"
       isOptional="true"
     >
-    Sets the checkbox's <stache-code>aria-labelledby</stache-code> attribute to support accessibility. The value should be the HTML element ID (without the leading #) of the element that labels the checkbox. If the checkbox does not include a visible label on the screen, use the <stache-code>label</stache-code> property instead. This property accepts <stache-code>string</stache-code> values.
+    Sets the checkbox's <stache-code>aria-labelledby</stache-code> attribute to support <a stacheRouterLink="." fragment="accessibility">accessibility</a>. The value should be the HTML element ID (without the leading #) of the element that labels the checkbox. If the checkbox does not include a visible label on the screen, use the <stache-code>label</stache-code> property instead. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="name"
       isOptional="true"
     >
-    Specifies a name for a group of checkboxes. This property accepts <stache-code>string</stache-code> values. If you do not specify an ID, an auto-incrementing integer generates unique IDs.
+    Specifies a name for a group of checkboxes. If you do not specify a name, an auto-incrementing integer generates a unique ID. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="tabIndex"
       defaultValue="0"
       isOptional="true"
     >
-    It specifies an index for the checkbox. If the index is not defined, it is set to the position of the checkbox on load.
+    Specifies an index for the checkbox. If the index is not defined, it is set to the position of the checkbox on load. This property accepts <stache-code>number</stache-code> values.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
