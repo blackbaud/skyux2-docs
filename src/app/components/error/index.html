@@ -5,7 +5,7 @@
 >
 
   <sky-demo-page-summary>
-    The error component displays a SKY UX-themed error message. It includes options to specify the image, title, description, and action.
+    The error component displays a SKY UX-themed error message. It includes options to specify an image, title, description, and action in the error message.
   </sky-demo-page-summary>
 
   <sky-demo-page-properties
@@ -15,14 +15,27 @@
       propertyName="errorType"
       [isOptional]="false"
     >
-      An attribute to specify a set of pre-defined values for the image, title, and description. The valid options are <stache-code>broken</stache-code>,
-      <stache-code>notfound</stache-code>, <stache-code>construction</stache-code>, and <stache-code>security</stache-code>.
+      Specifies an error type to use a set of pre-defined values for the image, title, and description. The valid options are <stache-code>broken</stache-code>,
+      <stache-code>construction</stache-code>, <stache-code>notfound</stache-code>, and <stache-code>security</stache-code>. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
   <sky-demo-page-properties
     sectionHeading="Error child components"
   >
+    <sky-demo-page-property
+      propertyName="sky-error-action"
+      [isOptional]="true"
+    >
+      Specifies an action to include in the error message. For example, you can include a button to reload the page or to refresh
+      data.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="sky-error-description"
+      [isOptional]="true"
+    >
+      Specifies a description to provide additional details in the error message. Properties are listed <a stacheRouterLink="." fragment="error-description-properties">below</a>.
+    </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="sky-error-image"
       [isOptional]="true"
@@ -33,20 +46,7 @@
       propertyName="sky-error-title"
       [isOptional]="true"
     >
-      Specifies a title to display in the error message. Properties are listed <a href="skyux/components/error#error-title-properties">below</a>.
-    </sky-demo-page-property>
-    <sky-demo-page-property
-      propertyName="sky-error-description"
-      [isOptional]="true"
-    >
-      Specifies a description to provide additional details in the error message. Properties are listed <a href="skyux/components/error#error-description-properties">below</a>.
-    </sky-demo-page-property>
-    <sky-demo-page-property
-      propertyName="sky-error-action"
-      [isOptional]="true"
-    >
-      Specifies an action to include in the error message. For example, you can include a button to reload the page or to refresh
-      data.
+      Specifies a title to display in the error message. Properties are listed <a stacheRouterLink="." fragment="error-title-properties">below</a>.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -55,9 +55,10 @@
   >
     <sky-demo-page-property
       propertyName="replaceDefaultTitle"
+      defaultValue="false"
       [isOptional]="true"
     >
-      Whether to replace the default title. If <stache-code>false</stache-code>, this title will be appended to the default title. This property accepts <stache-code>boolean</stache-code> values.
+      Indicates whether to replace the default title. If <stache-code>false</stache-code>, this title is appended to the default title. This property accepts <stache-code>boolean</stache-code> values.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -66,9 +67,10 @@
   >
     <sky-demo-page-property
       propertyName="replaceDefaultDescription"
+      defaultValue="false"
       [isOptional]="true"
     >
-      Whether to replace the default description. If <stache-code>false</stache-code>, this description will be appended to the default description. This property accepts <stache-code>boolean</stache-code> values.
+      Indicates whether to replace the default description. If <stache-code>false</stache-code>, this description is appended to the default description. This property accepts <stache-code>boolean</stache-code> values.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -82,19 +84,19 @@
 
   <sky-demo-page-properties sectionHeading="SkyErrorModalService config properties">
     <sky-demo-page-property
-      propertyName="errorTitle"
+      propertyName="errorCloseText"
     >
-      Specifies a title to display in the modal error message.
+      Specifies a label for the action button that closes the modal error message. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="errorDescription"
     >
-      Specifies a description to provide additional details in the modal error message.
+      Specifies a description to provide additional details in the modal error message. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
-      propertyName="errorCloseText"
+      propertyName="errorTitle"
     >
-      Specifies a label for the action button that closes the modal error message.
+      Specifies a title to display in the modal error message. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
