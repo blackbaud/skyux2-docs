@@ -42,6 +42,13 @@ export class CLICommandsActionButtonsComponent {
       summary: 'Displays help for SKY UX CLI arguments.'
     },
     {
+      name: 'install',
+      path: '/learn/reference/cli-commands/install',
+      icon: 'wrench',
+      // tslint:disable-next-line
+      summary: 'Deletes and re-installs SKY UX dependencies.'
+    },
+    {
       name: 'lint',
       path: '/learn/reference/cli-commands/lint',
       icon: 'tachometer',
