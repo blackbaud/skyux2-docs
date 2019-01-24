@@ -5,11 +5,16 @@
   "host": {
     "url": "https://developer.blackbaud.com"
   },
+  "app": {
+    "title": "Blackbaud SKY UX"
+  },
   "appSettings": {
     "stache": {
       "editButton": {
         "text": "Suggest edit",
         "url": "https://github.com/blackbaud/skyux2-docs"
+      },
+      "footer": {
       },
       "searchConfig": {
         "is_internal": false
