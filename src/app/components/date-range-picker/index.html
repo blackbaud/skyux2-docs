@@ -1,0 +1,167 @@
+<sky-demo-page
+  pageTitle="Date range picker"
+  skyuxModule="SkyDateRangePickerModule"
+  packageName="@skyux/datetime"
+>
+
+  <sky-demo-page-summary>
+    The date range picker module contains a component to let users select a range of dates. It is a composite component of up to two <stache-code>sky-datepicker</stache-code> components. The value that users select is driven through the <stache-code>ngModel</stache-code> attribute specified on the <stache-code>sky-date-range-picker</stache-code> component.
+  </sky-demo-page-summary>
+
+  <sky-demo-page-properties sectionHeading="Date range picker component properties">
+    <sky-demo-page-property
+      propertyName="label"
+      isOptional="false"
+    >
+      Specifies the label text describing the date range picker.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="dateFormat"
+      isOptional="true"
+      defaultValue="MM/DD/YYYY"
+    >
+      Specifies the date format for the <stache-code>sky-datepicker</stache-code> components. Place this attribute on the <stache-code>sky-date-range-picker</stache-code> element to override the default date format. This property accepts <stache-code>string</stache-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="disabled"
+      isOptional="true"
+      defaultValue="false"
+    >
+      Indicates whether to disable the date range picker. This property accepts <stache-code>boolean</stache-code> values.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-properties sectionHeading="Date range value (SkyDateRangeValue)">
+    <sky-demo-page-property
+      propertyName="startDate"
+    >
+      The date this range begins from.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="endDate"
+    >
+      The date this range ends on.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-properties sectionHeading="Dialog types (SkyDateRangeFormatType)">
+    <sky-demo-page-property
+      propertyName="Specific range"
+    >
+      The user selects the start and end date themselves. This is the default selected format.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="Before"
+    >
+      The user selects an end date and there is no starting date.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="After"
+    >
+      The user selects a start date and there is no ending date.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="At any time"
+    >
+      No dates are selected and all dates are considered to be within the range.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="Yesterday"
+    >
+      The start and end dates are set to the day before the current day.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="Today"
+    >
+      The start and end dates are set to the current day.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="Tomorrow"
+    >
+      The start and end dates are set to the day after the current day.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="Last week"
+    >
+      The start date is set to the Sunday of the week before the current week and the end date is set to the Saturday of the week before the current week.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="This week"
+    >
+      The start date is set to the Sunday of the current week and the end date is set to the Saturday of the current week.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="Next week"
+    >
+      The start date is set to the Sunday of the week after the current week and the end date is set to the Saturday of the week before the current week.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="Last month"
+    >
+      The start date is set to the first of the month before the current month and the end date is set to the final day of the month before the current month.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="This month"
+    >
+      The start date is set to the first of the current month and the end date is set to the last day of the current month.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="Next month"
+    >
+      The start date is set to the first of the month after the current month and the end date is set to the last day of the month after the current month.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="Last quarter"
+    >
+      The start date is set to the first day of the quarter before the current quarter and the end date is set to the last day of the quarter before the current quarter. Quarters are Jan-March, April-June, July-Sept, and Oct-Dec.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="This quarter"
+    >
+      The start date is set to the first day of the current quarter and the end date is set to the last day of the current quarter. Quarters are Jan-March, April-June, July-Sept, and Oct-Dec.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="Next quarter"
+    >
+      The start date is set to the first day of the quarter after the current quarter and the end date is set to the last day of the quarter after the current quarter. Quarters are Jan-March, April-June, July-Sept, and Oct-Dec.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="Last year"
+    >
+      The start date is set to the first day of the year before the current year and the end date is set to the last day of the year before the current year.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="This year"
+    >
+      The start date is set to the first day of the current year and the end date is set to the last day of the current year.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="Next year"
+    >
+      The start date is set to the first day of the year after the current year and the end date is set to the last day of the year after the current year.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="Last fiscal year"
+    >
+      The start date is set to the first day of the fiscal year before the current fiscal year and the end date is set to the last day of the fiscal year before the current fiscal year. A fiscal year runs from October 1st to September 30th.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="This fiscal year"
+    >
+      The start date is set to the first day of the current fiscal year and the end date is set to the last day of the current fiscal year. A fiscal year runs from October 1st to September 30th.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="Next fiscal year"
+    >
+      The start date is set to the first day of the fiscal year after the current fiscal year and the end date is set to the last day of the fiscal year after the current fiscal year. A fiscal year runs from October 1st to September 30th.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-example>
+    <sky-date-range-picker-demo>
+    </sky-date-range-picker-demo>
+    <sky-demo-page-code
+      demoName="Date range picker">
+    </sky-demo-page-code>
+  </sky-demo-page-example>
+</sky-demo-page>

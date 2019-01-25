@@ -1,0 +1,49 @@
+<div
+  class="date-range-demo"
+>
+  <h2>Templated date range picker</h2>
+  <form
+    id="screenshot-date-range-picker"
+    #form="ngForm"
+  >
+    <sky-date-range-picker
+      name="donation"
+      label="Last donation"
+      dateFormat="DD/MM/YYYY"
+      [(ngModel)]="value"
+      [disabled]="disabled"
+    >
+    </sky-date-range-picker>
+  </form>
+
+  <label>
+    Disabled:
+    <input
+      type="checkbox"
+      [(ngModel)]="disabled"
+    />
+  </label>
+
+  <h3>Templated form value:</h3>
+  <pre>{{ value | json }}</pre>
+
+  <br />
+  <hr />
+  <br />
+
+  <h2>Reactive date range picker</h2>
+  <form
+    novalidate
+    [formGroup]="reactiveForm"
+  >
+    <sky-date-range-picker
+      formControlName="selectedRange"
+      label="Second to last donation"
+      name="donation"
+    >
+    </sky-date-range-picker>
+  </form>
+
+  <h3>Reactive form value:</h3>
+  <pre>{{ reactiveRange.value | json }}</pre>
+</div>

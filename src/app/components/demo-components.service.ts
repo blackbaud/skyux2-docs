@@ -1,13 +1,24 @@
-import { Injectable } from '@angular/core';
+import {
+  Injectable
+} from '@angular/core';
 
-import { SkyDemoService } from '@blackbaud/skyux/dist/demo';
+import {
+  SkyDemoService
+} from '@blackbaud/skyux/dist/demo';
 
-import { SkyDemoComponent } from './demo-component';
+import {
+  SkyDemoComponent
+} from './demo-component';
+
+import {
+  SkyDocsDemoCodeService
+} from '../demos/demos.service';
 
 @Injectable()
 export class SkyDemoComponentsService {
   public constructor(
-    private demoService: SkyDemoService
+    private skyDemoService: SkyDemoService,
+    private docsDemoService: SkyDocsDemoCodeService
   ) { }
 
   public getComponents(filter?: string): SkyDemoComponent[] {
@@ -86,6 +97,14 @@ export class SkyDemoComponentsService {
         summary: `The datepicker module allows users to use an input and calendar to select dates.`,
         url: '/components/datepicker',
         getCodeFiles: () => this.getDemoFiles('SkyDatepickerDemoComponent')
+      },
+      {
+        name: 'Date range picker',
+        icon: 'calendar',
+        // tslint:disable-next-line
+        summary: `The date range picker module allows users to use multiple datepickers to select a date range.`,
+        url: '/components/date-range-picker',
+        getCodeFiles: () => this.getDemoFiles('SkyDateRangePickerDemoComponent')
       },
       {
         name: 'Definition list',
@@ -500,13 +519,17 @@ export class SkyDemoComponentsService {
   }
 
   public getDemoFiles(componentConstructorName: string): any {
-    const config = this.demoService.getComponent(componentConstructorName);
+    const docsDemo = this.docsDemoService.getComponent(componentConstructorName);
 
-    if (!config) {
-      console.warn('No demo files found for:', componentConstructorName);
-      return [];
+    if (!docsDemo) {
+      const skyDemo = this.skyDemoService.getComponent(componentConstructorName);
+      if (!skyDemo) {
+        console.warn('No demo files found for:', componentConstructorName);
+        return [];
+      } else {
+        return this.skyDemoService.getComponent(componentConstructorName).files;
+      }
     }
-
-    return this.demoService.getComponent(componentConstructorName).files;
+    return docsDemo;
   }
 }
