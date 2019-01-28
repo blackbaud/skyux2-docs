@@ -22,40 +22,11 @@
     }
   },
   "omnibar": {
-    "experimental": true,
-    "nav": {
-      "services": [
-        {
-          "title": "SKY UX",
-          "searchUrl": "https://stache-search-query.sky.blackbaud.com/search/skyux",
-          "items": [
-            {
-              "title": "Home",
-              "route": "/"
-            },
-            {
-              "title": "Learn",
-              "route": "/learn"
-            },
-            {
-              "title": "Components",
-              "route": "/components"
-            },
-            {
-              "title": "Design",
-              "route": "/design"
-            },
-            {
-              "title": "Contribute",
-              "route": "/contribute"
-            },
-            {
-              "title": "Blog",
-              "route": "/blog"
-            }
-          ]
-        }
-      ]
+    "experimental": true
+  },
+  "params": {
+    "svcid": {
+      "value": "skyux"
     }
   },
   "routes": {
