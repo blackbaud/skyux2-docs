@@ -76,37 +76,64 @@
 
   <sky-demo-page-properties sectionHeading="SkyTileDashboardConfig properties">
     <sky-demo-page-property
+      propertyName="layout"
+    >
+    A <stache-code>SkyTileDashboardConfigLayout</stache-code> object that describes the tile dashboard's layout. It includes the following properties:
+    <ul>
+      <li>
+        <stache-code>singleColumn</stache-code> — A <stache-code>SkyTileDashboardConfigLayoutColumn</stache-code> object that describes how to display tiles in a single column on small screens.
+      </li>
+      <li>
+        <stache-code>multiColumn</stache-code> — An array of <stache-code>SkyTileDashboardConfigLayoutColumn</stache-code> objects that describes how to display tiles in multiple columns on larger screens.
+      </li>
+      <p><stache-code>SkyTileDashboardConfigLayoutColumn</stache-code> objects include the following property:</p>
+      <ul>
+        <li>
+          <stache-code>tiles</stache-code> — An array of <stache-code>SkyTileDashboardConfigLayoutTile</stache-code> objects that describe the tiles to include in the columns of the dashboard and the order to display them. It includes the following properties:
+        </li>
+          <ul>
+            <li>
+              <stache-code>id</stache-code> — Specifies the ID of a tile to display in the dashboard. This property accepts <stache-code>string</stache-code> values.
+            </li>
+            <li>
+              <stache-code>isCollapsed</stache-code> — Indicates whether the tile is in a collapsed state. This property accepts <stache-code>string</stache-code> values.
+            </li>
+          </ul>
+      </ul>
+    </ul>
+    </sky-demo-page-property>
+    <sky-demo-page-property
       propertyName="tiles"
     >
     An array of <stache-code>SkyTileDashboardConfigTile</stache-code> objects that specifies the tiles to include in the dashboard. Each <stache-code>SkyTileDashboardConfigTile</stache-code> object includes the following properties:
     <ul>
       <li>
-        <stache-code>id</stache-code> — The unique identifier for the tile.
+        <stache-code>componentType</stache-code> — Specifies the class type of the tile component.
       </li>
       <li>
-        <stache-code>componentType</stache-code> — The class type for the tile component.
+        <stache-code>id</stache-code> — Specifies the ID of the tile. This property accepts <stache-code>string</stache-code> values.
       </li>
       <li>
-        <stache-code>providers</stache-code> — <em>(Optional.)</em> An array of data providers that can be passed to the tile.
-      </li>
-    </ul>
-    </sky-demo-page-property>
-    <sky-demo-page-property
-      propertyName="layout"
-    >
-    A <stache-code>SkyTileDashboardConfigLayout</stache-code> object that describes the tile dashboard's layout. The <stache-code>SkyTileDashboardConfigLayout</stache-code> object contains a <stache-code>singleColumn</stache-code> property of type <stache-code>SkyTileDashboardConfigLayoutColumn</stache-code> and a <stache-code>multiColumn</stache-code> property that is an array of type <stache-code>SkyTileDashboardConfigLayoutColumn</stache-code>. The <stache-code>singleColumn</stache-code> layout displays on small screens, while the <stache-code>multiColumn</stache-code> layout displays on larger screens. The <stache-code>SkyTileDashboardConfigLayoutColumn</stache-code> object contains an array of <stache-code>SkyTileDashboardConfigLayoutTile</stache-code> objects that indicates the order of tiles. It includes the following properties:
-    <ul>
-      <li>
-        <stache-code>id</stache-code> — The identifier for the tile in the dashboard.
-      </li>
-      <li>
-        <stache-code>isCollapsed</stache-code> — A boolean value that indicates whether the tile is in a collapsed state.
+        <stache-code>providers</stache-code> — <em>(Optional.)</em> Specifies an array of data providers that can be passed to the tile. This property accepts an array of <stache-code>any</stache-code> values.
       </li>
     </ul>
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="movedTile"
+      isOptional="true"
     >
+    A <stache-code>SkyTileDashboardConfigReorderData</stache-code> object that describes how to move a tile within the dashboard. It includes the following properties:
+    <ul>
+      <li>
+        <stache-code>column</stache-code> — Specifies the column for the tile. This property accepts <stache-code>number</stache-code> values.
+      </li>
+      <li>
+        <stache-code>position</stache-code> — Specifies the position of the tile within the column. This property accepts <stache-code>number</stache-code> values.
+      </li>
+      <li>
+        <stache-code>tileDescription</stache-code> — Specifies the description of the tile. This property accepts <stache-code>string</stache-code> values.
+      </li>
+    </ul>
   </sky-demo-page-properties>
 
   <sky-demo-page-properties sectionHeading="Tile dashboard service methods">
