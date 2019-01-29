@@ -14,7 +14,8 @@
 <stache
 layout="container"
 showBreadcrumbs="false"
-showEditButton="false">
+showEditButton="false"
+showFooter="false">
   <div class="row-welcome">
     <sky-fluid-grid>
       <sky-row>
@@ -106,6 +107,9 @@ showEditButton="false">
               <p class="lead">
                 We implement our design patterns as Angular components that allow developers to quickly create applications with a common user experience. Components are grouped into modules to improve performance. <a routerLink="/components">Learn more</a>.
               </p>
+              <sky-alert alertType="info" [closeable]="false">
+                These components support the <a href="https://angular.io">latest version of Angular</a>. Visit our <strong><a href="https://skyux.developer.blackbaud.com">SKY UX 1 documentation</a></strong> for information related to <a href="https://angularjs.org">AngularJS (1.x)</a>.
+              </sky-alert>
             </div>
           </sky-column>
       </sky-row>
@@ -129,6 +133,26 @@ showEditButton="false">
             <img src="~/assets/home/feature-sdk-cli.png" alt="Example SDK" />
           </a>
         </sky-column>
+      </sky-row>
+      <sky-row>
+        <sky-column screenSmall="4">
+          <a routerLink="/components" class="screenshot screenshot-info">
+            <img src="~/assets/home/stache.png" alt="Stache" />
+          </a>
+        </sky-column>
+        <sky-column screenSmall="2">
+          &nbsp;
+        </sky-column>
+        <sky-column screenSmall="6">
+            <div class="info">
+              <h3>
+                Documentation - Stache
+              </h3>
+              <p class="lead">
+                SKY UX partners well with Stache, which is Blackbaud's suite of tools and components for generating consistent, user-focused documentation websites. <a href="https://developer.blackbaud.com/stache">Learn more</a>.
+              </p>
+            </div>
+          </sky-column>
       </sky-row>
     </sky-fluid-grid>
   </div>
