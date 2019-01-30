@@ -14,7 +14,8 @@
 <stache
 layout="container"
 showBreadcrumbs="false"
-showEditButton="false">
+showEditButton="false"
+showFooter="false">
   <div class="row-welcome">
     <sky-fluid-grid>
       <sky-row>
@@ -104,7 +105,10 @@ showEditButton="false">
                 Angular components
               </h3>
               <p class="lead">
-                We implement our design patterns as Angular components that allow developers to quickly create applications with a common user experience. Components are grouped into modules to improve performance. <a routerLink="/components">Learn more</a>.
+                We implement our design patterns as Angular components that allow developers to quickly create applications with a common user experience. Components are grouped into modules to improve performance. <a routerLink="/components">Learn more</a>
+              </p>
+              <p class="lead">
+                To learn about our AngularJS (1.x) implementation, visit the <a href="https://skyux.developer.blackbaud.com">SKY UX 1 documentation</a>.
               </p>
             </div>
           </sky-column>
@@ -129,6 +133,26 @@ showEditButton="false">
             <img src="~/assets/home/feature-sdk-cli.png" alt="Example SDK" />
           </a>
         </sky-column>
+      </sky-row>
+      <sky-row>
+        <sky-column screenSmall="4">
+          <a routerLink="/components" class="screenshot screenshot-info">
+            <img src="~/assets/home/stache.png" alt="Stache" />
+          </a>
+        </sky-column>
+        <sky-column screenSmall="2">
+          &nbsp;
+        </sky-column>
+        <sky-column screenSmall="6">
+            <div class="info">
+              <h3>
+                Docs as Code
+              </h3>
+              <p class="lead">
+                The Stache component library provides open source components built on SKY UX to generate consistent, user-focused technical documentation websites with the same tools that you use to write code. <a href="https://developer.blackbaud.com/stache">Learn more</a>.
+              </p>
+            </div>
+          </sky-column>
       </sky-row>
     </sky-fluid-grid>
   </div>
