@@ -5,14 +5,14 @@
 >
 
   <sky-demo-page-summary>
-    The confirm service launches simple confirmation dialogs to allow users to confirm actions. The <stache-code>SkyConfirmService</stache-code> provider lauches the confirmation dialog. Within the service, you may specify the dialog's message and type, and customize the button text.
+    The confirm service launches simple confirmation dialogs to allow users to confirm actions. The <stache-code>SkyConfirmService</stache-code> provider launches the confirmation dialog. Within the service, you can specify the dialog's message and customize the button text.
   </sky-demo-page-summary>
 
-  <sky-demo-page-properties sectionHeading="Service methods">
+  <sky-demo-page-properties sectionHeading="Confirm service methods">
     <sky-demo-page-property
       propertyName="open(config)"
     >
-    Opens a confirmation dialog. The <stache-code>config</stache-code> parameter is of type <stache-code>SkyConfirmConfig</stache-code> and passed to the component's constructor. This method returns the confirmation dialog instance.
+    Opens a confirmation dialog and passes the <stache-code>config</stache-code> parameter is of type <stache-code>SkyConfirmConfig</stache-code> to the component's constructor. This method returns the confirmation dialog instance.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -20,80 +20,61 @@
     <sky-demo-page-property
       propertyName="message"
     >
-    The message to display in the dialog.
+    Specifies the message to display in a bold font at the top of the dialog. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
-      propertyName="type"
+      propertyName="body"
       isOptional="true"
     >
-    An enum of type <stache-code>SkyConfirmType</stache-code> that specifies the number of buttons to include in the dialog.
+    Specifies secondary text to display in plain font under the primary message. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="buttons"
       isOptional="true"
     >
-    An optional array of <stache-code>SkyConfirmButtonConfig</stache-code> that overrides the default button config. (The number of items in this array must match the number provided for the <stache-code>type</stache-code> property.)
+    Specifies an array of <stache-code>SkyConfirmButtonConfig</stache-code> objects that overwrite the default configuration for buttons. The number of items in the array must match the number of buttons that the <stache-code>type</stache-code> property specifies. Each <stache-code>SkyConfirmButtonConfig</stache-code> object includes the following properties:
+    <ul>
+      <li>
+        <stache-code>action</stache-code> — Specifies an identifier to return when users select the button to close the confirmation dialog. This is useful to determine which button users select. This property accepts <stache-code>string</stache-code> values.
+      </li>
+      <li>
+        <stache-code>text</stache-code> — Specifies the label for the button. This property accepts <stache-code>string</stache-code> values.
+      </li>
+      <li>
+        <stache-code>autofocus</stache-code> — <em>(Optional.)</em> Indicates whether to place focus on this button by default. This property accepts <stache-code>boolean</stache-code> values. <em>(Default: false)</em>
+      </li>
+      <li>
+        <stache-code>styleType</stache-code> — <em>(Optional.)</em> Specifies a <a stacheRouterLink="/components/button" fragment="classes">SKY UX button class</a> to apply to the button. The valid options are <stache-code>primary</stache-code> to format the primary action on the dialog, <stache-code>default</stache-code> to format a secondary action, and <stache-code>link</stache-code> to format an action that takes users to another page. This property accepts <stache-code>string</stache-code> values.
+      </li>
+    </ul>
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="type"
+      isOptional="true"
+    >
+    Specifies a <stache-code>SkyConfirmType</stache-code> enum that indicates how many buttons to include in the dialog. The valid options are:
+    <ul>
+      <li>
+        <stache-code>Custom</stache-code> — Allows you to define your own buttons using the <stache-code>buttons</stache-code> property to specify an array of <stache-code>SkyConfirmButtonConfig</stache-code> objects.  The integer value equivalent is 0.
+      </li>
+      <li>
+        <stache-code>OK</stache-code> — Displays one button with <strong>OK</strong> as the default label. The integer value equivalent is 1.
+      </li>
+      <li>
+        <stache-code>YesCancel</stache-code> — Displays two buttons with <strong>Yes</strong> and <strong>Cancel</strong> as the default labels. The integer value equivalent is 2.
+      </li>
+      <li>
+        <stache-code>YesNoCancel</stache-code> — Displays three buttons with <strong>Yes</strong>, <strong>No</strong>, and <strong>Cancel</strong> as the default labels. The integer value equivalent is 3.
+      </li>
+    </ul>
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
-  <sky-demo-page-properties sectionHeading="Dialog types (SkyConfirmType)">
-    <sky-demo-page-property
-      propertyName="OK"
-    >
-    A one-button dialog with 'OK' as the default button text. The integer value equivalent is 1.
-    </sky-demo-page-property>
-    <sky-demo-page-property
-      propertyName="YesCancel"
-    >
-    A two-button dialog with 'Yes' and 'Cancel' as the default button text. The integer value equivalent is 2.
-    </sky-demo-page-property>
-    <sky-demo-page-property
-      propertyName="YesNoCancel"
-    >
-    A three-button dialog with 'Yes', 'No', and 'Cancel' as the default button text. The integer value equivalent is 3.
-    </sky-demo-page-property>
-
-    <sky-demo-page-property
-      propertyName="Custom"
-    >
-    Provide the <stache-code>Custom</stache-code> type if you want to define your own buttons. This setting should be accompanied with a <stache-code>buttons</stache-code> config (see below).
-    </sky-demo-page-property>
-  </sky-demo-page-properties>
-
-  <sky-demo-page-properties
-    sectionHeading="Button configuration (SkyConfirmButtonConfig)">
-    <sky-demo-page-property
-      propertyName="text"
-      isOptional="true"
-    >
-    The button's text.
-    </sky-demo-page-property>
-    <sky-demo-page-property
-      propertyName="autofocus"
-      isOptional="true"
-    >
-    A boolean property that specifies whether to autofocus this button.
-    </sky-demo-page-property>
-    <sky-demo-page-property
-      propertyName="styleType"
-      isOptional="true"
-      defaultValue="default"
-    >
-    A string that specifies a <a stacheRouterLink="/components/button" fragment="classes">SKY UX button class</a> to apply to the button. The valid options are <stache-code>primary</stache-code>, which formats the primary action on the dialog, <stache-code>default</stache-code>, which formats a secondary action, and <stache-code>link</stache-code>, which formats an action that takes users to another page.
-    </sky-demo-page-property>
-    <sky-demo-page-property
-      propertyName="action"
-      isOptional="true"
-    >
-    A string identifier that is returned after the closed event is emitted. This is useful to determine which button the user clicked. Default values are applied based on the type of dialog being used.
-    </sky-demo-page-property>
-  </sky-demo-page-properties>
-
-  <sky-demo-page-properties sectionHeading="Events">
+  <sky-demo-page-properties sectionHeading="Confirmation dialog events">
     <sky-demo-page-property
       propertyName="closed"
     >
-    The event that the confirmation dialog instance emits after a user action is received. An object is returned that provides information about the button clicked.
+    Fires when users select an action to close the confirmation dialog. This event returns an object with information about the button that users select.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
