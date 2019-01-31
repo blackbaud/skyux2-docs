@@ -13,9 +13,8 @@
   "license": "MIT",
   "dependencies": {
     "@blackbaud/skyux": "2.40.0",
-    "@blackbaud/skyux-design-tokens": "0.0.8",
-    "@blackbaud/stache": "2.15.1",
-    "@skyux/datetime": "3.1.0"
+    "@blackbaud/skyux-design-tokens": "0.0.11",
+    "@blackbaud/stache": "2.15.2"
   },
   "devDependencies": {
     "@blackbaud/skyux-builder": "1.30.0"

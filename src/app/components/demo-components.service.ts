@@ -203,6 +203,13 @@ export class SkyDemoComponentsService {
         getCodeFiles: () => this.getDemoFiles('SkyTextHighlightDemoComponent')
       },
       {
+        name: 'Icon',
+        icon: 'picture-o',
+        summary: 'The icon component displays a Font Awesome icon.',
+        url: '/components/icon',
+        getCodeFiles: () => this.getDemoFiles('SkyIconDemoComponent')
+      },
+      {
         name: 'Infinite scroll',
         icon: 'refresh',
         summary: 'The infinite scroll component dynamically loads data as users scroll.',
