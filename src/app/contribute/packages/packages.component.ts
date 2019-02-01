@@ -141,6 +141,11 @@ export class PackagesComponent {
       npm: false
     },
     {
+      id: '@skyux-sdk/builder-plugin-migrate',
+      provider: 'github',
+      repo: 'blackbaud/skyux-sdk-builder-plugin-migrate'
+    },
+    {
       id: '@skyux-sdk/cli',
       provider: 'github',
       repo: 'blackbaud/skyux-sdk-cli'
@@ -189,14 +194,14 @@ export class PackagesComponent {
       repo: 'blackbaud/skyux-builder-plugin-auth-email-whitelist'
     },
     {
-      id: '@blackbaud/skyux-builder-plugin-migrate',
-      provider: 'github',
-      repo: 'blackbaud/skyux-sdk-builder-plugin-migrate'
-    },
-    {
       id: '@blackbaud/skyux-builder-plugin-stache',
       provider: 'github',
       repo: 'blackbaud/skyux-builder-plugin-stache'
+    },
+    {
+      id: '@blackbaud/skyux-builder-stache-search',
+      provider: 'github',
+      repo: 'blackbaud/skyux-builder-stache-search'
     },
     {
       id: '@blackbaud/skyux-cli',
@@ -209,6 +214,21 @@ export class PackagesComponent {
       repo: 'blackbaud/skyux-deploy'
     },
     {
+      id: '@blackbaud/skyux-design-tokens',
+      provider: 'github',
+      repo: 'blackbaud/skyux-design-tokens'
+    },
+    {
+      id: '@blackbaud/skyux-lib-help',
+      provider: 'github',
+      repo: 'blackbaud/skyux-lib-help'
+    },
+    {
+      id: '@blackbaud/skyux-lib-testing',
+      provider: 'github',
+      repo: 'blackbaud/skyux-lib-testing'
+    },
+    {
       id: '@blackbaud/skyux-logger',
       provider: 'github',
       repo: 'blackbaud/skyux-logger'
@@ -218,14 +238,6 @@ export class PackagesComponent {
       provider: 'github',
       repo: 'blackbaud/stache2'
     }
-
-    // @blackbaud/skyux-design-tokens
-    // @blackbaud/sky-api-addin
-    // @blackbaud/sky-addin-client
-    // @blackbaud/skyux-lib-help
-    // @blackbaud/skyux-builder-stache-search
-    // @blackbaud/skyux-lib-testing
-    // @blackbaud/skyux-builder-plugin-addin-client
   ];
 
   constructor() {
