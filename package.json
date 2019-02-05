@@ -15,7 +15,7 @@
     "@blackbaud/skyux": "2.40.0",
     "@blackbaud/skyux-design-tokens": "0.0.11",
     "@blackbaud/stache": "2.15.2",
-    "@skyux/action-bars": "3.0.0-rc.1"
+    "@skyux/action-bars": "3.0.0"
   },
   "devDependencies": {
     "@blackbaud/skyux-builder": "1.30.0"
