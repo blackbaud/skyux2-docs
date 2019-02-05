@@ -424,7 +424,7 @@ export class SkyDemoComponentsService {
         name: 'Summary action bar',
         icon: 'sun-o',
         // tslint:disable-next-line
-        summary: `The summary action bar provides a docked container for actions and summary information related.`,
+        summary: `The summary action bar provides a docked container for actions and summary information.`,
         url: '/components/summary-actionbar',
         getCodeFiles: () => this.getDemoFiles('SkySummaryActionBarDemoComponent')
       },
