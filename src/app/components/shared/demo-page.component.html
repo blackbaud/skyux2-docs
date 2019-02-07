@@ -8,6 +8,10 @@
       <span *ngFor="let moduleName of skyuxModulesForDisplay">
         <stache-code>{{ moduleName }}</stache-code>
       </span>
+      <!-- <ng-container *ngIf="packageName">
+        <span class="sky-field-label">in NPM package</span>
+        <a href="https://github.com"><stache-code>{{ packageName }}</stache-code></a>
+      </ng-container> -->
     </h4>
     <ng-content select="sky-demo-page-summary"></ng-content>
   </stache-page-summary>
@@ -15,6 +19,11 @@
   <stache-table-of-contents
     [routes]="tableOfContentsRoutes">
   </stache-table-of-contents>
+<!--
+  <ng-container *ngIf="npmInstall">
+    <h2>Installation</h2>
+    <stache-code-block [code]="npmInstall"></stache-code-block>
+  </ng-container> -->
 
   <ng-content select="sky-demo-page-properties"></ng-content>
   <ng-content select="sky-demo-page-example"></ng-content>

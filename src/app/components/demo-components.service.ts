@@ -3,11 +3,13 @@ import { Injectable } from '@angular/core';
 import { SkyDemoService } from '@blackbaud/skyux/dist/demo';
 
 import { SkyDemoComponent } from './demo-component';
+import { SkyDocsDemoCodeService } from '../demos/demos.service';
 
 @Injectable()
 export class SkyDemoComponentsService {
   public constructor(
-    private demoService: SkyDemoService
+    private skyDemoService: SkyDemoService,
+    private docsDemoService: SkyDocsDemoCodeService
   ) { }
 
   public getComponents(filter?: string): SkyDemoComponent[] {
@@ -184,6 +186,13 @@ export class SkyDemoComponentsService {
         getCodeFiles: () => this.getDemoFiles('SkyTextHighlightDemoComponent')
       },
       {
+        name: 'Icon',
+        icon: 'picture-o',
+        summary: 'The icon component displays a Font Awesome icon.',
+        url: '/components/icon',
+        getCodeFiles: () => this.getDemoFiles('SkyIconDemoComponent')
+      },
+      {
         name: 'Infinite scroll',
         icon: 'refresh',
         summary: 'The infinite scroll component dynamically loads data as users scroll.',
@@ -349,6 +358,14 @@ export class SkyDemoComponentsService {
         getCodeFiles: () => this.getDemoFiles('SkyPopoverDemoComponent')
       },
       {
+        name: 'Progress indicator',
+        icon: 'tasks',
+        // tslint:disable-next-line
+        summary: 'The progress indicator component visually represents progress through a series of sequential steps toward a final goal.',
+        url: '/components/progress-indicator',
+        getCodeFiles: () => this.getDemoFiles('SkyProgressIndicatorDemoComponent')
+      },
+      {
         name: 'Radio button',
         icon: 'circle-o',
         // tslint:disable-next-line
@@ -404,6 +421,14 @@ export class SkyDemoComponentsService {
         url: '/components/status-indicator'
       },
       {
+        name: 'Summary action bar',
+        icon: 'sun-o',
+        // tslint:disable-next-line
+        summary: `The summary action bar provides a docked container for actions and summary information.`,
+        url: '/components/summary-actionbar',
+        getCodeFiles: () => this.getDemoFiles('SkySummaryActionBarDemoComponent')
+      },
+      {
         name: 'Tabs',
         icon: 'folder-open-o',
         summary: `The tabs module contains components to render a tabset.`,
@@ -422,7 +447,7 @@ export class SkyDemoComponentsService {
         name: 'Tile',
         icon: 'th-large',
         // tslint:disable-next-line
-        summary: `The tile directive provides a container that is the building block for pages and forms.`,
+        summary: `The tile component creates a collapsible container that is a building block for pages and forms.`,
         url: '/components/tile',
         getCodeFiles: () => this.getDemoFiles('SkyTileDemoComponent')
       },
@@ -441,6 +466,14 @@ export class SkyDemoComponentsService {
         summary: `The toast module launches a container to display a message over a page's content.`,
         url: '/components/toast',
         getCodeFiles: () => this.getDemoFiles('SkyToastDemoComponent')
+      },
+      {
+        name: 'Tokens',
+        icon: 'th-large',
+        // tslint:disable-next-line
+        summary: `The tokens component displays a series of objects for users to interact with.`,
+        url: '/components/tokens',
+        getCodeFiles: () => this.getDemoFiles('SkyTokensDemoComponent')
       },
       {
         name: 'Toolbar',
@@ -484,6 +517,19 @@ export class SkyDemoComponentsService {
   }
 
   public getDemoFiles(componentConstructorName: string): any {
-    return this.demoService.getComponent(componentConstructorName).files;
+    const docsDemo = this.docsDemoService.getComponent(componentConstructorName);
+
+    if (!docsDemo) {
+      const skyDemo = this.skyDemoService.getComponent(componentConstructorName);
+
+      if (!skyDemo) {
+        console.warn('No demo files found for:', componentConstructorName);
+        return [];
+      } else {
+        return this.skyDemoService.getComponent(componentConstructorName).files;
+      }
+    } else {
+      return this.docsDemoService.getComponent(componentConstructorName).files;
+    }
   }
 }

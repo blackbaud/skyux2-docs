@@ -108,11 +108,11 @@ export class AppExtrasModule { }
     </li>
     <li>
       <p>
-        In the <stache-code>src/app/about</stache-code> folder, create an <stache-code>_id</stache-code> subfolder for the route parameters. Everything after the underscore will become a TypeScript variable name.</p>
+        In the <stache-code>src/app/about</stache-code> folder, create an <stache-code>_id</stache-code> subfolder for the route parameters. Everything after the underscore will become a public property in the auto-generated component that the <stache-code>index.html</stache-code> becomes the template for.</p>
     </li>
     <li>
       <p>
-        In the <stache-code>_id</stache-code> subfolder, add <stache-code>about-user.component.ts</stache-code> to create a component. We need to import <stache-code>Component</stache-code>, <stache-code>Input</stache-code>, and <stache-code>OnInit</stache-code> from Angular, plus <stache-code>AboutService</stache-code>. After we define the component's selector and template, we can define the component class and the public <stache-code>userId</stache-code> and <stache-code>user</stache-code> input variables. We'll use <stache-code>userId</stache-code> to pass the ID into the component. We can also declare the <stache-code>aboutService</stache-code> as a constructor and use <stache-code>ngOnInit</stache-code> to retrieve users based on ID.
+        In the <stache-code>_id</stache-code> subfolder, add <stache-code>about-user.component.ts</stache-code> to create a component. We need to import <stache-code>Component</stache-code>, <stache-code>Input</stache-code>, and <stache-code>OnInit</stache-code> from Angular, plus <stache-code>AboutService</stache-code>. After we define the component's selector and template, we can define the component class and the public <stache-code>userId</stache-code> and <stache-code>user</stache-code> input variables. We'll use <stache-code>userId</stache-code> to pass the ID into the component. Since we don't know when the <stache-code>userId</stache-code> property will be set or who will set it, we'll use the <stache-code>getter/setter</stache-code> technique in order to accommodate the value changing.
       </p>
       <stache-code-block languageType="typescript">
 import {
@@ -127,20 +127,24 @@ import { AboutService } from '../../shared/about.service';
   selector: 'my-about-user',
   templateUrl: './about-user.component.html'
 })
-export class AboutUserComponent implements OnInit {
+export class AboutUserComponent {
+  private _userId: string;
 
   @Input()
-  public userId: string;
+  public set userId(value: string) {
+    this._userId = value;
+    this.user = this.aboutService.getUserById(this.userId);
+  }
+
+  public get userId() {
+    return this._userId;
+  }
 
   public user: any;
 
   constructor(
     private aboutService: AboutService
   ) { }
-
-  public ngOnInit() {
-    this.user = this.aboutService.getUserById(this.userId);
-  }
 }
       </stache-code-block>
     </li>

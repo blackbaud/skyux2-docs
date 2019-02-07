@@ -1,7 +1,8 @@
 @import '~@blackbaud/skyux-design-tokens/scss/mixins';
 
-body {
-  background-color: #fff !important;
+body,
+.stache-layout-blank {
+  background-color: #FFF !important;
 }
 
 p {
@@ -117,6 +118,16 @@ p {
   &.screenshot-danger {
     border-color: $sky-background-color-danger;
   }
+
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+
+.screenshot-responsive {
+  display: block;
+  width: 100%;
 }
 
 // Start content tables

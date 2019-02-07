@@ -5,11 +5,16 @@
   "host": {
     "url": "https://developer.blackbaud.com"
   },
+  "app": {
+    "title": "Blackbaud SKY UX"
+  },
   "appSettings": {
     "stache": {
       "editButton": {
         "text": "Suggest edit",
         "url": "https://github.com/blackbaud/skyux2-docs"
+      },
+      "footer": {
       },
       "searchConfig": {
         "is_internal": false
@@ -17,41 +22,46 @@
     }
   },
   "omnibar": {
-    "experimental": true,
-    "nav": {
-      "services": [
-        {
-          "title": "SKY UX",
-          "searchUrl": "https://stache-search-query.sky.blackbaud.com/search/skyux",
-          "items": [
-            {
-              "title": "Home",
-              "route": "/"
-            },
-            {
-              "title": "Learn",
-              "route": "/learn"
-            },
-            {
-              "title": "Components",
-              "route": "/components"
-            },
-            {
-              "title": "Design",
-              "route": "/design"
-            },
-            {
-              "title": "Contribute",
-              "route": "/contribute"
-            },
-						{
-              "title": "Blog",
-              "route": "/blog"
-            }
-          ]
-        }
-      ]
+    "experimental": true
+  },
+  "params": {
+    "svcid": {
+      "value": "skyux"
     }
+  },
+  "routes": {
+    "public": [
+      {
+        "title": "Home",
+        "route": "/",
+        "global": true
+      },
+      {
+        "title": "Learn",
+        "route": "/learn",
+        "global": true
+      },
+      {
+        "title": "Components",
+        "route": "/components",
+        "global": true
+      },
+      {
+        "title": "Design",
+        "route": "/design",
+        "global": true
+      },
+      {
+        "title": "Contribute",
+        "route": "/contribute",
+        "global": true
+      },
+      {
+        "title": "Blog",
+        "route": "/blog",
+        "global": true
+      }
+    ]
   },
   "plugins": [
     "@blackbaud/skyux-builder-plugin-stache"
@@ -93,8 +103,8 @@
     "design/motion": "design/styles/motion",
     "design/spacing": "design/styles/spacing",
     "design/typography": "design/styles/typography",
-		"design/guidelines/form-containers": "design/guidelines/form-design",
-		"design/guidelines/select-items": "design/guidelines/form-design",
+    "design/guidelines/form-containers": "design/guidelines/form-design",
+    "design/guidelines/select-items": "design/guidelines/form-design",
     "components/list-filters": "components/list/filters",
     "components/list-paging": "components/list/paging",
     "components/list-toolbar": "components/list/toolbar",

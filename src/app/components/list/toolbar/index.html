@@ -1,14 +1,12 @@
 <sky-demo-page
   pageTitle="List toolbar"
   skyuxModule="SkyListToolbarModule"
+  packageName="@skyux/list-builder"
 >
 
   <sky-demo-page-summary>
     <p>
-      The list toolbar component displays a toolbar for a SKY UX-themed list of data.
-    </p>
-    <p>
-      The list toolbar component is designed for use within <a routerLink="../overview">a list component</a>.
+      The list toolbar component displays a toolbar for a SKY UX-themed list of data. It is designed for use within <a routerLink="../overview">the list component</a>.
     </p>
   </sky-demo-page-summary>
 
@@ -18,42 +16,38 @@
       defaultValue="Find in this list"
       isOptional="true"
     >
-    Specifies the placeholder text for the search bar. Acceptable values: <stache-code>string</stache-code>.
+    Specifies placeholder text for the search bar that the list toolbar creates with <a stacheRouterLink="/components/search">a search component</a>. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="searchEnabled"
+      defaultValue="true"
       isOptional="true"
     >
-    Indicates whether the search bar is enabled. Acceptable values: <stache-code>boolean</stache-code> or <stache-code>Observable boolean</stache-code>.
-    </sky-demo-page-property>
-    <sky-demo-page-property
-      propertyName="sortSelectorEnabled"
-      isOptional="true"
-    >
-    Indicates whether the sort selector is enabled. Acceptable values: <stache-code>boolean</stache-code> or <stache-code>Observable boolean</stache-code>.
+    Indicates whether to enable the search bar. This property accepts <stache-code>boolean</stache-code> or <stache-code>Observable boolean</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="searchText"
-      defaultValue=""
       isOptional="true"
     >
-    Specifies a text string to search with. Acceptable values: <stache-code>string</stache-code> or <stache-code>Observable string</stache-code>.
+    Specifies a text string to search with. This property accepts <stache-code>string</stache-code> or <stache-code>Observable string</stache-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="sortSelectorEnabled"
+      defaultValue="false"
+      isOptional="true"
+    >
+    Indicates whether to enable the sort selector. This property accepts <stache-code>boolean</stache-code> or <stache-code>Observable boolean</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="toolbarType"
       defaultValue="standard"
       isOptional="true"
     >
-    Specifies the type for the toolbar. If set to <stache-code>search</stache-code>, then the toolbar appears with a search component in a section above all other items.
+    Specifies whether to display the search bar in the standard position or in a separate section. To highlight the search bar in a section above all other toolbar items, set this property to <stache-code>search</stache-code>. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
   <sky-demo-page-properties sectionHeading="Child components">
-    <sky-demo-page-property
-      propertyName="sky-list-toolbar-item"
-    >
-    This list toolbar item component defines a given toolbar item. It is used in conjunction with the list toolbar component.
-    </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="sky-list-secondary-actions"
       isOptional="true"
@@ -61,33 +55,46 @@
     Adds a dropdown to the list toolbar for secondary actions. To add items to the <stache-code>sky-list-secondary-actions</stache-code> component, add child <stache-code>sky-list-secondary-action</stache-code> components. If no <stache-code>sky-list-secondary-action</stache-code> components exist, the secondary actions dropdown is hidden.
     </sky-demo-page-property>
     <sky-demo-page-property
+      propertyName="sky-list-toolbar-item"
+    >
+    Defines a toolbar item for the list toolbar.
+    </sky-demo-page-property>
+    <sky-demo-page-property
       propertyName="sky-list-toolbar-sort"
       isOptional="true"
     >
     Adds a sort dropdown to the list toolbar.
     </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="sky-list-toolbar-view-actions"
+      isOptional="true"
+    >
+    Adds a section on the right side of the toolbar for items that substantially change or affect the view of the list. This includes simple filters and view switchers. If the view section includes more than one item, simple filters appear on the left and view switchers appear on the right.
+    </sky-demo-page-property>
   </sky-demo-page-properties>
+
+
 
   <sky-demo-page-properties sectionHeading="List toolbar sort properties">
     <sky-demo-page-property
-      propertyName="label"
+      propertyName="descending"
     >
-    Specifies the label for a sort option. Acceptable values: <stache-code>string</stache-code>.
+    Indicates whether to sort data in descending order. This property accepts <stache-code>boolean</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="field"
     >
-    Specifies the field of the data to be sorted. Acceptable values: <stache-code>string</stache-code>.
+    Specifies the data field to sort the list on. This property accepts <stache-code>string</stache-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="label"
+    >
+    Specifies a label for a sort option. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="type"
     >
-    Specifies the data type of the data field to be sorted. Acceptable values: <stache-code>string</stache-code>.
-    </sky-demo-page-property>
-    <sky-demo-page-property
-      propertyName="descending"
-    >
-    Indicates whether the data should be sorted in descending or ascending order. Acceptable values: <stache-code>boolean</stache-code>.
+    Specifies the data type of the data field to sort the list on. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -97,21 +104,21 @@
       defaultValue="moment().toDate().getTime().toString()"
       isOptional="true"
     >
-    Specifies the ID of the item. Acceptable values: <stache-code>string</stache-code>.
+    Specifies the ID of the item. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="index"
       defaultValue="-1"
       isOptional="true"
     >
-    Specifies the index of the item at the given item location. Acceptable values: <stache-code>number</stache-code>.
+    Specifies the index of the item at the given item location. This property accepts <stache-code>number</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="location"
       defaultValue="left"
       isOptional="true"
     >
-    Specifies the toolbar location of the item. Acceptable values: <stache-code>'left'</stache-code>, <stache-code>'center'</stache-code>, or <stache-code>'right'</stache-code>.
+    Specifies the toolbar location of the item. This property accepts <stache-code>string</stache-code> values, and the valid options are <stache-code>left</stache-code>, <stache-code>center</stache-code>, and <stache-code>right</stache-code>.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -126,16 +133,47 @@
     <sky-list-toolbar-custom-demo></sky-list-toolbar-custom-demo>
     <sky-demo-page-code demoName="List toolbar"></sky-demo-page-code>
   </sky-demo-page-example>
-	
+
 	<sky-demo-page-content sectionHeading="UX guidelines">
-		<div class="sky-subsection-heading">Sorting</div>
-		<p>If you use the toolbar with a grid view, you have two options for letting users sort the list:</p>
-		<ul>
-			<li>The sort button in the toolbar</li>
-			<li>Clickable column headers</li>
-		</ul>
-		<p>Don't combine both sorting options in a single list because it confuses users about which option is currently applied.</p>
-		
+
+		<section>
+			<header><div class="sky-section-heading">Usage</div></header>
+			<stache-row>
+				<stache-column screenSmall="6">
+					<p>
+						The list toolbar appears above a <a routerLink="/components/list">list</a> of records. It contains actions to manipulate the contents of the list. Place frequently used actions directly in the toolbar, and place less-frequently used actions in a more actions menu. When multiple views of the list are available, the view switcher is docked on the right side of the toolbar.
+					</p>
+				</stache-column>
+				<stache-column screenSmall="6">
+					<div class="screenshot screenshot-info"><img src="~/assets/img/guidelines/toolbar/list-toolbar-context.png" style="width: 100%;" /></div>
+				</stache-column>
+			</stache-row>
+		</section>
+
+		<section>
+			<header><div class="sky-section-heading">Composition</div></header>
+			<div class="screenshot screenshot-info"><img src="~/assets/img/guidelines/toolbar/anatomy.png" style="width: 100%;" /></div>
+			<p>For more information about how to arrange content in a list toolbar, see the <a stacheRouterLink="/components/toolbar" fragment="ux-guidelines">toolbar UX guidelines.</a></p>
+		</section>
+
+		<section>
+			<div class="sky-section-heading">Interactions</div>
+			<div class="sky-subsection-heading">Sorting</div>
+			<p>If you use the toolbar with a grid view, you have two options to let users sort the list:</p>
+			<ul>
+				<li>The sort button in the toolbar</li>
+				<li>Clickable column headers</li>
+			</ul>
+			<p>Don't use both sorting options on the same list because it can confuse users about which option is applied.</p>
+		</section>
+
+		<section>
+			<div class="sky-section-heading">Related guidelines</div>
+			<ul>
+				<li><a stacheRouterLink="/components/toolbar" fragment="ux-guidelines">Toolbar</a></li>
+			</ul>
+		</section>
+
   </sky-demo-page-content>
 
 </sky-demo-page>

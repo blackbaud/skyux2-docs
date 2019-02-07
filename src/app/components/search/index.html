@@ -1,6 +1,7 @@
 <sky-demo-page
   pageTitle="Search"
   skyuxModule="SkySearchModule"
+  packageName="@skyux/lookup"
 >
 
   <sky-demo-page-summary>
@@ -9,35 +10,38 @@
 
   <sky-demo-page-properties sectionHeading="Search properties">
     <sky-demo-page-property
-      propertyName="searchText"
+      propertyName="debounceTime"
       isOptional="true"
+      defaultValue="0"
     >
-    Specifies search text for the input.
+    Specifies how many milliseconds to wait before searching after users enter text in the search input.
     </sky-demo-page-property>
     <sky-demo-page-property
-      propertyName="placeholderText"
+      propertyName="disabled"
       isOptional="true"
-      defaultValue="Find in this list"
+      defaultValue="false"
     >
-    Specifies placeholder text for the search input.
+    Indicates whether to disable the filter button.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="expandMode"
       isOptional="true"
       defaultValue="responsive"
     >
-    Specifies the expand mode for the search input. The valid options are <stache-code>responsive</stache-code>, <stache-code>none</stache-code>, and <stache-code>fit</stache-code>.
-    <ul>
-      <li>
-        <stache-code>responsive</stache-code> The search input collapses into a button on mobile devices.
-      </li>
-      <li>
-        <stache-code>none</stache-code> The search input does not collapse into a button on mobile devices.
-      </li>
-      <li>
-        <stache-code>fit</stache-code> The search input fits the width of its container.
-      </li>
-    </ul>
+    Specifies the expand mode for the search input. The valid options include <stache-code>responsive</stache-code> to collapse the search input into a button on mobile devices, <stache-code>none</stache-code> to <strong><em>not</em></strong> collapse the search input on mobile devices, and <stache-code>fit</stache-code> to extend the search input to fit the width of its container.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="placeholderText"
+      isOptional="true"
+      defaultValue="Find in this list"
+    >
+    Specifies placeholder text to display in the search input until users enter search criteria.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="searchText"
+      isOptional="true"
+    >
+    Specifies default search criteria for the input.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
