@@ -5,14 +5,14 @@
 >
 
   <sky-demo-page-summary>
-    The popover component allows you to display contextual content when users select a button or link. The content can be plain text, HTML, or any Angular component. To close a popover, users can select the trigger element or click elsewhere on the page.
+    The popover module allows you to display contextual content when users interact with an element on a page. The content can be plain text, HTML, or an Angular component.
   </sky-demo-page-summary>
 
-  <sky-demo-page-properties sectionHeading="Popover trigger properties">
+  <sky-demo-page-properties sectionHeading="Popover trigger directive properties">
     <sky-demo-page-property
       propertyName="skyPopover"
     >
-    References a <stache-code>SkyPopoverComponent</stache-code> instance on the page. Add this directive to an element that will open a popover when selected.
+    References the popover component to display. Add this directive to the trigger element that opens the popover.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="skyPopoverAlignment"
@@ -20,6 +20,12 @@
       isOptional="true"
     >
     Specifies the horizontal alignment of the popover in relation to the trigger element. Available values are <stache-code>left</stache-code>, <stache-code>right</stache-code>, and <stache-code>center</stache-code>.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="skyPopoverMessageStream"
+      isOptional="true"
+    >
+    Provides an observable to send commands to the popover. The commands should respect <a stacheRouterLink="." fragment="skypopovermessage-type">the <stache-code>SkyPopoverMessage</stache-code> type</a>.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="skyPopoverPlacement"
@@ -33,57 +39,77 @@
       defaultValue="click"
       isOptional="true"
     >
-    Specifies a user action that displays the popover. Available values are <stache-code>click</stache-code> and <stache-code>mouseenter</stache-code>.
+    Specifies the user action that displays the popover. Available values are <stache-code>click</stache-code> and <stache-code>mouseenter</stache-code>.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
   <sky-demo-page-properties sectionHeading="Popover component properties">
     <sky-demo-page-property
-      propertyName="popoverTitle"
-      isOptional="true"
-    >
-    Specifies a title for the popover.
-    </sky-demo-page-property>
-
-    <sky-demo-page-property
-      propertyName="placement"
-      isOptional="true"
-    >
-    Specifies the default placement value of the popover. Can be overwritten by the <stache-code>skyPopoverPlacement</stache-code> property.
-    </sky-demo-page-property>
-
-    <sky-demo-page-property
-      propertyName="alignment"
-      isOptional="true"
-    >
-    Specifies the default alignment value of the popover. Can be overwritten by the <stache-code>skyPopoverAlignment</stache-code> property.
-    </sky-demo-page-property>
-
-    <sky-demo-page-property
       propertyName="#<popover-reference-name>"
     >
-    Specifies the template reference variable that the <stache-code>[skyPopover]</stache-code> directive uses.
+    Specifies a template reference variable for the popover component. The <stache-code>[skyPopover]</stache-code> directive uses this variable to reference the popover component.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="alignment"
+      defaultValue="center"
+      isOptional="true"
+    >
+    The <stache-code>skyPopoverAlignment</stache-code> property on the trigger element overwrites this property. It specifies the horizontal alignment of the popover in relation to the trigger element. Available values are <stache-code>left</stache-code>, <stache-code>right</stache-code>, and <stache-code>center</stache-code>.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="dismissOnBlur"
+      defaultValue="true"
       isOptional="true"
     >
-    Indicates whether to close the popover when focus is lost. To require users to click a trigger button to toggle the popover's visibility, set this input to <stache-code>false</stache-code>. By default, the popover closes when focus is lost.
+    Indicates whether to close the popover when it loses focus. To require users to click a trigger button to close the popover, set this input to <stache-code>false</stache-code>. This property accepts <stache-code>boolean</stache-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="placement"
+      defaultValue="above"
+      isOptional="true"
+    >
+    The <stache-code>skyPopoverPlacement</stache-code> property on the trigger element overwrites this property. It specifies the placement of the popover in relation to the trigger element. Available values are <stache-code>above</stache-code>, <stache-code>below</stache-code>, <stache-code>left</stache-code>, and <stache-code>right</stache-code>.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="popoverTitle"
+      isOptional="true"
+    >
+    Specifies a title for the popover. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
   <sky-demo-page-properties sectionHeading="Popover component events">
     <sky-demo-page-property
-      propertyName="popoverOpened"
-    >
-    Fires when users open the popover.
-    </sky-demo-page-property>
-    <sky-demo-page-property
       propertyName="popoverClosed"
     >
     Fires when users close the popover.
     </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="popoverOpened"
+    >
+    Fires when users open the popover.
+    </sky-demo-page-property>
   </sky-demo-page-properties>
+
+  <sky-demo-page-properties sectionHeading="SkyPopoverMessage type">
+    <sky-demo-page-property
+      propertyName="type"
+      isOptional="true">
+      Sets <stache-code>SkyPopoverMessage</stache-code> to one of the following types:
+      <ul>
+        <li>
+          <stache-code>SkyPopoverMessageType.Close</stache-code> &mdash; Closes the popover.
+        </li>
+        <li>
+          <stache-code>SkyPopoverMessageType.Open</stache-code> &mdash; Opens the popover.
+        </li>
+        <li>
+          <stache-code>SkyPopoverMessageType.Reposition</stache-code> &mdash; Repositions the popover to the appropriate position. This is useful for when the popover’s width and height change while it is open.
+        </li>
+      </ul>
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
 
   <sky-demo-page-example>
     <sky-popover-demo>

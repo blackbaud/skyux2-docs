@@ -5,11 +5,16 @@
   "host": {
     "url": "https://developer.blackbaud.com"
   },
+  "app": {
+    "title": "Blackbaud SKY UX"
+  },
   "appSettings": {
     "stache": {
       "editButton": {
         "text": "Suggest edit",
         "url": "https://github.com/blackbaud/skyux2-docs"
+      },
+      "footer": {
       },
       "searchConfig": {
         "is_internal": false
@@ -17,40 +22,11 @@
     }
   },
   "omnibar": {
-    "experimental": true,
-    "nav": {
-      "services": [
-        {
-          "title": "SKY UX",
-          "searchUrl": "https://stache-search-query.sky.blackbaud.com/search/skyux",
-          "items": [
-            {
-              "title": "Home",
-              "route": "/"
-            },
-            {
-              "title": "Learn",
-              "route": "/learn"
-            },
-            {
-              "title": "Components",
-              "route": "/components"
-            },
-            {
-              "title": "Design",
-              "route": "/design"
-            },
-            {
-              "title": "Contribute",
-              "route": "/contribute"
-            },
-            {
-              "title": "Blog",
-              "route": "/blog"
-            }
-          ]
-        }
-      ]
+    "experimental": true
+  },
+  "params": {
+    "svcid": {
+      "value": "skyux"
     }
   },
   "routes": {
