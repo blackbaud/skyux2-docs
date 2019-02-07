@@ -5,29 +5,35 @@
 >
 
   <sky-demo-page-summary>
-    The radio button component renders a SKY UX-themed replacement for an HTML <stache-code>input</stache-code> element of <stache-code>type="radio"</stache-code>. When users select a radio button, its value is driven through an <stache-code>ngModel</stache-code> attribute that you specify on the <stache-code>sky-radio</stache-code> element or the parent <stache-code>sky-radio-group</stache-code> element. The radio button label component provides a <stache-code>sky-radio-label</stache-code> element to specify labels for radio buttons, and the radio button group component organizes radio buttons into a group. The radio button group component is required for radio buttons on Angular reactive forms, and we recommend using it with all radio buttons.
+    The radio button component renders a SKY UX-themed replacement for an HTML <stache-code>input</stache-code> element with <stache-code>type="radio"</stache-code>. When users select a radio button, its value is driven through an <stache-code>ngModel</stache-code> attribute that you specify on the <stache-code>sky-radio</stache-code> element or the parent <stache-code>sky-radio-group</stache-code> element. The <stache-code>sky-radio-label</stache-code> component specifies labels for radio buttons, and the <stache-code>sky-radio-group</stache-code> component organizes radio buttons into a group. The <stache-code>sky-radio-group</stache-code> component is required for radio buttons on Angular reactive forms, and we recommend using it with all radio buttons.
   </sky-demo-page-summary>
 
   <sky-demo-page-properties sectionHeading="Radio button group properties">
     <p>
-      The radio button group component's <stache-code>sky-radio-group</stache-code> element wraps <stache-code>sky-radio</stache-code> elements to organize the radio buttons into a group. It is required for SKY UX radio buttons on Angular reactive forms to manage the selected value and keep the form up-to-date. We recommend using the radio button group component with all radio buttons.
+      The <stache-code>sky-radio-group</stache-code> component wraps <stache-code>sky-radio</stache-code> components to organize radio buttons into a group. It is required for SKY UX radio buttons on Angular reactive forms to manage the selected values and keep the forms up-to-date. We recommend using the <stache-code>sky-radio-group</stache-code> component with all radio buttons.
     </p>
     <sky-demo-page-property
       propertyName="name"
     >
-      Specifies a name for the collection of radio buttons that the component groups together. If a <stache-code>name</stache-code> property is also set on the <stache-code>sky-radio</stache-code> elements, then this name overwrites it. If a <stache-code>name</stache-code> property is not set on the <stache-code>sky-radio</stache-code> elements, then this property is required.
+      Specifies a name for the collection of radio buttons that the component groups together. This property overwrites the deprecated <stache-code>name</stache-code> property on individual <stache-code>sky-radio</stache-code> elements, and it is required unless the <stache-code>name</stache-code> property is set on individual <stache-code>sky-radio</stache-code> elements. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="ariaLabelledBy"
       isOptional="true"
     >
-      Sets the radio button group's <stache-code>aria-labelledby</stache-code> attribute to support accessibility. The value should be the HTML element ID (without the leading #) of the element that labels the radio button group. This property accepts <stache-code>string</stache-code> values.
+      Sets the radio button group's <stache-code>aria-labelledby</stache-code> attribute to support <a stacheRouterLink="." fragment="accessibility">accessibility</a>. The value should be the HTML element ID (without the leading #) of the element that labels the radio button group. This property accepts <stache-code>string</stache-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="tabIndex"
+      isOptional="true"
+    >
+       Specifies an index for all the radio buttons in the group. If the index is not defined, the indices for individual radio buttons are set to their positions on load. This property supports <a stacheRouterLink="." fragment="accessibility">accessibility</a> by ensuring that focus is placed on the currently selected radio button or on the first or last button when no radio button is selected depending on how users navigate to the radio button group. This property accepts <stache-code>number</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="value"
       isOptional="true"
     >
-      Specifies a value for the radio button. The value usually corresponds to the label of the selected radio button. If a <stache-code>value</stache-code> property is also set on the <stache-code>sky-radio</stache-code> elements, then this value overwrites it. If a <stache-code>value</stache-code> property is not set on the <stache-code>sky-radio</stache-code> elements, then this property is required.
+      Specifies the value of the radio button to select by default when the group loads. The value corresponds to the <stache-code>value</stache-code> property of an individual <stache-code>sky-radio</stache-code> element within the group.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -35,7 +41,7 @@
     <sky-demo-page-property
       propertyName="name"
     >
-    Specifies a name for a group of radio buttons. This property is deprecated, and we recommend using the radio button group component and its <stache-code>name</stache-code> property to group components. This property accepts <stache-code>string</stache-code> values.
+    This property is deprecated in favor of <a stacheRouterLink="." fragment="radio-button-group-properties">the <stache-code>name</stache-code> property on the <stache-code>sky-radio-group</stache-code> element</a>. It specifies a name for a group of radio buttons. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="value"
@@ -54,13 +60,13 @@
       defaultValue="false"
       isOptional="true"
     >
-    Indicates whether the radio button is disabled. This property accepts <stache-code>boolean</stache-code> values.
+    Indicates whether to disable the radio button. This property accepts <stache-code>boolean</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="icon"
       isOptional="true"
     >
-    Specifies an icon to display in place of the radio button. This property accepts <stache-code>string</stache-code> values.
+    Specifies an icon to display in place of the radio button. To group radio buttons like in <a stacheRouterLink="." fragment="demo">the demo below</a>, place the <stache-code>sky-switch-icon-group</stache-code> class on the direct parent element of the radio buttons. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="id"
@@ -72,27 +78,27 @@
       propertyName="label"
       isOptional="true"
     >
-    Defines an ARIA label for the radio button to support accessibility. If the radio button includes a visible label on the screen, use the <stache-code>labelledBy</stache-code> property instead. This property accepts <stache-code>string</stache-code> values.
+    Defines an ARIA label for the radio button to support <a stacheRouterLink="." fragment="accessibility">accessibility</a> when the radio button does not include a visible label. This property must be set if you are using an icon radio button. If the radio button includes a visible label on the screen, use the <stache-code>labelledBy</stache-code> property instead. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="labelledBy"
       isOptional="true"
     >
-    Sets the radio button's <stache-code>aria-labelledby</stache-code> attribute to support accessibility. The value should be the HTML element ID (without the leading #) of the element that labels the radio button. If the radio button does not include a visible label on the screen, use the <stache-code>label</stache-code> property instead. This property accepts <stache-code>string</stache-code> values.
+    Sets the radio button's <stache-code>aria-labelledby</stache-code> attribute to support <a stacheRouterLink="." fragment="accessibility">accessibility</a>. The value should be the HTML element ID (without the leading #) of the element that labels the radio button. If the radio button does not include a visible label on the screen, use the <stache-code>label</stache-code> property instead. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="radioType"
-      defaultValue="false"
-      isOptional="info"
+      defaultValue="info"
+      isOptional="true"
     >
-    Specifies a type for a radio button that uses the <stache-code>icon</stache-code> property. When users select the icon, this property changes its background color. The valid options correspond to the label types from the <a stacheRouterLink="/components/label">label component</a>, and they include <stache-code>info</stache-code>, which creates a blue background, <stache-code>success</stache-code>, which creates a green background, <stache-code>warning</stache-code>, which creates an orange background, and <stache-code>danger</stache-code>, which creates a red background. This property accepts <stache-code>string</stache-code> values.
+    Specifies a type to set the background color after users select a radio button where the <stache-code>icon</stache-code> property displays an icon in place of the radio button. The valid options correspond <a stacheRouterLink="/components/label">the label component's</a> label types. <stache-code>info</stache-code> creates a blue background, <stache-code>success</stache-code> creates a green background, <stache-code>warning</stache-code> creates an orange background, and <stache-code>danger</stache-code> creates a red background. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="tabIndex"
       defaultValue="0"
       isOptional="true"
     >
-    This property is deprecated. It specifies an index for the radio button. If the index is not defined, it is set to the position of the radio button on load.
+    This property is deprecated in favor of <a stacheRouterLink="." fragment="radio-button-group-properties">the <stache-code>tabIndex</stache-code> property on the <stache-code>sky-radio-group</stache-code> element</a>. It specifies an index for the radio button. If the index is not defined, it is set to the position of the radio button on load. This property accepts <stache-code>number</stache-code> values.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -111,7 +117,14 @@
 
   <sky-demo-page-content sectionHeading="Accessibility">
     <p>
-      For a group of radio buttons, use <stache-code>fieldset</stache-code> and <stache-code>legend</stache-code> elements to provide semantic structure. For people using assistive technology, the <stache-code>fieldset</stache-code> element groups the radio buttons to indicate the number of items in the group, and the <stache-code>legend</stache-code> element provides a description for the group. For more information on how to use <stache-code>fieldset</stache-code> and <stache-code>legend</stache-code>, see <a href="http://webaim.org/techniques/forms/controls#radio">WebAIM examples and guidance</a>.</p>
+      For a group of radio buttons, use the <stache-code>fieldset</stache-code> and <stache-code>legend</stache-code> elements to provide semantic structure. For people using assistive technology, the <stache-code>fieldset</stache-code> element groups the radio buttons to indicate the number of items in the group, and the <stache-code>legend</stache-code> element provides a description for the group. For more information about how to use <stache-code>fieldset</stache-code> and <stache-code>legend</stache-code>, see <a href="http://webaim.org/techniques/forms/controls#radio">WebAIM examples and guidance</a>.
+    </p>
+    <p>
+      Also for a group of radio buttons, use the <stache-code>tabIndex</stache-code> property to specify an index for all radio buttons in the group. This places focus on the currently selected radio button. If no radio button is selected, it places focus on the first or last button depending on how users navigate to the radio button group.
+    </p>
+    <p>
+      For icon radio buttons, use the <stache-code>label</stache-code> or <stache-code>labelledby</stache-code> input. For people using assistive technology, the visible icon may not convey sufficient information.
+    </p>
   </sky-demo-page-content>
 
 </sky-demo-page>
