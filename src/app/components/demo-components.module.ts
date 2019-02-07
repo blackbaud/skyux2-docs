@@ -11,22 +11,24 @@ import {
 } from '../demos/demos.service';
 
 import {
+  SkyPhoneFieldDemoModule,
   SkySummaryActionBarDemoModule
-} from '../demos/summary-action-bar';
+} from '../demos';
 
 import {
   SkyDemoComponentsService
 } from './demo-components.service';
-
 require('style-loader!prismjs/themes/prism.css');
 
 @NgModule({
   imports: [
     SkyDemoModule,
+    SkyPhoneFieldDemoModule,
     SkySummaryActionBarDemoModule
   ],
   exports: [
     SkyDemoModule,
+    SkyPhoneFieldDemoModule,
     SkySummaryActionBarDemoModule
   ],
   providers: [

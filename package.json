@@ -18,7 +18,8 @@
     "@skyux/action-bars": "3.0.0"
   },
   "devDependencies": {
-    "@blackbaud/skyux-builder": "1.30.0"
+    "@blackbaud/skyux-builder": "1.30.0",
+    "intl-tel-input": "14.0.10"
   },
   "repository": {
     "type": "git",

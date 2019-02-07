@@ -350,6 +350,14 @@ export class SkyDemoComponentsService {
         getCodeFiles: () => this.getDemoFiles('SkyPagingDemoComponent')
       },
       {
+        name: 'Phone field',
+        icon: 'phone',
+        // tslint:disable-next-line
+        summary: `The phone field module allows users to validate international phone numbers.`,
+        url: '/components/phone-field',
+        getCodeFiles: () => this.getDemoFiles('SkyPhoneFieldDemoComponent')
+      },
+      {
         name: 'Popover',
         icon: 'newspaper-o',
         // tslint:disable-next-line

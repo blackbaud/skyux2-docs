@@ -1,0 +1,84 @@
+<sky-demo-page
+  pageTitle="Phone field"
+  skyuxModule="SkyPhoneFieldModule"
+  packageName="@skyux/phone-field"
+>
+
+  <sky-demo-page-summary>
+    <p>
+      The phone field module contains a directive which validates phone numbers against the standards for different countries. The value that is validated against is driven through the <stache-code>ngModel</stache-code> attribute specified on the <stache-code>input</stache-code> element or a <stache-code>FormControl</stache-code> within a reactive form.
+    </p>
+  </sky-demo-page-summary>
+
+  <sky-demo-page-properties
+    sectionHeading="Phone field input directive properties"
+  >
+    <sky-demo-page-property
+      propertyName="skyPhoneFieldInput"
+    >
+      Creates the phone field input and dropdown. Place this attribute on an <stache-code>input</stache-code> element, and wrap the input in a <stache-code>sky-phone-field</stache-code> component. The attribute must be set to the instance of the <stache-code>sky-phone-field</stache-code> component.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="defaultCountry"
+      [isOptional]="true"
+    >
+      Specifies the default country for the phone field input and dropdown. This property accepts <stache-code>string</stache-code> <a href="https://www.nationsonline.org/oneworld/country_code_list.htm">International Organization for Standardization Alpha 2</a> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="disabled"
+      [defaultValue]="false"
+      [isOptional]="true"
+    >
+      Indicates whether to disable the phone field. This property accepts <stache-code>boolean</stache-code> values.
+    </sky-demo-page-property>
+
+    <sky-demo-page-property
+      propertyName="formatModel"
+      [defaultValue]="true"
+      [isOptional]="true"
+    >
+      Indicates whether to format the phone field's model value based on national formatting rules. This property accepts <stache-code>boolean</stache-code> values.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-properties
+    sectionHeading="Phone field input directive events"
+  >
+    <sky-demo-page-property
+      propertyName="selectedCountryChanged"
+    >
+      This event emits a <stache-code>SkyCountryData</stache-code> object when the selected country is changed.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-properties
+    sectionHeading="SkyCountryData properties"
+  >
+    <sky-demo-page-property
+      propertyName="name"
+    >
+      The name of the country
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="iso2"
+    >
+      The country's <a href="https://www.nationsonline.org/oneworld/country_code_list.htm">International Organization for Standardization Alpha 2</a>.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="dialCode"
+    >
+      The country's international dial code.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="placeholder"
+    >
+      An example placeholder value for the country's number format. This value is set once the country is selected to be validated against and is <stache-code>undefined</stache-code> prior to this.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-example>
+    <sky-phone-field-demo></sky-phone-field-demo>
+    <sky-demo-page-code demoName="Phone field"></sky-demo-page-code>
+  </sky-demo-page-example>
+
+</sky-demo-page>

@@ -4,8 +4,9 @@ import {
 } from '@angular/core';
 
 import {
+  SkyPhoneFieldDemoComponent,
   SkySummaryActionBarDemoComponent
-} from './summary-action-bar';
+} from '.';
 // #endregion
 
 /**
@@ -23,6 +24,22 @@ import {
 @Injectable()
 export class SkyDocsDemoCodeService {
   public components: any[] = [
+    {
+      name: 'Phone field',
+      component: SkyPhoneFieldDemoComponent,
+      files: [
+        {
+          name: 'phone-field-demo.component.html',
+          fileContents: require('!!raw-loader!./phone-field/phone-field-demo.component.html')
+        },
+        {
+          name: 'phone-field-demo.ts',
+          fileContents: require('!!raw-loader!./phone-field/phone-field-demo.component.ts'),
+          componentName: 'SkyPhoneFieldDemoComponent',
+          bootstrapSelector: 'sky-phone-field-demo'
+        }
+      ]
+    },
     {
       name: 'Summary action bar',
       component: SkySummaryActionBarDemoComponent,
