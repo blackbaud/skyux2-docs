@@ -199,6 +199,13 @@ export class SkyDemoComponentsService {
         url: '/components/infinite-scroll',
         getCodeFiles: () => this.getDemoFiles('SkyInfiniteScrollDemoComponent')
       },
+			{
+        name: 'Inline form',
+        icon: 'keyboard-o',
+        summary: 'The inline form component renders a form in context rather than in a modal.',
+        url: '/components/inline-form',
+        getCodeFiles: () => this.getDemoFiles('SkyInlineFormDemoComponent')
+      },
       {
         name: 'Key info',
         icon: 'key',
