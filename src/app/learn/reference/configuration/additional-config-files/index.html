@@ -106,7 +106,26 @@
 }
   </stache-code-block>
   <p>
-    For an example of how to track parameters in the URL, see <a routerLink="/learn/reference/configuration/query-params"><stache-code>SkyAppConfig</stache-code> parameters</a>.
+    The following code sample illustrates how you can use SKY UX Builder to track parameters in the URL and expose them through your app using the <stache-code>SkyAppConfig</stache-code> class:
+  </p>
+
+  <stache-code-block languageType="typescript">
+import { Component } from '@angular/core';
+import { SkyAppConfig } from '@blackbaud/skyux-builder/runtime';
+
+@Component({
+  selector: 'my-home',
+  templateUrl: './home.component.html'
+})
+export class HomeComponent {
+  public envId: string;
+  constructor(skyAppConfig: SkyAppConfig) {
+    this.envId = skyAppConfig.params.get('envid');
+  }
+}
+  </stache-code-block>
+  <p>
+    For more information about <stache-code>envid</stache-code> and other querystring parameters, see <a routerLink="/learn/reference/configuration">the <stache-code>params</stache-code> configuration property</a>.
   </p>
 
 </stache>
