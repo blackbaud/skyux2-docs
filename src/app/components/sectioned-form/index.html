@@ -6,11 +6,19 @@
 
   <sky-demo-page-summary>
     <p>
-      Sectioned forms combine multiple forms to display large amounts of conceptually related information.
+      The sectioned form module contains components to combine multiple forms and display large amounts of conceptually related information. The <stache-code>sky-sectioned-form</stache-code> component creates a container for the forms, and the <stache-code>sky-sectioned-form-section</stache-code> component creates an individual form to display as a section within the sectioned form. 
     </p>
   </sky-demo-page-summary>
 
-  <sky-demo-page-properties sectionHeading="Sectioned form section settings">
+  <sky-demo-page-properties sectionHeading="Sectioned form events">
+    <sky-demo-page-property
+      propertyName="indexChanged"
+    >
+    Fires when the active tab changes and emits the index of the active section. The index is based on the section's position when the form loads.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-properties sectionHeading="Sectioned form section properties">
     <sky-demo-page-property
       propertyName="active"
       isOptional="true"
@@ -30,24 +38,16 @@
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
-  <sky-demo-page-properties sectionHeading="Sectioned form events">
-    <sky-demo-page-property
-      propertyName="indexChanged"
-    >
-    Fires when the active tab changes and emits the index of the active section. The index is based on the section's position when the form loads.
-    </sky-demo-page-property>
-  </sky-demo-page-properties>
-
   <sky-demo-page-properties sectionHeading="Section form service methods">
-    <sky-demo-page-property
-      propertyName="requiredFieldChanged(isRequired: boolean)"
-    >
-      Sets the current <stache-code>sky-sectioned-form-section</stache-code>'s required state based on the <stache-code>isRequired</stache-code> parameter. Used from within a <stache-code>sky-sectioned-form-section</stache-code>.
-    </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="invalidFieldChanged(isInvalid: boolean)"
     >
-      Sets the current <stache-code>sky-sectioned-form-section</stache-code>'s invalid state based on the <stache-code>isInvalid</stache-code> parameter. Used from within a <stache-code>sky-sectioned-form-section</stache-code>.
+      Sets the current section's invalid state based on the <stache-code>isInvalid</stache-code> parameter. This method is used within a <stache-code>sky-sectioned-form-section</stache-code> element.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="requiredFieldChanged(isRequired: boolean)"
+    >
+      Sets the current section's required state based on the <stache-code>isRequired</stache-code> parameter. This method is used within a <stache-code>sky-sectioned-form-section</stache-code> element.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
