@@ -218,7 +218,7 @@
     </li>
     <li>
       <p>
-        <stache-code>params</stache-code> — Specifies a list of parameters that are allowed at runtime. You can list parameters as an array of strings, specify parameters as key-value pairs with boolean values that indicate whether the parameters are allowed, or specify parameters as objects to provide default values for the parameters. If you specify parameters as objects with default values, the <stache-code>required</stache-code> parameter must be set to <stache-code>true</stache-code> to load your SPA. The <stache-code>excludeFromRequest</stache-code> parameter excludes parameters from requests.
+        <stache-code>params</stache-code> — Specifies a list of parameters that are allowed at runtime. You can list parameters as an array of strings, specify parameters as key-value pairs with boolean values that indicate whether the parameters are allowed, or specify parameters as objects to provide default values for the parameters.
       </p>
       <ul>
         <li>
@@ -275,8 +275,19 @@
         </li>
         <li>
           <p>
+            <stache-code>excludeFromRequest</stache-code> — By default, <stache-code>SkyAuthHttp</stache-code> and <stache-code>SkyAuthHttpClient</stache-code> include any parameter with listed values in their requests. This parameter applies when a consumer wants to track a parameter without including it in the http call.
+          </p>
+        </li>
+        <li>
+          <p>
             <stache-code>leid</stache-code> — Specifies the legal entity ID.
           </p>
+        </li>
+        <li>
+          <p>
+            <stache-code>required</stache-code> — For the <stache-code>envid</stache-code>, <stache-code>leid</stache-code>, and <stache-code>svcid</stache-code> parameters, <stache-code>@blackbaud/skyux-builder</stache-code> and <stache-code>@skyux-sdk/builder</stache-code> pass the <stache-code>required</stache-code> state to the <stache-code>auth-client</stache-code>, which attempts to resolve the default value if one is available, show the welcome screen if multiple are available, or show an error if none are available.</p>
+          <p>
+            For custom required parameters, no logic is applied, and users can use the <stache-code>SkyuxConfigParams</stache-code> class to interact with them.</p>
         </li>
         <li>
           <p>
