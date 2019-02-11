@@ -1,20 +1,37 @@
-import { NgModule } from '@angular/core';
+import {
+  NgModule
+} from '@angular/core';
 
-import { SkyDemoModule } from '@blackbaud/skyux/dist/demo';
+import {
+  SkyDemoModule
+} from '@blackbaud/skyux/dist/demo';
 
-import { SkyDemoComponentsService } from './demo-components.service';
+import {
+  SkyDocsDemoCodeService
+} from '../demos/demos.service';
+
+import {
+  SkySummaryActionBarDemoModule
+} from '../demos/summary-action-bar';
+
+import {
+  SkyDemoComponentsService
+} from './demo-components.service';
 
 require('style-loader!prismjs/themes/prism.css');
 
 @NgModule({
   imports: [
-    SkyDemoModule
+    SkyDemoModule,
+    SkySummaryActionBarDemoModule
   ],
   exports: [
-    SkyDemoModule
+    SkyDemoModule,
+    SkySummaryActionBarDemoModule
   ],
   providers: [
-    SkyDemoComponentsService
+    SkyDemoComponentsService,
+    SkyDocsDemoCodeService
   ]
 })
 export class SkyDemoComponentsModule { }

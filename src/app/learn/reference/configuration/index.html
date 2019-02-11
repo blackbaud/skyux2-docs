@@ -215,9 +215,6 @@
       <p>
         <stache-code>params</stache-code> — Specifies a list of parameters that are allowed at runtime. You can list parameters as an array of strings, specify parameters as key-value pairs with boolean values that indicate whether the parameters are allowed, or specify parameters as objects to provide default values for the parameters.
       </p>
-      <p>
-        By default, Builder’s <stache-code>skyuxconfig.json</stache-code> lists the <stache-code>svcid</stache-code> and <stache-code>envid</stache-code> parameters and sets them to <stache-code>true</stache-code>. This allows the SPA to track the querystring parameters of <stache-code>svcid</stache-code> and <stache-code>envid</stache-code> in the URL and exposes them through the <stache-code>SkyAppConfig</stache-code> in runtime. You may want to <a routerLink="/learn/reference/configuration/additional-config-files">specify default <stache-code>svcid</stache-code> and <stache-code>envid</stache-code> values for local development.</a>
-      </p>
       <ul>
         <li>
           <p>
@@ -257,6 +254,34 @@
           </stache-code-block>
         </li>
       </ul>
+      <p>
+        By default, SKY Builder includes the <stache-code>addin</stache-code>, <stache-code>envid</stache-code>, <stache-code>leid</stache-code>, and <stache-code>svcid</stache-code> querystring parameters in its <stache-code>skyuxconfig.json</stache-code> file and sets them to <stache-code>true</stache-code>. This allows SPAs to track those four parameters in the URL and exposes them through the <stache-code>SkyAppConfig</stache-code> at runtime.
+      </p>
+      <ul>
+        <li>
+          <p>
+            <stache-code>addin</stache-code> — Specifies that the SPA is running as an add-in within another SPA. This parameter is for internal Blackbaud use only, and it is primarily used to hide the omnibar.
+          </p>
+        </li>
+        <li>
+          <p>
+            <stache-code>envid</stache-code> — Specifies the environment ID.
+          </p>
+        </li>
+        <li>
+          <p>
+            <stache-code>leid</stache-code> — Specifies the legal entity ID.
+          </p>
+        </li>
+        <li>
+          <p>
+            <stache-code>svcid</stache-code> — Specifies the service ID.
+          </p>
+        </li>
+      </ul>
+      <p>
+        If you have a specific environment ID or service ID for testing, you can <a stacheRouterLink="/learn/reference/configuration/additional-config-files" fragment="parameters">specify default <stache-code>svcid</stache-code> or <stache-code>envid</stache-code> values for local development</a> in a <stache-code>skyuxconfig.serve.json</stache-code> file so that you don't have to paste the values in the URL when you serve. 
+      </p>
     </li>
     <li>
       <p>
