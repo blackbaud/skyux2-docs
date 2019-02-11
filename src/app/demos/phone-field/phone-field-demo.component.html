@@ -1,26 +1,45 @@
+<h2
+  class="sky-section-heading"
+>
+  Standard phone field
+</h2>
+
 <div
   id="screenshot-phone-field"
   style="width: 50%; margin: 10px; padding: 10px;"
 >
   <sky-phone-field #phoneField>
     <input
-      type="text"
       [(ngModel)]="phoneNumber"
       [skyPhoneFieldInput]="phoneField"
     >
   </sky-phone-field>
+
+  <p *ngIf="phoneNumber">
+    Entered phone number is {{ phoneNumber }}
+  </p>
 </div>
-<div
-  id="screenshot-phone-field-default"
-  style="width: 50%; margin: 10px; padding: 10px;"
+
+<h2
+  class="sky-section-heading"
 >
-  <sky-phone-field #phoneField2>
+  Reactive phone field with default country
+</h2>
+
+<form
+  style="width: 50%; margin: 10px; padding: 10px;"
+  [formGroup]="phoneForm"
+>
+  <sky-phone-field #reactivePhoneField>
     <input
-      type="text"
-      [(ngModel)]="phoneNumber2"
-      [skyPhoneFieldInput]="phoneField2"
+      formControlName="phoneControl"
+      [skyPhoneFieldInput]="reactivePhoneField"
       [defaultCountry]="'us'"
       >
   </sky-phone-field>
-</div>
+
+  <p *ngIf="phoneControl.value">
+    Entered phone number is {{ phoneControl.value }}
+  </p>
+</form>
 
