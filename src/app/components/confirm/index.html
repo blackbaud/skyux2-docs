@@ -12,7 +12,7 @@
     <sky-demo-page-property
       propertyName="open(config)"
     >
-    Opens a confirmation dialog and passes the <stache-code>config</stache-code> parameter is of type <stache-code>SkyConfirmConfig</stache-code> to the component's constructor. This method returns the confirmation dialog instance.
+    Opens a confirmation dialog and passes the <stache-code>config</stache-code> parameter of type <stache-code>SkyConfirmConfig</stache-code> to the component's constructor. This method returns an object of type <stache-code>SkyConfirmInstance</stache-code>.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -70,11 +70,16 @@
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
-  <sky-demo-page-properties sectionHeading="Confirmation dialog events">
+  <sky-demo-page-properties sectionHeading="SkyConfirmInstance events">
     <sky-demo-page-property
       propertyName="closed"
     >
-    Fires when users select an action to close the confirmation dialog. This event returns an object with information about the button that users select.
+    Fires when users select an action to close the confirmation dialog. This event returns a <stache-code>SkyConfirmCloseEventArgs</stache-code> object with information about the button that users select. The <stache-code>SkyConfirmCloseEventArgs</stache-code> object includes the following property:
+    <ul>
+      <li>
+        <stache-code>action</stache-code> — The identifier for the button that users selected to close the confirmation dialog. 
+      </li>
+    </ul>
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
