@@ -16,13 +16,13 @@ export class ContributeActionButtonsComponent {
       name: 'Guidelines',
       path: '/contribute/guidelines',
       icon: 'file',
-      summary: 'View our contribution guidelines.'
+      summary: 'View our guidelines for how to contribute to SKY UX.'
     },
     {
       name: 'Packages',
       path: '/contribute/packages',
       icon: 'file',
-      summary: 'View our package organization.'
+      summary: 'View the packages for different areas of development.'
     }
   ];
 }
