@@ -7,12 +7,6 @@ import { Component } from '@angular/core';
 export class ContributeActionButtonsComponent {
   public routes = [
     {
-      name: 'Contributors',
-      path: '/contribute/contributors',
-      icon: 'address-card',
-      summary: 'View SKY UX team members as well as key contributors.'
-    },
-    {
       name: 'Guidelines',
       path: '/contribute/guidelines',
       icon: 'file',
@@ -21,7 +15,7 @@ export class ContributeActionButtonsComponent {
     {
       name: 'Packages',
       path: '/contribute/packages',
-      icon: 'file',
+      icon: 'archive',
       summary: 'View our package organization.'
     }
   ];
