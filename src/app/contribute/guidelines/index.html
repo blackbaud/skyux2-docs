@@ -4,7 +4,12 @@
   layout="sidebar">
 
   <stache-page-summary>
-    The SKY UX framework provides functionality through many repositories, targeting different areas of development.  Use the <a href="../organization">organization matrix</a> to learn how are packages are organized.  When contributing, look to the <stache-code>CONTRIBUTING.md</stache-code> file in each repo for specifics.
+    <p>
+      The SKY UX framework provides functionality through multiple repositories that target different areas of development. To learn how we organize these packages, see <a routerLink="../packages">the packages matrix</a>. For information about how to contribute to a package, see the <stache-code>CONTRIBUTING.md</stache-code> file in its repo.
+    </p>
+    <sky-alert alertType="warning">
+      We are  expanding the contribution guidelines on this site, but the guidelines on this page are currently a work in progress. For additional guidance on SKY UX, see <a href="https://github.com/blackbaud/skyux2/blob/master/CONTRIBUTING.md">the contribution guidelines in the SKY UX repo</a>.
+    </sky-alert>
   </stache-page-summary>
 
   <stache-page-anchor>
@@ -12,7 +17,7 @@
   </stache-page-anchor>
 
   <ol>
-    <li>Commit and push your changes to your forked version of the repo.</li>
+    <li>Commit and push changes to a forked version of the repo.</li>
     <li>Submit a pull request.</li>
   </ol>
 
@@ -20,10 +25,10 @@
     Report Bugs
   </stache-page-anchor>
 
-  <p>If you uncover a bug while working with a package, please file an issue. We use the issue to track and assign any work needed. To file a issue with any package, follow these instructions:</p>
+  <p>If you uncover a bug while working with a package, please file an issue in its repo. We use issues to track and assign work.</p>
 
   <ol>
-    <li>Create a GitHub issue in the <a routerLink="../organization">applicable repo</a>.</li>
+    <li>Create a GitHub issue in the <a routerLink="../packages">applicable repo</a>.</li>
     <li>
       Fill out the template fields to provide:
       <ul>
@@ -44,15 +49,12 @@
 
   <h3>Visual Studio Code setup</h3>
 
-  <p>Like Angular, SKY UX Components are written in <a href="https://www.typescriptlang.org/">TypeScript</a>, and the free <a href="https://code.visualstudio.com/">Visual Studio Code editor</a> is a great IDE to work with TypeScript. It supports code navigation, refactoring tools, and a host of other features that are usually only found in richer IDEs. The SKY UX team uses Visual Studio Code and has some recommendations for configuring it to work best with Angular and SKY UX. Even if you do not want to use Visual Studio Code as your editor, the following information will still be useful because extensions are available for other popular editors such as <a href="https://atom.io">Atom</a>, <a href="https://brackets.io">Brackets</a>, and <a href="https://www.sublimetext.com">Sublime Text</a>.</p>
-
-  <h3>Visual Studio Code extensions</h3>
-
-  <p>We highly recommend the following VS Code extensions:</p>
-
+  <p>
+    Like Angular, SKY UX components are written in <a href="https://www.typescriptlang.org/">TypeScript</a>, and the free <a href="https://code.visualstudio.com/">Visual Studio Code editor</a> is a great IDE to work with TypeScript. It supports code navigation, refactoring tools, and a host of other features that are usually only found in richer IDEs. The SKY UX team uses VS Code and highly recommends the <a href="https://marketplace.visualstudio.com/items?itemName=eg2.tslint">TSLint</a> and <a href="https://github.com/editorconfig/editorconfig-vscode">EditorConfig</a> extensions to configure it to work best with Angular and SKY UX. If you do not use VS Code, we still recommend these extensions for other popular editors such as <a href="https://atom.io">Atom</a>, Brackets, and <a href="https://www.sublimetext.com">Sublime Text</a>.
+  </p>
   <ul>
-    <li><a href="https://marketplace.visualstudio.com/items?itemName=eg2.tslint">TSLint</a>: This extension validates your TypeScript code against the rules specified by the <stache-code>tslint.json</stache-code> file in the SKY UX repo. TSLint runs during the CI build, so if this extension does not validate your code in VS Code, the CI build will fail.</li>
-    <li><a href="https://github.com/editorconfig/editorconfig-vscode">EditorConfig</a>: This extension allows VS Code to recognize the <a href="http://editorconfig.org/"><stache-code>.editorconfig</stache-code></a> file to automatically enforce many of the coding conventions that the SKY UX team uses, such as indent size, trailing whitespace rules, etc. If you do not use this extension, then you will find yourself fixing a lot of TSLint errors manually instead of letting VS Code do it for you.</li>
+    <li><a href="https://marketplace.visualstudio.com/items?itemName=eg2.tslint">TSLint</a> validates your TypeScript code against the rules specified by the <stache-code>tslint.json</stache-code> file in the SKY UX repo. TSLint runs during the CI build, so if this extension does not validate your code in VS Code, then the CI build will fail.</li>
+    <li><a href="https://github.com/editorconfig/editorconfig-vscode">EditorConfig</a> allows VS Code to recognize the <a href="http://editorconfig.org/"><stache-code>.editorconfig</stache-code></a> file and automatically enforces many coding conventions that the SKY UX team uses, such as indent size and trailing whitespace rules. If you do not use this extension, then you will find yourself fixing a lot of TSLint errors manually instead of letting VS Code do it for you.</li>
   </ul>
 
 </stache>
