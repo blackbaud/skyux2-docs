@@ -2,6 +2,21 @@ import {
   Component
 } from '@angular/core';
 
+export function sortById(a: any, b: any): any {
+  const keyA = a.id;
+  const keyB = b.id;
+
+  if (keyA < keyB) {
+    return -1;
+  }
+
+  if (keyA > keyB) {
+    return 1;
+  }
+
+  return 0;
+}
+
 @Component({
   selector: 'app-packages',
   templateUrl: './packages.component.html',
@@ -11,6 +26,16 @@ export class PackagesComponent {
 
   // "id" is required for sky-grid
   public skyuxPackages = [
+    {
+      id: '@skyux/a11y',
+      provider: 'github',
+      repo: 'blackbaud/skyux-a11y'
+    },
+    {
+      id: '@skyux/action-bars',
+      provider: 'github',
+      repo: 'blackbaud/skyux-action-bars'
+    },
     {
       id: '@skyux/animations',
       provider: 'github',
@@ -25,6 +50,11 @@ export class PackagesComponent {
       id: '@skyux/colorpicker',
       provider: 'github',
       repo: 'blackbaud/skyux-colorpicker'
+    },
+    {
+      id: '@skyux/config',
+      provider: 'github',
+      repo: 'blackbaud/skyux-config'
     },
     {
       id: '@skyux/core',
@@ -57,6 +87,16 @@ export class PackagesComponent {
       repo: 'blackbaud/skyux-grids'
     },
     {
+      id: '@skyux/http',
+      provider: 'github',
+      repo: 'blackbaud/skyux-http'
+    },
+    {
+      id: '@skyux/i18n',
+      provider: 'github',
+      repo: 'blackbaud/skyux-i18n'
+    },
+    {
       id: '@skyux/indicators',
       provider: 'github',
       repo: 'blackbaud/skyux-indicators'
@@ -77,6 +117,21 @@ export class PackagesComponent {
       repo: 'blackbaud/skyux-list-builder'
     },
     {
+      id: '@skyux/list-builder-common',
+      provider: 'github',
+      repo: 'blackbaud/skyux-list-builder-common'
+    },
+    {
+      id: '@skyux/list-builder-view-checklist',
+      provider: 'github',
+      repo: 'blackbaud/skyux-list-builder-view-checklist'
+    },
+    {
+      id: '@skyux/list-builder-view-grids',
+      provider: 'github',
+      repo: 'blackbaud/skyux-list-builder-view-grids'
+    },
+    {
       id: '@skyux/lists',
       provider: 'github',
       repo: 'blackbaud/skyux-lists'
@@ -95,6 +150,16 @@ export class PackagesComponent {
       id: '@skyux/popovers',
       provider: 'github',
       repo: 'blackbaud/skyux-popovers'
+    },
+    {
+      id: '@skyux/progress-indicator',
+      provider: 'github',
+      repo: 'blackbaud/skyux-progress-indicator'
+    },
+    {
+      id: '@skyux/router',
+      provider: 'github',
+      repo: 'blackbaud/skyux-router'
     },
     {
       id: '@skyux/select-field',
@@ -125,6 +190,11 @@ export class PackagesComponent {
       id: '@skyux/toast',
       provider: 'github',
       repo: 'blackbaud/skyux-toast'
+    },
+    {
+      id: '@skyux/validation',
+      provider: 'github',
+      repo: 'blackbaud/skyux-validation'
     }
   ];
 
@@ -224,11 +294,6 @@ export class PackagesComponent {
       repo: 'blackbaud/skyux-lib-help'
     },
     {
-      id: '@blackbaud/skyux-lib-testing',
-      provider: 'github',
-      repo: 'blackbaud/skyux-lib-testing'
-    },
-    {
       id: '@blackbaud/skyux-logger',
       provider: 'github',
       repo: 'blackbaud/skyux-logger'
@@ -244,6 +309,10 @@ export class PackagesComponent {
     this.addProviderUrl(this.blackbaudPackages);
     this.addProviderUrl(this.skyuxPackages);
     this.addProviderUrl(this.sdkPackages);
+
+    this.blackbaudPackages.sort(sortById);
+    this.skyuxPackages.sort(sortById);
+    this.sdkPackages.sort(sortById);
   }
 
   private addProviderUrl(packages: any) {
