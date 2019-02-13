@@ -11,6 +11,13 @@
   </p>
 
   <stache-page-anchor>
+    <stache-code>$schema</stache-code>
+  </stache-page-anchor>
+  <p>
+    Specifies which file is used to provide annotations and validation to the entire configuration file in your IDE. This file should not be modified.
+  </p>
+
+  <stache-page-anchor>
     <stache-code>a11y</stache-code>
   </stache-page-anchor>
   <p>
@@ -278,7 +285,24 @@
       </li>
     </ul>
     <p>
-      By default, SKY Builder includes the <stache-code>addin</stache-code>, <stache-code>envid</stache-code>, <stache-code>leid</stache-code>, and <stache-code>svcid</stache-code> querystring parameters in its <stache-code>skyuxconfig.json</stache-code> file and sets them to <stache-code>true</stache-code>. This allows SPAs to track those four parameters in the URL and exposes them through the <stache-code>SkyAppConfig</stache-code> at runtime.
+      When using this format, in addition to the <stache-code>value</stache-code> property, you can also specify the <stache-code>required</stache-code> and <stache-code>excludeFromRequests</<stache-code> parameters.
+    </p>
+    <ul>
+      <li>
+        <p>
+          <stache-code>excludeFromRequest</stache-code> — By default, <stache-code>SkyAuthHttp</stache-code> and <stache-code>SkyAuthHttpClient</stache-code> include any parameter with listed values in their requests. This parameter applies when a consumer wants to track a parameter without including it in the http call.
+        </p>
+      </li>
+      <li>
+        <p>
+          <stache-code>required</stache-code> — For the <stache-code>envid</stache-code>, <stache-code>leid</stache-code>, and <stache-code>svcid</stache-code> parameters, <stache-code>@blackbaud/skyux-builder</stache-code> and <stache-code>@skyux-sdk/builder</stache-code> pass the <stache-code>required</stache-code> state to the <stache-code>auth-client</stache-code>, which attempts to resolve the default value if one is available, show the welcome screen if multiple are available, or show an error if none are available.</p>
+        <p>
+          For custom required parameters, no logic is applied, and users can use the <stache-code>SkyuxConfigParams</stache-code> class to interact with them.
+        </p>
+      </li>
+    </ul>
+    <p>
+      By default, SKY Builder includes the <stache-code>addin</stache-code>, <stache-code>envid</stache-code>, <stache-code>leid</stache-code>, and <stache-code>svcid</stache-code> parameters in its <stache-code>skyuxconfig.json</stache-code> file and sets them to <stache-code>true</stache-code>. This allows SPAs to track those four parameters in the URL and exposes them through the <stache-code>SkyAppConfig</stache-code> at runtime.
     </p>
     <ul>
       <li>
@@ -303,7 +327,7 @@
       </li>
     </ul>
     <p>
-      If you have a specific environment ID or service ID for testing, you can <a stacheRouterLink="/learn/reference/configuration/additional-config-files" fragment="parameters">specify default <stache-code>svcid</stache-code> or <stache-code>envid</stache-code> values for local development</a> in a <stache-code>skyuxconfig.serve.json</stache-code> file so that you don't have to paste the values in the URL when you serve. 
+      If you have a specific environment ID or service ID for testing, you can <a stacheRouterLink="/learn/reference/configuration/additional-config-files" fragment="parameters">specify default <stache-code>svcid</stache-code> or <stache-code>envid</stache-code> values for local development</a> in a <stache-code>skyuxconfig.serve.json</stache-code> file so that you don't have to paste the values in the URL when you serve.
     </p>
 
   <stache-page-anchor>
@@ -367,6 +391,22 @@
       <ul>
         <li>
           <p>
+            <stache-code>addin</stache-code> — Specifies that the SPA is running as an add-in within another SPA. This parameter is for internal Blackbaud use only, and it is primarily used to hide the omnibar.
+          </p>
+        </li>
+        <li>
+          <p>
+            <stache-code>envid</stache-code> — Specifies the environment ID.
+          </p>
+        </li>
+        <li>
+          <p>
+            <stache-code>leid</stache-code> — Specifies the legal entity ID.
+          </p>
+        </li>
+        <li>
+          <p>
+            <stache-code>svcid</stache-code> — Specifies the service ID.
             <stache-code>browserSet</stache-code> — Specifies the set of browsers to use during continuous integration end-to-end testing. For Blackbaud developers, <a href="https://host.nxt.blackbaud.com/browserstack/learn/automated">the Browserstack documentation</a> describes the available values.
           </p>
         </li>
