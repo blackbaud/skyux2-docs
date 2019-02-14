@@ -1,21 +1,18 @@
 <stache
-  layout="container"
-  pageTitle="Page design"
+  pageTitle="Page Design"
+  navTitle="Page design"
   showTableOfContents="true">
 	
 	<stache-page-anchor>
-    Page <stache-code>&lt;title&gt;</stache-code>
+    Page title
   </stache-page-anchor>
 	
-	<p>Use the following format for the page's HTML <stache-code>&lt;title&gt;</stache-code> element:</p>
-	<p><span class="sky-emphasized">&lt;Page title&gt; - &lt;Product title&gt;</span></p>
-	<p>Example: <span class="sky-emphasized">Gifts list - Raiser's Edge NXT</span></p>
-	
-	<p>For pages with tabbed subnavigation, use the following format:</p>
-	<p><span class="sky-emphasized">&lt;Tab title&gt; - &lt;Page title&gt; - &lt;Product title&gt;</span></p>
-	<p>Example: <span class="sky-emphasized">Portfolio - Work center - Raiser's Edge NXT</span></p>
-	
-	<p>Additional page title guidelines:</p>
+  <p>
+    Use <a href="https://angular.io/docs/ts/latest/cookbook/set-document-title.html">the Angular <stache-code>Title</stache-code> service</a> to set the page's HTML <stache-code>&lt;title&gt;</stache-code>. The default is <stache-code>Blackbaud - SKY UX Application</stache-code>, but you can use <a stacheRouterLink="learn/reference/configuration" fragment="app">the <stache-code>title</stache-code> configuration property</a> to specify your preferred title for when the application loads.
+  </p>
+	<p>
+    Use the following format for the page title element: <span class="sky-emphasized">&lt;Page title&gt; - &lt;Product title&gt;</span>. For example: <span class="sky-emphasized">Gifts list - Raiser's Edge NXT</span>. And for pages with tabbed subnavigation, use the following format: <span class="sky-emphasized">&lt;Tab title&gt; - &lt;Page title&gt; - &lt;Product title&gt;</span>. For example: <span class="sky-emphasized">Portfolio - Work center - Raiser's Edge NXT</span>. In addition, follow these guidelines for page titles:
+  </p>
 	<ul>
 		<li>Keep titles short.</li>
 		<li>Make titles unique.</li>
