@@ -1,0 +1,14 @@
+<div #divReference>
+  <h3>
+    Ctrl + C
+  </h3>
+  <p>
+    Text within a div element to copy to the clipboard!
+  </p>
+</div>
+<sky-copy-to-clipboard buttonText="Copy" buttonClickedText="Copied!" [copyTarget]="divReference"></sky-copy-to-clipboard>
+
+<div style="padding-top: 30px;">
+  <b>Paste Here:</b><br/>
+  <textarea rows="5" style="width:100%;"></textarea>
+</div>

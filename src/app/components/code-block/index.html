@@ -1,0 +1,54 @@
+<sky-demo-page
+  pageTitle="Code block"
+  skyuxModule="SkyCodeBlockModule"
+  packageName="lib-code-block"
+>
+
+  <sky-demo-page-summary>
+    <p>
+      The code block component formats a block of text as a code snippet with syntax highlighting. The code block also has a header that displays a copy button and, if defined, the language type. To create a code snippet, wrap <stache-code>sky-code-block</stache-code> tags around the code block.
+    </p>
+    <p>
+      If a code block has text within <stache-code>&lt;</stache-code> and <stache-code>&gt;</stache-code> characters, then the component automatically appends a closing tag unless the code snippet is valid HTML. To prevent this, you must use "&lt;" to escape <stache-code>&lt;</stache-code> and "&gt;" to escape <stache-code>&gt;</stache-code>. For example, you must escape the <stache-code>&lt;</stache-code> and <stache-code>&gt;</stache-code> characters in the code snippet <stache-code>public Task&lt;Generic> MethodName()</stache-code> or else the component automatically appends <stache-code>&lt;/Generic></stache-code> to the end: <stache-code>public Task&lt;Generic> MethodName()&lt;/Generic></stache-code>.
+    </p>
+    <p>
+    Using the list below, see if your code snippet language is supported. The languages supported appear in pairs. The first part lists the language and the second part displays the text you use for the <stache-code>languageType</stache-code> property. For example, if your code block is a JavaScript code snippet, use <stache-code>languageType="javascript"</stache-code>.
+  </p>
+  </sky-demo-page-summary>
+
+  <sky-demo-page-properties>
+    <sky-demo-page-property
+      propertyName="code"
+      isOptional="true"
+    >
+      Passes a code sample into the component. This property binds data, so you can use brackets to evaluate the template expression: <stache-code>[code]</stache-code>. Without the brackets, Angular treats the value as a string and initializes the target property with the string value instead of evaluating the data value. This property accepts <stache-code>string</stache-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="hideCopyToClipboard"
+      isOptional="true"
+      defaultValue="false"
+    >
+      Indicates whether to hide the copy-to-clipboard button in the code-block header. This property accepts <stache-code>boolean</stache-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="languageType"
+      isOptional="true"
+      defaultValue="markup"
+    >
+      Indicates the language of the code sample. The language type highlights the syntax in your code sample and appears in the header. This property accepts <stache-code>string</stache-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="hideHeader"
+      isOptional="true"
+      defaultValue="false"
+    >
+      Indicates whether to hide the header portion of the code block. If the <stache-code>languageType</stache-code> is not declared and <stache-code>hideCopyToClipboard</stache-code> is set to true, the header is hidden. This property accepts <stache-code>boolean</stache-code> values.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-example>
+    <sky-code-block-demo></sky-code-block-demo>
+    <sky-demo-page-code demoName="Code block"></sky-demo-page-code>
+  </sky-demo-page-example>
+
+</sky-demo-page>
