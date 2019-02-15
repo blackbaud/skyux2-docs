@@ -1,16 +1,23 @@
 <sky-demo-page
-  pageTitle="Vertical tabs"
+  pageTitle="Vertical Tabs"
   skyuxModule="SkyVerticalTabsetModule"
   packageName="@skyux/tabs"
 >
 
   <sky-demo-page-summary>
     <p>
-      The vertical tabs module contains components to render a vertical tabset.
+      The vertical tabs module contains components to render a vertical tabset that display large amounts of content without extending past the edge of the screen. It also allows you to group related tabs into collapsible sections. The <stache-code>sky-vertical-tabset</stache-code> component creates a container for the vertical tabs, and the <stache-code>sky-vertical-tabset-group</stache-code> component creates a collapsible container to organize related tabs into a section. Within the <stache-code>sky-vertical-tabset</stache-code> and <stache-code>sky-vertical-tabset-group</stache-code> components, the <stache-code>sky-vertical-tab</stache-code> component creates an individual tab.
     </p>
   </sky-demo-page-summary>
 
   <sky-demo-page-properties sectionHeading="Vertical tabset properties">
+    <sky-demo-page-property
+      propertyName="ariaRole"
+      isOptional="true"
+      defaultValue="tablist"
+    >
+    Specifies an ARIA role for the tabset to support accessibility by indicating how the tabset functions and what it controls. For information about ARIA roles, see the <a href="https://www.w3.org/WAI/PF/aria/roles">WAI-ARIA roles model</a>. This property accepts <stache-code>string</stache-code> values.
+    </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="showTabsText"
       isOptional="true"
@@ -19,16 +26,46 @@
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
+  <sky-demo-page-properties sectionHeading="Vertical tabset events">
+    <sky-demo-page-property
+      propertyName="activeChange"
+    >
+    Fires when the active tab changes. Emits the index of the active tab. The index is based on the tab's position when it loads.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-properties sectionHeading="Vertical tab group properties">
+    <sky-demo-page-property
+      propertyName="groupHeading"
+    >
+    Specifies the header for the collapsible group of tabs. This property accepts <stache-code>string</stache-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="disabled"
+      isOptional="true"
+      defaultValue="false"
+    >
+    Indicates whether to disable the ability to open and collapse the collapsible group. This property accepts <stache-code>boolean</stache-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="open"
+      isOptional="true"
+      defaultValue="false"
+    >
+    Indicates whether the collapsible group is open. This property accepts <stache-code>boolean</stache-code> values.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
   <sky-demo-page-properties sectionHeading="Vertical tab properties">
     <sky-demo-page-property
       propertyName="tabHeading"
-      defaultValue="false"
     >
     Specifies the tab header. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="active"
       isOptional="true"
+      defaultValue="false"
     >
     Indicates whether the tab is active when the tabset loads. This property accepts <stache-code>boolean</stache-code> values.
     </sky-demo-page-property>
@@ -41,6 +78,7 @@
     <sky-demo-page-property
       propertyName="ariaRole"
       isOptional="true"
+      defaultValue="tab"
     >
     Specifies an ARIA role for the tab to support accessibility by indicating how the tab functions and what it controls. For information about ARIA roles, see the <a href="https://www.w3.org/WAI/PF/aria/roles">WAI-ARIA roles model</a>. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
@@ -54,7 +92,6 @@
     <sky-demo-page-property
       propertyName="tabHeaderCount"
       isOptional="true"
-      defaultValue="false"
     >
     Displays a counter alongside the tab header. This property accepts <stache-code>number</stache-code> values.
     </sky-demo-page-property>
@@ -66,40 +103,12 @@
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
-  <sky-demo-page-properties sectionHeading="Vertical tab group properties">
-    <sky-demo-page-property
-      propertyName="groupHeading"
-    >
-    Specifies the header for the collapsible group of tabs.
-    </sky-demo-page-property>
-    <sky-demo-page-property
-      propertyName="disabled"
-      isOptional="true"
-    >
-    Indicates whether to disable the ability to open and collapse the collapsible group.
-    </sky-demo-page-property>
-    <sky-demo-page-property
-      propertyName="open"
-      isOptional="true"
-    >
-    Indicates whether the collapsible group is open.
-    </sky-demo-page-property>
-  </sky-demo-page-properties>
-
-  <sky-demo-page-properties sectionHeading="Vertical tab events">
-    <sky-demo-page-property
-      propertyName="activeChange"
-    >
-    Fires when the active tab changes. Emits the index of the active tab. The index is based on the tab's position when it loads.
-    </sky-demo-page-property>
-  </sky-demo-page-properties>
-
   <sky-demo-page-example>
     <sky-vertical-tabs-demo></sky-vertical-tabs-demo>
     <sky-demo-page-code demoName="Vertical tabs"></sky-demo-page-code>
   </sky-demo-page-example>
 
-  <sky-demo-page-content sectionHeading="UX Guidelines">
+  <sky-demo-page-content sectionHeading="UX guidelines">
     <section>
       <div class="sky-subsection-heading">When to use vertical tabs</div>
       <ul>
