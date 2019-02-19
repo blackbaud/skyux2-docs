@@ -6,9 +6,14 @@ import {
 import {
   SkySummaryActionBarDemoComponent
 } from './summary-action-bar';
-import { Z_BLOCK } from 'zlib';
-import { SkyCodeBlockDemoComponent } from './code-block';
-import { SkyCopyToClipboardDemoComponent } from './copy-to-clipboard';
+
+import {
+  SkyCodeBlockDemoComponent
+} from './code-block';
+
+import {
+  SkyCopyToClipboardDemoComponent
+} from './copy-to-clipboard';
 // #endregion
 
 /**
