@@ -10,7 +10,9 @@
       </span>
       <ng-container *ngIf="packageName">
         <span class="sky-field-label">in NPM package</span>
-        <a href="https://github.com"><stache-code>{{ packageName }}</stache-code></a>
+        <a href="https://npmjs.org/{{ packageName }}">
+          <stache-code>{{ packageName }}</stache-code>
+        </a>
       </ng-container>
     </h4>
     <ng-content select="sky-demo-page-summary"></ng-content>
