@@ -18,7 +18,7 @@
     "@skyux/action-bars": "3.0.0"
   },
   "devDependencies": {
-    "@blackbaud/skyux-builder": "1.30.0"
+    "@blackbaud/skyux-builder": "1.31.1"
   },
   "repository": {
     "type": "git",
