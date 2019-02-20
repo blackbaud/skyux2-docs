@@ -3,11 +3,13 @@ import { Injectable } from '@angular/core';
 import { SkyDemoService } from '@blackbaud/skyux/dist/demo';
 
 import { SkyDemoComponent } from './demo-component';
+import { SkyDocsDemoCodeService } from '../demos/demos.service';
 
 @Injectable()
 export class SkyDemoComponentsService {
   public constructor(
-    private demoService: SkyDemoService
+    private skyDemoService: SkyDemoService,
+    private docsDemoService: SkyDocsDemoCodeService
   ) { }
 
   public getComponents(filter?: string): SkyDemoComponent[] {
@@ -182,6 +184,13 @@ export class SkyDemoComponentsService {
         summary: 'The highlight component highlights text within DOM elements.',
         url: '/components/text-highlight',
         getCodeFiles: () => this.getDemoFiles('SkyTextHighlightDemoComponent')
+      },
+      {
+        name: 'Icon',
+        icon: 'picture-o',
+        summary: 'The icon component displays a Font Awesome icon.',
+        url: '/components/icon',
+        getCodeFiles: () => this.getDemoFiles('SkyIconDemoComponent')
       },
       {
         name: 'Infinite scroll',
@@ -412,6 +421,14 @@ export class SkyDemoComponentsService {
         url: '/components/status-indicator'
       },
       {
+        name: 'Summary action bar',
+        icon: 'sun-o',
+        // tslint:disable-next-line
+        summary: `The summary action bar provides a docked container for actions and summary information.`,
+        url: '/components/summary-actionbar',
+        getCodeFiles: () => this.getDemoFiles('SkySummaryActionBarDemoComponent')
+      },
+      {
         name: 'Tabs',
         icon: 'folder-open-o',
         summary: `The tabs module contains components to render a tabset.`,
@@ -476,7 +493,7 @@ export class SkyDemoComponentsService {
       {
         name: 'Vertical tabs',
         icon: 'folder-open-o',
-        summary: `The vertical tabs module contains components to render a vertical tabset.`,
+        summary: `The vertical tabs module displays large amounts of information within collapsible groups.`,
         url: '/components/vertical-tabs',
         getCodeFiles: () => this.getDemoFiles('SkyVerticalTabsDemoComponent')
       },
@@ -500,13 +517,19 @@ export class SkyDemoComponentsService {
   }
 
   public getDemoFiles(componentConstructorName: string): any {
-    const config = this.demoService.getComponent(componentConstructorName);
+    const docsDemo = this.docsDemoService.getComponent(componentConstructorName);
 
-    if (!config) {
-      console.warn('No demo files found for:', componentConstructorName);
-      return [];
+    if (!docsDemo) {
+      const skyDemo = this.skyDemoService.getComponent(componentConstructorName);
+
+      if (!skyDemo) {
+        console.warn('No demo files found for:', componentConstructorName);
+        return [];
+      } else {
+        return this.skyDemoService.getComponent(componentConstructorName).files;
+      }
+    } else {
+      return this.docsDemoService.getComponent(componentConstructorName).files;
     }
-
-    return this.demoService.getComponent(componentConstructorName).files;
   }
 }
