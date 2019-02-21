@@ -9,11 +9,13 @@
       The code block component formats a block of text as a code snippet with syntax highlighting. The code block also has a header that displays a copy button and, if defined, the language type. To create a code snippet, wrap <stache-code>sky-code-block</stache-code> tags around the code block.
     </p>
     <p>
-      If a code block has text within <stache-code>&lt;</stache-code> and <stache-code>&gt;</stache-code> characters, then the component automatically appends a closing tag unless the code snippet is valid HTML. To prevent this, you must use "&lt;" to escape <stache-code>&lt;</stache-code> and "&gt;" to escape <stache-code>&gt;</stache-code>. For example, you must escape the <stache-code>&lt;</stache-code> and <stache-code>&gt;</stache-code> characters in the code snippet <stache-code>public Task&lt;Generic> MethodName()</stache-code> or else the component automatically appends <stache-code>&lt;/Generic></stache-code> to the end: <stache-code>public Task&lt;Generic> MethodName()&lt;/Generic></stache-code>.
+      If a code block has text within <stache-code>&lt;</stache-code> and <stache-code>&gt;</stache-code> characters, then the component automatically appends a closing tag unless the code snippet is valid HTML. To prevent this, you must use "&#38;lt;" to escape <stache-code>&lt;</stache-code> and "&#38;gt;" to escape <stache-code>&gt;</stache-code>. For example, you must escape the <stache-code>&lt;</stache-code> and <stache-code>&gt;</stache-code> characters in the code snippet <stache-code>public Task&lt;Generic> MethodName()</stache-code> or else the component automatically appends <stache-code>&lt;/Generic></stache-code> to the end: <stache-code>public Task&lt;Generic> MethodName()&lt;/Generic></stache-code>.
     </p>
     <p>
-    Using the list below, see if your code snippet language is supported. The languages supported appear in pairs. The first part lists the language and the second part displays the text you use for the <stache-code>languageType</stache-code> property. For example, if your code block is a JavaScript code snippet, use <stache-code>languageType="javascript"</stache-code>.
-  </p>
+      <sky-alert alertType="info">
+        To use the code block component, you must set it up as a dependency in your SKY UX SPA. First,install the package as part of your SPA dependencies: <stache-code>npm install @blackbaud/skyux-lib-code-block --save</stache-code>. Then install its plugin: <stache-code>npm install @blackbaud/skyux-builder-plugin-code-block --save</stache-code>. Next, add <stache-code>SkyCodeBlockModule</stache-code> as both an import and export in your <stache-code>app-extras.module.ts</stache-code> file. Finally, add the code block plugin to your <stache-code>skyuxconfig.json</stache-code> file <stache-code>"plugins": ["@blackbaud/skyux-builder-plugin-code-block"]</stache-code>.
+      </sky-alert>
+    </p>
   </sky-demo-page-summary>
 
   <sky-demo-page-properties>
