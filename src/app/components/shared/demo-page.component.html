@@ -23,7 +23,9 @@
   </stache-table-of-contents>
 
   <ng-container *ngIf="npmInstall">
-    <h2>Installation</h2>
+    <stache-page-anchor>
+      Installation
+    </stache-page-anchor>
     <stache-code-block [code]="npmInstall"></stache-code-block>
   </ng-container>
 
