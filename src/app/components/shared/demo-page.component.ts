@@ -75,6 +75,14 @@ export class SkyDemoPageComponent implements OnInit, AfterContentInit {
   }
 
   public ngAfterContentInit(): void {
+    if (this.npmInstall) {
+      this.tableOfContentsRoutes.push({
+        name: 'Installation',
+        fragment: 'installation',
+        path: '.'
+      });
+    }
+
     this.propertiesComponents.map((component: any) => {
       this.tableOfContentsRoutes.push({
         name: component.sectionHeading,
