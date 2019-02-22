@@ -27,6 +27,104 @@
 	<p>
 		Don't rely on a single sensory characteristic of components such as shape, size, visual location, orientation, or sound to describe an error or offer a solution. "Above" and "below" are fine for referencing content in the appropriate reading order for the language used as long as the reference isn't ambiguous.
 	</p>
+
+	<stache-page-anchor>
+		Error message images
+	</stache-page-anchor>
+
+ 	<p>
+		The error message images apply to different scenarios and should be used accordingly. 
+	</p>
+
+ 	<sky-repeater expandMode="multiple">
+		<sky-repeater-item [isExpanded]="false">
+			<sky-repeater-item-title>Broken (Bird)</sky-repeater-item-title>
+			<sky-repeater-item-content>
+				<stache-image
+        		imageSource="~/assets/img/guidelines/errorhandling/bird.png">
+       		 	</stache-image>
+
+      			<p>
+					Use this image for:
+				</p>
+        		<ul>
+            		<li>Errors with the modal component. Example: Modal can't launch form, or the modal service is down on save.</li>
+            		<li>Errors loading list data. Example: Tab content doesn't load.
+            		<li>Errors with the list component. Example: List contents don't load.
+            		<li>500 errors.</li>
+        		</ul>
+    		</sky-repeater-item-content>
+ 		 </sky-repeater-item>
+
+ 	<sky-repeater expandMode="multiple">
+		<sky-repeater-item [isExpanded]="false">
+			<sky-repeater-item-title>Not found (Dinosaur)</sky-repeater-item-title>
+			<sky-repeater-item-content>
+				<stache-image
+        		imageSource="~/assets/img/guidelines/errorhandling/dinosaur.png">
+       		 	</stache-image>
+
+      			<p>
+					Use this image for:
+				</p>
+        		<ul>
+            		<li>Errors loading a page.</li>
+            		<li>400 errors.
+        		</ul>
+    		</sky-repeater-item-content>
+ 		 </sky-repeater-item>
+
+ 	<sky-repeater expandMode="multiple">
+		<sky-repeater-item [isExpanded]="false">
+			<sky-repeater-item-title>Construction (Beaver)</sky-repeater-item-title>
+			<sky-repeater-item-content>
+				<stache-image
+        		imageSource="~/assets/img/guidelines/errorhandling/beaver.png">
+       		 	</stache-image>
+
+      			<p>
+					Use this image for:
+				</p>
+        		<ul>
+            		<li>Errors syncing data.</li>
+            		<li>Planned downtime.
+        		</ul>
+    		</sky-repeater-item-content>
+ 		 </sky-repeater-item>
+
+ 	<sky-repeater expandMode="multiple">
+		<sky-repeater-item [isExpanded]="false">
+			<sky-repeater-item-title>Security/Access rights (Zebra)</sky-repeater-item-title>
+			<sky-repeater-item-content>
+				<stache-image
+        		imageSource="~/assets/img/guidelines/errorhandling/zebra.png">
+       		 	</stache-image>
+
+      			<p>
+					Use this image for:
+				</p>
+        		<ul>
+            		<li>Security rights. Example: Admin hasn't given a user rights to a page.</li>
+        		</ul>
+    		</sky-repeater-item-content>
+ 		 </sky-repeater-item>
+
+ 	<sky-repeater expandMode="multiple">
+		<sky-repeater-item [isExpanded]="false">
+			<sky-repeater-item-title>Other errors (No animal)</sky-repeater-item-title>
+			<sky-repeater-item-content>
+     			<p>
+					Do <i>not</i> use an image for errors:
+				</p>
+        		<ul>
+            		<li>With the tile component. Example: Tile won't load.</li>
+					<li>Loading data on a tab. Example: Tab content doesn't load, or the section or tile content doesn't load.</li>
+					<li>When users can't perform an action. Example: Panel and modal content doesn't load or display.</li>
+					<li>When users can't save changes. Example: Actions, like save or add, don't complete.</li>
+        		</ul>
+    		</sky-repeater-item-content>
+ 		</sky-repeater-item>
+
 		
 	<stache-page-anchor>
 		Page errors
