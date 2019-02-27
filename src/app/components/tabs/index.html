@@ -46,7 +46,7 @@
     <sky-demo-page-property
       propertyName="tabHeading"
     >
-    Specifies the tab header. This property accepts <stache-code>string</stache-code> values.
+    Specifies the tab header. When using tabs as the main navigation on a page, use <a href="https://angular.io/docs/ts/latest/cookbook/set-document-title.html">the Angular <stache-code>Title</stache-code> service</a> and <a stacheRouterLink="learn/reference/configuration" fragment="app">the SKY UX <stache-code>title</stache-code> configuration property</a> to reflect the tab header in the page title. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="active"
@@ -88,5 +88,25 @@
     <sky-tabs-demo></sky-tabs-demo>
     <sky-demo-page-code demoName="Tabs"></sky-demo-page-code>
   </sky-demo-page-example>
+
+	<sky-demo-page-content sectionHeading="UX guidelines">
+		<section>
+			<header>
+        <div class="sky-section-heading">Page titles</div>
+      </header>
+			<p>
+        If tabs are the main navigation on a page, display the tab header in the page title. Use the following format: <span class="sky-emphasized">&lt;Tab title&gt; - &lt;Page title&gt; - &lt;Product title&gt;</span>. For example: <span class="sky-emphasized">Portfolio - Work center - Raiser's Edge NXT</span>. In addition, follow these guidelines for page titles:
+  </p>
+	<ul>
+		<li>Keep titles short.</li>
+		<li>Make titles unique.</li>
+		<li>Provide concise descriptions of each page's contents or purpose. Titles should stand on their own and make sense out of context.</li>
+		<li>Start with the most meaningful, differentiating terms so that they can be scanned in browser tabs, window lists, and browser bookmarks.</li>
+	</ul>
+			<p>
+				For information about how to use <a href="https://angular.io/docs/ts/latest/cookbook/set-document-title.html">the Angular <stache-code>Title</stache-code> service</a> and the SKY UX <stache-code>title</stache-code> configuration property to specify the title, see <a stacheRouterLink="learn/reference/configuration" fragment="app">the configuration reference</a>.
+      </p>
+		</section>
+	</sky-demo-page-content>
 
 </sky-demo-page>
