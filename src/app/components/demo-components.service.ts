@@ -493,7 +493,7 @@ export class SkyDemoComponentsService {
       {
         name: 'Vertical tabs',
         icon: 'folder-open-o',
-        summary: `The vertical tabs module contains components to render a vertical tabset.`,
+        summary: `The vertical tabs module displays large amounts of information within collapsible groups.`,
         url: '/components/vertical-tabs',
         getCodeFiles: () => this.getDemoFiles('SkyVerticalTabsDemoComponent')
       },
