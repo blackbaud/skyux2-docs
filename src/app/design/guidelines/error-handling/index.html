@@ -27,7 +27,9 @@
 	<p>
 		Don't rely on a single sensory characteristic of components such as shape, size, visual location, orientation, or sound to describe an error or offer a solution. "Above" and "below" are fine for referencing content in the appropriate reading order for the language used as long as the reference isn't ambiguous.
 	</p>
-
+	<p>
+		Error messages should be as specific as possible to help the user determine what is wrong.
+	</p>
 	<stache-page-anchor>
 		Error message images
 	</stache-page-anchor>
@@ -48,9 +50,9 @@
 					Use this image for:
 				</p>
         		<ul>
-            		<li>Errors with the modal component. Example: Modal can't launch form, or the modal service is down on save.</li>
-            		<li>Errors loading list data. Example: Tab content doesn't load.
-            		<li>Errors with the list component. Example: List contents don't load.
+            		<li>Errors with the modal component such as when a modal can't launch a form, or the modal service is down on save.</li>
+            		<li>Errors loading list data such as when tab content doesn't load.
+            		<li>Errors with the list component such as when list content doesn't load.
             		<li>500 errors.</li>
         		</ul>
     		</sky-repeater-item-content>
@@ -104,7 +106,7 @@
 					Use this image for:
 				</p>
         		<ul>
-            		<li>Security rights. Example: Admin hasn't given a user rights to a page.</li>
+            		<li>Security rights such as when users don't have rights to a page.</li>
         		</ul>
     		</sky-repeater-item-content>
  		 </sky-repeater-item>
@@ -117,10 +119,10 @@
 					Do <i>not</i> use an image for errors:
 				</p>
         		<ul>
-            		<li>With the tile component. Example: Tile won't load.</li>
-					<li>Loading data on a tab. Example: Tab content doesn't load, or the section or tile content doesn't load.</li>
-					<li>When users can't perform an action. Example: Panel and modal content doesn't load or display.</li>
-					<li>When users can't save changes. Example: Actions, like save or add, don't complete.</li>
+            		<li>With the tile component such as when a tile won't load.</li>
+					<li>Loading data on a tab such as when tab or section content doesn't load.</li>
+					<li>When users can't perform an action such as when the panel and modal content doesn't load or display.</li>
+					<li>When users can't save changes such as when actions, like save or add, don't complete.</li>
         		</ul>
     		</sky-repeater-item-content>
  		</sky-repeater-item>
