@@ -92,7 +92,7 @@ export class SkyDemoComponentsService {
       {
         name: 'Copy to clipboard',
         icon: 'clipboard',
-        summary: 'The copy to clipboard component creates a button that enables users to copy sections of content to the clipboard.',
+        summary: 'The copy to clipboard component creates a button that enables users to copy content to the clipboard.',
         url: '/components/copy-to-clipboard',
         getCodeFiles: () => this.getDemoFiles('SkyCopyToClipboardDemoComponent')
       },

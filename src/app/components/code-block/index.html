@@ -6,7 +6,7 @@
 
   <sky-demo-page-summary>
     <p>
-      The code block component formats a block of text as a code block with syntax highlighting. The code block's header can display a copy button and language type. To create a code block, wrap <stache-code>sky-code-block</stache-code> tags around the code block.
+      The code block component formats a block of text as a code block with syntax highlighting. The code block's header can display a copy button and language type. To create a code block, wrap <stache-code>sky-code-block</stache-code> tags around the text.
     </p>
     <p>
       If a code block has text within <stache-code>&lt;</stache-code> and <stache-code>&gt;</stache-code> characters, then the component automatically appends a closing tag unless the code snippet is valid HTML. To prevent this, use "&#38;lt;" to escape <stache-code>&lt;</stache-code> and "&#38;gt;" to escape <stache-code>&gt;</stache-code>. For example, escape the <stache-code>&lt;</stache-code> and <stache-code>&gt;</stache-code> characters in the code snippet <stache-code>public Task&lt;Generic> MethodName()</stache-code> or the component automatically appends <stache-code>&lt;/Generic></stache-code> to the end: <stache-code>public Task&lt;Generic> MethodName()&lt;/Generic></stache-code>.
@@ -30,7 +30,7 @@
       isOptional="true"
       defaultValue="false"
     >
-      Indicates whether to hide the copy to clipboard button in the code-block header. This property accepts <stache-code>boolean</stache-code> values.
+      Indicates whether to hide the copy to clipboard button in the code block header. This property accepts <stache-code>boolean</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="hideHeader"
@@ -44,7 +44,7 @@
       isOptional="true"
       defaultValue="markup"
     >
-      Specifies the language of the code sample. The language type highlights the syntax in your code sample and appears in the header. This property accepts <stache-code>string</stache-code> values.
+      Specifies the language of the code block. The language type highlights the syntax in your code sample and appears in the header. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
