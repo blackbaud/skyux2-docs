@@ -6,45 +6,45 @@
 
   <sky-demo-page-summary>
     <p>
-      The code block component formats a block of text as a code snippet with syntax highlighting. The code block also has a header that displays a copy button and, if defined, the language type. To create a code block, wrap <stache-code>sky-code-block</stache-code> tags around the code block.
+      The code block component formats a block of text as a code block with syntax highlighting. The code block's header can display a copy button and language type. To create a code block, wrap <stache-code>sky-code-block</stache-code> tags around the code block.
     </p>
     <p>
-      If a code block has text within <stache-code>&lt;</stache-code> and <stache-code>&gt;</stache-code> characters, then the component automatically appends a closing tag unless the code snippet is valid HTML. To prevent this, you must use "&#38;lt;" to escape <stache-code>&lt;</stache-code> and "&#38;gt;" to escape <stache-code>&gt;</stache-code>. For example, you must escape the <stache-code>&lt;</stache-code> and <stache-code>&gt;</stache-code> characters in the code snippet <stache-code>public Task&lt;Generic> MethodName()</stache-code> or else the component automatically appends <stache-code>&lt;/Generic></stache-code> to the end: <stache-code>public Task&lt;Generic> MethodName()&lt;/Generic></stache-code>.
+      If a code block has text within <stache-code>&lt;</stache-code> and <stache-code>&gt;</stache-code> characters, then the component automatically appends a closing tag unless the code snippet is valid HTML. To prevent this, use "&#38;lt;" to escape <stache-code>&lt;</stache-code> and "&#38;gt;" to escape <stache-code>&gt;</stache-code>. For example, escape the <stache-code>&lt;</stache-code> and <stache-code>&gt;</stache-code> characters in the code snippet <stache-code>public Task&lt;Generic> MethodName()</stache-code> or the component automatically appends <stache-code>&lt;/Generic></stache-code> to the end: <stache-code>public Task&lt;Generic> MethodName()&lt;/Generic></stache-code>.
     </p>
     <p>
       <sky-alert alertType="info">
-        To use the code block component, you must set it up as a dependency in your SKY UX SPA. First,install the package as part of your SPA dependencies: <stache-code>npm install @blackbaud/skyux-lib-code-block --save</stache-code>. Then install its plugin: <stache-code>npm install @blackbaud/skyux-builder-plugin-code-block --save</stache-code>. Next, add <stache-code>SkyCodeBlockModule</stache-code> as both an import and export in your <stache-code>app-extras.module.ts</stache-code> file. Finally, add the code block plugin to your <stache-code>skyuxconfig.json</stache-code> file <stache-code>"plugins": ["@blackbaud/skyux-builder-plugin-code-block"]</stache-code>.
+        To use the code block component, set it up as a dependency in your SKY UX SPA. First, install the package as part of your SPA dependencies: <stache-code>npm install @blackbaud/skyux-lib-code-block --save</stache-code>. Then install its plugin: <stache-code>npm install @blackbaud/skyux-builder-plugin-code-block --save</stache-code>. Next, add <stache-code>SkyCodeBlockModule</stache-code> as both an import and export in your <stache-code>app-extras.module.ts</stache-code> file. Finally, add the code block plugin to your <stache-code>skyuxconfig.json</stache-code> file: <stache-code>"plugins": ["@blackbaud/skyux-builder-plugin-code-block"]</stache-code>.
       </sky-alert>
     </p>
   </sky-demo-page-summary>
-
+  
   <sky-demo-page-properties>
     <sky-demo-page-property
       propertyName="code"
       isOptional="true"
     >
-      Passes a code sample into the component. This property binds data, so you can use brackets to evaluate the template expression: <stache-code>[code]</stache-code>. Without the brackets, Angular treats the value as a string and initializes the target property with the string value instead of evaluating the data value. This property accepts <stache-code>string</stache-code> values.
+      Passes a code sample to the component. This property binds data, so you can use brackets to evaluate the template expression: <stache-code>[code]</stache-code>. Without the brackets, Angular treats the value as a string and initializes the target property with the string value instead of evaluating the data value. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="hideCopyToClipboard"
       isOptional="true"
       defaultValue="false"
     >
-      Indicates whether to hide the copy-to-clipboard button in the code-block header. This property accepts <stache-code>boolean</stache-code> values.
-    </sky-demo-page-property>
-    <sky-demo-page-property
-      propertyName="languageType"
-      isOptional="true"
-      defaultValue="markup"
-    >
-      Indicates the language of the code sample. The language type highlights the syntax in your code sample and appears in the header. This property accepts <stache-code>string</stache-code> values.
+      Indicates whether to hide the copy to clipboard button in the code-block header. This property accepts <stache-code>boolean</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="hideHeader"
       isOptional="true"
       defaultValue="false"
     >
-      Indicates whether to hide the header portion of the code block. If the <stache-code>languageType</stache-code> is not declared and <stache-code>hideCopyToClipboard</stache-code> is set to true, the header is hidden. This property accepts <stache-code>boolean</stache-code> values.
+      Indicates whether to hide the code block's header. This property accepts <stache-code>boolean</stache-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="languageType"
+      isOptional="true"
+      defaultValue="markup"
+    >
+      Specifies the language of the code sample. The language type highlights the syntax in your code sample and appears in the header. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 

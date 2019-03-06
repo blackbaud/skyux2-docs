@@ -70,7 +70,7 @@ export class SkyDemoComponentsService {
         name: 'Code block',
         icon: 'code',
         // tslint:disable-next-line
-        summary: `The code block component renders a formatted block of code with syntax highlighting.`,
+        summary: `The code block component formats a code block with syntax highlighting.`,
         url: '/components/code-block',
         getCodeFiles: () => this.getDemoFiles('SkyCodeBlockDemoComponent')
       },
@@ -92,7 +92,7 @@ export class SkyDemoComponentsService {
       {
         name: 'Copy to clipboard',
         icon: 'clipboard',
-        summary: 'The copy to clipboard component allows users to copy sections of content to the clipboard.',
+        summary: 'The copy to clipboard component creates a button that enables users to copy sections of content to the clipboard.',
         url: '/components/copy-to-clipboard',
         getCodeFiles: () => this.getDemoFiles('SkyCopyToClipboardDemoComponent')
       },

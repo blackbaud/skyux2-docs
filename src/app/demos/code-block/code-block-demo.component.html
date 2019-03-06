@@ -1,12 +1,20 @@
 <h3>Code block with hidden header</h3>
 <sky-code-block
-  languageType="HTML"
+  languageType="typescript"
   hideHeader="true"
 >
-  <sky-code-block
-    languageType="javascript"
-  >
-    $(document).ready(() => {
-      console.log('jQuery is ready!');
-    });
+// This code block illustrates a custom implementation of SkyAppLocaleProvider in the app-extras.module.ts file.
+// To see the code block in place within the SKY UX documentation website, go to:
+// https://developer.blackbaud.com/skyux/learn/get-started/advanced/localization#provide-a-custom-locale-provider
+
+import { NgModule } from '@angular/core';
+import { TestLocaleProvider } from './test-locale-provider'
+
+@NgModule({
+  providers: [{
+    provide: SkyAppLocaleProvider,
+    useClass: TestLocaleProvider
+  }]
+})
+export class AppExtrasModule { }
 </sky-code-block>
