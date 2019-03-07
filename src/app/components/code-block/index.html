@@ -44,9 +44,19 @@
       isOptional="true"
       defaultValue="markup"
     >
-      Specifies the language of the code block. The language type highlights the syntax in your code sample and appears in the header. This property accepts <stache-code>string</stache-code> values.
+      Specifies the language of the code block. The language type highlights the syntax in your code sample and appears in the header. For a list of valid options, see <a stacheRouterLink="." fragment="supported-languages">the supported languages</a>. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
   </sky-demo-page-properties>
+
+  <sky-demo-page-content sectionHeading="Supported languages">
+    <p>
+      The code block component supports the following languages. For each language, set the <stache-code>languageType</stache-code> property to the corresponding code snippet. For example, to create a JavaScript code snippet, set <stache-code>languageType="javascript"</stache-code>.
+    </p>
+
+    <language-type-list>
+    </language-type-list>
+
+  </sky-demo-page-content>
 
   <sky-demo-page-example>
     <sky-code-block-demo></sky-code-block-demo>
