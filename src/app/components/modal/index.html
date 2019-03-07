@@ -150,8 +150,28 @@
   </sky-demo-page-content>
 
 	<sky-demo-page-content sectionHeading="UX guidelines">
+		<div class="sky-section-heading">Usage</div>
+			<div class="sky-subsection-heading">Modal</div>
+			<p>A modal dialog is appropriate for forms that meet any of the following criteria:</p>
+			<ul>
+				<li>The task is functionally modal, and users must finish it before doing anything else.</li>
+				<li>Displaying the form inline would lead to substantial content shifting or require users to scroll to complete the form.</li>
+				<li>The form adds records from a paginated list or an infinite scroll list.</li>
+			</ul>
+			<div class="sky-subsection-heading">Full-page modal</div>
+			<p>A full-page modal is appropriate for forms that meet the following criteria:</p>
+			<ul>
+				<li>The task is functionally modal, and users must finish it before doing anything else.</li>
+				<li>Users usually perform the task in a large viewport, and a full-page modal can optimize the use of space.</li>
+				<li>The context of the task is self-contained.</li>
+				<li>The form displays feedback based on users entering data or making choices. For example, the form may display running totals or preview emails as they are constructed.</li>
+				<li>The form supports a complex task for a list of objects such as filling out report cards for a class.</li>
+				<li>The task includes subtasks that need to be completed in context.</li>
+			</ul>
+    
+		<div class="sky-section-heading">Content</div>
 		<div class="sky-subsection-heading">Modal title text</div>
-			<p>In general, use the following format for modal titles:</p>
+			<p>In general, modal titles should use sentence-case capitalization and the following format:</p>
 			<p><span class="sky-emphasized">&lt;Verb&gt; &lt;direct object&gt; for &lt;indirect object&gt;</span></p>
 			<div style="margin-bottom: 20px;">
 				<img class="screenshot screenshot-info" src="~/assets/img/guidelines/wording/modal-with-object.png" alt="modal title: Edit address for Robert Hernandez"/>
@@ -161,23 +181,11 @@
 			<div style="margin-bottom: 20px;">
 				<img class="screenshot screenshot-info" src="~/assets/img/guidelines/wording/modal-without-object.png" alt="modal title: Manage bank feeds"/>
 			</div>
-  	<div class="sky-subsection-heading">Usage</div>
-			<div class="sky-emphasized">Modal</div>
-			<p>A modal dialog is appropriate for forms that meet any of the following criteria:</p>
+		
+		<div class="sky-subsection-heading">Buttons in the modal action bar</div>
 			<ul>
-				<li>The task is functionally modal, and users must finish it before doing anything else.</li>
-				<li>Displaying the form inline would lead to substantial content shifting or require users to scroll to complete the form.</li>
-				<li>The form adds records from a paginated list or an infinite scroll list.</li>
-			</ul>
-			<div class="sky-emphasized">Full-page modal</div>
-			<p>A full-page modal is appropriate for forms that meet the following criteria:</p>
-			<ul>
-				<li>The task is functionally modal, and users must finish it before doing anything else.</li>
-				<li>Users usually perform the task in a large viewport, and a full-page modal can optimize the use of space.</li>
-				<li>The context of the task is self-contained.</li>
-				<li>The form displays ancillary information or previews such as running totals or an email being constructed.</li>
-				<li>The form supports a complex task for a list of objects such as filling out report cards for a class.</li>
-				<li>The task includes subtasks that need to be completed in context.</li>
+				<li>Use a primary <a routerLink="/components/button">button</a> for the most important action the user will take. Use secondary buttons for less important actions. Use a link button for the Cancel action.</li>
+				<li>If a modal has only one action, you should generally use the <a routerLink="/components/confirm">confirm</a> component instead.</li>
 			</ul>
   </sky-demo-page-content>
 
