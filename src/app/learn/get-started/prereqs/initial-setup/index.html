@@ -62,33 +62,6 @@
     Recommended tools
   </stache-page-anchor>
 
-  <h3>
-    Visual Studio Code setup
-  </h3>
-
-  <p>
-    Like Angular, SKY UX is written in <a href="https://www.typescriptlang.org/">TypeScript</a>, and the free <a href="https://code.visualstudio.com/">Visual Studio Code editor</a> is one of the best options for working with TypeScript. It supports code navigation, refactoring tools, and a host of other features that are usually only found in richer IDEs. The SKY UX team uses Visual Studio Code and has some recommendations for configuring it to work best with Angular and SKY UX. Even if you do not want to use Visual Studio Code as your editor, some of the following information will still be useful as many of the extensions and other tips are available for other popular editors such as <a href="https://atom.io/">Atom</a>, <a href="http://brackets.io/">Brackets</a>, and <a href="https://www.sublimetext.com/">Sublime Text</a>.
-  </p>
-
-  <h4>
-    Visual Studio Code extensions
-  </h4>
-
-  <p>
-    The following VS Code extensions are highly recommended:
-  </p>
-
-  <ul>
-    <li>
-      <p>
-        <a href="https://marketplace.visualstudio.com/items?itemName=eg2.tslint">TSLint</a>: This extension validates your TypeScript code against the rules specified in <a href="https://github.com/blackbaud/skyux2/blob/master/tslint.json">the <stache-code>tslint.json</stache-code> file in the SKY UX repo</a>. TSLint runs during the CI build, so if your code does not validate in VS Code with the use of this extension, the CI build will fail.
-      </p>
-    </li>
-    <li>
-      <p>
-        <a href="https://github.com/editorconfig/editorconfig-vscode">EditorConfig</a>: This extension allows VS Code to recognize this project's <stache-code>.editorconfig</stache-code> file so that many of the coding conventions used by the SKY UX team can be enforced automatically, such as indent size, trailing whitespace rules, etc. If you do not use this extension, then you will find yourself fixing a lot of TSLint errors manually instead of letting VS Code do it for you.
-      </p>
-    </li>
-  </ul>
+  <stache-include fileName="tslint-tool.html">
 
 </stache>
