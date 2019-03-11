@@ -1,7 +1,7 @@
 <sky-demo-page
   pageTitle="Copy to clipboard"
   skyuxModule="SkyClipboardModule"
-  packageName="lib-clipboard"
+  packageName="@blackbaud/skyux-lib-clipboard"
 >
 
   <sky-demo-page-summary>
@@ -10,7 +10,7 @@
     </p>
     <p>
       <sky-alert alertType="info">
-        To use the copy to clipboard component, set it up as a dependency in your SKY UX SPA. First, install the package as part of your SPA dependencies: <stache-code>npm install @blackbaud/skyux-lib-clipboard --save</stache-code>. Then add <stache-code>SkyClipboardModule</stache-code> as both an import and export in your <stache-code>app-extras.module.ts</stache-code> file.
+        To use the copy to clipboard component, set it up as a dependency in your SKY UX SPA. First, install the package as part of your SPA dependencies: <stache-code>npm install @blackbaud/skyux-lib-clipboard --save --save-exact</stache-code>. Then add <stache-code>SkyClipboardModule</stache-code> as both an import and export in your <stache-code>app-extras.module.ts</stache-code> file.
       </sky-alert>
     </p>
   </sky-demo-page-summary>
@@ -18,9 +18,14 @@
   <sky-demo-page-properties>
     <sky-demo-page-property
       propertyName="copyTarget"
-      isOptional="true"
     >
       Specifies the content to copy. This property binds data, so you must use brackets to evaluate the template expression: <stache-code>[copyTarget]</stache-code>. Without the brackets, Angular treats the value as a string and initializes the target property with the string value instead of evaluating the data value.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="buttonClickedText"
+      isOptional="true"
+    >
+      Specifies a label to display on the copy to clipboard button after users select it. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="buttonText"
@@ -28,12 +33,6 @@
       defaultValue="false"
     >
       Specifies a label for the copy to clipboard button. This property accepts <stache-code>string</stache-code> values.
-    </sky-demo-page-property>
-    <sky-demo-page-property
-      propertyName="buttonClickedText"
-      isOptional="true"
-    >
-      Specifies a label to display on the copy to clipboard button after users select it. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
