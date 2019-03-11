@@ -2,7 +2,16 @@
   pageTitle="lint">
 
   <p>
-    <stache-code>skyux lint</stache-code> runs the <a href="https://marketplace.visualstudio.com/items?itemName=eg2.tslint">TSLint extension</a> against the files in the <stache-code>src</stache-code> folder. The extension validates TypeScript code against the rules specified in <a href="https://github.com/blackbaud/skyux2/blob/master/tslint.json">the <stache-code>tslint.json</stache-code> file in the SKY UX repo</a>. Other commands such as <stache-code>skyux build</stache-code> and <stache-code>skyux e2e</stache-code> also run TSLint, but <stache-code>skyux lint</stache-code> allows you to run TSLint in isolation from those commands.
+    <stache-code>skyux lint</stache-code> runs the <a href="https://palantir.github.io/tslint/">TSLint static analysis tool</a> to check the TypeScript code in the files in the <stache-code>src</stache-code> folder. The tool validates TypeScript code against the rules specified by <a href="https://github.com/blackbaud/skyux-builder/blob/master/tslint.json">the <stache-code>tslint.json</stache-code> file in the SKY UX Builder repo</a>. Other commands such as <stache-code>skyux build</stache-code> and <stache-code>skyux e2e</stache-code> also run TSLint, but <stache-code>skyux lint</stache-code> allows you to run TSLint in isolation from those commands.
   </p>
+
+  <stache-page-anchor>
+    Options
+  </stache-page-anchor>
+
+  <ul>
+    <li><stache-include fileName="cli/lint-fix.html"></stache-include></li>
+    <li><stache-include fileName="cli/lint-format.html"></stache-include></li>
+  </ul>
 
 </stache>
