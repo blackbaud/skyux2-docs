@@ -67,6 +67,14 @@ export class SkyDemoComponentsService {
         getCodeFiles: () => this.getDemoFiles('SkyCheckboxDemoComponent')
       },
       {
+        name: 'Code block',
+        icon: 'code',
+        // tslint:disable-next-line
+        summary: `The code block component formats a code block with syntax highlighting.`,
+        url: '/components/code-block',
+        getCodeFiles: () => this.getDemoFiles('SkyCodeBlockDemoComponent')
+      },
+      {
         name: 'Colorpicker',
         icon: 'eyedropper',
         // tslint:disable-next-line
@@ -80,6 +88,13 @@ export class SkyDemoComponentsService {
         summary: 'The confirm component launches simple confirmation dialogs to allow users to confirm actions.',
         url: '/components/confirm',
         getCodeFiles: () => this.getDemoFiles('SkyConfirmDemoComponent')
+      },
+      {
+        name: 'Copy to clipboard',
+        icon: 'clipboard',
+        summary: 'The copy to clipboard component creates a button that enables users to copy content to the clipboard.',
+        url: '/components/copy-to-clipboard',
+        getCodeFiles: () => this.getDemoFiles('SkyCopyToClipboardDemoComponent')
       },
       {
         name: 'Datepicker',
