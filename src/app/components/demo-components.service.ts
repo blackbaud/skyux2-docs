@@ -109,7 +109,7 @@ export class SkyDemoComponentsService {
         name: 'Email validation',
         icon: 'check',
         // tslint:disable-next-line
-        summary: `The email validation module allows users to validate email format.`,
+        summary: `The email validation directive ensures that user entries in an input element are valid email addresses.`,
         url: '/components/email-validation',
         getCodeFiles: () => this.getDemoFiles('SkyEmailValidationDemoComponent')
       },
