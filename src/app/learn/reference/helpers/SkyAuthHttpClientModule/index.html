@@ -1,0 +1,108 @@
+<stache
+  pageTitle="SkyAuthHttpClientModule"
+  showTableOfContents="true">
+
+  <stache-page-summary>
+    <p>
+      <stache-code>SkyAuthHttpClientModule</stache-code> enables SKY UX SPAs to use Angular's <stache-code>HttpClient</stache-code> service instead of the deprecated <stache-code>Http</stache-code> service. SKY UX SPAs can use <stache-code>HttpClient</stache-code> directly, but they need to supply the <stache-code>skyAuthHttpOptions()</stache-code> function to HTTP calls to capture Blackbaud URL params such as <stache-code>leid</stache-code> and <stache-code>envid</stache-code>.
+    </p>
+  </stache-page-summary>
+  
+  <stache-page-anchor>
+    Use <stache-code>SkyAuthHttpClientModule</stache-code> to communicate with backend services
+  </stache-page-anchor>
+  
+  <ol>
+    <li>
+      <p>
+        In a local editor, open the <stache-code>skyuxconfig.json</stache-code> file in the root directory and set <a stacheRouterLink="/learn/reference/configuration" fragment="auth">the <stache-code>auth</stache-code> configuration property</a> to <stache-code>true</stache-code>.
+      </p>
+      <stache-code-block languageType="json">
+        {
+          "auth": true
+        }
+      </stache-code-block>
+    </li>
+    <li>
+      <p>
+        Open the <stache-code>app-extras.module.ts</stache-code> file in the <stache-code>src/app</stache-code> directory. Import <stache-code>SkyAuthHttpClientModule</stache-code> from <stache-code>@skyux/http</stache-code> and add it to the Angular module’s <stache-code>exports</stache-code> section.
+      </p>
+      <stache-code-block languageType="typescript">
+        import {
+          SkyAuthClientHttpModule
+        } from '@skyux/http';
+
+        @NgModule({
+          exports: [
+            SkyAuthClientHttpModule
+          ]
+        })
+        export class AppExtrasModule { }
+      </stache-code-block>
+    </li>
+    <li>
+      <p>
+        Use the <stache-code>HttpClient</stache-code> service instead of <stache-code>SkyAuthHttp</stache-code> to communicate between the front-end application and backend services. To make authenticated calls, pass in the result of <stache-code>skyAuthHttpOptions()</stache-code>, which is also defined by <stache-code>@skyux/http</stache-code>, to the <stache-code>HttpClient</stache-code> methods.
+      </p>
+      <stache-code-block languageType="typescript">
+        import {
+          HttpClient
+        } from '@angular/common/http';
+        
+        import {
+          skyAuthHttpOptions
+        } from '@skyux/http';
+        
+        @Component({
+          selector: 'app-foo',
+          templateUrl: './foo.component.html'
+        })
+        export class FooComponent implements OnInit {
+          constructor(
+            private http: HttpClient
+          ) { }
+          
+          public ngOnInit(): void {
+            // Available options are defined here:
+            // https://github.com/blackbaud/skyux-http/blob/master/src/app/public/modules/auth-http-client/auth-options.ts#L20-L29
+            const options: any = {};
+            
+            this.http.get('my/api/endpoint', skyAuthHttpOptions(options));
+          }
+        }
+      </stache-code-block>
+    </li>
+  </ol>
+
+  <stache-page-anchor>
+    <stache-code>skyAuthHttpOptions</stache-code> options
+  </stache-page-anchor>
+
+  <ul>
+    <li>
+      <stache-code>body</stache-code> — <em>(Optional.)</em> Specifies the body to use when creating <a href="https://angular.io/api/http/Request">a <stache-code>Request</stache-code> instance</a>.
+    </li>
+    <li>
+      <stache-code>headers</stache-code> — <em>(Optional.)</em> Specifies <a href="https://angular.io/api/http/Headers">the <stache-code>Headers</stache-code> instance</a> to attach to <a href="https://angular.io/api/http/Request">the <stache-code>Request</stache-code> instance</a>.
+    </li>
+    <li>
+      <stache-code>observe</stache-code> — <em>(Optional.)</em> Specifies the return type of the observable. The valid options are <stache-code>body</stache-code>, <stache-code>events</stache-code>, and <stache-code>response</stache-code>. 
+    </li>
+    <li>
+      <stache-code>params</stache-code> — <em>(Optional.)</em> Specifies the search parameters to include in <a href="https://angular.io/api/http/Request">the <stache-code>Request</stache-code> instance</a>.
+    </li>
+    <li>
+      <stache-code>permissionScope</stache-code> — <em>(Optional.)</em> Specifies permissions for the <stache-code>HttpInterceptor</stache-code> interface to intercept and modify HTTP requests globally. This property accepts <stache-code>string</stache-code> values. 
+    </li>
+    <li>
+      <stache-code>reportProgress</stache-code> — <em>(Optional.)</em> Indicates whether to enable tracking of progress events. This property accepts <stache-code>boolean</stache-code> values. <em>(Default: false)</em>
+    </li>
+    <li>
+      <stache-code>responseType</stache-code> — <em>(Optional.)</em> Specifies how to parse a successful response body. The valid options are <stache-code>arraybuffer</stache-code>, <stache-code>blob</stache-code>, <stache-code>json</stache-code>, and <stache-code>text</stache-code>. <em>(Default: json)</em>
+    </li>
+    <li>
+      <stache-code>withCredentials</stache-code> — <em>(Optional.)</em> Indicates whether to enable use credentials for <a href="https://angular.io/api/http/Request">the <stache-code>Request</stache-code> instance</a>. This property accepts <stache-code>boolean</stache-code> values. <em>(Default: false)</em>
+    </li>
+  </ul>
+
+</stache>
