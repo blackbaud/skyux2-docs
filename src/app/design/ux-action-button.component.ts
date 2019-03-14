@@ -33,6 +33,13 @@ export class DesignActionButtonsComponent {
       icon: 'file-o',
       // tslint:disable-next-line
       summary: 'Design resources to help make prototyping more efficient and accurate.'
-    }
+    },
+		{
+      name: 'Redesigned templates',
+      path: '/design/redesigned-templates',
+      icon: 'file-o',
+      // tslint:disable-next-line
+      summary: 'Page templates for redesigned sites.'
+    },
   ];
 }
