@@ -139,11 +139,11 @@
   <stache-code-block>
     import {
       SkyAppConfig
-    } from '@blackbaud/skyux-builder/runtime';
+    } from '@skyux/config';
 
     import {
       SkyAppTestModule
-    } from '@blackbaud/skyux-builder/runtime/testing/browser';
+    } from '@skyux-sdk/builder/runtime/testing/browser';
   </stache-code-block>
   <p>
     Finally, in the <stache-code>it</stache-code> blocks where you run accessibility checks, you inject <stache-code>SkyAppConfig</stache-code> in the <stache-code>async</stache-code> method and then reference the <stache-code>a11y</stache-code> configuration property in the second <stache-code>toBeAccessible</stache-code> parameter:
