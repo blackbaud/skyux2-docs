@@ -5,7 +5,7 @@
 
   <stache-page-summary>
     <p>
-      SKY UX Builder provides the capability to declare localization strings <a routerLink="/learn/reference/naming-and-placement">in a JSON file </a> and then reference those strings throughout your SPA using the <stache-code>skyAppResources</stache-code> pipe or the <stache-code>SkyAppResourcesService</stache-code> service in <stache-code>@blackbaud/skyux-builder/runtime/i18n</stache-code>.
+      SKY UX Builder provides the capability to declare localization strings <a routerLink="/learn/reference/naming-and-placement">in a JSON file </a> and then reference those strings throughout your SPA using the <stache-code>skyAppResources</stache-code> pipe or the <stache-code>SkyAppResourcesService</stache-code> service in <stache-code>@skyux/i18n</stache-code>.
     </p>
   </stache-page-summary>
     
@@ -52,7 +52,7 @@
         </li>
         <li>
           <p>
-            For the <stache-code>SkyAppResourcesService</stache-code> service in <stache-code>@blackbaud/skyux-builder/runtime/i18n</stache-code>, pull the string using <stache-code>getString</stache-code>.
+            For the <stache-code>SkyAppResourcesService</stache-code> service in <stache-code>@bskyux/i18n</stache-code>, pull the string using <stache-code>getString</stache-code>.
           </p>
           <stache-code-block>
             this.resources.getString('string_name')
@@ -103,7 +103,7 @@
         </li>
         <li>
           <p>
-            For the <stache-code>SkyAppResourcesService</stache-code> service in <stache-code>@blackbaud/skyux-builder/runtime/i18n</stache-code>, pull the string using <stache-code>getString</stache-code> and insert values for the .NET-style tokens. For example:
+            For the <stache-code>SkyAppResourcesService</stache-code> service in <stache-code>@skyux/i18n</stache-code>, pull the string using <stache-code>getString</stache-code> and insert values for the .NET-style tokens. For example:
           </p>
           <stache-code-block>
             this.resources.getString('string_name',constituentName,fundName)
@@ -152,7 +152,7 @@ export class AppExtrasModule { }
   </p>
   <stache-code-block languageType="typescript">
 import { NgModule } from '@angular/core';
-import { SkyAppLocaleProvider } from '@blackbaud/skyux-builder/runtime/i18n';
+import { SkyAppLocaleProvider } from '@skyux/i18n';
 import { Observable } from 'rxjs/Observable';
 
 export class TestLocaleProvider extends SkyAppLocaleProvider {
