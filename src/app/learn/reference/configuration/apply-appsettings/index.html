@@ -79,10 +79,10 @@
     </li>
     <li>
       <p>
-        In the <stache-code>component.ts</stache-code> file for the component or the <stache-code>service.ts</stache-code> file for the service, import <stache-code>SkyAppConfig</stache-code> from <stache-code>@skyux-sdk/builder/runtime</stache-code>:
+        In the <stache-code>component.ts</stache-code> file for the component or the <stache-code>service.ts</stache-code> file for the service, import <stache-code>SkyAppConfig</stache-code> from <stache-code>@skyux/config</stache-code>:
       </p>
       <stache-code-block languageType="js">
-        import { SkyAppConfig } from '@skyux-sdk/builder/runtime';
+        import { SkyAppConfig } from '@skyux/config';
       </stache-code-block>
     </li>
     <li>
@@ -91,7 +91,7 @@
       </p>
       <stache-code-block languageType="js">
 import { Component } from '@angular/core';
-import { SkyAppConfig } from '@skyux-sdk/builder/runtime';
+import { SkyAppConfig } from '@skyux/config';
 
 @Component({
   selector: 'my-home',
