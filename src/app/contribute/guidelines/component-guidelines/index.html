@@ -21,10 +21,10 @@
 
   <ul>
     <li>
-      <b>File an issue before you start any work.</b> The sooner we can discuss potential code changes, the better. We can also use the issue to track and assign any work needed. For guidance, see <a stacheRouterLink="." fragment="file-an-issue">file an issue</a>.
+      <b>File an issue before you start any work.</b> The sooner we can discuss potential code changes, the better.
     </li>
     <li>
-      <b>Use the <stache-code>Sky</stache-code> prefix when naming all classes, directives, services, components, etc.</b> This prefix indicates to other contributors that items are owned by SKY UX and not a third-party library and also prevents potential class-name clashes with other libraries. Keep in mind that while we generally use the uppercase <stache-code>Sky</stache-code> prefix, we also use the <stache-code>sky-</stache-code> prefix in some cases, such as the selector property in components.
+      <b>Use the <stache-code>Sky</stache-code> prefix when naming all classes, directives, services, components, etc.</b> This prefix indicates to other contributors that items are owned by SKY UX and not a third-party library. It also prevents potential class-name clashes with other libraries. Keep in mind that while we generally use the uppercase <stache-code>Sky</stache-code> prefix, we also use the <stache-code>sky-</stache-code> prefix in some cases, such as the selector properties in components.
     </li>
     <li>
       <b>All new code must have 100% unit test code coverage.</b> This doesn't guarantee that every use case is accounted for, but anything less than 100% code coverage does guarantee that at least one use case is not accounted for. This can be verified by running tests with <stache-code>npm run watch</stache-code> and viewing the code coverage results in <stache-code>coverage/Chrome xx.x.xxxx/index.html</stache-code>.
@@ -47,7 +47,7 @@
       <b>All new components and changes to existing components must have passing <a stacheRouterLink="/learn/accessibility/test">accessibility tests</a>.</b> This includes automated tests to run during visual regression tests as well as code review and manual keyboard testing.
     </li>
     <li>
-      <b>All new components must include demos to accompany the reference documentation in the <a stacheRouterLink="/components">Components section</a> of the SKY UX website.</b> Demos must include all or most features available to the components and examples of all inputs and outputs. In the <a stacheRouterLink="https://github.com/blackbaud/skyux2"></a>SKY UX repo, you create subfolders for your components in the <stache-code>src/demos</stache-code> folder and add TypeScript and HTML files for the demos. You create <stache-code>{{ '{' }}componentName}-demo.component.html</stache-code> files to provide HTML templates for demos, <stache-code>{{ '{' }}componentName}-demo.component.ts</stache-code> files to handle the logic, and <stache-code>index.ts</stache-code> files to export demos. For examples of existing demos, serve the the <a stacheRouterLink="https://github.com/blackbaud/skyux2">SKY UX repo</a> or view the <a stacheRouterLink="/components">components documentation</a>. We recommend that you also create the reference documentation for your components in a separate pull request in the SKY UX docs repo. If you do not, we request that you file an issue for the SKY UX team to document your components. However, we strongly encourage you to create your own documentation because it can be useful to uncover issues with your components.
+      <b>All new components must include demos to accompany the reference documentation in the <a stacheRouterLink="/components">Components section</a> of the SKY UX website.</b> Demos must include all or most features available to the components and examples of all inputs and outputs. In the <a stacheRouterLink="https://github.com/blackbaud/skyux2"></a>SKY UX repo, you create subfolders for your components in the <stache-code>src/demos</stache-code> folder and add TypeScript and HTML files for the demos. You create <stache-code>{{ '{' }}componentName}-demo.component.html</stache-code> files to provide HTML templates for demos, <stache-code>{{ '{' }}componentName}-demo.component.ts</stache-code> files to handle the logic, and <stache-code>index.ts</stache-code> files to export demos. For examples of existing demos, serve the the <a stacheRouterLink="https://github.com/blackbaud/skyux2">SKY UX repo</a> or view the <a stacheRouterLink="/components">components documentation</a>. We recommend that you also <a stacheRouterLink="." fragment="write-documentation">create the reference documentation for your components</a> in a separate pull request in the <a stacheRouterLink="https://github.com/blackbaud/skyux2-docs">SKY UX docs repo</a>.
     </li>
     <li>
       <b>For large changes that include multiple components, please submit changes in several small pull requests instead of one large pull request.</b> (Large being more than 50 files). We ask that you do this for the following reasons:
@@ -73,7 +73,7 @@
   </stache-page-anchor>
 
   <p>
-    To declare localization strings, specify a string name and provide the string and a description in the <stache-code>resources_en_US.json</stache-code> file in <stache-code>src/assets/locales</stache-code>. You can reference the localization strings with the skyAppResources pipe or the <stache-code>SkyAppResourcesService</stache-code> service in <stache-code>@blackbaud/skyux-builder/runtime/i18n</stache-code>.
+    To declare localization strings, specify a string name and provide the string and a description in the <stache-code>resources_en_US.json</stache-code> file in <stache-code>src/assets/locales</stache-code>. You can reference the localization strings with the <stache-code>skyAppResources</stache-code> pipe or the <stache-code>SkyAppResourcesService</stache-code> service in <stache-code>@blackbaud/skyux-builder/runtime/i18n</stache-code>.
     </p>
 
   <stache-page-anchor>
@@ -86,7 +86,7 @@
 
   <ol>
     <li>
-      <a stacheRouterLink="https://github.com/blackbaud/skyux2/issues/new">Create a GitHub issue in the SKY UX 2 repo</a>.
+      Create an issue in the <a stacheRouterLink="/contribute/packages">applicable repo</a>.
     </li>
     <li>
       Delete the default fields for <a stacheRouterLink="." fragment="report-bugs">reporting bugs</a> and describe the contribution and potential code changes to SKY UX.
@@ -105,13 +105,13 @@
       <a stacheRouterLink="https://help.github.com/articles/fork-a-repo/">Fork the master branch</a> into your own GitHub repo.
     </li>
     <li>
-      Create a branch named after the feature you will contribute. The branch name should be kebab-case (e.g. my-new-feature).
+      Create a branch named after the feature you will contribute. The branch name should be kebab-case (my-new-feature).
     </li>
     <li>
       Clone your repo locally and run <stache-code>npm install</stache-code> from your local repo's directory to install all required dependencies.
     </li>
     <li>
-      Run your first round of visual regression tests by following the instructions in the <a stacheRouterLink="." fragment="write-visual-regression-tests">Write visual regression tests</a> section below. This establishes baseline screenshots of the components in the master repo so that as you make changes and run your visual regression tests, your changes are validated against the state of the repo before the changes.
+      <a stacheRouterLink="." fragment="write-visual-regression-tests"></a>Run your first round of visual regression tests</a>. This establishes baseline screenshots of the components in the master repo so that as you make changes and run your visual regression tests, your changes are validated against the state of the repo before the changes.
     </li>
   </ol>
 
@@ -136,10 +136,10 @@
       When you save code changes, the code compiles, static code analysis is performed, unit tests run, and the page refreshes with the latest changes.
     </li>
     <p>
-      Keep in mind that when you create components, you must add public exports through <stache-code>./src/core.ts</stache-code> and <stache-code>./src/demo.ts</stache-code> to allow users to import your component modules. The public exports provide entry points for the bundles that are deployed by SKY UX.
+      Keep in mind that when you create components, you must add public exports through <stache-code>./src/core.ts</stache-code> and <stache-code>./src/demo.ts</stache-code> to allow users to import your component modules. The public exports provide entry points for the bundles that SKY UX deploys.
     </p>
     <p>
-      Also, the recommended change detection strategy for SKY UX components is to use <a stacheRouterLink="https://angular.io/api/core/ChangeDetectionStrategy">the <stache-code>OnPush</stache-code> property instead of <stache-code>Default</stache-code></a>.
+      The recommended change detection strategy for SKY UX components is to use <a stacheRouterLink="https://angular.io/api/core/ChangeDetectionStrategy">the <stache-code>OnPush</stache-code> property instead of <stache-code>Default</stache-code></a>.
     </p>
   </ol>
 
@@ -148,11 +148,11 @@
   </stache-page-anchor>
 
   <p>
-    In addition to the demos that we require for new components, we recommend that you create reference documentation for the <a stacheRouterLink="/components">Components section</a> of the SKY UX website. Component documentation should be extensive enough to explain the features of your components, including all properties and events. In the <a stacheRouterLink="https://github.com/blackbaud/skyux2-docs">SKY UX docs repo</a>, you create subfolders for your components in the <stache-code>src/app/components</stache-code> folder and document them in index.html files. To create action buttons for your components on the Components section landing page, you add entries for the components in the <stache-code>demo-components.service.ts</stache-code> file.
+    We recommend that you create reference documentation for the <a stacheRouterLink="/components">Components section</a> of the SKY UX website. Component documentation should explain alert-visual features of your components, including all properties and events. In the <a stacheRouterLink="https://github.com/blackbaud/skyux2-docs">SKY UX docs repo</a>, you create subfolders for your components in the <stache-code>src/app/components</stache-code> folder and document them in index.html files. To create action buttons for the Components section landing page, you add entries in the <stache-code>demo-components.service.ts</stache-code> file.
   </p> 
   
   <p>
-    If you do not document your components, the SKY UX team will create the documentation for you, but we request that you <a stacheRouterLink="https://github.com/blackbaud/skyux2/issues/new">file an issue</a> for the documentation. However, we strongly encourage you to create your own documentation because it can be useful to uncover issues with your components.
+    If you do not document your components, the SKY UX team will create the documentation, but we request that you <a stacheRouterLink="https://github.com/blackbaud/skyux2-docs/issues">file an issue</a>. However, we strongly encourage you to create your own documentation because it can be useful to uncover issues with your components.
   </p>
 
   <stache-page-anchor>
@@ -160,7 +160,7 @@
   </stache-page-anchor>
 
   <p>
-    Your unit test files should end in <stache-code>.spec.ts</stache-code> and reside in the same folders as the components that they test. For example, the test file for <stache-code>foo/foo.component.ts</stache-code> should be <stache-code>foo/foo.component.spec.ts</stache-code>. All test fixtures (sample components, mock services, etc.) should be in a fixtures folder within the component's folder. The existing codebase contains many examples of this pattern, so just follow the patterns in the existing code when you write tests for new components.
+    Your unit test files should end in <stache-code>.spec.ts</stache-code> and reside in the same folders as the components that they test. For example, the test file for <stache-code>foo/foo.component.ts</stache-code> should be <stache-code>foo/foo.component.spec.ts</stache-code>. All test fixtures such as sample components, mock services, etc. should be in a fixtures folder within the component's folder. The existing codebase contains many examples of this pattern, so just follow the patterns in the existing code when you write tests.
   </p>
 
   <p>
@@ -180,7 +180,7 @@
   </p>
 
   <p>
-    To create visual tests for a new component, first create a folder for the tests in <stache-code>skyux-spa-visual-tests/src/app</stache-code>. Then add four files for the visual regression test:
+    To create visual tests for a new component, create a folder for the tests in <stache-code>skyux-spa-visual-tests/src/app</stache-code> and add four files for the visual regression test:
   </p>
 
   <ul>
@@ -194,12 +194,12 @@
       <stache-code>{{ '{' }}componentName}.visual-spec.ts</stache-code>: The Protractor code to run the screenshot tests.
     </li>
     <li>
-      <stache-code>index.html</stache-code>: The route file that contians the component to render and take a screenshot of.
+      <stache-code>index.html</stache-code>: The route file that contains the component to render and take a screenshot of.
     </li>
   </ul>
 
   <p>
-    To run visual regression tests locally, you must first run them locally against the <stache-code>master</stache-code> branch and then run the tests against your feature branch. Keep in mind that you need to use the same monitor and resolution on both set of tests. If your visual regression tests fail, you can check the failed tests at <stache-code>skyux2\skyux-spa-visual-tests\screenshots-diff-local\diff</stache-code> to find the cause of the failures.
+    To run visual regression tests locally, you must first run them locally against the master branch and then run the tests against your feature branch. Keep in mind that you need to use the same monitor and resolution on both set of tests. If your visual regression tests fail, you can check the failed tests at <stache-code>skyux2\skyux-spa-visual-tests\screenshots-diff-local\diff</stache-code> to find the cause of the failures.
   </p>
 
   <stache-page-anchor>
@@ -241,7 +241,7 @@
       </tr>
       <tr>
         <td><stache-code>clean:full</stache-code></td>
-        <td>	Cleans the previous build, <stache-code>node_modules</stache-code>, and coverage reports..</td>
+        <td>	Cleans the previous build, <stache-code>node_modules</stache-code>, and coverage reports.</td>
       </tr>
       <tr>
         <td><stache-code>lint</stache-code></td>
@@ -265,46 +265,5 @@
       </tr>
     </tbody>
   </table>
-
-  <stache-page-anchor>
-    Report bugs
-  </stache-page-anchor>
-
-  <p>
-    If you uncover a bug while working with a package, please file an issue in its repo. We use issues to track and assign work.
-  </p>
-
-  <ol>
-    <li>
-      Create a GitHub issue in the <a routerLink="../packages">applicable repo</a>.
-      </li>
-    <li>
-      Fill out the template fields to provide:
-    </li>
-      <ul>
-        <li>
-          The expected behavior
-        </li>
-        <li>
-          The actual behavior
-        </li>
-        <li>
-          Steps to reproduce
-        </li>
-        <li>
-          A Plunkr example, if applicable
-        </li>
-        <li>
-          The severity
-        </li>
-        <li>
-          The impact
-        </li>
-      </ul>
-    </li>
-    <li>
-      Subscribe to the issue to receive notifications.
-    </li>
-  </ol>
 
 </stache>
