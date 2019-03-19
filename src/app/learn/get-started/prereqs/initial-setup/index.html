@@ -17,11 +17,22 @@
     Install the latest LTS release of <a href="https://nodejs.org/en/download/releases/">Node.js</a>. We require at least version 6. To check your version, run <stache-code>node –v</stache-code> from the command line.
   </p>
   <p>
-    For Windows, download the <stache-code>msi</stache-code> version of the latest LTS release.
-  </p>
-  <p>
     For Mac OS X and Linux, we recommend that you use <a href="https://github.com/creationix/nvm">Node Version Manager (nvm)</a> to wrap your NodeJS installation so that it installs in your user directory and avoids permissions-related issues.
   </p>
+  <p>
+    For Windows, download the <stache-code>msi</stache-code> version of the latest LTS release. Windows machines also require two additional steps:
+  </p>
+  <ul>
+    <li>
+      To install the node-sass requirement as described in <a href="https://github.com/sass/node-sass#install">the official node-sass documentation</a>, run <stache-code>npm install node-sass</stache-code>.
+    </li>
+    <li>
+      To install the required tools and configurations using <a href="https://github.com/felixrieseberg/windows-build-tools">Microsoft's windows-build-tools</a>, run <stache-code>npm install --global --production windows-build-tools</stache-code> from an elevated PowerShell or CMD.exe (run as administrator).
+    </li>
+  </ul>
+<!--  <p>
+    For guidance on transitioning from Node.js 6 to Node.js 10 on Windows machines, see <a stacheRouterLink="learn/get-started/prereqs/initial-setup/upgrade-path-for-windows">the upgrade path for Windows</a>. 
+  </p> -->
 
   <stache-page-anchor>
     NPM
@@ -51,33 +62,6 @@
     Recommended tools
   </stache-page-anchor>
 
-  <h3>
-    Visual Studio Code setup
-  </h3>
-
-  <p>
-    Like Angular, SKY UX is written in <a href="https://www.typescriptlang.org/">TypeScript</a>, and the free <a href="https://code.visualstudio.com/">Visual Studio Code editor</a> is one of the best options for working with TypeScript. It supports code navigation, refactoring tools, and a host of other features that are usually only found in richer IDEs. The SKY UX team uses Visual Studio Code and has some recommendations for configuring it to work best with Angular and SKY UX. Even if you do not want to use Visual Studio Code as your editor, some of the following information will still be useful as many of the extensions and other tips are available for other popular editors such as <a href="https://atom.io/">Atom</a>, <a href="http://brackets.io/">Brackets</a>, and <a href="https://www.sublimetext.com/">Sublime Text</a>.
-  </p>
-
-  <h4>
-    Visual Studio Code extensions
-  </h4>
-
-  <p>
-    The following VS Code extensions are highly recommended:
-  </p>
-
-  <ul>
-    <li>
-      <p>
-        <a href="https://marketplace.visualstudio.com/items?itemName=eg2.tslint">TSLint</a>: This extension validates your TypeScript code against the rules specified in <a href="https://github.com/blackbaud/skyux2/blob/master/tslint.json">the <stache-code>tslint.json</stache-code> file in the SKY UX repo</a>. TSLint runs during the CI build, so if your code does not validate in VS Code with the use of this extension, the CI build will fail.
-      </p>
-    </li>
-    <li>
-      <p>
-        <a href="https://github.com/editorconfig/editorconfig-vscode">EditorConfig</a>: This extension allows VS Code to recognize this project's <stache-code>.editorconfig</stache-code> file so that many of the coding conventions used by the SKY UX team can be enforced automatically, such as indent size, trailing whitespace rules, etc. If you do not use this extension, then you will find yourself fixing a lot of TSLint errors manually instead of letting VS Code do it for you.
-      </p>
-    </li>
-  </ul>
+  <stache-include fileName="tslint-tool.html">
 
 </stache>

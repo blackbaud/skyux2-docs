@@ -10,7 +10,7 @@
     </p>
   </sky-demo-page-summary>
 
-  <sky-demo-page-properties>
+  <sky-demo-page-properties sectionHeading="List view grid properties">
     <sky-demo-page-property
       propertyName="name"
       [isOptional]="false"
@@ -54,7 +54,7 @@
       defaultValue="true"
       isOptional="true"
     >
-    Indicates whether to highlight search text within the grid. The property accepts <stache-code>boolean</stache-code> values.
+    Indicates whether to highlight search text within the grid. This property accepts <stache-code>boolean</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="multiselectRowId"
@@ -72,7 +72,7 @@
       propertyName="search"
       isOptional="true"
     >
-    Specifies a search function to apply on the view data. This property accepts of type <stache-code>(data: any, searchText: string) => boolean</stache-code>.
+    Specifies a search function to apply on the view data. This property accepts values of type <stache-code>(data: any, searchText: string) => boolean</stache-code>.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="width"
@@ -82,7 +82,7 @@
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
-  <sky-demo-page-properties sectionHeading="Events">
+  <sky-demo-page-properties sectionHeading="List view grid events">
     <sky-demo-page-property
       propertyName="multiselectSelectionChange"
     >
@@ -95,11 +95,28 @@
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
-  <sky-demo-page-properties sectionHeading="Related components">
+  <sky-demo-page-properties sectionHeading="List column selector action properties">
+    <p>
+      The <stache-code>sky-list-column-selector-action</stache-code> component provides a column selector modal for a list grid view when placed in a <stache-code>sky-list-toolbar</stache-code> component. For information the toolbar component, see <a stacheRouterLink="components/list/toolbar">the list toolbar</a>.
+    </p>
     <sky-demo-page-property
-      propertyName="sky-list-column-selector-action"
+      propertyName="gridView"
     >
-    The <stache-code>sky-list-column-selector-action</stache-code> component is available in the list toolbar component to provide a column selector modal for a grid view. To enable the column selector, set the <stache-code>gridView</stache-code> property of the <stache-code>sky-list-column-selector-action</stache-code>.
+    Enables the column selector in the list toolbar. The attribute must be set to the instance of the <stache-code>sky-grid-view</stache-code> component using the component's template reference variable.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="helpKey"
+      isOptional="true"
+    >
+    Specifies a <stache-code>helpKey</stache-code> string. This property dispays the <i class="fa fa-question-circle" aria-hidden="true"></i> button in the grid header. When users click this button, the <stache-code>helpOpened</stache-code> event broadcasts the <stache-code>helpKey</stache-code> parameter.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-properties sectionHeading="List column selector action events">
+    <sky-demo-page-property
+      propertyName="helpOpened"
+    >
+    Fires when users click the <i class="fa fa-question-circle" aria-hidden="true"></i> button and broadcasts the <stache-code>helpKey</stache-code>.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
