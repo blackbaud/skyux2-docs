@@ -104,24 +104,42 @@ p {
 }
 
 .screenshot {
-  box-sizing: border-box;
-  border: 30px solid;
 
   &.screenshot-info {
-    border-color: $sky-background-color-info-light;
+    img {
+			
+		}
+		.caption {
+			margin-top: $sky-margin-stacked-default;
+			padding-top: $sky-margin-stacked-compact;
+			border-top: 4px solid $sky-background-color-neutral-light;
+  	}
   }
 
-  &.screenshot-success {
-    border-color: $sky-background-color-success;
-  }
+	&.screenshot-success {
+		img {
+			
+		}
+		.caption {
+			margin-top: $sky-margin-stacked-default;
+			padding-top: $sky-margin-stacked-compact;
+			border-top: 4px solid $sky-background-color-success;
+  	}
+	}
 
   &.screenshot-danger {
-    border-color: $sky-background-color-danger;
+		img {
+			
+		}
+		.caption {
+			margin-top: $sky-margin-stacked-default;
+			padding-top: $sky-margin-stacked-compact;
+			border-top: 4px solid $sky-background-color-danger;
+  	}
   }
 
   img {
     display: block;
-    width: 100%;
   }
 }
 
@@ -168,4 +186,33 @@ p {
 article.blog-post {
 	@include sky-border(row);
 	margin-bottom: 20px;
+}
+
+// Site redesign placeholders
+img.bordered {
+	@include sky-border(light, top, right, bottom, left);
+}
+
+.two-col-right-image{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	
+	.two-col-text {
+		flex: 0 0 25%;
+		min-width: 320px;
+		max-width: 690px;
+		margin-right: 30px;
+	}
+	
+	.two-col-image {
+		flex: 0;
+		display: flex;
+		
+		img{
+
+		}
+		
+	}
+	
 }

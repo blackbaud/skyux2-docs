@@ -1,19 +1,79 @@
-<stache
-  pageTitle="2-column with right side image"
-  navTitle="2 column with right side image"
-  >
+<stache>
+
+	<div class="sky-section-heading sky-margin-stacked-separate">Flexbox</div>
 	
-	<sky-grid>
+	<div class="sky-subsection-heading">wide image</div>
+	<div class="two-col-right-image sky-margin-stacked-separate">
+		<div class="two-col-text">
+			<ul>
+				<li>Annotation 1</li>
+				<li>Annotation 2</li>
+				<li>Annotation 3</li>
+			</ul>
+		</div>
+		<div class="two-col-image">
+			<div class="screenshot screenshot-info">
+				<img class="bordered" src="~/assets/img/guidelines/errorhandling/background-error.png" />
+				<div class="caption">A neutral caption</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="sky-subsection-heading">narrow image</div>
+	<div class="two-col-right-image">
+		<div class="two-col-text">
+			<ul>
+				<li>Annotation 1</li>
+				<li>Annotation 2</li>
+				<li>Annotation 3</li>
+			</ul>
+		</div>
+		<div class="two-col-image sky-margin-stacked-separate">
+			<div class="screenshot screenshot-danger">
+				<img class="bordered" src="~/assets/img/guidelines/wording/add-button.png" />
+				<div class="caption sky-text-danger">Don't do this</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="sky-section-heading sky-margin-stacked-separate">Fluid grid</div>
+	
+	<div class="sky-subsection-heading">wide image</div>
+	<sky-fluid-grid class="sky-margin-stacked-separate">
 		<sky-row>
-			<sky-column screenSmall="6">
-				<p>Descriptive content goes here.</p>
-			</sky-column>
-			<sky-column screenSmall="6">
-				<div class="screenshot screenshot-success">
-					<img src="~/assets/img/guidelines/flyout/flyout-dashboard-view.png" />
-				</div>
-			</sky-column>
+		<sky-column screenMedium="4" screenLarge="3">
+			<ul>
+				<li>Annotation 1</li>
+				<li>Annotation 2</li>
+				<li>Annotation 3</li>
+			</ul>
+		</sky-column>
+		<sky-column screenMedium="8" screenLarge="9">
+			<div class="screenshot screenshot-info">
+				<img class="bordered" src="~/assets/img/guidelines/errorhandling/background-error.png" />
+				<div class="caption">A neutral caption</div>
+			</div>
+		</sky-column>
 		</sky-row>
-	</sky-grid>
+	</sky-fluid-grid>
+	
+	<div class="sky-subsection-heading">narrow image</div>
+	<sky-fluid-grid class="sky-margin-stacked-separate">
+		<sky-row>
+		<sky-column screenMedium="4" screenLarge="3">
+			<ul>
+				<li>Annotation 1</li>
+				<li>Annotation 2</li>
+				<li>Annotation 3</li>
+			</ul>
+		</sky-column>
+		<sky-column screenMedium="8" screenLarge="9">
+			<div class="screenshot screenshot-info">
+				<img class="bordered" src="~/assets/img/guidelines/wording/add-button.png" />
+				<div class="caption">A neutral caption</div>
+			</div>
+		</sky-column>
+		</sky-row>
+	</sky-fluid-grid>
 	
 </stache>
