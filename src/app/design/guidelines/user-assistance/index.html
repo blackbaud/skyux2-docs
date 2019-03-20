@@ -1,19 +1,60 @@
 <stache
-  layout="container"
-  pageTitle="User assistance"
+  pageTitle="User Assistance"
+  navTitle="User assistance"
   showTableOfContents="true">
 
+  <stache-page-summary>
+    <p>
+      When users access functionality for the first time, they may require guidance. To determine how much guidance to provide and how to present it, you must account for the complexity of the task, the complexity of the user interface, and the expected knowledge of users. User assistance design patterns provide guidance on how to present help content in SKY UX SPAs.
+    </p>
+  </stache-page-summary>
+
 	<stache-page-anchor>
-  	Page- and modal-level help
-  </stache-page-anchor>
+		Usage
+	</stache-page-anchor>
+	<p>
+		SKY UX design patterns include four primary techniques to display help content: empty-state help, inline help, preloaded Help Widget, and popovers. To determine the appropriate technique for user assistance, consider the complexity of the task and the expected knowledge of users. The chart below provides a matrix to determine which type of user assistance to use in different scenarios. Do not overuse help content because it can overwhelm or inhibit users. For example, only display the preloaded Help Widget and popovers when user research supports the need for it. When in doubt, err on the side of empty-state help and inline help.
+	</p>
+	<div class="screenshot screenshot-info" style="margin-top: 20px;">
+		<img src="~/assets/img/guidelines/userassistance/help-chart.png" style="width: 100%;" />
+	</div>
 
+	<stache-page-anchor>
+		Empty-state help
+	</stache-page-anchor>
+
+	<stache-row>
+		<stache-column screenSmall="6">
+			<div class="sky-subsection-heading">Usage</div>
+			<p>
+				Empty-state help provides user assistance when content containers are not populated. The content can include a title, body copy, and buttons to take actions or access additional resources. The help content is not available when content containers are populated.
+			</p>
+			<div class="sky-subsection-heading">Layout</div>
+				<p>
+					Center empty-state help in its content container.
+				</p>
+		</stache-column>
+		<stache-column screenSmall="6">
+			<div class="screenshot screenshot-info">
+				<img src="~/assets/img/guidelines/userassistance/empty-state-example.png" />
+			</div>
+		</stache-column>
+	</stache-row>
+
+	<stache-page-anchor>
+		Inline help
+	</stache-page-anchor>
+
+  <h3 class="sky-subsection-heading">
+  	Page-level and modal-level help
+  </h3>
   <p>
-    When users perform a complex task, they may require comprehensive documentation for an entire task instead of inline help for individual parts of the task. Users should invoke help at the page or modal level, depending on the context. In Blackbaud products, users can invoke the help service from the omnibar or a <a routerLink="/components/modal">modal</a> header bar.
-  </p>  
+    When users perform a complex task, they may require comprehensive documentation for the entire task instead of inline help for individual parts of the task. Users should invoke help at the page or modal level, depending on the context. In Blackbaud products, users can invoke the help service from the omnibar or a <a routerLink="/components/modal">modal</a> header bar.
+  </p>
 
-  <stache-page-anchor>
+  <h3 class="sky-subsection-heading">
     Invoked inline help
-  </stache-page-anchor>
+  </h3>
 	<stache-row>
 		<stache-column screenSmall="6">
 			<div class="sky-subsection-heading">Usage</div>
@@ -28,7 +69,9 @@
 				In general, use a <a routerLink="/components/help-inline">help button</a> to invoke the help content. For more complex help content, you can also use a <a routerLink="/components/popover">popover</a> or the help panel.
 			</p>
 			<div class="sky-subsection-heading">Layout</div>
-			<p>Place the help button to the right of the label for the element that the help content supports.</p>
+			<p>
+				Place the help button to the right of the label for the element that the help content supports.
+			</p>
 		</stache-column>
 		<stache-column screenSmall="6">
 			<div class="screenshot screenshot-info">
@@ -40,10 +83,9 @@
 		</stache-column>
 	</stache-row>
   	
-  <stache-page-anchor>
+  <h3 class="sky-subsection-heading">
     Persistent inline help
-  </stache-page-anchor>
-
+  </h3>
 	<stache-row>
 		<stache-column screenSmall="6">
 			<div class="sky-subsection-heading">Usage</div>
@@ -71,5 +113,49 @@
 			</div>
 		</stache-column>
 	</stache-row>
-  
+
+	<stache-page-anchor>
+		Popovers
+	</stache-page-anchor>
+
+	<stache-row>
+		<stache-column screenSmall="6">
+			<div class="sky-subsection-heading">Usage</div>
+			<p>
+				<a stacheRouterLink="/components/popover">Popovers</a> are a great way to guide users toward a subtle but important element on the page or modal. Users can display popovers when they interact with their trigger elements, and you can also display popovers programmatically when a page loads. It is appropriate to use popover help in cases where:
+			</p>
+			<ul>
+				<li>
+					An element is important but easily overlooked. For example, use a popover for a new filter option, a view switcher, or an isolated context menu.
+				</li>
+				<li>
+					An element requires special attention when it loads because user research indicates a problem with discoverability.
+				</li>
+			</ul>
+		</stache-column>
+		<stache-column screenSmall="6">
+			<div class="screenshot screenshot-info">
+				<img src="~/assets/img/guidelines/userassistance/popover-example.png" />
+			</div>
+		</stache-column>
+	</stache-row>
+
+	<stache-page-anchor>
+		Preloaded Help Widget
+	</stache-page-anchor>
+
+	<stache-row>
+		<stache-column screenSmall="6">
+			<div class="sky-subsection-heading">Usage</div>
+			<p>
+				You can preload the Help Widget to display user assistance that is tailored to the first time that users load a page. Use this technique to introduce users to new or novel functionality. Do not use it to walk users through processes.
+			</p>
+		</stache-column>
+		<stache-column screenSmall="6">
+			<div class="screenshot screenshot-info">
+				<img src="~/assets/img/guidelines/userassistance/help-flyout.png" />
+			</div>
+		</stache-column>
+	</stache-row>
+
 </stache>
