@@ -1,13 +1,13 @@
-// #region imports
 import {
   Injectable
 } from '@angular/core';
 
 import {
   SkyPhoneFieldDemoComponent,
-  SkySummaryActionBarDemoComponent
+  SkySummaryActionBarDemoComponent,
+  SkyCodeBlockDemoComponent,
+  SkyCopyToClipboardDemoComponent
 } from '.';
-// #endregion
 
 /**
  * This service provides consumers with the raw file contents for each component demo.
@@ -62,6 +62,38 @@ export class SkyDocsDemoCodeService {
           name: 'summary-action-bar-modal-demo.ts',
           fileContents: require('!!raw-loader!./summary-action-bar/summary-action-bar-modal-demo.component.ts'),
           componentName: 'SkySummaryActionBarModalDemoComponent'
+        }
+      ]
+    },
+    {
+      name: 'Code block',
+      component: SkyCodeBlockDemoComponent,
+      files: [
+        {
+          name: 'code-block-demo-component.html',
+          fileContents: require('!!raw-loader!./code-block/code-block-demo.component.html')
+        },
+        {
+          name: 'code-block-demo-component.ts',
+          fileContents: require('!!raw-loader!./code-block/code-block-demo.component.ts'),
+          componentName: 'SkyCodeBlockDemoComponent',
+          bootstrapSelector: 'sky-code-block-demo'
+        }
+      ]
+    },
+    {
+      name: 'Copy to clipboard',
+      component: SkyCopyToClipboardDemoComponent,
+      files: [
+        {
+          name: 'copy-to-clipboard-demo.component.html',
+          fileContents: require('!!raw-loader!./copy-to-clipboard/copy-to-clipboard-demo.component.html')
+        },
+        {
+          name: 'copy-to-clipboard-demo.component.ts',
+          fileContents: require('!!raw-loader!./copy-to-clipboard/copy-to-clipboard-demo.component.ts'),
+          componentName: 'SkyCopyToClipboardDemoComponent',
+          bootstrapSelector: 'sky-copy-to-clipboard-demo'
         }
       ]
     }

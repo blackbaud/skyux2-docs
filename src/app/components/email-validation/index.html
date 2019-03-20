@@ -1,17 +1,17 @@
 <sky-demo-page
-  pageTitle="Email validation"
+  pageTitle="Email Validation"
   skyuxModule="SkyEmailValidationModule"
   packageName="@skyux/validation"
 >
 
   <sky-demo-page-summary>
-    The email validation module allows the user to validate email format.
+    The email validation directive ensures that user entries in an <stache-code>input</stache-code> element are valid email addresses.
   </sky-demo-page-summary>
 
   <sky-demo-page-properties sectionHeading="Email validation input directive properties">
     <sky-demo-page-property
       propertyName="skyEmailValidation">
-      When this attribute is placed on an input element, the input with validation properties is created. The error message will display if the input is not in the correct format. This directive will use <stache-code>NgModel</stache-code> for binding data.
+      Creates an input that validates email addresses. Place this attribute on an <stache-code>input</stache-code> element. If users enter values that are not valid email addresses, an error message appears. The directive uses <stache-code>NgModel</stache-code> to bind data.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 

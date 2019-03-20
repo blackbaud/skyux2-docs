@@ -10,7 +10,7 @@
     </p>
   </sky-demo-page-summary>
 
-  <sky-demo-page-properties>
+  <sky-demo-page-properties sectionHeading="List toolbar properties">
     <sky-demo-page-property
       propertyName="placeholder"
       defaultValue="Find in this list"
@@ -47,17 +47,25 @@
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
+  <sky-demo-page-properties sectionHeading="Related components">
+    <sky-demo-page-property
+      propertyName="sky-list-column-selector-action"
+    >
+    The <stache-code>sky-list-column-selector-action</stache-code> component provides a column selector modal for a list toolbar in a grid view. For more information, see <a stacheRouterLink="components/list/grid">the list view grid</a>.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
   <sky-demo-page-properties sectionHeading="Child components">
+    <sky-demo-page-property
+      propertyName="sky-list-toolbar-item"
+    >
+    Defines a toolbar item for the list toolbar.
+    </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="sky-list-secondary-actions"
       isOptional="true"
     >
     Adds a dropdown to the list toolbar for secondary actions. To add items to the <stache-code>sky-list-secondary-actions</stache-code> component, add child <stache-code>sky-list-secondary-action</stache-code> components. If no <stache-code>sky-list-secondary-action</stache-code> components exist, the secondary actions dropdown is hidden.
-    </sky-demo-page-property>
-    <sky-demo-page-property
-      propertyName="sky-list-toolbar-item"
-    >
-    Defines a toolbar item for the list toolbar.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="sky-list-toolbar-sort"
@@ -73,14 +81,7 @@
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
-
-
   <sky-demo-page-properties sectionHeading="List toolbar sort properties">
-    <sky-demo-page-property
-      propertyName="descending"
-    >
-    Indicates whether to sort data in descending order. This property accepts <stache-code>boolean</stache-code> values.
-    </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="field"
     >
@@ -95,6 +96,13 @@
       propertyName="type"
     >
     Specifies the data type of the data field to sort the list on. This property accepts <stache-code>string</stache-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="descending"
+      isOptional="true"
+      defaultValue="false"
+    >
+    Indicates whether to sort data in descending order. This property accepts <stache-code>boolean</stache-code> values.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -118,7 +126,7 @@
       defaultValue="left"
       isOptional="true"
     >
-    Specifies the toolbar location of the item. This property accepts <stache-code>string</stache-code> values, and the valid options are <stache-code>left</stache-code>, <stache-code>center</stache-code>, and <stache-code>right</stache-code>.
+    Specifies the toolbar location of the item. The valid options are <stache-code>left</stache-code>, <stache-code>center</stache-code>, and <stache-code>right</stache-code>. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
