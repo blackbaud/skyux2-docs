@@ -15,9 +15,11 @@
   </stache-page-anchor>
   
   <p>
-    The <a stacheRouterLink="https://github.com/blackbaud/skyux-lib-testing">SKY UX testing library</a> provides methods to run <a stacheRouterLink="https://github.com/dequelabs/axe-core">aXe automated accessibility tests</a> in your <a stacheRouterLink="/learn/get-started/advanced/accessibility-unit-tests">unit tests</a>. aXe includes 50-60 rules covering a subset of the W3C's WCAG 2.0 success criteria. Include accessibility checks for e2e tests using the  <a routerLink="/learn/get-started/advanced/accessibility-analyzer">accessibility analyzer</a>, and ensure that all the rules pass.
+    The <a stacheRouterLink="https://github.com/blackbaud/skyux-sdk-testing">SKY UX testing library</a> provides methods to run <a stacheRouterLink="https://github.com/dequelabs/axe-core">aXe automated accessibility tests</a> in your <a stacheRouterLink="/learn/get-started/advanced/accessibility-unit-tests">unit tests</a>. aXe includes 50-60 rules covering a subset of the W3C's WCAG 2.0 success criteria. For guidance on how to run accessibility checks in SKY UX unit tests, see <a stacheRouterLink="/learn/get-started/advanced/accessibility-unit-tests">accessibility tests</a>.
   </p>
-  <stache-include fileName="e2e-recommendation-accessibility.html"></stache-include>
+  <p>
+    You can also use the <a stacheRouterLink="/learn/get-started/advanced/accessibility-analyzer">accessibility analyzer</a> to include accessibility checks for end-to-end tests. However, SKY UX recommends unit tests instead of end-to-end tests based on Angular's guidance on testing. Use e2e tests only as a last resort when you can't use Angular's testing framework to interact with the DOM.
+  </p>
   
   <stache-page-anchor>
     Incorporate accessibility checks in a code review
