@@ -49,7 +49,10 @@
   	Page-level and modal-level help
   </h3>
   <p>
-    When users perform a complex task, they may require comprehensive documentation for the entire task instead of inline help for individual parts of the task. Users should invoke help at the page or modal level, depending on the context. In Blackbaud products, users can invoke the help service from the omnibar or a <a routerLink="/components/modal">modal</a> header bar.
+    When users perform a complex task, they may require comprehensive documentation for the entire task instead of inline help for individual parts of the task. Users should invoke help at the page or modal level, depending on the context.
+  </p>
+	<p>
+		In Blackbaud products, users can invoke the help service from the omnibar or a <a routerLink="/components/modal">modal</a> header bar. <stache-include fileName="help-widget.html"></stache-include>
   </p>
 
   <h3 class="sky-subsection-heading">
@@ -148,7 +151,10 @@
 		<stache-column screenSmall="6">
 			<div class="sky-subsection-heading">Usage</div>
 			<p>
-				You can preload the Help Widget to display user assistance that is tailored to the first time that users load a page. Use this technique to introduce users to new or novel functionality. Do not use it to walk users through processes.
+				<stache-include fileName="help-widget.html"></stache-include>
+			</p>
+			<p>
+				Blackbaud developers can preload the Help Widget to display user assistance that is tailored to the first time that users load a page. Use this technique to introduce users to new or novel functionality. Do not use it to walk users through processes.
 			</p>
 		</stache-column>
 		<stache-column screenSmall="6">
