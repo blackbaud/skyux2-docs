@@ -67,6 +67,14 @@ export class SkyDemoComponentsService {
         getCodeFiles: () => this.getDemoFiles('SkyCheckboxDemoComponent')
       },
       {
+        name: 'Code block',
+        icon: 'code',
+        // tslint:disable-next-line
+        summary: `The code block component formats a code block with syntax highlighting.`,
+        url: '/components/code-block',
+        getCodeFiles: () => this.getDemoFiles('SkyCodeBlockDemoComponent')
+      },
+      {
         name: 'Colorpicker',
         icon: 'eyedropper',
         // tslint:disable-next-line
@@ -80,6 +88,13 @@ export class SkyDemoComponentsService {
         summary: 'The confirm component launches simple confirmation dialogs to allow users to confirm actions.',
         url: '/components/confirm',
         getCodeFiles: () => this.getDemoFiles('SkyConfirmDemoComponent')
+      },
+      {
+        name: 'Copy to clipboard',
+        icon: 'clipboard',
+        summary: 'The copy to clipboard component creates a button that enables users to copy content to the clipboard.',
+        url: '/components/copy-to-clipboard',
+        getCodeFiles: () => this.getDemoFiles('SkyCopyToClipboardDemoComponent')
       },
       {
         name: 'Datepicker',
@@ -109,7 +124,7 @@ export class SkyDemoComponentsService {
         name: 'Email validation',
         icon: 'check',
         // tslint:disable-next-line
-        summary: `The email validation module allows users to validate email format.`,
+        summary: `The email validation directive ensures that user entries in an input element are valid email addresses.`,
         url: '/components/email-validation',
         getCodeFiles: () => this.getDemoFiles('SkyEmailValidationDemoComponent')
       },
@@ -500,7 +515,7 @@ export class SkyDemoComponentsService {
       {
         name: 'Vertical tabs',
         icon: 'folder-open-o',
-        summary: `The vertical tabs module contains components to render a vertical tabset.`,
+        summary: `The vertical tabs module displays large amounts of information within collapsible groups.`,
         url: '/components/vertical-tabs',
         getCodeFiles: () => this.getDemoFiles('SkyVerticalTabsDemoComponent')
       },

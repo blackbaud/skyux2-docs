@@ -1,6 +1,7 @@
 <sky-demo-page
   pageTitle="Summary action bar"
   skyuxModule="SkySummaryActionBarModule"
+  packageName="@skyux/action-bars"
 >
 
   <sky-demo-page-summary>
@@ -8,7 +9,7 @@
       The summary action bar module provides a docked container for actions and summary information on forms or multiselect lists. Within the <stache-code>sky-summary-action-bar</stache-code> component, the <stache-code>sky-summary-action-bar-actions</stache-code> component contains actions and the <stache-code>sky-summary-action-bar-summary</stache-code> component contains summary information. Within the <stache-code>sky-summary-action-bar-actions</stache-code> component, the <stache-code>sky-summary-action-bar-cancel</stache-code> component displays a cancel action, the <stache-code>sky-summary-action-bar-primary-action</stache-code> component displays a primary button, and the <stache-code>sky-summary-action-bar-secondary-actions</stache-code> component contains secondary actions that are specified with <stache-code>sky-summary-action-bar-secondary-action</stache-code> components. Within the the <stache-code>sky-summary-action-bar-summary</stache-code> component, you can specify the summary information to display. For example, you can highlight important information with <a stacheRouterLink="/components/key-info">key info components</a>.
     </p>
 		<sky-alert alertType="info">
-			To use the summary action bar module, you must set it up as a dependency in your SKY UX SPA. First, install the package as part of your SPA dependencies: <stache-code>npm install @skyux/action-bars --save</stache-code>. Next, add <stache-code>SkySummaryActionBarModule</stache-code> as both an import and export in your <stache-code>app-extras.module.ts</stache-code> file.
+			To use the summary action bar module, you first install its NPM package to set it up as a dependency: <stache-code>npm install @skyux/action-bars --save --save-exact</stache-code>. For SKY UX SPAs, you then add <stache-code>SkySummaryActionBarModule</stache-code> as both an import and an export in the <stache-code>app-extras.module.ts</stache-code> file that controls the rendering of the SPA. For SKY UX libraries, you add <stache-code>SkySummaryActionBarModule</stache-code> as an import in the module for the component that uses the summary action bar.
 		</sky-alert>
   </sky-demo-page-summary>
 
@@ -83,6 +84,7 @@
   <stache-row>
     <stache-column screenSmall="6">
 			<p>Actions that can be taken on multiple items in a list of items.</p>
+			<p>When used with a multiselect list, hide the summary action bar until users select an item in the list. After users select an item, the summary action bar should fly in from the bottom of the page.</p>
 		</stache-column>
 		<stache-column screenSmall="6">
 			<div class="screenshot screenshot-success">
