@@ -1,5 +1,5 @@
 <sky-demo-page
-  pageTitle="Radio button"
+  pageTitle="Radio Button"
   skyuxModule="SkyRadioModule"
   packageName="@skyux/forms"
 >
@@ -18,10 +18,16 @@
       Specifies a name for the collection of radio buttons that the component groups together. This property overwrites the deprecated <stache-code>name</stache-code> property on individual <stache-code>sky-radio</stache-code> elements, and it is required unless the <stache-code>name</stache-code> property is set on individual <stache-code>sky-radio</stache-code> elements. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
+      propertyName="ariaLabel"
+      isOptional="true"
+    >
+    Defines a string value to label the radio button group and set the <stache-code>aria-label</stache-code> attribute to support <a stacheRouterLink="." fragment="accessibility">accessibility</a>. If the radio button group includes a visible label on the screen, use the <stache-code>ariaLabelledBy</stache-code> property instead. This property accepts <stache-code>string</stache-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
       propertyName="ariaLabelledBy"
       isOptional="true"
     >
-      Sets the radio button group's <stache-code>aria-labelledby</stache-code> attribute to support <a stacheRouterLink="." fragment="accessibility">accessibility</a>. The value should be the HTML element ID (without the leading #) of the element that labels the radio button group. This property accepts <stache-code>string</stache-code> values.
+      Sets the radio button group's <stache-code>aria-labelledby</stache-code> attribute to support <a stacheRouterLink="." fragment="accessibility">accessibility</a>. The value should be the HTML element ID (without the leading #) of the element that labels the radio button group. If the radio button group does not include a visible label on the screen, use the <stache-code>ariaLabel</stache-code> property instead. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="tabIndex"
