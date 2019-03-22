@@ -83,11 +83,9 @@
   </sky-demo-page-properties>
 
   <sky-demo-page-properties sectionHeading="List view grid events">
-    <sky-demo-page-property
-      propertyName="multiselectSelectionChange"
-    >
-    Fires when the selection of multiselect checkboxes changes. Emits an array of IDs for the selected rows based on the <stache-code>multiselectRowId</stache-code> property that the consumer provides.
-    </sky-demo-page-property>
+    <p>
+      When the multiselect feature is enabled and the selected checkboxes change, <a stacheRouterLink="components/list/overview">the list component's</a> <stache-code>selectedIdsChange</stache-code> event emits a <stache-code>Map string, boolean</stache-code> object to indicate the selected items. This differs from multiselect behavior in <a stacheRouterLink="components/grid">the grid component</a> where the <stache-code>multiselectSelectionChange</stache-code> event emits an array of IDs for the selected rows when the selection changes. 
+    </p>
     <sky-demo-page-property
       propertyName="selectedColumnIdsChange"
     >
