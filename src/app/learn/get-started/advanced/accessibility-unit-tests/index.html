@@ -6,7 +6,7 @@
   
   <stache-page-summary>
     <p>
-      The <a href="https://github.com/blackbaud/skyux-lib-testing">SKY UX testing library</a> provides methods to run <a href="https://github.com/dequelabs/axe-core">aXe automated accessibility tests</a> in your unit tests. aXe is an open source library of automated accessibility rules that is integrated into SKY UX to identify potential issues for a subset of the <a href="https://www.w3.org/TR/WCAG20/">Web Content Accessibility Guidelines 2.0 Level A and AA success criteria</a>. For SKY UX guidance on designing, coding, and testing accessible experiences, see the accessibility section.
+      The <a href="https://github.com/blackbaud/skyux-sdk-testing">SKY UX SDK testing library</a> provides methods to run <a href="https://github.com/dequelabs/axe-core">aXe automated accessibility tests</a> in your unit tests. aXe is an open source library of automated accessibility rules that is integrated into SKY UX to identify potential issues for a subset of the <a href="https://www.w3.org/TR/WCAG20/">Web Content Accessibility Guidelines 2.0 Level A and AA success criteria</a>. For SKY UX guidance on designing, coding, and testing accessible experiences, see the accessibility section.
     </p>
   </stache-page-summary>
 
@@ -15,20 +15,20 @@
   </p>
   
   <stache-page-anchor>
-    Import SKY UX testing library
+    Import SKY UX SDK testing library
   </stache-page-anchor>
   
   <p>
-    The first step to run accessibility checks in SKY UX unit tests is to import the <a href="https://github.com/blackbaud/skyux-lib-testing">SKY UX testing library</a> into your SPA. This library provides methods to interact with SKY UX during Karma unit tests. For accessibility testing, it extends the Jasmine <stache-code>expect</stache-code> function to add the <stache-code>toBeAccessible</stache-code> matcher.
+    The first step to run accessibility checks in SKY UX unit tests is to import the <a href="https://github.com/blackbaud/skyux-sdk-testing">SKY UX SDK testing library</a> into your SPA. This library provides methods to interact with SKY UX during Karma unit tests. For accessibility testing, it extends the Jasmine <stache-code>expect</stache-code> function to add the <stache-code>toBeAccessible</stache-code> matcher.
   </p>
   <p>
     To install the testing library, open the command prompt, <stache-code>cd</stache-code> into your SPA's directory, and run:
   </p>
   <stache-code-block>
-    npm install @blackbaud/skyux-lib-testing --save-dev --save-exact
+    npm install @blackbaud/skyux-sdk-testing --save-dev --save-exact
   </stache-code-block>
   <p>
-    By default, the <stache-code>SkyA11yAnalyzerConfig</stache-code> interface specifies <a href="https://github.com/blackbaud/skyux-lib-testing/blob/master/src/app/public/src/a11y/a11y-analyzer.ts">configuration settings for <stache-code>toBeAccessible</stache-code> to indicate which accessibility checks to run</a>. To overwrite the default acccessibility checks, you can modify <a stacheRouterLink="." fragment="specify-parameters-for-tobeaccessible">a parameter for the <stache-code>toBeAccessible</stache-code> matcher</a>.
+    By default, the <stache-code>SkyA11yAnalyzerConfig</stache-code> interface specifies <a href="https://github.com/blackbaud/skyux-sdk-testing/blob/master/src/app/public/a11y/a11y-analyzer.ts">configuration settings for <stache-code>toBeAccessible</stache-code> to indicate which accessibility checks to run</a>. To overwrite the default acccessibility checks, you can modify <a stacheRouterLink="." fragment="specify-parameters-for-tobeaccessible">a parameter for the <stache-code>toBeAccessible</stache-code> matcher</a>.
   </p>
   
 
@@ -42,7 +42,7 @@
   <stache-code-block>
     import {
       expect
-    } from '@blackbaud/skyux-lib-testing';
+    } from '@blackbaud/skyux-sdk-testing';
   </stache-code-block>
   <p>
     After you import <stache-code>expect</stache-code> function, you can use it to run accessibility tests for components. For components that change state, you can insert the function into existing <stache-code>it</stache-code> blocks. And for components that don't change state, the function can stand alone to run accessibility checks from its own <stache-code>it</stache-code> block. 
@@ -77,7 +77,7 @@
   </stache-page-anchor>
   
   <p>
-    Finally, you can specify two optional parameters within the <stache-code>toBeAccessible</stache-code> matcher. The first parameter is a callback that lets you execute code after accessibility checks run. The second parameter is an option that lets you overwrite <a href="https://github.com/blackbaud/skyux-lib-testing/blob/master/src/app/public/src/a11y/a11y-analyzer.ts">the default accessibility checks that <stache-code>SkyA11yAnalyzerConfig</stache-code> specifies</a>. 
+    Finally, you can specify two optional parameters within the <stache-code>toBeAccessible</stache-code> matcher. The first parameter is a callback that lets you execute code after accessibility checks run. The second parameter is an option that lets you overwrite <a href="https://github.com/blackbaud/skyux-sdk-testing/blob/master/src/app/public/a11y/a11y-analyzer.ts">the default accessibility checks that <stache-code>SkyA11yAnalyzerConfig</stache-code> specifies</a>. 
   </p>
 
   <h3 class="sky-subsection-heading">
@@ -103,7 +103,7 @@
     Overwrite accessibility checks
   </h3>
   <p>
-    In the second <stache-code>toBeAccessible</stache-code> parameter, you can adjust configuration settings to turn off accessibility checks. <a href="https://github.com/blackbaud/skyux-lib-testing/blob/master/src/app/public/src/a11y/a11y-analyzer.ts">The <stache-code>SkyA11yAnalyzerConfig</stache-code> interface</a> specifies configuration settings, and it turns all checks on by default. To turn off accessibility checks, you set them to <stache-code>false</stache-code>:
+    In the second <stache-code>toBeAccessible</stache-code> parameter, you can adjust configuration settings to turn off accessibility checks. <a href="https://github.com/blackbaud/skyux-sdk-testing/blob/master/src/app/public/a11y/a11y-analyzer.ts">The <stache-code>SkyA11yAnalyzerConfig</stache-code> interface</a> specifies configuration settings, and it turns all checks on by default. To turn off accessibility checks, you set them to <stache-code>false</stache-code>:
   </p>
   <stache-code-block>
     it('should pass accessibility', async(() => {
@@ -139,11 +139,11 @@
   <stache-code-block>
     import {
       SkyAppConfig
-    } from '@blackbaud/skyux-builder/runtime';
+    } from '@skyux/config';
 
     import {
       SkyAppTestModule
-    } from '@blackbaud/skyux-builder/runtime/testing/browser';
+    } from '@skyux-sdk/builder/runtime/testing/browser';
   </stache-code-block>
   <p>
     Finally, in the <stache-code>it</stache-code> blocks where you run accessibility checks, you inject <stache-code>SkyAppConfig</stache-code> in the <stache-code>async</stache-code> method and then reference the <stache-code>a11y</stache-code> configuration property in the second <stache-code>toBeAccessible</stache-code> parameter:

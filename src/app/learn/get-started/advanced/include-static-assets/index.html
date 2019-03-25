@@ -1,5 +1,6 @@
 <stache
-  pageTitle="Static assets"
+  pageTitle="Static Assets"
+  navTitle="Static assets"
   showTableOfContents="true">
 
   <stache-page-summary>
@@ -66,7 +67,7 @@
         In the file where you want to access the static asset, import <stache-code>SkyAppAssetsService</stache-code>.
       </p>
       <stache-code-block languageType="typescript">
-        import { SkyAppAssetsService } from '@blackbaud/skyux-builder/runtime';
+        import { SkyAppAssetsService } from '@skyux/assets;
       </stache-code-block>
     </li>
     <li>
@@ -82,7 +83,7 @@
       <stache-code-block languageType="typescript">
         import { Component } from '@angular/core';
         import { Http } from '@angular/http';
-        import { SkyAppAssetsService } from '@blackbaud/skyux-builder/runtime';
+        import { SkyAppAssetsService } from '@skyux/assets;
         
         @Component({
           selector: 'my-home',

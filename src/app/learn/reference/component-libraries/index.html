@@ -141,10 +141,10 @@ export class AppExtrasModule { }
     }
   </stache-code-block>
   <p>
-    After you add properties through <stache-code>appSettings</stache-code> for the library, you can access them in your components and services by injecting <stache-code>SkyAppConfig</stache-code> from <stache-code>@blackbaud/skyux-builder/runtime/config</stache-code>.
+    After you add properties through <stache-code>appSettings</stache-code> for the library, you can access them in your components and services by injecting <stache-code>SkyAppConfig</stache-code> from <stache-code>@skyux/config</stache-code>.
   </p>
   <stache-code-block languageType="typescript">
-    import { SkyAppConfig } from '@blackbaud/skyux-builder/runtime/config';
+    import { SkyAppConfig } from '@skyux/config';
 
     @Component({ ... })
     export class MyLibraryComponent {
