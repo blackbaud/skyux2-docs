@@ -19,26 +19,26 @@
       isOptional="true"
       defaultValue="Vertical"
     >
-      Specifies whether to display the progress indicator vertically or horizontally. For <a routerLink="/components/wizard">modal wizards</a>, use the horizontal display mode. For waterfall pages and passive progress indicators, use the vertical display mode.
+      Specifies whether to display the progress indicator vertically or horizontally. For <a routerLink="/components/wizard">modal wizards</a>, use the horizontal display mode. For waterfall pages and passive progress indicators, use the vertical display mode. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="isPassive"
       isOptional="true"
       defaultValue="false"
     >
-      Indicates whether the progress indicator is passive. Passive progress indicators inform users of progress that concerns them but that they are not responsible for, and they must use the vertical display mode.
+      Indicates whether the progress indicator is passive. Passive progress indicators inform users of progress that concerns them but that they are not responsible for, and they must use the vertical display mode. This property accepts <stache-code>boolean</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="messageStream"
       isOptional="true"
     >
-      Specifies an observable of <stache-code>SkyProgressIndicatorMessageType</stache-code> that determines the status to display for progress items in the progress indicator. The message stream is a queue of commanding messages to change the state of the progress indicator based on one of the three message types.
+      Specifies an observable of <stache-code>SkyProgressIndicatorMessageType</stache-code> that determines the status to display for progress items in the progress indicator. The message stream is a queue of commanding messages to change the state of the progress indicator based on one of the three message types. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="startingIndex"
       isOptional="true"
     >
-      Specifies the index for the first progress item to make active when the progress indicator loads. All steps that precede the first progress item are marked as complete.
+      Specifies the index for the first progress item to make active when the progress indicator loads. All steps that precede the first progress item are marked as complete. This property accepts <stache-code>number</stache-code> values.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -72,22 +72,22 @@
     <sky-demo-page-property
       propertyName="title"
     >
-      Specifies the title to display with the progress item.
+      Specifies the title to display with the progress item. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
   <sky-demo-page-properties sectionHeading="Progress indicator reset button properties">
     <sky-demo-page-property
+      propertyName="progressIndicator"
+    >
+      Specifies the progress indicator component to associate with the reset button. This property accepts an array or Observable array of <stache-code>array</stache-code> of string values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
       propertyName="disabled"
       isOptional="true"
       defaultValue="false"
     >
-      Indicates whether to disable the reset button.
-    </sky-demo-page-property>
-    <sky-demo-page-property
-      propertyName="progressIndicator"
-    >
-      Specifies the progress indicator component to associate with the reset button.
+      Indicates whether to disable the reset button. This property accepts <stache-code>boolean</stache-code> values.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -104,30 +104,30 @@
       The progress indicator nav button component allows users to navigate the steps in modal wizards. We recommend against using it in waterfall pages and passive progress indicators.
     </p>
     <sky-demo-page-property
+      propertyName="progressIndicator"
+    >
+      Specifies the progress indicator component to associate with the nav button. This property accepts an array or Observable array of <stache-code>string</stache-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
       propertyName="buttonText"
       isOptional="true"
       defaultValue="Next"
     >
-      Specifies the label to display on the nav button.
+      Specifies the label to display on the nav button. The property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="buttonType"
       isOptional="true"
       defaultValue="next"
     >
-      Specifies the type of nav button to include. Options include <stache-code>finish</stache-code>, <stache-code>next</stache-code>, and <stache-code>previous</stache-code>.
+      Specifies the type of nav button to include. Options include <stache-code>finish</stache-code>, <stache-code>next</stache-code>, and <stache-code>previous</stache-code>. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="disabled"
       isOptional="true"
       defaultValue="false"
     >
-      Indicates whether to disable the nav button.
-    </sky-demo-page-property>
-    <sky-demo-page-property
-      propertyName="progressIndicator"
-    >
-      Specifies the progress indicator component to associate with the nav button.
+      Indicates whether to disable the nav button. This property accepts <stache-code>boolean</stache-code> values.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -164,7 +164,7 @@
         Decisions within tasks change the number of steps or the order of steps. Instead, move decisions that affect the number or order of steps to the start of workflows and branch users to different active progress contexts.
       </li>
       <li>
-        Users need to edit properties that are already set.
+        Users need to edit preset properties.
       </li>
       </li>
     </ul>
