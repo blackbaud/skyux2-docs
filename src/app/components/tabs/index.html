@@ -30,9 +30,14 @@
 				</ul>
 			</div>
 			<div class="two-col-image">
-				<div class="screenshot screenshot-info">
-					<img class="bordered" src="~/assets/img/guidelines/errorhandling/background-error.png" />
-					<div class="caption">A neutral caption</div>
+				<div class="screenshot screenshot-success sky-margin-stacked-content-section">
+					<img src="~/assets/img/guidelines/tab/use-slices.png" />
+					<div class="caption sky-text-success">Do use tabs to show different slices of the same data.</div>
+				</div>
+				
+				<div class="screenshot screenshot-success">
+					<img src="~/assets/img/guidelines/tab/use-tasks.png" />
+					<div class="caption sky-text-success">Do use tabs to group content for different tasks.</div>
 				</div>
 			</div>
 		</div>
@@ -45,9 +50,9 @@
 				</ul>
 			</div>
 			<div class="two-col-image">
-				<div class="screenshot screenshot-info">
-					<img class="bordered" src="~/assets/img/guidelines/errorhandling/background-error.png" />
-					<div class="caption">A neutral caption</div>
+				<div class="screenshot screenshot-danger">
+					<img src="~/assets/img/guidelines/tab/use-tasks.png" />
+					<div class="caption sky-text-danger">Don't use multiple sets of tabs on a single page.</div>
 				</div>
 			</div>
 		</div>
@@ -77,9 +82,8 @@
 					<p>When you use tabs to hold lists, you can include the list's record count in the tab so users know if there are records to look at without navigating to the tab.</p>
 				</div>
 				<div class="two-col-image">
-					<div class="screenshot screenshot-info">
-						<img class="bordered" src="~/assets/img/guidelines/errorhandling/background-error.png" />
-						<div class="caption">A neutral caption</div>
+					<div class="screenshot">
+						<img src="~/assets/img/guidelines/tab/option-count.png" />
 					</div>
 				</div>
 			</div>
@@ -89,25 +93,11 @@
 					<p>If users need to work with a subset of large number of available tabs, let them open and close tabs so they are only working with relevant tabs.</p>
 				</div>
 				<div class="two-col-image">
-					<div class="screenshot screenshot-info">
-						<img class="bordered" src="~/assets/img/guidelines/tab/option-open-close.png" />
-						<div class="caption">A neutral caption</div>
+					<div class="screenshot">
+						<img src="~/assets/img/guidelines/tab/option-open-close.png" />
 					</div>
 				</div>
 			</div>
-	</sky-demo-page-content>
-	
-	<sky-demo-page-content sectionHeading="Content">
-		<h3>Page titles</h3>
-			<p>
-        If tabs are the main navigation on a page, display the tab header in the page title. Use the following format: <span class="sky-emphasized">&lt;Tab title&gt; - &lt;Page title&gt; - &lt;Product title&gt;</span>. For example: <span class="sky-emphasized">Portfolio - Work center - Blackbaud</span>. In addition, follow these guidelines for page titles:
-			</p>
-			<ul>
-				<li>Keep titles short.</li>
-				<li>Make titles unique.</li>
-				<li>Provide concise descriptions of each page's contents or purpose. Titles should stand on their own and make sense out of context.</li>
-				<li>Start with the most meaningful, differentiating terms so that they can be scanned in browser tabs, window lists, and browser bookmarks.</li>
-			</ul>
 	</sky-demo-page-content>
 	
 	<sky-demo-page-content sectionHeading="Behavior & states">
@@ -125,12 +115,25 @@
 			</div>
 	</sky-demo-page-content>
 	
+	<sky-demo-page-content sectionHeading="Content">
+		<h3>Page titles</h3>
+			<p>
+        If tabs are the main navigation on a page, display the tab header in the page title. Use the following format: <span class="sky-emphasized">&lt;Tab title&gt; - &lt;Page title&gt; - &lt;Product title&gt;</span>. For example: <span class="sky-emphasized">Portfolio - Work center - Blackbaud</span>. In addition, follow these guidelines for page titles:
+			</p>
+			<ul>
+				<li>Keep titles short.</li>
+				<li>Make titles unique.</li>
+				<li>Provide concise descriptions of each page's contents or purpose. Titles should stand on their own and make sense out of context.</li>
+				<li>Start with the most meaningful, differentiating terms so that they can be scanned in browser tabs, window lists, and browser bookmarks.</li>
+			</ul>
+	</sky-demo-page-content>	
+		
 	<sky-demo-page-content sectionHeading="Layout">
 		<div class="two-col-right-image sky-margin-stacked-separate">
 				<div class="two-col-text">
 					<ul>
-						<li>Use <code>$sky-margin-stacked-separate</code> vertical margin between the tabs and the preceeding content.</li>
-						<li>Use <code>$sky-padding-even-large</code> padding within the tab view, except when using a single full-width list within the tab.</li>
+						<li>Use <stache-code>$sky-margin-stacked-separate</stache-code> vertical margin between the tabs and the preceeding content.</li>
+						<li>Use <stache-code>$sky-padding-even-large</stache-code> padding within the tab view, except when using a single full-width list within the tab.</li>
 					</ul>
 				</div>
 				<div class="two-col-image">
