@@ -14,7 +14,7 @@
     <stache-code>$schema</stache-code>
   </stache-page-anchor>
   <p>
-    Specifies which file is used to provide annotations and validation to the entire configuration file in your IDE. This file should not be modified.
+    The <stache-code>$schema</stache-code> configuration option specifies the file that provides annotations and validation to the entire configuration file in your IDE. You should not modify this file should.
   </p>
 
   <stache-page-anchor>
@@ -84,6 +84,18 @@
     </li>
     <li>
       <p>
+        <stache-code>styles</stache-code> — Specifies CSS or SCSS files to bundle with the SPA. This property provides an array of <stache-code>string</stache-code> values that represent relative paths for CSS and SCSS files to include in the bundle. The paths are relative to the SPA's root directory.
+      </p>
+      <stache-code-block>
+        "app": {
+          "styles": [
+            "src/styles/my-styles.scss"
+          ]
+        }
+      </stache-code-block>
+    </li>
+    <li>
+      <p>
         <stache-code>title</stache-code> — Controls the page title at the template level for the <stache-code>skyux serve</stache-code> command while waiting for the application to load. After it loads, you can use <a href="https://angular.io/docs/ts/latest/cookbook/set-document-title.html">the Angular <stache-code>Title</stache-code> service</a> to set the page title. The default is <stache-code>Blackbaud - SKY UX Application</stache-code>, so if you do not want this default to appear in the title bar while the application loads, use the <stache-code>title</stache-code> to provide your preferred title.
       </p>
     </li>
@@ -135,14 +147,14 @@
     <stache-code>cssPath</stache-code>
   </stache-page-anchor>
   <p>
-    The <stache-code>cssPath</stache-code> configuration option specifies a path to reference CSS styles. This property is specific to the SKY UX docs site and is for internal Blackbaud use only.
+    The <stache-code>cssPath</stache-code> configuration option specifies a path to reference CSS styles. This property is specific to the SKY UX docs site and is for internal Blackbaud use only. To bundle CSS or SCSS files with your SPA, use the <stache-code>styles</stache-code> property of <a stacheRouterLink="." fragment="app">the <stache-code>app</stache-code> configuration option</a> instead. 
   </p>
 
   <stache-page-anchor>
     <stache-code>help</stache-code>
   </stache-page-anchor>
   <p>
-    The <stache-code>help</stache-code> configuration option indicates whether to automatically include the help widget in the application to identify the current page and display relevant help content. This property is for internal Blackbaud use only. By default, this property is set to <stache-code>false</stache-code>. For Blackbaud developers who want to include the help widget, <a href="https://github.com/blackbaud/bb-help#configuration">the help widget configuration options documentation</a> describes the configuration object to set the <stache-code>help</stache-code> property to.
+    The <stache-code>help</stache-code> configuration option indicates whether to automatically include the Help Widget in the application to identify the current page and display relevant help content. This property is for internal Blackbaud use only. By default, this property is set to <stache-code>false</stache-code>. For Blackbaud developers who want to include the Help Widget, <a href="https://docs.blackbaud.com/bb-help-docs/learn/configuration/recommended">the Help Widget configuration options documentation</a> describes the configuration object to set the <stache-code>help</stache-code> property to.
   </p>
 
   <stache-page-anchor>
@@ -171,6 +183,13 @@
   </stache-page-anchor>
   <p>
     The <stache-code>mode</stache-code> configuration option controls how much boilerplate code to generate automatically. By default, the <stache-code>skyuxconfig.json</stache-code> file sets this property to <stache-code>easy</stache-code>. In easy mode, SKY UX  automatically generates routes based the project's folder structure, provides bootstrapping to initialize the application, and supplies SKY UX components to the application. To override these options, change the <stache-code>mode</stache-code> property to <stache-code>advanced</stache-code>. Since advanced mode does not provide automatic route configuration, you can adjust URLs and point to specific components in your SPA. This property will eventually become obsolete as the SKY UX team builds out the CLI to allow users to override individual steps without switching to advanced mode.
+  </p>
+
+  <stache-page-anchor>
+    <stache-code>moduleAliases</stache-code>
+  </stache-page-anchor>
+  <p>
+    The <stache-code>moduleAliases</stache-code> configuration option specifies module aliases to allow for custom module resolution. This enables SPAs to provide <a href="https://webpack.js.org/configuration/resolve/#resolvealias">resolve aliases</a> to import or require modules more easily.
   </p>
 
   <stache-page-anchor>
@@ -283,17 +302,17 @@
         }
         </stache-code-block>
         <p>
-          When using this format, in addition to the <stache-code>value</stache-code> property, you can also specify the <stache-code>required</stache-code> and <stache-code>excludeFromRequests</stache-code> parameters.
+          The <stache-code>value</stache-code> property specifies the default value of the parameter, but the query string or other future sources of parameter values can overwrite it at runtime. When using this format, you can also specify the <stache-code>required</stache-code> and <stache-code>excludeFromRequests</stache-code> parameters.
         </p>
         <ul>
           <li>
             <p>
-              <stache-code>excludeFromRequests</stache-code> — By default, <stache-code>SkyAuthHttp</stache-code> and <stache-code>SkyAuthHttpClient</stache-code> include any parameter with listed values in their requests. This parameter applies when a consumer wants to track a parameter without including it in the http call.
+              <stache-code>excludeFromRequests</stache-code> — Indicates whether to exclude the parameter from the query string. By default, <stache-code>SkyAuthHttp</stache-code> and <stache-code>SkyAuthHttpClient</stache-code> include any parameter with listed values in their requests. This parameter allows consumers to track the parameter without including it in the HTTP call.
             </p>
           </li>
           <li>
             <p>
-              <stache-code>required</stache-code> — For the <stache-code>envid</stache-code>, <stache-code>leid</stache-code>, and <stache-code>svcid</stache-code> parameters, <stache-code>@skyux-sdk/builder</stache-code> and <stache-code>@skyux-sdk/builder</stache-code> pass the <stache-code>required</stache-code> state to the <stache-code>auth-client</stache-code>, which attempts to resolve the default value if one is available, show the welcome screen if multiple are available, or show an error if none are available.</p>
+              <stache-code>required</stache-code> — Indicates whether the parameter must be supplied to the application. For the <stache-code>envid</stache-code>, <stache-code>leid</stache-code>, and <stache-code>svcid</stache-code> parameters, <stache-code>@skyux-sdk/builder</stache-code> and <stache-code>@skyux-sdk/builder</stache-code> pass the <stache-code>required</stache-code> state to the <stache-code>auth-client</stache-code>, which attempts to resolve the default value if one is available, show the welcome screen if multiple are available, or show an error if none are available.</p>
             <p>
               For custom required parameters, no logic is applied, and users can use the <stache-code>SkyuxConfigParams</stache-code> class to interact with them.
             </p>
@@ -396,6 +415,11 @@
         </li>
         <li>
           <p>
+            <stache-code>browserSet</stache-code> — Specifies the set of browsers to use during continuous integration e2e testing. For Blackbaud developers, <a href="https://host.nxt.blackbaud.com/browserstack/learn/automated">the Browserstack documentation</a> describes the available values.
+          </p>
+        </li>
+        <li>
+          <p>
             <stache-code>envid</stache-code> — Specifies the environment ID.
           </p>
         </li>
@@ -407,7 +431,6 @@
         <li>
           <p>
             <stache-code>svcid</stache-code> — Specifies the service ID.
-            <stache-code>browserSet</stache-code> — Specifies the set of browsers to use during continuous integration end-to-end testing. For Blackbaud developers, <a href="https://host.nxt.blackbaud.com/browserstack/learn/automated">the Browserstack documentation</a> describes the available values.
           </p>
         </li>
       </ul>
