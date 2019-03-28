@@ -19,7 +19,7 @@
       isOptional="true"
       defaultValue="Vertical"
     >
-      Specifies whether to display the progress indicator vertically or horizontally. For <a routerLink="/components/wizard">modal wizards</a>, use the horizontal display mode. For waterfall pages and passive progress indicators, use the vertical display mode. This property accepts <stache-code>string</stache-code> values.
+      Specifies whether to display the progress indicator vertically or horizontally. For <a routerLink="/components/wizard">modal wizards</a>, use the horizontal display mode. For waterfall pages and passive progress indicators, use the vertical display mode. This property accepts <stache-code>string</stache-code> values and a type of the <a stacheRouterLink="." fragment="sky-progress-indicator-display-mode"><stache-code>SkyProgressIndicatorDisplayMode</stache-code></a> property.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="isPassive"
@@ -32,7 +32,7 @@
       propertyName="messageStream"
       isOptional="true"
     >
-      Specifies an observable of <stache-code>SkyProgressIndicatorMessageType</stache-code> that determines the status to display for progress items in the progress indicator. The message stream is a queue of commanding messages to change the state of the progress indicator based on one of the three message types. This property accepts <stache-code>string</stache-code> values.
+      Specifies <a stacheRouterLink="." fragment="skyprogressindicatormessagetype-properties">an observable of <stache-code>SkyProgressIndicatorMessageType</stache-code></a> that determines the status to display for progress items in the progress indicator. The message stream is a queue of commanding messages to change the state of the progress indicator based on one of the three message types. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="startingIndex"
@@ -47,6 +47,19 @@
       propertyName="progressChanges"
     >
       Fires when the progress indicator changes the status of a progress item.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-properties sectionHeading="SkyProgressIndicatorDisplayMode properties">
+    <sky-demo-page-property
+      propertyName="Vertical"
+    >
+    Specifies a vertical layout for the progress indicator.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="Horizontal"
+    >
+    Specifies a horizontal layout for the progress indicator.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -68,19 +81,11 @@
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
-  <sky-demo-page-properties sectionHeading="Progress indicator item properties">
-    <sky-demo-page-property
-      propertyName="title"
-    >
-      Specifies the title to display with the progress item. This property accepts <stache-code>string</stache-code> values.
-    </sky-demo-page-property>
-  </sky-demo-page-properties>
-
   <sky-demo-page-properties sectionHeading="Progress indicator reset button properties">
     <sky-demo-page-property
       propertyName="progressIndicator"
     >
-      Specifies the progress indicator component to associate with the reset button. This property accepts an array or Observable array of <stache-code>array</stache-code> of string values.
+      Specifies the progress indicator component to associate with the reset button. This property accepts an array or Observable array of <stache-code>string</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="disabled"
@@ -120,7 +125,7 @@
       isOptional="true"
       defaultValue="next"
     >
-      Specifies the type of nav button to include. Options include <stache-code>finish</stache-code>, <stache-code>next</stache-code>, and <stache-code>previous</stache-code>. This property accepts <stache-code>string</stache-code> values.
+      Specifies the type of nav button to include. The valid options are <stache-code>finish</stache-code>, <stache-code>next</stache-code>, and <stache-code>previous</stache-code>. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="disabled"
@@ -128,6 +133,19 @@
       defaultValue="false"
     >
       Indicates whether to disable the nav button. This property accepts <stache-code>boolean</stache-code> values.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-properties sectionHeading="Progress indicator child components">
+    <sky-demo-page-property
+      propertyName="sky-progress-indicator-title-component"
+    >
+      Specifies a header to display above the progress indicator.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="sky-progress-indicator-item"
+    >
+      Specifies the steps in the progress indicator.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
