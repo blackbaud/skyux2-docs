@@ -9,6 +9,7 @@ import {
 } from '@angular/core';
 
 import { SkyDemoTitleService } from '../../shared/title.service';
+import { SkyDemoPageModuleInfoComponent } from './new-demo-page-module-info.component';
 import { SkyDemoPagePropertiesComponent } from './demo-page-properties.component';
 import { SkyDemoPageExampleComponent } from './demo-page-example.component';
 import { SkyDemoPageContentComponent } from './demo-page-content.component';
@@ -22,30 +23,7 @@ import { SkyDemoPageContentComponent } from './demo-page-content.component';
 export class SkyNewDemoPageComponent implements OnInit, AfterContentInit {
   @Input()
   public pageTitle: string;
-
-  @Input()
-  public set skyuxModule(value: string | string[]) {
-    if (value) {
-      if (Array.isArray(value)) {
-        this.skyuxModulesForDisplay = value;
-      } else {
-        this.skyuxModulesForDisplay = [value];
-      }
-    } else {
-      this.skyuxModulesForDisplay = undefined;
-    }
-  }
-
-  @Input()
-  public set packageName(value: string) {
-    this._packageName = value;
-    this.npmInstall = value && `npm install ${value} --save --save-exact`;
-  }
-
-  public get packageName(): string {
-    return this._packageName;
-  }
-
+  
   @Input()
   public summary: string;
 
@@ -55,7 +33,10 @@ export class SkyNewDemoPageComponent implements OnInit, AfterContentInit {
 
   public skyuxModulesForDisplay: string[];
 
-  @ContentChildren(SkyDemoPagePropertiesComponent)
+  @ContentChildren(SkyDemoPageModuleInfoComponent)
+  private moduleInfoComponents: QueryList<SkyDemoPageModuleInfoComponent>;
+	
+	@ContentChildren(SkyDemoPagePropertiesComponent)
   private propertiesComponents: QueryList<SkyDemoPagePropertiesComponent>;
 
   @ContentChildren(SkyDemoPageExampleComponent)
