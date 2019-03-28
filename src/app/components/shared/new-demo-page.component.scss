@@ -1,0 +1,28 @@
+.sky-demo-page-header {
+  display: flex;
+  align-items: center;
+
+  h1 {
+    flex-grow: 1;
+  }
+}
+
+// Override Stache layouts
+::ng-deep .stache-layout-wrapper.stache-max-width-container {
+	max-width: none;
+	margin: 0;
+}
+
+::ng-deep .stache-sidebar {
+	width: 275px;
+	
+	.stache-nav-list-item.active > .stache-nav-anchor {
+		border-left-color: #00b4f1 !important; //$sky-background-color-neutral-light
+		background-color: #eeeeef; //$sky-highlight-color-info
+	}
+}
+
+::ng-deep .stache-sidebar-enabled .stache-container {
+	padding-left: 290px !important;
+	padding-right: 15px !important;
+}
