@@ -68,11 +68,11 @@
 			<div class="two-col-text">
 				<div class="anatomy-list">
 					<div class="anatomy-item anatomy-item-required"><div class="anatomy-marker">1</div><div class="anatomy-description">Selected tab</div></div>
-					<div class="anatomy-item anatomy-item-required"><div class="anatomy-marker">2</div>Unselected tab</div>
-					<div class="anatomy-item anatomy-item-required"><div class="anatomy-marker">3</div>Tab border</div>
-					<div class="anatomy-item anatomy-item-optional"><div class="anatomy-marker">4</div>Tab count (optional)</div>
-					<div class="anatomy-item anatomy-item-optional"><div class="anatomy-marker">5</div>Close tab button (optional)</div>
-					<div class="anatomy-item anatomy-item-optional"><div class="anatomy-marker">6</div>Open tab button (optional)</div>
+					<div class="anatomy-item anatomy-item-required"><div class="anatomy-marker">2</div><div class="anatomy-description">Unselected tab</div></div>
+					<div class="anatomy-item anatomy-item-required"><div class="anatomy-marker">3</div><div class="anatomy-description">Tab border</div></div>
+					<div class="anatomy-item anatomy-item-optional"><div class="anatomy-marker">4</div><div class="anatomy-description">Tab count (optional)</div></div>
+					<div class="anatomy-item anatomy-item-optional"><div class="anatomy-marker">5</div><div class="anatomy-description">Close tab button (optional)</div></div>
+					<div class="anatomy-item anatomy-item-optional"><div class="anatomy-marker">6</div><div class="anatomy-description">Open tab button (optional)</div></div>
 				</div>
 			</div>
 			<div class="two-col-image">
@@ -115,28 +115,90 @@
 					<p>If there are too many tabs to fit in the allotted space, the tabs collapse into a dropdown.</p>
 				</div>
 				<div class="two-col-image">
-					<div class="screenshot screenshot-info">
-						<img class="bordered" src="~/assets/img/guidelines/errorhandling/background-error.png" />
-						<div class="caption">A neutral caption</div>
+					<div class="screenshot">
+						<img src="~/assets/img/guidelines/tab/behavior-responsive.png" />
 					</div>
 				</div>
 			</div>
 		<h3>States</h3>
-			<div class="two-col-right-image sky-margin-stacked-separate">
-				<div class="two-col-text">
-					<p>If there are too many tabs to fit in the allotted space, the tabs collapse into a dropdown.</p>
-				</div>
-				<div class="two-col-image">
-					<div class="screenshot screenshot-info">
-						<img class="bordered" src="~/assets/img/guidelines/errorhandling/background-error.png" />
-						<div class="caption">A neutral caption</div>
-					</div>
-				</div>
-			</div>
+			<sky-repeater>
+				<sky-repeater-item>
+					<sky-repeater-item-content>
+						<div class="two-col-right-image">
+							<div class="two-col-text">
+								<div>Selected</div>
+							</div>
+							<div class="two-col-image">
+								<div class="screenshot">
+									<img src="~/assets/img/guidelines/tab/state-selected.png" />
+								</div>
+							</div>
+						</div>
+					</sky-repeater-item-content>
+				</sky-repeater-item>
+				<sky-repeater-item>
+					<sky-repeater-item-content>
+						<div class="two-col-right-image">
+							<div class="two-col-text">
+								<div>Unselected</div>
+							</div>
+							<div class="two-col-image">
+								<div class="screenshot">
+									<img src="~/assets/img/guidelines/tab/state-unselected.png" />
+								</div>
+							</div>
+						</div>
+					</sky-repeater-item-content>
+				</sky-repeater-item>
+				<sky-repeater-item>
+					<sky-repeater-item-content>
+						<div class="two-col-right-image">
+							<div class="two-col-text">
+								<div>Hover</div>
+							</div>
+							<div class="two-col-image">
+								<div class="screenshot">
+									<img src="~/assets/img/guidelines/tab/state-hover.png" />
+								</div>
+							</div>
+						</div>
+					</sky-repeater-item-content>
+				</sky-repeater-item>
+				<sky-repeater-item>
+					<sky-repeater-item-content>
+						<div class="two-col-right-image">
+							<div class="two-col-text">
+								<div>Collapsed, closed</div>
+							</div>
+							<div class="two-col-image">
+								<div class="screenshot">
+									<img src="~/assets/img/guidelines/tab/state-collapsed-closed.png" />
+								</div>
+							</div>
+						</div>
+					</sky-repeater-item-content>
+				</sky-repeater-item>
+				<sky-repeater-item>
+					<sky-repeater-item-content>
+						<div class="two-col-right-image">
+							<div class="two-col-text">
+								<div>Collapsed, open</div>
+							</div>
+							<div class="two-col-image">
+								<div class="screenshot">
+									<img src="~/assets/img/guidelines/tab/state-collapsed-open.png" />
+								</div>
+							</div>
+						</div>
+					</sky-repeater-item-content>
+				</sky-repeater-item>
+			</sky-repeater>
+			
 	</sky-demo-page-content>
 	
 	<sky-demo-page-content sectionHeading="Content">
 		<h3>Page titles</h3>
+		<div class="sky-text-block">
 			<p>
         If tabs are the main navigation on a page, display the tab header in the page title. Use the following format: <span class="sky-emphasized">&lt;Tab title&gt; - &lt;Page title&gt; - &lt;Product title&gt;</span>. For example: <span class="sky-emphasized">Portfolio - Work center - Blackbaud</span>. In addition, follow these guidelines for page titles:
 			</p>
@@ -146,6 +208,7 @@
 				<li>Provide concise descriptions of each page's contents or purpose. Titles should stand on their own and make sense out of context.</li>
 				<li>Start with the most meaningful, differentiating terms so that they can be scanned in browser tabs, window lists, and browser bookmarks.</li>
 			</ul>
+		</div>
 	</sky-demo-page-content>	
 		
 	<sky-demo-page-content sectionHeading="Layout">
