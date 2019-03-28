@@ -50,9 +50,13 @@
 				</ul>
 			</div>
 			<div class="two-col-image">
-				<div class="screenshot screenshot-danger">
-					<img src="~/assets/img/guidelines/tab/use-tasks.png" />
+				<div class="screenshot screenshot-danger sky-margin-stacked-content-section">
+					<img src="~/assets/img/guidelines/tab/dont-double-tab-horz.png" />
 					<div class="caption sky-text-danger">Don't use multiple sets of tabs on a single page.</div>
+				</div>
+				<div class="screenshot screenshot-danger">
+					<img src="~/assets/img/guidelines/tab/dont-double-tab-vert.png" />
+					<div class="caption sky-text-danger">Don't combine vertical tabs with horizontal tabs.</div>
 				</div>
 			</div>
 		</div>
@@ -62,14 +66,18 @@
 	<sky-demo-page-content sectionHeading="Anatomy">
 		<div class="two-col-right-image sky-margin-stacked-separate">
 			<div class="two-col-text">
-				<ul>
-					<li>You already have a tabset on the page. Try changing the workflow rather than using multiple tabsets on a page.</li>
-				</ul>
+				<div class="anatomy-list">
+					<div class="anatomy-item anatomy-item-required"><div class="anatomy-marker">1</div><div class="anatomy-description">Selected tab</div></div>
+					<div class="anatomy-item anatomy-item-required"><div class="anatomy-marker">2</div>Unselected tab</div>
+					<div class="anatomy-item anatomy-item-required"><div class="anatomy-marker">3</div>Tab border</div>
+					<div class="anatomy-item anatomy-item-optional"><div class="anatomy-marker">4</div>Tab count (optional)</div>
+					<div class="anatomy-item anatomy-item-optional"><div class="anatomy-marker">5</div>Close tab button (optional)</div>
+					<div class="anatomy-item anatomy-item-optional"><div class="anatomy-marker">6</div>Open tab button (optional)</div>
+				</div>
 			</div>
 			<div class="two-col-image">
-				<div class="screenshot screenshot-info">
-					<img class="bordered" src="~/assets/img/guidelines/errorhandling/background-error.png" />
-					<div class="caption">A neutral caption</div>
+				<div class="screenshot">
+					<img src="~/assets/img/guidelines/tab/anatomy.png" />
 				</div>
 			</div>
 		</div>
@@ -90,18 +98,30 @@
 		<h3>Open and close</h3>
 			<div class="two-col-right-image sky-margin-stacked-separate">
 				<div class="two-col-text">
-					<p>If users need to work with a subset of large number of available tabs, let them open and close tabs so they are only working with relevant tabs.</p>
+					<p>If users need to work with a subset of large number of available tabs, let them open and close tabs so they are only working with relevant tabs. If users have more than one option of what to display in a new tab, use action buttons within the tab view to let them choose the option they want.</p>
 				</div>
 				<div class="two-col-image">
 					<div class="screenshot">
 						<img src="~/assets/img/guidelines/tab/option-open-close.png" />
 					</div>
 				</div>
-			</div>
+		</div>
 	</sky-demo-page-content>
 	
 	<sky-demo-page-content sectionHeading="Behavior & states">
 		<h3>Overflowing tabs</h3>
+			<div class="two-col-right-image sky-margin-stacked-separate">
+				<div class="two-col-text">
+					<p>If there are too many tabs to fit in the allotted space, the tabs collapse into a dropdown.</p>
+				</div>
+				<div class="two-col-image">
+					<div class="screenshot screenshot-info">
+						<img class="bordered" src="~/assets/img/guidelines/errorhandling/background-error.png" />
+						<div class="caption">A neutral caption</div>
+					</div>
+				</div>
+			</div>
+		<h3>States</h3>
 			<div class="two-col-right-image sky-margin-stacked-separate">
 				<div class="two-col-text">
 					<p>If there are too many tabs to fit in the allotted space, the tabs collapse into a dropdown.</p>

@@ -217,3 +217,33 @@ img.bordered {
 .sky-margin-stacked-content-section {
 	margin-bottom: 50px;
 }
+
+.anatomy-marker {
+	display: flex;
+	width: 22px;
+	height: 22px;
+	border-radius: 50%;
+	justify-content: center;
+	align-items: center;
+	margin-right: $sky-margin-inline-compact;
+}
+
+.anatomy-item {
+	margin-bottom: $sky-margin-stacked-default;
+	display: flex;
+	align-items: center;
+	
+	&.anatomy-item-required {
+		.anatomy-marker {
+			color: $sky-text-color-on-dark;
+			background-color: #4d842d;
+		}
+	}
+		
+	&.anatomy-item-optional {
+		.anatomy-marker {
+			background-color: $sky-background-color-success;
+		}
+	}
+}
+
