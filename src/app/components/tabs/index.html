@@ -212,20 +212,43 @@
 	</sky-demo-page-content>	
 		
 	<sky-demo-page-content sectionHeading="Layout">
-		<div class="two-col-right-image sky-margin-stacked-separate">
-				<div class="two-col-text">
-					<ul>
-						<li>Use <stache-code>$sky-margin-stacked-separate</stache-code> vertical margin between the tabs and the preceeding content.</li>
-						<li>Use <stache-code>$sky-padding-even-large</stache-code> padding within the tab view, except when using a single full-width list within the tab.</li>
-					</ul>
-				</div>
-				<div class="two-col-image">
-					<div class="screenshot screenshot-info">
-						<img class="bordered" src="~/assets/img/guidelines/errorhandling/background-error.png" />
-						<div class="caption">A neutral caption</div>
-					</div>
+		<div class="two-col-right-image sky-margin-stacked-content-section">
+			<div class="two-col-text">
+				<p>Tabs and their contents are always the last (bottommost) content inside their container. Don’t put content underneath a tab set if it’s not inside one of the tabs.</p>
+			</div>
+			<div class="two-col-image">
+				<div class="screenshot screenshot-danger">
+					<img src="~/assets/img/guidelines/tab/layout-bottommost.png" />
+					<div class="caption sky-text-danger">Don't put additional content underneath tabs</div>
 				</div>
 			</div>
+		</div>
+		<div class="two-col-right-image sky-margin-stacked-content-section">
+			<div class="two-col-text">
+				<p>The tab line extends the full width of the overall container. Don’t use left or right margins on the tab line and ignore any padding the overall container defines.</p>
+			</div>
+			<div class="two-col-image">
+				<div class="screenshot screenshot-success sky-margin-stacked-content-section">
+					<img src="~/assets/img/guidelines/tab/layout-full-width.png" />
+					<div class="caption sky-text-success">Do extend the tab line the full width of the container</div>
+				</div>
+				<div class="screenshot screenshot-danger">
+					<img src="~/assets/img/guidelines/tab/layout-dont-pad-line.png" />
+					<div class="caption sky-text-danger">Don't apply the container's padding to the tab line</div>
+				</div>
+			</div>
+		</div>
+		<div class="two-col-right-image sky-margin-stacked-content-section">
+			<div class="two-col-text">
+				<p>The contents inside of a tab do not have additional left or right padding. The left and right gutters should align with those of the content outside of the tabs.</p>
+			</div>
+			<div class="two-col-image">
+				<div class="screenshot screenshot-danger">
+					<img src="~/assets/img/guidelines/tab/layout-dont-pad-content.png" />
+					<div class="caption sky-text-danger">Don't apply additional left-right padding to the tab contents</div>
+				</div>
+			</div>
+		</div>
 	</sky-demo-page-content>
 	
 	</sky-tab>
