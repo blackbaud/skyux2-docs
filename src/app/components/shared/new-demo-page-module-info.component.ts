@@ -1,5 +1,5 @@
 import {
-  ChangeDetectionStrategy,
+	ChangeDetectionStrategy,
   Component,
   Input
 } from '@angular/core';
@@ -9,11 +9,8 @@ import {
   templateUrl: './new-demo-page-module-info.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SkyDemoPageModuleInfoComponent { 
-	public npmInstall: string;
 
-  public skyuxModulesForDisplay: string[];
-	
+export class SkyDemoPageModuleInfoComponent { 
 	@Input()
   public set skyuxModule(value: string | string[]) {
     if (value) {
@@ -37,4 +34,11 @@ export class SkyDemoPageModuleInfoComponent {
     return this._packageName;
   }
 
+	public npmInstall: string;
+
+	public skyuxModulesForDisplay: string[];
+
+	private _packageName: string;
+	
 }
+	

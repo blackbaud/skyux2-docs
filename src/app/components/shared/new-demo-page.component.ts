@@ -27,11 +27,7 @@ export class SkyNewDemoPageComponent implements OnInit, AfterContentInit {
   @Input()
   public summary: string;
 
-  public npmInstall: string;
-
   public tableOfContentsRoutes: any[] = [];
-
-  public skyuxModulesForDisplay: string[];
 
   @ContentChildren(SkyDemoPageModuleInfoComponent)
   private moduleInfoComponents: QueryList<SkyDemoPageModuleInfoComponent>;
@@ -44,8 +40,6 @@ export class SkyNewDemoPageComponent implements OnInit, AfterContentInit {
 
   @ContentChildren(SkyDemoPageContentComponent)
   private contentComponents: QueryList<SkyDemoPageContentComponent>;
-
-  private _packageName: string;
 
   constructor(
     private titleService: SkyDemoTitleService

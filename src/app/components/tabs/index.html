@@ -1,7 +1,5 @@
 <sky-new-demo-page
   pageTitle="Tabs"
-  skyuxModule="SkyTabsModule"
-  packageName="@skyux/tabs"
 >
 
   <sky-demo-page-summary>
@@ -254,9 +252,13 @@
 	</sky-tab>
 	
 	<sky-tab
-		tabHeading="Angular development">
+		tabHeading="Development">
 		
-	<sky-demo-page-module-info></sky-demo-page-module-info>	
+	<sky-demo-page-module-info
+		skyuxModule="SkyTabsModule"
+		packageName="@skyux/tabs"
+	>
+	</sky-demo-page-module-info>	
 		
   <sky-demo-page-properties sectionHeading="Tabset properties">
     <sky-demo-page-property
