@@ -13,13 +13,36 @@
     </p>
  </sky-demo-page-summary>
 
+  <sky-demo-page-properties sectionHeading="Progress indicator child components">
+    <sky-demo-page-property
+      propertyName="sky-progress-indicator-item"
+    >
+      Specifies a step to include in the progress indicator.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="sky-progress-indicator-nav-button"
+    >
+      Displays a button to navigate the steps in a modal wizard.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="sky-progress-indicator-reset-button"
+    >
+      Displays a button to mark all items in the progress indicator as incomplete and set the first progress item as the active item.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="sky-progress-indicator-title"
+    >
+      Specifies a header to display above the progress indicator.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
   <sky-demo-page-properties sectionHeading="Progress indicator properties">
     <sky-demo-page-property
       propertyName="displayMode()"
       isOptional="true"
       defaultValue="Vertical"
     >
-      Specifies whether to display the progress indicator vertically or horizontally. For <a routerLink="/components/wizard">modal wizards</a>, use the horizontal display mode. For waterfall pages and passive progress indicators, use the vertical display mode. This property accepts <stache-code>string</stache-code> values and a type of the <a stacheRouterLink="." fragment="sky-progress-indicator-display-mode"><stache-code>SkyProgressIndicatorDisplayMode</stache-code></a> property.
+      Specifies whether to display the progress indicator vertically or horizontally. For <a routerLink="/components/wizard">modal wizards</a>, use the horizontal display mode. For waterfall pages and passive progress indicators, use the vertical display mode. This property accepts <stache-code>string</stache-code> values and a type of <a stacheRouterLink="." fragment="skyprogressindicatordisplaymode-properties">the <stache-code>SkyProgressIndicatorDisplayMode</stache-code> property</a>.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="isPassive"
@@ -52,14 +75,14 @@
 
   <sky-demo-page-properties sectionHeading="SkyProgressIndicatorDisplayMode properties">
     <sky-demo-page-property
-      propertyName="Vertical"
-    >
-    Specifies a vertical layout for the progress indicator.
-    </sky-demo-page-property>
-    <sky-demo-page-property
       propertyName="Horizontal"
     >
     Specifies a horizontal layout for the progress indicator.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="Vertical"
+    >
+    Specifies a vertical layout for the progress indicator.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -133,19 +156,6 @@
       defaultValue="false"
     >
       Indicates whether to disable the nav button. This property accepts <stache-code>boolean</stache-code> values.
-    </sky-demo-page-property>
-  </sky-demo-page-properties>
-
-  <sky-demo-page-properties sectionHeading="Progress indicator child components">
-    <sky-demo-page-property
-      propertyName="sky-progress-indicator-title-component"
-    >
-      Specifies a header to display above the progress indicator.
-    </sky-demo-page-property>
-    <sky-demo-page-property
-      propertyName="sky-progress-indicator-item"
-    >
-      Specifies the steps in the progress indicator.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
