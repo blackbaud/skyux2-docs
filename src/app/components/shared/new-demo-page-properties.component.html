@@ -1,0 +1,22 @@
+<sky-demo-page-content [sectionHeading]="sectionHeading">
+  <ng-content></ng-content>
+  <table class="sky-content-table">
+		<colgroup>
+			<col class="property-name">
+			<col class="property-description">
+			<col class="property-default">
+			<col class="property-optional">
+		</colgroup>
+		<thead>
+			<tr>
+				<th>Property name</th>
+				<th>Description</th>
+				<th>Default value</th>
+				<th>Optional?</th>
+			</tr>
+		</thead>
+		<tbody>
+			<ng-content select="new-sky-demo-page-property"></ng-content>
+		</tbody>
+	</table>
+</sky-demo-page-content>

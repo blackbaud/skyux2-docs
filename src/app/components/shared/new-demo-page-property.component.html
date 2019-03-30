@@ -1,0 +1,14 @@
+	<td>
+		<stache-code>{{ propertyName }}</stache-code>
+	</td>
+	<td><ng-content></ng-content></td>
+	<td>
+		<ng-container *ngIf="defaultValue">
+			{{ defaultValue }}
+		</ng-container>
+	</td>
+	<td>
+		<ng-container *ngIf="isOptional">
+			Optional
+		</ng-container>
+	</td>

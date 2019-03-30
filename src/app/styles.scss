@@ -251,6 +251,38 @@ img.bordered {
 	width: 690px;
 }
 
-table.content-table {
+table.sky-content-table {
+	td, th {
+		text-align: left;
+		padding: $sky-margin-stacked-default;
+	}
 	
+	th{
+		background-color: $sky-background-color-info-light;
+	}
+	
+	tr {
+		border-bottom: 1px dotted $sky-border-color-neutral-medium;
+	}
+	
+	.property-name {
+		width: 20%;
+		min-width: 200px;
+	}
+	
+	.property-description {
+		width: 40%;
+		min-width: 200px;
+		max-width: 690px;
+	}
+	
+	.property-default {
+		width: 20%;
+		min-width: 200px;
+	}
+	
+	.property-optional {
+		width: 20%;
+		min-width: 200px;
+	}
 }
