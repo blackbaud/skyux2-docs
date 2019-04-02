@@ -1,5 +1,6 @@
 <stache
-  pageTitle="Initial setup"
+  pageTitle="Initial Setup"
+  navTitle="Initial setup"
   navOrder="2"
   showTableOfContents="true">
 
@@ -12,27 +13,27 @@
   <stache-page-anchor>
     Node.js
   </stache-page-anchor>
-
   <p>
-    Install the latest LTS release of <a href="https://nodejs.org/en/download/releases/">Node.js</a>. We require at least version 6. To check your version, run <stache-code>node –v</stache-code> from the command line.
+    SKY UX requires an LTS Dubnium version of Node.js, and we recommend <a href="https://nodejs.org/en/download/releases/">the latest release</a>. To check your version, run <stache-code>node –v</stache-code> from the command line.
   </p>
   <p>
-    For Mac OS X and Linux, we recommend that you use <a href="https://github.com/creationix/nvm">Node Version Manager (nvm)</a> to wrap your NodeJS installation so that it installs in your user directory and avoids permissions-related issues.
-  </p>
-  <p>
-    For Windows, download the <stache-code>msi</stache-code> version of the latest LTS release. Windows machines also require two additional steps:
+    In addition, SKY UX recommends Node Version Manager (NVM) to wrap your Node.js installation so that it installs in your user directory and avoids permissions-related issues.
   </p>
   <ul>
     <li>
-      To install the node-sass requirement as described in <a href="https://github.com/sass/node-sass#install">the official node-sass documentation</a>, run <stache-code>npm install node-sass</stache-code>.
+      <p>
+        For Mac OS X and Linux, follow <a href="https://github.com/creationix/nvm#installation-and-update">the installation and update instructions</a> in the <stache-code>README.md</stache-code> file for the NVM GitHub repo.
+      </p>
     </li>
     <li>
-      To install the required tools and configurations using <a href="https://github.com/felixrieseberg/windows-build-tools">Microsoft's windows-build-tools</a>, run <stache-code>npm install --global --production windows-build-tools</stache-code> from an elevated PowerShell or CMD.exe (run as administrator).
+      <p>
+        For Windows, follow <a href="https://github.com/coreybutler/nvm-windows#node-version-manager-nvm-for-windows">the installation and update instructions </a> in the <stache-code>README.md</stache-code> file for the NVM for Windows GitHub repo. 
+      </p>
     </li>
   </ul>
-<!--  <p>
-    For guidance on transitioning from Node.js 6 to Node.js 10 on Windows machines, see <a stacheRouterLink="learn/get-started/prereqs/initial-setup/upgrade-path-for-windows">the upgrade path for Windows</a>. 
-  </p> -->
+  <p>
+    For Windows machines, you must also install required tools and configurations using <a href="https://github.com/felixrieseberg/windows-build-tools">Microsoft's windows-build-tools</a>. Run <stache-code>npm install --global --production windows-build-tools</stache-code> as an administrator from an elevated PowerShell or CMD.exe.
+  </p>
 
   <stache-page-anchor>
     NPM
