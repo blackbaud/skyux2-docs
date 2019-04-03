@@ -27,11 +27,11 @@
       Installation
     </stache-page-anchor>
     <p>
-      To use <span *ngFor="let moduleName of skyuxModulesForDisplay"><stache-code>{{ moduleName }}</stache-code></span>, you must first install the module's NPM package to set it up as a dependency. In the command prompt, run the following command from your SPA's root directory:
+      To use any exports from <span *ngFor="let moduleName of skyuxModulesForDisplay"><stache-code>{{ moduleName }}</stache-code></span>, you must install it as a dependency to your project. In the command prompt, run the following command from your SPA's root directory:
     </p>
     <stache-code-block [code]="npmInstall"></stache-code-block>
     <p>
-      After the module is in place, use an Angular <stache-code>app.module.ts</stache-code> file to make it available to your SPA. For SKY UX SPAs, add <span *ngFor="let moduleName of skyuxModulesForDisplay"><stache-code>{{ moduleName }}</stache-code></span> as both an import and an export in the <stache-code>app-extras.module.ts</stache-code> file that controls the rendering of the SPA. For SKY UX libraries, add <span *ngFor="let moduleName of skyuxModulesForDisplay"><stache-code>{{ moduleName }}</stache-code></span> as an import in the module for the component that consumes it.
+      After installation, you need to make any exports from <span *ngFor="let moduleName of skyuxModulesForDisplay"><stache-code>{{ moduleName }}</stache-code></span> available to your SPA by adding the module to the <stache-code>exports</stache-code> section of your SPA's main module. If you are using the SKY UX SDK, add <span *ngFor="let moduleName of skyuxModulesForDisplay"><stache-code>{{ moduleName }}</stache-code></span> as an export in your <stache-code>app-extras.module.ts</stache-code> file.
     </p>
   </ng-container>
 
