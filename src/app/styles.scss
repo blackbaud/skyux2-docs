@@ -252,9 +252,15 @@ img.bordered {
 }
 
 table.sky-content-table {
+	border-collapse: collapse;
+	
 	td, th {
 		text-align: left;
 		padding: $sky-margin-stacked-default;
+	}
+	
+	td {
+		border-bottom: 1px dotted $sky-border-color-neutral-medium; //@include sky-border(row) 
 	}
 	
 	th{
