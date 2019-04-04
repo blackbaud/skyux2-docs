@@ -1,14 +1,22 @@
-	<td>
+<div class="property-table-row">
+	<div class="property-name">
+		<div class="sky-field-label property-heading">Name</div>
 		<stache-code>{{ propertyName }}</stache-code>
-	</td>
-	<td><ng-content></ng-content></td>
-	<td>
+	</div>
+	<div class="property-description">
+		<div class="sky-field-label property-heading">Description</div>
+		<ng-content></ng-content>
+	</div>
+	<div class="property-default">
+		<div class="sky-field-label property-heading">Default</div>
 		<ng-container *ngIf="defaultValue">
 			{{ defaultValue }}
 		</ng-container>
-	</td>
-	<td>
+	</div>
+	<div class="property-optional">
+		<div class="sky-field-label property-heading">Optional?</div>
 		<ng-container *ngIf="isOptional">
 			Optional
 		</ng-container>
-	</td>
+	</div>
+</div>	

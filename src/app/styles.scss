@@ -251,44 +251,55 @@ img.bordered {
 	width: 690px;
 }
 
-table.sky-content-table {
-	border-collapse: collapse;
+.property-table {
 	
-	td, th {
-		text-align: left;
-		padding: $sky-margin-stacked-default;
+	.property-table-row {
+		display: flex;
+		flex-wrap: wrap;
+		border-bottom: 1px dotted $sky-border-color-neutral-medium; //@include sky-border(row)
+		
+		&.property-table-header {
+			background-color: $sky-background-color-info-light;
+			border-bottom: none;
+		}
+		
+		&> div {
+		padding: $sky-padding-even-default;
+		}
 	}
 	
-	td {
-		border-bottom: 1px dotted $sky-border-color-neutral-medium; //@include sky-border(row) 
-	}
+		.property-heading {
+			display: none;
+		}
+
+		.property-name {
+			width: 20%;
+		}
+
+		.property-description {
+			width: 40%;
+		}
+
+		.property-default {
+			width: 20%;
+		}
+
+		.property-optional {
+			width: 20%;
+		}
 	
-	th{
-		background-color: $sky-background-color-info-light;
-	}
-	
-	tr {
-		border-bottom: 1px dotted $sky-border-color-neutral-medium;
-	}
-	
-	.property-name {
-		width: 20%;
-		min-width: 200px;
-	}
-	
-	.property-description {
-		width: 40%;
-		min-width: 200px;
-		max-width: 690px;
-	}
-	
-	.property-default {
-		width: 20%;
-		min-width: 200px;
-	}
-	
-	.property-optional {
-		width: 20%;
-		min-width: 200px;
+	@media (max-width: $sky-screen-sm-max) {
+		.property-table-header {
+			display: none;
+		}
+		
+		.property-heading {
+			display: block;
+			margin-bottom: $sky-margin-stacked-default;
+		}
+
+		.property-name, .property-description, .property-default, .property-optional {
+			width: 100%;
+		}
 	}
 }

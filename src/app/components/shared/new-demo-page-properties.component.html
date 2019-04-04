@@ -1,22 +1,12 @@
 <sky-demo-page-content [sectionHeading]="sectionHeading">
   <ng-content></ng-content>
-  <table class="sky-content-table">
-		<colgroup>
-			<col class="property-name">
-			<col class="property-description">
-			<col class="property-default">
-			<col class="property-optional">
-		</colgroup>
-		<thead>
-			<tr>
-				<th>Property name</th>
-				<th>Description</th>
-				<th>Default value</th>
-				<th>Optional?</th>
-			</tr>
-		</thead>
-		<tbody>
+  <div class="property-table">
+			<div class="property-table-row property-table-header">
+				<div class="property-name">Property name</div>
+				<div class="property-description">Description</div>
+				<div class="property-default">Default value</div>
+				<div class="property-optional">Optional?</div>
+			</div>
 			<ng-content select="new-sky-demo-page-property"></ng-content>
-		</tbody>
-	</table>
+	</div>
 </sky-demo-page-content>
