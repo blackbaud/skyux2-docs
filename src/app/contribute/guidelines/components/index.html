@@ -76,7 +76,7 @@
   </stache-page-anchor>
 
   <p>
-    To declare localization strings, specify a string name and provide the string and a description in the <stache-code>resources_en_US.json</stache-code> file in <stache-code>src/assets/locales</stache-code>. You can reference the localization strings with the <stache-code>skyAppResources</stache-code> pipe or the <stache-code>SkyAppResourcesService</stache-code> service in <stache-code>@skyux/i18n</stache-code>.
+    To declare localization strings, specify a string name and provide the string and a description in the <stache-code>resources_en_US.json</stache-code> file in <stache-code>src/assets/locales</stache-code>. You can reference the localization strings with the <stache-code>skyLibResources</stache-code> pipe or the <stache-code>SkyLibResourcesService</stache-code> service in <stache-code>@skyux/i18n</stache-code>.
     </p>
 
   <stache-page-anchor>
@@ -91,10 +91,10 @@
       Create a branch named after the feature you will contribute. The branch name should be kebab-case (my-new-feature).
     </li>
     <li>
-      Clone your repo locally and run <stache-code>npm install</stache-code> from your local repo's directory to install all required dependencies.
+      Clone your repo locally and run <stache-code>nvm use</stache-code> to ensure you have the preferred version of Node.js installed. Next, run <stache-code>npm install</stache-code> to install all required dependencies.
     </li>
     <li>
-      <a stacheRouterLink="." fragment="write-visual-regression-tests"></a>Run your first round of visual regression tests</a>. This establishes baseline screenshots of the components in the master repo so that as you make changes and run your visual regression tests, your changes are validated against the state of the repo before the changes.
+      <a stacheRouterLink="." fragment="write-visual-regression-tests"></a>Run your first round of visual regression tests with <stache-code>skyux e2e</stache-code></a>. This establishes baseline screenshots of the components in the master repo so that as you make changes and run your visual regression tests, your changes are validated against the state of the repo before the changes.
     </li>
   </ol>
 
@@ -104,14 +104,14 @@
 
   <ol>
     <li>
-      Launch a command prompt, <stache-code>cd</stache-code> to the folder where you cloned your branch, and run <stache-code>npm run watch</stache-code>.
+      Launch a command prompt, <stache-code>cd</stache-code> to the folder where you cloned your branch, and run <stache-code>skyux watch --coverage library</stache-code>.
     </li>
     <li>
       Launch a second command prompt, <stache-code>cd</stache-code> to the folder where you cloned your branch, and run <stache-code>skyux serve</stache-code>. This launches the SKY UX component demos page where you write the demo components to test your code.
     </li>
     <ul>
       <li>
-        SKY UX demos are authored with <a href="https://github.com/blackbaud/skyux-sdk-cli">SKY UX SDK CLI</a>. If this is your first time using SKY UX Builder, you must install the CLI as a global NPM package before you run <stache-code>skyux serve</stache-code>:
+        SKY UX demos are authored with <a href="https://github.com/blackbaud/skyux-sdk-cli">SKY UX CLI</a>. If this is your first time using SKY UX Builder, you must install the CLI as a global NPM package before you run <stache-code>skyux serve</stache-code>:
       </li>
       <stache-code>npm i -g @skyux-sdk/cli</stache-code>
     </ul>
@@ -119,7 +119,7 @@
       When you save code changes, the code compiles, static code analysis is performed, unit tests run, and the page refreshes with the latest changes.
     </li>
     <p>
-      Keep in mind that when you create components, you must add public exports through <stache-code>./src/core.ts</stache-code> and <stache-code>./src/demo.ts</stache-code> to allow users to import your component modules. The public exports provide entry points for the bundles that SKY UX deploys.
+      Keep in mind that when you create components, you must add public exports through <stache-code>./src/app/public/index.ts</stache-code> to allow users to import your component modules. The public exports provide entry points for the bundles that SKY UX deploys.
     </p>
     <p>
       The recommended change detection strategy for SKY UX components is to use <a href="https://angular.io/api/core/ChangeDetectionStrategy">the <stache-code>OnPush</stache-code> property instead of <stache-code>Default</stache-code></a>.
@@ -143,7 +143,7 @@
   </stache-page-anchor>
 
   <p>
-    Your unit test files should end in <stache-code>.spec.ts</stache-code> and reside in the same folders as the components that they test. For example, the test file for <stache-code>foo/foo.component.ts</stache-code> should be <stache-code>foo/foo.component.spec.ts</stache-code>. All test fixtures such as sample components, mock services, etc. should be in a fixtures folder within the component's folder. The existing codebase contains many examples of this pattern, so just follow the patterns in the existing code when you write tests.
+    Your unit test files should end in <stache-code>.spec.ts</stache-code> and reside in the same folders as the components that they test. For example, the test file for <stache-code>foo/foo.component.ts</stache-code> should be <stache-code>foo/foo.component.spec.ts</stache-code>. To run unit tests for a library, run <stache-code>skyux test --coverage library</stache-code>. All test fixtures such as sample components, mock services, etc. should be in a fixtures folder within the component's folder. The existing codebase contains many examples of this pattern, so just follow the patterns in the existing code when you write tests.
   </p>
 
   <p>
@@ -159,11 +159,11 @@
   </stache-page-anchor>
 
   <p>
-    During continuous integration builds, SKY UX runs visual regression tests through BrowserStack using <a href="http://www.protractortest.org/">Protractor</a> and <a href="https://github.com/koola/pix-diff">pix-diff</a>. These prerequisites are automatically installed when you run <stache-code>npm run test:visual</stache-code> to create and compare screenshots in the <stache-code>skyux-spa-visual-tests/screenshots-baseline-local/</stache-code> folder.
+    During continuous integration builds, SKY UX runs visual regression tests through BrowserStack using <a href="http://www.protractortest.org/">Protractor</a> and <a href="https://github.com/koola/pix-diff">pix-diff</a>. These prerequisites are automatically installed when you run <stache-code>skyux e2e</stache-code> to create and compare screenshots in the <stache-code>skyux-spa-visual-tests/screenshots-baseline-local/</stache-code> folder.
   </p>
 
   <p>
-    To create visual tests for a new component, create a folder for the tests in <stache-code>skyux-spa-visual-tests/src/app</stache-code> and add four files for the visual regression test:
+    To create visual tests for a new component, create a folder for the tests in <stache-code>./src/app/visual</stache-code> and add four files for the visual regression test to the root <stache-code>e2e</stache-code> folder:
   </p>
 
   <ul>
@@ -171,10 +171,10 @@
       <stache-code>{{ '{' }}componentName}-visual.component.html</stache-code>: The template for the component to render and take a screenshot of.
     </li>
     <li>
-      <stache-code>{{ '{' }}componentName}-visual.component.ts</stache-code>: The TypeScript code for the component to render and take a screenshot of.
+      <stache-code>{{ '{' }}componentName}.e2e-spec.ts</stache-code>: The TypeScript code for the component to render and take a screenshot of.
     </li>
     <li>
-      <stache-code>{{ '{' }}componentName}.visual-spec.ts</stache-code>: The Protractor code to run the screenshot tests.
+      <stache-code>{{ '{' }}componentName}.e2e-spec.ts</stache-code>: The Protractor code to run the screenshot tests.
     </li>
     <li>
       <stache-code>index.html</stache-code>: The route file that contains the component to render and take a screenshot of.
@@ -182,21 +182,7 @@
   </ul>
 
   <p>
-    To run visual regression tests locally, you must first run them locally against the master branch and then run the tests against your feature branch. Keep in mind that you need to use the same monitor and resolution on both set of tests. If your visual regression tests fail, you can check the failed tests at <stache-code>skyux2\skyux-spa-visual-tests\screenshots-diff-local\diff</stache-code> to find the cause of the failures.
-  </p>
-
-  <stache-page-anchor>
-    Submit code
-  </stache-page-anchor>
-
-  <ol>
-    <li>
-      Commit and push your changes to the repo.
-    </li>
-    <li>
-      Submit a pull request.
-    </li>
-  </ol>
+    To run visual regression tests locally, you must first run them locally against the master branch and then run the tests against your feature branch. Keep in mind that you need to use the same monitor and resolution on both set of tests. If your visual regression tests fail, you can check the failed tests at <stache-code>./screenshots-diff-local/diff</stache-code> to find the cause of the failures.
 
   <stache-page-anchor>
     Available NPM scripts
