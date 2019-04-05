@@ -12,13 +12,13 @@
   "author": "Blackbaud, Inc.",
   "license": "MIT",
   "dependencies": {
-    "@blackbaud/skyux": "2.46.0",
+    "@blackbaud/skyux": "2.46.1",
     "@blackbaud/skyux-design-tokens": "0.0.11",
-    "@blackbaud/stache": "2.15.3",
-    "@skyux/action-bars": "3.0.0"
+    "@blackbaud/stache": "2.16.0",
+    "@skyux/action-bars": "3.0.1"
   },
   "devDependencies": {
-    "@blackbaud/skyux-builder": "1.33.0"
+    "@blackbaud/skyux-builder": "1.33.1"
   },
   "repository": {
     "type": "git",
