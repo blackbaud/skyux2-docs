@@ -4,10 +4,10 @@
   navTitle="Route parameters">
 
   <p>
-    SKY UX supports routes that contain <a href="https://angular.io/guide/router#route-definition-with-a-parameter">route parameters</a>. This complements the fact that SKY UX Builder automatically registers routes and creates components for all <stache-code>index.html</stache-code> files in the <stache-code>src/app</stache-code> directory.
+    SKY UX supports routes that contain <a href="https://angular.io/guide/router#route-parameters">Angular route parameters</a>. This allows you to use variables in your routes and complements the fact that SKY UX Builder automatically registers routes and creates components for all <stache-code>index.html</stache-code> files in the <stache-code>src/app</stache-code> directory.
   </p>
   <p>
-    To create a route parameter, you create a subfolder and prefix the name with an underscore. The subfolder name must be a valid TypeScript variable because SKY UX Builder creates a variable with that name (minus the underscore). The type of the variable is a string. For example, to use a route parameter in a <stache-code>src/app/dogs</stache-code> folder, you can create a <stache-code>src/app/dogs/_id</stache-code> subfolder and then create an <stache-code>index.html</stache-code> file with the following content:
+    To create a route parameter, you create a subfolder and prefix its name with an underscore. The subfolder name must be a valid TypeScript variable because SKY UX Builder creates a <stache-code>string</stache-code> variable with that name (minus the underscore). For example, if you create a page at <stache-code>src/app/dogs</stache-code> for users to view dogs that are up for adoption, you can use route parameters to display individual dogs by creating a <stache-code>src/app/dogs/_id</stache-code> subfolder and adding an <stache-code>index.html</stache-code> file with the following content:
   </p>
   <stache-code-block>
     You are viewing dog {{ id }}.
@@ -18,6 +18,9 @@
   <stache-code-block>
     You are viewing dog 42.
   </stache-code-block>
+  <p>
+    You can create routes with multiple route parameters by setting up nested parameter folders. For example, in the dogs example, you may you want to group dogs by their shelter locations. To do this, you can create a <stache-code>location</stache-code> folder with a <stache-code>_name</stache-code> subfolder and move the <stache-code>dogs</stache-code> folder and its <stache-code>_id</stache-code> subfolder within that path: <stache-code>src/app/location/_name/dogs/_id</stache-code>.
+  </p>
   <p>
     We recommend against creating paramaterized routes as siblings of static routes. Nesting paramaterized routes alongside static routes is not a problem, but when paramaterized routes and static routes are siblings, it can create ambiguity for the router. 
   </p>
