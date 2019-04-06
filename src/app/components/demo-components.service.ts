@@ -390,7 +390,7 @@ export class SkyDemoComponentsService {
       },
       {
         name: 'Repeater',
-        icon: 'check-square',
+        icon: 'chevron-down',
         // tslint:disable-next-line
         summary: `The repeater component creates a container to display formatted information for a list of objects.`,
         url: '/components/repeater',
@@ -456,6 +456,14 @@ export class SkyDemoComponentsService {
         // tslint:disable-next-line
         summary: `The text expand component truncates long text and provides a link to expand the text.`,
         url: '/components/text-expand',
+        getCodeFiles: () => this.getDemoFiles('SkyTextExpandDemoComponent')
+      },
+      {
+        name: 'Text expand repeater',
+        icon: 'list',
+        // tslint:disable-next-line
+        summary: `The text expand repeater component truncates a list of items and initially displays a limited number.`,
+        url: '/components/text-expand-repeater',
         getCodeFiles: () => this.getDemoFiles('SkyTextExpandDemoComponent')
       },
       {
