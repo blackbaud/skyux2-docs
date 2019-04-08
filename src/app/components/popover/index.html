@@ -17,7 +17,7 @@
 		tabHeading="Design">
 	
 		<sky-demo-page-content sectionHeading="Usage">
-			<p>Popovers display small chunks of contextual content that do not always need to be visible. Popovers are appropriate when:</p>
+			<p>Popovers display small chunks of contextual content that do not always need to be visible.</p>
 
 			<h3>Use when</h3>
 			<ul>
@@ -30,18 +30,69 @@
 		</sky-demo-page-content>
 		
 		<sky-demo-page-content sectionHeading="Anatomy">
-			
+			<div class="two-col-right-image sky-margin-stacked-separate">
+			<div class="two-col-text">
+				<div class="anatomy-list">
+					<div class="anatomy-item anatomy-item-required"><div class="anatomy-marker">1</div><div class="anatomy-description">Content area</div></div>
+					<div class="anatomy-item anatomy-item-required"><div class="anatomy-marker">2</div><div class="anatomy-description">Highlight border</div></div>
+					<div class="anatomy-item anatomy-item-required"><div class="anatomy-marker">3</div><div class="anatomy-description">Element pointer</div></div>
+				</div>
+			</div>
+			<div class="two-col-image">
+				<div class="screenshot">
+					<img src="~/assets/img/guidelines/popover/anatomy.png" />
+				</div>
+			</div>
+		</div>
 		</sky-demo-page-content>
 		
 		<sky-demo-page-content sectionHeading="Options">
-			
+			<h3>Positioning</h3>
+			<div class="two-col-right-image sky-margin-stacked-separate">
+				<div class="two-col-text">
+					<p>You can specify the position of the popover in relation to the element it is pointing to. The default position is above and centered on the element.</p>
+				</div>
+				<div class="two-col-image">
+					<div class="screenshot">
+						<img src="~/assets/img/guidelines/tab/option-count.png" />
+					</div>
+				</div>
+			</div>
+			<h3>Trigger</h3>
+			<div class="two-col-right-image sky-margin-stacked-separate">
+				<div class="two-col-text">
+					<p>
+						To ensure usability on touch devices, you should trigger user-invoked popovers on <stache-code>click</stache-code> rather than <stache-code>mouseenter</stache-code>.
+					</p>
+					<p>
+						You can programatically invoke popovers, for example the first time a user visits a page to call out an important interface element that is easily overlooked.
+					</p>
+				</div>
+				<div class="two-col-image">
+					<div class="screenshot">
+						<img src="~/assets/img/guidelines/tab/option-count.png" />
+					</div>
+				</div>
+			</div>
 		</sky-demo-page-content>
 			
 		<sky-demo-page-content sectionHeading="Behavior & states">
-			<div class="sky-subsection-heading">Interaction</div>
-			<p>
-				To ensure usability on touch devices, you should generally trigger popovers on <stache-code>click</stache-code> rather than <stache-code>mouseenter</stache-code>.
-			</p>
+			<h3>Closing</h3>
+				<div class="sky-text-block">Popovers close when the user clicks on or focuses an element outside the popover.</div>
+			
+			<h3>Responsiveness</h3>
+				<div class="two-col-right-image sky-margin-stacked-separate">
+				<div class="two-col-text">
+					<p>
+						If the popover doesn't fit in the viewport in its current position it will automatically try to reposition itself so that it fits. If it does not fit in any position it will convert itself into a modal overlaying the page.
+					</p>
+				</div>
+				<div class="two-col-image">
+					<div class="screenshot">
+						<img src="~/assets/img/guidelines/popover/behavior-responsive.png" />
+					</div>
+				</div>
+			</div>
 		</sky-demo-page-content>
 		
 		<sky-demo-page-content sectionHeading="Content">
