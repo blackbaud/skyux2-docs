@@ -14,13 +14,13 @@
   </stache-page-anchor>
 
   <p>
-    The command to get the latest is <stache-code>npm install -g @blackbaud/skyux-cli</stache-code>. The SKY UX CLI notifies users when a new version is released. If a new version is available when users run <stache-code>skyux serve</stache-code>, then a message appears in the command prompt.
+    The command to get the latest is <stache-code>npm install -g @skyux-sdk/cli</stache-code>. The SKY UX CLI notifies users when a new version is released. If a new version is available when users run <stache-code>skyux serve</stache-code>, then a message appears in the command prompt.
   </p>
 
   <stache-page-anchor>
     How do I get the latest version of the SKY UX components?
   </stache-page-anchor>
-  
+
   <p>
     In the <stache-code>package.json</stache-code> configuration file for NPM that the SKY UX template provides in the default SPA, update the <stache-code>@blackbaud/skyux</stache-code> property that specifies the version of SKY UX components. To find the latest version of the SKY UX components, check the <a href="https://github.com/blackbaud/skyux2/blob/master/CHANGELOG.md">changelog in the SKY UX repo</a> or the <a href="https://www.npmjs.com/package/@blackbaud/skyux">NPM page for the SKY UX package</a>.
   </p>
@@ -28,7 +28,7 @@
   <stache-page-anchor>
     How do I get the latest version of the SKY UX Builder?
   </stache-page-anchor>
-  
+
   <p>
     In the <stache-code>package.json</stache-code> configuration file for NPM that the SKY UX template provides in the default SPA, update the <stache-code>@skyux-sdk/builder</stache-code> that specifies the version of SKY UX Builder. To find the latest version of SKY UX Builder, check the <a href="https://github.com/blackbaud/skyux-builder/blob/master/CHANGELOG.md">changelog in the SKY UX Builder repo</a> or the <a href="https://npmjs.com/package/@skyux-sdk/builder">NPM page for the SKY UX Builder package</a>.
   </p>
@@ -48,7 +48,7 @@
   <stache-page-anchor>
     For internal Blackbaud SPAs, will deployment be automated through <a href="https://github.com/blackbaud/skyux-deploy">the skyux-deploy repo</a>?
   </stache-page-anchor>
-  
+
   <p>
     Yes. Currently, any merge to your master branch triggers a release to production. We plan to change that to state a release with an endpoint or a user interface where you can flag staged releases as production releases.
   </p>
@@ -56,7 +56,7 @@
   <stache-page-anchor>
     Do you need a separate repo for a backend to perform business logic?
   </stache-page-anchor>
-  
+
   <p>
     Since the app repository exists solely for UI components, you do need a separate repo if you need a backend deployed to perform business logic or some other action.
   </p>
@@ -64,17 +64,17 @@
   <stache-page-anchor>
     What browsers does SKY UX support?
   </stache-page-anchor>
-  
+
   <p>
     <stache-include fileName="supported-browsers.html"></stache-include>
   </p>
-  
+
   <stache-page-anchor>
     How do I troubleshoot a <stache-code>webpack: Failed to compile.</stache-code> error?
   </stache-page-anchor>
-  
+
   <p>
     After a <stache-code>webpack: Failed to compile.</stache-code> error in the output of the <a routerLink="/learn/reference/cli-commands">serve CLI command</a>, you can review the script console in your web browser for information about the specific files with errors.
   </p>
-  
+
 </stache>

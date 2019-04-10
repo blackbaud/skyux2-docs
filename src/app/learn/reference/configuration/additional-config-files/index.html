@@ -3,7 +3,7 @@
   navTitle="Additional files"
   showTableOfContents="true"
   navOrder="1">
-  
+
   <stache-page-summary>
     <p>
       The SKY UX template provides the <stache-code>skyuxconfig.json</stache-code> file to specify configuration settings. In addition, you can create configuration files with the <stache-code>skyuxconfig.[COMMAND].json</stache-code> naming convention to apply configuration settings to specific <a routerLink="/learn/reference/cli-commands">SKY UX CLI commands</a>.
@@ -28,12 +28,12 @@
         <p>
           For example, you can specify a mock server URL to use when you run <stache-code>skyux test</stache-code>.
         </p>
-        <stache-code-block languageType="js">{
+        <sky-code-block languageType="js">{
   "appSettings": {
     "mockServerURL": "https://localhost:9000"
   }
 }
-      </stache-code-block>
+      </sky-code-block>
     </li>
     <li>
       <p>
@@ -92,7 +92,7 @@
   <p>
     For example, if you use a specific environment ID and service ID for testing, you can specify default <stache-code>svcid</stache-code> and <stache-code>envid</stache-code> values for local development in <stache-code>skyuxconfig.serve.json</stache-code>. This allows you to include the environment ID and service ID for testing when you serve without pasting the values in the URL. In addition, if you use the global nav exclusively and don’t want the local nav alongside it, you can set the <stache-code>routes</stache-code> property to <stache-code>false</stache-code>.
   </p>
-  <stache-code-block>
+  <sky-code-block>
 {
   "routes": false,
   "params": {
@@ -104,12 +104,12 @@
     }
   }
 }
-  </stache-code-block>
+  </sky-code-block>
   <p>
     The following code sample illustrates how you can use SKY UX Builder to track parameters in the URL and expose them through your app using the <stache-code>SkyAppConfig</stache-code> class:
   </p>
 
-  <stache-code-block languageType="typescript">
+  <sky-code-block languageType="typescript">
 import { Component } from '@angular/core';
 import { SkyAppConfig } from '@skyux/config';
 
@@ -123,7 +123,7 @@ export class HomeComponent {
     this.envId = skyAppConfig.params.get('envid');
   }
 }
-  </stache-code-block>
+  </sky-code-block>
   <p>
     For more information about <stache-code>envid</stache-code> and other querystring parameters, see <a routerLink="/learn/reference/configuration">the <stache-code>params</stache-code> configuration property</a>.
   </p>

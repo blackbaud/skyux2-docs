@@ -17,9 +17,9 @@
   <p>
     The <stache-code>skyAppLink</stache-code> attribute automatically includes the SPA's parameters in the URL. The most common parameters are <stache-code>envid</stache-code> and <stache-code>svcid</stache-code>, but the URL can include any parameters that are provided to the SPA when it loads.
   </p>
-  <stache-code-block>
+  <sky-code-block>
     <a skyAppLink="sample-route">Sample Link 2</a>
-  </stache-code-block>
+  </sky-code-block>
   <p>
     If this SPA has a <stache-code>svcid</stache-code> of "abc" and an <stache-code>envid</stache-code> of "1234," the sample directs users to <stache-code>/sample-spa/sample-route?svcid=abc&envid=1234</stache-code>.
   </p>
@@ -32,13 +32,13 @@
   </stache-page-anchor>
 
   <p>
-    To create links to other SPAs, use the standard HTML <stache-code>a</stache-code> element. If the external SPA URL includes parameters, specify the path to link to with the SKY UX <stache-code>skyAppLink</stache-code> attribute. If not, use the standard HTML <stache-code>href</stache-code> attribute. 
+    To create links to other SPAs, use the standard HTML <stache-code>a</stache-code> element. If the external SPA URL includes parameters, specify the path to link to with the SKY UX <stache-code>skyAppLink</stache-code> attribute. If not, use the standard HTML <stache-code>href</stache-code> attribute.
   </p>
     The <stache-code>skyAppLinkExternal</stache-code> attribute automatically includes the external SPA's parameters in the URL. The most common parameters are <stache-code>envid</stache-code> and <stache-code>svcid</stache-code>, but the URL can include any parameters that are provided to the SPA when it loads.
   </p>
-  <stache-code-block>
+  <sky-code-block>
     <a skyAppLinkExternal="/another-spa/sample-route">Sample Link 4</a>
-  </stache-code-block>
+  </sky-code-block>
   <p>
     If this external SPA has a <stache-code>svcid</stache-code> of "abc" and an <stache-code>envid</stache-code> of "1234," the sample directs users to <stache-code>/another-spa/sample-route?svid=abc&envid=1234</stache-code>.
   </p>
