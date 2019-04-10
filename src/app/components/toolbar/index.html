@@ -8,6 +8,15 @@
     The toolbar component displays a SKY UX-themed toolbar. Use the <stache-code>sky-toolbar</stache-code> component in conjunction with the <stache-code>sky-toolbar-item</stache-code> child component.
   </sky-demo-page-summary>
 
+  <sky-demo-page-properties sectionHeading="Toolbar component">
+    <sky-demo-page-property
+      propertyName="sky-toolbar-view-actions"
+      isOptional="true"
+    >
+    Adds a section on the right side of the toolbar for items that alter the view of the toolbar. This includes simple filters and view switchers. For best practices on the order of toolbar items and item placement, see <a stacheRouterLink="." fragment="ux-guidelines">UX guidelines</a>.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
   <sky-demo-page-properties sectionHeading="Toolbar child components">
     <sky-demo-page-property
       propertyName="sky-toolbar-item"
@@ -19,13 +28,6 @@
       isOptional="true"
     >
     Specifies a section to group items within the toolbar. The section displays items in a separate horizontal row.
-    </sky-demo-page-property>
-    <sky-demo-page-property
-      propertyName="sky-toolbar-view-actions"
-      isOptional="true"
-    >
-    Adds a section on the right side of the toolbar for items that substantially change or affect the view of the toolbar. This includes simple filters and view switchers. If the view section includes more than one item, simple filters appear on the left and view switchers appear on the right.
-
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
