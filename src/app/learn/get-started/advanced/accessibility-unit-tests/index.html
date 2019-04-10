@@ -1,0 +1,182 @@
+<stache
+  pageTitle="Accessibility Tests"
+  navTitle="Accessibility tests"
+  showTableOfContents="true"
+  navOrder="1">
+
+  <stache-page-summary>
+    <p>
+      The <a href="https://github.com/blackbaud/skyux-sdk-testing">SKY UX SDK testing library</a> provides methods to run <a href="https://github.com/dequelabs/axe-core">aXe automated accessibility tests</a> in your unit tests. aXe is an open source library of automated accessibility rules that is integrated into SKY UX to identify potential issues for a subset of the <a href="https://www.w3.org/TR/WCAG20/">Web Content Accessibility Guidelines 2.0 Level A and AA success criteria</a>. For SKY UX guidance on designing, coding, and testing accessible experiences, see the accessibility section.
+    </p>
+  </stache-page-summary>
+
+  <p>
+    <stache-include fileName="e2e-recommendation.html"></stache-include> If you must use e2e tests, the deprecated accessibility analyzer lets you add accessibility checks to e2e specs and manage rules for accessibility tests with an <stache-code>a11y</stache-code> configuration property. For more information, see <a routerLink="/learn/get-started/advanced/accessibility-analyzer">the accessibility analyzer</a> and <a routerLink="/learn/reference/configuration">the configuration guidelines</a>.
+  </p>
+
+  <stache-page-anchor>
+    Import SKY UX SDK testing library
+  </stache-page-anchor>
+
+  <p>
+    The first step to run accessibility checks in SKY UX unit tests is to import the <a href="https://github.com/blackbaud/skyux-sdk-testing">SKY UX SDK testing library</a> into your SPA. This library provides methods to interact with SKY UX during Karma unit tests. For accessibility testing, it extends the Jasmine <stache-code>expect</stache-code> function to add the <stache-code>toBeAccessible</stache-code> matcher.
+  </p>
+  <p>
+    To install the testing library, open the command prompt, <stache-code>cd</stache-code> into your SPA's directory, and run:
+  </p>
+  <sky-code-block>
+    npm install @blackbaud/skyux-sdk-testing --save-dev --save-exact
+  </sky-code-block>
+  <p>
+    By default, the <stache-code>SkyA11yAnalyzerConfig</stache-code> interface specifies <a href="https://github.com/blackbaud/skyux-sdk-testing/blob/master/src/app/public/a11y/a11y-analyzer.ts">configuration settings for <stache-code>toBeAccessible</stache-code> to indicate which accessibility checks to run</a>. To overwrite the default acccessibility checks, you can modify <a stacheRouterLink="." fragment="specify-parameters-for-tobeaccessible">a parameter for the <stache-code>toBeAccessible</stache-code> matcher</a>.
+  </p>
+
+
+  <stache-page-anchor>
+    Import the <stache-code>expect</stache-code> function
+  </stache-page-anchor>
+
+  <p>
+    After you import the testing library, the next step to run accessibility checks in unit tests is to import the extended Jasmine <stache-code>expect</stache-code> function into <stache-code>.spec.ts</stache-code> files. At the top of the spec files for the components to test, import the function from the testing library:
+  </p>
+  <sky-code-block>
+    import {
+      expect
+    } from '@blackbaud/skyux-sdk-testing';
+  </sky-code-block>
+  <p>
+    After you import <stache-code>expect</stache-code> function, you can use it to run accessibility tests for components. For components that change state, you can insert the function into existing <stache-code>it</stache-code> blocks. And for components that don't change state, the function can stand alone to run accessibility checks from its own <stache-code>it</stache-code> block.
+  </p>
+
+  <stache-page-anchor>
+    Insert the <stache-code>expect</stache-code> function and <stache-code>toBeAccessible</stache-code> matcher
+  </stache-page-anchor>
+
+  <p>
+    After you import the <stache-code>expect</stache-code> function into spec files, the next step is to wrap the <stache-code>expect</stache-code> function around the elements to test for accessibility. Accessibility checks are asynchronous, so it's important to wrap your tests in Angular's <stache-code>async</stache-code> method. And to break the linear flow of control when using <stache-code>async</stache-code>, it's also important to wrap <stache-code>toBeAccessible</stache-code> in Angular's <stache-code>whenStable</stache-code> method.
+  </p>
+
+  <sky-code-block>
+    it('should pass accessibility', async(() => {
+      fixture.whenStable().then(() => {
+        expect(element).toBeAccessible();
+      });
+    }));
+  </sky-code-block>
+
+  <p>
+    Keep in mind that <stache-code>async</stache-code> is also a native JavaScript declaration, so you need to explicitly import the Angular <stache-code>async</stache-code> method at the top of the unit test spec file.
+  </p>
+
+  <sky-code-block>
+    import { async } from ‘@angular/core/testing’;
+  </sky-code-block>
+
+  <stache-page-anchor>
+    Specify parameters for <stache-code>toBeAccessible</stache-code>
+  </stache-page-anchor>
+
+  <p>
+    Finally, you can specify two optional parameters within the <stache-code>toBeAccessible</stache-code> matcher. The first parameter is a callback that lets you execute code after accessibility checks run. The second parameter is an option that lets you overwrite <a href="https://github.com/blackbaud/skyux-sdk-testing/blob/master/src/app/public/a11y/a11y-analyzer.ts">the default accessibility checks that <stache-code>SkyA11yAnalyzerConfig</stache-code> specifies</a>.
+  </p>
+
+  <h3 class="sky-subsection-heading">
+    Callback
+  </h3>
+  <p>
+    In the first <stache-code>toBeAccessible</stache-code> parameter, you can specify logic to run after accessibility testing:
+  </p>
+  <sky-code-block>
+    it('should pass accessibility', async(() => {
+      fixture.whenStable().then(() => {
+        expect(element).toBeAccessible(() => {
+          // Do something else after the accessibility checks run...
+        });
+      });
+    }));
+  </sky-code-block>
+  <p>
+    For example, for components that change state, you can use this parameter to change state after accessibility checks and then run the accessibility checks again.
+  </p>
+
+  <h3 class="sky-subsection-heading">
+    Overwrite accessibility checks
+  </h3>
+  <p>
+    In the second <stache-code>toBeAccessible</stache-code> parameter, you can adjust configuration settings to turn off accessibility checks. <a href="https://github.com/blackbaud/skyux-sdk-testing/blob/master/src/app/public/a11y/a11y-analyzer.ts">The <stache-code>SkyA11yAnalyzerConfig</stache-code> interface</a> specifies configuration settings, and it turns all checks on by default. To turn off accessibility checks, you set them to <stache-code>false</stache-code>:
+  </p>
+  <sky-code-block>
+    it('should pass accessibility', async(() => {
+      fixture.whenStable().then(() => {
+        expect(element).toBeAccessible(() => {}, {
+          rules: {
+            'color-contrast': {enabled: false }
+          }
+        });
+      });
+    }));
+  </sky-code-block>
+  <p>
+    You can also use the SKY UX <stache-code>a11y</stache-code> configuration property to overwrite accessibility checks. This option is useful if you need to turn off a set of accessibility checks in multiple spec files.
+  </p>
+  <p>
+    In the <stache-code>skyuxconfig.json</stache-code> file, you specify the accessibility checks to overwrite and set them to <stache-code>false</stache-code>:
+  </p>
+  <sky-code-block>
+    {
+      "a11y": {
+        "rules": {
+          "color-contrast": {
+            "enabled": false
+          }
+        }
+      }
+    }
+  </sky-code-block>
+  <p>
+    Then in the spec files where you want to overwrite accessibility checks, you import <stache-code>SkyAppConfig</stache-code> and <stache-code>SkyAppTest</stache-code> at the top:
+  </p>
+  <sky-code-block>
+    import {
+      SkyAppConfig
+    } from '@skyux/config';
+
+    import {
+      SkyAppTestModule
+    } from '@skyux-sdk/builder/runtime/testing/browser';
+  </sky-code-block>
+  <p>
+    Finally, in the <stache-code>it</stache-code> blocks where you run accessibility checks, you inject <stache-code>SkyAppConfig</stache-code> in the <stache-code>async</stache-code> method and then reference the <stache-code>a11y</stache-code> configuration property in the second <stache-code>toBeAccessible</stache-code> parameter:
+  </p>
+  <sky-code-block>
+    it('should pass accessibility', async(
+      inject([SkyAppConfig], (appConfig: SkyAppConfig) => {
+        fixture.whenStable().then(() => {
+          expect(element).toBeAccessible(() => {}, config.skyux.a11y);
+        });
+      }))
+    );
+  </sky-code-block>
+
+  <stache-page-anchor>
+    Review accessibility failures
+  </stache-page-anchor>
+
+  <p>
+    When you include accessibility rules in your unit tests, you may run into errors that uncover accessibility issues. Here is an example of an error message that appears in the command log when you run <stache-code>skyux test</stache-code>:
+  </p>
+  <sky-code-block>
+    info: Starting accessibility checks for https://host.nxt.blackbaud.com/builder-allytest/...
+    info: Accessibility checks finished with 1 violation.
+
+    error: aXe - [Rule: 'label'] Form elements must have labels - WCAG: wcag332, wcag131
+    Get help at: https://dequeuniversity.com/rules/axe/2.3/label?application=webdriverjs
+    Elements:
+
+    <input id="thefirstname" type="text">
+  </sky-code-block>
+  <p>
+    The first line of the error message indicates what failed. It lists the name of the rule that failed and a detailed description that includes the WCAG 2.0 success criteria numbers. On the next line, the error message provides the URL for the rule definition to help address the failure. And finally, the error message lists the DOM elements where the failure was identified.
+  </p>
+
+</stache>

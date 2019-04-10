@@ -1,0 +1,137 @@
+<sky-demo-page
+  pageTitle="Select Field"
+  skyuxModule="SkySelectFieldModule"
+  packageName="@skyux/select-field"
+>
+
+  <sky-demo-page-summary>
+    <p>
+      The select field component creates a text input or button that launches a modal where users can select items. The modal displays a searchable, browsable, and filterable list of items. The component displays a text input to launch the modal when users can only select one item. It displays a button to launch the modal when users can select multiple items.
+    </p>
+  </sky-demo-page-summary>
+
+  <sky-demo-page-properties sectionHeading="Select field properties">
+    <sky-demo-page-property
+      propertyName="data"
+    >
+    Defines a data source to populate the select field component's modal with items that users can select. This property accepts an Observable array of <stache-code>SkySelectField</stache-code> values. <a stacheRouterLink="." fragment="skyselectfield-properties">The <stache-code>SkySelectField</stache-code> type</a> extends the <stache-code>any</stache-code> type and supports <stache-code>id</stache-code>, <stache-code>label</stache-code>, and <stache-code>category</stache-code> values for the data objects that you inject into the select field component.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="ariaLabel"
+      isOptional="true"
+    >
+    Defines a string value to label the select field component's text input or button for accessibility. If the text input or button includes a visible label on the screen, use the <stache-code>ariaLabelledBy</stache-code> property instead. This property accepts <stache-code>string</stache-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="ariaLabelledBy"
+      isOptional="true"
+    >
+    Identifies the element that defines a label for the select field component's text input or button. If the text input or button does not include a visible label on the screen, use the <stache-code>ariaLabel</stache-code> property instead. This property accepts <stache-code>string</stache-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="descriptorKey"
+      isOptional="true"
+      defaultValue="label"
+    >
+    Specifies a property to highlight with bold text in the select field component's modal. The valid options are <stache-code>id</stache-code>, <stache-code>label</stache-code>, and <stache-code>category</stache-code> and correspond to the values that the <stache-code>data</stache-code> property injects into the component. This property accepts <stache-code>string</stache-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="disabled"
+      isOptional="true"
+      defaultValue="false"
+    >
+    Indicates whether to disable the select field component's text input or button to prevent users from opening the modal. This property accepts <stache-code>boolean</stache-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="multipleSelectOpenButtonText"
+      isOptional="true"
+      defaultValue="Select values"
+    >
+    Specifies a label for the button when <stache-code>selectMode</stache-code> is set to <stache-code>multiple</stache-code>. This property accepts <stache-code>string</stache-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="pickerHeading"
+      isOptional="true"
+    >
+    Specifies a header for the select field component's modal. When <stache-code>selectMode</stache-code> is set to <stache-code>single</stache-code>, the default header is "Select a value." When <stache-code>selectMode</stache-code> is set to <stache-code>multiple</stache-code>, the default header is "Select values." This property accepts <stache-code>string</stache-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="selectMode"
+      isOptional="true"
+      defaultValue="multiple"
+    >
+    Specifies the selection mode that determines whether users can select one item or multiple items in the select field component's modal. The valid options are <stache-code>single</stache-code>, which displays a text input and allows users to select one item, and <stache-code>multiple</stache-code>, which displays a button and allows users to select multiple items.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="singleSelectClearButtonTitle"
+      isOptional="true"
+      defaultValue="Clear selection"
+    >
+    Specifies tooltip text for the icon that clears the text input when <stache-code>selectMode</stache-code> is set to <stache-code>single</stache-code>. The clear icon appears after users select an item. This property accepts <stache-code>string</stache-code> values.
+    </sky-demo-page-property>
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="singleSelectOpenButtonTitle"
+      isOptional="true"
+      defaultValue="Click to select a value"
+    >
+    Specifies tooltip text for the text input when <stache-code>selectMode</stache-code> is set to <stache-code>single</stache-code>. This property accepts <stache-code>string</stache-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="singleSelectPlaceholderText"
+      isOptional="true"
+      defaultValue="Select a value"
+    >
+    Specifies ghost text to display in the text input when <stache-code>selectMode</stache-code> is set to <stache-code>single</stache-code> and no item is selected. This property accepts <stache-code>string</stache-code> values.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-properties sectionHeading="Select field events">
+    <sky-demo-page-property
+      propertyName="blur"
+    >
+      Fires when the selected field component loses focus. This event does not emit a value.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-properties sectionHeading="SkySelectField properties">
+    <sky-demo-page-property
+      propertyName="category"
+      isOptional="true"
+    >
+    Specifies a category for an item that users can select with the select field component. This property accepts <stache-code>string</stache-code> values.
+    </sky-demo-page-property>
+    <p>
+      The <stache-code>SkySelectField</stache-code> type extends the <stache-code>any</stache-code> type and supports values for data objects that you can inject into the select field component to populate the select field modal.
+    </p>
+    <sky-demo-page-property
+      propertyName="id"
+      isOptional="true"
+    >
+    Specifies an ID for an item that users can select with the select field component. This property accepts <stache-code>string</stache-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="label"
+      isOptional="true"
+    >
+    Specifies a label for an item that users can select with the select field component. This property accepts <stache-code>string</stache-code> values.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-example>
+    <sky-select-field-demo></sky-select-field-demo>
+    <sky-demo-page-code demoName="Select field"></sky-demo-page-code>
+  </sky-demo-page-example>
+
+	<sky-demo-page-content sectionHeading="UX guidelines">
+		<section>
+			<header>
+        <div class="sky-section-heading">Usage</div>
+      </header>
+			<p>
+        The select field component is effective for scenarios where users are not sure of the exact value they are looking for within a long list of items. For guidance on which selection inputs to use in other scenarios, see the <a routerLink="/design/guidelines/form-design" fragment="selection-inputs">form design guidelines</a>.
+      </p>
+		</section>
+	</sky-demo-page-content>
+
+</demo-page>

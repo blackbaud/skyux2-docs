@@ -1,5 +1,6 @@
 <stache
-  pageTitle="Unit tests for modals"
+  pageTitle="Unit Tests for Modals"
+  navTitle="Unit tests for modals"
   showTableOfContents="true">
 
     <stache-page-summary>
@@ -15,7 +16,7 @@
     <p>
       The first way to unit test components that use the modal service is to create tests that launch modals and interacts with them. This allows you to create tests that ensure data is passed properly to the launched modal and then passed back to the caller of the modal service when the modal is saved. The following code shows the setup necessary for this sort of test:
     </p>
-    <stache-code-block languageType="typescript">
+    <sky-code-block languageType="typescript">
         let applicationRef: ApplicationRef;
 
         beforeEach(() => {
@@ -41,14 +42,14 @@
             }
           )
         );
-    </stache-code-block>
+    </sky-code-block>
     <p>
       The first <stache-code>beforeEach</stache-code> function configures the testing module with our standard <stache-code>SkyAppTestModule</stache-code>. The second <stache-code>beforeEach</stache-code> function injects the <stache-code>SkyModalService</stache-code> and disposes it to ensure that previous test modals are destroyed. It also saves a reference to <stache-code>applicationRef</stache-code>, which must be used to detect changes when interacting with the launched modal because the modal content lives outside of the currently tested component.
     </p>
     <p>
       After this setup, a component that contains logic to launch a modal can be tested with something like the following test:
     </p>
-    <stache-code-block languageType="typescript">
+    <sky-code-block languageType="typescript">
         it('should launch and save data with the modal', fakeAsync(() => {
           const fixture = TestBed.createComponent(ModalLaunchingComponent);
           fixture.detectChanges();
@@ -64,7 +65,7 @@
           applicationRef.tick();
           fixture.detectChanges();
         }));
-    </stache-code-block>
+    </sky-code-block>
     <p>
       In this test example, the <stache-code>ModalLaunchingComponent</stache-code> is created, a button within the component is clicked to launch the modal, and a button within the modal is clicked to save the modal. (In an actual test, you might use <stache-code>expect</stache-code> statements to confirm that certain component properties are set after saving the modal.)
     </p>
@@ -76,7 +77,7 @@
     <p>
       Another way to unit test components that launch modals is to mock the <stache-code>SkyModalService</stache-code>. This is usually the preferred methodology because it allows you to unit test components that launch modals in isolation. The following code shows the setup necessary for this sort of test:
     </p>
-    <stache-code-block languageType="typescript">
+    <sky-code-block languageType="typescript">
       class MockModalService {
         constructor() { };
         public open() {
@@ -108,14 +109,14 @@
           ]
         });
       });
-    </stache-code-block>
+    </sky-code-block>
     <p>
       In this example, we create a class that mocks the necessary modal service functionality. It provides an open function and saves the callback for the modal <stache-code>closed</stache-code> subscription. In the <stache-code>beforeEach</stache-code> function, we configure our testing module and override the <stache-code>SkyModalService</stache-code> provider with an instance of the <stache-code>MockModalService</stache-code> that we define.
     </p>
     <p>
       After this setup, a component that contains logic to launch a modal can be tested by our <stache-code>MockModalService</stache-code> with something like the following test:
     </p>
-    <stache-code-block languageType="typescript">
+    <sky-code-block languageType="typescript">
       it('should mock opening and saving a modal', () => {
 
         const fixture = TestBed.createComponentModalLaunchingComponent);
@@ -135,7 +136,7 @@
 
         fixture.detectChanges();
       });
-    </stache-code-block>
+    </sky-code-block>
     <p>
       In this test example, the <stache-code>ModalLaunchingComponent</stache-code> is created, a button within the component is clicked to launch the modal, and our <stache-code>MockModalService</stache-code> is called to simulate the modal saving. (In an actual test, you might use <stache-code>expect</stache-code> statements to confirm that certain component properties are set after saving the modal.)
     </p>
@@ -147,7 +148,7 @@
     <p>
       You can also test a modal component that launches the modal service in isolation. To do this, you must mock <stache-code>SkyModalInstance</stache-code>, <stache-code>SkyModalHostService</stache-code>, and <stache-code>SkyModalConfiguration</stache-code>. The following code shows the setup necessary for this sort of test:
     </p>
-    <stache-code-block languageType="typescript">
+    <sky-code-block languageType="typescript">
       class MockModalInstance {
         constructor() { };
 
@@ -207,11 +208,11 @@
           ]
         });
       });
-    </stache-code-block>
+    </sky-code-block>
     <p>
       In this example, we create classes that mock the necessary functionality for modal components. After this setup, you can test your modal component in isolation with something like the following test:
     </p>
-    <stache-code-block languageType="typescript">
+    <sky-code-block languageType="typescript">
       it('should create a modal component without having to use the modal service', () => {
         const fixture = TestBed.createComponent(ModalDemoComponent);
         fixture.detectChanges();
@@ -223,7 +224,7 @@
 
         expect(modalInstance.saveResult).toBe('complete');
       });
-    </stache-code-block>
+    </sky-code-block>
     <p>
       In this test example, we create a modal component and test it like any other standalone component. Then we can use our <stache-code>MockModalInstance</stache-code> to verify results of specific actions such as saving the modal.
     </p>

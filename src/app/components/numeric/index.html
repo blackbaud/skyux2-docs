@@ -1,20 +1,21 @@
 <sky-demo-page
   pageTitle="Numeric"
   skyuxModule="SkyNumericModule"
+  packageName="@skyux/core"
 >
 
   <sky-demo-page-summary>
     <p>
-      The numeric pipe formats numbers to a shortened value if it is 1000 or more to a rounded number plus an abbreviation character. K for thousands, M for millions, B for billions and T for trillion. It will also format the shortened number as a currency as an option, with proper localization including currency symbol placement.
+      The numeric pipe formats numbers to shorten values of 1000 or more to rounded numbers and abbreviation characters such as K for thousands, M for millions, B for billions, and T for trillion. The pipe can also format shortened number as currency, with proper localization and currency symbol placement.
     </p>
     <p>
       Pipe usage: <stache-code>number_expression | skyNumeric[:NumericOptions] ]]</stache-code>
     </p>
-    <sky-alert alertType="info">
-      When creating the NumericOptions object in the template, You MUST have the space between the end of the options object bracket and the closing brackets for the pipe or it won't work.  See HTML code file below for examples.
+    <sky-alert alertType="warning">
+      When you create a <stache-code>NumericOptions</stache-code> object in the template, you MUST have the space between the closing bracket for the object and the closing brackets for the pipe or it won't work. For examples, see the HTML code sample below.
     </sky-alert>
     <p>
-      It can also be imported as SkyNumericService and the formatNumber method called.  It uses a new NumericOptions class, which contains the three properties.  Create a new instance of the class with its parameters set and pass it in as the NumericOptions parameter.
+      You can also import <stache-code>SkyNumericService</stache-code> and call the <stache-code>formatNumber</stache-code> method. The method uses a <stache-code>NumericOptions</stache-code> class that includes arguments to format the number. You create a new instance of the class with its parameters set and pass it in as the <stache-code>NumericOptions</stache-code> parameter.
     </p>
     <p>
       Method usage: <stache-code>this.skyNumeric.formatNumber(value, NumericOptions)</stache-code>
@@ -25,37 +26,59 @@
     <sky-demo-page-property
       propertyName="value"
     >
-    Number. This is the number_expression to be shortened.
+    Specifies the number to format. This property accepts <stache-code>number</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="Numeric Options"
       isOptional="true"
     >
-    NumericOptions object. This object contains arguments for the following options:
+    Specifies the <stache-code>NumericOptions</stache-code> object that provides arguments for the number to format.
     </sky-demo-page-property>
-    <div style="margin-left: 40px">
+  </sky-demo-page-properties>
+
+  <sky-demo-page-properties sectionHeading="NumericOptions properties">
     <sky-demo-page-property
       propertyName="digits"
       defaultValue="1"
       isOptional="true"
     >
-    Number. Specifies the maximum number of digits after the decimal separator.
+    Specifies the maximum number of digits after the decimal separator. This property accepts <stache-code>number</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="format"
       defaultValue="number"
       isOptional="true"
     >
-    String. Specifies if it should be formatted as currency. Options are 'currency' or 'number'.
+    Specifies how to format the number. Options are <stache-code>currency</stache-code> or <stache-code>number</stache-code>. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="iso"
       defaultValue="USD"
       isOptional="true"
     >
-    String. Specifies the ISO4217 currency code to be used for currency formatting.
+    Specifies the ISO4217 currency code to use for currency formatting. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
-    </div>
+    <sky-demo-page-property
+      propertyName="minDigits"
+      defaultValue="0"
+      isOptional="true"
+    >
+    Specifies the minimum number of digits after the decimal separator. This property only applies when the <stache-code>truncate</stache-code> property is set to <stache-code>false</stache-code>. If <stache-code>digits</stache-code> specifies a maximum number of digits, then <stache-code>minDigits</stache-code> must be less than that value. This property accepts <stache-code>number</stache-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="truncate"
+      defaultValue="true"
+      isOptional="true"
+    >
+    Indicates whether to shorten numbers to rounded numbers and abbreviation characters such as K for thousands, M for millions, B for billions, and T for trillion. This property accepts <stache-code>boolean</stache-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="truncateAfter"
+      defaultValue="1000"
+      isOptional="true"
+    >
+    Specifies the starting point after which numbers are shortened to rounded numbers and abbreviation characters. This property accepts <stache-code>number</stache-code> values.
+    </sky-demo-page-property>
   </sky-demo-page-properties>
 
   <sky-demo-page-example>

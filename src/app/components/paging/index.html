@@ -1,45 +1,48 @@
 <sky-demo-page
   pageTitle="Paging"
   skyuxModule="SkyPagingModule"
+  packageName="@skyux/lists"
 >
 
   <sky-demo-page-summary>
-    This paging component displays a SKY UX-themed pagination control.
+    The paging component displays a SKY UX-themed pagination control.
   </sky-demo-page-summary>
 
-  <sky-demo-page-properties>
+  <sky-demo-page-properties sectionHeading="Paging properties">
     <sky-demo-page-property
       propertyName="currentPage"
       defaultValue="1"
       isOptional="true"
     >
-    Specifies the current page number, starting at 1.
+    Specifies the page number of the currently displayed page. Page numbers start at 1 and increment. This property accepts <stache-code>number</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
-      propertyName="pageSize"
-      defaultValue="10"
+      propertyName="itemCount"
+      defaultValue="0"
       isOptional="true"
     >
-    Specifies the page size.
+    Specifies the total number of items across all pages. This property accepts <stache-code>number</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="maxPages"
       defaultValue="5"
       isOptional="true"
     >
-    Specifies the maximum pages displayed.
+    Specifies the maximum number of pages to display in the pagination control. This property accepts <stache-code>number</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
-      propertyName="itemCount"
+      propertyName="pageSize"
+      defaultValue="10"
+      isOptional="true"
     >
-    Specifies the total number of items in the pages.
+    Specifies the number of items to display per page. This property accepts <stache-code>number</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="pagingLabel"
       defaultValue="Pagination"
       isOptional="true"
     >
-    Specifies an accessibility label for the pagination control when using more than one on a page.
+    Specifies a label for the pagination control to support <a stacheRouterLink="." fragment="accessibility">accessibility</a>. The label should be unique and descriptive to help users of assistive technology differentiate pagination controls when multiple paging components appear on a page. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -47,7 +50,7 @@
     <sky-demo-page-property
       propertyName="currentPageChange"
     >
-    Fires when the current page is changed. The new current page is emitted.
+    Fires when the current page changes and emits the new current page.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 

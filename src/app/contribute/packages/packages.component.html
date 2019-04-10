@@ -1,0 +1,34 @@
+<stache
+  pageTitle="Packages"
+  showTableOfContents="true"
+  layout="sidebar">
+
+  <stache-page-anchor>
+    <stache-code>@skyux</stache-code>
+  </stache-page-anchor>
+
+  <app-packages-grid
+    [packages]="skyuxPackages">
+  </app-packages-grid>
+
+  <stache-page-anchor>
+    <stache-code>@skyux-sdk</stache-code>
+  </stache-page-anchor>
+
+  <app-packages-grid
+    [packages]="sdkPackages">
+  </app-packages-grid>
+
+  <stache-page-anchor>
+    <stache-code>@blackbaud</stache-code>
+  </stache-page-anchor>
+
+  <sky-alert alertType="warning">
+    We are actively migrating these packages to <stache-code>@skyux</stache-code> and <stache-code>@skyux-sdk</stache-code>.
+  </sky-alert>
+
+  <app-packages-grid
+    [packages]="blackbaudPackages">
+  </app-packages-grid>
+
+</stache>

@@ -39,10 +39,10 @@
     <sky-tab
       *ngFor="let codeFile of codeFilesForBinding"
       [tabHeading]="codeFile.name">
-      <stache-code-block
+      <sky-code-block
         [code]="codeFile.codeImports"
         [languageType]="codeFile.language">
-      </stache-code-block>
+      </sky-code-block>
     </sky-tab>
   </sky-tabset>
 </section> -->

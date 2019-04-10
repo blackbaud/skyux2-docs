@@ -1,6 +1,7 @@
 <sky-demo-page
   pageTitle="Filter"
   skyuxModule="SkyFilterModule"
+  packageName="@skyux/lists"
 >
 
   <sky-demo-page-summary>
@@ -11,17 +12,41 @@
     <sky-demo-page-property
       propertyName="active"
       isOptional="true"
+      defaultValue="false"
     >
-    Indicates whether the filter button should be given active indication. This property should be set when indication of filtering is not visible to the user, such as when a filter summary is not shown.
+      Indicates whether to highlight the filter button to indicate that filters have been applied. We recommend setting this property to <stache-code>true</stache-code> when no indication of filtering is visible to users. For example, use this property when the filter summary is not displayed.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="ariaControls"
+    >
+      Specifies an ID to identify the element that contains the filtering options that the filter button exposes.  This property supports <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#disclosure">accessibility rules for disclosures</a>.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="ariaExpanded"
+    >
+      Indicates whether the filtering options are exposed. This property supports <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#disclosure">accessibility rules for disclosures</a>.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="disabled"
+      isOptional="true"
+      defaultValue="false"
+    >
+      Indicates whether to disable the filter button.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="filterButtonId()"
+    >
+      Specifies an ID for the filter button.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="showButtonText"
       isOptional="true"
       defaultValue="false"
     >
-    Indicates whether to display text on the filter button beside the filter icon.
+      Indicates whether to display text beside the filter icon on the filter button.
     </sky-demo-page-property>
   </sky-demo-page-properties>
+
   <sky-demo-page-properties sectionHeading="Filter button events">
     <sky-demo-page-property
       propertyName="filterButtonClick"

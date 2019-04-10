@@ -1,47 +1,86 @@
 <sky-demo-page
   pageTitle="Colorpicker"
   skyuxModule="SkyColorpickerModule"
+  packageName="@skyux/colorpicker"
 >
 
   <sky-demo-page-summary>
-    The colorpicker module allows users to use a button to select a color.
+    The colorpicker module contains directives to let users select colors. It is a SKY UX-themed replacement for the HTML <stache-code>input</stache-code> element with <stache-code>type="color"</stache-code>. The value that users select is driven through the <stache-code>ngModel</stache-code> attribute specified on the <stache-code>input</stache-code> element.
   </sky-demo-page-summary>
 
-  <sky-demo-page-properties sectionHeading="color picker input directive properties">
+  <sky-demo-page-properties sectionHeading="Colorpicker properties">
+    <sky-demo-page-property
+      propertyName="messageStream"
+      isOptional="true">
+      Specifies a message stream to toggle the reset button on and off.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="showResetButton"
+      defaultValue="true"
+      isOptional="true">
+      Indicates whether to display a reset button to let users return to the default color.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-properties sectionHeading="Colorpicker events">
+    <sky-demo-page-property
+      propertyName="selectedColorApplied">
+      Fires when users click <strong>Apply</strong> in the colorpicker to apply a color.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="selectedColorChanged">
+      Fires when users select a color within the colorpicker.
+      <div style="margin-top: 10px;">Both events return an object with the following properties:
+        <pre>
+        {{'{'}}
+          hslaText: string
+          rgbaText: string
+          cmykText: string
+          hsva: {{'{'}} hue:  number, saturation: number, value: number,      alpha: number{{'}'}}
+          rgba: {{'{'}} red:  number, green: number,      blue: number,       alpha: number{{'}'}}
+          hsla: {{'{'}} hue:  number, saturation: number, lightness: number,  alpha: number{{'}'}}
+          cmyk: {{'{'}} cyan: number, magenta: number,    yellow: number,     key: number  {{'}'}}
+          hex:  string
+        {{'}'}}
+        </pre>
+      </div>
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-properties sectionHeading="Colorpicker input directive properties">
     <sky-demo-page-property
       propertyName="skyColorpickerInput">
-      When this attribute is placed on an (input or button) element and wrapped in a <stache-code>sky-colorpicker</stache-code> component,
-      the Element and colorpicker are created. This attribute must be set to the instance of the <stache-code>sky-colorpicker</stache-code>.
-      This directive will use <stache-code>NgModel</stache-code> for binding data.
+      Creates the colorpicker element and dropdown. Place this attribute on an <stache-code>input</stache-code> element or <stache-code>button</stache-code> element, and wrap the element in a <stache-code>sky-colorpicker</stache-code> component. This attribute must be set to the instance of the <stache-code>sky-colorpicker</stache-code> component. 
     </sky-demo-page-property>
     <sky-demo-page-property
-      propertyName="NgModel">
-      Will return an object with the following interface:
-      <div><pre>{{'{'}}
-  hslaText: string
-  rgbaText: string
-  cmykText: string
-  hsva: {{'{'}} hue:  number, saturation: number, value: number,      alpha: number{{'}'}}
-  rgba: {{'{'}} red:  number, green: number,      blue: number,       alpha: number{{'}'}}
-  hsla: {{'{'}} hue:  number, saturation: number, lightness: number,  alpha: number{{'}'}}
-  cmyk: {{'{'}} cyan: number, magenta: number,    yellow: number,     key: number  {{'}'}}
-  hex:  string
-  {{'}'}}</pre></div>
-    </sky-demo-page-property>
-    <sky-demo-page-property
-      propertyName="presetColors"
+      propertyName="alphaChannel"
+      defaultValue="hex6"
       isOptional="true">
-      Specifies a array of colors that will load in the colorpicker.
+      Specifies the type of transparency to use.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="initialColor"
+      defaultValue="#FFF"
       isOptional="true">
-      Specifies the initial color to be used, default <stache-code>#FFF</stache-code>.
+      Specifies an initial color to load in the colorpicker. This property is deprecated. As an alternative, we recommend the <stache-code>formControlName</stache-code> property on reactive forms or <stache-code>ngModel</stache-code> on template-driven forms. See <a stacheRouterLink="." fragment="demo">the demo for examples</a>.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="outputFormat"
+      defaultValue="rgba"
       isOptional="true">
-      Specifies the value property on the provided input or button, accepts <stache-code>rgba</stache-code>, <stache-code>hex</stache-code> or <stache-code>hsla</stache-code>
+      Specifies the format to use for the color when the colorpicker uses a native input element such as a standard text input or a button. This property accepts <stache-code>rgba</stache-code>, <stache-code>hex</stache-code>, or <stache-code>hsla</stache-code>, but we do not recommend using it because users never see or use its value. Instead, if you need to access this format value, see <a stacheRouterLink="." fragment="demo">the demo for an example</a> of the recommended way to access the value.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="presetColors"
+      defaultValue="['#333', '#888', '#EFEFEF', '#FFF']"
+      isOptional="true">
+      Specifies an array of colors to load as preset choices. The colorpicker displays the colors in a series of 12 boxes for users to select.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="returnFormat"
+      defaultValue="rgba"
+      isOptional="true">
+      This property is deprecated and does not affect the colorpicker. We recommend against using it.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 

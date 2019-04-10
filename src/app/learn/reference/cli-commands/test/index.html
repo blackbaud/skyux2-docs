@@ -2,7 +2,7 @@
   pageTitle="test">
 
   <p>
-    <stache-code>skyux test</stache-code> runs unit tests. The Karma unit test is configured under the hood to look for specific file names, similar to how SKY UX Builder looks for <stache-code>index.html</stache-code> files. The Karma unit test looks for any files in the <stache-code>src/app</stache-code> folder with names that end in <stache-code>.spec.ts</stache-code>. Users should write separate tests to confirm that the components work. For more information about unit tests, see <a routerLink="/learn/reference/tests">the unit test reference</a>.
+    <stache-code>skyux test</stache-code> runs unit tests. The Karma unit test is configured under the hood to look for specific file names, similar to how SKY UX Builder looks for <stache-code>index.html</stache-code> files. The Karma unit test looks for any files in the <stache-code>src/app</stache-code> folder with names that end in <stache-code>.spec.ts</stache-code>. Users should write separate tests to confirm that the components work. For more information about unit tests, see <a routerLink="/learn/reference/tests">the unit test reference</a>. The <stache-code>skyux test</stache-code> command also runs the <a href="https://palantir.github.io/tslint/">TSLint static analysis tool</a> to check the TypeScript code in the files in the <stache-code>src</stache-code> folder.
   </p>
 
   <stache-page-anchor>
@@ -10,9 +10,12 @@
   </stache-page-anchor>
 
   <ul>
+    <li><stache-include fileName="cli/coverage.html"></stache-include></li>
+    <li><stache-include fileName="cli/lint-fix.html"></stache-include></li>
+    <li><stache-include fileName="cli/lint-format.html"></stache-include></li>
     <li><stache-include fileName="cli/logColor.html"></stache-include></li>
-    <li><stache-include fileName="cli/logLevel.html"></stache-include></li>
     <li><stache-include fileName="cli/logFormat.html"></stache-include></li>
+    <li><stache-include fileName="cli/logLevel.html"></stache-include></li>
   </ul>
 
 </stache>

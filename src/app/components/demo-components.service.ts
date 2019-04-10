@@ -3,11 +3,13 @@ import { Injectable } from '@angular/core';
 import { SkyDemoService } from '@blackbaud/skyux/dist/demo';
 
 import { SkyDemoComponent } from './demo-component';
+import { SkyDocsDemoCodeService } from '../demos/demos.service';
 
 @Injectable()
 export class SkyDemoComponentsService {
   public constructor(
-    private demoService: SkyDemoService
+    private skyDemoService: SkyDemoService,
+    private docsDemoService: SkyDocsDemoCodeService
   ) { }
 
   public getComponents(filter?: string): SkyDemoComponent[] {
@@ -65,6 +67,14 @@ export class SkyDemoComponentsService {
         getCodeFiles: () => this.getDemoFiles('SkyCheckboxDemoComponent')
       },
       {
+        name: 'Code block',
+        icon: 'code',
+        // tslint:disable-next-line
+        summary: `The code block component formats a code block with syntax highlighting.`,
+        url: '/components/code-block',
+        getCodeFiles: () => this.getDemoFiles('SkyCodeBlockDemoComponent')
+      },
+      {
         name: 'Colorpicker',
         icon: 'eyedropper',
         // tslint:disable-next-line
@@ -78,6 +88,13 @@ export class SkyDemoComponentsService {
         summary: 'The confirm component launches simple confirmation dialogs to allow users to confirm actions.',
         url: '/components/confirm',
         getCodeFiles: () => this.getDemoFiles('SkyConfirmDemoComponent')
+      },
+      {
+        name: 'Copy to clipboard',
+        icon: 'clipboard',
+        summary: 'The copy to clipboard component creates a button that enables users to copy content to the clipboard.',
+        url: '/components/copy-to-clipboard',
+        getCodeFiles: () => this.getDemoFiles('SkyCopyToClipboardDemoComponent')
       },
       {
         name: 'Datepicker',
@@ -107,7 +124,7 @@ export class SkyDemoComponentsService {
         name: 'Email validation',
         icon: 'check',
         // tslint:disable-next-line
-        summary: `The email validation module allows users to validate email format.`,
+        summary: `The email validation directive ensures that user entries in an input element are valid email addresses.`,
         url: '/components/email-validation',
         getCodeFiles: () => this.getDemoFiles('SkyEmailValidationDemoComponent')
       },
@@ -182,6 +199,20 @@ export class SkyDemoComponentsService {
         summary: 'The highlight component highlights text within DOM elements.',
         url: '/components/text-highlight',
         getCodeFiles: () => this.getDemoFiles('SkyTextHighlightDemoComponent')
+      },
+      {
+        name: 'Icon',
+        icon: 'picture-o',
+        summary: 'The icon component displays a Font Awesome icon.',
+        url: '/components/icon',
+        getCodeFiles: () => this.getDemoFiles('SkyIconDemoComponent')
+      },
+      {
+        name: 'Infinite scroll',
+        icon: 'refresh',
+        summary: 'The infinite scroll component dynamically loads data as users scroll.',
+        url: '/components/infinite-scroll',
+        getCodeFiles: () => this.getDemoFiles('SkyInfiniteScrollDemoComponent')
       },
       {
         name: 'Key info',
@@ -342,6 +373,14 @@ export class SkyDemoComponentsService {
         getCodeFiles: () => this.getDemoFiles('SkyPopoverDemoComponent')
       },
       {
+        name: 'Progress indicator',
+        icon: 'tasks',
+        // tslint:disable-next-line
+        summary: 'The progress indicator component visually represents progress through a series of sequential steps toward a final goal.',
+        url: '/components/progress-indicator',
+        getCodeFiles: () => this.getDemoFiles('SkyProgressIndicatorDemoComponent')
+      },
+      {
         name: 'Radio button',
         icon: 'circle-o',
         // tslint:disable-next-line
@@ -374,6 +413,14 @@ export class SkyDemoComponentsService {
         getCodeFiles: () => this.getDemoFiles('SkySectionedFormDemoComponent')
       },
       {
+        name: 'Select field',
+        icon: 'search',
+        // tslint:disable-next-line
+        summary: `The select field component launches a modal that displays items for users to select.`,
+        url: '/components/select-field',
+        getCodeFiles: () => this.getDemoFiles('SkySelectFieldDemoComponent')
+      },
+      {
         name: 'Sort',
         icon: 'sort',
         // tslint:disable-next-line
@@ -387,6 +434,14 @@ export class SkyDemoComponentsService {
         // tslint:disable-next-line
         summary: `The status indicator classes provide icons to draw attention to status information.`,
         url: '/components/status-indicator'
+      },
+      {
+        name: 'Summary action bar',
+        icon: 'sun-o',
+        // tslint:disable-next-line
+        summary: `The summary action bar provides a docked container for actions and summary information.`,
+        url: '/components/summary-actionbar',
+        getCodeFiles: () => this.getDemoFiles('SkySummaryActionBarDemoComponent')
       },
       {
         name: 'Tabs',
@@ -407,7 +462,7 @@ export class SkyDemoComponentsService {
         name: 'Tile',
         icon: 'th-large',
         // tslint:disable-next-line
-        summary: `The tile directive provides a container that is the building block for pages and forms.`,
+        summary: `The tile component creates a collapsible container that is a building block for pages and forms.`,
         url: '/components/tile',
         getCodeFiles: () => this.getDemoFiles('SkyTileDemoComponent')
       },
@@ -418,6 +473,22 @@ export class SkyDemoComponentsService {
         summary: `The timepicker module allows users to use an input to select times.`,
         url: '/components/timepicker',
         getCodeFiles: () => this.getDemoFiles('SkyTimepickerDemoComponent')
+      },
+      {
+        name: 'Toast',
+        icon: 'envelope',
+        // tslint:disable-next-line
+        summary: `The toast module launches a container to display a message over a page's content.`,
+        url: '/components/toast',
+        getCodeFiles: () => this.getDemoFiles('SkyToastDemoComponent')
+      },
+      {
+        name: 'Tokens',
+        icon: 'th-large',
+        // tslint:disable-next-line
+        summary: `The tokens component displays a series of objects for users to interact with.`,
+        url: '/components/tokens',
+        getCodeFiles: () => this.getDemoFiles('SkyTokensDemoComponent')
       },
       {
         name: 'Toolbar',
@@ -437,7 +508,7 @@ export class SkyDemoComponentsService {
       {
         name: 'Vertical tabs',
         icon: 'folder-open-o',
-        summary: `The vertical tabs module contains components to render a vertical tabset.`,
+        summary: `The vertical tabs module displays large amounts of information within collapsible groups.`,
         url: '/components/vertical-tabs',
         getCodeFiles: () => this.getDemoFiles('SkyVerticalTabsDemoComponent')
       },
@@ -461,6 +532,19 @@ export class SkyDemoComponentsService {
   }
 
   public getDemoFiles(componentConstructorName: string): any {
-    return this.demoService.getComponent(componentConstructorName).files;
+    const docsDemo = this.docsDemoService.getComponent(componentConstructorName);
+
+    if (!docsDemo) {
+      const skyDemo = this.skyDemoService.getComponent(componentConstructorName);
+
+      if (!skyDemo) {
+        console.warn('No demo files found for:', componentConstructorName);
+        return [];
+      } else {
+        return this.skyDemoService.getComponent(componentConstructorName).files;
+      }
+    } else {
+      return this.docsDemoService.getComponent(componentConstructorName).files;
+    }
   }
 }

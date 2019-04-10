@@ -24,4 +24,8 @@ before_install:
   - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
   - sudo dpkg -i google-chrome*.deb
   - rm google-chrome*.deb
-  - npm install -g @blackbaud/skyux-cli
+  - npm install -g @skyux-sdk/cli
+
+# Identical to package.json except for travis wait
+script:
+  - skyux lint && skyux test && skyux e2e && travis_wait skyux build --logFormat none --output-keep-alive

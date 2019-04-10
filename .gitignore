@@ -18,9 +18,14 @@ jspm_packages
 
 # SKY UX temp directory
 .skyuxtmp
+.skypageslocales
+.skypagestmp
 
 # SKY UX build directory
 dist
 
 # OS specific files
 .DS_Store
+
+# Lock files
+package-lock.json

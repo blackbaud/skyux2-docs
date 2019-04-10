@@ -4,48 +4,44 @@
   navOrder="3">
 
   <p>
-    When you <a routerLink="/learn/get-started/basics/create-project">create a SKY UX project</a>, the SKY UX template provides a <stache-code>skyuxconfig.json</stache-code> file in your project's directory to enable you to configure settings for SKY UX. All properties in <stache-code>skyuxconfig.json</stache-code> are optional, and by default, the file only specifies values for the <stache-code>mode</stache-code> and <stache-code>compileMode</stache-code> settings.
-  </p>
-  <p>
-    SKY UX enables you to create additional configuration files as necessary <a routerLink="/learn/reference/configuration/additional-config-files">to apply settings to specific SKY UX CLI commands</a> using the <stache-code>skyuxconfig.[COMMAND].json</stache-code> naming convention.
+    When you <a routerLink="/learn/get-started/basics/create-project">create a SKY UX project</a>, the SKY UX template provides a <stache-code>skyuxconfig.json</stache-code> file in your project's directory to enable you to configure settings for SKY UX. All properties in <stache-code>skyuxconfig.json</stache-code> are optional, and by default, the file only specifies values for the <stache-code>mode</stache-code> and <stache-code>compileMode</stache-code> settings. SKY UX enables you to create additional configuration files as necessary <a routerLink="/learn/reference/configuration/additional-config-files">to apply settings to specific SKY UX CLI commands</a> using the <stache-code>skyuxconfig.[COMMAND].json</stache-code> naming convention.
   </p>
   <p>
     The configuration options that are available in the <stache-code>skyuxconfig.json</stache-code> file include:
   </p>
 
+  <stache-page-anchor>
+    <stache-code>$schema</stache-code>
+  </stache-page-anchor>
+  <p>
+    The <stache-code>$schema</stache-code> configuration option specifies the file that provides annotations and validation to the entire configuration file in your IDE. You should not modify this file.
+  </p>
+
+  <stache-page-anchor>
+    <stache-code>a11y</stache-code>
+  </stache-page-anchor>
+  <p>
+    The <stache-code>a11y</stache-code> configuration option enables or disables accessibility test rules. You can manage rules individually, or you can enable or disable all rules in bulk. For examples of how to enable and disable rules, see <a routerLink="/learn/get-started/advanced/accessibility-analyzer">accessibility analyzer</a>.
+  </p>
+
+  <stache-page-anchor>
+    <stache-code>app</stache-code>
+  </stache-page-anchor>
+  <p>
+    The <stache-code>app</stache-code> configuration option specifies configuration options for the local app.
+  </p>
   <ul>
     <li>
       <p>
-        <stache-code>a11y</stache-code> — Enables or disables accessibility test rules. You can manage rules individually, or you can enable or disable all rules in bulk. For examples of how to enable and disable rules, see <a routerLink="/learn/get-started/advanced/accessibility-analyzer">accessibility analyzer</a>.
+        <stache-code>externals</stache-code> — Dynamically injects CSS and JavaScript files into SKY UX Host for the <stache-code>skyux serve</stache-code> or <stache-code>skyux build</stache-code> commands. You should have a specific use-case for an external. For example, Office Addins require their library to load through CDN in the head. The <stache-code>before</stache-code> and <stache-code>after</stache-code> sections of an external indicate whether to include the external resource before or after the default SKY UX Builder resources. The <stache-code>head</stache-code> property, which only applies to JS resources, indicates whether to inject elements within the HTML <stache-code>head</stache-code> element or just before the closing <stache-code>body</stache-code> tag.
       </p>
-    </li>
-    <li>
       <p>
-        <stache-code>app</stache-code> — Specifies configuration options for the local app when running <stache-code>skyux serve</stache-code>.
+        For Blackbaud-hosted SPAs, Blackbaud developers must whitelist all URLs in the <stache-code>externals</stache-code> property. If <stache-code>skyuxconfig.json</stache-code> includes externals that are not whitelisted, then the SPA won’t load. To whitelist externals, contact the SKY UX team.
       </p>
-
-      <ul>
-        <li>
-          <p>
-            <stache-code>title</stache-code> — Controls the page title at the template level while waiting for the application to load. After it loads, you can use the Angular <a href="https://angular.io/docs/ts/latest/cookbook/set-document-title.html">title service</a> to set the page title. The default is <stache-code>Blackbaud - SKY UX Application</stache-code>, so if you do not want this default to appear in the title bar while the application loads, use the <stache-code>title</stache-code> to provide your preferred title.
-          </p>
-        </li>
-        <li>
-          <p>
-            <stache-code>port</stache-code> — Configures a port for the <stache-code>skyux serve</stache-code> command to use. If no port is specified, <stache-code>skyux serve</stache-code> dynamically finds an available port starting with 8000. Keep in mind that if you configure SPAs to use the same port, you cannot serve them simultaneously.
-          </p>
-        </li>
-        <li>
-          <p>
-            <stache-code>externals</stache-code> — Dynamically injects CSS and JavaScript files into SKY UX Host. You should have a specific use-case for an external. For example, Office Addins require their library to load through CDN in the head. The <stache-code>before</stache-code> and <stache-code>after</stache-code> sections of an external indicate whether to include the external resource before or after the default SKY UX Builder resources. The <stache-code>head</stache-code> property, which only applies to JS resources, indicates whether to inject elements within the HTML <stache-code>head</stache-code> element or just before the closing <stache-code>body</stache-code> tag.
-          </p>
-          <p>
-            For Blackbaud-hosted SPAs, Blackbaud developers must whitelist all URLs in the <stache-code>externals</stache-code> property. If <stache-code>skyuxconfig.json</stache-code> includes externals that are not whitelisted, then the SPA won’t load. To whitelist externals, contact the SKY UX team.
-          </p>
-          <p>
-            The following example shows an external with all the configuration options:
-          </p>
-          <stache-code-block languageType="js">
+      <p>
+        The following example shows an external with all the configuration options:
+      </p>
+      <sky-code-block languageType="js">
   externals: {
     css: {
         before: [
@@ -79,222 +75,385 @@
         ]
     }
 }
-          </stache-code-block>
-        </li>
-      </ul>
+      </sky-code-block>
     </li>
     <li>
       <p>
-        <stache-code>appSettings</stache-code> — Specifies data that is available for reuse throughout the application. The data type of this property is <stache-code>any</stache-code>. After you specify data in the <stache-code>appSettings</stache-code> property, you can <a routerLink="/learn/reference/configuration/apply-appsettings">access that data throughout the SPA</a>.
-      </p>
-    </li>
-    <li>
-      <p>
-        <stache-code>auth</stache-code> — Indicates whether the application requires an authenticated Blackbaud ID. This property is for internal Blackbaud use only. By default, this property is set to <stache-code>false</stache-code>. To require authentication, set this property to <stache-code>true</stache-code>. For Blackbaud developers, <a routerLink="/learn/reference/helpers">the helpers reference</a> provides information about how to make authenticated HTTP requests.
+        <stache-code>port</stache-code> — Configures a port for the <stache-code>skyux serve</stache-code> command to use. If no port is specified, <stache-code>skyux serve</stache-code> dynamically finds an available port starting with 8000. Keep in mind that if you configure SPAs to use the same port, you cannot serve them simultaneously.
       </p>
     </li>
     <li>
       <p>
-        <stache-code>codeCoverageThreshold</stache-code> — Specifies the minimum code coverage threshold that is required to pass the <stache-code>skyux test</stache-code> command. The available values and their corresponding thresholds are:
+        <stache-code>styles</stache-code> — Specifies CSS or SCSS files to bundle with the SPA. This property provides an array of <stache-code>string</stache-code> values that represent relative paths for CSS and SCSS files to include in the bundle. The paths are relative to the SPA's root directory.
       </p>
-      <ul>
-        <li>
-          <stache-code>none</stache-code>: 0 percent
-        </li>
-        <li>
-          <stache-code>standard</stache-code>: 80 percent
-        </li>
-        <li>
-          <stache-code>strict</stache-code>: 100 percent
-        </li>
-      </ul>
-
-      <p>
-        To exclude files from code coverage, place them in the <stache-code>src/app/lib</stache-code> folder.
-      </p>
-    </li>
-    <li>
-      <p>
-        <stache-code>compileMode</stache-code> — Specifies how to compile the project's code. By default, the <stache-code>skyuxconfig.json</stache-code> file sets this property to <stache-code>aot</stache-code> to specify ahead-of-time compilation, which runs the compiler once at build time using one set of libraries. You can change this setting to <stache-code>jit</stache-code> to specify just-in-time compilation, which runs the compiler at run time for every user using a different set of libraries. SKY UX uses ahead-of-time compilation by default because it is typically more performant and has less to handle at run-time. For more information about the difference, see the <a href="https://angular.io/docs/ts/latest/cookbook/aot-compiler.html#!#aot-jit">Angular documentation</a>.
-      </p>
-    </li>
-    <li>
-      <p>
-        <stache-code>cssPath</stache-code> — Specifies a path to reference CSS styles. This property is specific to the SKY UX docs site and is for internal Blackbaud use only.
-      </p>
-    </li>
-    <li>
-      <p>
-        <stache-code>help</stache-code> — Indicates whether to automatically include the help widget in the application to identify the current page and display relevant help content. This property is for internal Blackbaud use only. By default, this property is set to <stache-code>false</stache-code>. For Blackbaud developers who want to include the help widget, <a href="https://github.com/blackbaud/bb-help#configuration">the help widget configuration options documentation</a> describes the configuration object to set the <stache-code>help</stache-code> property to.
-      </p>
-    </li>
-    <li>
-      <p>
-        <stache-code>host</stache-code> — Specifies configuration options for communication with SKY UX Host.
-      </p>
-      
-      <ul>
-        <li>
-          <p>
-            <stache-code>url</stache-code> — Specifies a base URL to pass information from <stache-code>skyux serve</stache-code> to the SKY UX Host. The default value is <stache-code>https://host.nxt.blackbaud.com</stache-code>.
-          </p>
-        </li>
-      </ul>
-    </li>
-    <li>
-      <p>
-        <stache-code>importPath</stache-code> — Specifies a path to reference SKY UX components in Angular. This property is specific to the SKY UX docs site and is for internal Blackbaud use only.
-      </p>
-    </li>
-    <li>
-      <p>
-        <stache-code>mode</stache-code> — Controls how much boilerplate code to generate automatically. By default, the <stache-code>skyuxconfig.json</stache-code> file sets this property to <stache-code>easy</stache-code>. In easy mode, SKY UX  automatically generates routes based the project's folder structure, provides bootstrapping to initialize the application, and supplies SKY UX components to the application. To override these options, change the <stache-code>mode</stache-code> property to <stache-code>advanced</stache-code>. Since advanced mode does not provide automatic route configuration, you can adjust URLs and point to specific components in your SPA. This property will eventually become obsolete as the SKY UX team builds out the CLI to allow users to override individual steps without switching to advanced mode.
-      </p>
-    </li>
-    <li>
-      <p>
-        <stache-code>name</stache-code> — Specifies the name of the project when running in SKY UX Host. For example, if you specify "demo" as the name, then your SPA is accessible from https://host.nxt.blackbaud.com/demo. By default, SKY UX Builder uses the <stache-code>name</stache-code> property in the <stache-code>package.json</stache-code> file, minus the "blackbaud-skyux-spa-" prefix. That value is based on the root directory name that you specify when you <a routerLink="/learn/get-started/basic/create-project">create a SKY UX project</a>. You can use the <stache-code>name</stache-code> property in <stache-code>skyuxconfig.json</stache-code> to overwrite the default name if you do not want the root directory name in your public-facing URL. For example, if you publish the SPA to NPM, you use the <stache-code>name</stache-code> property in <stache-code>package.json</stache-code>, so you may want to use a different name for the project in SKY UX Host.
-      </p>
-    </li>
-    <li>
-      <p>
-        <stache-code>omnibar</stache-code> — Specifies an object to pass to the omnibar's <stache-code>load</stache-code> method. This property is for internal Blackbaud use only. The omnibar provides a common UI element for Blackbaud applications that allows users to navigate between applications. For Blackbaud developers, <a href="http://authsvc.docs.blackbaudhosting.com/components/omnibar/configuration_options/">the omnibar configuration options documentation</a> describes the available options to pass to the omnibar.
-      </p>
-    </li>
-    <li>
-      <p>
-        <stache-code>pacts</stache-code> — Specifies configuration settings for pact testing. Pact is a testing framework that you can use to test a SPA's integration with the services that it consumes. In the <stache-code>pacts</stache-code> option, you create a separate entry for each provider to test. Settings are generally the same for each entry except for the <stache-code>provider</stache-code> setting. When you run <a routerLink="/learn/reference/cli-commands/pact">the <stache-code>skyux pact</stache-code> command</a>, it reads the <stache-code>pacts</stache-code> setting and spins up an individual pact server for each provider service that you specify.
-      </p>
-      <ul>
-        <li>
-          <p>
-            <stache-code>consumer</stache-code> — Specifies the consumer that calls the provider's API. This is a string value that the developer uses to represent the consumer in the consumer-provider relationship. Blackbaud developers register their consumer with the pact broker at <a href="https://host.nxt.blackbaud.com/pact/">https://host.nxt.blackbaud.com/pact/</a>. This internal Blackbaud-only site is not available to external developers.
-          </p>
-        </li>
-        <li>
-          <p>
-            <stache-code>dir</stache-code> — Specifies a directory for the pact file that the pact server generates when <stache-code>skyux pact</stache-code> runs. By default, the pact server stores the JSON file in the <stache-code>app/pacts</stache-code> directory. The file includes an array of request/response pairs called interactions to describe the behaviors that the consumer expects from the provider service. The file name follows the format of <stache-code>&#123;consumer}-&#123;provider}.json</stache-code>, where <stache-code>&#123;consumer}</stache-code> is the name of the consumer and <stache-code>&#123;provider}</stache-code> is the name of the provider. The pact file needs to be uploaded to the pact broker. Blackbaud developers can find information on registered services at <a href="https://host.nxt.blackbaud.com/pact/">https://host.nxt.blackbaud.com/pact/</a>. This internal Blackbaud-only site is not available to external developers.
-          </p>
-        </li>
-        <li>
-          <p>
-            <stache-code>host</stache-code> — Specifies a host for the pact server. By default, the host is <stache-code>localhost</stache-code>. 
-          </p>
-        </li>
-        <li>
-          <p>
-            <stache-code>log</stache-code> — Specifies a directory for the log file that the pact server generates when <stache-code>skyux pact</stache-code> runs. By default, the pact server stores the log file in a <stache-code>logs</stache-code> folder in the root directory. The log file includes debug output to help diagnose issues. The file name follows the format of <stache-code>pact-&#123;provider}.log</stache-code>, where <stache-code>&#123;provider}</stache-code> is the name of the provider.
-          </p>
-        </li>
-        <li>
-          <p>
-            <stache-code>logLevel</stache-code> — Specifies the log level for the log file. The available values are <stache-code>trace</stache-code>, <stache-code>debug</stache-code>, <stache-code>info</stache-code>, <stache-code>error</stache-code>, <stache-code>fatal</stache-code>, and <stache-code>warn</stache-code>.
-          </p>
-        </li>
-        <li>
-          <p>
-            <stache-code>port</stache-code> — Specifies a port to use for pact testing. By default, SKY UX Builder dynamically finds the next available port.
-          </p>
-        </li>
-        <li>
-          <p>
-            <stache-code>provider</stache-code> — Specifies the provider of a service that exposes an API to the consumer. This is a string value that the developer uses to represent the provider in the consumer-provider relationship. Blackbaud developers register the provider with the pact broker at <a href="https://host.nxt.blackbaud.com/pact/">https://host.nxt.blackbaud.com/pact/</a>. This internal Blackbaud-only site is not available to external developers.
-          </p>
-        </li>
-        <li>
-          <p>
-            <stache-code>spec</stache-code> — Specifies the pact specification version for the log file. By default, the version is <stache-code>2</stache-code>.
-          </p>
-        </li>
-      </ul>
-      <p>
-        For information about how to run pact tests with the SKY UX CLI, see <a routerLink="/learn/reference/cli-commands/pact">the <stache-code>skyux pact</stache-code> command</a>. And for more information on configuration settings and guidance on how to write pact tests, see <a routerLink="/learn/get-started/advanced/pact-tests">the pact testing tutorial</a>.
-      </p>
-    </li>
-    <li>
-      <p>
-        <stache-code>params</stache-code> — Specifies a list of parameters that are allowed at runtime. You can list parameters as an array of strings, specify parameters as key-value pairs with boolean values that indicate whether the parameters are allowed, or specify parameters as objects to provide default values for the parameters.
-      </p>
-      <p>
-        By default, Builder’s <stache-code>skyuxconfig.json</stache-code> lists the <stache-code>svcid</stache-code> and <stache-code>envid</stache-code> parameters and sets them to <stache-code>true</stache-code>. This allows the SPA to track the querystring parameters of <stache-code>svcid</stache-code> and <stache-code>envid</stache-code> in the URL and exposes them through the <stache-code>SkyAppConfig</stache-code> in runtime. You may want to <a routerLink="/learn/reference/configuration/additional-config-files">specify default <stache-code>svcid</stache-code> and <stache-code>envid</stache-code> values for local development.</a>
-      </p>
-      <ul>
-        <li>
-          <p>
-            Parameters as an array of strings:
-          </p>
-          <stache-code-block>
-          "params": [
-            "param1",
-            "param2"
+      <sky-code-block>
+        "app": {
+          "styles": [
+            "src/styles/my-styles.scss"
           ]
-          </stache-code-block>
-        </li>
-        <li>
-          <p>
-            Parameters as key-value pairs with boolean values:
-          </p>
-          <stache-code-block>
-          "params": {
-            "param3": true,
-            "param4": true
-          }
-          </stache-code-block>
-        </li>
-        <li>
-          <p>
-            Parameters as objects with default values:
-          </p>
-          <stache-code-block>
-          "params": {
-            "param5": {
-              "value": "value1"
-            },
-            "param4": {
-              "value": "value2"
-            }
-          }
-          </stache-code-block>
-        </li>
-      </ul>
+        }
+      </sky-code-block>
     </li>
     <li>
       <p>
-        <stache-code>plugins</stache-code> — Specifies plugins to expand on existing SKY UX Builder functionality and create new functionality. For example, the Stache 2 component library uses <a href="https://developer.blackbaud.com/stache/learn/plugins">a variety of plugins</a>.
+        <stache-code>title</stache-code> — Controls the page title at the template level for the <stache-code>skyux serve</stache-code> command while waiting for the application to load. After it loads, you can use <a href="https://angular.io/docs/ts/latest/cookbook/set-document-title.html">the Angular <stache-code>Title</stache-code> service</a> to set the page title. The default is <stache-code>Blackbaud - SKY UX Application</stache-code>, so if you do not want this default to appear in the title bar while the application loads, use the <stache-code>title</stache-code> to provide your preferred title.
       </p>
     </li>
+  </ul>
+
+  <stache-page-anchor>
+    <stache-code>appSettings</stache-code>
+  </stache-page-anchor>
+  <p>
+    The <stache-code>appSettings</stache-code> configuration option specifies data that is available for reuse throughout the application. The data type of this property is <stache-code>any</stache-code>. After you specify data in the <stache-code>appSettings</stache-code> property, you can <a routerLink="/learn/reference/configuration/apply-appsettings">access that data throughout the SPA</a>.
+  </p>
+
+  <stache-page-anchor>
+    <stache-code>auth</stache-code>
+  </stache-page-anchor>
+  <p>
+    The <stache-code>auth</stache-code> configuration option indicates whether the application requires an authenticated Blackbaud ID. This property is for internal Blackbaud use only. By default, this property is set to <stache-code>false</stache-code>. To require authentication, set this property to <stache-code>true</stache-code>. For Blackbaud developers, <a routerLink="/learn/reference/helpers">the helpers reference</a> provides information about how to make authenticated HTTP requests.
+  </p>
+
+  <stache-page-anchor>
+    <stache-code>codeCoverageThreshold</stache-code>
+  </stache-page-anchor>
+  <p>
+    The <stache-code>codeCoverageThreshold</stache-code> configuration option specifies the minimum code coverage threshold that is required to pass the <stache-code>skyux test</stache-code> command. The available values and their corresponding thresholds are:
+  </p>
+    <ul>
+      <li>
+        <stache-code>none</stache-code>: 0 percent
+      </li>
+      <li>
+        <stache-code>standard</stache-code>: 80 percent
+      </li>
+      <li>
+        <stache-code>strict</stache-code>: 100 percent
+      </li>
+    </ul>
+    <p>
+      To exclude files from code coverage, place them in the <stache-code>src/app/lib</stache-code> folder.
+    </p>
+
+  <stache-page-anchor>
+    <stache-code>compileMode</stache-code>
+  </stache-page-anchor>
+  <p>
+    The <stache-code>compileMode</stache-code> configuration option specifies how to compile the project's code. By default, the <stache-code>skyuxconfig.json</stache-code> file sets this property to <stache-code>aot</stache-code> to specify ahead-of-time compilation, which runs the compiler once at build time using one set of libraries. You can change this setting to <stache-code>jit</stache-code> to specify just-in-time compilation, which runs the compiler at run time for every user using a different set of libraries. SKY UX uses ahead-of-time compilation by default because it is typically more performant and has less to handle at run-time. For more information about the difference, see the <a href="https://angular.io/docs/ts/latest/cookbook/aot-compiler.html#!#aot-jit">Angular documentation</a>.
+  </p>
+
+  <stache-page-anchor>
+    <stache-code>cssPath</stache-code>
+  </stache-page-anchor>
+  <p>
+    The <stache-code>cssPath</stache-code> configuration option specifies a path to reference CSS styles. This property is specific to the SKY UX docs site and is for internal Blackbaud use only. To bundle CSS or SCSS files with your SPA, use the <stache-code>styles</stache-code> property of <a stacheRouterLink="." fragment="app">the <stache-code>app</stache-code> configuration option</a> instead.
+  </p>
+
+  <stache-page-anchor>
+    <stache-code>help</stache-code>
+  </stache-page-anchor>
+  <p>
+    The <stache-code>help</stache-code> configuration option indicates whether to automatically include the Help Widget in the application to identify the current page and display relevant help content. This property is for internal Blackbaud use only. By default, this property is set to <stache-code>false</stache-code>. For Blackbaud developers who want to include the Help Widget, <a href="https://docs.blackbaud.com/bb-help-docs/learn/configuration/recommended">the Help Widget configuration options documentation</a> describes the configuration object to set the <stache-code>help</stache-code> property to.
+  </p>
+
+  <stache-page-anchor>
+    <stache-code>host</stache-code>
+  </stache-page-anchor>
+  <p>
+    The <stache-code>host</stache-code> configuration option specifies configuration options for communication with SKY UX Host.
+  </p>
+  <ul>
     <li>
       <p>
-        <stache-code>redirects</stache-code> — Specifies redirects for pages within an application. When a project's folder structure changes, you can specify redirects for the files that move so that existing links continue to work. In the <stache-code>redirects</stache-code> property, you create a comma-separated list where you specify the original paths followed by the redirect paths.
+        <stache-code>url</stache-code> — Specifies a base URL to pass information from <stache-code>skyux serve</stache-code> to the SKY UX Host. The default value is <stache-code>https://host.nxt.blackbaud.com</stache-code>.
       </p>
-      <stache-code-block>
+    </li>
+  </ul>
+
+  <stache-page-anchor>
+    <stache-code>importPath</stache-code>
+  </stache-page-anchor>
+  <p>
+    The <stache-code>importPath</stache-code> configuration option specifies a path to reference SKY UX components in Angular. This property is specific to the SKY UX docs site and is for internal Blackbaud use only.
+  </p>
+
+  <stache-page-anchor>
+    <stache-code>mode</stache-code>
+  </stache-page-anchor>
+  <p>
+    The <stache-code>mode</stache-code> configuration option controls how much boilerplate code to generate automatically. By default, the <stache-code>skyuxconfig.json</stache-code> file sets this property to <stache-code>easy</stache-code>. In easy mode, SKY UX  automatically generates routes based the project's folder structure, provides bootstrapping to initialize the application, and supplies SKY UX components to the application. To override these options, change the <stache-code>mode</stache-code> property to <stache-code>advanced</stache-code>. Since advanced mode does not provide automatic route configuration, you can adjust URLs and point to specific components in your SPA. This property will eventually become obsolete as the SKY UX team builds out the CLI to allow users to override individual steps without switching to advanced mode.
+  </p>
+
+  <stache-page-anchor>
+    <stache-code>moduleAliases</stache-code>
+  </stache-page-anchor>
+  <p>
+    The <stache-code>moduleAliases</stache-code> configuration option specifies module aliases to allow for custom module resolution. This enables SPAs to provide <a href="https://webpack.js.org/configuration/resolve/#resolvealias">resolve aliases</a> to import or require modules more easily.
+  </p>
+
+  <stache-page-anchor>
+    <stache-code>name</stache-code>
+  </stache-page-anchor>
+  <p>
+    The <stache-code>name</stache-code> configuration option specifies the name of the project when running in SKY UX Host. For example, if you specify "demo" as the name, then your SPA is accessible from https://host.nxt.blackbaud.com/demo. By default, SKY UX Builder uses the <stache-code>name</stache-code> property in the <stache-code>package.json</stache-code> file, minus the "blackbaud-skyux-spa-" prefix. That value is based on the root directory name that you specify when you <a routerLink="/learn/get-started/basic/create-project">create a SKY UX project</a>. You can use the <stache-code>name</stache-code> property in <stache-code>skyuxconfig.json</stache-code> to overwrite the default name if you do not want the root directory name in your public-facing URL. For example, if you publish the SPA to NPM, you use the <stache-code>name</stache-code> property in <stache-code>package.json</stache-code>, so you may want to use a different name for the project in SKY UX Host.
+  </p>
+
+  <stache-page-anchor>
+    <stache-code>omnibar</stache-code>
+  </stache-page-anchor>
+  <p>
+    The <stache-code>omnibar</stache-code> configuration option specifies an object to pass to the omnibar's <stache-code>load</stache-code> method. This property is for internal Blackbaud use only. The omnibar provides a common UI element for Blackbaud applications that allows users to navigate between applications. For Blackbaud developers, <a href="https://docs.blackbaud.com/omnibar-docs/learn/configuring">the omnibar configuration options documentation</a> describes the available options to pass to the omnibar.
+  </p>
+
+  <stache-page-anchor>
+    <stache-code>pacts</stache-code>
+  </stache-page-anchor>
+  <p>
+    The <stache-code>pacts</stache-code> configuration option specifies configuration settings for pact testing. Pact is a testing framework that you can use to test a SPA's integration with the services that it consumes. In the <stache-code>pacts</stache-code> option, you create a separate entry for each provider to test. Settings are generally the same for each entry except for the <stache-code>provider</stache-code> setting. When you run <a routerLink="/learn/reference/cli-commands/pact">the <stache-code>skyux pact</stache-code> command</a>, it reads the <stache-code>pacts</stache-code> setting and spins up an individual pact server for each provider service that you specify.
+  </p>
+    <ul>
+      <li>
+        <p>
+          <stache-code>consumer</stache-code> — Specifies the consumer that calls the provider's API. This is a string value that the developer uses to represent the consumer in the consumer-provider relationship. Blackbaud developers register their consumer with the pact broker at <a href="https://host.nxt.blackbaud.com/pact/">https://host.nxt.blackbaud.com/pact/</a>. This internal Blackbaud-only site is not available to external developers.
+        </p>
+      </li>
+      <li>
+        <p>
+          <stache-code>dir</stache-code> — Specifies a directory for the pact file that the pact server generates when <stache-code>skyux pact</stache-code> runs. By default, the pact server stores the JSON file in the <stache-code>app/pacts</stache-code> directory. The file includes an array of request/response pairs called interactions to describe the behaviors that the consumer expects from the provider service. The file name follows the format of <stache-code>&#123;consumer}-&#123;provider}.json</stache-code>, where <stache-code>&#123;consumer}</stache-code> is the name of the consumer and <stache-code>&#123;provider}</stache-code> is the name of the provider. The pact file needs to be uploaded to the pact broker. Blackbaud developers can find information on registered services at <a href="https://host.nxt.blackbaud.com/pact/">https://host.nxt.blackbaud.com/pact/</a>. This internal Blackbaud-only site is not available to external developers.
+        </p>
+      </li>
+      <li>
+        <p>
+          <stache-code>host</stache-code> — Specifies a host for the pact server. By default, the host is <stache-code>localhost</stache-code>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <stache-code>log</stache-code> — Specifies a directory for the log file that the pact server generates when <stache-code>skyux pact</stache-code> runs. By default, the pact server stores the log file in a <stache-code>logs</stache-code> folder in the root directory. The log file includes debug output to help diagnose issues. The file name follows the format of <stache-code>pact-&#123;provider}.log</stache-code>, where <stache-code>&#123;provider}</stache-code> is the name of the provider.
+        </p>
+      </li>
+      <li>
+        <p>
+          <stache-code>logLevel</stache-code> — Specifies the log level for the log file. The available values are <stache-code>trace</stache-code>, <stache-code>debug</stache-code>, <stache-code>info</stache-code>, <stache-code>error</stache-code>, <stache-code>fatal</stache-code>, and <stache-code>warn</stache-code>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <stache-code>port</stache-code> — Specifies a port to use for pact testing. By default, SKY UX Builder dynamically finds the next available port.
+        </p>
+      </li>
+      <li>
+        <p>
+          <stache-code>provider</stache-code> — Specifies the provider of a service that exposes an API to the consumer. This is a string value that the developer uses to represent the provider in the consumer-provider relationship. Blackbaud developers register the provider with the pact broker at <a href="https://host.nxt.blackbaud.com/pact/">https://host.nxt.blackbaud.com/pact/</a>. This internal Blackbaud-only site is not available to external developers.
+        </p>
+      </li>
+      <li>
+        <p>
+          <stache-code>spec</stache-code> — Specifies the pact specification version for the log file. By default, the version is <stache-code>2</stache-code>.
+        </p>
+      </li>
+    </ul>
+    <p>
+      For information about how to run pact tests with the SKY UX CLI, see <a routerLink="/learn/reference/cli-commands/pact">the <stache-code>skyux pact</stache-code> command</a>. And for more information on configuration settings and guidance on how to write pact tests, see <a routerLink="/learn/get-started/advanced/pact-tests">the pact testing tutorial</a>.
+    </p>
+
+  <stache-page-anchor>
+    <stache-code>params</stache-code>
+  </stache-page-anchor>
+  <p>
+    The <stache-code>params</stache-code> configuration option specifies a list of parameters that are allowed at runtime. You can list parameters as an array of strings, specify parameters as key-value pairs with boolean values that indicate whether the parameters are allowed, or specify parameters as objects to provide default values for the parameters.
+  </p>
+    <ul>
+      <li>
+        <p>
+          Parameters as an array of strings:
+        </p>
+        <sky-code-block>
+        "params": [
+          "param1",
+          "param2"
+        ]
+        </sky-code-block>
+      </li>
+      <li>
+        <p>
+          Parameters as key-value pairs with boolean values:
+        </p>
+        <sky-code-block>
+        "params": {
+          "param3": true,
+          "param4": true
+        }
+        </sky-code-block>
+      </li>
+      <li>
+        <p>
+          Parameters as objects with default values:
+        </p>
+        <sky-code-block>
+        "params": {
+          "param5": {
+            "value": "value1"
+          },
+          "param4": {
+            "value": "value2"
+          }
+        }
+        </sky-code-block>
+        <p>
+          The <stache-code>value</stache-code> property specifies the default value of the parameter, but the query string or other future sources of parameter values can overwrite it at runtime. When using this format, you can also specify the <stache-code>required</stache-code> and <stache-code>excludeFromRequests</stache-code> parameters.
+        </p>
+        <ul>
+          <li>
+            <p>
+              <stache-code>excludeFromRequests</stache-code> — Indicates whether to exclude the parameter from the query string. By default, <stache-code>SkyAuthHttp</stache-code> and <stache-code>SkyAuthHttpClient</stache-code> include any parameter with listed values in their requests. This parameter allows consumers to track the parameter without including it in the HTTP call.
+            </p>
+          </li>
+          <li>
+            <p>
+              <stache-code>required</stache-code> — Indicates whether the parameter must be supplied to the application. For the <stache-code>envid</stache-code>, <stache-code>leid</stache-code>, and <stache-code>svcid</stache-code> parameters, <stache-code>@skyux-sdk/builder</stache-code> and <stache-code>@skyux-sdk/builder</stache-code> pass the <stache-code>required</stache-code> state to the <stache-code>auth-client</stache-code>, which attempts to resolve the default value if one is available, show the welcome screen if multiple are available, or show an error if none are available.</p>
+            <p>
+              For custom required parameters, no logic is applied, and users can use the <stache-code>SkyuxConfigParams</stache-code> class to interact with them.
+            </p>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <p>
+      By default, SKY Builder includes the <stache-code>addin</stache-code>, <stache-code>envid</stache-code>, <stache-code>leid</stache-code>, and <stache-code>svcid</stache-code> parameters in its <stache-code>skyuxconfig.json</stache-code> file and sets them to <stache-code>true</stache-code>. This allows SPAs to track those four parameters in the URL and exposes them through the <stache-code>SkyAppConfig</stache-code> at runtime.
+    </p>
+    <ul>
+      <li>
+        <p>
+          <stache-code>addin</stache-code> — Specifies that the SPA is running as an add-in within another SPA. This parameter is for internal Blackbaud use only, and it is primarily used to hide the omnibar.
+        </p>
+      </li>
+      <li>
+        <p>
+          <stache-code>envid</stache-code> — Specifies the environment ID.
+        </p>
+      </li>
+      <li>
+        <p>
+          <stache-code>leid</stache-code> — Specifies the legal entity ID.
+        </p>
+      </li>
+      <li>
+        <p>
+          <stache-code>svcid</stache-code> — Specifies the service ID.
+        </p>
+      </li>
+    </ul>
+    <p>
+      If you have a specific environment ID or service ID for testing, you can <a stacheRouterLink="/learn/reference/configuration/additional-config-files" fragment="parameters">specify default <stache-code>svcid</stache-code> or <stache-code>envid</stache-code> values for local development</a> in a <stache-code>skyuxconfig.serve.json</stache-code> file so that you don't have to paste the values in the URL when you serve.
+    </p>
+
+  <stache-page-anchor>
+    <stache-code>pipelineSettings</stache-code>
+  </stache-page-anchor>
+  <p>
+    The <stache-code>pipelineSettings</stache-code> configuration option specifies configuration options for build and release pipelines. The data type of this property is <stache-code>any</stache-code>. This property is for internal Blackbaud use only.
+    </p>
+
+  <stache-page-anchor>
+    <stache-code>plugins</stache-code>
+  </stache-page-anchor>
+  <p>
+    The <stache-code>plugins</stache-code> configuration option specifies plugins to expand on existing SKY UX Builder functionality and create new functionality. For example, the Stache 2 component library uses <a href="https://developer.blackbaud.com/stache/learn/plugins">a variety of plugins</a>.
+  </p>
+
+  <stache-page-anchor>
+    <stache-code>redirects</stache-code>
+  </stache-page-anchor>
+  <p>
+    The <stache-code>redirects</stache-code> configuration option specifies redirects for pages within an application. When a project's folder structure changes, you can specify redirects for the files that move so that existing links continue to work. In the <stache-code>redirects</stache-code> property, you create a comma-separated list where you specify the original paths followed by the redirect paths.
+  </p>
+  <sky-code-block>
   "redirects": {
     "old-folder-1/old-subfolder-1": "new-folder/new-subfolder-1",
     "old-folder-1/old-subfolder-2": "old-folder-1/old-subfolder-2/new-subfolder-2"
   }
-      </stache-code-block>
+  </sky-code-block>
+
+  <stache-page-anchor>
+    <stache-code>routes</stache-code>
+  </stache-page-anchor>
+  <p>
+    The <stache-code>routes</stache-code> configuration option allows you to use the omnibar but still define navigation items. This property is for internal Blackbaud use only. For Blackbaud developers, the Engineering System website describes how to <a href="https://host.nxt.blackbaud.com/engineering-system-docs/learn/spa/spa-global-navigation">add your SPA to global navigation</a>.
+  </p>
+
+  <stache-page-anchor>
+    <stache-code>skyuxModules</stache-code>
+  </stache-page-anchor>
+  <p>
+    The <stache-code>skyuxModules</stache-code> configuration option allows you to specify the SKY UX modules to import into your application. By default, the SPA imports the entire SKY UX library. The <stache-code>skyuxModules</stache-code> property allows you to optimize performance for an application that only uses a small subset of SKY UX components. For example, specifying modules can improve the performance of unit tests and speed up the reload time when running <stache-code>skyux serve</stache-code>.
+  </p>
+  <p>
+    To identify the modules for the SKY UX components that you use in your application, see <a routerLink="/components">the SKY UX components documentation</a>. The module that defines each component is listed at the top of the documentation for that component.
+  </p>
+  <p>
+    Keep in mind that this property does not reduce the code in your application’s JavaScript bundles. And it does not affect performance in production because applications are compiled “ahead-of-time” (AoT) and optimizations occur during the build step.
+  </p>
+
+  <stache-page-anchor>
+    <stache-code>testSettings</stache-code>
+  </stache-page-anchor>
+  <p>
+    The <stache-code>testSettings</stache-code> configuration option specifies settings for use during continuous integration testing. These properties are for internal Blackbaud use only.
+  </p>
+  <ul>
+    <li>
+      <p>
+        <stache-code>e2e</stache-code> — Specifies settings for end-to-end testing in the continuous integration framework.
+      </p>
+      <ul>
+        <li>
+          <p>
+            <stache-code>addin</stache-code> — Specifies that the SPA is running as an add-in within another SPA. This parameter is for internal Blackbaud use only, and it is primarily used to hide the omnibar.
+          </p>
+        </li>
+        <li>
+          <p>
+            <stache-code>browserSet</stache-code> — Specifies the set of browsers to use during continuous integration e2e testing. For Blackbaud developers, <a href="https://host.nxt.blackbaud.com/browserstack/learn/automated">the Browserstack documentation</a> describes the available values.
+          </p>
+        </li>
+        <li>
+          <p>
+            <stache-code>envid</stache-code> — Specifies the environment ID.
+          </p>
+        </li>
+        <li>
+          <p>
+            <stache-code>leid</stache-code> — Specifies the legal entity ID.
+          </p>
+        </li>
+        <li>
+          <p>
+            <stache-code>svcid</stache-code> — Specifies the service ID.
+          </p>
+        </li>
+      </ul>
     </li>
     <li>
       <p>
-        <stache-code>routes</stache-code> — Allows you to use the omnibar but still define navigation items. This property is for internal Blackbaud use only. For Blackbaud developers, the Engineering System website describes how to <a href="https://host.nxt.blackbaud.com/engineering-system-docs/learn/spa/spa-global-navigation">add your SPA to global navigation</a>.
+        <stache-code>unit</stache-code> — Specifies settings for unit testing in the continuous integration framework.
       </p>
-    </li>
-    <li>
-      <p>
-        <stache-code>skyuxModules</stache-code> — Allows you to specify the SKY UX modules to import into your application. By default, the SPA imports the entire SKY UX library. The <stache-code>skyuxModules</stache-code> property allows you to optimize performance for an application that only uses a small subset of SKY UX components. For example, specifying modules can improve the performance of unit tests and speed up the reload time when running <stache-code>skyux serve</stache-code>.
-      </p>
-      <p>
-        To identify the modules for the SKY UX components that you use in your application, see <a routerLink="/components">the SKY UX components documentation</a>. The module that defines each component is listed at the top of the documentation for that component. 
-      </p>
-      <p>
-        Keep in mind that this property does not reduce the code in your application’s JavaScript bundles. And it does not affect performance in production because applications are compiled “ahead-of-time” (AoT) and optimizations occur during the build step.
-      </p>
-    </li>
-    <li>
-      <p>
-        <stache-code>useHashRouting</stache-code> — Allows your SPA to use Angular's hash location strategy. For more information, see <a href="https://angular.io/guide/router#hashlocationstrategy">the Angular documentation</a>.
-      </p>
+      <ul>
+        <li>
+          <p>
+            <stache-code>browserSet</stache-code> — Specifies the set of browsers to use during continuous integration unit testing. For Blackbaud developers, <a href="https://host.nxt.blackbaud.com/browserstack/learn/automated">the Browserstack documentation</a> describes the available values.
+          </p>
+        </li>
+      </ul>
     </li>
   </ul>
+
+  <stache-page-anchor>
+    <stache-code>useHashRouting</stache-code>
+  </stache-page-anchor>
+  <p>
+    The <stache-code>useHashRouting</stache-code> configuration option allows your SPA to use Angular's hash location strategy. For more information, see <a href="https://angular.io/guide/router#hashlocationstrategy">the Angular documentation</a>.
+  </p>
 
 </stache>

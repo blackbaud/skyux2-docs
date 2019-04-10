@@ -2,7 +2,7 @@
   pageTitle="watch">
 
   <p>
-    <stache-code>skyux watch</stache-code> runs the <stache-code>test</stache-code> command and watches the file system for changes. The <stache-code>watch</stache-code> command monitors changes in much the same way as the <stache-code>serve</stache-code> command, but for testing, the <stache-code>watch</stache-code> command is always running, much like debug mode in Visual Studio. If you change a test, the window is watching that and runs the test. This command is useful when writing a bunch of tests.
+    <stache-code>skyux watch</stache-code> runs the <stache-code>test</stache-code> command and watches the file system for changes. The <stache-code>watch</stache-code> command monitors changes in much the same way as the <stache-code>serve</stache-code> command, but for testing, the <stache-code>watch</stache-code> command is always running, much like debug mode in Visual Studio. If you change a test, the window is watching that and runs the test. This command is useful when writing a bunch of tests. The <stache-code>skyux watch</stache-code> command also runs the <a href="https://palantir.github.io/tslint/">TSLint static analysis tool</a> to check the TypeScript code in the files in the <stache-code>src</stache-code> folder.
   </p>
 
   <stache-page-anchor>
@@ -10,6 +10,9 @@
   </stache-page-anchor>
 
   <ul>
+    <li><stache-include fileName="cli/coverage.html"></stache-include></li>
+    <li><stache-include fileName="cli/lint-fix.html"></stache-include></li>
+    <li><stache-include fileName="cli/lint-format.html"></stache-include></li>
     <li><stache-include fileName="cli/no-coverage.html"></stache-include></li>
   </ul>
 

@@ -3,7 +3,7 @@
   navTitle="Additional files"
   showTableOfContents="true"
   navOrder="1">
-  
+
   <stache-page-summary>
     <p>
       The SKY UX template provides the <stache-code>skyuxconfig.json</stache-code> file to specify configuration settings. In addition, you can create configuration files with the <stache-code>skyuxconfig.[COMMAND].json</stache-code> naming convention to apply configuration settings to specific <a routerLink="/learn/reference/cli-commands">SKY UX CLI commands</a>.
@@ -28,19 +28,19 @@
         <p>
           For example, you can specify a mock server URL to use when you run <stache-code>skyux test</stache-code>.
         </p>
-        <stache-code-block languageType="js">{
+        <sky-code-block languageType="js">{
   "appSettings": {
     "mockServerURL": "https://localhost:9000"
   }
 }
-      </stache-code-block>
+      </sky-code-block>
     </li>
     <li>
       <p>
         Save your changes. When you run SKY UX CLI commands, SKY UX automatically reads any files with the <stache-code>skyuxconfig.[COMMAND].json</stache-code> naming convention.
       </p>
       <p>
-        For example, SKY UX includes and merges the settings in <stache-code>skyuxconfig.test.json</stache-code> when you run <stache-code>skyux tests</stache-code>.
+        For example, SKY UX includes and merges the settings in <stache-code>skyuxconfig.test.json</stache-code> when you run <stache-code>skyux test</stache-code>.
       </p>
     </li>
   </ol>
@@ -62,7 +62,7 @@
     </li>
     <li>
       <p>
-        <stache-code>skyuxconfig.e2e.json</stache-code> — Specifies configuration settings for end-to-end tests, although SKY UX generally recommends using unit tests instead of end-to-end tests based on <a href="https://angular.io/guide/testing#why-not-rely-on-e2e-tests-of-dom-integration">Angular’s guidance on testing</a>.
+        <stache-code>skyuxconfig.e2e.json</stache-code> — Specifies configuration settings for end-to-end tests, although we recommend using unit tests instead of end-to-end tests based on <a href="https://angular.io/guide/testing#why-not-rely-on-e2e-tests-of-dom-integration">Angular’s guidance on testing</a>.
       </p>
     </li>
     <li>
@@ -83,14 +83,16 @@
   </ul>
 
   <stache-page-anchor>
-    Default <stache-code>svcid</stache-code> and <stache-code>envid</stache-code> for local development
+    Parameters
   </stache-page-anchor>
 
   <p>
-    If you need to track the <stache-code>svcid</stache-code> and <stache-code>envid</stache-code> querystring parameters and expose them through the <stache-code>SkyAppConfig</stache-code> for local development, we recommend creating a <stache-code>skyuxconfig.serve.json</stache-code> file and adding the <stache-code>svcid</stache-code> and <stache-code>envid</stache-code> settings to the <stache-code>params</stache-code> property. In addition, if you use the global nav exclusively and don’t want the local nav alongside it, you can set the <stache-code>routes</stache-code> property to <stache-code>false</stache-code>.
+    <a routerLink="/learn/reference/configuration">The <stache-code>params</stache-code> configuration property</a> allows you to specify querystring parameters to track and exposes them through <stache-code>SkyAppConfig</stache-code>. To apply parameters to specific SKY UX CLI commands or apply specific values to CLI commands, you can create <stache-code>skyuxconfig.[COMMAND].json</stache-code> files and add your querystring parameters to the <stache-code>params</stache-code> property.
   </p>
-
-  <stache-code-block>
+  <p>
+    For example, if you use a specific environment ID and service ID for testing, you can specify default <stache-code>svcid</stache-code> and <stache-code>envid</stache-code> values for local development in <stache-code>skyuxconfig.serve.json</stache-code>. This allows you to include the environment ID and service ID for testing when you serve without pasting the values in the URL. In addition, if you use the global nav exclusively and don’t want the local nav alongside it, you can set the <stache-code>routes</stache-code> property to <stache-code>false</stache-code>.
+  </p>
+  <sky-code-block>
 {
   "routes": false,
   "params": {
@@ -102,6 +104,28 @@
     }
   }
 }
-  </stache-code-block>
+  </sky-code-block>
+  <p>
+    The following code sample illustrates how you can use SKY UX Builder to track parameters in the URL and expose them through your app using the <stache-code>SkyAppConfig</stache-code> class:
+  </p>
+
+  <sky-code-block languageType="typescript">
+import { Component } from '@angular/core';
+import { SkyAppConfig } from '@skyux/config';
+
+@Component({
+  selector: 'my-home',
+  templateUrl: './home.component.html'
+})
+export class HomeComponent {
+  public envId: string;
+  constructor(skyAppConfig: SkyAppConfig) {
+    this.envId = skyAppConfig.params.get('envid');
+  }
+}
+  </sky-code-block>
+  <p>
+    For more information about <stache-code>envid</stache-code> and other querystring parameters, see <a routerLink="/learn/reference/configuration">the <stache-code>params</stache-code> configuration property</a>.
+  </p>
 
 </stache>

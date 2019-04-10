@@ -1,6 +1,6 @@
 <stache
-    layout="container"
-    pageTitle="Form design"
+    pageTitle="Form Design"
+    navTitle="Form design"
     showTableOfContents="true">
 		
 		<stache-page-summary>
@@ -52,6 +52,11 @@
 			<li>
 				<p>
 					Displaying the form inline would lead to substantial content shifting or require users to scroll to complete the form.
+				</p>
+			</li>
+			<li>
+				<p>
+					The form adds records from a paginated list or an infinite scroll list.
 				</p>
 			</li>
 		</ul>
@@ -284,7 +289,7 @@
 		<li>The HTML <stache-code>&lt;select&gt;</stache-code> field is effective when users are not sure of the exact value they are looking for and can select a single item from a moderately sized list of items.</li>
 		<li>The <a routerLink="/components/lookup">lookup component</a> provides a typeahead search input that is effective when users know what they are looking for and can select multiple items.</li>
 		<li><a routerLink="/components/radio">Radio buttons</a> are effective when users can select a single item from a short list of items.</li>
-		<li>The SKY UX select field (<a href="https://github.com/blackbaud/skyux2/pull/1496">this component is being developed</a>) provides a searchable, browsable, and filterable list of items that is effective when users are not sure of the exact value they are looking for within a long list of items.</li>
+		<li>The <a routerLink="/components/select-field">SKY UX select field</a> provides a searchable, browsable, and filterable list of items that is effective when users are not sure of the exact value they are looking for within a long list of items.</li>
 	</ul>
 	<p>
 		To provide a consistent experience when users select items from lists, follow these guidelines to determine which controls to use:
