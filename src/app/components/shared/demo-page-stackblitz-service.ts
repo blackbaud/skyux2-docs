@@ -20,7 +20,16 @@ export class SkyDemoPageStackBlitzService {
       elementOrId,
       this.getPayload(codeFiles),
       embedOptions
-    );
+    ).then(vm => {
+      vm.getFsSnapshot()
+        .then(fs => {
+          console.log(fs);
+        });
+      vm.getDependencies()
+        .then(deps => {
+          console.log(deps);
+        });
+    });
   }
 
   public openProject(codeFiles: SkyDemoPageCodeFile[]) {
@@ -30,19 +39,58 @@ export class SkyDemoPageStackBlitzService {
   }
 
   private getPayload(codeFiles: SkyDemoPageCodeFile[]) {
+    const angularVersion = '^7.0.0';
+    const dependencies = {
+      '@angular/animations': angularVersion,
+      '@angular/common': angularVersion,
+      '@angular/compiler': angularVersion,
+      '@angular/core': angularVersion,
+      '@angular/forms': angularVersion,
+      '@angular/http': angularVersion,
+      '@angular/platform-browser': angularVersion,
+      '@angular/platform-browser-dynamic': angularVersion,
+      '@angular/router': angularVersion,
+      '@blackbaud/auth-client': '^2.0.0',
+      '@skyux/assets': '^3.0.0',
+      '@skyux/avatar': '^3.0.0',
+      '@skyux/config': '^3.0.0',
+      '@skyux/core': '^3.0.0',
+      '@skyux/errors': '^3.0.0',
+      '@skyux/forms': '^3.0.0',
+      '@skyux/http': '^3.0.0',
+      '@skyux/i18n': '^3.0.0',
+      '@skyux/indicators': '^3.0.0',
+      '@skyux/layout': '^3.0.0',
+      '@skyux/modals': '^3.0.0',
+      '@skyux/navbar': '^3.0.0',
+      '@skyux/omnibar-interop': '^3.0.0',
+      '@skyux/router': '^3.0.0',
+      '@skyux/theme': '^3.0.0',
+      'core-js': '2.6.5',
+      'rxjs': '^6.0.0',
+      'rxjs-compat': '^6.0.0',
+      'tslib': '1.9.3',
+      'zone.js': '~0.8.28'
+    };
+
     const payload = {
-      files: this.getFiles(codeFiles),
+      files: this.getFiles(codeFiles, dependencies),
       title: 'SKY UX Demo',
       description: 'SKY UX Demo',
-      template: 'angular-cli'
+      template: 'angular-cli',
+      dependencies: dependencies
     };
 
     return payload;
   }
 
-  private getFiles(codeFiles: SkyDemoPageCodeFile[]) {
-    const angularVersion = '4.3.6';
-    const demoFolderName = '__demo-files__/';
+  private getFiles(
+    codeFiles: SkyDemoPageCodeFile[],
+    dependencies: any
+  ) {
+    const srcFolder = `src/`;
+    const appFolder = `${srcFolder}app/`;
+    const demoFolder = `demo/`;
 
     let declarations: string[] = [];
     let bootstrapSelectors: string[] = [];
@@ -51,13 +99,13 @@ export class SkyDemoPageStackBlitzService {
     let imports: string[] = [];
 
     for (let codeFile of codeFiles) {
-      files['app/' + codeFile.name] = codeFile.codeImports;
+      files[`${appFolder}${demoFolder}` + codeFile.name] = codeFile.codeImports;
 
       const componentName = codeFile.componentName;
 
       if (componentName) {
         imports.push(
-          `import { ${componentName} } from '../app/${codeFile.name}';`
+          `import { ${componentName} } from './${demoFolder}${codeFile.name}';`
         );
 
         declarations.push(componentName);
@@ -83,9 +131,41 @@ export class SkyDemoPageStackBlitzService {
 
  `;
 
-    files['index.html'] = `<sky-demo-app>loading...</sky-demo-app>`;
+    files['package.json'] = JSON.stringify({ dependencies }, undefined, 2);
+    files[`tsconfig.json`] = `{
+  "compilerOptions": {
+    "target": "es5",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "lib": [
+      "dom",
+      "es6"
+    ]
+  }
+}`;
 
-    files[`${demoFolderName}app.component.ts`] = `${banner}
+    files['angular.json'] = `{
+  "projects": {
+    "demo": {
+      "architect": {
+        "build": {
+          "options": {
+            "index": "src/index.html",
+            "styles": [
+              "src/styles.scss"
+            ]
+          }
+        }
+      }
+    }
+  }
+}`;
+    files[`${srcFolder}styles.scss`] = `@import '~@skyux/theme/css/sky';`;
+    files[`${srcFolder}index.html`] = `<sky-demo-app>loading...</sky-demo-app>`;
+
+    files[`${appFolder}app.component.ts`] = `${banner}
 import { Component } from '@angular/core';
 
 @Component({
@@ -94,11 +174,28 @@ import { Component } from '@angular/core';
 })
 export class AppComponent { }`;
 
-    files[`${demoFolderName}app.module.ts`] = `import { Component, NgModule } from '@angular/core';
+    // TODO: THIS FILE NEEDS THE MODULE + PACKAGE NAMES
+    files[`${appFolder}app-sky.module.ts`] = `import {
+  NgModule
+} from '@angular/core';
+
+import { SkyAlertModule } from '@skyux/indicators';
+import { SkyCheckboxModule } from '@skyux/forms';
+
+@NgModule({
+  exports: [
+    SkyAlertModule,
+    SkyCheckboxModule
+  ]
+})
+export class AppSkyModule { }
+`;
+
+    files[`${appFolder}app.module.ts`] = `import { Component, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { SkyModule } from '@blackbaud/skyux/dist/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AppSkyModule } from './app-sky.module.ts';
 
 ${imports.join('\n')}
 
@@ -108,7 +205,7 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     FormsModule,
-    SkyModule
+    AppSkyModule
   ],
   declarations: [
     AppComponent,
@@ -123,25 +220,16 @@ import { AppComponent } from './app.component';
 })
 export class AppModule { }`;
 
-    files[`${demoFolderName}polyfills.ts`] = `${banner}
+    files[`${srcFolder}polyfills.ts`] = `${banner}
 import 'core-js/es6/reflect';
 import 'core-js/es7/reflect';
 import 'zone.js/dist/zone';`;
 
-//     files['.angular-cli.json'] = `
-// {
-//   "apps": [{
-//     "styles": ["${demoFolderName}styles.css"]
-//   }]
-// }`;
-
-//     files[`${demoFolderName}styles.css`] = `@import '~@blackbaud/skyux/dist/css/sky';`;
-
-    files['main.ts'] = `${banner}
-import './${demoFolderName}polyfills';
+    files[`${srcFolder}main.ts`] = `${banner}
+import './polyfills';
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { AppModule } from './${demoFolderName}app.module';
+import { AppModule } from './app/app.module';
 
 platformBrowserDynamic().bootstrapModule(AppModule).then(ref => {
   if (window['ngRef']) {
@@ -151,27 +239,6 @@ platformBrowserDynamic().bootstrapModule(AppModule).then(ref => {
   window['ngRef'] = ref;
 }).catch(err => console.error(err));
 `;
-
-  files['package.json'] = JSON.stringify({
-    dependencies: {
-      '@angular/animations': angularVersion,
-      '@angular/common': angularVersion,
-      '@angular/compiler': angularVersion,
-      '@angular/compiler-cli': angularVersion,
-      '@angular/core': angularVersion,
-      '@angular/forms': angularVersion,
-      '@angular/http': angularVersion,
-      '@angular/platform-browser': angularVersion,
-      '@angular/platform-browser-dynamic': angularVersion,
-      '@angular/router': angularVersion,
-      '@blackbaud/skyux': '2.27.2',
-      'moment': '*',
-      '@skyux/l18n': '*',
-      'core-js': '2.4.1',
-      'rxjs': '5.4.3',
-      'zone.js': '0.8.10'
-    }
-  }, undefined, 2);
 
     return files;
   }

@@ -32,6 +32,8 @@ export class SkyDemoPageCodeComponent implements AfterViewInit {
 
     const items = this.getItems(this.componentsService.getComponents(), value);
 
+    console.log(items);
+
     items.map((item: SkyDemoComponent) => {
       this.codeFilesForBinding = item.getCodeFiles().map((codeFile: any) => {
         return new SkyDemoPageCodeFile(
@@ -44,7 +46,7 @@ export class SkyDemoPageCodeComponent implements AfterViewInit {
     });
   }
 
-  @ViewChild('embed')
+  @ViewChild('stackblitzEmbed')
   public embedRef: ElementRef;
 
   public get plunkerFiles(): any[] {
@@ -66,7 +68,7 @@ export class SkyDemoPageCodeComponent implements AfterViewInit {
       {
         openFile: this.codeFilesForBinding[0].name,
         height: 600,
-        hideDevTools: true
+        forceEmbedLayout: true
       }
     );
   }

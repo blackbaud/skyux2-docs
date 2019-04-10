@@ -4,6 +4,11 @@
   margin: 10px 0;
 }
 
+.stackblitz-wrapper ::ng-deep iframe {
+  border: 0;
+  margin: 10px 0;
+}
+
 .sky-demo-page-code-sample {
   @include sky-border(light, top, bottom, left, right);
   border-top: none;
