@@ -41,7 +41,7 @@
       <p>
         The following example shows an external with all the configuration options:
       </p>
-      <stache-code-block languageType="js">
+      <sky-code-block languageType="js">
   externals: {
     css: {
         before: [
@@ -75,7 +75,7 @@
         ]
     }
 }
-      </stache-code-block>
+      </sky-code-block>
     </li>
     <li>
       <p>
@@ -86,13 +86,13 @@
       <p>
         <stache-code>styles</stache-code> — Specifies CSS or SCSS files to bundle with the SPA. This property provides an array of <stache-code>string</stache-code> values that represent relative paths for CSS and SCSS files to include in the bundle. The paths are relative to the SPA's root directory.
       </p>
-      <stache-code-block>
+      <sky-code-block>
         "app": {
           "styles": [
             "src/styles/my-styles.scss"
           ]
         }
-      </stache-code-block>
+      </sky-code-block>
     </li>
     <li>
       <p>
@@ -147,7 +147,7 @@
     <stache-code>cssPath</stache-code>
   </stache-page-anchor>
   <p>
-    The <stache-code>cssPath</stache-code> configuration option specifies a path to reference CSS styles. This property is specific to the SKY UX docs site and is for internal Blackbaud use only. To bundle CSS or SCSS files with your SPA, use the <stache-code>styles</stache-code> property of <a stacheRouterLink="." fragment="app">the <stache-code>app</stache-code> configuration option</a> instead. 
+    The <stache-code>cssPath</stache-code> configuration option specifies a path to reference CSS styles. This property is specific to the SKY UX docs site and is for internal Blackbaud use only. To bundle CSS or SCSS files with your SPA, use the <stache-code>styles</stache-code> property of <a stacheRouterLink="." fragment="app">the <stache-code>app</stache-code> configuration option</a> instead.
   </p>
 
   <stache-page-anchor>
@@ -269,29 +269,29 @@
         <p>
           Parameters as an array of strings:
         </p>
-        <stache-code-block>
+        <sky-code-block>
         "params": [
           "param1",
           "param2"
         ]
-        </stache-code-block>
+        </sky-code-block>
       </li>
       <li>
         <p>
           Parameters as key-value pairs with boolean values:
         </p>
-        <stache-code-block>
+        <sky-code-block>
         "params": {
           "param3": true,
           "param4": true
         }
-        </stache-code-block>
+        </sky-code-block>
       </li>
       <li>
         <p>
           Parameters as objects with default values:
         </p>
-        <stache-code-block>
+        <sky-code-block>
         "params": {
           "param5": {
             "value": "value1"
@@ -300,7 +300,7 @@
             "value": "value2"
           }
         }
-        </stache-code-block>
+        </sky-code-block>
         <p>
           The <stache-code>value</stache-code> property specifies the default value of the parameter, but the query string or other future sources of parameter values can overwrite it at runtime. When using this format, you can also specify the <stache-code>required</stache-code> and <stache-code>excludeFromRequests</stache-code> parameters.
         </p>
@@ -369,12 +369,12 @@
   <p>
     The <stache-code>redirects</stache-code> configuration option specifies redirects for pages within an application. When a project's folder structure changes, you can specify redirects for the files that move so that existing links continue to work. In the <stache-code>redirects</stache-code> property, you create a comma-separated list where you specify the original paths followed by the redirect paths.
   </p>
-  <stache-code-block>
+  <sky-code-block>
   "redirects": {
     "old-folder-1/old-subfolder-1": "new-folder/new-subfolder-1",
     "old-folder-1/old-subfolder-2": "old-folder-1/old-subfolder-2/new-subfolder-2"
   }
-  </stache-code-block>
+  </sky-code-block>
 
   <stache-page-anchor>
     <stache-code>routes</stache-code>

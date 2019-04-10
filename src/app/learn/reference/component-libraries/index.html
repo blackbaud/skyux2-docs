@@ -21,9 +21,9 @@
   <p>
     To create a SKY UX library, you must first create a SPA for the library and specify a base template with a starter module for front-end libraries. From the SKY UX CLI, run <stache-code>skyux new</stache-code> and use the <stache-code>--template</stache-code> option to specify the <stache-code>library</stache-code> template. This creates a SPA with the library template and places source files in <stache-code>/src/app/public</stache-code>.
   </p>
-  <stache-code-block>
+  <sky-code-block>
     skyux new --template library
-  </stache-code-block>
+  </sky-code-block>
   <p>
     After you specify the library template, follow the usual steps <a routerLink="/learn/get-started/basics/create-project">to set up a local SKY UX application</a>.
   </p>
@@ -47,15 +47,15 @@
       <p>
         The <stache-code>name</stache-code> property in <stache-code>skyuxconfig.json</stache-code> specifies the name of the project when running in SKY UX Host. You must update this property to the name of your library. For more information about configuration options, see the <a routerLink="/learn/reference/configuration">configuration options reference</a>.
       </p>
-      <stache-code-block>
+      <sky-code-block>
         "name": "your-library"
-      </stache-code-block>
+      </sky-code-block>
     </li>
     <li>
       <p>
         The <stache-code>app-extras.module.ts</stache-code> file in <stache-code>/src/app</stache-code> handles tasks such as registering providers and entry components, and SKY UX Builder automatically imports it into the build process. You must import and export your module in this file.
       </p>
-      <stache-code-block>
+      <sky-code-block>
 import { NgModule } from '@angular/core';
 
 import { YourModule } from './public';
@@ -71,7 +71,7 @@ import { YourModule } from './public';
   declarations: []
 })
 export class AppExtrasModule { }
-      </stache-code-block>
+      </sky-code-block>
     </li>
   </ul>
 
@@ -82,9 +82,9 @@ export class AppExtrasModule { }
   <p>
     After you create your library, you are ready to bundle it into a consumable NPM module that you can publish to an NPM stream such as <a href="https://www.npmjs.com/">npmjs.org</a>. From the SKY UX CLI, run <stache-code>skyux build-public-library</stache-code>.
   </p>
-  <stache-code-block>
+  <sky-code-block>
     skyux build-public-library
-  </stache-code-block>
+  </sky-code-block>
   <p>
     This creates a bundle that is NPM-ready and places it in a <stache-code>/dist</stache-code> directory. It bundles the library's components and services in <stache-code>/src/app/public</stache-code> and ignores all other files, but it does not publish the component library.
   </p>
@@ -107,7 +107,7 @@ export class AppExtrasModule { }
   <p>
     After you publish a front-end library, other SKY UX SPAs can install it. To consume a SKY UX library, import the library into your SPA through <stache-code>/app/src/app-extras.module.ts</stache-code>
   </p>
-  <stache-code-block languageType="typescript">
+  <sky-code-block languageType="typescript">
     import { NgModule } from '@angular/core';
 
     import { LibraryModule } from 'my-component-library';
@@ -121,7 +121,7 @@ export class AppExtrasModule { }
       ]
     })
     export class AppExtrasModule { }
-  </stache-code-block>
+  </sky-code-block>
 
   <stache-page-anchor>
     Provide configuration for the library
@@ -130,7 +130,7 @@ export class AppExtrasModule { }
   <p>
     You can provide configuration for the library through the <stache-code>skyuxconfig.json</stache-code> file in the project's directory. In this file, the <stache-code>appSettings</stache-code> property specifies data that is available for reuse throughout the application, and you can use it to add any properties that are necessary for the library.
   </p>
-  <stache-code-block languageType="json">
+  <sky-code-block languageType="json">
     {
       "appSettings": {
         "myLibrary": {
@@ -139,11 +139,11 @@ export class AppExtrasModule { }
         }
       }
     }
-  </stache-code-block>
+  </sky-code-block>
   <p>
     After you add properties through <stache-code>appSettings</stache-code> for the library, you can access them in your components and services by injecting <stache-code>SkyAppConfig</stache-code> from <stache-code>@skyux/config</stache-code>.
   </p>
-  <stache-code-block languageType="typescript">
+  <sky-code-block languageType="typescript">
     import { SkyAppConfig } from '@skyux/config';
 
     @Component({ ... })
@@ -167,6 +167,6 @@ export class AppExtrasModule { }
         console.log(this.config.foo); // "bar"
       }
     }
-  </stache-code-block>
+  </sky-code-block>
 
 </stache>
