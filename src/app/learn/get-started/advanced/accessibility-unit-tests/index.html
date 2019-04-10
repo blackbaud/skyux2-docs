@@ -25,7 +25,7 @@
     To install the testing library, open the command prompt, <stache-code>cd</stache-code> into your SPA's directory, and run:
   </p>
   <sky-code-block>
-    npm install @blackbaud/skyux-sdk-testing --save-dev --save-exact
+    npm install @skyux-sdk/testing --save-dev --save-exact
   </sky-code-block>
   <p>
     By default, the <stache-code>SkyA11yAnalyzerConfig</stache-code> interface specifies <a href="https://github.com/blackbaud/skyux-sdk-testing/blob/master/src/app/public/a11y/a11y-analyzer.ts">configuration settings for <stache-code>toBeAccessible</stache-code> to indicate which accessibility checks to run</a>. To overwrite the default acccessibility checks, you can modify <a stacheRouterLink="." fragment="specify-parameters-for-tobeaccessible">a parameter for the <stache-code>toBeAccessible</stache-code> matcher</a>.
@@ -42,7 +42,7 @@
   <sky-code-block>
     import {
       expect
-    } from '@blackbaud/skyux-sdk-testing';
+    } from '@skyux-sdk-/testing';
   </sky-code-block>
   <p>
     After you import <stache-code>expect</stache-code> function, you can use it to run accessibility tests for components. For components that change state, you can insert the function into existing <stache-code>it</stache-code> blocks. And for components that don't change state, the function can stand alone to run accessibility checks from its own <stache-code>it</stache-code> block.
