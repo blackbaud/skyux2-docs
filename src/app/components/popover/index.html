@@ -17,16 +17,16 @@
 		tabHeading="Design">
 	
 		<sky-demo-page-content sectionHeading="Usage">
-			<p>Popovers display small chunks of contextual content that do not always need to be visible.</p>
-
 			<h3>Use when</h3>
-			<ul>
-				<li>Users select a button or link to display the popover, and the interaction does not change the system state.</li>
-				<li>The popover content directly relates to the user's current task.</li>
-				<li>The popover content does not require scrolling on a mobile device.</li>
-			</ul>
+				<ul>
+					<li>You need to give users access to small pieces of contextual content that are not always valuable to see.</li>
+					<li>You need to guide users toward subtle-but-important elements when tasks include complex or unfamiliar capabilities.</li>
+				</ul>
 			<h3>Don't use when</h3>
-			<p>If the content is valuable to see most of the time, use <a routerLink="/design/guidelines/user-assistance" fragment="persistent-inline-help">presistent inline help</a> instead. If the amount of content requires scrolling on a mobile device, use a <a routerLink="/components/flyout">flyout</a> instead.</p>
+				<ul>
+					<li>The content is valuable to see most of the time. Use <a routerLink="/design/guidelines/user-assistance" fragment="persistent-inline-help">presistent inline help</a> instead.</li>
+					<li>You need to show a large amount of content. Use a <a routerLink="/components/flyout">flyout</a> instead.</li>
+				</ul>
 		</sky-demo-page-content>
 		
 		<sky-demo-page-content sectionHeading="Anatomy">
@@ -54,7 +54,7 @@
 				</div>
 				<div class="two-col-image">
 					<div class="screenshot">
-						<img src="~/assets/img/guidelines/tab/option-count.png" />
+						<img src="~/assets/img/guidelines/popover/option-position.png" />
 					</div>
 				</div>
 			</div>
@@ -62,15 +62,15 @@
 			<div class="two-col-right-image sky-margin-stacked-separate">
 				<div class="two-col-text">
 					<p>
-						To ensure usability on touch devices, you should trigger user-invoked popovers on <stache-code>click</stache-code> rather than <stache-code>mouseenter</stache-code>.
+						To ensure usability on touch devices, trigger user-invoked popovers on <stache-code>click</stache-code> rather than <stache-code>mouseenter</stache-code>.
 					</p>
 					<p>
-						You can programatically invoke popovers, for example the first time a user visits a page to call out an important interface element that is easily overlooked.
+						You can programatically invoke popovers, for example the first time a user visits a page to call out an important interface element that is easily overlooked. However, don't programatically invoke more than one popover on a page or they will lose effectiveness at drawing attention.
 					</p>
 				</div>
 				<div class="two-col-image">
 					<div class="screenshot">
-						<img src="~/assets/img/guidelines/tab/option-count.png" />
+						
 					</div>
 				</div>
 			</div>
@@ -96,17 +96,56 @@
 		</sky-demo-page-content>
 		
 		<sky-demo-page-content sectionHeading="Content">
-			
+			<div class="two-col-right-image sky-margin-stacked-separate">
+				<div class="two-col-text">
+					<p>
+						Keep the amount of content in a popover small. The content can be simple text or formatted HTML.
+					</p>
+					<p>
+						Don't include too much content, form inputs or complex interactions.
+					</p>
+				</div>
+				<div class="two-col-image">
+					<div class="screenshot screenshot-success sky-margin-stacked-content-section">
+						<img src="~/assets/img/guidelines/popover/content-simple.png" />
+						<div class="caption sky-text-success">You can use small amounts of plain text content.</div>
+					</div>
+					<div class="screenshot screenshot-success sky-margin-stacked-content-section">
+						<img src="~/assets/img/guidelines/popover/content-html.png" />
+						<div class="caption sky-text-success">You can use small amounts of formatted HTML content.</div>
+					</div>
+					<div class="screenshot screenshot-danger">
+						<img class="bordered" src="~/assets/img/guidelines/popover/content-dont-overload.png" />
+						<div class="caption sky-text-danger">Don't include large amounts of content.</div>
+					</div>
+				</div>
+			</div>
 		</sky-demo-page-content>
 		
 		<sky-demo-page-content sectionHeading="Layout">
-			
+			<div class="two-col-right-image sky-margin-stacked-separate">
+				<div class="two-col-text">
+					<p>In most cases, use the default “above” placement for Popovers. This minimizes the chances that the Popover will obscure content that a user hasn’t seen yet or will interact with next.</p>
+					<p>Use other placement options if the trigger for the Popover will be close to the edge of the display. Choose a placement that will obscure as little other content as possible.</p>
+				</div>
+				<div class="two-col-image">
+					<div class="screenshot sky-margin-stacked-content-section">
+						<img src="~/assets/img/guidelines/popover/layout-alternate.png" />
+					</div>
+				</div>
+			</div>
 		</sky-demo-page-content>			
 			
 		<sky-demo-page-content sectionHeading="Related content">
+			<h3>Components</h3>
+			<ul>
+				<li><a routerLink="/components/help-inline">Flyout</a></li>
+				<li><a routerLink="/components/help-inline">Inline help</a></li>
+			</ul>
 			<h3>Guidelines</h3>
 			<ul>
 				<li><a routerLink="/design/guidelines/content-containers">Content containers</a></li>
+				<li><a routerLink="/design/guidelines/user-assistance">User assistance</a></li>
 			</ul>
 		</sky-demo-page-content>
 		

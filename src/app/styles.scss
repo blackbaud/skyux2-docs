@@ -207,9 +207,15 @@ img.bordered {
 	
 	.two-col-image {
 		flex: 0;
-		//display: flex;
+		display: flex;
+		flex-wrap: wrap;
 		
-		img{
+		> * {
+			flex: 0;
+		}
+		
+		> :not(:last-child) {
+			margin-right: 30px;
 		}
 	}
 }
