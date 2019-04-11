@@ -464,7 +464,7 @@ export class SkyDemoComponentsService {
         // tslint:disable-next-line
         summary: `The text expand repeater component truncates a list of items and initially displays a limited number of items.`,
         url: '/components/text-expand-repeater',
-        getCodeFiles: () => this.getDemoFiles('SkyTextExpandDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('SkyTextExpandRepeaterDemoComponent')
       },
       {
         name: 'Tile',
