@@ -32,8 +32,6 @@ export class SkyDemoPageCodeComponent implements AfterViewInit {
 
     const items = this.getItems(this.componentsService.getComponents(), value);
 
-    console.log(items);
-
     items.map((item: SkyDemoComponent) => {
       this.codeFilesForBinding = item.getCodeFiles().map((codeFile: any) => {
         return new SkyDemoPageCodeFile(
