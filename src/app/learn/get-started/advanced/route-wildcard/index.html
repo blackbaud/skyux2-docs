@@ -1,5 +1,6 @@
 <stache
-  pageTitle="Route wildcard"
+  pageTitle="Route Wildcards"
+  navTitle="Route wildcards"
   showTableofContents="true">
 
   <stache-page-summary>
@@ -12,22 +13,22 @@
     To customize the wildcard route, you can create a <stache-code>not-found.component.ts</stache-code> file in <stache-code>src/app</stache-code>, import the <stache-code>Component</stache-code> class from Angular to provide functionality to the component, define the template for the component, and export the <stache-code>NotFoundComponent</stache-code> component class:
   </p>
 
-  <stache-code-block languageType="typescript">
+  <sky-code-block languageType="typescript">
 import { Component } from '@angular/core';
 
 @Component({
   templateUrl: './not-found.component.html'
 })
 export class NotFoundComponent {}
-  </stache-code-block>
+  </sky-code-block>
 
   <p>
     You can then create a <stache-code>not-found.component.html</stache-code> file in <stache-code>src/app</stache-code> and provide the content for the wildcard route to display:
   </p>
 
-  <stache-code-block languageType="markup">
+  <sky-code-block languageType="markup">
 This is my custom 404 page.
-  </stache-code-block>
+  </sky-code-block>
 
   <p>
     Please note that while the filename is technically not important to this functionality, the component name is crucial. The component must export <stache-code>NotFoundComponent</stache-code>.

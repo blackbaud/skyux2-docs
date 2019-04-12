@@ -1,5 +1,6 @@
 <stache
-  pageTitle="Static assets"
+  pageTitle="Static Assets"
+  navTitle="Static assets"
   showTableOfContents="true">
 
   <stache-page-summary>
@@ -7,7 +8,7 @@
       To include static assets such as images in your SPA, you place them in the <stache-code>assets</stache-code> folder in the <stache-code>src</stache-code> directory. You can then reference the files in your HTML, CSS, or SCSS. If you need programmatic access to the files, you can use the <stache-code>SkyAppAssetsService</stache-code>. For more information about static assets, see the <stache-code>src/assets</stache-code> entry in <a routerLink="/learn/reference/naming-and-placement">the file name and placement reference.
     </p>
   </stache-page-summary>
-  
+
   <stache-page-anchor>
     Include a static asset on a page
   </stache-page-anchor>
@@ -28,15 +29,15 @@
       <p>
         For example, you can display an image on a page.
       </p>
-      <stache-code-block>
+      <sky-code-block>
         <p>
           <img src="&#126;/assets/img/example.jpg" alt="Photo" />
         </p>
-      </stache-code-block>
+      </sky-code-block>
       <p>
         Or you can insert an image in the background.
       </p>
-      <stache-code-block languageType="typescript">
+      <sky-code-block languageType="typescript">
         <div [ngStyle]="{
           'background-image': 'url(&#126;/assets/img/example.jpg)',
           'height': '500px',
@@ -44,7 +45,7 @@
         }">
           Foreground content goes here
         </div>
-      </stache-code-block>
+      </sky-code-block>
     </li>
   </ol>
 
@@ -53,7 +54,7 @@
   </stache-page-anchor>
 
   <p>
-    For programmatic access to static assets during runtime outside of your template, you can use the <stache-code>SkyAppAssetsService</stache-code>. The service's only method is <stache-code>getUrl</stache-code>, which takes a string value with the path and file name, relative to the <stache-code>assets</stache-code> folder. 
+    For programmatic access to static assets during runtime outside of your template, you can use the <stache-code>SkyAppAssetsService</stache-code>. The service's only method is <stache-code>getUrl</stache-code>, which takes a string value with the path and file name, relative to the <stache-code>assets</stache-code> folder.
   </p>
   <ol>
     <li>
@@ -65,25 +66,25 @@
       <p>
         In the file where you want to access the static asset, import <stache-code>SkyAppAssetsService</stache-code>.
       </p>
-      <stache-code-block languageType="typescript">
+      <sky-code-block languageType="typescript">
         import { SkyAppAssetsService } from '@skyux/assets;
-      </stache-code-block>
+      </sky-code-block>
     </li>
     <li>
       <p>
         In the <stache-code>getUrl</stache-code> method, specify the path and file name for the static asset.
       </p>
-      <stache-code-block>
+      <sky-code-block>
         skyAppAssetsService.getUrl('json/example.json')
-      </stache-code-block>
+      </sky-code-block>
       <p>
         For example, you can use the <stache-code>SkyAppAssetsService</stache-code> to display data from a JSON file.
       </p>
-      <stache-code-block languageType="typescript">
+      <sky-code-block languageType="typescript">
         import { Component } from '@angular/core';
         import { Http } from '@angular/http';
         import { SkyAppAssetsService } from '@skyux/assets;
-        
+
         @Component({
           selector: 'my-home',
           templateUrl: './home.component.html'
@@ -100,9 +101,9 @@
               });
           }
         }
-      </stache-code-block>
+      </sky-code-block>
     </li>
   </ol>
 
-  
+
 </stache>
