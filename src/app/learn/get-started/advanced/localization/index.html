@@ -4,13 +4,141 @@
 
   <stache-page-summary>
     <p>
-      SKY UX Builder provides two methods for localization, <stache-code>skyAppResources</stache-code> for SPAs and <stache-code>skyLibResources</stache-code> for libraries. 
+      SKY UX Builder provides two methods for localization, <stache-code>skyLibResources</stache-code> for libraries and <stache-code>skyAppResources</stache-code> for SPAs. 
     </p>
   </stache-page-summary>
 
   <sky-alert alertType="info">
     SKY UX Builder version <stache-code>1.14</stache-code> or later is required for a library to provide its own resource files. The consuming SPA must also be on version <stache-code>1.14</stache-code> or later.
   </sky-alert>
+
+<stache-page-anchor>
+  Localization for libraries
+</stache-page-anchor>
+
+<p>
+  Localization strings for libraries must be set when publishing to NPM because they are not fetched at runtime as they are for SPAs. 
+</p>
+
+<h3>
+  Install the plugin
+</h3>
+
+<ol>
+  <li>
+    <p>
+      Install the SKY UX builder plugin.
+    </p>
+      <sky-code-block>
+        npm install --save-dev --save-exact @skyux-sdk/builder-plugin-skyux
+      </sky-code-block>
+    </li>
+  <li>
+    <p>
+      Add the plugin to your <stache-code>skyuxconfig.json file</stache-code>.
+    </p>
+      <sky-code-block>
+        {
+          "plugins": [
+            "@skyux-sdk/builder-plugin-skyux"
+          ]
+        }  
+      </sky-code-block>
+  </li>
+</ol>
+
+<h3>
+  Create a resources provider
+</h3>
+
+  <ol>
+    <li>
+      <p>
+        Create a new directory named <stache-code>plugin-resources</stache-code> in <stache-code>./src/app/public/plugin-resources</stache-code>. The name and location of the directory are important.
+      </p>
+    </li>
+    <li>
+      <p>
+        Inside the <stache-code>plugin-resources</stache-code> directory, create a new file named <stache-code>my-library-resources-provider.ts</stache-code> and replace <stache-code>my-library</stache-code> with the name of your library. In the sample below, replace <stache-code>MyLibrary</stache-code> with the name of your library.
+      </p>
+    </li>
+
+    <sky-code-block languageType="typescript">
+      import {
+        SkyAppLocaleInfo,
+        SkyLibResourcesProvider
+      } from '@skyux/i18n';
+
+      export class MyLibraryResourcesProvider implements SkyLibResourcesProvider {
+        public getString: (localeInfo: SkyAppLocaleInfo, name: string) => string;
+      }
+  </sky-code-block>
+
+  </ol>
+
+  <h3>
+    Create a resources module
+  </h3>
+
+  <p>
+    The resources module will be shared by all modules in your library that need access to locale resources strings.
+  </p>
+
+  <p>
+    In a shared type directory, create a new Angular module with the content below. Replace <stache-code>MyLibrary</stache-code> with the name of your library.
+  </p>
+
+  <sky-code-block languageType="typescript">
+    import {
+      NgModule
+    } from '@angular/core';
+
+    import {
+      SkyI18nModule,
+      SKY_LIB_RESOURCES_PROVIDERS
+    } from '@skyux/i18n';
+
+    import {
+      MyLibraryResourcesProvider
+    } from '../../plugin-resources/my-library-resources-provider';
+
+    @NgModule({
+      providers: [{
+        provide: SKY_LIB_RESOURCES_PROVIDERS,
+        useClass: MyLibraryResourcesProvider,
+        multi: true
+      }],
+      exports: [
+        SkyI18nModule
+      ]
+    })
+    export class MyLibraryResourcesModule { }
+  </sky-code-block>
+
+  <h3>
+    Additional Setup
+  </h3>
+
+  <p>
+    Import the new <stache-code>MyLibraryResourcesModule</stache-code> into modules requiring access to locale resource strings. This allows the module to use the <stache-code>skyLibResources</stache-code> pipe and the <stache-code>SkyLibResourcesService</stache-code>.
+  </p>
+
+  <stache-code-block languageType="typescript">
+    import {
+      MyLibraryResourcesModule
+    } from './shared/my-library-resources.module';
+
+    @NgModule({
+      // ...
+
+      imports: [
+        SkyLibraryResourcesModule
+      ]
+
+      // ...
+    })
+    export class MyLibrarySomeOtherModule { }
+  </stache-code-block>
 
   <stache-page-anchor>
     Localization for SPAs
@@ -170,133 +298,5 @@ export class TestLocaleProvider extends SkyAppLocaleProvider {
   }
 }
   </sky-code-block>
-
-<stache-page-anchor>
-  Localization for libraries
-</stache-page-anchor>
-
-<p>
-  Localization strings for libraries must be set when publishing to NPM because they are not fetched at runtime as they are for SPAs. 
-</p>
-
-<h3>
-  Install the plugin
-</h3>
-
-<ol>
-  <li>
-    <p>
-      Install the SKY UX builder plugin.
-    </p>
-      <sky-code-block>
-        npm install --save-dev --save-exact @skyux-sdk/builder-plugin-skyux
-      </sky-code-block>
-    </li>
-  <li>
-    <p>
-      Add the plugin to your <stache-code>skyuxconfig.json file</stache-code>.
-    </p>
-      <sky-code-block>
-        {
-          "plugins": [
-            "@skyux-sdk/builder-plugin-skyux"
-          ]
-        }  
-      </sky-code-block>
-  </li>
-</ol>
-
-<h3>
-  Create a resources provider
-</h3>
-
-  <ol>
-    <li>
-      <p>
-        Create a new directory named <stache-code>plugin-resources</stache-code> in <stache-code>./src/app/public/plugin-resources</stache-code>. The name and location of the directory are important.
-      </p>
-    </li>
-    <li>
-      <p>
-        Inside the <stache-code>plugin-resources</stache-code> directory, create a new file named <stache-code>my-library-resources-provider.ts</stache-code> and replace <stache-code>my-library</stache-code> with the name of your library. In the sample below, replace <stache-code>MyLibrary</stache-code> with the name of your library.
-      </p>
-    </li>
-
-    <sky-code-block languageType="typescript">
-      import {
-        SkyAppLocaleInfo,
-        SkyLibResourcesProvider
-      } from '@skyux/i18n';
-
-      export class MyLibraryResourcesProvider implements SkyLibResourcesProvider {
-        public getString: (localeInfo: SkyAppLocaleInfo, name: string) => string;
-      }
-  </sky-code-block>
-
-  </ol>
-
-  <h3>
-    Create a resources module
-  </h3>
-
-  <p>
-    The resources module will be shared by all modules in your library that need access to locale resources strings.
-  </p>
-
-  <p>
-    In a shared type directory, create a new Angular module with the content below. Replace <stache-code>MyLibrary</stache-code> with the name of your library.
-  </p>
-
-  <sky-code-block languageType="typescript">
-    import {
-      NgModule
-    } from '@angular/core';
-
-    import {
-      SkyI18nModule,
-      SKY_LIB_RESOURCES_PROVIDERS
-    } from '@skyux/i18n';
-
-    import {
-      MyLibraryResourcesProvider
-    } from '../../plugin-resources/my-library-resources-provider';
-
-    @NgModule({
-      providers: [{
-        provide: SKY_LIB_RESOURCES_PROVIDERS,
-        useClass: MyLibraryResourcesProvider,
-        multi: true
-      }],
-      exports: [
-        SkyI18nModule
-      ]
-    })
-    export class MyLibraryResourcesModule { }
-  </sky-code-block>
-
-  <h3>
-    Additional Setup
-  </h3>
-
-  <p>
-    Import the new <stache-code>MyLibraryResourcesModule</stache-code> into modules requiring access to locale resource strings. This allows the module to use the <stache-code>skyLibResources</stache-code> pipe and the <stache-code>SkyLibResourcesService</stache-code>.
-  </p>
-
-  <stache-code-block languageType="typescript">
-    import {
-      MyLibraryResourcesModule
-    } from './shared/my-library-resources.module';
-
-    @NgModule({
-      // ...
-
-      imports: [
-        SkyLibraryResourcesModule
-      ]
-
-      // ...
-    })
-    export class MyLibrarySomeOtherModule { }
-  </stache-code-block>
 
 </stache>
