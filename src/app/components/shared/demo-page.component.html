@@ -1,5 +1,6 @@
 <stache
   layout="container"
+  showTableOfContents="true"
   [pageTitle]="pageTitle">
 
   <stache-page-summary>
@@ -18,10 +19,6 @@
     <ng-content select="sky-demo-page-summary"></ng-content>
   </stache-page-summary>
 
-  <stache-table-of-contents
-    [routes]="tableOfContentsRoutes">
-  </stache-table-of-contents>
-
   <ng-container *ngIf="npmInstall">
     <stache-page-anchor>
       Installation
@@ -29,7 +26,7 @@
     <p>
       To use any exports from <span *ngFor="let moduleName of skyuxModulesForDisplay"><stache-code>{{ moduleName }}</stache-code></span>, you must install it as a dependency to your project. In the command prompt, run the following command from your SPA's root directory:
     </p>
-    <stache-code-block [code]="npmInstall"></stache-code-block>
+    <sky-code-block [code]="npmInstall"></sky-code-block>
     <p>
       After installation, you need to make any exports from <span *ngFor="let moduleName of skyuxModulesForDisplay"><stache-code>{{ moduleName }}</stache-code></span> available to your SPA by adding the module to the <stache-code>exports</stache-code> section of your SPA's main module. If you are using the SKY UX SDK, add <span *ngFor="let moduleName of skyuxModulesForDisplay"><stache-code>{{ moduleName }}</stache-code></span> as an export in your <stache-code>app-extras.module.ts</stache-code> file.
     </p>

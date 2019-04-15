@@ -12,19 +12,19 @@
   <stache-page-anchor>
     Configure pact settings
   </stache-page-anchor>
-  
+
   <p>
     The first step to implement pact testing for a SPA is to specify configuration options <a routerLink="/learn/reference/configuration">with the <stache-code>pacts</stache-code> property in the <stache-code>skyuxconfig.json</stache-code> file</a>. In this property, you create a separate entry for each provider to test. Settings are generally the same for each entry except for the <stache-code>provider</stache-code> setting. When you run <stache-code>skyux pact</stache-code>, the command reads the <stache-code>pacts</stache-code> setting and spins up an individual pact server for each provider service that you specify.
   </p>
   <p>
-    For each service provider that you need to configure settings for, you can include the following properties: 
+    For each service provider that you need to configure settings for, you can include the following properties:
   </p>
   <ul>
     <li>
       <p>
         To specify the consumer and provider of a service, add the <stache-code>consumer</stache-code> and <stache-code>provider</stache-code> settings. The provider is the service that exposes an API, while the consumer is the component or service in the SPA that calls the provider's API.
       </p>
-      <stache-code-block>
+      <sky-code-block>
         {
           "pacts": [
             {
@@ -33,13 +33,13 @@
             }
           ]
         }
-      </stache-code-block>
+      </sky-code-block>
     </li>
     <li>
       <p>
         To specify a host and port to use for pact tests, add the <stache-code>host</stache-code> and <stache-code>port</stache-code> settings. By default, the host is <stache-code>localhost</stache-code> and SKY UX Builder dynamically finds the next available port.
       </p>
-      <stache-code-block>
+      <sky-code-block>
         {
           "pacts": [
             {
@@ -50,13 +50,13 @@
             }
           ]
         }
-      </stache-code-block>
+      </sky-code-block>
     </li>
     <li>
       <p>
         To specify a directory for the pact file that the pact server generates to describe the behaviors that the consumer expects from the provider service, add the <stache-code>dir</stache-code> setting. By default, the pact server stores the JSON file in the <stache-code>app/pacts</stache-code> directory.
       </p>
-      <stache-code-block>
+      <sky-code-block>
         {
           "pacts": [
             {
@@ -68,7 +68,7 @@
             }
           ]
         }
-        </stache-code-block>
+        </sky-code-block>
     <li>
       <p>
         Configure the log file as necessary:
@@ -88,7 +88,7 @@
           </p>
         </li>
       </ul>
-      <stache-code-block>
+      <sky-code-block>
         {
           "pacts": [
             {
@@ -103,7 +103,7 @@
             }
           ]
         }
-        </stache-code-block>
+        </sky-code-block>
     </li>
   </ul>
   <p>
@@ -129,19 +129,19 @@
   <ul>
     <li>
       <p>
-        To create the pact test, add a new file with a filename that ends with <stache-code>.pact-spec.ts</stache-code>. SKY UX automatically configures Karma to run pact tests in the <stache-code>src/app</stache-code> folder that match the <stache-code>.pact-spec.ts</stache-code> pattern. We recommend that SKY UX pact tests use the same name as the components or services where they test integration with consumed services and that you place the spec files in the same folder as the components or services that they test. 
+        To create the pact test, add a new file with a filename that ends with <stache-code>.pact-spec.ts</stache-code>. SKY UX automatically configures Karma to run pact tests in the <stache-code>src/app</stache-code> folder that match the <stache-code>.pact-spec.ts</stache-code> pattern. We recommend that SKY UX pact tests use the same name as the components or services where they test integration with consumed services and that you place the spec files in the same folder as the components or services that they test.
       </p>
     </li>
     <li>
       <p>
         In the pact test file, create a <stache-code>beforeAll</stache-code> block. Within the <stache-code>beforeAll</stache-code> block, import <stache-code>SkyAppTestModule</stache-code> and provide access to <stache-code>SkyPactService</stache-code>. <stache-code>SkyPactService</stache-code> allows you to interact with the pact server from within a unit test, which allows you to test endpoints without end-to-end tests.
       </p>
-      <stache-code-block>
+      <sky-code-block>
         TestBed.configureTestingModule({
           imports: [SkyAppTestModule]
           });
           skyPactService = TestBed.get(SkyPactService);
-      </stache-code-block>
+      </sky-code-block>
       <p>
         With the <stache-code>beforeAll</stache-code> block in place, you can call <stache-code>skyPactService.addInteraction(&#123;provider-name-here}, &#123;})</stache-code>.</p>
       <p>
@@ -160,7 +160,7 @@
           <p>
             Call the <stache-code>addInteraction</stache-code> method with an input similar to this:
           </p>
-          <stache-code-block>
+          <sky-code-block>
             {
               uponReceiving: '{description}',
               state: `{provider_state}`,
@@ -179,7 +179,7 @@
                 }
               }
             }
-          </stache-code-block>
+          </sky-code-block>
         </li>
         <li>
           <p>
@@ -208,7 +208,7 @@
     After you create your pact tests, the next step is to run the tests from the SKY UX CLI to confirm integration between provider services and your SPA. From the command prompt, navigate to your SPA's directory and run <a routerLink="/learn/reference/cli-commands/pact">the <stache-code>skyux pact</stache-code> command</a>.
   </p>
   <p>
-    SKY UX automatically configures Karma to run all pact tests in the <stache-code>src/app</stache-code> folder that match the <stache-code>.pact-spec.ts</stache-code> pattern. The <stache-code>pact</stache-code> command spins up an individual pact server for each provider, as well as one for the proxy server. The proxy server takes requests from the browser that runs in the host and port specified in your configuration settings, and it changes the CORS headers to the <stache-code>url</stache-code> value in the <stache-code>host</stache-code> property of <stache-code>skyuxconfig.json</stache-code>, which defaults to <stache-code>https://host.nxt.blackbaud.com</stache-code>. 
+    SKY UX automatically configures Karma to run all pact tests in the <stache-code>src/app</stache-code> folder that match the <stache-code>.pact-spec.ts</stache-code> pattern. The <stache-code>pact</stache-code> command spins up an individual pact server for each provider, as well as one for the proxy server. The proxy server takes requests from the browser that runs in the host and port specified in your configuration settings, and it changes the CORS headers to the <stache-code>url</stache-code> value in the <stache-code>host</stache-code> property of <stache-code>skyuxconfig.json</stache-code>, which defaults to <stache-code>https://host.nxt.blackbaud.com</stache-code>.
   </p>
 
 </stache>
