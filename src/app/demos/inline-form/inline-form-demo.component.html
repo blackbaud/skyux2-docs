@@ -1,0 +1,165 @@
+<h3>Simple example</h3>
+
+<div
+  id="simple-example"
+  class="sky-margin-stacked-separate"
+>
+  <sky-inline-form
+    id="inline-form-add"
+    [config]="editConfig"
+    [showForm]="showPageTitleForm"
+    [template]="pageTitleForm"
+    (close)="onClosePageTitleForm($event)"
+  >
+    <sky-fluid-grid>
+      <sky-row>
+        <sky-column screenSmall="9">
+          <h1>
+            {{ pageTitle }}
+          </h1>
+        </sky-column>
+        <sky-column
+          screenSmall="3"
+        >
+          <button
+            class="sky-btn sky-btn-primary"
+            (click)="showPageTitleForm = true"
+          >
+            <sky-icon
+              icon="pencil"
+              size="lg">
+            </sky-icon>
+            Edit page title
+          </button>
+        </sky-column>
+      </sky-row>
+    </sky-fluid-grid>
+  </sky-inline-form>
+</div>
+
+<ng-template
+  #pageTitleForm
+>
+  <div
+    class="sky-form-group"
+  >
+    <label
+      class="sky-control-label"
+      for="input-page-title"
+    >
+      Name
+    </label>
+    <input
+      id="input-page-title"
+      class="sky-form-control"
+      type="text"
+      [(ngModel)]="pageTitle"
+    />
+  </div>
+</ng-template>
+
+<!-- <sky-inline-form *ngFor="let data of myData"
+  id="inline-form-add"
+  [config]="editConfig"
+  [showForm]="activeId == data.id"
+  [template]="addForm"
+  (close)="onClose($event)"
+>
+  <p>
+    {{ data.name }}: {{ data.amount }}
+    <button
+      class="sky-btn-link"
+      (click)="activeId = data.id"
+    >
+      Edit
+    </button>
+  </p>
+
+  <ng-template
+    #addForm
+  >
+    <div
+      class="sky-form-group"
+    >
+      <label
+        class="sky-control-label"
+        for="demo-input-1"
+      >
+        Name
+      </label>
+      <input
+        id="demo-input-1"
+        class="sky-form-control"
+        type="text"
+        [(ngModel)]="data.name"
+      />
+    </div>
+    <div
+      class="sky-form-group"
+    >
+      <label
+        class="sky-control-label"
+        for="demo-input-2"
+      >
+        Amount
+      </label>
+      <input
+        id="demo-input-2"
+        class="sky-form-control"
+        type="text"
+        [(ngModel)]="data.amount"
+      />
+    </div>
+  </ng-template>
+</sky-inline-form>
+
+
+
+
+<h2>Custom config</h2>
+
+<sky-inline-form
+  id="inline-form-edit"
+  [config]="customConfig"
+  [showForm]="true"
+  [template]="customForm"
+  (close)="onClose($event)"
+>
+  <p>My title</p>
+  <p>My note</p>
+</sky-inline-form>
+
+<ng-template
+  #customForm
+>
+  <div
+    class="sky-form-group"
+  >
+    <label
+      class="sky-control-label"
+      for="demo-input-3"
+    >
+      Title
+    </label>
+    <input
+      id="demo-input-3"
+      class="sky-form-control"
+      type="text"
+    />
+  </div>
+  <div
+    class="sky-form-group"
+  >
+    <label
+      class="sky-control-label"
+      for="demo-input-4"
+    >
+      Note
+    </label>
+    <input
+      id="demo-input-4"
+      class="sky-form-control"
+      type="text"
+    />
+  </div>
+</ng-template> -->
