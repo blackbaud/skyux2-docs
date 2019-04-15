@@ -1,21 +1,13 @@
 <sky-demo-page
   pageTitle="Text Expand"
-  [skyuxModule]="['SkyTextExpandModule', 'SkyTextExpandRepeaterModule']"
-  packagenName="@skyux/layout"
+  navTitle="Text expand"
+  skyuxModule="SkyTextExpandModule"
+  packageName="@skyux/layout"
 >
 
   <sky-demo-page-summary>
     <p>
-      The text expand component truncates long text with an ellipsis and a link that allows the user to fully expand the text.
-      If the text length falls below the specified threshold, then no action is taken. The 'See more' link will expand the
-      text inline if it does not exceed the limits on text characters or newline characters for the inline expanded view. Otherwise, the link will open the text in a modal view.
-    </p>
-    <p>
-      Note that collapsed text will have newlines removed. Also, if newlines are detected, the text is automatically
-      collapsed regardless of the total length.
-    </p>
-    <p>
-      The text expand repeater component truncates a list of repeater items and will initially display a set number of items. Any items over the set maximum limit are hidden until the user expands the list.
+      The text expand component truncates long blocks of text with an ellipsis and a link to expand the full text. When users click the link, the component expands the full text inline unless it exceeds limits on text characters or newline characters. If the text exceeds those limits, then the component expands the full text in a modal view instead. The component does not truncate text when it is shorter than a specified threshold, and by default, it removes newline characters from truncated text.
     </p>
   </sky-demo-page-summary>
 
@@ -23,56 +15,44 @@
     <sky-demo-page-property
       propertyName="text"
     >
-    The text to truncate.
+    Specifies the text to truncate. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
-      propertyName="maxLength"
-      defaultValue="200"
+      propertyName="expandModalTitle"
+      defaultValue="Expanded view"
       isOptional="true"
     >
-    The number of characters to show before truncating the text. To avoid truncating text in the middle of a word, the directive looks for a space in the 10 characters before the last character.
+    Specifies a title to display when the component expands the full text in a modal. This property accepts <stache-code>string</stache-code> values.
+    </sky-demo-page-property>
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="maxExpandedLength"
       defaultValue="600"
       isOptional="true"
     >
-    The maximum number of characters to show in the inline expanded view. If the text includes more characters, then a
-      modal view with the content will be displayed when the 'See more' link is clicked
+    Specifies the maximum number of text characters to display inline when users click the link to expand the full text. If the text exceeds this limit, then the component expands the full text in a modal instead. This property accepts <stache-code>number</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="maxExpandedNewlines"
       defaultValue="2"
       isOptional="true"
     >
-    The maximum number of newline characters to show in the inline expanded view. If the text includes more newline characters, then a modal view with the content will be displayed when the 'See more' link is clicked.
+    Specifies the maximum number of newline characters to display inline when users click the link to expand the full text. If the text exceeds this limit, then the component expands the full text in a modal view instead. This property accepts <stache-code>number</stache-code> values.
+    </sky-demo-page-property>
     </sky-demo-page-property>
     <sky-demo-page-property
-      propertyName="expandModalTitle"
-      defaultValue="Expanded View"
+      propertyName="maxLength"
+      defaultValue="200"
       isOptional="true"
     >
-    The title to display in the modal expanded view.
+    Specifies the number of text characters to display before truncating the text. To avoid truncating text in the middle of a word, the component looks for a space in the 10 characters before the last character. This property accepts <stache-code>number</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="truncateNewlines"
       defaultValue="true"
       isOptional="true"
     >
-    If this property is set to <stache-code>false</stache-code>, newline characters will not be replaced with spaces in the truncated text.
-    </sky-demo-page-property>
-  </sky-demo-page-properties>
-
-  <sky-demo-page-properties sectionHeading="Text expand repeater properties">
-    <sky-demo-page-property
-      propertyName="data"
-    >
-    The data to truncate.
-    </sky-demo-page-property>
-    <sky-demo-page-property
-      propertyName="maxItems"
-    >
-    The number of items from the data to display before truncating.
+    Indicates whether to replace newline characters in truncated text with spaces. This property accepts <stache-code>boolean</stache-code> values.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
