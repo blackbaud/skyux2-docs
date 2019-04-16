@@ -26,3 +26,7 @@
 	padding-left: 305px !important;
 	padding-right: 30px !important;
 }
+
+::ng-deep .stache-page-anchor {
+	border-bottom: none !important;
+}
