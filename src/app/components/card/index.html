@@ -50,7 +50,14 @@
 
   <sky-demo-page-example>
     <sky-card-demo></sky-card-demo>
-    <sky-demo-page-code demoName="Card"></sky-demo-page-code>
+    <sky-demo-page-code
+      demoName="Card"
+      [skyuxImports]="{
+        SkyCardModule: '@skyux/layout',
+        SkyCheckboxModule: '@skyux/forms',
+        SkyDropdownModule: '@skyux/popovers'
+      }">
+    </sky-demo-page-code>
   </sky-demo-page-example>
 
 </sky-demo-page>

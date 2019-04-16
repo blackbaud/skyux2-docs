@@ -67,7 +67,13 @@
 
   <sky-demo-page-example>
     <sky-avatar-demo></sky-avatar-demo>
-    <sky-demo-page-code demoName="Avatar"></sky-demo-page-code>
+    <sky-demo-page-code
+      demoName="Avatar"
+      [skyuxImports]="{
+        SkyAvatarModule: '@skyux/avatar',
+        SkyCheckboxModule: '@skyux/forms'
+      }">
+    </sky-demo-page-code>
   </sky-demo-page-example>
 
 </sky-demo-page>

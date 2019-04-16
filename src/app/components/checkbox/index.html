@@ -81,7 +81,12 @@
 
   <sky-demo-page-example>
     <sky-checkbox-demo></sky-checkbox-demo>
-    <sky-demo-page-code demoName="Checkbox"></sky-demo-page-code>
+    <sky-demo-page-code
+      demoName="Checkbox"
+      [skyuxImports]="{
+        SkyCheckboxModule: '@skyux/forms'
+      }">
+    </sky-demo-page-code>
   </sky-demo-page-example>
 
   <sky-demo-page-content sectionHeading="Accessibility">

@@ -1,37 +1,17 @@
-<!-- <section class="sky-demo-page-code">
+<section class="sky-demo-page-code">
   <div class="sky-demo-page-code-header">
     <stache-page-anchor>
       Code
     </stache-page-anchor>
-    <div class="sky-demo-page-code-plunker">
-      <form ngNoForm action="https://plnkr.co/edit/?p=preview" method="POST" target="_blank">
-        <input
-          type="hidden"
-          *ngFor="let plunkerFile of plunkerFiles;"
-          [name]="'files[' + plunkerFile.name + ']'"
-          [value]="plunkerFile.content"
-        >
-        <sky-dropdown>
-          <sky-dropdown-button>
-            <i class="fa fa-pencil"></i> Run Demo
-          </sky-dropdown-button>
-          <sky-dropdown-menu>
-            <sky-dropdown-item>
-              <button
-                type="submit">
-                Run in Plunker
-              </button>
-            </sky-dropdown-item>
-            <sky-dropdown-item>
-              <button
-                type="button"
-                (click)="runInStackBlitz()">
-                Run in StackBlitz
-              </button>
-            </sky-dropdown-item>
-          </sky-dropdown-menu>
-        </sky-dropdown>
-      </form>
+    <div class="sky-demo-page-code-stackblitz" *ngIf="skyuxImports">
+      <button
+        type="button"
+        class="sky-btn sky-btn-primary"
+        (click)="openProjectInStackBlitz()"
+      >
+        <i class="fa fa-pencil"></i>
+        Run in StackBlitz
+      </button>
     </div>
   </div>
   <sky-tabset
@@ -45,6 +25,8 @@
       </sky-code-block>
     </sky-tab>
   </sky-tabset>
-</section> -->
+</section>
 
-<div class="stackblitz-wrapper" #stackblitzEmbed></div>
+<div class="stackblitz-wrapper" *ngIf="skyuxImports">
+  <div #stackblitzEmbed></div>
+</div>

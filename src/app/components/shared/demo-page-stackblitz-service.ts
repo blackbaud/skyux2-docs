@@ -1,46 +1,66 @@
 /* tslint:disable max-line-length */
 
 import { Injectable } from '@angular/core';
-
 import sdk from '@stackblitz/sdk';
 
 import { SkyDemoPageCodeFile } from './demo-page-code-file';
-
-import { EmbedOptions } from '@stackblitz/sdk/typings/interfaces';
+import { SkyuxImports } from './demo-page-skyux-imports';
 
 @Injectable()
 export class SkyDemoPageStackBlitzService {
 
+  private srcFolder = `src/`;
+
+  private appFolder = `${this.srcFolder}app/`;
+
+  private demoFolder = `demo/`;
+
   public embedProject(
     elementOrId: string | HTMLElement,
     codeFiles: SkyDemoPageCodeFile[],
-    embedOptions?: EmbedOptions
+    skyuxImports: SkyuxImports
   ) {
     sdk.embedProject(
       elementOrId,
-      this.getPayload(codeFiles),
-      embedOptions
-    ).then(vm => {
-      vm.getFsSnapshot()
-        .then(fs => {
-          console.log(fs);
-        });
-      vm.getDependencies()
-        .then(deps => {
-          console.log(deps);
-        });
-    });
+      this.getPayload(
+        codeFiles,
+        skyuxImports
+      ),
+      {
+        openFile: this.getFileToOpen(codeFiles),
+        height: 700,
+        forceEmbedLayout: true
+      }
+    );
   }
 
-  public openProject(codeFiles: SkyDemoPageCodeFile[]) {
-    sdk.openProject(this.getPayload(codeFiles), {
-      openFile: 'app/' + codeFiles[0].name
-    });
+  public openProject(
+    codeFiles: SkyDemoPageCodeFile[],
+    skyuxImports: SkyuxImports
+  ) {
+    sdk.openProject(
+      this.getPayload(
+        codeFiles,
+        skyuxImports
+      ),
+      {
+        openFile: this.getFileToOpen(codeFiles)
+      }
+    );
   }
 
-  private getPayload(codeFiles: SkyDemoPageCodeFile[]) {
+  private getFileToOpen(codeFiles: SkyDemoPageCodeFile[]) {
+    return this.appFolder + this.demoFolder + codeFiles[0].name;
+  }
+
+  private getPayload(
+    codeFiles: SkyDemoPageCodeFile[],
+    skyuxImports: SkyuxImports
+  ) {
     const angularVersion = '^7.0.0';
-    const dependencies = {
+    const skyuxVersion = '^3.0.0';
+
+    const dependencies: SkyuxImports = {
       '@angular/animations': angularVersion,
       '@angular/common': angularVersion,
       '@angular/compiler': angularVersion,
@@ -50,22 +70,19 @@ export class SkyDemoPageStackBlitzService {
       '@angular/platform-browser': angularVersion,
       '@angular/platform-browser-dynamic': angularVersion,
       '@angular/router': angularVersion,
-      '@blackbaud/auth-client': '^2.0.0',
-      '@skyux/assets': '^3.0.0',
-      '@skyux/avatar': '^3.0.0',
-      '@skyux/config': '^3.0.0',
-      '@skyux/core': '^3.0.0',
-      '@skyux/errors': '^3.0.0',
-      '@skyux/forms': '^3.0.0',
-      '@skyux/http': '^3.0.0',
-      '@skyux/i18n': '^3.0.0',
-      '@skyux/indicators': '^3.0.0',
-      '@skyux/layout': '^3.0.0',
-      '@skyux/modals': '^3.0.0',
-      '@skyux/navbar': '^3.0.0',
-      '@skyux/omnibar-interop': '^3.0.0',
-      '@skyux/router': '^3.0.0',
-      '@skyux/theme': '^3.0.0',
+      '@skyux/assets': skyuxVersion,
+      '@skyux/config': skyuxVersion,
+      '@skyux/core': skyuxVersion,
+      '@skyux/errors': skyuxVersion,
+      '@skyux/forms': skyuxVersion,
+      '@skyux/http': skyuxVersion,
+      '@skyux/i18n': skyuxVersion,
+      '@skyux/indicators': skyuxVersion,
+      '@skyux/layout': skyuxVersion,
+      '@skyux/modals': skyuxVersion,
+      '@skyux/popovers': skyuxVersion,
+      '@skyux/router': skyuxVersion,
+      '@skyux/theme': skyuxVersion,
       'core-js': '2.6.5',
       'rxjs': '^6.0.0',
       'rxjs-compat': '^6.0.0',
@@ -73,12 +90,25 @@ export class SkyDemoPageStackBlitzService {
       'zone.js': '~0.8.28'
     };
 
+    Object.keys(skyuxImports).forEach((key: string) => {
+      dependencies[skyuxImports[key]] = skyuxVersion;
+    });
+
     const payload = {
-      files: this.getFiles(codeFiles, dependencies),
+      files: this.getFiles(
+        codeFiles,
+        skyuxImports,
+        dependencies
+      ),
       title: 'SKY UX Demo',
       description: 'SKY UX Demo',
       template: 'angular-cli',
-      dependencies: dependencies
+      dependencies: dependencies,
+      settings: {
+        compile: {
+          clearConsole: false
+        }
+      }
     };
 
     return payload;
@@ -86,12 +116,9 @@ export class SkyDemoPageStackBlitzService {
 
   private getFiles(
     codeFiles: SkyDemoPageCodeFile[],
+    skyuxImports: SkyuxImports,
     dependencies: any
   ) {
-    const srcFolder = `src/`;
-    const appFolder = `${srcFolder}app/`;
-    const demoFolder = `demo/`;
-
     let declarations: string[] = [];
     let bootstrapSelectors: string[] = [];
     let entryComponents: string[] = [];
@@ -99,13 +126,13 @@ export class SkyDemoPageStackBlitzService {
     let imports: string[] = [];
 
     for (let codeFile of codeFiles) {
-      files[`${appFolder}${demoFolder}` + codeFile.name] = codeFile.codeImports;
+      files[`${this.appFolder}${this.demoFolder}` + codeFile.name] = codeFile.codeImports;
 
       const componentName = codeFile.componentName;
 
       if (componentName) {
         imports.push(
-          `import { ${componentName} } from './${demoFolder}${codeFile.name}';`
+          `import { ${componentName} } from './${this.demoFolder}${codeFile.name}';`
         );
 
         declarations.push(componentName);
@@ -122,6 +149,16 @@ export class SkyDemoPageStackBlitzService {
     bootstrapSelectors.forEach((item) => {
       combinedSelectors += '<' + item + '></' + item + '>';
     });
+
+    const appSkyExports: string[] = [];
+    let appSkyImports = '';
+
+    Object.keys(skyuxImports).forEach((key: string) => {
+      appSkyImports += `import { ${key} } from '${skyuxImports[key]}';
+`;
+      appSkyExports.push(key);
+    });
+
 
     const banner = `/**
  * This file is needed for the StackBlitz demo only.
@@ -162,10 +199,10 @@ export class SkyDemoPageStackBlitzService {
     }
   }
 }`;
-    files[`${srcFolder}styles.scss`] = `@import '~@skyux/theme/css/sky';`;
-    files[`${srcFolder}index.html`] = `<sky-demo-app>loading...</sky-demo-app>`;
+    files[`${this.srcFolder}styles.scss`] = `@import '~@skyux/theme/css/sky';`;
+    files[`${this.srcFolder}index.html`] = `<sky-demo-app>loading...</sky-demo-app>`;
 
-    files[`${appFolder}app.component.ts`] = `${banner}
+    files[`${this.appFolder}app.component.ts`] = `${banner}
 import { Component } from '@angular/core';
 
 @Component({
@@ -175,25 +212,24 @@ import { Component } from '@angular/core';
 export class AppComponent { }`;
 
     // TODO: THIS FILE NEEDS THE MODULE + PACKAGE NAMES
-    files[`${appFolder}app-sky.module.ts`] = `import {
+    files[`${this.appFolder}app-sky.module.ts`] = `import {
   NgModule
 } from '@angular/core';
 
-import { SkyAlertModule } from '@skyux/indicators';
-import { SkyCheckboxModule } from '@skyux/forms';
+${appSkyImports}
 
 @NgModule({
   exports: [
-    SkyAlertModule,
-    SkyCheckboxModule
+    ${appSkyExports.join(',\n')}
   ]
 })
 export class AppSkyModule { }
 `;
 
-    files[`${appFolder}app.module.ts`] = `import { Component, NgModule } from '@angular/core';
+    files[`${this.appFolder}app.module.ts`] = `import { Component, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppSkyModule } from './app-sky.module.ts';
 
@@ -205,6 +241,8 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
+    RouterModule.forRoot([]),
     AppSkyModule
   ],
   declarations: [
@@ -220,12 +258,12 @@ import { AppComponent } from './app.component';
 })
 export class AppModule { }`;
 
-    files[`${srcFolder}polyfills.ts`] = `${banner}
+    files[`${this.srcFolder}polyfills.ts`] = `${banner}
 import 'core-js/es6/reflect';
 import 'core-js/es7/reflect';
 import 'zone.js/dist/zone';`;
 
-    files[`${srcFolder}main.ts`] = `${banner}
+    files[`${this.srcFolder}main.ts`] = `${banner}
 import './polyfills';
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
