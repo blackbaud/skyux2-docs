@@ -4,8 +4,6 @@ import { Injectable, VERSION } from '@angular/core';
 
 import { SkyAppConfig } from '@blackbaud/skyux-builder/runtime';
 
-import { SkyAppConfig } from '@blackbaud/skyux-builder/runtime';
-
 import { SkyDemoPageCodeFile } from './demo-page-code-file';
 
 @Injectable()

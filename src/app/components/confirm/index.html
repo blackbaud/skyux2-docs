@@ -77,7 +77,7 @@
     Fires when users select an action to close the confirmation dialog. This event returns a <stache-code>SkyConfirmCloseEventArgs</stache-code> object with information about the button that users select. The <stache-code>SkyConfirmCloseEventArgs</stache-code> object includes the following property:
     <ul>
       <li>
-        <stache-code>action</stache-code> — The identifier for the button that users selected to close the confirmation dialog. 
+        <stache-code>action</stache-code> — The identifier for the button that users selected to close the confirmation dialog.
       </li>
     </ul>
     </sky-demo-page-property>
@@ -87,7 +87,10 @@
     <sky-confirm-demo>
     </sky-confirm-demo>
     <sky-demo-page-code
-      demoName="Confirm">
+      demoName="Confirm"
+      [skyuxImports]="{
+        SkyConfirmModule: '@skyux/modals'
+      }">
     </sky-demo-page-code>
   </sky-demo-page-example>
 

@@ -159,7 +159,6 @@ export class SkyDemoPageStackBlitzService {
       appSkyExports.push(key);
     });
 
-
     const banner = `/**
  * This file is needed for the StackBlitz demo only.
  * It is automatically built when using SKY UX CLI.
