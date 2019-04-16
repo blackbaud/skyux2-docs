@@ -191,6 +191,7 @@ article.blog-post {
 // Site redesign placeholders
 img.bordered {
 	@include sky-border(light, top, right, bottom, left);
+	padding: $sky-padding-even-large;
 }
 
 .two-col-right-image{
@@ -305,6 +306,13 @@ img.bordered {
 		.property-name, .property-description, .property-default, .property-optional {
 			width: 100%;
 		}
+	}
+}
+
+div.states-table {
+	.sky-repeater-item {
+		padding-top: 20px;
+		padding-bottom: 20px;
 	}
 }
 
