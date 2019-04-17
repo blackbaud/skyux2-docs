@@ -1,5 +1,5 @@
 import {
-	ChangeDetectionStrategy,
+  ChangeDetectionStrategy,
   Component,
   Input
 } from '@angular/core';
@@ -10,8 +10,8 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 
-export class SkyDemoPageModuleInfoComponent { 
-	@Input()
+export class SkyDemoPageModuleInfoComponent {
+  @Input()
   public set skyuxModule(value: string | string[]) {
     if (value) {
       if (Array.isArray(value)) {
@@ -34,11 +34,10 @@ export class SkyDemoPageModuleInfoComponent {
     return this._packageName;
   }
 
-	public npmInstall: string;
+  public npmInstall: string;
 
-	public skyuxModulesForDisplay: string[];
+  public skyuxModulesForDisplay: string[];
 
-	private _packageName: string;
-	
+  private _packageName: string;
+
 }
-	

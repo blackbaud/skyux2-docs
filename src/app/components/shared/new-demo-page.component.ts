@@ -22,13 +22,13 @@ import { SkyDemoPageContentComponent } from './demo-page-content.component';
 export class SkyNewDemoPageComponent implements OnInit, AfterContentInit {
   @Input()
   public pageTitle: string;
-  
+ 
   @Input()
   public summary: string;
 
   public tableOfContentsRoutes: any[] = [];
-	
-	@ContentChildren(SkyDemoPagePropertiesComponent)
+
+  @ContentChildren(SkyDemoPagePropertiesComponent)
   private propertiesComponents: QueryList<SkyDemoPagePropertiesComponent>;
 
   @ContentChildren(SkyDemoPageExampleComponent)
@@ -47,7 +47,7 @@ export class SkyNewDemoPageComponent implements OnInit, AfterContentInit {
 
   public ngAfterContentInit(): void {
 
-		this.propertiesComponents.map((component: any) => {
+    this.propertiesComponents.map((component: any) => {
       this.tableOfContentsRoutes.push({
         name: component.sectionHeading,
         fragment: this.getFragment(component.sectionHeading),
