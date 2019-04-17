@@ -9,7 +9,6 @@ import {
 } from '@angular/core';
 
 import { SkyDemoTitleService } from '../../shared/title.service';
-import { SkyDemoPageModuleInfoComponent } from './new-demo-page-module-info.component';
 import { SkyDemoPagePropertiesComponent } from './demo-page-properties.component';
 import { SkyDemoPageExampleComponent } from './demo-page-example.component';
 import { SkyDemoPageContentComponent } from './demo-page-content.component';
