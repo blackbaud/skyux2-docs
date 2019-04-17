@@ -105,7 +105,13 @@
 
   <sky-demo-page-example>
     <sky-file-attachment-demo></sky-file-attachment-demo>
-    <sky-demo-page-code demoName="File attachment"></sky-demo-page-code>
+    <sky-demo-page-code
+      demoName="File attachment"
+      [skyuxImports]="{
+        SkyFileAttachmentsModule: '@skyux/forms',
+        SkyAlertModule: '@skyux/indicators'
+      }">
+    </sky-demo-page-code>
   </sky-demo-page-example>
 
 </sky-demo-page>
