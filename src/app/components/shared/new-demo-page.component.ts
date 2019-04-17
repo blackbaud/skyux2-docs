@@ -28,9 +28,6 @@ export class SkyNewDemoPageComponent implements OnInit, AfterContentInit {
   public summary: string;
 
   public tableOfContentsRoutes: any[] = [];
-
-  @ContentChildren(SkyDemoPageModuleInfoComponent)
-  private moduleInfoComponents: QueryList<SkyDemoPageModuleInfoComponent>;
 	
 	@ContentChildren(SkyDemoPagePropertiesComponent)
   private propertiesComponents: QueryList<SkyDemoPagePropertiesComponent>;
@@ -50,15 +47,8 @@ export class SkyNewDemoPageComponent implements OnInit, AfterContentInit {
   }
 
   public ngAfterContentInit(): void {
-    if (this.npmInstall) {
-      this.tableOfContentsRoutes.push({
-        name: 'Installation',
-        fragment: 'installation',
-        path: '.'
-      });
-    }
 
-    this.propertiesComponents.map((component: any) => {
+		this.propertiesComponents.map((component: any) => {
       this.tableOfContentsRoutes.push({
         name: component.sectionHeading,
         fragment: this.getFragment(component.sectionHeading),
