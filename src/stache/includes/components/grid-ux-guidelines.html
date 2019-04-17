@@ -1,0 +1,231 @@
+	<header><div class="sky-section-heading">Usage</div></header>
+	<p>The grid provides a layout for tabular data.</p>
+		
+	<header><div class="sky-subsection-heading">When to use grids</div></header>
+		
+  <stache-row>
+    <stache-column screenSmall="6">
+			<p>Use grids to display tabular data when: </p>
+			<ul>
+				<li>A large amount of data needs to be visible.</li>
+				<li>Users need to visually scan columns for certain values or outliers.</li>
+				<li>Users need to compare values between rows.</li>
+			</ul>
+		</stache-column>
+		<stache-column screenSmall="6">
+			<div class="screenshot screenshot-success">
+				<img src="~/assets/img/guidelines/grid/grid-use-when.png" />
+			</div>
+		</stache-column>
+	</stache-row>
+    
+	<header><div class="sky-subsection-heading">When not to use grids</div></header>
+
+  <stache-row>
+    <stache-column screenSmall="6">
+			<ul>
+        <li>Do not use grids when you need to display visual content such as graphs or images. Use <a routerLink="/components/repeater">repeaters</a> or <a routerLink="/components/card">card</a> views instead.</li>
+        <li>Do not use grids when the content calls for a more complex layout. If grids require a lot of templated columns, try repeaters instead.</li>
+        <li>Do not use grids when you need to display many fields and users are likely to view the grids in a small viewport such as a phone. Try repeaters instead.</li>
+      </ul>
+		</stache-column>
+		<stache-column screenSmall="6">
+			<div class="screenshot screenshot-danger">
+				<img src="~/assets/img/guidelines/grid/grid-dont-use-complex.png" style="width: 100%;" />
+			</div>
+		</stache-column>
+	</stache-row>
+		
+	<header><div class="sky-section-heading">Anatomy</div></header>
+	
+		<stache-row>
+			<stache-column screenSmall="3">
+				<ol>
+					<li>
+						<span class="sky-deemphasized">List count (optional)</span>
+					</li>
+					<li>
+						<span class="sky-deemphasized">Toolbar (optional)</span>
+					</li>
+					<li>
+						<span class="sky-deemphasized">Multiselect toolbar (optional)</span>
+					</li>
+					<li>
+						Header row
+					</li>
+					<li>
+						<span class="sky-deemphasized">Row selection checkbox (optional)</span>
+					</li>
+					<li>
+						<span class="sky-deemphasized">Context menu button (optional)</span>
+					</li>
+					<li>
+						Data
+					</li>
+					<li>
+						Alternate row striping
+					</li>
+					<li>
+						Row divider
+					</li>
+					<li>
+						Selected row background
+					</li>
+					<li>
+						<span class="sky-deemphasized">Pagination (optional)</span>
+					</li>
+					<li>
+						<span class="sky-deemphasized">Summary action bar (optional)</span>
+					</li>
+				</ol>
+			</stache-column>
+			<stache-column screenSmall="9">
+				<div class="screenshot screenshot-info">
+				<img src="~/assets/img/guidelines/grid/grid-annotated.png" style="width: 100%;" />
+			</div>
+			</stache-column>
+		</stache-row>		
+    
+	<header><div class="sky-section-heading">Options</div></header>
+
+	<header><div class="sky-subsection-heading">Context menu</div></header>
+
+  <stache-row>
+    <stache-column screenSmall="6">
+			<p>Use context menus in the first column when users need to access multiple actions in the rows.</p>
+		</stache-column>
+		<stache-column screenSmall="6">
+			<div class="screenshot screenshot-info">
+				<img src="~/assets/img/guidelines/grid/grid-option-context-menu.png" style="width: 100%;" />
+			</div>
+		</stache-column>
+	</stache-row>
+    
+	<header><div class="sky-subsection-heading">Multiselect</div></header>
+
+  <stache-row>
+    <stache-column screenSmall="6">
+			<p>Use multiselect when:</p>
+				<ul>
+					<li>Users need to act on more than one row at a time.</li>
+					<li>The list is presented as a full page, a full-page modal, or a full page within a flyout.</li>
+				</ul>
+			<p>Don't use multiselect when:</p>
+			<ul>
+				<li>The list is presented in a tile, page section, or other container that might flow off the screen.</li>
+			</ul>
+			<p>To allows users to select or clear all items and to view only the selected items, include the multiselect toolbar.</p>
+      <p>When users select rows, the summary action bar should fly in from the bottom of the page. Place actions that can be taken on the selected items in the summary action bar.</p>
+		</stache-column>
+		<stache-column screenSmall="6">
+			<div class="screenshot screenshot-info sky-margin-stacked-separate">
+				<img src="~/assets/img/guidelines/grid/grid-option-multi.png" style="width: 100%;" />
+			</div>
+			<div class="screenshot screenshot-danger">
+				<img src="~/assets/img/guidelines/grid/grid-option-multi-dont-tile.png" style="width: 100%;" />
+			</div>
+		</stache-column>
+	</stache-row>
+    
+	<header><div class="sky-subsection-heading">Sorting</div></header>
+
+  <stache-row>
+    <stache-column screenSmall="6">
+			<p>If users are likely to sort based on the data in columns, enable sorting so that they can click column headers to toggle between sorting in ascending and descending order for the specified fields in columns. If users need to sort by data in a templated column, use the <a routerLink="/components/sort">sort</a> component instead to allow them to choose the data to sort on.</p>
+		</stache-column>
+		<stache-column screenSmall="6">
+			<div class="screenshot screenshot-info">
+				<img src="~/assets/img/guidelines/grid/grid-option-sort.png" style="width: 100%;" />
+			</div>
+		</stache-column>
+	</stache-row>
+		
+	<header><div class="sky-subsection-heading">Filtering</div></header>
+
+  <stache-row>
+    <stache-column screenSmall="6">
+			<p>If users are likely to work with a subset of items in the grid, enable filtering so that they can focus on those items.</p>
+		</stache-column>
+		<stache-column screenSmall="6">
+			<div class="screenshot screenshot-info">
+				<img src="~/assets/img/guidelines/grid/grid-option-filter.png" style="width: 100%;" />
+			</div>
+		</stache-column>
+	</stache-row>
+    
+	<header id="option-templated-columns"><div class="sky-subsection-heading">Templated columns</div></header>
+
+  <stache-row>
+    <stache-column screenSmall="6">
+			<p>When columns need to represent composite information instead of single values, use templated columns to lay out content as necessary.</p>
+		</stache-column>
+		<stache-column screenSmall="6">
+			<div class="screenshot screenshot-info">
+				<img src="~/assets/img/guidelines/grid/grid-option-template-column.png" style="width: 100%;" />
+			</div>
+		</stache-column>
+	</stache-row>
+    
+	<header><div class="sky-section-heading">Behavior</div></header>
+
+	<header><div class="sky-subsection-heading">Fit</div></header>
+	
+	<header><div class="sky-emphasized">Scroll</div></header>	
+		
+	
+		<stache-row>
+			<stache-column screenSmall="6">
+				<p>Setting the <stache-code>fit</stache-code> property to <stache-code>scroll</stache-code> allows the grid to take as much space as necessary by adding a horizontal scrollbar. This is most useful for grids with large numbers of columns.</p>
+			</stache-column>
+			<stache-column screenSmall="6">
+			<div class="screenshot screenshot-info">
+				<img src="~/assets/img/guidelines/grid/grid-fit-scroll.png" style="width: 100%;" />
+			</div>
+		</stache-column>
+		</stache-row>	
+		
+	
+	<header><div class="sky-emphasized">Width</div></header>
+  
+	
+		<stache-row>
+			<stache-column screenSmall="6">
+				<p>Setting the <stache-code>fit</stache-code> property to <stache-code>width</stache-code> fixes the width of the grid to that of its container. Columns resize themselves to fit. This is most useful for simple grids in smaller containers such as tiles where the content fits neatly in the allotted space.</p>
+			</stache-column>
+			<stache-column screenSmall="6">
+			<div class="screenshot screenshot-info">
+				<img src="~/assets/img/guidelines/grid/grid-fit-width.png" style="width: 100%;" />
+			</div>
+		</stache-column>
+		</stache-row>	
+		
+	
+	<header><div class="sky-subsection-heading">Reordering columns</div></header>
+
+  <stache-row>
+    <stache-column screenSmall="6">
+			<p>Users can reorder columns by dragging and dropping.</p>
+		</stache-column>
+		<stache-column screenSmall="6">
+			<div class="screenshot screenshot-success">
+				<img src="~/assets/img/guidelines/grid/grid-reorder.png" style="width: 100%;" />
+			</div>
+		</stache-column>
+	</stache-row>
+    
+	<header><div class="sky-subsection-heading">Resizing columns</div></header>
+
+  <stache-row>
+    <stache-column screenSmall="6">
+			<p>Users can resize columns by clicking and dragging or by using the keyboard.</p>
+		</stache-column>
+		<stache-column screenSmall="6">
+			<div class="screenshot screenshot-success">
+				<img src="~/assets/img/guidelines/grid/grid-resize.png" style="width: 100%;" />
+			</div>
+		</stache-column>
+	</stache-row>
+    
+	<header><div class="sky-section-heading">Responsiveness</div></header>
+  <p>Grids tend to perform poorly in small viewports. The columns in fixed-width grids shrink down to the point of being unreadable, and scrolling grids require a lot of interaction to see all the content. Use <a routerLink="/components/repeater">repeaters</a> instead if possible.</p>
+	
