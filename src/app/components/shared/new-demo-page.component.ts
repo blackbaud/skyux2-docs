@@ -22,7 +22,7 @@ import { SkyDemoPageContentComponent } from './demo-page-content.component';
 export class SkyNewDemoPageComponent implements OnInit, AfterContentInit {
   @Input()
   public pageTitle: string;
- 
+
   @Input()
   public summary: string;
 
