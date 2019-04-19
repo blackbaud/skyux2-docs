@@ -40,6 +40,10 @@ export class SkyDocsDemoCodeService {
           fileContents: require('!!raw-loader!./summary-action-bar/summary-action-bar-demo.component.html')
         },
         {
+          name: 'summary-action-bar-demo.component.scss',
+          fileContents: require('!!raw-loader!./summary-action-bar/summary-action-bar-demo.component.scss')
+        },
+        {
           name: 'summary-action-bar-demo.ts',
           fileContents: require('!!raw-loader!./summary-action-bar/summary-action-bar-demo.component.ts'),
           componentName: 'SkySummaryActionBarDemoComponent',
@@ -48,6 +52,14 @@ export class SkyDocsDemoCodeService {
         {
           name: 'summary-action-bar-modal-demo.component.html',
           fileContents: require('!!raw-loader!./summary-action-bar/summary-action-bar-modal-demo.component.html')
+        },
+        {
+          name: 'summary-action-bar-modal-demo.component.scss',
+          fileContents: require('!!raw-loader!./summary-action-bar/summary-action-bar-modal-demo.component.scss')
+        },
+        {
+          name: 'summary-action-bar-modal-demo.component.ts',
+          fileContents: require('!!raw-loader!./summary-action-bar/summary-action-bar-modal-demo.component.ts')
         },
         {
           name: 'summary-action-bar-modal-demo.ts',

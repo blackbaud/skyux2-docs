@@ -8,11 +8,11 @@ import {
 } from '@angular/core';
 
 import { SkyDemoPageCodeFile } from './demo-page-code-file';
+import { SkyDemoPageImports } from './demo-page-imports';
 import { SkyDemoPagePlunkerService } from './demo-page-plunker-service';
 import { SkyDemoPageStackBlitzService } from './demo-page-stackblitz-service';
 import { SkyDemoComponentsService } from '../demo-components.service';
 import { SkyDemoComponent } from '../demo-component';
-import { SkyuxImports } from './demo-page-skyux-imports';
 
 @Component({
   selector: 'sky-demo-page-code',
@@ -29,7 +29,10 @@ export class SkyDemoPageCodeComponent implements AfterViewInit {
   public codeFilesForBinding: SkyDemoPageCodeFile[];
 
   @Input()
-  public skyuxImports: SkyuxImports;
+  public showDemoRunButton = false;
+
+  @Input()
+  public showDemoEmbed = false;
 
   @Input()
   public set demoName(value: string) {
@@ -37,6 +40,14 @@ export class SkyDemoPageCodeComponent implements AfterViewInit {
     const items = this.getItems(this.componentsService.getComponents(), value);
 
     items.map((item: SkyDemoComponent) => {
+
+      this.imports = item.imports;
+
+      if (this.imports) {
+        this.showDemoRunButton = true;
+        this.showDemoEmbed = true;
+      }
+
       this.codeFilesForBinding = item.getCodeFiles().map((codeFile: any) => {
         return new SkyDemoPageCodeFile(
           codeFile.name,
@@ -51,14 +62,9 @@ export class SkyDemoPageCodeComponent implements AfterViewInit {
   @ViewChild('stackblitzEmbed')
   public embedRef: ElementRef;
 
-  public get plunkerFiles(): any[] {
-    return [
-      ...this.plunkerService.getFiles(this.codeFilesForBinding)
-    ];
-  }
+  private imports: SkyDemoPageImports;
 
   constructor(
-    private plunkerService: SkyDemoPagePlunkerService,
     private stackBlitzService: SkyDemoPageStackBlitzService,
     private componentsService: SkyDemoComponentsService
   ) { }
@@ -68,7 +74,7 @@ export class SkyDemoPageCodeComponent implements AfterViewInit {
       this.stackBlitzService.embedProject(
         this.embedRef.nativeElement,
         this.codeFilesForBinding,
-        this.skyuxImports
+        this.imports
       );
     }
   }
@@ -76,7 +82,7 @@ export class SkyDemoPageCodeComponent implements AfterViewInit {
   public openProjectInStackBlitz() {
     this.stackBlitzService.openProject(
       this.codeFilesForBinding,
-      this.skyuxImports
+      this.imports
     );
   }
 

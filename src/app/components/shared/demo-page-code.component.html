@@ -1,9 +1,12 @@
 <section class="sky-demo-page-code">
   <div class="sky-demo-page-code-header">
+  <div class="stackblitz-wrapper" *ngIf="showDemoEmbed">
+      <div #stackblitzEmbed></div>
+    </div>
     <stache-page-anchor>
       Code
     </stache-page-anchor>
-    <div class="sky-demo-page-code-stackblitz" *ngIf="skyuxImports">
+    <div class="sky-demo-page-code-stackblitz" *ngIf="showDemoRunButton"></div>
       <button
         type="button"
         class="sky-btn sky-btn-primary"
@@ -26,7 +29,3 @@
     </sky-tab>
   </sky-tabset>
 </section>
-
-<div class="stackblitz-wrapper" *ngIf="skyuxImports">
-  <div #stackblitzEmbed></div>
-</div>

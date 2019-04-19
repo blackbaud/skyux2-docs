@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 import sdk from '@stackblitz/sdk';
 
 import { SkyDemoPageCodeFile } from './demo-page-code-file';
-import { SkyuxImports } from './demo-page-skyux-imports';
+import { SkyDemoPageImports } from './demo-page-imports';
 
 @Injectable()
 export class SkyDemoPageStackBlitzService {
@@ -18,13 +18,13 @@ export class SkyDemoPageStackBlitzService {
   public embedProject(
     elementOrId: string | HTMLElement,
     codeFiles: SkyDemoPageCodeFile[],
-    skyuxImports: SkyuxImports
+    imports: SkyDemoPageImports
   ) {
     sdk.embedProject(
       elementOrId,
       this.getPayload(
         codeFiles,
-        skyuxImports
+        imports
       ),
       {
         openFile: this.getFileToOpen(codeFiles),
@@ -36,12 +36,12 @@ export class SkyDemoPageStackBlitzService {
 
   public openProject(
     codeFiles: SkyDemoPageCodeFile[],
-    skyuxImports: SkyuxImports
+    imports: SkyDemoPageImports
   ) {
     sdk.openProject(
       this.getPayload(
         codeFiles,
-        skyuxImports
+        imports
       ),
       {
         openFile: this.getFileToOpen(codeFiles)
@@ -55,12 +55,12 @@ export class SkyDemoPageStackBlitzService {
 
   private getPayload(
     codeFiles: SkyDemoPageCodeFile[],
-    skyuxImports: SkyuxImports
+    imports: SkyDemoPageImports
   ) {
     const angularVersion = '^7.0.0';
     const skyuxVersion = '^3.0.0';
 
-    const dependencies: SkyuxImports = {
+    const dependencies: { [key: string]: string } = {
       '@angular/animations': angularVersion,
       '@angular/common': angularVersion,
       '@angular/compiler': angularVersion,
@@ -70,6 +70,7 @@ export class SkyDemoPageStackBlitzService {
       '@angular/platform-browser': angularVersion,
       '@angular/platform-browser-dynamic': angularVersion,
       '@angular/router': angularVersion,
+      '@skyux/animations': skyuxVersion,
       '@skyux/assets': skyuxVersion,
       '@skyux/config': skyuxVersion,
       '@skyux/core': skyuxVersion,
@@ -90,14 +91,14 @@ export class SkyDemoPageStackBlitzService {
       'zone.js': '~0.8.28'
     };
 
-    Object.keys(skyuxImports).forEach((key: string) => {
-      dependencies[skyuxImports[key]] = skyuxVersion;
+    Object.keys(imports).forEach((key: string) => {
+      dependencies[key] = skyuxVersion;
     });
 
     const payload = {
       files: this.getFiles(
         codeFiles,
-        skyuxImports,
+        imports,
         dependencies
       ),
       title: 'SKY UX Demo',
@@ -114,16 +115,21 @@ export class SkyDemoPageStackBlitzService {
     return payload;
   }
 
+  private getFilenameNoExtension(filename: string) {
+    const lastDot = filename.lastIndexOf('.');
+    return lastDot === -1 ? filename : filename.substr(0, lastDot);
+  }
+
   private getFiles(
     codeFiles: SkyDemoPageCodeFile[],
-    skyuxImports: SkyuxImports,
+    imports: SkyDemoPageImports,
     dependencies: any
   ) {
     let declarations: string[] = [];
     let bootstrapSelectors: string[] = [];
     let entryComponents: string[] = [];
     let files: any = {};
-    let imports: string[] = [];
+    let componentImports: string[] = [];
 
     for (let codeFile of codeFiles) {
       files[`${this.appFolder}${this.demoFolder}` + codeFile.name] = codeFile.codeImports;
@@ -131,8 +137,10 @@ export class SkyDemoPageStackBlitzService {
       const componentName = codeFile.componentName;
 
       if (componentName) {
-        imports.push(
-          `import { ${componentName} } from './${this.demoFolder}${codeFile.name}';`
+        const componentImport = this.getFilenameNoExtension(codeFile.name);
+
+        componentImports.push(
+          `import { ${componentName} } from './${this.demoFolder}${componentImport}';`
         );
 
         declarations.push(componentName);
@@ -150,13 +158,12 @@ export class SkyDemoPageStackBlitzService {
       combinedSelectors += '<' + item + '></' + item + '>';
     });
 
-    const appSkyExports: string[] = [];
     let appSkyImports = '';
+    let appSkyExports: string[] = [];
 
-    Object.keys(skyuxImports).forEach((key: string) => {
-      appSkyImports += `import { ${key} } from '${skyuxImports[key]}';
-`;
-      appSkyExports.push(key);
+    Object.keys(imports).forEach((key: string) => {
+      appSkyImports += `import { ${imports[key].join()} } from '${key}';\n`;
+      appSkyExports = appSkyExports.concat(...imports[key]);
     });
 
     const banner = `/**
@@ -219,7 +226,7 @@ ${appSkyImports}
 
 @NgModule({
   exports: [
-    ${appSkyExports.join(',\n')}
+    ${appSkyExports.join(',\n    ')}
   ]
 })
 export class AppSkyModule { }
@@ -230,9 +237,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { AppSkyModule } from './app-sky.module.ts';
+import { AppSkyModule } from './app-sky.module';
 
-${imports.join('\n')}
+${componentImports.join('\n')}
 
 import { AppComponent } from './app.component';
 
