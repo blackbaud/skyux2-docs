@@ -182,11 +182,6 @@ export class PackagesComponent {
       repo: 'blackbaud/skyux-tiles'
     },
     {
-      id: '@skyux/validation',
-      provider: 'github',
-      repo: 'blackbaud/skyux-validation'
-    },
-    {
       id: '@skyux/toast',
       provider: 'github',
       repo: 'blackbaud/skyux-toast'
