@@ -26,7 +26,7 @@ export class SkyDemoComponentsService {
             'SkyActionButtonModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyActionButtonDemoComponent'),
+        getCodeFiles: () => this.getDemoFiles('SkyActionButtonDemoComponent')
       },
       {
         name: 'Alert',
