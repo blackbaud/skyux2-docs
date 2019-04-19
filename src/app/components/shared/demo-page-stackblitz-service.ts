@@ -217,7 +217,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent { }`;
 
-    // TODO: THIS FILE NEEDS THE MODULE + PACKAGE NAMES
     files[`${this.appFolder}app-sky.module.ts`] = `import {
   NgModule
 } from '@angular/core';

@@ -143,6 +143,9 @@ export class SkyDemoComponentsService {
         imports: {
           '@skyux/modals': [
             'SkyConfirmModule'
+          ],
+          '@skyux/indicators': [
+            'SkyAlertModule'
           ]
         },
         getCodeFiles: () => this.getDemoFiles('SkyConfirmDemoComponent')
@@ -192,6 +195,9 @@ export class SkyDemoComponentsService {
         imports: {
           '@skyux/popovers': [
             'SkyDropdownModule'
+          ],
+          '@skyux/layout': [
+            'SkyFluidGridModule'
           ]
         },
         getCodeFiles: () => this.getDemoFiles('SkyDropdownDemoComponent')
@@ -245,10 +251,20 @@ export class SkyDemoComponentsService {
         url: '/components/filter',
         imports: {
           '@skyux/lists': [
-            'SkyFilterModule'
+            'SkyFilterModule',
+            'SkyRepeaterModule'
           ],
           '@skyux/inline-form': [
             'SkyInlineFormModule'
+          ],
+          '@skyux/modals': [
+            'SkyModalModule'
+          ],
+          '@skyux/layout': [
+            'SkyToolbarModule'
+          ],
+          '@skyux/forms': [
+            'SkyCheckboxModule'
           ]
         },
         getCodeFiles: () => [
