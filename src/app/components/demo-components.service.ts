@@ -294,6 +294,22 @@ export class SkyDemoComponentsService {
         imports: {
           '@skyux/flyout': [
             'SkyFlyoutModule'
+          ],
+          '@skyux/list-builder': [
+            'SkyListModule'
+          ],
+          '@skyux/list-builder-view-grids': [
+            'SkyListViewGridModule'
+          ],
+          '@skyux/avatar': [
+            'SkyAvatarModule'
+          ],
+          '@skyux/layout': [
+            'SkyPageSummaryModule'
+          ],
+          '@skyux/indicators': [
+            'SkyKeyInfoModule',
+            'SkyLabelModule'
           ]
         },
         getCodeFiles: () => this.getDemoFiles('SkyFlyoutDemoComponent')
@@ -732,6 +748,12 @@ export class SkyDemoComponentsService {
           ],
           '@skyux/list-builder': [
             'SkyListModule'
+          ],
+          '@skyux/lookup': [
+            'SkyLookupModule'
+          ],
+          '@skyux/layout': [
+            'SkyFluidGridModule'
           ]
         },
         getCodeFiles: () => this.getDemoFiles('SkySelectFieldDemoComponent')
@@ -853,6 +875,9 @@ export class SkyDemoComponentsService {
         imports: {
           '@skyux/toast': [
             'SkyToastModule'
+          ],
+          '@skyux/forms': [
+            'SkyRadioModule'
           ]
         },
         getCodeFiles: () => this.getDemoFiles('SkyToastDemoComponent')
@@ -929,6 +954,12 @@ export class SkyDemoComponentsService {
         imports: {
           '@skyux/progress-indicator': [
             'SkyProgressIndicatorModule'
+          ],
+          '@skyux/modals': [
+            'SkyModalModule'
+          ],
+          '@skyux/forms': [
+            'SkyCheckboxModule'
           ]
         },
         getCodeFiles: () => this.getDemoFiles('SkyWizardDemoComponent')
