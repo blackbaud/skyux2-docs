@@ -47,7 +47,7 @@
       class="sky-control-label"
       for="input-page-title"
     >
-      Name
+      Page title
     </label>
     <input
       id="input-page-title"
@@ -57,6 +57,94 @@
     />
   </div>
 </ng-template>
+
+
+<div
+  class="app-screenshot sky-margin-stacked-default"
+  id="screenshot-repeater-with-inline-form"
+>
+
+  <h3>Repeater with inline-form</h3>
+  <sky-repeater>
+    <sky-repeater-item *ngFor="let item of repeaterItems"
+      [inlineFormTemplate]="myInlineForm"
+      [showInlineForm]="activeInlineFormId === item.id"
+      (inlineFormClose)="onInlineFormClose($event)"
+    >
+      <sky-repeater-item-title>
+          <sky-fluid-grid>
+            <sky-row>
+              <sky-column
+                screenXSmall="11"
+              >
+                  {{ item.title }}
+              </sky-column>
+              <sky-column
+                screenXSmall="1"
+              >
+                <button
+                  class="sky-btn sky-btn-link sky-no-focus sky-demo-btn-edit"
+                  type="button"
+                  (click)="activeInlineFormId = item.id"
+                >
+                  <sky-icon
+                    icon="pencil"
+                    size="sm"
+                  >
+                  </sky-icon>
+                </button>
+              </sky-column>
+            </sky-row>
+          </sky-fluid-grid>
+      </sky-repeater-item-title>
+
+      <sky-repeater-item-content>
+        {{ item.note }}
+      </sky-repeater-item-content>
+
+
+      <ng-template
+        #myInlineForm
+      >
+        <div
+          class="sky-form-group"
+        >
+          <label
+            class="sky-control-label"
+            for="inline-form-title"
+          >
+            Title
+          </label>
+          <input
+            id="inline-form-title"
+            class="sky-form-control"
+            type="text"
+            [(ngModel)]="item.title"
+          />
+        </div>
+        <div
+          class="sky-form-group"
+        >
+          <label
+            class="sky-control-label"
+            for="inline-form-note"
+          >
+            Note
+          </label>
+          <input
+            id="inline-form-note"
+            class="sky-form-control"
+            type="text"
+            [(ngModel)]="item.note"
+          />
+        </div>
+      </ng-template>
+
+    </sky-repeater-item>
+  </sky-repeater>
+
+</div>
+
 
 <!-- <sky-inline-form *ngFor="let data of myData"
   id="inline-form-add"
