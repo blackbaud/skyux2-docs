@@ -427,6 +427,9 @@ export class SkyDemoComponentsService {
             'SkyLinkRecordsModule'
           ]
         },
+        dependencies: {
+          'microedge-rxstate': '*'
+        },
         getCodeFiles: () => this.getDemoFiles('SkyLinkRecordsDemoComponent')
       },
       {
@@ -553,6 +556,9 @@ export class SkyDemoComponentsService {
         imports: {
           '@skyux/core': [
             'SkyMediaQueryModule'
+          ],
+          '@skyux/indicators': [
+            'SkyAlertModules'
           ]
         },
         getCodeFiles: () => this.getDemoFiles('SkyMediaQueryDemoComponent')
@@ -565,6 +571,12 @@ export class SkyDemoComponentsService {
         imports: {
           '@skyux/modals': [
             'SkyModalModule'
+          ],
+          '@skyux/indicators': [
+            'SkyAlertModules'
+          ],
+          '@skyux/tiles': [
+            'SkyTilesModule'
           ]
         },
         getCodeFiles: () => this.getDemoFiles('SkyModalDemoComponent')
