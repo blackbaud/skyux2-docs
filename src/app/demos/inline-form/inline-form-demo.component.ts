@@ -27,7 +27,7 @@ export class SkyInlineFormDemoComponent {
 
   public showCustomButtonsForm = false;
 
-  public repeaterItems = [
+  public repeaterItems: any[] = [
     {
       id: '1',
       title: '2018 Spring gala',
