@@ -13,6 +13,7 @@ import { SkyDemoPagePlunkerService } from './demo-page-plunker-service';
 import { SkyDemoPageStackBlitzService } from './demo-page-stackblitz-service';
 import { SkyDemoComponentsService } from '../demo-components.service';
 import { SkyDemoComponent } from '../demo-component';
+import { SkyDemoPageDependencies } from './demo-page-dependencies';
 
 @Component({
   selector: 'sky-demo-page-code',
@@ -42,20 +43,25 @@ export class SkyDemoPageCodeComponent implements AfterViewInit {
     items.map((item: SkyDemoComponent) => {
 
       this.imports = item.imports;
+      this.dependencies = item.dependencies;
 
       if (this.imports) {
         this.showDemoRunButton = true;
         this.showDemoEmbed = true;
       }
 
-      this.codeFilesForBinding = item.getCodeFiles().map((codeFile: any) => {
-        return new SkyDemoPageCodeFile(
+      this.codeFilesForBinding = item.getCodeFiles()
+        .map((codeFile: any) => new SkyDemoPageCodeFile(
           codeFile.name,
           codeFile.fileContents,
           codeFile.componentName,
           codeFile.bootstrapSelector
-        );
-      });
+        )
+      );
+
+      if (this.codeFilesForBinding.length) {
+        this.codeFilesForBinding[0].active = true;
+      }
     });
   }
 
@@ -63,6 +69,7 @@ export class SkyDemoPageCodeComponent implements AfterViewInit {
   public embedRef: ElementRef;
 
   private imports: SkyDemoPageImports;
+  private dependencies: SkyDemoPageDependencies;
 
   constructor(
     private stackBlitzService: SkyDemoPageStackBlitzService,
@@ -74,7 +81,8 @@ export class SkyDemoPageCodeComponent implements AfterViewInit {
       this.stackBlitzService.embedProject(
         this.embedRef.nativeElement,
         this.codeFilesForBinding,
-        this.imports
+        this.imports,
+        this.dependencies
       );
     }
   }
@@ -82,7 +90,8 @@ export class SkyDemoPageCodeComponent implements AfterViewInit {
   public openProjectInStackBlitz() {
     this.stackBlitzService.openProject(
       this.codeFilesForBinding,
-      this.imports
+      this.imports,
+      this.dependencies
     );
   }
 

@@ -5,6 +5,7 @@ import sdk from '@stackblitz/sdk';
 
 import { SkyDemoPageCodeFile } from './demo-page-code-file';
 import { SkyDemoPageImports } from './demo-page-imports';
+import { SkyDemoPageDependencies } from './demo-page-dependencies';
 
 @Injectable()
 export class SkyDemoPageStackBlitzService {
@@ -18,13 +19,15 @@ export class SkyDemoPageStackBlitzService {
   public embedProject(
     elementOrId: string | HTMLElement,
     codeFiles: SkyDemoPageCodeFile[],
-    imports: SkyDemoPageImports
+    imports: SkyDemoPageImports,
+    dependencies: SkyDemoPageDependencies
   ) {
     sdk.embedProject(
       elementOrId,
       this.getPayload(
         codeFiles,
-        imports
+        imports,
+        dependencies
       ),
       {
         openFile: this.getFileToOpen(codeFiles),
@@ -36,12 +39,14 @@ export class SkyDemoPageStackBlitzService {
 
   public openProject(
     codeFiles: SkyDemoPageCodeFile[],
-    imports: SkyDemoPageImports
+    imports: SkyDemoPageImports,
+    dependencies: SkyDemoPageDependencies
   ) {
     sdk.openProject(
       this.getPayload(
         codeFiles,
-        imports
+        imports,
+        dependencies
       ),
       {
         openFile: this.getFileToOpen(codeFiles)
@@ -55,12 +60,13 @@ export class SkyDemoPageStackBlitzService {
 
   private getPayload(
     codeFiles: SkyDemoPageCodeFile[],
-    imports: SkyDemoPageImports
+    imports?: SkyDemoPageImports,
+    dependencies?: SkyDemoPageDependencies
   ) {
     const angularVersion = '^7.0.0';
     const skyuxVersion = '^3.0.0';
 
-    const dependencies: { [key: string]: string } = {
+    const commonDependencies: { [key: string]: string } = {
       '@angular/animations': angularVersion,
       '@angular/common': angularVersion,
       '@angular/compiler': angularVersion,
@@ -91,9 +97,17 @@ export class SkyDemoPageStackBlitzService {
       'zone.js': '~0.8.28'
     };
 
-    Object.keys(imports).forEach((key: string) => {
-      dependencies[key] = skyuxVersion;
-    });
+    if (imports) {
+      Object.keys(imports).forEach((key: string) => {
+        commonDependencies[key] = skyuxVersion;
+      });
+    }
+
+    if (dependencies) {
+      Object.keys(dependencies).forEach((key: string) => {
+        commonDependencies[key] = dependencies[key];
+      });
+    }
 
     const payload = {
       files: this.getFiles(
@@ -104,7 +118,7 @@ export class SkyDemoPageStackBlitzService {
       title: 'SKY UX Demo',
       description: 'SKY UX Demo',
       template: 'angular-cli',
-      dependencies: dependencies,
+      dependencies: commonDependencies,
       settings: {
         compile: {
           clearConsole: false
@@ -205,7 +219,11 @@ export class SkyDemoPageStackBlitzService {
     }
   }
 }`;
-    files[`${this.srcFolder}styles.scss`] = `@import '~@skyux/theme/css/sky';`;
+    files[`${this.srcFolder}styles.scss`] = `@import '~@skyux/theme/css/sky';
+body {
+  background: #FFF;
+  margin: 15px;
+}`;
     files[`${this.srcFolder}index.html`] = `<sky-demo-app>loading...</sky-demo-app>`;
 
     files[`${this.appFolder}app.component.ts`] = `${banner}

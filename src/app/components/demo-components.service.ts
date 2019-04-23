@@ -649,6 +649,7 @@ export class SkyDemoComponentsService {
         url: '/components/popover',
         imports: {
           '@skyux/popovers': [
+            'SkyDropdownModule',
             'SkyPopoverModule'
           ]
         },
@@ -663,6 +664,12 @@ export class SkyDemoComponentsService {
         imports: {
           '@skyux/progress-indicator': [
             'SkyProgressIndicatorModule'
+          ],
+          '@skyux/modals': [
+            'SkyModalModule'
+          ],
+          '@skyux/popovers': [
+            'SkyPopoverModule'
           ]
         },
         getCodeFiles: () => this.getDemoFiles('SkyProgressIndicatorDemoComponent')
@@ -729,6 +736,12 @@ export class SkyDemoComponentsService {
         imports: {
           '@skyux/tabs': [
             'SkySectionedFormModule'
+          ],
+          '@skyux/modals': [
+            'SkyModalModule'
+          ],
+          '@skyux/forms': [
+            'SkyCheckboxModule'
           ]
         },
         getCodeFiles: () => this.getDemoFiles('SkySectionedFormDemoComponent')
@@ -755,6 +768,12 @@ export class SkyDemoComponentsService {
           '@skyux/layout': [
             'SkyFluidGridModule'
           ]
+        },
+        dependencies: {
+          'microedge-rxstate': '*',
+          '@skyux/list-builder-common': '*',
+          '@skyux/lists': '*',
+          '@skyux/inline-form': '*'
         },
         getCodeFiles: () => this.getDemoFiles('SkySelectFieldDemoComponent')
       },

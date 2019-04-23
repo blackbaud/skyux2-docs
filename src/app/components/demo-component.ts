@@ -11,4 +11,5 @@ export interface SkyDemoComponent {
   getCodeFiles?: () => any[];
   components?: SkyDemoComponent[];
   imports?: SkyDemoPageImports;
+  dependencies?: { [key: string]: string };
 }
