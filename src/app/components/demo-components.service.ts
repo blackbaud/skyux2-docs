@@ -216,11 +216,10 @@ export class SkyDemoComponentsService {
       },
       {
         name: 'Inline form',
-        icon: 'sun-o',
-        // tslint:disable-next-line
-        summary: `The inline form component allows a form to be displayed in context, without having to open a modal.`,
+        icon: 'keyboard-o',
+        summary: 'The inline form component renders a form in the current view rather than in a modal.',
         url: '/components/inline-form',
-        getCodeFiles: () => this.getDemoFiles('SkyInlineFormComponent')
+        getCodeFiles: () => this.getDemoFiles('SkyInlineFormDemoComponent')
       },
       {
         name: 'Key info',
