@@ -86,7 +86,7 @@
       propertyName="sortField"
       isOptional="true"
     >
-    Specifies the field to use to sort the grid. This property accepts a <stache-code>ListSortFieldSelectorModel</stache-code> value that contains a <stache-code>fieldSelector</stache-code> string to represent the current sort field and a <stache-code>descending</stache-code> boolean to indicate whether to sort in descending order.
+    Displays a caret in the column that was used to sort the grid. This is particularly useful when you programmatically sort data and want to visually indicate how the grid was sorted. This property accepts <a stacheRouterLink="." fragment="listsortfieldselectormodel-properties">a <stache-code>ListSortFieldSelectorModel</stache-code> value</a> to represent the current sort field and the sort order.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="width"
@@ -109,6 +109,21 @@
           <stache-code>SkyGridMessageType.SelectAll</stache-code> &mdash; Selects the multiselect checkboxes for all rows in the grid.
         </li>
       </ul>
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-properties sectionHeading="ListSortFieldSelectorModel properties">
+    <sky-demo-page-property
+      propertyName="fieldSelector"
+    >
+      Represents the current sort field. This property accepts <stache-code>string</stache-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="descending"
+      defaultValue="false"
+      isOptional="true"
+    >
+      Indicates whether to sort in descending order. The caret that visually indicates the sort order points down for descending order and up for ascending order. This property accepts <stache-code>boolean</stache-code> values.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
