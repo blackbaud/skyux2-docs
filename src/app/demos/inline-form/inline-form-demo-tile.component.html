@@ -1,66 +1,58 @@
 <sky-tile>
   <sky-tile-title>
-    2018 Events
+    Event description
   </sky-tile-title>
-  <sky-tile-summary>
-    3
-  </sky-tile-summary>
   <sky-tile-content>
-    <sky-tile-content-section *ngFor="let item of tileData">
+    <sky-tile-content-section>
 
       <sky-inline-form
-        [showForm]="activeItemId === item.id"
-        [template]="tileForm"
+        [showForm]="showEventDescriptionForm"
+        [template]="eventDescriptionForm"
         (close)="onInlineFormClose($event)"
       >
-        <b>
-          {{ item.title }}
-        </b>
-        {{ item.note }}
-        <button
-          class="sky-btn sky-btn-link sky-no-focus"
-          (click)="activeItemId = item.id"
-        >
-          <sky-icon
-            aria-label="Edit"
-            icon="pencil"
-          >
-          </sky-icon>
-        </button>
+        <sky-fluid-grid>
+          <sky-row>
+            <sky-column
+              screenXSmall="11"
+            >
+              {{ eventDescription }}
+            </sky-column>
+            <sky-column
+              screenXSmall="1"
+            >
+              <button
+                class="sky-btn sky-btn-link sky-no-focus sky-demo-btn-edit"
+                (click)="showEventDescriptionForm = true"
+              >
+                <sky-icon
+                  aria-label="Edit"
+                  icon="pencil"
+                >
+                </sky-icon>
+              </button>
+            </sky-column>
+          </sky-row>
+        </sky-fluid-grid>
       </sky-inline-form>
 
-      <ng-template #tileForm>
+      <ng-template
+        #eventDescriptionForm
+      >
         <div
           class="sky-form-group"
         >
           <label
             class="sky-control-label"
-            for="demo-input-3"
+            for="demo-input-tile-description"
           >
-            Title
+            Event description
           </label>
-          <input
-            id="demo-input-3"
+          <textarea
+            id="demo-input-tile-description"
             class="sky-form-control"
-            type="text"
-            [(ngModel)]="item.title"
-          />
-        </div>
-        <div
-          class="sky-form-group"
-        >
-          <label
-            class="sky-control-label"
-            for="demo-input-4"
+            [(ngModel)]="eventDescription"
           >
-            Note
-          </label>
-          <input
-            id="demo-input-4"
-            class="sky-form-control"
-            type="text"
-            [(ngModel)]="item.note"
-          />
+          </textarea>
         </div>
       </ng-template>
 

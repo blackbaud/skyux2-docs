@@ -13,7 +13,7 @@
   <h4>
     {{ pageTitle }}
     <button
-      class="sky-btn sky-btn-link"
+      class="sky-btn sky-btn-link sky-demo-btn-edit"
       (click)="showPageTitleForm = true"
     >
       <sky-icon
@@ -40,7 +40,7 @@
   <h4>
     {{ pageTitle }}
     <button
-      class="sky-btn sky-btn-link"
+      class="sky-btn sky-btn-link sky-demo-btn-edit"
       (click)="showCustomButtonsForm = true"
     >
       <sky-icon
@@ -78,7 +78,6 @@
   id="example-repeater"
 >
   <h3>Repeater using inline-form</h3>
-  <h4>Events</h4>
   <sky-repeater>
     <sky-repeater-item *ngFor="let item of repeaterItems"
       [inlineFormTemplate]="myInlineForm"

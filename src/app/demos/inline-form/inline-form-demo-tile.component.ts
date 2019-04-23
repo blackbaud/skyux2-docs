@@ -11,19 +11,16 @@ import {
 })
 export class SkyInlineFormDemoTileComponent {
 
-  public activeItemId: string;
+  public showEventDescriptionForm = false;
 
-  public tileData: any[] = [
-    { id: '1', title: '2018 Spring gala ', note: 'Gala for friends and family' },
-    { id: '2', title: '2018 Special winter event ', note: 'A special event' },
-    { id: '3', title: '2018 Donor appreciation event', note: 'All donors and families invited' }
-  ];
+  // tslint:disable-next-line:max-line-length
+  public eventDescription: string = `Spring is here and it's time to celebrate the strawberry. Join us for the 9th annual Spring Strawberry Festival at Sunny Park with some of your favorite music and vendors. Bring the family with activities for all age groups - from face painting to strawberry eating.`;
 
   public onInlineFormClose(inlineFormCloseArgs: SkyInlineFormCloseArgs): void {
     console.log(inlineFormCloseArgs);
 
     // Form handling would go here
 
-    this.activeItemId = undefined;
+    this.showEventDescriptionForm = false;
   }
 }
