@@ -30,27 +30,27 @@ export class SkyInlineFormDemoComponent {
   public repeaterItems: any[] = [
     {
       id: '1',
-      title: '2018 Spring gala',
+      title: '2019 Spring Gala',
       note: 'Gala for friends and family',
-      fund: 'General 2018 Fund'
+      fund: 'General 2019 Fund'
     },
     {
       id: '2',
-      title: '2018 Special winter event',
+      title: '2019 Special Winter Event',
       note: 'A special event',
-      fund: '2018 Special Events Fund'
+      fund: '2019 Special Events Fund'
     },
     {
       id: '3',
-      title: '2018 Donor appreciation event',
-      note: 'All donors and families invited',
-      fund: 'General 2018 Fund'
+      title: '2019 Donor Appreciation Event',
+      note: 'Event for all donors and families',
+      fund: 'General 2019 Fund'
     },
     {
       id: '4',
-      title: '2019 Gala',
-      note: '2019 Gala for friends and family',
-      fund: 'General 2019 Fund'
+      title: '2020 Spring Gala',
+      note: 'Gala for friends and family',
+      fund: 'General 2020 Fund'
     }
   ];
 

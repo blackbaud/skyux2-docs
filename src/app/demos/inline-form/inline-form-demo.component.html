@@ -2,7 +2,7 @@
   id="example-simple"
   class="sky-margin-stacked-separate"
 >
-  <h3>Simple example</h3>
+  <h3>Inline form with Save and Cancel buttons</h3>
   <sky-inline-form
     id="inline-form-add"
     [config]="editTitleConfig"
@@ -29,7 +29,7 @@
   id="example-simple"
   class="sky-margin-stacked-separate"
 >
-  <h3>Custom buttons example</h3>
+  <h3>Inline form with custom buttons</h3>
   <sky-inline-form
     id="inline-form-custom"
     [config]="customConfig"
@@ -62,7 +62,7 @@
       class="sky-control-label"
       for="input-page-title"
     >
-      Page title
+      Fundraising page title
     </label>
     <input
       id="input-page-title"
@@ -77,7 +77,7 @@
   class="sky-margin-stacked-separate"
   id="example-repeater"
 >
-  <h3>Repeater using inline-form</h3>
+  <h3>Repeater using inline forms</h3>
   <sky-repeater>
     <sky-repeater-item *ngFor="let item of repeaterItems"
       [inlineFormTemplate]="myInlineForm"
@@ -159,7 +159,7 @@
   class="sky-margin-stacked-separate"
   id="example-tiles"
 >
-  <h3>Tile sections using inline-form</h3>
+  <h3>Tile sections using inline form</h3>
 
   <sky-tile-dashboard
     [(config)]="dashboardConfig"
