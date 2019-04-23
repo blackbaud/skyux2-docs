@@ -8,6 +8,10 @@ import {
   SkyInlineFormCloseArgs
 } from '@skyux/inline-form';
 
+import {
+  SkyInlineFormDemoTileComponent
+} from './inline-form-demo-tile.component';
+
 @Component({
   selector: 'sky-inline-form-demo',
   templateUrl: './inline-form-demo.component.html',
@@ -17,32 +21,33 @@ import {
 })
 export class SkyInlineFormDemoComponent {
 
-  public activeId: string = undefined;
-
   public pageTitle = 'My fundraising page';
 
   public showPageTitleForm = false;
 
-  public myData: any = [
-    { id: '1', name: 'Target', amount: '$500.00' },
-    { id: '2', name: 'Raised', amount: '$25.00' }
-  ];
+  public showCustomButtonsForm = false;
 
   public repeaterItems = [
     {
       id: '1',
-      title: '2018 Gala',
-      note: '2018 Gala for friends and family',
+      title: '2018 Spring gala',
+      note: 'Gala for friends and family',
       fund: 'General 2018 Fund'
     },
     {
       id: '2',
-      title: '2018 Special event',
-      note: 'Special event',
+      title: '2018 Special winter event',
+      note: 'A special event',
       fund: '2018 Special Events Fund'
     },
     {
       id: '3',
+      title: '2018 Donor appreciation event',
+      note: 'All donors and families invited',
+      fund: 'General 2018 Fund'
+    },
+    {
+      id: '4',
       title: '2019 Gala',
       note: '2019 Gala for friends and family',
       fund: 'General 2019 Fund'
@@ -51,8 +56,8 @@ export class SkyInlineFormDemoComponent {
 
   public activeInlineFormId: number;
 
-  public editConfig: SkyInlineFormConfig = {
-    buttonLayout: SkyInlineFormButtonLayout.SaveDeleteCancel
+  public editTitleConfig: SkyInlineFormConfig = {
+    buttonLayout: SkyInlineFormButtonLayout.SaveCancel
   };
 
   public customConfig: SkyInlineFormConfig = {
@@ -67,20 +72,56 @@ export class SkyInlineFormDemoComponent {
 
   public showForm = false;
 
-  public onClose(event: any): void {
-    this.activeId = undefined;
-    console.log(event);
+  public dashboardConfig = {
+    tiles: [
+      {
+        id: 'tile1',
+        componentType: SkyInlineFormDemoTileComponent
+      }
+    ],
+    layout: {
+      singleColumn: {
+        tiles: [
+          {
+            id: 'tile1',
+            isCollapsed: false
+          }
+        ]
+      },
+      multiColumn: [
+        {
+          tiles: [
+            {
+              id: 'tile1',
+              isCollapsed: false
+            }
+          ]
+        }
+      ]
+    }
+  };
+
+  public onClosePageTitleForm(inlineFormCloseArgs: SkyInlineFormCloseArgs): void {
+    console.log(inlineFormCloseArgs);
+
+    // Form handling would go here
+
+    this.showPageTitleForm = false;
   }
 
-  public onClosePageTitleForm(event: SkyInlineFormCloseArgs): void {
-    this.showPageTitleForm = false;
-    console.log(event);
+  public onCloseCustomButtonsForm(inlineFormCloseArgs: SkyInlineFormCloseArgs): void {
+    console.log(inlineFormCloseArgs);
+
+    // Form handling would go here
+
+    this.showCustomButtonsForm = false;
   }
 
   public onInlineFormClose(inlineFormCloseArgs: SkyInlineFormCloseArgs): void {
     console.log(inlineFormCloseArgs);
-    this.activeInlineFormId = undefined;
 
     // Form handling would go here
+
+    this.activeInlineFormId = undefined;
   }
 }

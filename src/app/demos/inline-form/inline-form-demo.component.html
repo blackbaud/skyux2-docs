@@ -1,39 +1,54 @@
-<h3>Simple example</h3>
-
 <div
-  id="simple-example"
+  id="example-simple"
   class="sky-margin-stacked-separate"
 >
+  <h3>Simple example</h3>
   <sky-inline-form
     id="inline-form-add"
-    [config]="editConfig"
+    [config]="editTitleConfig"
     [showForm]="showPageTitleForm"
     [template]="pageTitleForm"
     (close)="onClosePageTitleForm($event)"
   >
-    <sky-fluid-grid>
-      <sky-row>
-        <sky-column screenSmall="9">
-          <h1>
-            {{ pageTitle }}
-          </h1>
-        </sky-column>
-        <sky-column
-          screenSmall="3"
-        >
-          <button
-            class="sky-btn sky-btn-primary"
-            (click)="showPageTitleForm = true"
-          >
-            <sky-icon
-              icon="pencil"
-              size="lg">
-            </sky-icon>
-            Edit page title
-          </button>
-        </sky-column>
-      </sky-row>
-    </sky-fluid-grid>
+  <h4>
+    {{ pageTitle }}
+    <button
+      class="sky-btn sky-btn-link"
+      (click)="showPageTitleForm = true"
+    >
+      <sky-icon
+        icon="pencil"
+        size="lg">
+      </sky-icon>
+    </button>
+  </h4>
+  </sky-inline-form>
+</div>
+
+<div
+  id="example-simple"
+  class="sky-margin-stacked-separate"
+>
+  <h3>Custom buttons example</h3>
+  <sky-inline-form
+    id="inline-form-custom"
+    [config]="customConfig"
+    [showForm]="showCustomButtonsForm"
+    [template]="pageTitleForm"
+    (close)="onCloseCustomButtonsForm($event)"
+  >
+  <h4>
+    {{ pageTitle }}
+    <button
+      class="sky-btn sky-btn-link"
+      (click)="showCustomButtonsForm = true"
+    >
+      <sky-icon
+        icon="pencil"
+        size="lg">
+      </sky-icon>
+    </button>
+  </h4>
   </sky-inline-form>
 </div>
 
@@ -58,13 +73,12 @@
   </div>
 </ng-template>
 
-
 <div
-  class="app-screenshot sky-margin-stacked-default"
-  id="screenshot-repeater-with-inline-form"
+  class="sky-margin-stacked-separate"
+  id="example-repeater"
 >
-
-  <h3>Repeater with inline-form</h3>
+  <h3>Repeater using inline-form</h3>
+  <h4>Events</h4>
   <sky-repeater>
     <sky-repeater-item *ngFor="let item of repeaterItems"
       [inlineFormTemplate]="myInlineForm"
@@ -72,30 +86,26 @@
       (inlineFormClose)="onInlineFormClose($event)"
     >
       <sky-repeater-item-title>
-          <sky-fluid-grid>
-            <sky-row>
-              <sky-column
-                screenXSmall="11"
-              >
-                  {{ item.title }}
-              </sky-column>
-              <sky-column
-                screenXSmall="1"
-              >
-                <button
-                  class="sky-btn sky-btn-link sky-no-focus sky-demo-btn-edit"
-                  type="button"
-                  (click)="activeInlineFormId = item.id"
-                >
-                  <sky-icon
-                    icon="pencil"
-                    size="sm"
-                  >
-                  </sky-icon>
-                </button>
-              </sky-column>
-            </sky-row>
-          </sky-fluid-grid>
+        <div
+          class="pull-left"
+        >
+          {{ item.title }}
+        </div>
+        <div
+          class="pull-right"
+        >
+          <button
+            class="sky-btn sky-btn-link sky-no-focus sky-demo-btn-edit"
+            type="button"
+            (click)="activeInlineFormId = item.id"
+          >
+            <sky-icon
+              icon="pencil"
+              size="sm"
+            >
+            </sky-icon>
+          </button>
+        </div>
       </sky-repeater-item-title>
 
       <sky-repeater-item-content>
@@ -146,108 +156,14 @@
 </div>
 
 
-<!-- <sky-inline-form *ngFor="let data of myData"
-  id="inline-form-add"
-  [config]="editConfig"
-  [showForm]="activeId == data.id"
-  [template]="addForm"
-  (close)="onClose($event)"
+<div
+  class="sky-margin-stacked-separate"
+  id="example-tiles"
 >
-  <p>
-    {{ data.name }}: {{ data.amount }}
-    <button
-      class="sky-btn-link"
-      (click)="activeId = data.id"
-    >
-      Edit
-    </button>
-  </p>
+  <h3>Tile sections using inline-form</h3>
 
-  <ng-template
-    #addForm
+  <sky-tile-dashboard
+    [(config)]="dashboardConfig"
   >
-    <div
-      class="sky-form-group"
-    >
-      <label
-        class="sky-control-label"
-        for="demo-input-1"
-      >
-        Name
-      </label>
-      <input
-        id="demo-input-1"
-        class="sky-form-control"
-        type="text"
-        [(ngModel)]="data.name"
-      />
-    </div>
-    <div
-      class="sky-form-group"
-    >
-      <label
-        class="sky-control-label"
-        for="demo-input-2"
-      >
-        Amount
-      </label>
-      <input
-        id="demo-input-2"
-        class="sky-form-control"
-        type="text"
-        [(ngModel)]="data.amount"
-      />
-    </div>
-  </ng-template>
-</sky-inline-form>
-
-
-
-
-<h2>Custom config</h2>
-
-<sky-inline-form
-  id="inline-form-edit"
-  [config]="customConfig"
-  [showForm]="true"
-  [template]="customForm"
-  (close)="onClose($event)"
->
-  <p>My title</p>
-  <p>My note</p>
-</sky-inline-form>
-
-<ng-template
-  #customForm
->
-  <div
-    class="sky-form-group"
-  >
-    <label
-      class="sky-control-label"
-      for="demo-input-3"
-    >
-      Title
-    </label>
-    <input
-      id="demo-input-3"
-      class="sky-form-control"
-      type="text"
-    />
-  </div>
-  <div
-    class="sky-form-group"
-  >
-    <label
-      class="sky-control-label"
-      for="demo-input-4"
-    >
-      Note
-    </label>
-    <input
-      id="demo-input-4"
-      class="sky-form-control"
-      type="text"
-    />
-  </div>
-</ng-template> -->
+  </sky-tile-dashboard>
+</div>
