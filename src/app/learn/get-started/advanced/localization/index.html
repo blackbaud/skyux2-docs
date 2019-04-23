@@ -17,7 +17,7 @@
 </stache-page-anchor>
 
 <p>
-  You must set localization strings for libraries when publishing to NPM because libraries do not fetch them at runtime like SPAs.
+  You must set localization strings for libraries when publishing to NPM because libraries do not fetch them at runtime like SPAs. To set localization strings, follow the procedures below.
 </p>
 
 <h3>
@@ -125,7 +125,7 @@
   </h3>
 
   <p>
-    Import your <stache-code>MyLibraryResourcesModule</stache-code> into any modules that require access to locale resource strings. This allows the modules to use the <stache-code>skyLibResources</stache-code> pipe and the <stache-code>SkyLibResourcesService</stache-code> service.
+    For modules that require access to locale resource strings, import <stache-code>MyLibraryResourcesModule</stache-code> where <stache-code>MyLibrary</stache-code> is the name of your library. This allows the modules to use the <stache-code>skyLibResources</stache-code> pipe and the <stache-code>SkyLibResourcesService</stache-code> service.
   </p>
 
   <stache-code-block languageType="typescript">
