@@ -18,8 +18,10 @@
   </sky-demo-page-property>
 	<sky-demo-page-property
     propertyName="showForm"
+		isOptional="true"
+		defaultValue="false"
   >
-  Specifies the form to display inline.
+  Indicates whether to display the inline form. Users can toggle between displaying and hiding the inline form. This property accepts <stache-code>boolean</stache-code> values.
   </sky-demo-page-property>
 	<sky-demo-page-property
     propertyName="template"
@@ -32,7 +34,7 @@
 	<sky-demo-page-property
     propertyName="close"
   >
-  Fires when users close the inline form.
+  Fires when users close the inline form and emits <a stacheRouterLink="." fragment="skyinlineformcloseargs-properties">a <stache-code>SkyInlineFormCloseArgs</stache-code> type</a>.
   </sky-demo-page-property>
 </sky-demo-page-properties>
 
@@ -46,7 +48,7 @@
     propertyName="buttons"
     isOptional="true"
   >
-  Specifies configuration options for the inline form's buttons. This property accepts <a stacheRouterLink="." fragment="skyinlineformbuttonconfig-properties">a <stache-code>SkyInlineFormButtonConfig</stache-code> object</a>.
+  Specifies configuration options for the inline form's buttons. This property accepts <a stacheRouterLink="." fragment="skyinlineformbuttonconfig-properties">an array of <stache-code>SkyInlineFormButtonConfig</stache-code> objects</a>.
   </sky-demo-page-property>
 </sky-demo-page-properties>
 
@@ -66,6 +68,14 @@
     isOptional="true"
   >
   Specifies a background color and style for the button. The valid options are <stache-code>default</stache-code>, <stache-code>link</stache-code>, and <stache-code>primary</stache-code>. These values set the background color and style from the <a routerLink="../button">secondary, link, and primary button classes</a> respectively. This property accepts <stache-code>string</stache-code> values.
+  </sky-demo-page-property>
+</sky-demo-page-properties>
+
+<sky-demo-page-properties sectionHeading='SkyInlineFormCloseArgs properties'>
+	<sky-demo-page-property
+    propertyName="reason"
+  >
+  Returns a <stache-code>string</stache-code> value that explains why the inline form closed. The possible values are <stache-code>cancel</stache-code>, <stache-code>delete</stache-code>, <stache-code>done</stache-code>, and <stache-code>save</stache-code>.
   </sky-demo-page-property>
 </sky-demo-page-properties>
 
