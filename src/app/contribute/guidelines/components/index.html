@@ -21,7 +21,7 @@
 
   <ul>
     <li>
-      <b>File an issue before you start any work.</b> The sooner we can discuss potential code changes, the better.
+      <b><a stacheRouterLink="contribute/guidelines" fragment="file-an-issue">File an issue</a> before you start any work.</b> The sooner we can discuss potential code changes, the better.
     </li>
     <li>
       <b>Use the <stache-code>Sky</stache-code> prefix when naming all classes, directives, services, components, etc.</b> This prefix indicates to other contributors that items are owned by SKY UX and not a third-party library. It also prevents potential class-name clashes with other libraries. Keep in mind that while we generally use the uppercase <stache-code>Sky</stache-code> prefix, we also use the <stache-code>sky-</stache-code> prefix in some cases, such as the selector properties in components.
@@ -131,7 +131,7 @@
   </stache-page-anchor>
 
   <p>
-    We recommend that you create reference documentation for the <a stacheRouterLink="/components">Components section</a> of the SKY UX website. Component documentation should be extensive enough to explain the features of your components, including all properties and events. In the <a href="https://github.com/blackbaud/skyux2-docs">SKY UX docs repo</a>, you create subfolders for your components in the <stache-code>src/app/components</stache-code> folder and document them in index.html files. To create action buttons for the Components section landing page, you add entries in the <stache-code>demo-components.service.ts</stache-code> file.
+    We recommend that you create reference documentation for the <a stacheRouterLink="/components">Components section</a> of the SKY UX website. Component documentation should explain all features of your components, including all properties and events. In the <a href="https://github.com/blackbaud/skyux2-docs">SKY UX docs repo</a>, you create subfolders for your components in the <stache-code>src/app/components</stache-code> folder and document them in index.html files. To create action buttons for the Components section landing page, you add entries in the <stache-code>demo-components.service.ts</stache-code> file.
   </p> 
   
   <p>
@@ -183,44 +183,19 @@
 
   <p>
     To run visual regression tests locally, you must first run them locally against the master branch and then run the tests against your feature branch. Keep in mind that you need to use the same monitor and resolution on both set of tests. If your visual regression tests fail, you can check the failed tests at <stache-code>./screenshots-diff-local/diff</stache-code> to find the cause of the failures.
-
-  <stache-page-anchor>
-    Available NPM scripts
-  </stache-page-anchor>
-
-  <p>
-    <stache-code>npm install</stache-code> and <stache-code>npm start</stache-code> are special commands. All other commands listed below should use the <stache-code>npm run COMMAND</stache-code> format. For example, <stache-code>npm run build</stache-code>.
   </p>
 
-  <table class="content-table">
-    <thead>
-      <tr style="text-align: left;" class="sky-emphasized">
-        <th style="width: 18em;">Script</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><stache-code>build</stache-code></td>
-        <td>Cleans the previous build, compiles the Sass, and transpiles the JavaScript.</td>
-      </tr>
-      <tr>
-        <td><stache-code>skyux</stache-code></td>
-        <td>Cleans the previous build.</td>
-      </tr>
-      <tr>
-        <td><stache-code>start</stache-code></td>
-        <td>Cleans the previous build, <stache-code>node_modules</stache-code>, and coverage reports.</td>
-      </tr>
-      <tr>
-        <td><stache-code>test</stache-code></td>
-        <td>Runs unit tests and visual regression tests.</td>
-      </tr>
-      <tr>
-        <td><stache-code>test:visual</stache-code></td>
-        <td>Runs WebDriver visual regression tests and accessibility tests.</td>
-      </tr>
-    </tbody>
-  </table>
+  <stache-page-anchor>	
+    Submit code	
+  </stache-page-anchor>	
+
+  <ol>
+    <li>	
+      Commit and push your changes to the repo.	
+    </li>	
+    <li>	
+      Submit a pull request.	
+    </li>	
+  </ol>
 
 </stache>
