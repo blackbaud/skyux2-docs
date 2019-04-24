@@ -220,11 +220,14 @@ export class SkyDemoPageStackBlitzService {
   }
 }`;
     files[`${this.srcFolder}styles.scss`] = `@import '~@skyux/theme/css/sky';
+
 body {
-  background: #FFF;
+  background-color: #FFF;
   margin: 15px;
 }`;
-    files[`${this.srcFolder}index.html`] = `<sky-demo-app>loading...</sky-demo-app>`;
+    files[`${this.srcFolder}index.html`] = `<sky-demo-app>
+  Loading...
+</sky-demo-app>`;
 
     files[`${this.appFolder}app.component.ts`] = `${banner}
 import { Component } from '@angular/core';
