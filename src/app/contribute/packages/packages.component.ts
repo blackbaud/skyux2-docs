@@ -164,7 +164,7 @@ export class PackagesComponent {
     {
       id: '@skyux/select-field',
       provider: 'github',
-      repo: 'blackbaud/skyux-select-fields'
+      repo: 'blackbaud/skyux-select-field'
     },
     {
       id: '@skyux/tabs',
@@ -180,11 +180,6 @@ export class PackagesComponent {
       id: '@skyux/tiles',
       provider: 'github',
       repo: 'blackbaud/skyux-tiles'
-    },
-    {
-      id: '@skyux/validation',
-      provider: 'github',
-      repo: 'blackbaud/skyux-validation'
     },
     {
       id: '@skyux/toast',
