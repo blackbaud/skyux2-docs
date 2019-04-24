@@ -14,6 +14,7 @@ import {
 import {
   SkyCopyToClipboardDemoComponent
 } from './copy-to-clipboard';
+import { SkyDateRangePickerDemoComponent } from './date-range-picker';
 // #endregion
 
 /**
@@ -85,6 +86,22 @@ export class SkyDocsDemoCodeService {
           fileContents: require('!!raw-loader!./copy-to-clipboard/copy-to-clipboard-demo.component.ts'),
           componentName: 'SkyCopyToClipboardDemoComponent',
           bootstrapSelector: 'sky-copy-to-clipboard-demo'
+        }
+      ]
+    },
+    {
+      name: 'Date range picker',
+      component: SkyDateRangePickerDemoComponent,
+      files: [
+        {
+          name: 'date-range-picker-demo.component.html',
+          fileContents: require('!!raw-loader!./date-range-picker/date-range-picker-demo.component.html')
+        },
+        {
+          name: 'date-range-picker-demo.component.ts',
+          fileContents: require('!!raw-loader!./date-range-picker/date-range-picker-demo.component.ts'),
+          componentName: 'SkyDateRangePickerDemoComponent',
+          bootstrapSelector: 'sky-date-range-picker-demo'
         }
       ]
     }
