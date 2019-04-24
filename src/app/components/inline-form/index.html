@@ -5,28 +5,26 @@
 >
 
 <sky-demo-page-summary>
-	<p>The inline form component renders a form in the current view rather than opening a modal.</p>
+	<p>
+		The inline form component renders a form in context in the current view rather than opening it in a separate modal. It is most commonly used in <a stacheRouterLink="/components/grid">grids</a>, <a stacheRouterLink="/components/repeater">repeaters</a>, and <a stacheRouterLink="/components/tile">tiles</a>.
+	</p>
 </sky-demo-page-summary>
 
 <sky-demo-page-properties sectionHeading='Inline form properties'>
 	<sky-demo-page-property
     propertyName="config"
-    isOptional="true"
   >
-  Specifies configuration options for the inline form. This property accepts <a stacheRouterLink="." fragment="skyinlineformconfig-properties">a <stache-code>SkyInlineFormConfig</stache-code> object</a>.
+  Specifies configuration options for the buttons to display with the inline form. This property accepts <a stacheRouterLink="." fragment="skyinlineformconfig-properties">a <stache-code>SkyInlineFormConfig</stache-code> object</a>.
   </sky-demo-page-property>
 	<sky-demo-page-property
     propertyName="showForm"
-    isOptional="true"
-		defaultValue="false"
   >
-  Indicates whether to display the inline form. This property accepts <stache-code>boolean</stache-code> values.
+  Specifies the form to display inline.
   </sky-demo-page-property>
 	<sky-demo-page-property
     propertyName="template"
-    isOptional="true"
   >
-  Specifies the template to use to instantiate the inline form. This property accepts an Angular <stache-code>TemplateRef</stache-code> class.
+  Specifies a template to use to instantiate the inline form. This property accepts <a href="https://angular.io/api/core/TemplateRef">an Angular <stache-code>TemplateRef</stache-code> class</a>.
   </sky-demo-page-property>
 </sky-demo-page-properties>
 
@@ -42,7 +40,7 @@
 	<sky-demo-page-property
     propertyName="buttonLayout"
   >
-  Specifies the buttons to display in the inline form. This property accepts <stache-code>enum</stache-code> values, and the valid options are <stache-code>0</stache-code> for custom buttons, <stache-code>1</stache-code> for Done and Cancel buttons, <stache-code>2</stache-code> for Done, Delete, and Cancel buttons, <stache-code>3</stache-code> for Save and Cancel buttons, and <stache-code>4</stache-code> for Save, Delete, and Cancel buttons.
+  Specifies the buttons to display with the inline form. This property accepts a <stache-code>SkyInlineFormButtonLayout</stache-code> value. The valid options are <stache-code>Custom</stache-code> for custom buttons, <stache-code>DoneCancel</stache-code> for Done and Cancel buttons, <stache-code>DoneDeleteCancel</stache-code> for Done, Delete, and Cancel buttons, <stache-code>SaveCancel</stache-code> for Save and Cancel buttons, and <stache-code>SaveDeleteCancel</stache-code> for Save, Delete, and Cancel buttons.
   </sky-demo-page-property>
 	<sky-demo-page-property
     propertyName="buttons"
@@ -61,13 +59,13 @@
 	<sky-demo-page-property
     propertyName="text"
   >
-  Specifies the label for the button. This property accepts <stache-code>string</stache-code> values.
+  Specifies a label for the button. This property accepts <stache-code>string</stache-code> values.
   </sky-demo-page-property>
 	<sky-demo-page-property
     propertyName="styleType"
     isOptional="true"
   >
-  Specifies a background color for the dropdown button. The valid options are <stache-code>default</stache-code> and <stache-code>primary</stache-code>. These values set the background color from the <a routerLink="../button">secondary and primary button classes</a> respectively. This property accepts <stache-code>string</stache-code> values.
+  Specifies a background color and style for the button. The valid options are <stache-code>default</stache-code>, <stache-code>link</stache-code>, and <stache-code>primary</stache-code>. These values set the background color and style from the <a routerLink="../button">secondary, link, and primary button classes</a> respectively. This property accepts <stache-code>string</stache-code> values.
   </sky-demo-page-property>
 </sky-demo-page-properties>
 
