@@ -1,0 +1,26 @@
+@import "../../../../node_modules/@skyux/theme/scss/mixins.scss";
+
+.sky-margin-stacked-separate {
+  margin-bottom: 40px;
+}
+
+#example-repeater ::ng-deep .sky-demo-btn-edit {
+  margin:-6px -12px;
+  line-height: 1;
+}
+
+::ng-deep .sky-demo-btn-edit {
+  color: $sky-text-color-icon-borderless;
+}
+
+#example-tiles ::ng-deep .sky-column {
+  padding:0;
+}
+
+#example-tiles ::ng-deep textarea {
+  height: 90px;
+}
+
+::ng-deep .sky-column-xs-1 {
+  text-align: right;
+}
