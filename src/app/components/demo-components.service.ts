@@ -222,6 +222,13 @@ export class SkyDemoComponentsService {
         getCodeFiles: () => this.getDemoFiles('SkyInfiniteScrollDemoComponent')
       },
       {
+        name: 'Inline form',
+        icon: 'keyboard-o',
+        summary: 'The inline form component renders a form in the current view rather than in a modal.',
+        url: '/components/inline-form',
+        getCodeFiles: () => this.getDemoFiles('SkyInlineFormDemoComponent')
+      },
+      {
         name: 'Key info',
         icon: 'key',
         // tslint:disable-next-line
