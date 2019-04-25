@@ -15,21 +15,13 @@
       >
       </sky-date-range-picker>
 
-      <div *ngIf="reactiveRange.errors && reactiveRange.touched"
-        class="sky-error-label"
-      >
-        {{ reactiveRange.errors | json }}
-      </div>
-    </div>
-
-    <div class="sky-form-group">
-      <button
-        class="sky-btn"
-        type="button"
-        (click)="submit()"
-      >
-        Submit
-      </button>
+      <ng-container *ngIf="reactiveRange.errors && reactiveRange.touched">
+        <div *ngIf="reactiveRange.errors"
+          class="sky-error-label"
+        >
+          {{ reactiveRange.errors | json }}
+        </div>
+      </ng-container>
     </div>
   </form>
 
@@ -69,6 +61,7 @@
   >
     Toggle disabled
   </button>
+
   <button
     class="sky-btn sky-btn-default"
     type="button"
@@ -76,6 +69,7 @@
   >
     Reset form
   </button>
+
   <button
     class="sky-btn sky-btn-default"
     type="button"
@@ -83,6 +77,7 @@
   >
     Set specific range
   </button>
+
   <button
     class="sky-btn sky-btn-default"
     type="button"
@@ -90,6 +85,7 @@
   >
     Set invalid range
   </button>
+
   <button
     class="sky-btn sky-btn-default"
     type="button"
@@ -97,6 +93,7 @@
   >
     Set invalid dates
   </button>
+
   <button
     class="sky-btn sky-btn-default"
     type="button"
@@ -104,6 +101,7 @@
   >
     Set custom calculators
   </button>
+
   <button
     class="sky-btn sky-btn-default"
     type="button"

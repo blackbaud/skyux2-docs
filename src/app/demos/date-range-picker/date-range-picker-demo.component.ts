@@ -1,5 +1,6 @@
 import {
   Component,
+  OnDestroy,
   OnInit
 } from '@angular/core';
 
@@ -11,34 +12,36 @@ import {
 } from '@angular/forms';
 
 import {
-  SkyAppResourcesService
-} from '@skyux/i18n';
-
-import {
   SkyDateRangeCalculation,
   SkyDateRangeCalculatorId,
   SkyDateRangeCalculatorType,
   SkyDateRangeService
 } from '@skyux/datetime';
 
+import {
+  Subject
+} from 'rxjs/Subject';
+
+import 'rxjs/add/operator/distinctUntilChanged';
+
 @Component({
   selector: 'sky-date-range-picker-demo',
   templateUrl: './date-range-picker-demo.component.html'
 })
-export class SkyDateRangePickerDemoComponent implements OnInit {
+export class SkyDateRangePickerDemoComponent implements OnInit, OnDestroy {
   public calculatorIds: SkyDateRangeCalculatorId[];
   public dateFormat: string;
-  public disabled = false;
   public reactiveForm: FormGroup;
 
   public get reactiveRange(): AbstractControl {
     return this.reactiveForm.get('lastDonation');
   }
 
+  private ngUnsubscribe = new Subject<void>();
+
   constructor(
     private dateRangeService: SkyDateRangeService,
-    private formBuilder: FormBuilder,
-    private resourcesService: SkyAppResourcesService
+    private formBuilder: FormBuilder
   ) { }
 
   public ngOnInit(): void {
@@ -47,6 +50,8 @@ export class SkyDateRangePickerDemoComponent implements OnInit {
     });
 
     this.reactiveRange.statusChanges
+      .distinctUntilChanged()
+      .takeUntil(this.ngUnsubscribe)
       .subscribe((status) => {
         console.log(
           'Date range status change:',
@@ -56,6 +61,8 @@ export class SkyDateRangePickerDemoComponent implements OnInit {
       });
 
     this.reactiveRange.valueChanges
+      .distinctUntilChanged()
+      .takeUntil(this.ngUnsubscribe)
       .subscribe((value) => {
         console.log(
           'Date range value change:',
@@ -64,8 +71,12 @@ export class SkyDateRangePickerDemoComponent implements OnInit {
       });
   }
 
+  public ngOnDestroy(): void {
+    this.ngUnsubscribe.next();
+    this.ngUnsubscribe.complete();
+  }
+
   public toggleDisabled(): void {
-    this.disabled = !this.disabled;
     if (this.reactiveForm.disabled) {
       this.reactiveForm.enable();
     } else {
@@ -74,6 +85,8 @@ export class SkyDateRangePickerDemoComponent implements OnInit {
   }
 
   public resetForm(): void {
+    this.dateFormat = undefined;
+    this.calculatorIds = undefined;
     this.reactiveForm.reset();
     this.reactiveForm.markAsPristine();
     this.reactiveForm.markAsUntouched();
@@ -102,38 +115,31 @@ export class SkyDateRangePickerDemoComponent implements OnInit {
   public setInvalidDates(): void {
     const range: SkyDateRangeCalculation = {
       calculatorId: SkyDateRangeCalculatorId.SpecificRange,
-      startDate: 'asdf' as any,
-      endDate: 'asdf' as any
+      startDate: 'invalid' as any,
+      endDate: 'invalid' as any
     };
 
     this.reactiveRange.setValue(range);
   }
 
-  public submit(): void {
-    const value = this.reactiveForm.value;
-    console.log('Form submitted with:', value);
-  }
-
   public setCalculatorIds(): void {
-    this.resourcesService
-      .getString('my_resource_string')
-      .first()
-      .subscribe((value) => {
-        const calculator = this.dateRangeService.createCalculator({
-          shortDescription: value,
-          type: SkyDateRangeCalculatorType.Relative,
-          getValue: () => ({
-            startDate: new Date(),
-            endDate: new Date('1/1/1')
-          })
-        });
 
-        this.calculatorIds = [
-          SkyDateRangeCalculatorId.SpecificRange,
-          SkyDateRangeCalculatorId.LastFiscalYear,
-          calculator.calculatorId
-        ];
-      });
+    const calculator = this.dateRangeService.createCalculator({
+      shortDescription: 'Since 1999',
+      type: SkyDateRangeCalculatorType.Relative,
+      getValue: () => {
+        return {
+          startDate: new Date('1/1/1999'),
+          endDate: new Date()
+        };
+      }
+    });
+
+    this.calculatorIds = [
+      calculator.calculatorId,
+      SkyDateRangeCalculatorId.SpecificRange,
+      SkyDateRangeCalculatorId.LastFiscalYear
+    ];
   }
 
   public setDateFormat(): void {
