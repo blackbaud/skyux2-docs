@@ -85,13 +85,13 @@
 
   <ol>
     <li>
-      <a href="https://help.github.com/articles/fork-a-repo/">Fork the master branch</a> into your own GitHub repo.
+      <a href="https://help.github.com/articles/fork-a-repo/">Fork the repo</a> into your own GitHub repo.
     </li>
     <li>
-      Create a branch named after the feature you will contribute. The branch name should be kebab-case (my-new-feature).
+      Create a branch off of master named after the feature you will contribute. The branch name should be kebab-case (my-new-feature).
     </li>
     <li>
-      Clone your repo locally and run <stache-code>nvm use</stache-code> to ensure you have the preferred version of Node.js installed. Next, run <stache-code>npm install</stache-code> to install all required dependencies.
+      Clone your repo locally and run <stache-code>nvm use</stache-code> to ensure you have the preferred version of Node.js installed. Next, run <stache-code>npm install</stache-code> to install all required dependencies. For more information on prerequisites, see <a stacheRouterLink="/learn/get-started/prereqs">SKY UX prerequisites</a>.
     </li>
     <li>
       <a stacheRouterLink="." fragment="write-visual-regression-tests"></a>Run your first round of visual regression tests with <stache-code>skyux e2e</stache-code></a>. This establishes baseline screenshots of the components in the master repo so that as you make changes and run your visual regression tests, your changes are validated against the state of the repo before the changes.
