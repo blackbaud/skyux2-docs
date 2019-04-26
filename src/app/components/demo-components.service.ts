@@ -107,7 +107,7 @@ export class SkyDemoComponentsService {
       {
         name: 'Date range picker',
         icon: 'calendar',
-        summary: `The date range picker module allows users to use multiple datepickers to select a date range.`,
+        summary: `The date range picker component creates a text input for users to select a date range from a set of well-known options.`,
         url: '/components/date-range-picker',
         getCodeFiles: () => this.getDemoFiles('SkyDateRangePickerDemoComponent')
       },
