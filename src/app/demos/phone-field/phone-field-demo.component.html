@@ -8,17 +8,17 @@
   id="screenshot-phone-field"
   style="width: 50%; margin: 10px; padding: 10px;"
 >
-  <sky-phone-field #phoneField>
+  <sky-phone-field>
     <input
       [(ngModel)]="phoneNumber"
-      [skyPhoneFieldInput]="phoneField"
+      skyPhoneFieldInput
     >
   </sky-phone-field>
-
-  <p *ngIf="phoneNumber">
-    Entered phone number is {{ phoneNumber }}
-  </p>
 </div>
+
+<p *ngIf="phoneNumber">
+  Entered phone number is {{ phoneNumber }}
+</p>
 
 <h2
   class="sky-section-heading"
@@ -27,19 +27,20 @@
 </h2>
 
 <form
+  id="screenshot-phone-field-default"
   style="width: 50%; margin: 10px; padding: 10px;"
   [formGroup]="phoneForm"
 >
-  <sky-phone-field #reactivePhoneField>
+  <sky-phone-field
+    [defaultCountry]="'au'"
+  >
     <input
       formControlName="phoneControl"
-      [skyPhoneFieldInput]="reactivePhoneField"
-      [defaultCountry]="'us'"
+      skyPhoneFieldInput
       >
   </sky-phone-field>
-
-  <p *ngIf="phoneControl.value">
-    Entered phone number is {{ phoneControl.value }}
-  </p>
 </form>
 
+<p *ngIf="phoneControl.value">
+  Entered phone number is {{ phoneControl.value }}
+</p>

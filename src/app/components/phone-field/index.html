@@ -11,18 +11,23 @@
   </sky-demo-page-summary>
 
   <sky-demo-page-properties
+    sectionHeading="Phone field component properties"
+  >
+    <sky-demo-page-property
+        propertyName="defaultCountry"
+        [isOptional]="true"
+      >
+        Specifies the default country for the phone field input and dropdown. This property accepts <stache-code>string</stache-code> <a href="https://www.nationsonline.org/oneworld/country_code_list.htm">International Organization for Standardization Alpha 2</a> values.
+      </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-properties
     sectionHeading="Phone field input directive properties"
   >
     <sky-demo-page-property
       propertyName="skyPhoneFieldInput"
     >
-      Creates the phone field input and dropdown. Place this attribute on an <stache-code>input</stache-code> element, and wrap the input in a <stache-code>sky-phone-field</stache-code> component. The attribute must be set to the instance of the <stache-code>sky-phone-field</stache-code> component.
-    </sky-demo-page-property>
-    <sky-demo-page-property
-      propertyName="defaultCountry"
-      [isOptional]="true"
-    >
-      Specifies the default country for the phone field input and dropdown. This property accepts <stache-code>string</stache-code> <a href="https://www.nationsonline.org/oneworld/country_code_list.htm">International Organization for Standardization Alpha 2</a> values.
+      Creates the phone field input and dropdown. Place this attribute on an <stache-code>input</stache-code> element, and wrap the input in a <stache-code>sky-phone-field</stache-code> component.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="disabled"
@@ -31,28 +36,27 @@
     >
       Indicates whether to disable the phone field. This property accepts <stache-code>boolean</stache-code> values.
     </sky-demo-page-property>
-
     <sky-demo-page-property
-      propertyName="formatModel"
-      [defaultValue]="true"
+      propertyName="skyPhoneFieldNoValidate"
+      [defaultValue]="false"
       [isOptional]="true"
     >
-      Indicates whether to format the phone field's model value based on national formatting rules. This property accepts <stache-code>boolean</stache-code> values.
+      Indicates whether to prevent validation on the phone field input. When set to <stache-code>true</stache-code>, date validation does not run on the input. This property accepts <stache-code>boolean</stache-code> values.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
   <sky-demo-page-properties
-    sectionHeading="Phone field input directive events"
+    sectionHeading="Phone field component events"
   >
     <sky-demo-page-property
       propertyName="selectedCountryChanged"
     >
-      This event emits a <stache-code>SkyCountryData</stache-code> object when the selected country is changed.
+      This event emits a <stache-code>SkyPhoneFieldCountry</stache-code> object when the selected country is changed.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
   <sky-demo-page-properties
-    sectionHeading="SkyCountryData properties"
+    sectionHeading="SkyPhoneFieldCountry properties"
   >
     <sky-demo-page-property
       propertyName="name"
