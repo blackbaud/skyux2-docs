@@ -7,7 +7,7 @@ skyux serve
 
 ## Found an issue?
 
-Please log all issues related to SKY UX docs at [blackbaud/skyux2](https://github.com/blackbaud/skyux2/issues).
+Learn about our [contribution process](https://developer.blackbaud.com/skyux/contribute/guidelines). [File an issue](https://gitub.com/blackbaud/skyux2-docs/issues) in this repo.
 
 ## How to run Plunker for components locally
 

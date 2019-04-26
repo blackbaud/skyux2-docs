@@ -6,7 +6,8 @@ import {
   SkyPhoneFieldDemoComponent,
   SkySummaryActionBarDemoComponent,
   SkyCodeBlockDemoComponent,
-  SkyCopyToClipboardDemoComponent
+  SkyCopyToClipboardDemoComponent,
+  SkyInlineFormDemoComponent
 } from '.';
 
 /**
@@ -94,6 +95,22 @@ export class SkyDocsDemoCodeService {
           fileContents: require('!!raw-loader!./copy-to-clipboard/copy-to-clipboard-demo.component.ts'),
           componentName: 'SkyCopyToClipboardDemoComponent',
           bootstrapSelector: 'sky-copy-to-clipboard-demo'
+        }
+      ]
+    },
+    {
+      name: 'Inline form',
+      component: SkyInlineFormDemoComponent,
+      files: [
+        {
+          name: 'inline-form-demo-component.html',
+          fileContents: require('!!raw-loader!./inline-form/inline-form-demo.component.html')
+        },
+        {
+          name: 'inline-form-demo-component.ts',
+          fileContents: require('!!raw-loader!./inline-form/inline-form-demo.component.ts'),
+          componentName: 'SkyInlineFormDemoComponent',
+          bootstrapSelector: 'sky-inline-form-demo'
         }
       ]
     }
