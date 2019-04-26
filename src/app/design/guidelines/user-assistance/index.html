@@ -30,9 +30,6 @@
 				Empty-state help provides user assistance when content containers are not populated. The content can include a title, body copy, and buttons to take actions or access additional resources. The help content does not appear when content containers are populated.
 			</p>
 			<p>
-				When possible, use a button to open an inline experience in a modal. If you can't use a button or if users should be sent elsewhere, use a link to imply navigation. Buttons suggest modals while links indicate navigation. 
-			</p>
-			<p>
 				Empty-state help content explains how users can take advantage of the functionality in question, and it follows these guidelines:
 			</p>
 			<ul>
@@ -44,6 +41,9 @@
 				</li>
 				<li>
 					In the body copy, expand on the call to action as necessary and provide any additional details that users need to know.
+				</li>
+				<li>
+					For the button, use the <a stacheRouterLink="https://developer.blackbaud.com/skyux/components/button">secondary button class</a> to open a modal where users can complete the experience inline. If users cannot complete the experience inline and must navigate elsewhere, use the <a stacheRouterLink="https://developer.blackbaud.com/skyux/components/button">link button class</a> instead. Secondary buttons indicate modals, while links indicate navigation.
 				</li>
 				<li>
 					For Blackbaud designers and developers, we also recommend that you engage a writer on the Strategic Content Delivery team to help write or review the help content.  
