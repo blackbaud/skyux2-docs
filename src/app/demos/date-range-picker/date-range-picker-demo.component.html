@@ -16,10 +16,15 @@
       </sky-date-range-picker>
 
       <ng-container *ngIf="reactiveRange.errors && reactiveRange.touched">
-        <div *ngIf="reactiveRange.errors"
+        <div *ngIf="reactiveRange.errors.skyDateRange?.errors.endDateBeforeStartDate"
           class="sky-error-label"
         >
-          {{ reactiveRange.errors | json }}
+          End date must be before start date.
+        </div>
+        <div *ngIf="reactiveRange.errors.skyDate"
+          class="sky-error-label"
+        >
+          Invalid date entered.
         </div>
       </ng-container>
     </div>
