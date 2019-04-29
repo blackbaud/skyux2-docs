@@ -39,24 +39,27 @@
   </sky-demo-page-properties>
 
   <sky-demo-page-properties
-    sectionHeading="SkyDateRangeCalculation properties"
+    sectionHeading="Date range calculation"
   >
+    <p>
+      The form model for the date range picker field returns a value with a type of <stache-code>SkyDateRangeCalculation</stache-code>.
+    </p>
     <sky-demo-page-property
       propertyName="calculatorId"
     >
-      The calculator that determines the dates in the date range. This property accepts <a stacheRouterLink="." fragment="skydaterangecalculation-properties">a <stache-code>SkyDateRangeCalculatorId</stache-code> value</a>.
+      Specifies the calculator that determines the dates in the date range. This property returns <a stacheRouterLink="." fragment="skydaterangecalculation-properties">a <stache-code>SkyDateRangeCalculatorId</stache-code> value</a>.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="endDate"
       isOptional="true"
     >
-      The last date in the date range. This property accepts <stache-code>Date</stache-code> values.
+      Specifies the last date in the date range. This property returns a <stache-code>Date</stache-code> value.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="startDate"
       isOptional="true"
     >
-      The first date in the date range. This property accepts <stache-code>Date</stache-code> values.
+      Specifies the first date in the date range. This property returns a <stache-code>Date</stache-code> value.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
