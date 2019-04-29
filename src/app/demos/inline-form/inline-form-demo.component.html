@@ -13,11 +13,13 @@
   <h4>
     {{ pageTitle }}
     <button
+      aria-label="Edit"
       class="sky-btn sky-btn-link sky-demo-btn-edit"
       (click)="showPageTitleForm = true"
     >
       <sky-icon
-        icon="pencil">
+        icon="pencil"
+      >
       </sky-icon>
     </button>
   </h4>
@@ -39,11 +41,13 @@
   <h4>
     {{ pageTitle }}
     <button
+      aria-label="Edit"
       class="sky-btn sky-btn-link sky-demo-btn-edit"
       (click)="showCustomButtonsForm = true"
     >
       <sky-icon
-        icon="pencil">
+        icon="pencil"
+      >
       </sky-icon>
     </button>
   </h4>
@@ -92,6 +96,7 @@
           class="pull-right"
         >
           <button
+            aria-label="Edit"
             class="sky-btn sky-btn-link sky-no-focus sky-demo-btn-edit"
             type="button"
             (click)="activeInlineFormId = item.id"
