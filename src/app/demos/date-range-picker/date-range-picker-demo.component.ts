@@ -63,7 +63,7 @@ export class SkyDateRangePickerDemoComponent implements OnInit, OnDestroy {
     this.reactiveRange.valueChanges
       .distinctUntilChanged()
       .takeUntil(this.ngUnsubscribe)
-      .subscribe((value) => {
+      .subscribe((value: SkyDateRangeCalculation) => {
         console.log(
           'Date range value change:',
           value
