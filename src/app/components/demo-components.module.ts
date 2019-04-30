@@ -18,16 +18,22 @@ import {
   SkyDemoComponentsService
 } from './demo-components.service';
 
+import {
+  SkyInlineFormDemoModule
+} from '../demos/inline-form/inline-form-demo.module';
+
 require('style-loader!prismjs/themes/prism.css');
 
 @NgModule({
   imports: [
     SkyDemoModule,
-    SkySummaryActionBarDemoModule
+    SkySummaryActionBarDemoModule,
+    SkyInlineFormDemoModule
   ],
   exports: [
     SkyDemoModule,
-    SkySummaryActionBarDemoModule
+    SkySummaryActionBarDemoModule,
+    SkyInlineFormDemoModule
   ],
   providers: [
     SkyDemoComponentsService,

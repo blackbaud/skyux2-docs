@@ -17,7 +17,12 @@
       "footer": {
       },
       "searchConfig": {
-        "is_internal": false
+        "is_internal": false,
+        "site_names": [
+          "skyux",
+          "bb-help-docs",
+          "skyux-migration-guide"
+        ]
       }
     }
   },

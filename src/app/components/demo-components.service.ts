@@ -215,6 +215,13 @@ export class SkyDemoComponentsService {
         getCodeFiles: () => this.getDemoFiles('SkyInfiniteScrollDemoComponent')
       },
       {
+        name: 'Inline form',
+        icon: 'keyboard-o',
+        summary: 'The inline form component renders a form in the current view rather than in a modal.',
+        url: '/components/inline-form',
+        getCodeFiles: () => this.getDemoFiles('SkyInlineFormDemoComponent')
+      },
+      {
         name: 'Key info',
         icon: 'key',
         // tslint:disable-next-line
@@ -390,7 +397,7 @@ export class SkyDemoComponentsService {
       },
       {
         name: 'Repeater',
-        icon: 'check-square',
+        icon: 'chevron-down',
         // tslint:disable-next-line
         summary: `The repeater component creates a container to display formatted information for a list of objects.`,
         url: '/components/repeater',
@@ -454,9 +461,17 @@ export class SkyDemoComponentsService {
         name: 'Text expand',
         icon: 'text-height',
         // tslint:disable-next-line
-        summary: `The text expand component truncates long text and provides a link to expand the text.`,
+        summary: `The text expand component truncates long blocks of text with an ellipsis and a link to expand the full text.`,
         url: '/components/text-expand',
         getCodeFiles: () => this.getDemoFiles('SkyTextExpandDemoComponent')
+      },
+      {
+        name: 'Text expand repeater',
+        icon: 'list',
+        // tslint:disable-next-line
+        summary: `The text expand repeater component truncates a list of items and initially displays a limited number of items.`,
+        url: '/components/text-expand-repeater',
+        getCodeFiles: () => this.getDemoFiles('SkyTextExpandRepeaterDemoComponent')
       },
       {
         name: 'Tile',
