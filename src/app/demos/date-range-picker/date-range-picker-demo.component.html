@@ -64,7 +64,7 @@
     type="button"
     (click)="toggleDisabled()"
   >
-    Toggle disabled
+    {{ reactiveForm.disabled ? 'Enable' : 'Disable'}} picker
   </button>
 
   <button
