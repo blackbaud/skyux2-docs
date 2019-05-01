@@ -6,7 +6,7 @@ import {
 
 @Component({
   selector: 'sky-demo-page-module-info',
-  templateUrl: './new-demo-page-module-info.component.html',
+  templateUrl: './demo-page-module-info.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 

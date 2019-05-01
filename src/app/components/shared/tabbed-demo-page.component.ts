@@ -14,12 +14,12 @@ import { SkyDemoPageExampleComponent } from './demo-page-example.component';
 import { SkyDemoPageContentComponent } from './demo-page-content.component';
 
 @Component({
-  selector: 'sky-new-demo-page',
-  templateUrl: './new-demo-page.component.html',
-  styleUrls: ['./new-demo-page.component.scss'],
+  selector: 'sky-tabbed-demo-page',
+  templateUrl: './tabbed-demo-page.component.html',
+  styleUrls: ['./tabbed-demo-page.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SkyNewDemoPageComponent implements OnInit, AfterContentInit {
+export class SkyTabbedDemoPageComponent implements OnInit, AfterContentInit {
   @Input()
   public pageTitle: string;
 
