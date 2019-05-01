@@ -1,4 +1,4 @@
-<sky-new-demo-page
+<sky-tabbed-demo-page
   pageTitle="Tabs"
 >
 
@@ -287,79 +287,79 @@
 	>
 	</sky-demo-page-module-info>	
 		
-  <new-sky-demo-page-properties sectionHeading="Tabset properties">
-    <new-sky-demo-page-property
+  <sky-demo-page-properties sectionHeading="Tabset properties">
+    <sky-demo-page-property
       propertyName="active"
     >
     Specifies the index of the active tab. This property accepts <stache-code>number</stache-code> or <stache-code>string</stache-code> values.
-    </new-sky-demo-page-property>
-    <new-sky-demo-page-property
+    </sky-demo-page-property>
+    <sky-demo-page-property
       propertyName="tabStyle"
       defaultValue="tabs"
     >
     This property is deprecated. It specifies the behavior for a series of tabs. The property was designed to create wizards by setting <stache-code>tabStyle="wizard"</stache-code> on tabsets in modals, but this wizard implementation was replaced by <a stacheRouterLink="/components/progress-indicator">the progress indicator component</a>. This property accepts <stache-code>string</stache-code> values.
-    </new-sky-demo-page-property>
-  </new-sky-demo-page-properties>
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
 
-  <new-sky-demo-page-properties sectionHeading="Tabset events">
-    <new-sky-demo-page-property
+  <sky-demo-page-properties sectionHeading="Tabset events">
+    <sky-demo-page-property
       propertyName="activeChange"
     >
     Fires when the active tab changes and emits the index of the active tab.
-    </new-sky-demo-page-property>
-		<new-sky-demo-page-property
+    </sky-demo-page-property>
+		<sky-demo-page-property
       propertyName="newTab"
     >
     Fires when users click the button to add a new tab. The new tab button is added to the tab area when you specify a listener for this event.
-    </new-sky-demo-page-property>
-    <new-sky-demo-page-property
+    </sky-demo-page-property>
+    <sky-demo-page-property
       propertyName="openTab"
     >
     Fires when users click the button to open a tab. The open tab button is added to the tab area when you specify a listener for this event.
-    </new-sky-demo-page-property>
-  </new-sky-demo-page-properties>
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
 
-  <new-sky-demo-page-properties sectionHeading="Tab properties">
-    <new-sky-demo-page-property
+  <sky-demo-page-properties sectionHeading="Tab properties">
+    <sky-demo-page-property
       propertyName="tabHeading"
     >
     Specifies the tab header. When using tabs as the main navigation on a page, use <a href="https://angular.io/docs/ts/latest/cookbook/set-document-title.html">the Angular <stache-code>Title</stache-code> service</a> and <a stacheRouterLink="learn/reference/configuration" fragment="app">the SKY UX <stache-code>title</stache-code> configuration property</a> to reflect the tab header in the page title. This property accepts <stache-code>string</stache-code> values.
-    </new-sky-demo-page-property>
-    <new-sky-demo-page-property
+    </sky-demo-page-property>
+    <sky-demo-page-property
       propertyName="active"
       isOptional="true"
       defaultValue="false"
     >
     Indicates whether the tab is active when the tabset loads. This property accepts <stache-code>boolean</stache-code> values.
-    </new-sky-demo-page-property>
-    <new-sky-demo-page-property
+    </sky-demo-page-property>
+    <sky-demo-page-property
       propertyName="disabled"
       isOptional="true"
       defaultValue="false"
     >
     Indicates whether to disable the tab. This property accepts <stache-code>boolean</stache-code> values.
-    </new-sky-demo-page-property>
-    <new-sky-demo-page-property
+    </sky-demo-page-property>
+    <sky-demo-page-property
       propertyName="tabHeaderCount"
       isOptional="true"
     >
     Displays a counter beside the tab header. This property accepts <stache-code>string</stache-code> values.
-    </new-sky-demo-page-property>
-    <new-sky-demo-page-property
+    </sky-demo-page-property>
+    <sky-demo-page-property
       propertyName="tabIndex"
       isOptional="true"
     >
     Specifies a unique identifier for the tab. If not defined, the identifier is set to the position of the tab on load, starting with <stache-code>0</stache-code>. This property accepts <stache-code>string</stache-code> or <stache-code>number</stache-code> values.
-    </new-sky-demo-page-property>
-  </new-sky-demo-page-properties>
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
 
-  <new-sky-demo-page-properties sectionHeading="Tab events">
-    <new-sky-demo-page-property
+  <sky-demo-page-properties sectionHeading="Tab events">
+    <sky-demo-page-property
       propertyName="close"
     >
     Fires when users click the button to close the tab. The close button is added to the tab when you specify a listener for this event.
-    </new-sky-demo-page-property>
-  </new-sky-demo-page-properties>
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
 
 	<sky-demo-page-example>
     <sky-tabs-demo></sky-tabs-demo>
@@ -369,4 +369,4 @@
 	</sky-tab>
 		
 	</sky-tabset>
-</sky-new-demo-page>
+</sky-tabbed-demo-page>

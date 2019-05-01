@@ -1,4 +1,4 @@
-<sky-new-demo-page
+<sky-tabbed-demo-page
   pageTitle="Popover"
 >
 
@@ -156,91 +156,91 @@
 	>
 	</sky-demo-page-module-info>
 	
-  <new-sky-demo-page-properties sectionHeading="Popover trigger directive properties">
-    <new-sky-demo-page-property
+  <sky-demo-page-properties sectionHeading="Popover trigger directive properties">
+    <sky-demo-page-property
       propertyName="skyPopover"
     >
     References the popover component to display. Add this directive to the trigger element that opens the popover.
-    </new-sky-demo-page-property>
-    <new-sky-demo-page-property
+    </sky-demo-page-property>
+    <sky-demo-page-property
       propertyName="skyPopoverAlignment"
       defaultValue="center"
       isOptional="true"
     >
     Specifies the horizontal alignment of the popover in relation to the trigger element. Available values are <stache-code>left</stache-code>, <stache-code>right</stache-code>, and <stache-code>center</stache-code>.
-    </new-sky-demo-page-property>
-    <new-sky-demo-page-property
+    </sky-demo-page-property>
+    <sky-demo-page-property
       propertyName="skyPopoverMessageStream"
       isOptional="true"
     >
     Provides an observable to send commands to the popover. The commands should respect <a stacheRouterLink="." fragment="skypopovermessage-type">the <stache-code>SkyPopoverMessage</stache-code> type</a>.
-    </new-sky-demo-page-property>
-    <new-sky-demo-page-property
+    </sky-demo-page-property>
+    <sky-demo-page-property
       propertyName="skyPopoverPlacement"
       defaultValue="above"
       isOptional="true"
     >
     Specifies the placement of the popover in relation to the trigger element. Available values are <stache-code>above</stache-code>, <stache-code>below</stache-code>, <stache-code>left</stache-code>, and <stache-code>right</stache-code>.
-    </new-sky-demo-page-property>
-    <new-sky-demo-page-property
+    </sky-demo-page-property>
+    <sky-demo-page-property
       propertyName="skyPopoverTrigger"
       defaultValue="click"
       isOptional="true"
     >
     Specifies the user action that displays the popover. Available values are <stache-code>click</stache-code> and <stache-code>mouseenter</stache-code>.
-    </new-sky-demo-page-property>
-  </new-sky-demo-page-properties>
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
 
-  <new-sky-demo-page-properties sectionHeading="Popover component properties">
-    <new-sky-demo-page-property
+  <sky-demo-page-properties sectionHeading="Popover component properties">
+    <sky-demo-page-property
       propertyName="#<popover-reference-name>"
     >
     Specifies a template reference variable for the popover component. The <stache-code>[skyPopover]</stache-code> directive uses this variable to reference the popover component.
-    </new-sky-demo-page-property>
-    <new-sky-demo-page-property
+    </sky-demo-page-property>
+    <sky-demo-page-property
       propertyName="alignment"
       defaultValue="center"
       isOptional="true"
     >
     The <stache-code>skyPopoverAlignment</stache-code> property on the trigger element overwrites this property. It specifies the horizontal alignment of the popover in relation to the trigger element. Available values are <stache-code>left</stache-code>, <stache-code>right</stache-code>, and <stache-code>center</stache-code>.
-    </new-sky-demo-page-property>
-    <new-sky-demo-page-property
+    </sky-demo-page-property>
+    <sky-demo-page-property
       propertyName="dismissOnBlur"
       defaultValue="true"
       isOptional="true"
     >
     Indicates whether to close the popover when it loses focus. To require users to click a trigger button to close the popover, set this input to <stache-code>false</stache-code>. This property accepts <stache-code>boolean</stache-code> values.
-    </new-sky-demo-page-property>
-    <new-sky-demo-page-property
+    </sky-demo-page-property>
+    <sky-demo-page-property
       propertyName="placement"
       defaultValue="above"
       isOptional="true"
     >
     The <stache-code>skyPopoverPlacement</stache-code> property on the trigger element overwrites this property. It specifies the placement of the popover in relation to the trigger element. Available values are <stache-code>above</stache-code>, <stache-code>below</stache-code>, <stache-code>left</stache-code>, and <stache-code>right</stache-code>.
-    </new-sky-demo-page-property>
-    <new-sky-demo-page-property
+    </sky-demo-page-property>
+    <sky-demo-page-property
       propertyName="popoverTitle"
       isOptional="true"
     >
     Specifies a title for the popover. This property accepts <stache-code>string</stache-code> values.
-    </new-sky-demo-page-property>
-  </new-sky-demo-page-properties>
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
 
-  <new-sky-demo-page-properties sectionHeading="Popover component events">
-    <new-sky-demo-page-property
+  <sky-demo-page-properties sectionHeading="Popover component events">
+    <sky-demo-page-property
       propertyName="popoverClosed"
     >
     Fires when users close the popover.
-    </new-sky-demo-page-property>
-    <new-sky-demo-page-property
+    </sky-demo-page-property>
+    <sky-demo-page-property
       propertyName="popoverOpened"
     >
     Fires when users open the popover.
-    </new-sky-demo-page-property>
-  </new-sky-demo-page-properties>
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
 
-  <new-sky-demo-page-properties sectionHeading="SkyPopoverMessage type">
-    <new-sky-demo-page-property
+  <sky-demo-page-properties sectionHeading="SkyPopoverMessage type">
+    <sky-demo-page-property
       propertyName="type"
       isOptional="true">
       Sets <stache-code>SkyPopoverMessage</stache-code> to one of the following types:
@@ -255,8 +255,8 @@
           <stache-code>SkyPopoverMessageType.Reposition</stache-code> &mdash; Repositions the popover to the appropriate position. This is useful for when the popover’s width and height change while it is open.
         </li>
       </ul>
-    </new-sky-demo-page-property>
-  </new-sky-demo-page-properties>
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
 
 
   <sky-demo-page-example>
@@ -270,4 +270,4 @@
 
 </sky-tabset>
 
-</sky-new-demo-page>
+</sky-tabbed-demo-page>

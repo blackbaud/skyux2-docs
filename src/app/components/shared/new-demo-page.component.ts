@@ -14,7 +14,7 @@ import { SkyDemoPageExampleComponent } from './demo-page-example.component';
 import { SkyDemoPageContentComponent } from './demo-page-content.component';
 
 @Component({
-  selector: 'sky-new-demo-page',
+  selector: 'sky-tabbed-demo-page',
   templateUrl: './new-demo-page.component.html',
   styleUrls: ['./new-demo-page.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
