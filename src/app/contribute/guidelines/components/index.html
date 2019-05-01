@@ -107,7 +107,7 @@
       Launch a command prompt, <stache-code>cd</stache-code> to the folder where you cloned your branch, and run <stache-code>skyux watch --coverage library</stache-code>.
     </li>
     <li>
-      Launch a second command prompt, <stache-code>cd</stache-code> to the folder where you cloned your branch, and run <stache-code>skyux serve</stache-code>. This launches the SKY UX component demos page where you write the demo components to test your code.
+      Launch a second command prompt, <stache-code>cd</stache-code> to the folder where you cloned your branch, and run <stache-code>skyux serve</stache-code>. This launches the visual testing pages where you can view updates based on your code changes. Depending on the nature of your changes, you may need to update the visual tests. Any changes here will impact the visual e2e tests, and you may need to reset the baselines after you make changes to get the build to pass. For more information, see <a stacheRouterLink="." fragment="write-visual-regression-tests">write visual regression tests</a>.
     </li>
     <ul>
       <li>
@@ -162,24 +162,34 @@
     During continuous integration builds, SKY UX runs visual regression tests through BrowserStack using <a href="http://www.protractortest.org/">Protractor</a> and <a href="https://github.com/koola/pix-diff">pix-diff</a>. These prerequisites are automatically installed when you run <stache-code>skyux e2e</stache-code> to create and compare screenshots in the <stache-code>skyux-spa-visual-tests/screenshots-baseline-local/</stache-code> folder.
   </p>
 
-  <p>
-    To create visual tests for a new component, create a folder for the tests in <stache-code>./src/app/visual</stache-code> and add four files for the visual regression test to the root <stache-code>e2e</stache-code> folder:
-  </p>
+  <ol>
+    <li>
+      To create visual tests for a new component, create a folder for the tests in <stache-code>./src/app/visual</stache-code> and add four files for the visual regression test to the root <stache-code>e2e</stache-code> folder:
+    </li>
 
-  <ul>
+    <ul>
+      <li>
+        <stache-code>{{ '{' }}componentName}-visual.component.html</stache-code>: The template for the component to render and take a screenshot of.
+      </li>
+      <li>
+        <stache-code>{{ '{' }}componentName}.e2e-spec.ts</stache-code>: The TypeScript code for the component to render and take a screenshot of.
+      </li>
+      <li>
+        <stache-code>{{ '{' }}componentName}.e2e-spec.ts</stache-code>: The Protractor code to run the screenshot tests.
+      </li>
+      <li>
+        <stache-code>index.html</stache-code>: The route file that contains the component to render and take a screenshot of.
+      </li>
+    </ul>
+
     <li>
-      <stache-code>{{ '{' }}componentName}-visual.component.html</stache-code>: The template for the component to render and take a screenshot of.
+      Add a convenience link to the new folder in the <stache-code>./src/app/index.html</stache-code> file.
     </li>
     <li>
-      <stache-code>{{ '{' }}componentName}.e2e-spec.ts</stache-code>: The TypeScript code for the component to render and take a screenshot of.
+      Add your new tests to the e2e suite by a creating a file at <stache-code>./e2e/{{ '{' }}componentName}.e2e-spec.ts</stache-code>.
     </li>
-    <li>
-      <stache-code>{{ '{' }}componentName}.e2e-spec.ts</stache-code>: The Protractor code to run the screenshot tests.
-    </li>
-    <li>
-      <stache-code>index.html</stache-code>: The route file that contains the component to render and take a screenshot of.
-    </li>
-  </ul>
+
+   </ol>
 
   <p>
     To run visual regression tests locally, you must first run them locally against the master branch and then run the tests against your feature branch. Keep in mind that you need to use the same monitor and resolution on both set of tests. If your visual regression tests fail, you can check the failed tests at <stache-code>./screenshots-diff-local/diff</stache-code> to find the cause of the failures.
