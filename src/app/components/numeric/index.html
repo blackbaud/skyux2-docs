@@ -53,10 +53,9 @@
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="iso"
-      defaultValue="USD"
       isOptional="true"
     >
-    Specifies the ISO4217 currency code to use for currency formatting. This property accepts <stache-code>string</stache-code> values.
+    Specifies the ISO4217 currency code to use for currency formatting. If you do not specify a currency code, the component uses the browser's culture to determine the currency unless your SPA provides a different culture with <stache-code>SkyAppLocaleProvider</stache-code>. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="minDigits"
