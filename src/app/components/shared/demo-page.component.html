@@ -4,7 +4,7 @@
   [pageTitle]="pageTitle">
 
   <stache-page-summary>
-    <h4 *ngIf="skyuxModulesForDisplay">
+    <h4 *ngIf="skyuxModulesForDisplay && !installOnly">
       <span class="sky-field-label">Defined in</span>
       <span *ngFor="let moduleName of skyuxModulesForDisplay">
         <stache-code>{{ moduleName }}</stache-code>
@@ -16,6 +16,12 @@
         </a>
       </ng-container>
     </h4>
+    <h4 *ngIf="packageName && installOnly">
+      <span class="sky-field-label">Defined in NPM package</span>
+        <a href="https://npmjs.org/{{ packageName }}">
+          <stache-code>{{ packageName }}</stache-code>
+        </a>
+    </h4>
     <ng-content select="sky-demo-page-summary"></ng-content>
   </stache-page-summary>
 
@@ -24,10 +30,10 @@
       Installation
     </stache-page-anchor>
     <p>
-      To use any exports from <span *ngFor="let moduleName of skyuxModulesForDisplay"><stache-code>{{ moduleName }}</stache-code></span>, you must install it as a dependency to your project. In the command prompt, run the following command from your SPA's root directory:
+      <span *ngIf="!installOnly">To use any exports from <span *ngFor="let moduleName of skyuxModulesForDisplay"><stache-code>{{ moduleName }}</stache-code></span>, you must install it as a dependency to your project.</span> In the command prompt, run the following command from your SPA's root directory:
     </p>
     <sky-code-block [code]="npmInstall"></sky-code-block>
-    <p>
+    <p *ngIf="!installOnly">
       After installation, you need to make any exports from <span *ngFor="let moduleName of skyuxModulesForDisplay"><stache-code>{{ moduleName }}</stache-code></span> available to your SPA by adding the module to the <stache-code>exports</stache-code> section of your SPA's main module. If you are using the SKY UX SDK, add <span *ngFor="let moduleName of skyuxModulesForDisplay"><stache-code>{{ moduleName }}</stache-code></span> as an export in your <stache-code>app-sky.module.ts</stache-code> file.
     </p>
   </ng-container>
