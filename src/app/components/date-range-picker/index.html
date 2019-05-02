@@ -4,7 +4,7 @@
   packageName="@skyux/datetime"
 >
   <sky-demo-page-summary>
-    The date range picker component creates a text input with a dropdown for users to select a date range from a set of well-known options. This includes options that enable users to specify dates to create their own date range. The text input is a composite component of up to two <stache-code>sky-datepicker</stache-code> components.
+    The date range picker component creates a text input with a dropdown for users to select a date range from a set of well-known options. This includes options that enable users to specify dates to create their own date range. The text input is a composite component of <a stacheRouterLink="/components/datepicker">up to two <stache-code>sky-datepicker</stache-code> components</a>.
   </sky-demo-page-summary>
 
   <sky-demo-page-properties
@@ -19,7 +19,7 @@
       propertyName="calculatorIds"
       isOptional="true"
     >
-      Specifies IDs for the date range options to include in the list that users select from. The options specify calculators to determine the dates in date ranges. This property accepts <a stacheRouterLink="." fragment="skydaterangecalculatorid-properties">an array of <stache-code>SkyDateRangeCalculatorId</stache-code> values</a>. By default, this property includes <a stacheRouterLink="." fragment="skydaterangecalculatorid-properties">all <stache-code>SkyDateRangeCalculatorId</stache-code> values</a>.
+      Specifies IDs for the date range options to include in the field's dropdown. The options specify calculators to determine the dates in date ranges. This property accepts <a stacheRouterLink="." fragment="skydaterangecalculatorid-properties">an array of <stache-code>SkyDateRangeCalculatorId</stache-code> values</a>. By default, it includes <a stacheRouterLink="." fragment="skydaterangecalculatorid-properties">all <stache-code>SkyDateRangeCalculatorId</stache-code> values</a>.
     </sky-demo-page-property>
 
     <sky-demo-page-property
@@ -27,7 +27,7 @@
       isOptional="true"
       defaultValue="MM/DD/YYYY"
     >
-      Specifies a date format for the <stache-code>sky-datepicker</stache-code> components that make up the date range picker. This property accepts <stache-code>string</stache-code> values.
+      Specifies a date format for <a stacheRouterLink="/components/datepicker">the <stache-code>sky-datepicker</stache-code> components</a> that make up the date range picker. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="disabled"
@@ -182,7 +182,7 @@
     sectionHeading="Error handling"
   >
     <p>
-      Each calculator in the select has its own validator that is run when the date range value changes. The error is returned in the following format:
+      Each calculator in the date range picker's dropdown has its own validator that runs when the value changes. Errors are returned in the following format:
     </p>
     <stache-code-block>
       {
