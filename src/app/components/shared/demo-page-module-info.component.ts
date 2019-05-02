@@ -32,8 +32,8 @@ export class SkyDemoPageModuleInfoComponent {
   public get packageName(): string {
     return this._packageName;
   }
-  
-  @Input() githubRepo: string;
+
+  @Input() private githubRepo: string;
 
   public npmInstall: string;
 
