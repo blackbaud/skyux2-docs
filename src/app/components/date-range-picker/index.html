@@ -19,9 +19,8 @@
       propertyName="calculatorIds"
       isOptional="true"
     >
-      Specifies IDs for the date range options to include in the field's dropdown. The options specify calculators to determine the dates in date ranges. This property accepts <a stacheRouterLink="." fragment="skydaterangecalculatorid-properties">an array of <stache-code>SkyDateRangeCalculatorId</stache-code> values</a>. By default, it includes <a stacheRouterLink="." fragment="skydaterangecalculatorid-properties">all <stache-code>SkyDateRangeCalculatorId</stache-code> values</a>.
+      Specifies IDs for the date range options to include in the field's dropdown. The options specify calculator objects that return two <stache-code>Date</stache-code> objects to represent date ranges. This property accepts <a stacheRouterLink="." fragment="skydaterangecalculatorid-properties">an array of <stache-code>SkyDateRangeCalculatorId</stache-code> values</a>. By default, it includes <a stacheRouterLink="." fragment="skydaterangecalculatorid-properties">all <stache-code>SkyDateRangeCalculatorId</stache-code> values</a>.
     </sky-demo-page-property>
-
     <sky-demo-page-property
       propertyName="dateFormat"
       isOptional="true"
@@ -66,6 +65,12 @@
   <sky-demo-page-properties
     sectionHeading="SkyDateRangeCalculatorId properties"
   >
+    <p>
+      <stache-code>SkyDateRangeCalculatorId</stache-code> values specify calculator objects that return two <stache-code>Date</stache-code> objects to represent date ranges. The <stache-code>SkyDateRangeCalculatorId</stache-code> values are used to populate the options in the date range picker's dropdown.
+    </p>
+    <p>
+      SKY UX uses the <stache-code>SkyDateRangeService</stache-code> to create calculators and configures each one with a <stache-code>validate</stache-code> function to confirm that the dates users select are compatible. For example, <stache-code>validate</stache-code> functions ensure that start dates are before end dates. SKY UX also configures calculators to call a <stache-code>getValue</stache-code> function after the <stache-code>validate</stache-code> function and return a range of two <stache-code>Date</stache-code> objects.
+    </p>
     <sky-demo-page-property
       propertyName="After"
     >
