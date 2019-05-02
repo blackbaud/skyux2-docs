@@ -85,7 +85,7 @@
 
   <ol>
     <li>
-      <a href="https://help.github.com/articles/fork-a-repo/">Fork the repo</a> into your own GitHub repo.
+      <a href="https://help.github.com/articles/fork-a-repo/">Fork the repo</a> into your own GitHub repo. To view a list of SKY UX repositories that target different areas of development, see the <a stacheRouterLink="/contribute/packages">packages matrix</a>.
     </li>
     <li>
       Create a branch off of master named after the feature you will contribute. The branch name should be kebab-case (my-new-feature).
@@ -164,7 +164,7 @@
 
   <ol>
     <li>
-      To create visual tests for a new component, create a folder for the tests in <stache-code>./src/app/visual</stache-code> and add four files for the visual regression test to the root <stache-code>e2e</stache-code> folder:
+      To create visual regression tests for a new component, create a folder for the tests in <stache-code>./src/app/visual</stache-code> and add three files for the visual regression test to it:
     </li>
 
     <ul>
@@ -173,9 +173,6 @@
       </li>
       <li>
         <stache-code>{{ '{' }}componentName}.e2e-spec.ts</stache-code>: The TypeScript code for the component to render and take a screenshot of.
-      </li>
-      <li>
-        <stache-code>{{ '{' }}componentName}.e2e-spec.ts</stache-code>: The Protractor code to run the screenshot tests.
       </li>
       <li>
         <stache-code>index.html</stache-code>: The route file that contains the component to render and take a screenshot of.
