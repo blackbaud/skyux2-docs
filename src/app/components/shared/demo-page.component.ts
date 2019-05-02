@@ -43,6 +43,9 @@ export class SkyDemoPageComponent implements OnInit {
   @Input()
   public summary: string;
 
+  @Input()
+  public installOnly = false;
+
   public npmInstall: string;
 
   public skyuxModulesForDisplay: string[];
