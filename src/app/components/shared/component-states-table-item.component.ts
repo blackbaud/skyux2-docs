@@ -9,7 +9,7 @@ import {
   styleUrls: ['./component-states-table-item.component.scss']
 })
 export class ComponentStatesTableItemComponent {
-  @Input() private stateName: string;
+  @Input() public stateName: string;
   
-  @Input() private imagePath: string;
+  @Input() public imagePath: string;
 }
