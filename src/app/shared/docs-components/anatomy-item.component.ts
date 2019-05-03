@@ -10,7 +10,7 @@ import {
 })
 export class AnatomyItemComponent {
 
-  @Input() private isOptional: boolean;
+  @Input() public isOptional: boolean;
 
-  @Input() private anatomyNumber: string;
+  @Input() public anatomyNumber: string;
 }
