@@ -10,6 +10,6 @@ import {
 })
 export class ComponentStatesTableItemComponent {
   @Input() public stateName: string;
-  
+
   @Input() public imagePath: string;
 }
