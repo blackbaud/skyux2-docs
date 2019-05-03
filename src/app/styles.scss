@@ -194,19 +194,14 @@ img.bordered {
 	padding: $sky-padding-even-large;
 }
 
+$sky-margin-stacked-content-section: 50px;
+
 .sky-margin-stacked-content-section {
-	margin-bottom: 50px;
+	margin-bottom: $sky-margin-stacked-content-section;
 }
 
 .sky-text-block {
 	width: 690px;
-}
-
-div.states-table {
-	.sky-repeater-item {
-		padding-top: 20px;
-		padding-bottom: 20px;
-	}
 }
 
 sky-tabset#content-tabs .sky-tabset {

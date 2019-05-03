@@ -1,5 +1,6 @@
 import {
-  Component
+  Component,
+  Input
 } from '@angular/core';
 
 @Component({
@@ -8,5 +9,7 @@ import {
   styleUrls: ['./component-states-table-item.component.scss']
 })
 export class ComponentStatesTableItemComponent {
-
+  @Input() private stateName: string;
+  
+  @Input() private imagePath: string;
 }
