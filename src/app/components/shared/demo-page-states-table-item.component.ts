@@ -4,9 +4,9 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'sky-docs-component-states-table-item',
-  templateUrl: './component-states-table-item.component.html',
-  styleUrls: ['./component-states-table-item.component.scss']
+  selector: 'sky-demo-page-states-table-item',
+  templateUrl: './demo-page-states-table-item.component.html',
+  styleUrls: ['./demo-page-states-table-item.component.scss']
 })
 export class ComponentStatesTableItemComponent {
   @Input() public stateName: string;
