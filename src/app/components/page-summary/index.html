@@ -1,7 +1,5 @@
-<stache
+<sky-demo-page
   pageTitle="Page Summary"
-  windowTitle="Page summary"
-  layout="container"
   skyuxModule="SkyPageSummaryModule"
   packageName="@skyux/layout"
 >
@@ -18,75 +16,63 @@
     </sky-alert>
   </sky-demo-page-summary>
 
-  <stache-page-anchor>
-    Title and subtitle
-  </stache-page-anchor>
-
+  <sky-demo-page-properties sectionHeading="Title and subtitle">
   <p>
     You can display a title and subtitle in the summary to uniquely identify the page content. You can pull data for the title from multiple sources, and you can combine multiple pieces of data in the title. The data to use depends on your users and the context in which they visit the page. You can display additional information in the subtitle. For example, you can display a record's natural language name in the title and its system-generated or coded identifier in the subtitle.
   </p>
   <p>
     You use the <stache-code>sky-page-summary-title</stache-code> and <stache-code>sky-page-summary-subtitle</stache-code> components to display the title and subtitle.
   </p>
+  </sky-demo-page-properties>
 
-  <stache-page-anchor>
-    Image
-  </stache-page-anchor>
-
+  <sky-demo-page-properties sectionHeading="Image">
   <p>
     You can display an image in the summary to help users identify a record or complete a core task. We recommend that you do not include images just for decorative purposes because they are likely to distract users and interfere with task completion.
   </p>
   <p>
     You use the <stache-code>sky-page-summary-image</stache-code> component to display the image. As the example below demonstrates, you can use this component in conjunction with the <stache-code>sky-avatar</stache-code> component to allow users to manage and upload images.
   </p>
+  </sky-demo-page-properties>
 
-  <stache-page-anchor>
-    Status
-  </stache-page-anchor>
-
+  <sky-demo-page-properties sectionHeading="Status">
   <p>
     You can display important status information about a page's content with labels in the status section of the page summary.
   </p>
   <p>
     You use the <stache-code>sky-page-summary-status</stache-code> component to display the status section. You typically display the labels with a series of <a routerLink="../label">SKY UX label components</a>.
   </p>
+  </sky-demo-page-properties>
 
-  <stache-page-anchor>
-    Key information
-  </stache-page-anchor>
-
+  <sky-demo-page-properties sectionHeading="Key information">
   <p>
     You can highlight important information about a page's content in the key information section of the page summary. This section can display any type of content, but it generally highlights a key information block such as important summary numbers.
   </p>
   <p>
     You use the <stache-code>sky-page-summary-key-info</stache-code> component to display the key information section.
   </p>
+  </sky-demo-page-properties>
 
-  <stache-page-anchor>
-    Arbitrary content
-  </stache-page-anchor>
-
+  <sky-demo-page-properties sectionHeading="Arbitrary content">
   <p>
     You can display any kind of content in the arbitrary content section of the page summary. We recommend that you display content to support the key tasks of users who visit the page. We also recommend that you keep in mind the context of how users will use the content and limit the content to avoid overloading the summary.
   </p>
   <p>
     You use the <stache-code>sky-page-summary-content</stache-code> component to display the arbitrary content section.
   </p>
+  </sky-demo-page-properties>
 
-  <stache-page-anchor>
-    Alert
-  </stache-page-anchor>
-
+  <sky-demo-page-properties sectionHeading="Alert">
   <p>
     You can display messages that require immediate attention as alerts within the page summary. For example, you can display system-generated messages when certain criteria are met, or you can display notes about a record that you enter manually.
   </p>
   <p>
     You use the <stache-code>sky-page-summary-alert</stache-code> component to display the alerts. You can use this component in conjunction with the the <stache-code>sky-alert</stache-code> component.
   </p>
+  </sky-demo-page-properties>
 
   <sky-demo-page-example>
     <sky-page-summary-demo></sky-page-summary-demo>
     <sky-demo-page-code demoName="Page summary"></sky-demo-page-code>
   </sky-demo-page-example>
 
-</stache>
+</sky-demo-page>
