@@ -29,6 +29,18 @@
   </sky-demo-page-properties>
   <sky-demo-page-properties sectionHeading="Repeater item properties">
     <sky-demo-page-property
+      propertyName="inlineFormConfig"
+      isOptional="true"
+    >
+    Specifies configuration options for the buttons to display on an inline form within the repeater. This property accepts <a stacheRouterLink="/components/inline-form" fragment="skyinlineformconfig-properties">a <stache-code>SkyInlineFormConfig</stache-code> object</a>.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="inlineFormTemplate"
+      isOptional="true"
+    >
+    Specifies a template to use to instantiate an inline form within the repeater. This property accepts <a href="https://angular.io/api/core/TemplateRef">an Angular <stache-code>TemplateRef</stache-code> class</a>.
+    </sky-demo-page-property>
+    <sky-demo-page-property
       propertyName="isExpanded"
       isOptional="true"
       defaultValue="true"
@@ -49,6 +61,13 @@
     >
     Indicates whether to display a checkbox in the left of the repeater item. This property accepts <stache-code>boolean</stache-code> values.
     </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="showInlineForm"
+      defaultValue="false"
+      isOptional="true"
+    >
+    Indicates whether to display an inline form within the repeater. Users can toggle between displaying and hiding the inline form. This property accepts <stache-code>boolean</stache-code> values.
+    </sky-demo-page-property>
   </sky-demo-page-properties>
   <sky-demo-page-properties sectionHeading="Repeater item events">
     <sky-demo-page-property
@@ -60,6 +79,11 @@
       propertyName="expand"
     >
     Fires when users expand the repeater item.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="inlineFormClose"
+    >
+    Fires when the repeater includes an inline form and users close it. This event emits <a stacheRouterLink="/components/inline-form" fragment="skyinlineformcloseargs-properties">a <stache-code>SkyInlineFormCloseArgs</stache-code> type</a>.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
