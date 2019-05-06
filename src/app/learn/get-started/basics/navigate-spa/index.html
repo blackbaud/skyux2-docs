@@ -8,6 +8,23 @@
   </stache-page-summary>
 
   <stache-page-anchor>
+    Installation
+  </stache-page-anchor>
+
+  <p>
+    To use any exports from <stache-code>SkyAppLinkModule</stache-code>, you must install it as a dependency to your project. In the command prompt, run the following command from your SPA's root directory:
+  </p>
+
+  <sky-code-block
+  >
+    npm install @skyux/router --save --save-exact
+  </sky-code-block>
+
+  <p>
+    After installation, you need to make any exports from <stache-code>SkyAppLinkModule</stache-code>S available to your SPA by adding the module to the exports section of your SPA's main module. If you are using the SKY UX SDK, add <stache-code>SkyAppLinkModule</stache-code> as an export in your <stache-code>app-sky.module.ts</stache-code> file.
+  </p>
+
+  <stache-page-anchor>
     Create internal links within a SPA
   </stache-page-anchor>
 
