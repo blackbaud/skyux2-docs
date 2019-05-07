@@ -194,126 +194,12 @@ img.bordered {
 	padding: $sky-padding-even-large;
 }
 
-.two-col-right-image{
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: flex-start;
-	
-	.two-col-text {
-		flex: 0 0 320px;
-		margin-right: 30px;
-	}
-	
-	.two-col-image {
-		flex: 0;
-		display: flex;
-		flex-wrap: wrap;
-		
-		> * {
-			flex: 0;
-		}
-		
-		> :not(:last-child) {
-			margin-right: 30px;
-		}
-	}
-}
-
 .sky-margin-stacked-content-section {
 	margin-bottom: 50px;
 }
 
-.anatomy-marker {
-	display: flex;
-	width: 22px;
-	height: 22px;
-	border-radius: 50%;
-	justify-content: center;
-	align-items: center;
-	margin-right: $sky-margin-inline-compact;
-}
-
-.anatomy-item {
-	margin-bottom: $sky-margin-stacked-default;
-	display: flex;
-	align-items: center;
-	
-	&.anatomy-item-required {
-		.anatomy-marker {
-			color: $sky-text-color-on-dark;
-			background-color: #4d842d;
-		}
-	}
-		
-	&.anatomy-item-optional {
-		.anatomy-marker {
-			background-color: $sky-background-color-success;
-		}
-	}
-}
-
 .sky-text-block {
 	width: 690px;
-}
-
-.property-table {
-	
-	.property-table-row {
-		display: flex;
-		flex-wrap: wrap;
-		border-bottom: 1px dotted $sky-border-color-neutral-medium; //@include sky-border(row)
-		
-		&.property-table-header {
-			background-color: $sky-background-color-info-light;
-			border-bottom: none;
-		}
-		
-		&> div {
-		padding: $sky-padding-even-default;
-		}
-	}
-	
-		.property-heading {
-			display: none;
-		}
-
-		.property-name {
-			width: 20%;
-		}
-
-		.property-description {
-			width: 40%;
-		}
-
-		.property-default {
-			width: 20%;
-		}
-
-		.property-optional {
-			width: 20%;
-		}
-	
-	@media (max-width: $sky-screen-sm-max) {
-		.property-table-header {
-			display: none;
-		}
-		
-		.property-heading {
-			display: block;
-			margin-bottom: $sky-margin-stacked-default;
-		}
-
-		.property-name, .property-description, .property-default, .property-optional {
-			width: 100%;
-		}
-	}
-}
-
-div.states-table {
-	.sky-repeater-item {
-		padding-top: 20px;
-		padding-bottom: 20px;
-	}
 }
 
 sky-tabset#content-tabs .sky-tabset {
@@ -322,3 +208,4 @@ sky-tabset#content-tabs .sky-tabset {
 	padding-left: 30px;
 	padding-right: 30px;
 }
+

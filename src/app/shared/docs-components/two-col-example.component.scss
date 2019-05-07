@@ -1,0 +1,25 @@
+.two-col-example{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+  margin-bottom: 50px; //$sky-margin-stacked-content-section;
+	
+	.two-col-text {
+		flex: 0 0 320px;
+		margin-right: 30px;
+	}
+	
+	.two-col-image {
+		flex: 0;
+		display: flex;
+		flex-wrap: wrap;
+		
+		> * {
+			flex: 0;
+		}
+		
+		> :not(:last-child) {
+			margin-right: 30px;
+		}
+	}
+}

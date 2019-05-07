@@ -1,5 +1,4 @@
 import {
-  ChangeDetectionStrategy,
   Component,
   Input
 } from '@angular/core';
@@ -7,7 +6,7 @@ import {
 @Component({
   selector: 'sky-demo-page-module-info',
   templateUrl: './demo-page-module-info.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./demo-page-module-info.component.scss']
 })
 
 export class SkyDemoPageModuleInfoComponent {
@@ -33,6 +32,8 @@ export class SkyDemoPageModuleInfoComponent {
   public get packageName(): string {
     return this._packageName;
   }
+
+  @Input() public githubRepo: string;
 
   public npmInstall: string;
 

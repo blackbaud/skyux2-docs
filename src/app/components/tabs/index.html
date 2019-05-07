@@ -20,205 +20,126 @@
 		tabHeading="Design">	
 	<sky-demo-page-content sectionHeading="Usage">
 	<h3>Use when</h3>
-	<ul>
-		<li>
-			<div class="two-col-right-image sky-margin-stacked-content-section">
-				<div class="two-col-text">
+		<sky-docs-two-col-example>
+			<sky-docs-two-col-example-text>
 					<p>Users require quick access to different slices of the same data.</p>
+			</sky-docs-two-col-example-text>
+			<sky-docs-two-col-example-image>
+				<div class="screenshot screenshot-success">
+					<img class="bordered" src="~/assets/img/guidelines/tab/use-slices.png" />
+					<div class="caption sky-text-success">Do use tabs to show different slices of the same data.</div>
 				</div>
-				<div class="two-col-image">
-					<div class="screenshot screenshot-success">
-						<img class="bordered" src="~/assets/img/guidelines/tab/use-slices.png" />
-						<div class="caption sky-text-success">Do use tabs to show different slices of the same data.</div>
-					</div>
-				</div>
-			</div>
-		</li>
-		<li>
-		<div class="two-col-right-image sky-margin-stacked-separate">
-			<div class="two-col-text">
+			</sky-docs-two-col-example-image>
+		</sky-docs-two-col-example>
+		<sky-docs-two-col-example>
+			<sky-docs-two-col-example-text>
 				<p>Users need to complete different tasks on a page, and each task includes a significant amount of data.</p>
-			</div>
-			<div class="two-col-image">				
+			</sky-docs-two-col-example-text>
+			<sky-docs-two-col-example-image>				
 				<div class="screenshot screenshot-success">
 					<img class="bordered" src="~/assets/img/guidelines/tab/use-tasks.png" />
 					<div class="caption sky-text-success">Do use tabs to group content for different tasks.</div>
 				</div>
-			</div>
-		</div>
-		</li>
-	</ul>
+			</sky-docs-two-col-example-image>
+		</sky-docs-two-col-example>
 		
 	<h3>Don't use when</h3>
-	<ul>
-		<li>
-			<div class="two-col-right-image  sky-margin-stacked-content-section">
-				<div class="two-col-text">
+	<h3>Don't use when</h3>
+		<sky-docs-two-col-example>
+			<sky-docs-two-col-example-text>
 					<p>A page already has a set of tabs. Change the workflow instead of using multiple sets of tabs.</p>
-				</div>
-				<div class="two-col-image">
-					<div class="screenshot screenshot-danger sky-margin-stacked-content-section">
-						<img class="bordered" src="~/assets/img/guidelines/tab/dont-double-tab-horz.png" />
-						<div class="caption sky-text-danger">Don't use multiple sets of tabs on a page.</div>
+			</sky-docs-two-col-example-text>
+			<sky-docs-two-col-example-image>
+				<div class="screenshot screenshot-danger sky-margin-stacked-content-section">
+					<img class="bordered" src="~/assets/img/guidelines/tab/dont-double-tab-horz.png" />
+					<div class="caption sky-text-danger">Don't use multiple sets of tabs on a page.</div>
 					</div>
 					<div class="screenshot screenshot-danger">
 						<img class="bordered" src="~/assets/img/guidelines/tab/dont-double-tab-vert.png" />
 						<div class="caption sky-text-danger">Don't combine vertical tabs and horizontal tabs.</div>
 					</div>
 				</div>
-			</div>
-		</li>
-		<li>
-			<div class="two-col-right-image sky-margin-stacked-separate">
-				<div class="two-col-text">
+			</sky-docs-two-col-example-image>
+		</sky-docs-two-col-example>
+    
+    <sky-docs-two-col-example>
+			<sky-docs-two-col-example-text>
 					<p>The tabs are likely to overflow the available horizontal space. This leads to a collapsed tab dropdown and a large amount of unused space in the tab bar. Use <a routerLink="/components/vertical-tabs">vertical tabs</a> instead.</p>
+			</sky-docs-two-col-example-text>
+			<sky-docs-two-col-example-image>
+				<div class="screenshot screenshot-danger">
+					<img class="bordered" src="~/assets/img/guidelines/tab/dont-overflow.png" />
+					<div class="caption sky-text-danger">Don't use horizontal tabs when they are likely to overflow and collapse into a dropdown.</div>
 				</div>
-				<div class="two-col-image">
-					<div class="screenshot screenshot-danger">
-						<img class="bordered" src="~/assets/img/guidelines/tab/dont-overflow.png" />
-						<div class="caption sky-text-danger">Don't use horizontal tabs when they are likely to overflow and collapse into a dropdown.</div>
-					</div>
-				</div>
-			</div>
-		</li>
-	</ul>
-   
+			</sky-docs-two-col-example-image>
+		</sky-docs-two-col-example>
 		
 	</sky-demo-page-content>
 	
 	<sky-demo-page-content sectionHeading="Anatomy">
-		<div class="two-col-right-image sky-margin-stacked-separate">
-			<div class="two-col-text">
-				<div class="anatomy-list">
-					<div class="anatomy-item anatomy-item-required"><div class="anatomy-marker">1</div><div class="anatomy-description">Selected tab</div></div>
-					<div class="anatomy-item anatomy-item-required"><div class="anatomy-marker">2</div><div class="anatomy-description">Unselected tab</div></div>
-					<div class="anatomy-item anatomy-item-required"><div class="anatomy-marker">3</div><div class="anatomy-description">Tab border</div></div>
-					<div class="anatomy-item anatomy-item-optional"><div class="anatomy-marker">4</div><div class="anatomy-description">Tab count (optional)</div></div>
-					<div class="anatomy-item anatomy-item-optional"><div class="anatomy-marker">5</div><div class="anatomy-description">Close tab button (optional)</div></div>
-					<div class="anatomy-item anatomy-item-optional"><div class="anatomy-marker">6</div><div class="anatomy-description">Open tab button (optional)</div></div>
-				</div>
-			</div>
-			<div class="two-col-image">
+		<sky-docs-two-col-example>
+			<sky-docs-two-col-example-text>
+        <sky-docs-anatomy-item anatomyNumber="1">Selected tab</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item anatomyNumber="2">Unselected tab</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item anatomyNumber="3">Tab border</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item isOptional="true" anatomyNumber="4">Tab count</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item isOptional="true" anatomyNumber="5">Close tab button</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item isOptional="true" anatomyNumber="6">Open tab button</sky-docs-anatomy-item>
+			</sky-docs-two-col-example-text>
+			<sky-docs-two-col-example-image>
 				<div class="screenshot">
 					<img class="bordered" srcset="~/assets/img/guidelines/tab/anatomy.png 1x, ~/assets/img/guidelines/tab/anatomy_2x.png 2x" src="~/assets/img/guidelines/tab/anatomy.png" />
 				</div>
-			</div>
-		</div>
+			</sky-docs-two-col-example-image>
+		</sky-docs-two-col-example>
 	</sky-demo-page-content>
 	
 	<sky-demo-page-content sectionHeading="Options">
 		<h3>Count</h3>
-			<div class="two-col-right-image sky-margin-stacked-separate">
-				<div class="two-col-text">
+			<sky-docs-two-col-example>
+				<sky-docs-two-col-example-text>
 					<p>When a tab displays a list, you can include the record count in the tab so that users know if the list includes records without navigating to the tab.</p>
-				</div>
-				<div class="two-col-image">
+				</sky-docs-two-col-example-text>
+				<sky-docs-two-col-example-image>
 					<div class="screenshot">
 						<img class="bordered" src="~/assets/img/guidelines/tab/option-count.png" />
 					</div>
-				</div>
-			</div>
+				</sky-docs-two-col-example-image>
+			</sky-docs-two-col-example>
 		<h3>Open and close</h3>
-			<div class="two-col-right-image sky-margin-stacked-separate">
-				<div class="two-col-text">
+			<sky-docs-two-col-example>
+				<sky-docs-two-col-example-text>
 					<p>If users need to work with a subset of tabs in a large tabset, let them open and close tabs to display only the relevant tabs.</p>
 					<p>If a new tab includes multiple options on what to display, use action buttons in the tab view to let users make selections.</p>
-				</div>
-				<div class="two-col-image">
+				</sky-docs-two-col-example-text>
+				<sky-docs-two-col-example-image>
 					<div class="screenshot">
 						<img class="bordered" src="~/assets/img/guidelines/tab/option-open-close.png" />
 					</div>
-				</div>
-		</div>
+				</sky-docs-two-col-example-image>
+		</sky-docs-two-col-example>
 	</sky-demo-page-content>
 	
 	<sky-demo-page-content sectionHeading="Behavior & states">
 		<h3>Overflowing tabs</h3>
-			<div class="two-col-right-image sky-margin-stacked-separate">
-				<div class="two-col-text">
+			<sky-docs-two-col-example>
+				<sky-docs-two-col-example-text>
 					<p>If the tabset includes too many tabs to fit in the tab bar's available horizontal space, the tabs collapse into a dropdown.</p>
-				</div>
-				<div class="two-col-image">
+				</sky-docs-two-col-example-text>
+				<sky-docs-two-col-example-image>
 					<div class="screenshot">
 						<img src="~/assets/img/guidelines/tab/behavior-responsive.png" />
 					</div>
-				</div>
-			</div>
+				</sky-docs-two-col-example-image>
+			</sky-docs-two-col-example>
 		<h3>States</h3>
-		<div class="states-table">
-			<sky-repeater>
-				<sky-repeater-item>
-					<sky-repeater-item-content>
-						<div class="two-col-right-image">
-							<div class="two-col-text">
-								<div>Selected</div>
-							</div>
-							<div class="two-col-image">
-								<div class="screenshot">
-									<img src="~/assets/img/guidelines/tab/state-selected.png" />
-								</div>
-							</div>
-						</div>
-					</sky-repeater-item-content>
-				</sky-repeater-item>
-				<sky-repeater-item>
-					<sky-repeater-item-content>
-						<div class="two-col-right-image">
-							<div class="two-col-text">
-								<div>Unselected</div>
-							</div>
-							<div class="two-col-image">
-								<div class="screenshot">
-									<img src="~/assets/img/guidelines/tab/state-unselected.png" />
-								</div>
-							</div>
-						</div>
-					</sky-repeater-item-content>
-				</sky-repeater-item>
-				<sky-repeater-item>
-					<sky-repeater-item-content>
-						<div class="two-col-right-image">
-							<div class="two-col-text">
-								<div>Hover</div>
-							</div>
-							<div class="two-col-image">
-								<div class="screenshot">
-									<img src="~/assets/img/guidelines/tab/state-hover.png" />
-								</div>
-							</div>
-						</div>
-					</sky-repeater-item-content>
-				</sky-repeater-item>
-				<sky-repeater-item>
-					<sky-repeater-item-content>
-						<div class="two-col-right-image">
-							<div class="two-col-text">
-								<div>Collapsed, closed</div>
-							</div>
-							<div class="two-col-image">
-								<div class="screenshot">
-									<img src="~/assets/img/guidelines/tab/state-collapsed-closed.png" />
-								</div>
-							</div>
-						</div>
-					</sky-repeater-item-content>
-				</sky-repeater-item>
-				<sky-repeater-item>
-					<sky-repeater-item-content>
-						<div class="two-col-right-image">
-							<div class="two-col-text">
-								<div>Collapsed, open</div>
-							</div>
-							<div class="two-col-image">
-								<div class="screenshot">
-									<img src="~/assets/img/guidelines/tab/state-collapsed-open.png" />
-								</div>
-							</div>
-						</div>
-					</sky-repeater-item-content>
-				</sky-repeater-item>
-			</sky-repeater>
-			</div>
+    <sky-demo-page-states-table>
+      <sky-demo-page-states-table-item stateName="Selected" imagePath="~/assets/img/guidelines/tab/state-selected.png"></sky-demo-page-states-table-item>
+      <sky-demo-page-states-table-item stateName="Unselected" imagePath="~/assets/img/guidelines/tab/state-unselected.png"></sky-demo-page-states-table-item>
+      <sky-demo-page-states-table-item stateName="Hover" imagePath="~/assets/img/guidelines/tab/state-hover.png"></sky-demo-page-states-table-item>
+      <sky-demo-page-states-table-item stateName="Collapsed, closed" imagePath="~/assets/img/guidelines/tab/state-collapsed-closed.png"></sky-demo-page-states-table-item>
+      <sky-demo-page-states-table-item stateName="Collapsed, open" imagePath="~/assets/img/guidelines/tab/state-collapsed-open.png"></sky-demo-page-states-table-item>
+    </sky-demo-page-states-table>
 			
 	</sky-demo-page-content>
 	
@@ -239,22 +160,22 @@
 	</sky-demo-page-content>
 		
 	<sky-demo-page-content sectionHeading="Layout">
-		<div class="two-col-right-image sky-margin-stacked-content-section">
-			<div class="two-col-text">
+		<sky-docs-two-col-example>
+			<sky-docs-two-col-example-text>
 				<p>Tabs are always the last (bottommost) content in their container. Don’t put additional content under tabs.</p>
-			</div>
-			<div class="two-col-image">
+			</sky-docs-two-col-example-text>
+			<sky-docs-two-col-example-image>
 				<div class="screenshot screenshot-danger">
 					<img class="bordered" src="~/assets/img/guidelines/tab/layout-bottommost.png" />
 					<div class="caption sky-text-danger">Don't put additional content under tabs.</div>
 				</div>
-			</div>
-		</div>
-		<div class="two-col-right-image sky-margin-stacked-content-section">
-			<div class="two-col-text">
+			</sky-docs-two-col-example-image>
+		</sky-docs-two-col-example>
+		<sky-docs-two-col-example>
+			<sky-docs-two-col-example-text>
 				<p>The tab border extends the full width of the container. Don’t use left or right margins on the tab border, and ignore any padding that the container defines.</p>
-			</div>
-			<div class="two-col-image">
+			</sky-docs-two-col-example-text>
+			<sky-docs-two-col-example-image>
 				<div class="screenshot screenshot-success sky-margin-stacked-content-section">
 					<img src="~/assets/img/guidelines/tab/layout-full-width.png" />
 					<div class="caption sky-text-success">Do extend the tab border to the full width of the container.</div>
@@ -263,19 +184,19 @@
 					<img src="~/assets/img/guidelines/tab/layout-dont-pad-line.png" />
 					<div class="caption sky-text-danger">Don't apply the container's padding to the tab border.</div>
 				</div>
-			</div>
-		</div>
-		<div class="two-col-right-image sky-margin-stacked-content-section">
-			<div class="two-col-text">
+			</sky-docs-two-col-example-image>
+		</sky-docs-two-col-example>
+		<sky-docs-two-col-example>
+			<sky-docs-two-col-example-text>
 				<p>Tab content does not have additional left or right padding. The left and right gutters align with the gutters for content outside the tabs.</p>
-			</div>
-			<div class="two-col-image">
+			</sky-docs-two-col-example-text>
+			<sky-docs-two-col-example-image>
 				<div class="screenshot screenshot-danger">
 					<img class="bordered" src="~/assets/img/guidelines/tab/layout-dont-pad-content.png" />
 					<div class="caption sky-text-danger">Don't apply additional left or right padding to tab content.</div>
 				</div>
-			</div>
-		</div>
+			</sky-docs-two-col-example-image>
+		</sky-docs-two-col-example>
 	</sky-demo-page-content>
 	
 	<sky-demo-page-content sectionHeading="See more">
@@ -298,6 +219,7 @@
 	<sky-demo-page-module-info
 		skyuxModule="SkyTabsModule"
 		packageName="@skyux/tabs"
+    githubRepo="skyux-tabs"
 	>
 	</sky-demo-page-module-info>	
 

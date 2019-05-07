@@ -1,0 +1,40 @@
+@import '~@blackbaud/skyux-design-tokens/scss/mixins';
+
+	.property-table-row {
+		display: flex;
+		flex-wrap: wrap;
+		border-bottom: 1px dotted $sky-border-color-neutral-medium; //@include sky-border(row)
+		
+		&.property-table-header {
+			background-color: $sky-background-color-info-light;
+			border-bottom: none;
+		}
+	}
+	
+		.property-heading {
+			display: none;
+		}
+
+		.property-name {
+			width: 25%;
+      border-right: 2px solid white;
+		}
+
+		.property-description {
+			width: 50%;
+      border-right: 2px solid white;
+		}
+
+		.property-default {
+			width: 25%;
+		}
+	
+	@media (max-width: $sky-screen-sm-max) {
+		.property-table-header {
+			display: none;
+		}
+		
+		.property-name, .property-description, .property-default, .property-optional {
+			width: 100%;
+		}
+	}

@@ -30,41 +30,46 @@
 		</sky-demo-page-content>
 		
 		<sky-demo-page-content sectionHeading="Anatomy">
-			<div class="two-col-right-image sky-margin-stacked-separate">
-			<div class="two-col-text">
-				<div class="anatomy-list">
-					<div class="anatomy-item anatomy-item-required"><div class="anatomy-marker">1</div><div class="anatomy-description">Content area</div></div>
-					<div class="anatomy-item anatomy-item-required"><div class="anatomy-marker">2</div><div class="anatomy-description">Highlight border</div></div>
-					<div class="anatomy-item anatomy-item-required"><div class="anatomy-marker">3</div><div class="anatomy-description">Element pointer</div></div>
-				</div>
-			</div>
-			<div class="two-col-image">
-				<div class="screenshot">
-					<img src="~/assets/img/guidelines/popover/anatomy.png" />
-				</div>
-			</div>
-		</div>
+      <sky-docs-two-col-example>
+        <sky-docs-two-col-example-text>
+          <sky-docs-anatomy-item anatomyNumber="1">Content area</sky-docs-anatomy-item>
+          <sky-docs-anatomy-item anatomyNumber="2">Highlight border</sky-docs-anatomy-item>
+          <sky-docs-anatomy-item anatomyNumber="3">Element pointer</sky-docs-anatomy-item>
+        </sky-docs-two-col-example-text>
+        <sky-docs-two-col-example-image>
+          <div class="screenshot">
+            <img src="~/assets/img/guidelines/popover/anatomy.png" />
+          </div>
+        </sky-docs-two-col-example-image>
+      </sky-docs-two-col-example>
 		</sky-demo-page-content>
 		
 		<sky-demo-page-content sectionHeading="Options">
 			<h3>Positioning</h3>
-			<div class="two-col-right-image sky-margin-stacked-separate">
-				<div class="two-col-text">
+			<sky-docs-two-col-example>
+        <sky-docs-two-col-example-text>
 					<p>You can specify the position of the popover in relation to its trigger element. The default position is centered above the trigger element.</p>
-				</div>
-				<div class="two-col-image">
-					<div class="screenshot">
+        </sky-docs-two-col-example-text>
+        <sky-docs-two-col-example-image>
+          <div class="screenshot">
 						<img src="~/assets/img/guidelines/popover/option-position.png" />
 					</div>
-				</div>
-			</div>
+        </sky-docs-two-col-example-image>
+      </sky-docs-two-col-example>
 			<h3>Trigger</h3>
-				<p>
-					To ensure usability on touch devices, trigger user-invoked popovers on <stache-code>click</stache-code> actions rather than <stache-code>mouseenter</stache-code> actions.
-				</p>
-				<p>
-					You can also invoke popovers programmatically. For example, you can programmatically invoke a popover when users visit a page for the first time to highlight an important interface element that they might overlook. However, don't invoke multiple popovers on a page because this reduces their effectiveness.
-				</p>
+      <sky-docs-two-col-example>
+        <sky-docs-two-col-example-text>
+          <p>
+  					To ensure usability on touch devices, trigger user-invoked popovers on <stache-code>click</stache-code> actions rather than <stache-code>mouseenter</stache-code> actions.
+					</p>
+					<p>
+  					You can also invoke popovers programmatically. For example, you can programmatically invoke a popover when users visit a page for the first time to highlight an important interface element that they might overlook. However, don't invoke multiple popovers on a page because this reduces their effectiveness.
+					</p>
+        </sky-docs-two-col-example-text>
+        <sky-docs-two-col-example-image>
+          <div class="sky-deemphasized">Placeholder for animation of triggers</div>
+        </sky-docs-two-col-example-image>
+      </sky-docs-two-col-example>
 		</sky-demo-page-content>
 			
 		<sky-demo-page-content sectionHeading="Behavior and states">
@@ -72,59 +77,59 @@
 				<div class="sky-text-block">Popovers close when users click elsewhere or focus on another element.</div>
 			
 			<h3>Responsiveness</h3>
-				<div class="two-col-right-image sky-margin-stacked-separate">
-				<div class="two-col-text">
-					<p>
-						If a popover doesn't fit in the viewport at its current position, it automatically repositions. If the popover doesn't fit at any position, it converts to a modal that overlays the page.
-					</p>
-				</div>
-				<div class="two-col-image">
-					<div class="screenshot">
-						<img src="~/assets/img/guidelines/popover/behavior-responsive.png" />
-					</div>
-				</div>
-			</div>
-		</sky-demo-page-content>
+        <sky-docs-two-col-example>
+          <sky-docs-two-col-example-text>
+            <p>
+  						If a popover doesn't fit in the viewport at its current position, it automatically repositions. If the popover doesn't fit at any position, it converts to a modal that overlays the page.
+            </p>
+          </sky-docs-two-col-example-text>
+          <sky-docs-two-col-example-image>
+            <div class="screenshot">
+              <img src="~/assets/img/guidelines/popover/behavior-responsive.png" />
+            </div>
+          </sky-docs-two-col-example-image>
+        </sky-docs-two-col-example>
+      </sky-demo-page-content>
 		
 		<sky-demo-page-content sectionHeading="Content">
-			<div class="two-col-right-image sky-margin-stacked-separate">
-				<div class="two-col-text">
-					<p>
-						Limit popovers to small chunks of contextual content. The content can include plain text, formatted HTML, or Angular components.
-					</p>
-					<p>
-						Don't include a large amount of content, form inputs, or complex interactions.
-					</p>
-				</div>
-				<div class="two-col-image">
-					<div class="screenshot screenshot-success sky-margin-stacked-content-section">
-						<img src="~/assets/img/guidelines/popover/content-simple.png" />
-						<div class="caption sky-text-success">Do use small chunks of plain text.</div>
-					</div>
-					<div class="screenshot screenshot-success sky-margin-stacked-content-section">
-						<img src="~/assets/img/guidelines/popover/content-html.png" />
-						<div class="caption sky-text-success">Do use small chunks of formatted HTML.</div>
-					</div>
-					<div class="screenshot screenshot-danger">
-						<img class="bordered" src="~/assets/img/guidelines/popover/content-dont-overload.png" />
-						<div class="caption sky-text-danger">Don't display large amounts of content in popovers.</div>
-					</div>
-				</div>
-			</div>
-		</sky-demo-page-content>
+			<sky-docs-two-col-example>
+          <sky-docs-two-col-example-text>
+           <p>
+					  Limit popovers to small chunks of contextual content. The content can include plain text, formatted HTML, or Angular components.
+            </p>
+            <p>
+  						Don't include a large amount of content, form inputs, or complex interactions.
+           </p>
+          </sky-docs-two-col-example-text>
+          <sky-docs-two-col-example-image>
+            <div class="screenshot screenshot-success sky-margin-stacked-content-section">
+              <img src="~/assets/img/guidelines/popover/content-simple.png" />
+              <div class="caption sky-text-success">Do use small chunks of plain text.</div>
+            </div>
+            <div class="screenshot screenshot-success sky-margin-stacked-content-section">
+              <img src="~/assets/img/guidelines/popover/content-html.png" />
+              <div class="caption sky-text-success">Do use small chunks of formatted HTML.</div>
+            </div>
+            <div class="screenshot screenshot-danger">
+              <img class="bordered" src="~/assets/img/guidelines/popover/content-dont-overload.png" />
+              <div class="caption sky-text-danger">Don't display large amounts of content in popovers.</div>
+            </div>
+          </sky-docs-two-col-example-image>
+        </sky-docs-two-col-example>
+		  </sky-demo-page-content>
 		
 		<sky-demo-page-content sectionHeading="Layout">
-			<div class="two-col-right-image sky-margin-stacked-separate">
-				<div class="two-col-text">
+      <sky-docs-two-col-example>
+        <sky-docs-two-col-example-text>
 					<p>In most cases, use the default placement for popovers to center them above their trigger elements. This minimizes the risk of obscuring content that users haven’t seen and avoids obscuring the content that they will interact with next.</p>
 					<p>However, when popover triggers are near the edge of the display, use a different placement option to obscure as little content as possible.</p>
-				</div>
-				<div class="two-col-image">
-					<div class="screenshot sky-margin-stacked-content-section">
+        </sky-docs-two-col-example-text>
+        <sky-docs-two-col-example-image>
+          <div class="screenshot sky-margin-stacked-content-section">
 						<img src="~/assets/img/guidelines/popover/layout-alternate.png" />
 					</div>
-				</div>
-			</div>
+        </sky-docs-two-col-example-image>
+      </sky-docs-two-col-example>
 		</sky-demo-page-content>			
 			
 		<sky-demo-page-content sectionHeading="See more">
@@ -148,6 +153,7 @@
 	<sky-demo-page-module-info
 		skyuxModule="SkyPopoverModule"
   	packageName="@skyux/popovers"
+    githubRepo="skyux-popovers"
 	>
 	</sky-demo-page-module-info>
 	

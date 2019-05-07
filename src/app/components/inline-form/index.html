@@ -1,0 +1,189 @@
+<sky-demo-page
+  pageTitle="Inline form"
+  skyuxModule="SkyInlineFormModule"
+  packageName="@skyux/inline-form"
+>
+
+<sky-demo-page-summary>
+	<p>
+		The inline form component renders a form in context in the current view rather than opening it in a separate modal. It is most commonly used in <a stacheRouterLink="/components/grid">grids</a>, <a stacheRouterLink="/components/repeater">repeaters</a>, and <a stacheRouterLink="/components/tile">tiles</a>.
+	</p>
+</sky-demo-page-summary>
+
+<sky-demo-page-properties sectionHeading='Inline form properties'>
+	<sky-demo-page-property
+    propertyName="config"
+  >
+  Specifies configuration options for the buttons to display with the inline form. This property accepts <a stacheRouterLink="." fragment="skyinlineformconfig-properties">a <stache-code>SkyInlineFormConfig</stache-code> object</a>.
+  </sky-demo-page-property>
+	<sky-demo-page-property
+    propertyName="showForm"
+		isOptional="true"
+		defaultValue="false"
+  >
+  Indicates whether to display the inline form. Users can toggle between displaying and hiding the inline form. This property accepts <stache-code>boolean</stache-code> values.
+  </sky-demo-page-property>
+	<sky-demo-page-property
+    propertyName="template"
+  >
+  Specifies a template to use to instantiate the inline form. This property accepts <a href="https://angular.io/api/core/TemplateRef">an Angular <stache-code>TemplateRef</stache-code> class</a>.
+  </sky-demo-page-property>
+</sky-demo-page-properties>
+
+<sky-demo-page-properties sectionHeading='Inline form events'>
+	<sky-demo-page-property
+    propertyName="close"
+  >
+  Fires when users close the inline form. This event emits <a stacheRouterLink="." fragment="skyinlineformcloseargs-properties">a <stache-code>SkyInlineFormCloseArgs</stache-code> type</a>.
+  </sky-demo-page-property>
+</sky-demo-page-properties>
+
+<sky-demo-page-properties sectionHeading='SkyInlineFormConfig properties'>
+	<sky-demo-page-property
+    propertyName="buttonLayout"
+  >
+  Specifies the buttons to display with the inline form. This property accepts a <stache-code>SkyInlineFormButtonLayout</stache-code> value. The valid options are <stache-code>Custom</stache-code> for custom buttons, <stache-code>DoneCancel</stache-code> for Done and Cancel buttons, <stache-code>DoneDeleteCancel</stache-code> for Done, Delete, and Cancel buttons, <stache-code>SaveCancel</stache-code> for Save and Cancel buttons, and <stache-code>SaveDeleteCancel</stache-code> for Save, Delete, and Cancel buttons.
+  </sky-demo-page-property>
+	<sky-demo-page-property
+    propertyName="buttons"
+    isOptional="true"
+  >
+  Specifies configuration options for the inline form's buttons. This property accepts <a stacheRouterLink="." fragment="skyinlineformbuttonconfig-properties">an array of <stache-code>SkyInlineFormButtonConfig</stache-code> objects</a>.
+  </sky-demo-page-property>
+</sky-demo-page-properties>
+
+<sky-demo-page-properties sectionHeading='SkyInlineFormButtonConfig properties'>
+	<sky-demo-page-property
+    propertyName="action"
+  >
+  Specifies the action that the button performs. The valid options are <stache-code>cancel</stache-code>, <stache-code>delete</stache-code>, <stache-code>done</stache-code>, and <stache-code>save</stache-code>. This property accepts <stache-code>string</stache-code> values.
+  </sky-demo-page-property>
+	<sky-demo-page-property
+    propertyName="text"
+  >
+  Specifies a label for the button. This property accepts <stache-code>string</stache-code> values.
+  </sky-demo-page-property>
+	<sky-demo-page-property
+    propertyName="styleType"
+    isOptional="true"
+  >
+  Specifies a background color and style for the button. The valid options are <stache-code>default</stache-code>, <stache-code>link</stache-code>, and <stache-code>primary</stache-code>. These values set the background color and style from the <a routerLink="../button">secondary, link, and primary button classes</a> respectively. This property accepts <stache-code>string</stache-code> values.
+  </sky-demo-page-property>
+</sky-demo-page-properties>
+
+<sky-demo-page-properties sectionHeading='SkyInlineFormCloseArgs properties'>
+	<sky-demo-page-property
+    propertyName="reason"
+  >
+  Returns a <stache-code>string</stache-code> value that explains why the inline form closed. The possible values are <stache-code>cancel</stache-code>, <stache-code>delete</stache-code>, <stache-code>done</stache-code>, and <stache-code>save</stache-code>.
+  </sky-demo-page-property>
+</sky-demo-page-properties>
+
+<sky-demo-page-example>
+  <sky-inline-form-demo></sky-inline-form-demo>
+  <sky-demo-page-code demoName="Inline form"></sky-demo-page-code>
+</sky-demo-page-example>
+
+<sky-demo-page-content sectionHeading="UX guidelines">
+
+<header><div class="sky-section-heading">Usage</div></header>
+	<header><div class="sky-subsection-heading sky-margin-stacked-default">When to use inline forms</div></header>
+	<stache-row>
+    <stache-column screenSmall="6">
+			<ul>
+			<li>The add or edit form is simple in terms of the number of fields and the complexity of the input controls.</li>
+			<li>The surrounding content will not distract users from the add or edit task.</li>
+			<li>Users are highly likely to add multiple records in succession.</li>
+			<li>To add or edit a subsection within a larger modal form.</li>
+			<li>Users can abandon the task while the add or edit form is open.</li>
+			</ul>
+		</stache-column>
+		<stache-column screenSmall="6">
+			<div class="screenshot screenshot-success sky-margin-stacked-default">
+				<img src="~/assets/img/guidelines/inline-form/usage-do-repeater.png" style="width: 100%;" />
+			</div>
+			<div class="screenshot screenshot-success">
+				<img src="~/assets/img/guidelines/inline-form/usage-do-block.png" style="width: 100%;" />
+			</div>
+		</stache-column>
+	</stache-row>
+
+	<header><div class="sky-subsection-heading sky-margin-stacked-default">When not to use inline forms</div></header>
+	<stache-row>
+    <stache-column screenSmall="6">
+			<ul>
+			<li>The add or edit form requires a large amount of page morphing or users must scroll to complete the form.</li>
+			<li>Within a paginated or infinite scroll list of items.</li>
+			<li>Users must finish the add or edit form before doing anything else.</li>
+			</ul>
+		</stache-column>
+		<stache-column screenSmall="6">
+			<div class="screenshot screenshot-danger sky-margin-stacked-default">
+				<img src="~/assets/img/guidelines/inline-form/usage-dont-complex.png" style="width: 100%;" />
+			</div>
+			<div class="screenshot screenshot-danger">
+				<img src="~/assets/img/guidelines/inline-form/usage-dont-paginated.png" style="width: 100%;" />
+			</div>
+		</stache-column>
+	</stache-row>
+	<header><div class="sky-section-heading">Anatomy</div></header>
+	<stache-row>
+    <stache-column screenSmall="6">
+			<ol>
+				<li>Edit button</li>
+				<li>Form fields</li>
+				<li>Form action buttons</li>
+				<li>Form background</li>
+				<li>Add button</li>
+			</ol>
+		</stache-column>
+		<stache-column screenSmall="6">
+			<div class="screenshot screenshot-info">
+				<img src="~/assets/img/guidelines/inline-form/anatomy.png" style="width: 100%;" />
+			</div>
+		</stache-column>
+	</stache-row>
+
+
+	<header><div class="sky-section-heading">Behavior</div></header>
+		<header><div class="sky-subsection-heading sky-margin-stacked-default">Add form</div></header>
+			<p>When users click the Add button, the form slides out from the bottom of the list.</p>
+		<header><div class="sky-subsection-heading sky-margin-stacked-default">Edit form</div></header>
+			<p>When users click the Edit button, the view content fades out and the form slides in to replace the view content.</p>
+
+  <header><div class="sky-section-heading">Content</div></header>
+    <header><div class="sky-subsection-heading sky-margin-stacked-default">Primary buttons</div></header>
+  <p>The primary action on the inline form should be Save or Done.</p>
+    <stache-row>
+      <stache-column screenSmall="6">
+        <p>Use Save if the inline form saves data to the database immediately.</p>
+      </stache-column>
+      <stache-column screenSmall="6">
+        <div class="screenshot screenshot-success">
+          <img src="~/assets/img/guidelines/inline-form/usage-do-block.png" style="width: 100%;" />
+        </div>
+      </stache-column>
+    </stache-row>
+    <stache-row>
+      <stache-column screenSmall="6">
+        <p>Use Done if the inline form does not save data to the database immediately because it is part of a larger form.</p>
+      </stache-column>
+      <stache-column screenSmall="6">
+        <div class="screenshot screenshot-success sky-margin-stacked-default">
+          <img src="~/assets/img/guidelines/inline-form/content-done-button.png" style="width: 100%;" />
+        </div>
+      </stache-column>
+    </stache-row>
+  
+	<header><div class="sky-section-heading">Related content</div></header>
+		<header><div class="sky-subsection-heading sky-margin-stacked-default">Guidelines</div></header>
+			<ul>
+				<li><a routerLink="/design/guidelines/form-design">Form design</a></li>
+			</ul>
+		<header><div class="sky-subsection-heading sky-margin-stacked-default">Components</div></header>
+			<ul>
+				<li><a routerLink="/components/form">Form</a></li>
+      </ul>
+
+  </sky-demo-page-content>
+</sky-demo-page>
