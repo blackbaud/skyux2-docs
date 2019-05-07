@@ -329,7 +329,17 @@ export class SkyDemoComponentsService {
             'SkyLabelModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyFlyoutDemoComponent')
+        dependencies: {
+          'microedge-rxstate': '*',
+          '@skyux/list-builder-common': '*',
+          '@skyux/lists': '*',
+          '@skyux/lookup': '*',
+          '@skyux/grids': '*',
+          '@skyux/list-builder-view-checklist': '*',
+          '@skyux/inline-form': '*'
+        },
+        getCodeFiles: () => this.getDemoFiles('SkyFlyoutDemoComponent'),
+        disableStackblitz: true
       },
       {
         name: 'Form',
@@ -346,6 +356,9 @@ export class SkyDemoComponentsService {
           '@skyux/grids': [
             'SkyGridModule'
           ]
+        },
+        dependencies: {
+          '@skyux/list-builder-common': '*'
         },
         getCodeFiles: () => this.getDemoFiles('SkyGridDemoComponent')
       },
@@ -403,9 +416,21 @@ export class SkyDemoComponentsService {
           ],
           '@skyux/inline-form': [
             'SkyInlineFormModule'
+          ],
+          '@skyux/grids': [
+            'SkyGridModule'
+          ],
+          '@skyux/list-builder-view-grids': [
+            'SkyListViewGridModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyInfiniteScrollDemoComponent')
+        dependencies: {
+          'microedge-rxstate': '*',
+          '@skyux/list-builder-common': '*',
+          '@skyux/lookup': '*'
+        },
+        getCodeFiles: () => this.getDemoFiles('SkyInfiniteScrollDemoComponent'),
+        disableStackblitz: true
       },
       {
         name: 'Inline form',
@@ -633,7 +658,8 @@ export class SkyDemoComponentsService {
             'SkyDefinitionListModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyNumericDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('SkyNumericDemoComponent'),
+        disableStackblitz: true
       },
       {
         name: 'Page summary',
@@ -814,7 +840,8 @@ export class SkyDemoComponentsService {
           '@skyux/lists': '*',
           '@skyux/inline-form': '*'
         },
-        getCodeFiles: () => this.getDemoFiles('SkySelectFieldDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('SkySelectFieldDemoComponent'),
+        disableStackblitz: true
       },
       {
         name: 'Sort',
@@ -833,7 +860,8 @@ export class SkyDemoComponentsService {
             'SkyToolbarModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkySortDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('SkySortDemoComponent'),
+        disableStackblitz: true
       },
       {
         name: 'Status indicator',
@@ -859,7 +887,8 @@ export class SkyDemoComponentsService {
             'SkyModalModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkySummaryActionBarDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('SkySummaryActionBarDemoComponent'),
+        disableStackblitz: true
       },
       {
         name: 'Tabs',
@@ -884,7 +913,8 @@ export class SkyDemoComponentsService {
             'SkyTextExpandModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyTextExpandDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('SkyTextExpandDemoComponent'),
+        disableStackblitz: true
       },
       {
         name: 'Text expand repeater',
@@ -897,7 +927,8 @@ export class SkyDemoComponentsService {
             'SkyTextExpandRepeaterModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyTextExpandRepeaterDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('SkyTextExpandRepeaterDemoComponent'),
+        disableStackblitz: true
       },
       {
         name: 'Tile',
@@ -1020,7 +1051,8 @@ export class SkyDemoComponentsService {
             'SkyCheckboxModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyWizardDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('SkyWizardDemoComponent'),
+        disableStackblitz: true
       }
     ];
   }
