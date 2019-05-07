@@ -30,12 +30,6 @@ export class SkyDemoPageCodeComponent implements AfterViewInit {
   public codeFilesForBinding: SkyDemoPageCodeFile[];
 
   @Input()
-  public showDemoRunButton = false;
-
-  @Input()
-  public showDemoEmbed = false;
-
-  @Input()
   public set demoName(value: string) {
 
     const items = this.getItems(this.componentsService.getComponents(), value);
@@ -44,11 +38,7 @@ export class SkyDemoPageCodeComponent implements AfterViewInit {
 
       this.imports = item.imports;
       this.dependencies = item.dependencies;
-
-      if (this.imports) {
-        this.showDemoRunButton = true;
-        this.showDemoEmbed = true;
-      }
+      this.disableStackblitz = item.disableStackblitz;
 
       this.codeFilesForBinding = item.getCodeFiles()
         .map((codeFile: any) => new SkyDemoPageCodeFile(
@@ -64,6 +54,12 @@ export class SkyDemoPageCodeComponent implements AfterViewInit {
       }
     });
   }
+
+  public disableStackblitz = false;
+
+  public showStackblitzRun = true;
+
+  public showStackblitzEmbed = true;
 
   @ViewChild('stackblitzEmbed')
   public embedRef: ElementRef;

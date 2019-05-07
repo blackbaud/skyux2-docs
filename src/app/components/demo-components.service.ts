@@ -120,7 +120,13 @@ export class SkyDemoComponentsService {
             'SkyCodeBlockModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyCodeBlockDemoComponent')
+        dependencies: {
+          '@blackbaud/skyux-lib-code-block': '*',
+          '@blackbaud/skyux-lib-clipboard': '*',
+          'prismjs': '*'
+        },
+        getCodeFiles: () => this.getDemoFiles('SkyCodeBlockDemoComponent'),
+        disableStackblitz: true
       },
       {
         name: 'Colorpicker',
@@ -161,7 +167,11 @@ export class SkyDemoComponentsService {
             'SkyClipboardModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyCopyToClipboardDemoComponent')
+        dependencies: {
+          '@blackbaud/skyux-lib-code-block': '*'
+        },
+        getCodeFiles: () => this.getDemoFiles('SkyCopyToClipboardDemoComponent'),
+        disableStackblitz: true
       },
       {
         name: 'Datepicker',
@@ -650,6 +660,9 @@ export class SkyDemoComponentsService {
           '@skyux/inline-form': [
             'SkyInlineFormModule'
           ]
+        },
+        dependencies: {
+          '@skyux/lists': '3.2.2'
         },
         getCodeFiles: () => this.getDemoFiles('SkyPagingDemoComponent')
       },

@@ -73,11 +73,15 @@ export class SkyDocsDemoCodeService {
       component: SkyCodeBlockDemoComponent,
       files: [
         {
-          name: 'code-block-demo-component.html',
+          name: 'code-block-demo.component.html',
           fileContents: require('!!raw-loader!./code-block/code-block-demo.component.html')
         },
         {
-          name: 'code-block-demo-component.ts',
+          name: 'code-block-demo.component.scss',
+          fileContents: require('!!raw-loader!./code-block/code-block-demo.component.scss')
+        },
+        {
+          name: 'code-block-demo.component.ts',
           fileContents: require('!!raw-loader!./code-block/code-block-demo.component.ts'),
           componentName: 'SkyCodeBlockDemoComponent',
           bootstrapSelector: 'sky-code-block-demo'

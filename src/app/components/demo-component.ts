@@ -12,4 +12,5 @@ export interface SkyDemoComponent {
   components?: SkyDemoComponent[];
   imports?: SkyDemoPageImports;
   dependencies?: { [key: string]: string };
+  disableStackblitz?: boolean;
 }

@@ -3,7 +3,7 @@
     <stache-page-anchor>
       Code
     </stache-page-anchor>
-    <div class="sky-demo-page-code-stackblitz" *ngIf="showDemoRunButton">
+    <div class="sky-demo-page-code-stackblitz" *ngIf="!disableStackblitz && showStackblitzRun">
       <button
         type="button"
         class="sky-btn sky-btn-default"
@@ -15,7 +15,7 @@
     </div>
   </div>
 
-  <div class="stackblitz-wrapper" *ngIf="showDemoEmbed">
+  <div class="stackblitz-wrapper" *ngIf="!disableStackblitz && showStackblitzEmbed">
     <div #stackblitzEmbed></div>
   </div>
 
