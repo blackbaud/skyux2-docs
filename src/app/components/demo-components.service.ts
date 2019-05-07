@@ -186,6 +186,13 @@ export class SkyDemoComponentsService {
         getCodeFiles: () => this.getDemoFiles('SkyDatepickerDemoComponent')
       },
       {
+        name: 'Date range picker',
+        icon: 'calendar',
+        summary: `The date range picker component creates a text input for users to select a date range from a set of well-known options.`,
+        url: '/components/date-range-picker',
+        getCodeFiles: () => this.getDemoFiles('SkyDateRangePickerDemoComponent')
+      },
+      {
         name: 'Definition list',
         icon: 'list-alt',
         summary: `The definition list component displays a list of label-value pairs.`,
@@ -399,6 +406,13 @@ export class SkyDemoComponentsService {
           ]
         },
         getCodeFiles: () => this.getDemoFiles('SkyInfiniteScrollDemoComponent')
+      },
+      {
+        name: 'Inline form',
+        icon: 'keyboard-o',
+        summary: 'The inline form component renders a form in the current view rather than in a modal.',
+        url: '/components/inline-form',
+        getCodeFiles: () => this.getDemoFiles('SkyInlineFormDemoComponent')
       },
       {
         name: 'Key info',

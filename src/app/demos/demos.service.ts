@@ -14,6 +14,14 @@ import {
 import {
   SkyCopyToClipboardDemoComponent
 } from './copy-to-clipboard';
+
+import {
+  SkyDateRangePickerDemoComponent
+} from './date-range-picker';
+
+import {
+  SkyInlineFormDemoComponent
+} from './inline-form/inline-form-demo.component';
 // #endregion
 
 /**
@@ -68,6 +76,7 @@ export class SkyDocsDemoCodeService {
         }
       ]
     },
+
     {
       name: 'Code block',
       component: SkyCodeBlockDemoComponent,
@@ -88,6 +97,7 @@ export class SkyDocsDemoCodeService {
         }
       ]
     },
+
     {
       name: 'Copy to clipboard',
       component: SkyCopyToClipboardDemoComponent,
@@ -101,6 +111,40 @@ export class SkyDocsDemoCodeService {
           fileContents: require('!!raw-loader!./copy-to-clipboard/copy-to-clipboard-demo.component.ts'),
           componentName: 'SkyCopyToClipboardDemoComponent',
           bootstrapSelector: 'sky-copy-to-clipboard-demo'
+        }
+      ]
+    },
+
+    {
+      name: 'Date range picker',
+      component: SkyDateRangePickerDemoComponent,
+      files: [
+        {
+          name: 'date-range-picker-demo.component.html',
+          fileContents: require('!!raw-loader!./date-range-picker/date-range-picker-demo.component.html')
+        },
+        {
+          name: 'date-range-picker-demo.component.ts',
+          fileContents: require('!!raw-loader!./date-range-picker/date-range-picker-demo.component.ts'),
+          componentName: 'SkyDateRangePickerDemoComponent',
+          bootstrapSelector: 'sky-date-range-picker-demo'
+        }
+      ]
+    },
+
+    {
+      name: 'Inline form',
+      component: SkyInlineFormDemoComponent,
+      files: [
+        {
+          name: 'inline-form-demo-component.html',
+          fileContents: require('!!raw-loader!./inline-form/inline-form-demo.component.html')
+        },
+        {
+          name: 'inline-form-demo-component.ts',
+          fileContents: require('!!raw-loader!./inline-form/inline-form-demo.component.ts'),
+          componentName: 'SkyInlineFormDemoComponent',
+          bootstrapSelector: 'sky-inline-form-demo'
         }
       ]
     }

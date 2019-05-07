@@ -7,6 +7,10 @@ import {
 } from '@blackbaud/skyux/dist/demo';
 
 import {
+  SkyDateRangePickerModule
+} from '@skyux/datetime';
+
+import {
   SkyDocsDemoCodeService
 } from '../demos/demos.service';
 
@@ -18,16 +22,24 @@ import {
   SkyDemoComponentsService
 } from './demo-components.service';
 
+import {
+  SkyInlineFormDemoModule
+} from '../demos/inline-form/inline-form-demo.module';
+
 require('style-loader!prismjs/themes/prism.css');
 
 @NgModule({
   imports: [
+    SkyDateRangePickerModule,
     SkyDemoModule,
-    SkySummaryActionBarDemoModule
+    SkySummaryActionBarDemoModule,
+    SkyInlineFormDemoModule
   ],
   exports: [
+    SkyDateRangePickerModule,
     SkyDemoModule,
-    SkySummaryActionBarDemoModule
+    SkySummaryActionBarDemoModule,
+    SkyInlineFormDemoModule
   ],
   providers: [
     SkyDemoComponentsService,

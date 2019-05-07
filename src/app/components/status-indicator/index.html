@@ -1,16 +1,14 @@
-<stache
+<sky-demo-page
   pageTitle="Status Indicator"
-  windowTitle="Status indicator"
-  layout="container">
+  packageName="@skyux/theme"
+  [installOnly]="true"
+>
 
 <sky-demo-page-summary>
 	The status indicator classes provide icons to draw attention to status information that users need to address. Statuses indicate a state or condition at a particular time and fall into four categories: danger, info, success, and warning. For example, a status can indicate that a submission is late, submitted, or awaiting approval.
 </sky-demo-page-summary>
 
-<stache-page-anchor>
-	Status indicator classes
-</stache-page-anchor>
-
+<sky-demo-page-content sectionHeading="Status indicator classes">
   <div class="definition-table definition-table-wide">
     <div class="definition-item">
       <div class="sky-text-danger">Danger</div>
@@ -90,11 +88,9 @@
       </div>
     </div>
   </div>
-	
-<stache-page-anchor>
-	UX guidelines
-</stache-page-anchor>
-	
+</sky-demo-page-content>
+
+<sky-demo-page-content sectionHeading="UX guidelines">		
 	<div class="sky-subsection-heading">Status importance</div>
 		<p>If statuses are crucial to user tasks, use status indicators. However, if one status in an area is crucial, that does not mean all statuses are. For example, in a list of invoices with a mix of paid, unpaid, and overdue invoices, it's likely that only overdue invoices require status indicators because only they require immediate attention.</p>
 		<p>If statuses are not crucial to user tasks, use regular text.</p>
@@ -106,6 +102,6 @@
 		<ul>
 			<li><a routerLink="/design/guidelines/call-out-info">Calling out information</a></li>
 		</ul>
-	
-</stache>	
+</sky-demo-page-content>	
+</sky-demo-page>	
 
