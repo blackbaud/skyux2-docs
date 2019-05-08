@@ -1,0 +1,16 @@
+
+## SKY UX SDK
+
+The SKY UX SDK is comprised of two main modules - the SKY UX CLI and the SKY UX Builder.  The CLI is globally installed whereas Builder is installed in each repository.  This allows individual SPAs to dicate the version of the builder they use.
+
+## SKY UX CLI
+
+The SKY UX CLI serves two main functions.
+
+First, it's job is to make `skyux` a known command, including handling commands which make sense running from any directory.  Command such as `skyux new` and `skyux help`.
+
+Second, it's job is to locate any plugins, either globally or locally based on the current working directory, and pass the specified command to them.
+
+## SKY UX Builder
+
+## SKY UX SDK Plugins
