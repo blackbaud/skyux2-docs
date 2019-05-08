@@ -13,6 +13,16 @@ export class SkyDemoComponentsService {
   ) { }
 
   public getComponents(filter?: string): SkyDemoComponent[] {
+    const listDependencies = {
+      '@skyux/list-builder-common': '*',
+      'microedge-rxstate': '*',
+      '@skyux/lists': '*',
+      '@skyux/lookup': '*',
+      '@skyux/inline-form': '*',
+      '@skyux/list-builder-view-checklist': '*',
+      '@skyux/grids': '*'
+    };
+
     return [
       {
         name: 'Action button',
@@ -488,30 +498,22 @@ export class SkyDemoComponentsService {
         summary: `The list module displays a SKY UX-themed list of data in a consistent, flexible way.`,
         url: '/components/list',
         imports: {
-          '@skyux/ASDF': [
-            'ASDF'
+          '@skyux/list-builder': [
+            'SkyListModule',
+            'SkyListPagingModule',
+            'SkyListToolbarModule'
+          ],
+          '@skyux/list-builder-view-grids': [
+            'SkyListViewGridModule'
           ]
         },
+        dependencies: listDependencies,
+        disableStackblitz: true,
         getCodeFiles: () => [
           ...this.getDemoFiles('SkyListDemoComponent'),
           ...this.getDemoFiles('SkyListProviderDemoComponent')
         ],
         components: [
-          {
-            name: 'List',
-            icon: 'list',
-            summary: `The list component displays data in a consistent and flexible way.`,
-            url: '/components/list',
-            imports: {
-              '@skyux/ASDF': [
-                'ASDF'
-              ]
-            },
-            getCodeFiles: () => [
-              ...this.getDemoFiles('SkyListDemoComponent'),
-              ...this.getDemoFiles('SkyListProviderDemoComponent')
-            ]
-          },
           {
             name: 'List filters',
             icon: 'filter',
@@ -519,10 +521,26 @@ export class SkyDemoComponentsService {
             summary: `The list filter module provides components that allow users to select filter criteria.`,
             url: '/components/list-filters',
             imports: {
-              '@skyux/ASDF': [
-                'ASDF'
+              '@skyux/list-builder': [
+                'SkyListModule',
+                'SkyListFiltersModule',
+                'SkyListToolbarModule'
+              ],
+              '@skyux/lists': [
+                'SkyFilterModule'
+              ],
+              '@skyux/list-builder-view-grids': [
+                'SkyListViewGridModule'
+              ],
+              '@skyux/modals': [
+                'SkyModalModule'
+              ],
+              '@skyux/forms': [
+                'SkyCheckboxModule'
               ]
             },
+            dependencies: listDependencies,
+            disableStackblitz: true,
             getCodeFiles: () => [
               ...this.getDemoFiles('SkyListFiltersDemoComponent'),
               ...this.getDemoFiles('SkyListFiltersInlineDemoComponent')
@@ -535,10 +553,21 @@ export class SkyDemoComponentsService {
             summary: `The list paging component displays a SKY UX-themed pagination control for a list.`,
             url: '/components/list-paging',
             imports: {
-              '@skyux/ASDF': [
-                'ASDF'
+              '@skyux/list-builder': [
+                'SkyListModule',
+                'SkyListFiltersModule',
+                'SkyListPagingModule',
+                'SkyListToolbarModule'
+              ],
+              '@skyux/lists': [
+                'SkyFilterModule'
+              ],
+              '@skyux/list-builder-view-grids': [
+                'SkyListViewGridModule'
               ]
             },
+            dependencies: listDependencies,
+            disableStackblitz: true,
             getCodeFiles: () => this.getDemoFiles('SkyListPagingDemoComponent')
           },
           {
@@ -547,10 +576,31 @@ export class SkyDemoComponentsService {
             summary: `The list toolbar component displays a SKY UX-themed toolbar for a list.`,
             url: '/components/list-toolbar',
             imports: {
-              '@skyux/ASDF': [
-                'ASDF'
+              '@skyux/list-builder': [
+                'SkyListModule',
+                'SkyListFiltersModule',
+                'SkyListPagingModule',
+                'SkyListToolbarModule',
+                'SkyListSecondaryActionsModule'
+              ],
+              '@skyux/lists': [
+                'SkyFilterModule'
+              ],
+              '@skyux/list-builder-view-grids': [
+                'SkyListViewGridModule'
+              ],
+              '@skyux/indicators': [
+                'SkyIconModule'
+              ],
+              '@skyux/popovers': [
+                'SkyDropdownModule'
+              ],
+              '@skyux/forms': [
+                'SkyRadioModule'
               ]
             },
+            dependencies: listDependencies,
+            disableStackblitz: true,
             getCodeFiles: () => [
               ...this.getDemoFiles('SkyListToolbarDemoComponent'),
               ...this.getDemoFiles('SkyListToolbarCustomDemoComponent')
@@ -562,10 +612,20 @@ export class SkyDemoComponentsService {
             summary: `The list view checklist component builds a filterable checkbox list of data.`,
             url: '/components/list-view-checklist',
             imports: {
-              '@skyux/ASDF': [
-                'ASDF'
+              '@skyux/list-builder': [
+                'SkyListModule',
+                'SkyListToolbarModule'
+              ],
+              '@skyux/list-builder-view-checklist': [
+                'SkyListViewChecklistModule'
+              ],
+              '@skyux/forms': [
+                'SkyCheckboxModule',
+                'SkyRadioModule'
               ]
             },
+            dependencies: listDependencies,
+            disableStackblitz: true,
             getCodeFiles: () => this.getDemoFiles('SkyListViewChecklistDemoComponent')
           },
           {
@@ -575,10 +635,20 @@ export class SkyDemoComponentsService {
             summary: `The list view grid component displays a SKY UX-themed grid for a list of data.`,
             url: '/components/list-view-grid',
             imports: {
-              '@skyux/ASDF': [
-                'ASDF'
+              '@skyux/list-builder': [
+                'SkyListModule',
+                'SkyListPagingModule',
+                'SkyListToolbarModule'
+              ],
+              '@skyux/list-builder-view-grids': [
+                'SkyListViewGridModule'
+              ],
+              '@skyux/popovers': [
+                'SkyDropdownModule'
               ]
             },
+            dependencies: listDependencies,
+            disableStackblitz: true,
             getCodeFiles: () => this.getDemoFiles('SkyListViewGridDemoComponent')
           }
         ]
@@ -860,6 +930,11 @@ export class SkyDemoComponentsService {
             'SkyToolbarModule'
           ]
         },
+        dependencies: {
+          '@skyux/list-builder': '*',
+          'microedge-rxstate': '*',
+          '@skyux/list-builder-common': '*'
+        },
         getCodeFiles: () => this.getDemoFiles('SkySortDemoComponent'),
         disableStackblitz: true
       },
@@ -981,7 +1056,8 @@ export class SkyDemoComponentsService {
             'SkyTokensModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyTokensDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('SkyTokensDemoComponent'),
+        disableStackblitz: true
       },
       {
         name: 'Toolbar',

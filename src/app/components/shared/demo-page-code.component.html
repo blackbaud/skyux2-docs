@@ -15,19 +15,23 @@
     </div>
   </div>
 
-  <div class="stackblitz-wrapper" *ngIf="!disableStackblitz && showStackblitzEmbed">
+  <div
+    class="sky-demo-page-code-stackblitz-embed"
+    *ngIf="!disableStackblitz && showStackblitzEmbed">
     <div #stackblitzEmbed></div>
   </div>
 
-  <sky-vertical-tabset>
-    <sky-vertical-tab
-      *ngFor="let codeFile of codeFilesForBinding"
-      [active]="codeFile.active"
-      [tabHeading]="codeFile.name">
-      <sky-code-block
-        [code]="codeFile.codeImports"
-        [languageType]="codeFile.language">
-      </sky-code-block>
-    </sky-vertical-tab>
-  </sky-vertical-tabset>
+  <div class="sky-demo-page-code-tabs-wrapper">
+    <sky-vertical-tabset>
+      <sky-vertical-tab
+        *ngFor="let codeFile of codeFilesForBinding"
+        [active]="codeFile.active"
+        [tabHeading]="codeFile.name">
+        <sky-code-block
+          [code]="codeFile.codeImports"
+          [languageType]="codeFile.language">
+        </sky-code-block>
+      </sky-vertical-tab>
+    </sky-vertical-tabset>
+  </div>
 </section>

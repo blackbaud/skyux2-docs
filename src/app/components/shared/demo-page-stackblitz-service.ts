@@ -174,11 +174,27 @@ export class SkyDemoPageStackBlitzService {
 
     let appSkyImports = '';
     let appSkyExports: string[] = [];
+    let includeListStateProvider = false;
 
     Object.keys(imports).forEach((key: string) => {
       appSkyImports += `import { ${imports[key].join()} } from '${key}';\n`;
       appSkyExports = appSkyExports.concat(...imports[key]);
+
+      if (key.toUpperCase().indexOf('LIST') > -1) {
+        includeListStateProvider = true;
+      }
     });
+
+    let listStateImport = '';
+    let listStateProvider = '';
+
+    if (includeListStateProvider) {
+      listStateImport = `import {
+  ListState,
+  ListStateDispatcher
+} from '@skyux/list-builder/modules/list/state';`;
+      listStateProvider = `ListState, ListStateDispatcher`;
+    }
 
     const banner = `/**
  * This file is needed for the StackBlitz demo only.
@@ -259,6 +275,7 @@ import { RouterModule } from '@angular/router';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppSkyModule } from './app-sky.module';
 
+${listStateImport}
 ${componentImports.join('\n')}
 
 import { AppComponent } from './app.component';
@@ -278,6 +295,7 @@ import { AppComponent } from './app.component';
   entryComponents: [
     ${entryComponents.join(',\n')}
   ],
+  providers: [ ${listStateProvider} ],
   bootstrap: [
     AppComponent
   ]

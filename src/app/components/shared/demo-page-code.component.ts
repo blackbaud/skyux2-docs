@@ -59,7 +59,7 @@ export class SkyDemoPageCodeComponent implements AfterViewInit {
 
   public showStackblitzRun = true;
 
-  public showStackblitzEmbed = true;
+  public showStackblitzEmbed = false;
 
   @ViewChild('stackblitzEmbed')
   public embedRef: ElementRef;
