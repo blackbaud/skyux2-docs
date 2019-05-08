@@ -1,11 +1,11 @@
 <stache
-  navOrder="7"
+  navOrder="6"
   pageTitle="Build and Publish a SPA"
   navTitle="Build and publish">
 
   <stache-page-summary>
     <p>
-      After you update the SKY UX CLI with the latest version, you can build and publish your SPA. 
+      Before you build and publish your SPA, you must first choose a web server to host your site. We recommend <a href="https://pages.github.com/">GitHub Pages</a>, a free tool suitable for front-end projects. 
     </p>
     <sky-alert alertType="info">
       Blackbaud developers should create repos and provision applications through the SKY UX App Management Portal. Documentation on the SKY UX App Management Portal is available on <a href="https://host.nxt.blackbaud.com/engineering-system-docs/learn/spa/spa-app-portal">the Engineering System website</a>. This site is for Blackbaud internal use only and is not available to external developers.
@@ -25,17 +25,23 @@
     </li>
     <li>
       <p>
-        Copy the contents of the <stache-code>dist/</stache-code> folder into a directory such as <stache-code>my-spa/</stache-code>, where<stache-code>my-spa</stache-code> is the name of your SPA.
+        Copy the contents of the <stache-code>dist/</stache-code> folder into a directory using the SPA name specified in <a stacheRouterLink="/learn/get-started/basics/create-project">create a SPA</a>.
+      </p>
+      <p>
+          For example, if you provided <stache-code>my-spa</stache-code> after running <stache-code>skyux new</stache-code>, change the <stache-code>dist/</stache-code> folder to <stache-code>my-spa/</stache-code>.
       </p>
     </li>
     <li>
       <p>
-        Store the <stache-code>my-spa/</stache-code> directory on a web server.
+        Host the <stache-code>my-spa/</stache-code> directory on your preferred web server.
       </p>
     </li>
     <li>
       <p>
         In a browser, enter <stache-code>https://example.com/my-spa</stache-code> to view your SPA.
+      </p>
+      <p>
+        <sky-alert alertType="info">You must configure your host to redirect all requests to the root <stache-code>index.html</stache-code> file because SKY UX SPAs use HTML5 push states for routing.</sky-alert>
       </p>
     </li>
   </ol>
