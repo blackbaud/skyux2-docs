@@ -7,6 +7,7 @@ import {
   SkySummaryActionBarDemoComponent,
   SkyCodeBlockDemoComponent,
   SkyCopyToClipboardDemoComponent,
+  SkyDateRangePickerDemoComponent,
   SkyInlineFormDemoComponent
 } from '.';
 
@@ -66,6 +67,7 @@ export class SkyDocsDemoCodeService {
         }
       ]
     },
+
     {
       name: 'Code block',
       component: SkyCodeBlockDemoComponent,
@@ -82,6 +84,7 @@ export class SkyDocsDemoCodeService {
         }
       ]
     },
+
     {
       name: 'Copy to clipboard',
       component: SkyCopyToClipboardDemoComponent,
@@ -98,6 +101,24 @@ export class SkyDocsDemoCodeService {
         }
       ]
     },
+
+    {
+      name: 'Date range picker',
+      component: SkyDateRangePickerDemoComponent,
+      files: [
+        {
+          name: 'date-range-picker-demo.component.html',
+          fileContents: require('!!raw-loader!./date-range-picker/date-range-picker-demo.component.html')
+        },
+        {
+          name: 'date-range-picker-demo.component.ts',
+          fileContents: require('!!raw-loader!./date-range-picker/date-range-picker-demo.component.ts'),
+          componentName: 'SkyDateRangePickerDemoComponent',
+          bootstrapSelector: 'sky-date-range-picker-demo'
+        }
+      ]
+    },
+
     {
       name: 'Inline form',
       component: SkyInlineFormDemoComponent,
