@@ -1,0 +1,51 @@
+<stache
+  pageTitle="Route Guards"
+  navTitle="Route guards"
+  showTableofContents="true">
+
+  <stache-page-summary>
+    <p>
+      Route guards allow a SPA to enable or disable the rendering of routes at runtime, usually based on some external information such as logged-in status or a necessary permission.
+    </p>
+  </stache-page-summary>
+
+  <p>
+    Route guards in SKY UX behave fundamentally as they do in an Angular CLI-based SPA.  You may implement the <stache-code>CanActivate</stache-code>, <stache-code>CanActivateChild</stache-code>, and <stache-code>CanDeactivate</stache-code>.  Learn more about <a href="https://angular.io/guide/router#milestone-5-route-guards">Angular route guards</a>.
+  </p>
+
+  <p>
+    The only difference in an SKY UX SPA is how you register the route guard.  Since routes are <a routerLink="/learn/get-started/basics/navigate-spa">automatically created</a>, we provide the same convenience.  Create an <stache-code>index.guard.ts</stache-code> in the same directory you wish to protect with a route guard.
+  </p>
+
+  <p>An example route guard:</p>
+
+  <sky-code-block languageType="typescript">
+import {
+  Injectable
+} from '@angular/core';
+
+import {
+  CanActivate
+} from '@angular/router';
+
+import {
+  MyPermissionService
+} from './services/my-permission.service';
+
+@Injectable()
+export class AppRouteGuard implements CanActivate {
+
+    constructor(
+      private myPermissionService: MyPermissionService
+    ) { }
+
+    public canActivate(
+      route: ActivatedRouteSnapshot,
+      state: RouterStateSnapshot
+    ): Observable<boolean> {
+      return this.myPermissionService.isAuthorized();
+    }
+}
+  </sky-code-block>
+
+</stache>
