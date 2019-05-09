@@ -57,7 +57,7 @@ export class SkyDemoPageCodeComponent implements AfterViewInit {
 
   public disableStackblitz = false;
 
-  public showStackblitzRun = true;
+  public showStackblitzRunButton = true;
 
   public showStackblitzEmbed = false;
 

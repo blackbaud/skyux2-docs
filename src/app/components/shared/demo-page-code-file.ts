@@ -5,7 +5,7 @@ export class SkyDemoPageCodeFile {
 
   public codeImports: string;
 
-  public active: boolean;
+  public active = false;
 
   constructor(
     public readonly name: string,
