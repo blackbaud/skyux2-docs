@@ -8,13 +8,17 @@
 }
 
 // Override Stache layouts
+
 ::ng-deep .stache-layout-wrapper.stache-max-width-container {
 	max-width: none;
 	margin: 0;
+  
+  ::ng-deep .stache-sidebar-content {
+    padding-right: 0 !important;
+  }
 }
 
 ::ng-deep .stache-sidebar {
-	width: 275px;
 	
 	.stache-nav-list-item.active > .stache-nav-anchor {
 		border-left-color: #00b4f1 !important; //$sky-background-color-neutral-light
@@ -22,11 +26,13 @@
 	}
 }
 
-::ng-deep .stache-sidebar-enabled .stache-container {
-	padding-left: 305px !important;
-	padding-right: 30px !important;
-}
-
 ::ng-deep .stache-page-anchor {
 	border-bottom: none !important;
+}
+
+::ng-deep sky-tabset#content-tabs .sky-tabset {
+	margin-left: -45px;
+	margin-right: -45px;
+	padding-left: 45px;
+	padding-right: 45px;
 }
