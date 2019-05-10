@@ -18,15 +18,15 @@
 	
 		<sky-demo-page-content sectionHeading="Usage">
 			<h3>Use when</h3>
-			<ul>
-				<li>Users require access to small chunks of contextual content that are only valuable some of the time.</li>
-				<li>Tasks include complex or unfamiliar capabilities, and users require guidance on subtle-but-important elements.</li>
-			</ul>
+        <div class="sky-text-block">
+          <p>Users require access to small chunks of contextual content that are only valuable some of the time.</p>
+          <p>Tasks include complex or unfamiliar capabilities, and users require guidance on subtle-but-important elements.</p>
+        </div>
 			<h3>Don't use when</h3>
-			<ul>
-				<li>The content is valuable most of the time. Use <a routerLink="/design/guidelines/user-assistance" fragment="persistent-inline-help">persistent inline help</a> instead.</li>
-				<li>A large amount of content is necessary. Use a <a routerLink="/components/flyout">flyout</a> instead.</li>
-			</ul>
+        <div class="sky-text-block">  
+          <p>The content is valuable most of the time. Use <a routerLink="/design/guidelines/user-assistance" fragment="persistent-inline-help">persistent inline help</a> instead.</p>
+          <p>A large amount of content is necessary. Use a <a routerLink="/components/flyout">flyout</a> instead.</p>
+        </div>
 		</sky-demo-page-content>
 		
 		<sky-demo-page-content sectionHeading="Anatomy">
@@ -48,7 +48,7 @@
 			<h3>Positioning</h3>
 			<sky-docs-two-col-example>
         <sky-docs-two-col-example-text>
-					<p>You can specify the position of the popover in relation to its trigger element. The default position is centered above the trigger element.</p>
+					<p>You can specify the position of the popover in relation to the element it references. The default position is centered above that element.</p>
         </sky-docs-two-col-example-text>
         <sky-docs-two-col-example-image>
           <div class="screenshot">
@@ -121,8 +121,8 @@
 		<sky-demo-page-content sectionHeading="Layout">
       <sky-docs-two-col-example>
         <sky-docs-two-col-example-text>
-					<p>In most cases, use the default placement for popovers to center them above their trigger elements. This minimizes the risk of obscuring content that users haven’t seen and avoids obscuring the content that they will interact with next.</p>
-					<p>However, when popover triggers are near the edge of the display, use a different placement option to obscure as little content as possible.</p>
+					<p>In most cases, use the default placement for popovers to center them above the elements they reference. This minimizes the risk of obscuring content that users haven’t seen and avoids obscuring the content that they will interact with next.</p>
+					<p>However, when the referenced elements are near the edge of the display, use a different placement option to obscure as little content as possible.</p>
         </sky-docs-two-col-example-text>
         <sky-docs-two-col-example-image>
           <div class="screenshot sky-margin-stacked-content-section">
