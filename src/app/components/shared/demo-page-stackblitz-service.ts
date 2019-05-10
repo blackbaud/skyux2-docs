@@ -113,7 +113,7 @@ export class SkyDemoPageStackBlitzService {
       files: this.getFiles(
         codeFiles,
         imports,
-        dependencies
+        commonDependencies
       ),
       title: 'SKY UX Demo',
       description: 'SKY UX Demo',
