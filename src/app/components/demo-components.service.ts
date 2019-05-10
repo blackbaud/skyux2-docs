@@ -382,7 +382,7 @@ export class SkyDemoComponentsService {
         name: 'Popover',
         icon: 'newspaper-o',
         // tslint:disable-next-line
-        summary: 'The popover component provides an HTML-formatted popover that is displayed by a trigger element.',
+        summary: 'The popover module displays small chunks of contextual content in an HTML-formatted popover on pages or modals.',
         url: '/components/popover',
         getCodeFiles: () => this.getDemoFiles('SkyPopoverDemoComponent')
       },
@@ -460,7 +460,7 @@ export class SkyDemoComponentsService {
       {
         name: 'Tabs',
         icon: 'folder-open-o',
-        summary: `The tabs module contains components to render a tabset.`,
+        summary: `The tabs module renders tabs that divide large subsets of content on a page.`,
         url: '/components/tabs',
         getCodeFiles: () => this.getDemoFiles('SkyTabsDemoComponent')
       },

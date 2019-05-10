@@ -3,7 +3,7 @@
 >
 
   <sky-demo-page-summary>
-    The popover module allows you to display contextual content when users interact with an element on a page. The content can be plain text, HTML, or an Angular component.
+		The popover module displays small chunks of contextual content on pages or modals. It highlights content in an HTML-formatted popover that is similar to a tooltip but provides more room for plain text, HTML content, or Angular components. The popover trigger directive ties the popover to an element that users can interact with to display the popover.
   </sky-demo-page-summary>
 	
 	<sky-demo-page-example>
@@ -18,11 +18,15 @@
 	
 		<sky-demo-page-content sectionHeading="Usage">
 			<h3>Use when</h3>
-				<p>You need to give users access to small pieces of contextual content that are not always valuable to see.</p>
-				<p>You need to guide users toward subtle-but-important elements when tasks include complex or unfamiliar capabilities.</p>
+        <div class="sky-text-block">
+          <p>Users require access to small chunks of contextual content that are only valuable some of the time.</p>
+          <p>Tasks include complex or unfamiliar capabilities, and users require guidance on subtle-but-important elements.</p>
+        </div>
 			<h3>Don't use when</h3>
-				<p>The content is valuable to see most of the time. Use <a routerLink="/design/guidelines/user-assistance" fragment="persistent-inline-help">presistent inline help</a> instead.</p>
-				<p>You need to show a large amount of content. Use a <a routerLink="/components/flyout">flyout</a> instead.</p>
+        <div class="sky-text-block">  
+          <p>The content is valuable most of the time. Use <a routerLink="/design/guidelines/user-assistance" fragment="persistent-inline-help">persistent inline help</a> instead.</p>
+          <p>A large amount of content is necessary. Use a <a routerLink="/components/flyout">flyout</a> instead.</p>
+        </div>
 		</sky-demo-page-content>
 		
 		<sky-demo-page-content sectionHeading="Anatomy">
@@ -44,7 +48,7 @@
 			<h3>Positioning</h3>
 			<sky-docs-two-col-example>
         <sky-docs-two-col-example-text>
-          <p>You can specify the position of the popover in relation to the element it is pointing to. The default position is above and centered on the element.</p>
+					<p>You can specify the position of the popover in relation to the element it references. The default position is centered above that element.</p>
         </sky-docs-two-col-example-text>
         <sky-docs-two-col-example-image>
           <div class="screenshot">
@@ -56,10 +60,10 @@
       <sky-docs-two-col-example>
         <sky-docs-two-col-example-text>
           <p>
-						To ensure usability on touch devices, trigger user-invoked popovers on <stache-code>click</stache-code> rather than <stache-code>mouseenter</stache-code>.
+  					To ensure usability on touch devices, trigger user-invoked popovers on <stache-code>click</stache-code> actions rather than <stache-code>mouseenter</stache-code> actions.
 					</p>
 					<p>
-						You can programatically invoke popovers, for example the first time a user visits a page to call out an important interface element that is easily overlooked. However, don't programatically invoke more than one popover on a page or they will lose effectiveness at drawing attention.
+  					You can also invoke popovers programmatically. For example, you can programmatically invoke a popover when users visit a page for the first time to highlight an important interface element that they might overlook. However, don't invoke multiple popovers on a page because this reduces their effectiveness.
 					</p>
         </sky-docs-two-col-example-text>
         <sky-docs-two-col-example-image>
@@ -68,15 +72,15 @@
       </sky-docs-two-col-example>
 		</sky-demo-page-content>
 			
-		<sky-demo-page-content sectionHeading="Behavior & states">
+		<sky-demo-page-content sectionHeading="Behavior and states">
 			<h3>Closing</h3>
-				<div class="sky-text-block">Popovers close when the user clicks on or focuses an element outside the popover.</div>
+				<div class="sky-text-block">Popovers close when users click elsewhere or focus on another element.</div>
 			
 			<h3>Responsiveness</h3>
         <sky-docs-two-col-example>
           <sky-docs-two-col-example-text>
             <p>
-						  If the popover doesn't fit in the viewport in its current position it will automatically try to reposition itself so that it fits. If it does not fit in any position it will convert itself into a modal overlaying the page.
+  						If a popover doesn't fit in the viewport at its current position, it automatically repositions. If the popover doesn't fit at any position, it converts to a modal that overlays the page.
             </p>
           </sky-docs-two-col-example-text>
           <sky-docs-two-col-example-image>
@@ -91,24 +95,24 @@
 			<sky-docs-two-col-example>
           <sky-docs-two-col-example-text>
            <p>
-              Keep the amount of content in a popover small. The content can be simple text or formatted HTML.
+					  Limit popovers to small chunks of contextual content. The content can include plain text, formatted HTML, or Angular components.
             </p>
             <p>
-              Don't include too much content, form inputs or complex interactions.
-            </p>
+  						Don't include a large amount of content, form inputs, or complex interactions.
+           </p>
           </sky-docs-two-col-example-text>
           <sky-docs-two-col-example-image>
             <div class="screenshot screenshot-success sky-margin-stacked-content-section">
               <img src="~/assets/img/guidelines/popover/content-simple.png" />
-              <div class="caption sky-text-success">You can use small amounts of plain text content.</div>
+              <div class="caption sky-text-success">Do use small chunks of plain text.</div>
             </div>
             <div class="screenshot screenshot-success sky-margin-stacked-content-section">
               <img src="~/assets/img/guidelines/popover/content-html.png" />
-              <div class="caption sky-text-success">You can use small amounts of formatted HTML content.</div>
+              <div class="caption sky-text-success">Do use small chunks of formatted HTML.</div>
             </div>
             <div class="screenshot screenshot-danger">
               <img class="bordered" src="~/assets/img/guidelines/popover/content-dont-overload.png" />
-              <div class="caption sky-text-danger">Don't include large amounts of content.</div>
+              <div class="caption sky-text-danger">Don't display large amounts of content in popovers.</div>
             </div>
           </sky-docs-two-col-example-image>
         </sky-docs-two-col-example>
@@ -117,8 +121,8 @@
 		<sky-demo-page-content sectionHeading="Layout">
       <sky-docs-two-col-example>
         <sky-docs-two-col-example-text>
-          <p>In most cases, use the default “above” placement for Popovers. This minimizes the chances that the Popover will obscure content that a user hasn’t seen yet or will interact with next.</p>
-          <p>Use other placement options if the trigger for the Popover will be close to the edge of the display. Choose a placement that will obscure as little other content as possible.</p>
+					<p>In most cases, use the default placement for popovers to center them above the elements they reference. This minimizes the risk of obscuring content that users haven’t seen and avoids obscuring the content that they will interact with next.</p>
+					<p>However, when the referenced elements are near the edge of the display, use a different placement option to obscure as little content as possible.</p>
         </sky-docs-two-col-example-text>
         <sky-docs-two-col-example-image>
           <div class="screenshot sky-margin-stacked-content-section">
@@ -131,7 +135,7 @@
 		<sky-demo-page-content sectionHeading="See more">
 			<h3>Components</h3>
 			<ul>
-				<li><a routerLink="/components/help-inline">Flyout</a></li>
+				<li><a routerLink="/components/flyout">Flyout</a></li>
 				<li><a routerLink="/components/help-inline">Inline help</a></li>
 			</ul>
 			<h3>Guidelines</h3>
@@ -164,27 +168,27 @@
       defaultValue="center"
       isOptional="true"
     >
-    Specifies the horizontal alignment of the popover in relation to the trigger element. Available values are <stache-code>left</stache-code>, <stache-code>right</stache-code>, and <stache-code>center</stache-code>.
+    Specifies the horizontal alignment of the popover in relation to the trigger element. The valid options are <stache-code>center</stache-code>, <stache-code>left</stache-code>, and <stache-code>right</stache-code>.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="skyPopoverMessageStream"
       isOptional="true"
     >
-    Provides an observable to send commands to the popover. The commands should respect <a stacheRouterLink="." fragment="skypopovermessage-type">the <stache-code>SkyPopoverMessage</stache-code> type</a>.
+    Provides an observable to send commands to the popover that respect <a stacheRouterLink="." fragment="skypopovermessage-type">the <stache-code>SkyPopoverMessage</stache-code> type</a>.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="skyPopoverPlacement"
       defaultValue="above"
       isOptional="true"
     >
-    Specifies the placement of the popover in relation to the trigger element. Available values are <stache-code>above</stache-code>, <stache-code>below</stache-code>, <stache-code>left</stache-code>, and <stache-code>right</stache-code>.
+    Specifies the placement of the popover in relation to the trigger element. The valid options are <stache-code>above</stache-code>, <stache-code>below</stache-code>, <stache-code>left</stache-code>, and <stache-code>right</stache-code>.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="skyPopoverTrigger"
       defaultValue="click"
       isOptional="true"
     >
-    Specifies the user action that displays the popover. Available values are <stache-code>click</stache-code> and <stache-code>mouseenter</stache-code>.
+    Specifies the user action that displays the popover. The valid options are <stache-code>click</stache-code> and <stache-code>mouseenter</stache-code>.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -199,7 +203,7 @@
       defaultValue="center"
       isOptional="true"
     >
-    The <stache-code>skyPopoverAlignment</stache-code> property on the trigger element overwrites this property. It specifies the horizontal alignment of the popover in relation to the trigger element. Available values are <stache-code>left</stache-code>, <stache-code>right</stache-code>, and <stache-code>center</stache-code>.
+    Specifies the horizontal alignment of the popover in relation to the trigger element. The <stache-code>skyPopoverAlignment</stache-code> property on the trigger element overwrites this property. The valid options are <stache-code>center</stache-code>, <stache-code>left</stache-code>, and <stache-code>right</stache-code>.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="dismissOnBlur"
@@ -213,7 +217,7 @@
       defaultValue="above"
       isOptional="true"
     >
-    The <stache-code>skyPopoverPlacement</stache-code> property on the trigger element overwrites this property. It specifies the placement of the popover in relation to the trigger element. Available values are <stache-code>above</stache-code>, <stache-code>below</stache-code>, <stache-code>left</stache-code>, and <stache-code>right</stache-code>.
+    Specifies the placement of the popover in relation to the trigger element. The <stache-code>skyPopoverPlacement</stache-code> property on the trigger element overwrites this property. The valid options are <stache-code>above</stache-code>, <stache-code>below</stache-code>, <stache-code>left</stache-code>, and <stache-code>right</stache-code>.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="popoverTitle"
