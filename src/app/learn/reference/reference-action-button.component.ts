@@ -10,7 +10,7 @@ export class ReferenceActionButtonsComponent {
       name: 'SKY UX CLI',
       path: '/learn/reference/cli-commands',
       icon: 'code',
-      summary: 'Commands and options to create and manage single-page applications.'
+      summary: 'Commands and options to create and manage SPAs.'
     },
     {
       name: 'Configuration',
@@ -22,7 +22,7 @@ export class ReferenceActionButtonsComponent {
       name: 'Extensibility',
       path: '/learn/reference/extensibility',
       icon: 'building',
-      summary: 'Extensibility information for SKY UX SDK.'
+      summary: 'Extensibility information for the SKY UX SDK.'
     },
     {
       name: 'File conventions',
@@ -52,7 +52,7 @@ export class ReferenceActionButtonsComponent {
       name: 'Helpers',
       path: '/learn/reference/helpers',
       icon: 'wrench',
-      summary: 'Helpers that SKY UX provides for making authenticated HTTP requests.'
+      summary: 'SKY UX helper for making authenticated HTTP requests.'
     },
     {
       name: 'FAQ',
