@@ -66,7 +66,7 @@ export class SkyDemoPageStackBlitzService {
     const angularVersion = '^7.0.0';
     const skyuxVersion = '^3.0.0';
 
-    const commonDependencies: { [key: string]: string } = {
+    const mergedDependencies: { [key: string]: string } = {
       '@angular/animations': angularVersion,
       '@angular/common': angularVersion,
       '@angular/compiler': angularVersion,
@@ -99,13 +99,13 @@ export class SkyDemoPageStackBlitzService {
 
     if (imports) {
       Object.keys(imports).forEach((key: string) => {
-        commonDependencies[key] = skyuxVersion;
+        mergedDependencies[key] = skyuxVersion;
       });
     }
 
     if (dependencies) {
       Object.keys(dependencies).forEach((key: string) => {
-        commonDependencies[key] = dependencies[key];
+        mergedDependencies[key] = dependencies[key];
       });
     }
 
@@ -113,12 +113,12 @@ export class SkyDemoPageStackBlitzService {
       files: this.getFiles(
         codeFiles,
         imports,
-        commonDependencies
+        mergedDependencies
       ),
       title: 'SKY UX Demo',
       description: 'SKY UX Demo',
       template: 'angular-cli',
-      dependencies: commonDependencies,
+      dependencies: mergedDependencies,
       settings: {
         compile: {
           clearConsole: false
