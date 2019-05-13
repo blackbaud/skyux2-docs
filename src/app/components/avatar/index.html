@@ -6,26 +6,28 @@
 
   <sky-demo-page-summary>
     <p>
-      The avatar component displays an image to identify a record. The component includes an option to let users change the image. To select a different image, users can click the image or drag another image on top of it. In addition, when images are missing, the avatar component can display the initials of a name that you provide.
+      The avatar component displays an image to identify a record and includes an option to let users change the image. If the image is missing, the avatar component can display initials for the record that the avatar represents.
     </p>
   </sky-demo-page-summary>
 
-  <sky-demo-page-properties>
+  <sky-demo-page-properties
+    sectionHeading="Avatar properties"
+  >
     <sky-demo-page-property
-      propertyName="src"
+      propertyName="canChange"
+      defaultValue="false"
     >
-      Provides a reference to a URL or <stache-code>File</stache-code> object that represents the avatar.
+      Indicates whether users can change the image. To select a different image, users click the image or drag another image on top of it, much like the <stache-code>sky-file-drop</stache-code> component in the <a routerLink="../fileattachments">file attachment module</a>. This property accepts <stache-code>boolean</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="name"
     >
-      Specifies the name of the record that the avatar represents. If <stache-code>src</stache-code> does not specify an image, the component extracts initials from the first and last words of this name and displays them in place of the missing image. To ensure that the component extracts the correct initials, specify a name with no prefix (e.g. "Dr.", "Mrs.") or suffix (e.g. "Jr.", "Esq."). You can also provide the initials with a space between them (e.g. "R H").
+      Specifies the name of the record that the avatar represents. If the <stache-code>src</stache-code> property does not specify an image, the component extracts initials from the first and last words of this name and displays them in place of the missing image. To ensure that the component extracts the correct initials, specify a name with no prefix or suffix. You can specify just the initials with a space between them. This property accepts <stache-code>string</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
-      propertyName="canChange"
-      [defaultValue]="false"
+      propertyName="src"
     >
-      Indicates whether users can select a new image, much like the <a routerLink="../fileattachments">sky-file-drop</a> component.
+      Specifies an image to display to identify a record. This property accepts <stache-code>string</stache-code>, <stache-code>Blob</stache-code>, or <stache-code>File</stache-code> values.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -35,7 +37,7 @@
     <sky-demo-page-property
       propertyName="avatarChanged"
     >
-      This event emits a <stache-code>SkyFileItem</stache-code> object when the image is updated.
+      Emits <a stacheRouterLink="." fragment="skyfileitem-properties">a <stache-code>SkyFileItem</stache-code> object</a> when the image is updated.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -43,25 +45,25 @@
     sectionHeading="SkyFileItem properties"
   >
     <sky-demo-page-property
+      propertyName="errorParam"
+    >
+    Specifies error details if the file causes an error.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="errorType"
+    >
+    Specifies an error type if the file causes an error.
+    </sky-demo-page-property>
+    <sky-demo-page-property
       propertyName="file"
     >
-    The <stache-code>File</stache-code> object associated with the <stache-code>SkyFileItem</stache-code> object.
+    Specifies the <stache-code>File</stache-code> object associated with the <stache-code>SkyFileItem</stache-code> object.
     </sky-demo-page-property>
 
     <sky-demo-page-property
       propertyName="url"
     >
-    The URL of the file item.
-    </sky-demo-page-property>
-    <sky-demo-page-property
-      propertyName="errorType"
-    >
-    The type of error resulting from the file.
-    </sky-demo-page-property>
-    <sky-demo-page-property
-      propertyName="errorParam"
-    >
-    The details of the error.
+    Specifies the URL of the file item.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
