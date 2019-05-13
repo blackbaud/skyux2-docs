@@ -72,7 +72,7 @@ export class SkyDemoComponentsService {
       {
         name: 'Avatar',
         icon: 'user',
-        summary: `The avatar component displays an image and allows users to change the image.`,
+        summary: `The avatar component displays an image to identify a record and allows users to change the image.`,
         url: '/components/avatar',
         imports: {
           '@skyux/avatar': [
