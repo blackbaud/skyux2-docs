@@ -1,0 +1,83 @@
+<stache
+  pageTitle="Sticky Settings"
+  navTitle="Sticky settings"
+  showTableofContents="true">
+
+  <stache-page-summary>
+    <p>
+      Implementing a sticky settings enables components to save user settings across sessions in grids and tile dashboards. Sticky settings preserve column order and the sorting of columns in grids, and they preserve the layout and collapsed state of tiles in tile dashboards.
+    </p>
+  </stache-page-summary>
+
+  <sky-alert>
+    Blackbaudians have this functionality available first-class.  Visit <a href="https://docs.blackbaud.com/ui-config-service-docs/">https://docs.blackbaud.com/ui-config-service-docs/</a> to learn more.
+  </sky-alert>
+
+  <p>In the <stache-code>app-extras.module.ts</stache-code> file, you must provide a class for the <stache-code>SkyUIConfigService</stache-code>:</p>
+
+  <sky-code-block languageType="typescript">
+    import {
+      AppUIConfigService
+    } from './shared/services/app-ui-config.service';
+
+    import {
+      SkyUIConfigService
+    } from '@skyux/core';
+
+    @NgModule({
+      providers: [
+        {
+          provide: SkyUIConfigService,
+          useClass: SkyAppUIConfigService
+        }
+      ]
+    })
+  </sky-code-block>
+
+  <p>Below we show an example <stache-code>AppUIConfigService</stache-code> which utilizies the <a href="https://github.com/dscheerens/ngx-webstorage-service">ngx-webstorage-service</a>.  You could just as easily implement this service to call your backend if you wished to store settings across devices.</p>
+
+  <sky-code-block languageType="typescript">
+import {
+  Injectable
+} from '@angular/core';
+
+import {
+  LOCAL_STORAGE,
+  StorageService
+} from 'ngx-webstorage-service';
+
+import {
+  SkyAppConfig
+} from '@skyux/config';
+
+@Injectable()
+export class SkyAppUIConfigService {
+
+  constructor(
+    @Inject(LOCAL_STORAGE) private storage: StorageService
+    private config: SkyAppConfig
+  ) {}
+
+  public getConfig(key: string, defaultConfig: any): Observable<any> {
+    key = this.buildSettingsKey(key);
+    return of(
+      this.storage.get(key) || defaultConfig;
+    )
+  }
+
+  public setConfig(key: string, value: any): Observable<any> {
+    key = this.buildSettingsKey(key);
+    return of(
+      this.storage.set(key, value)
+    );
+  }
+
+  private buildSettingsKey(key: string): string {
+    return `skyux-spa-${this.config.runtime.app.name}-${key}`;
+  }
+}
+  </sky-code-block>
+
+  <p>Currently, both the <a routerLink="/components/grid">grid component</a> and <a routerLink="/components/tile">tile component</a> support a stickySettings key.  When provided, those components will automatically call the <stache-code>SkyUIConfigService</stache-code> stub during appropriate actions.  This is why you provide your own implementation as shown above.</p>
+
+</stache>
