@@ -11,15 +11,5 @@
 	
 	.two-col-image {
 		flex: 0;
-		display: flex;
-		flex-wrap: wrap;
-		
-		> * {
-			flex: 0;
-		}
-		
-		> :not(:last-child) {
-			margin-right: 30px;
-		}
 	}
 }
