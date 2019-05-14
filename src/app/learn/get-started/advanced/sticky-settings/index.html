@@ -5,16 +5,16 @@
 
   <stache-page-summary>
     <p>
-      Implementing a sticky settings enables components to save user settings across sessions in grids and tile dashboards. Sticky settings preserve column order and the sorting of columns in grids, and they preserve the layout and collapsed state of tiles in tile dashboards.
+      Sticky settings enable you to save user settings across sessions in grids and tile dashboards. Sticky settings preserve column order and the sorting of columns in grids, and they preserve the layout and collapsed state of tiles in tile dashboards.
     </p>
   </stache-page-summary>
 
   <sky-alert>
-    Blackbaudians have this functionality available first-class.  Visit <a href="https://docs.blackbaud.com/ui-config-service-docs/">https://docs.blackbaud.com/ui-config-service-docs/</a> to learn more.
+    For Blackbaud developers, the sticky settings functionality is available first-class through the UI Config Service. This services is for internal Blackbaud use only. Blackbaud developers can learn more about how to implement sticky settings on <a href="https://docs.blackbaud.com/ui-config-service-docs/">the UI Config Service website</a>.
   </sky-alert>
-
-  <p>In the <stache-code>app-extras.module.ts</stache-code> file, you must provide a class for the <stache-code>SkyUIConfigService</stache-code>:</p>
-
+  <p>
+    To implement sticky settings, you must provide a class for <stache-code>SkyUIConfigService</stache-code> in your SPA's <stache-code>app-extras.module.ts</stache-code> file.
+  </p>
   <sky-code-block languageType="typescript">
     import {
       AppUIConfigService
@@ -33,9 +33,9 @@
       ]
     })
   </sky-code-block>
-
-  <p>Below we show an example <stache-code>AppUIConfigService</stache-code> which utilizies the <a href="https://github.com/dscheerens/ngx-webstorage-service">ngx-webstorage-service</a>.  You could just as easily implement this service to call your backend if you wished to store settings across devices.</p>
-
+  <p>
+    Next, you implement a service to retrieve stored settings. The following example provides <stache-code>AppUIConfigService</stache-code> to utilize the <a href="https://github.com/dscheerens/ngx-webstorage-service">ngx-webstorage-service</a>. You could just as easily implement the service to call your backend if you store settings across devices.
+  </p>
   <sky-code-block languageType="typescript">
 import {
   Injectable
@@ -77,7 +77,8 @@ export class SkyAppUIConfigService {
   }
 }
   </sky-code-block>
-
-  <p>Currently, both the <a routerLink="/components/grid">grid component</a> and <a routerLink="/components/tile">tile component</a> support a stickySettings key.  When provided, those components will automatically call the <stache-code>SkyUIConfigService</stache-code> stub during appropriate actions.  This is why you provide your own implementation as shown above.</p>
+  <p>
+    Currently, the <a routerLink="/components/grid">grid component</a> and <a routerLink="/components/tile">tile component</a> both support a <stache-code>settingsKey</stache-code> property for sticky settings. When you provide this property, the components automatically call the <stache-code>SkyUIConfigService</stache-code> stub to retrieve stored settings during appropriate actions. This is why you provide your own implementation as shown above.
+  </p>
 
 </stache>
