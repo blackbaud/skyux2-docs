@@ -1,17 +1,17 @@
 <div class="property-table-row" role="row">
-	<div class="property-name sky-padding-even-default" role="cell">
-		<div class="sky-field-label property-heading">Name</div>
-		<div><stache-code>{{ propertyName }}</stache-code></div>
+  <div class="property-name sky-padding-even-default" role="cell">
+    <div class="sky-field-label property-heading">Name</div>
+    <div><stache-code>{{ propertyName }}</stache-code></div>
     <div class="property-required sky-text-danger" *ngIf="!isOptional">Required</div>
-	</div>
-	<div class="property-description sky-padding-even-default" role="cell">
-		<div class="sky-field-label property-heading">Description</div>
-		<ng-content></ng-content>
-	</div>
-	<div class="property-default sky-padding-even-default" role="cell">
-		<ng-container *ngIf="defaultValue">
+  </div>
+  <div class="property-description sky-padding-even-default" role="cell">
+    <div class="sky-field-label property-heading">Description</div>
+    <ng-content></ng-content>
+  </div>
+  <div class="property-default sky-padding-even-default" role="cell">
+    <ng-container *ngIf="defaultValue">
       <div class="sky-field-label property-heading">Default value</div>
-			<stache-code>{{ defaultValue }}</stache-code>
-		</ng-container>
-	</div>
-</div>	
+      <stache-code>{{ defaultValue }}</stache-code>
+    </ng-container>
+  </div>
+</div>  

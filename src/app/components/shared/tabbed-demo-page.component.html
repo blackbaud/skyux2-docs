@@ -1,15 +1,15 @@
 <stache
   layout="sidebar"
   [pageTitle]="pageTitle"
-	showTableOfContents="false"
-	showBreadcrumbs="false"
-	showEditButton="false">
+  showTableOfContents="false"
+  showBreadcrumbs="false"
+  showEditButton="false">
 
   <stache-page-summary>
     <ng-content select="sky-demo-page-summary"></ng-content>
   </stache-page-summary>
-	
-	<ng-content select="sky-demo-page-module-info"></ng-content>
+  
+  <ng-content select="sky-demo-page-module-info"></ng-content>
   <ng-content select="sky-demo-page-properties"></ng-content>
   <ng-content select="sky-demo-page-example"></ng-content>
 

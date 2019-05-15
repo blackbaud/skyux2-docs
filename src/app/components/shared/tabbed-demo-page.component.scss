@@ -10,8 +10,8 @@
 // Override Stache layouts
 
 ::ng-deep .stache-layout-wrapper.stache-max-width-container {
-	max-width: none;
-	margin: 0;
+  max-width: none;
+  margin: 0;
   
   ::ng-deep .stache-sidebar-content {
     padding-right: 0 !important;
@@ -19,20 +19,20 @@
 }
 
 ::ng-deep .stache-sidebar {
-	
-	.stache-nav-list-item.active > .stache-nav-anchor {
-		border-left-color: #00b4f1 !important; //$sky-background-color-neutral-light
-		background-color: #eeeeef; //$sky-highlight-color-info
-	}
+  
+  .stache-nav-list-item.active > .stache-nav-anchor {
+    border-left-color: #00b4f1 !important; //$sky-background-color-neutral-light
+    background-color: #eeeeef; //$sky-highlight-color-info
+  }
 }
 
 ::ng-deep .stache-page-anchor {
-	border-bottom: none !important;
+  border-bottom: none !important;
 }
 
 ::ng-deep sky-tabset#content-tabs .sky-tabset {
-	margin-left: -45px;
-	margin-right: -45px;
-	padding-left: 45px;
-	padding-right: 45px;
+  margin-left: -45px;
+  margin-right: -45px;
+  padding-left: 45px;
+  padding-right: 45px;
 }
