@@ -9,12 +9,12 @@
       The form classes create styled inputs and labels for use in forms.
     </p>
   </sky-demo-page-summary>
-  
+
   <sky-demo-page-content sectionHeading="Form control">
     <p>The <stache-code>sky-form-control</stache-code> class consistently styles an input and allows it to fill the width of its container.</p>
-    <div style="max-width: 50%">
+    <p style="max-width: 50%">
       <input type="text" class="sky-form-control" aria-label="basic-input-example" placeholder="Enter text" />
-    </div>
+    </p>
 
     <sky-code-block>
       <input type="text" class="sky-form-control" aria-label="basic-input-example" placeholder="Enter text"/>
@@ -23,12 +23,12 @@
 
   <sky-demo-page-content sectionHeading="Control label">
     <p>The <stache-code>sky-control-label</stache-code> class consistently styles the label for an input. For guidance on the wording for labels, see <a stacheRouterLink="/design/guidelines/form-design" fragment="field-usability">the form design guidelines</a>.</p>
-    <div style="max-width: 50%">
+    <p style="max-width: 50%">
       <label for="basic-input-with-label-example" class="sky-control-label">
         Phone number
       </label>
       <input class="sky-form-control" id="basic-input-with-label-example" type="text" placeholder="(201) 555-5555" />
-    </div>
+    </p>
 
     <sky-code-block>
      <label for="basic-input-with-label-example" class="sky-control-label">
@@ -40,12 +40,12 @@
 
   <sky-demo-page-content sectionHeading="Required fields">
     <p>The <stache-code>sky-control-label-required</stache-code> class indicates that an input is required to submit a form.</p>
-    <div style="max-width: 50%">
+    <p style="max-width: 50%">
       <label for="required-input-with-label-example" class="sky-control-label sky-control-label-required">
         Last name
       </label>
       <input class="sky-form-control" id="required-input-with-label-example" type="text" aria-required="true" required placeholder="Ex: Smith"/>
-    </div>
+    </p>
 
     <sky-code-block>
       <label
@@ -66,13 +66,13 @@
 	<sky-demo-page-content sectionHeading="Error states">
 	  <p>If a form field that uses Angular validation is in an invalid state, the input is styled with a red glow. The <stache-code>ng-invalid</stache-code> and <stache-code>ng-touched</stache-code> control status CSS classes indicate when the input is in an invalid state. For more information, see <a href="https://angular.io/guide/form-validation">the Angular form validation docs</a>.</p>
 	  <p>In addition, the <stache-code>sky-error-label</stache-code> class provides styling for the error message when an input is in an invalid state. Place the message below the form field, and include logic to display the message when the conditions for invalid styling are met.</p>
-	  <div style="max-width: 50%">
+	  <p style="max-width: 50%">
       <label for="input-with-error-example" class="sky-control-label">
         Age
       </label>
       <input class="sky-form-control ng-invalid ng-touched" id="input-with-error-example" type="text" />
-			<div class="sky-error-label">Enter a valid value.</div>
-    </div>
+			<span class="sky-error-label">Enter a valid value.</span>
+    </p>
 
     <sky-code-block>
       <label for="input-with-error-example" class="sky-control-label">
@@ -91,18 +91,18 @@
 
   <sky-demo-page-content sectionHeading="Form group">
     <p>The <stache-code>sky-form-group</stache-code> class provides consistent vertical spacing between fields.</p>
-    <div class="sky-form-group" style="max-width: 50%">
+    <p class="sky-form-group" style="max-width: 50%">
       <label for="form-group-first-input-example" class="sky-control-label">
         First name
       </label>
       <input class="sky-form-control" id="form-group-first-input-example" type="text" />
-    </div>
-    <div class="sky-form-group" style="max-width: 50%">
+    </p>
+    <p class="sky-form-group" style="max-width: 50%">
       <label for="form-group-second-input-example" class="sky-control-label">
         Last name
       </label>
       <input class="sky-form-control" id="form-group-second-input-example" type="text" />
-    </div>
+    </p>
 
     <sky-code-block>
       <div class="sky-form-group" style="max-width: 50%">
