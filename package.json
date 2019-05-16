@@ -16,11 +16,10 @@
     "@blackbaud/skyux-design-tokens": "0.0.11",
     "@blackbaud/stache": "2.18.0",
     "@skyux/action-bars": "3.0.1",
-    "@skyux/phone-field": "3.0.0-rc.0"
+    "@skyux/phone-field": "3.0.0-rc.1"
   },
   "devDependencies": {
-    "@blackbaud/skyux-builder": "1.34.1",
-    "intl-tel-input": "14.0.10"
+    "@blackbaud/skyux-builder": "1.34.1"
   },
   "repository": {
     "type": "git",
