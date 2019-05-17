@@ -34,13 +34,16 @@
 			</p>
 			<ul>
 				<li>
-					Make help content unique to the content container in question. Empty-state help requires a specific call to action to be useful, not boilerplate content that you can modify and reuse in multiple scenarios.
+					Make help content unique to the content container in question. Empty-state help provides information that is specific to the current scenario, and it usually includes a specific call to action. Do not use empty-state help to display boilerplate content that you can modify and reuse in multiple scenarios.
 				</li>
 				<li>
-					In the title, use a conversational tone and explicitly state the call to action.
+					For an empty container where a call to action does not apply, identify the container with centered, deemphasized text. Do not include other content such as controls or actions.
 				</li>
 				<li>
-					In the body copy, expand on the call to action as necessary and provide any additional details that users need to know.
+					In the title, use a conversational tone and explicitly state any call to action.
+				</li>
+				<li>
+					In the body copy, expand on the title as necessary and provide additional details that users need to know.
 				</li>
 				<li>
 					For the button, use the <a stacheRouterLink="/components/button">secondary button class</a> to open a modal where users can complete the experience inline. If users cannot complete the experience inline and must navigate elsewhere, use the <a stacheRouterLink="/components/button">link button class</a> instead. Secondary buttons indicate modals, while links indicate navigation.
@@ -55,8 +58,14 @@
 				</p>
 		</stache-column>
 		<stache-column screenSmall="6">
-			<div class="screenshot screenshot-info">
-				<img src="~/assets/img/guidelines/userassistance/empty-state-example.png" />
+			<div class="screenshot screenshot-info screenshot-margin-bottom">
+				<img src="~/assets/img/guidelines/userassistance/empty-state-call-to-action.png" />
+			</div>
+			<div class="screenshot screenshot-info screenshot-margin-bottom">
+				<img src="~/assets/img/guidelines/userassistance/empty-state-plain.png" />
+			</div>
+			<div class="screenshot screenshot-danger screenshot-margin-bottom">
+				<img src="~/assets/img/guidelines/userassistance/empty-state-bad-example.png" />
 			</div>
 		</stache-column>
 	</stache-row>
