@@ -1,0 +1,116 @@
+<stache
+  pageTitle="Install SKY UX Modules"
+  navTitle="SKY UX modules"
+  navOrder="3"
+  showTableOfContents="true">
+
+  <stache-page-summary>
+    <p>
+      SKY UX modules provide Angular components, directives, and services to enable developers that create user interfaces that incorporate SKY UX styles and patterns. The framework provides functionality through NPM packages targeting different areas of development, and developers must intall the modules in those packages as dependencies in their projects. To learn how SKY UX organizes packages, see <a routerLink="/contribute/packages">the packages matrix</a>.
+    </p>
+  </stache-page-summary>
+
+  <stache-page-anchor>
+    Use modules in SKY UX SPAs
+  </stache-page-anchor>
+  <p>
+    To use exports from a SKY UX module, you must install its package as a dependency to your project.
+  </p>
+  <ol>
+    <li>
+      <p>
+        In the command prompt, run the following command from your SPA's root directory. Replace <stache-code>[package-name]</stache-code> with the name of the package that contains the module.
+      </p>
+      <sky-code-block>
+        npm install [package-name] --save --save-exact
+      </sky-code-block>
+      <p>
+        For example, <a href="https://www.npmjs.com/package/@skyux/layout">the <stache-code>@skyux/modals</stache-code> package</a> contains the <stache-code>SkyConfirmModule</stache-code> and <stache-code>SkyModalModule</stache-code> modules. To install it, run the following command:
+      </p>
+      <sky-code-block>
+        npm install @skyux/modals --save --save-exact
+      </sky-code-block>
+    </li>
+    </li>
+    <li>
+      <p>
+        After you install a package, check the command prompt for missing dependencies and install them as necessary.
+      </p>
+    </li>
+    <li>
+      <p>
+        To make exports from a module available to your SPA, add the module to the <stache-code>exports</stache-code> section of your SPA's <stache-code>app-sky.module.ts</stache-code> file.
+      </p>
+    </li>
+  </ol>
+
+  <stache-page-anchor>
+    Use modules in Angular SPAs
+  </stache-page-anchor>
+
+  <p>
+    To use exports from a SKY UX module, you must install its package as a dependency to your project.
+  </p>
+  <ol>
+    <li>
+      <p>
+        In the command prompt, run the following command from your SPA's root directory. Replace <stache-code>[package-name]</stache-code> with the name of the package that contains the module.
+      </p>
+      <sky-code-block>
+        npm install [package-name] --save --save-exact
+      </sky-code-block>
+      <p>
+        For example, <a href="https://www.npmjs.com/package/@skyux/layout">the <stache-code>@skyux/modals</stache-code> package</a> contains the <stache-code>SkyConfirmModule</stache-code> and <stache-code>SkyModalModule</stache-code> modules. To install it, run the following command:
+      </p>
+      <sky-code-block>
+        npm install @skyux/modals --save --save-exact
+      </sky-code-block>
+    </li>
+    </li>
+    <li>
+      <p>
+        After you install a package, check the command prompt for missing dependencies and install them as necessary.
+      </p>
+    </li>
+    <li>
+      <p>
+        To make exports from a module available to your SPA, add the module to the <stache-code>exports</stache-code> section of your SPA's main module.
+      </p>
+    </li>
+  </ol>
+
+  <stache-page-anchor>
+    Use modules in libraries
+  </stache-page-anchor>
+
+  <p>
+    To use exports from a SKY UX module, you must install its package as a dependency to your project.
+  </p>
+  <ol>
+    <li>
+      <p>
+        In the command prompt, run the following command from your library's root directory. Replace <stache-code>[package-name]</stache-code> with the name of the package that contains the module.
+      </p>
+      <sky-code-block>
+        npm install [package-name] --save --save-exact
+      </sky-code-block>
+      <p>
+        For example, <a href="https://www.npmjs.com/package/@skyux/layout">the <stache-code>@skyux/modals</stache-code> package</a> contains the <stache-code>SkyConfirmModule</stache-code> and <stache-code>SkyModalModule</stache-code> modules. To install it, run the following command:
+      </p>
+      <sky-code-block>
+        npm install @skyux/modals --save --save-exact
+      </sky-code-block>
+    </li>
+    <li>
+      <p>
+        After you install a package, check the command prompt for missing dependencies and install them as necessary.
+      </p>
+    </li>
+    <li>
+      <p>
+        xxx.
+      </p>
+    </li>
+  </ol>
+
+</stache>
