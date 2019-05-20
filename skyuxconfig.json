@@ -114,6 +114,7 @@
     "components/list-paging": "components/list/paging",
     "components/list-toolbar": "components/list/toolbar",
     "components/list-view-checklist": "components/list/checklist",
-    "components/list-view-grid": "components/list/grid"
+    "components/list-view-grid": "components/list/grid",
+    "learn/get-started/basics/update-components": "learn/get-started/basics/modules"
   }
 }
