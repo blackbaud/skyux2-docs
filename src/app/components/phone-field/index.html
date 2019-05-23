@@ -6,7 +6,7 @@
 
   <sky-demo-page-summary>
     <p>
-      The phone field module contains a directive which validates phone numbers against the standards for different countries. The value that is validated against is driven through the <stache-code>ngModel</stache-code> attribute specified on the <stache-code>input</stache-code> element or a <stache-code>FormControl</stache-code> within a reactive form.
+      The phone field module creates a field and dropdown to validate international phone numbers. The phone field input directive validates the phone number that users enter in the field against standards for the country that they select in the dropdown. For validation, phone numbers are driven through the <stache-code>ngModel</stache-code> attribute that you specify on an <stache-code>input</stache-code> element or a <stache-code>FormControl</stache-code> in a reactive form.
     </p>
   </sky-demo-page-summary>
 
@@ -15,9 +15,10 @@
   >
     <sky-demo-page-property
         propertyName="defaultCountry"
+        defaultValue="US"
         [isOptional]="true"
       >
-        Specifies the default country for the phone field input and dropdown. This property accepts <stache-code>string</stache-code> <a href="https://www.nationsonline.org/oneworld/country_code_list.htm">International Organization for Standardization Alpha 2</a> values.
+        Specifies the <a href="https://www.nationsonline.org/oneworld/country_code_list.htm">International Organization for Standardization Alpha 2</a> country code for the default country in the phone field dropdown. This property accepts <stache-code>string</stache-code> values.
       </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -27,18 +28,18 @@
     <sky-demo-page-property
       propertyName="skyPhoneFieldInput"
     >
-      Creates the phone field input and dropdown. Place this attribute on an <stache-code>input</stache-code> element, and wrap the input in a <stache-code>sky-phone-field</stache-code> component.
+      Creates the phone field input and dropdown. Place this attribute on an <stache-code>input</stache-code> element, and wrap that element in a <stache-code>sky-phone-field</stache-code> component.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="disabled"
-      [defaultValue]="false"
+      defaultValue="false"
       [isOptional]="true"
     >
       Indicates whether to disable the phone field. This property accepts <stache-code>boolean</stache-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="skyPhoneFieldNoValidate"
-      [defaultValue]="false"
+      defaultValue="false"
       [isOptional]="true"
     >
       Indicates whether to prevent validation on the phone field input. When set to <stache-code>true</stache-code>, date validation does not run on the input. This property accepts <stache-code>boolean</stache-code> values.
@@ -51,7 +52,7 @@
     <sky-demo-page-property
       propertyName="selectedCountryChanged"
     >
-      This event emits a <stache-code>SkyPhoneFieldCountry</stache-code> object when the selected country is changed.
+      Emits <a stacheRouterLink="." fragment="skyphonefieldcountry-properties">a <stache-code>SkyPhoneFieldCountry</stache-code> object</a> when the selected country in the phone field dropdown changes.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -59,24 +60,25 @@
     sectionHeading="SkyPhoneFieldCountry properties"
   >
     <sky-demo-page-property
-      propertyName="name"
+      propertyName="dialCode"
     >
-      The name of the country
+      Specifies the country's international dial code.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="iso2"
     >
-      The country's <a href="https://www.nationsonline.org/oneworld/country_code_list.htm">International Organization for Standardization Alpha 2</a>.
+      Specifies the country's <a href="https://www.nationsonline.org/oneworld/country_code_list.htm">International Organization for Standardization Alpha 2</a> country code.
     </sky-demo-page-property>
     <sky-demo-page-property
-      propertyName="dialCode"
+      propertyName="name"
     >
-      The country's international dial code.
+      Specifies the name of the country.
     </sky-demo-page-property>
     <sky-demo-page-property
-      propertyName="placeholder"
+      propertyName="exampleNumber"
+      isOptional="true"
     >
-      An example placeholder value for the country's number format. This value is set once the country is selected to be validated against and is <stache-code>undefined</stache-code> prior to this.
+      Specifies a placeholder value to demonstrate the country's number format. This value is <stache-code>undefined</stache-code> until a country is selected to validate against.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
