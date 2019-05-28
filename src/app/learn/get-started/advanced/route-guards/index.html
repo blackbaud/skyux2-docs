@@ -5,20 +5,17 @@
 
   <stache-page-summary>
     <p>
-      Route guards allow a SPA to enable or disable the rendering of routes at runtime, usually based on some external information such as logged-in status or a necessary permission.
+      Route guards allow SPAs to enable or disable the rendering of routes at runtime, usually based on external information such as login status or permissions.
     </p>
   </stache-page-summary>
 
   <p>
-    Route guards in SKY UX behave fundamentally as they do in an Angular CLI-based SPA.  You may implement the <stache-code>CanActivate</stache-code>, <stache-code>CanActivateChild</stache-code>, and <stache-code>CanDeactivate</stache-code>.  Learn more about <a href="https://angular.io/guide/router#milestone-5-route-guards">Angular route guards</a>.
+    Route guards behave the same way in SKY UX SPAs as in Angular CLI-based SPAs. They are hierarchical, and you can nest route guards to implement different levels of control for different routes in your SPAs. You can implement <a href="https://angular.io/api/router/CanActivate">the <stache-code>CanActivate</stache-code> interface</a> to handle navigation to a route, <a href="https://angular.io/api/router/CanActivateChild">the <stache-code>CanActivateChild</stache-code> interface</a> to handle navigation to a child route, and <a href="https://angular.io/api/router/CanDeactivate">the <stache-code>CanDeactivate</stache-code> interface</a> to handle navigation away from a route. For more information about route guards, see <a href="https://angular.io/guide/router#milestone-5-route-guards">the Angular routing and navigation documentation</a>.
   </p>
-
   <p>
-    The only difference in an SKY UX SPA is how you register the route guard.  Since routes are <a routerLink="/learn/get-started/basics/navigate-spa">automatically created</a>, we provide the same convenience.  Create an <stache-code>index.guard.ts</stache-code> in the same directory you wish to protect with a route guard.
+    The only difference between route guards in SKY UX SPAs and Angular CLI-based SPAs is how you register the route guards. SKY UX <a routerLink="/learn/get-started/basics/navigate-spa">automatically creates routes</a>, and to apply a route guard to one of those routes, you create an <stache-code>index.guard.ts</stache-code> file in its directory alongside the <stache-code>index.html</stache-code> file .
   </p>
-
-  <p>An example route guard:</p>
-
+  <p>The following code sample provides an example of a route guard.</p>
   <sky-code-block languageType="typescript">
 import {
   Injectable
