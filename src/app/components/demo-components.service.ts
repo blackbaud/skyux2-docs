@@ -677,7 +677,7 @@ export class SkyDemoComponentsService {
             'SkyMediaQueryModule'
           ],
           '@skyux/indicators': [
-            'SkyAlertModules'
+            'SkyAlertModule'
           ]
         },
         getCodeFiles: () => this.getDemoFiles('SkyMediaQueryDemoComponent')
@@ -692,7 +692,7 @@ export class SkyDemoComponentsService {
             'SkyModalModule'
           ],
           '@skyux/indicators': [
-            'SkyAlertModules'
+            'SkyAlertModule'
           ],
           '@skyux/tiles': [
             'SkyTilesModule'
