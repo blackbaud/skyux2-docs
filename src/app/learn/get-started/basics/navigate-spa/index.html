@@ -29,7 +29,7 @@
   </stache-page-anchor>
 
   <p>
-    To create links between pages in a SPA, use the standard HTML <stache-code>a</stache-code> element. If the SPA's URL includes parameters, specify the path to link to with the SKY UX <stache-code>skyAppLink</stache-code> attribute. If not, use the Angular <stache-code>routerLink</stache-code> attribute.
+    To create links between pages in a SPA, use the standard HTML <stache-code>a</stache-code> element. If the SPA's URL includes <a stacheRouterLink="/learn/reference/configuration" fragment="params">parameters</a>, specify the path to link to with the SKY UX <stache-code>skyAppLink</stache-code> attribute. If not, use the Angular <stache-code>routerLink</stache-code> attribute.
   </p>
   <p>
     The <stache-code>skyAppLink</stache-code> attribute automatically includes the SPA's parameters in the URL. The most common parameters are <stache-code>envid</stache-code> and <stache-code>svcid</stache-code>, but the URL can include any parameters that are provided to the SPA when it loads.
@@ -49,7 +49,7 @@
   </stache-page-anchor>
 
   <p>
-    To create links to other SPAs, use the standard HTML <stache-code>a</stache-code> element. If the external SPA URL includes parameters, specify the path to link to with the SKY UX <stache-code>skyAppLink</stache-code> attribute. If not, use the standard HTML <stache-code>href</stache-code> attribute.
+    To create links to other SPAs, use the standard HTML <stache-code>a</stache-code> element. If the external SPA URL includes parameters, specify the path to link to with the SKY UX <stache-code>skyAppLinkExternal</stache-code> attribute. If not, use the standard HTML <stache-code>href</stache-code> attribute.
   </p>
     The <stache-code>skyAppLinkExternal</stache-code> attribute automatically includes the external SPA's parameters in the URL. The most common parameters are <stache-code>envid</stache-code> and <stache-code>svcid</stache-code>, but the URL can include any parameters that are provided to the SPA when it loads.
   </p>
