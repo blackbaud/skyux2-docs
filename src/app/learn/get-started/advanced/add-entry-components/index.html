@@ -1,32 +1,32 @@
 <stache
-  pageTitle="Add Entry Components"
+  pageTitle="Entry Components"
   showTableofContents="true"
   navTitle="Entry components">
 
-  <p>
-    Entry components are components such as tiles and modals that are generated dynamically instead of with HTML selectors. You must declare entry components to ensure that Webpack does not remove them as unused code during tree-shaking.
-  </p>
-  <p>
-    You register entry components in the <stache-code>app-extras.modules.ts</stache-code> file. Entry components are not tied to routes. They are loaded dynamically and are not referenced in component templates. For more information about entry components, see the <a href="https://angular.io/guide/ngmodule-faq#what-is-an-entry-component">Angular documentation</a>.
-  </p>
-  <p>
-    After you create a component in the default single-page application, you can create another page and add a SKY UX modal component to register an entry component.
-  </p>
+  <stache-page-summary>
+    <p>
+      Entry components are components such as tiles and modals that you generate dynamically instead of with HTML selectors. You must declare entry components to ensure that Webpack does not remove them as unused code during tree-shaking.
+    </p>
+    <p>
+      You register entry components in the SPA's <stache-code>app-extras.modules.ts</stache-code> file. Entry components are not tied to routes. They are loaded dynamically and are not referenced in component templates. For more information about entry components, see the <a href="https://angular.io/guide/ngmodule-faq#what-is-an-entry-component">Angular documentation</a>.
+    </p>
+  </stache-page-summary>
 
+  <stache-page-anchor>
+    Add an entry component
+  </stache-page-anchor>
+  <p>
+    The following tutorial walks you through the process to create a page with a SKY UX modal component and declare that component as an entry component.
+  </p>
   <ol>
     <li>
       <p>
-        Return to the project in a local editor, and create a folder within the <stache-code>src/app</stache-code> folder.
+        Open your project in a local editor, and create a folder within the <stache-code>src/app</stache-code> folder. The folder name appears in the route for the page. For this tutorial, use <stache-code>modal</stache-code> for the folder name.
       </p>
     </li>
     <li>
       <p>
-        Rename the folder. The folder name appears in the route for the page. For this tutorial, use "modal" for the folder name.
-      </p>
-    </li>
-    <li>
-      <p>
-        In the new <stache-code>modal</stache-code> folder, create a file and name it <stache-code>index.html</stache-code>. Place the shared <stache-code>app-nav</stache-code> component at the top and then add hello world content.
+        In the new folder, create an <stache-code>index.html</stache-code> file for the page. Insert the <stache-code>app-nav</stache-code> component and basic content, and then save the file.
       </p>
       <sky-code-block languageType="markup">
         <app-nav></app-nav>
@@ -39,12 +39,7 @@
     </li>
     <li>
       <p>
-        Save the <stache-code>index.html</stache-code> file.
-      </p>
-    </li>
-    <li>
-      <p>
-        Go to the <stache-code>src/app/shared</stache-code> folder, and open the <stache-code>app-nav.component.ts</stache-code> file.
+        In the <stache-code>src/app/shared</stache-code> folder, open the <stache-code>app-nav.component.ts</stache-code> file.
       </p>
     </li>
     <li>
@@ -83,12 +78,12 @@ export class AppNavComponent {
     </li>
     <li>
       <p>
-        Save the changes to the <stache-code>app-nav.component.ts</stache-code> file. If <stache-code>skyux serve</stache-code> is running, it recognizes the changes and updates the SPA. The Modal item appears in the menu, and you can click <strong>Modal</strong> to view the new page.
+        Save the changes and run <stache-code>skyux serve</stache-code> to view them in the SPA. The Modal item appears in the menu, and you can click <strong>Modal</strong> to view the new page.
       </p>
     </li>
     <li>
       <p>
-        In the <stache-code>modal</stache-code> folder, add another new file and name it <stache-code>modal-demo-context.ts</stache-code>. Add the following code:
+        In the <stache-code>modal</stache-code> folder, create a <stache-code>modal-demo-context.ts</stache-code> file and add the following code:
       </p>
       <sky-code-block>
        export class SkyModalDemoContext {
@@ -96,7 +91,7 @@ export class AppNavComponent {
       }
       </sky-code-block>
       <p>
-        This file passes a context object to the modal to prepopulate the modal field. In this sample, we prepopulate dummy data, but in a production modal, you can pull data from records and use this file can supply the context to determine what data to populate based on what record the form opens from.
+        This file passes a context object to the modal to prepopulate the modal field. In this sample, we prepopulate dummy data, but in a production modal, you can pull data from records and use this file can supply the context to populate data based on the record where the form opens.
       </p>
     </li>
     <li>
@@ -106,7 +101,7 @@ export class AppNavComponent {
     </li>
     <li>
       <p>
-        In the <stache-code>modal</stache-code> folder, add another new file and name it <stache-code>modal-demo-launcher.component.ts</stache-code>. This file defines the button component that launches the modal and its functionality. Add the following code:
+        In the <stache-code>modal</stache-code> folder, create a <stache-code>modal-demo-launcher.component.ts</stache-code> file to define the button component that launches the modal and its functionality and add the following code:
       </p>
 <sky-code-block languageType="typescript">
 import { Component } from '@angular/core';
@@ -143,7 +138,7 @@ export class SkyModalDemoComponent {
 }
 </sky-code-block>
       <p>
-        The <stache-code>import</stache-code> entries import several items:
+        This imports several items.
       </p>
 
       <ul>
@@ -151,21 +146,21 @@ export class SkyModalDemoComponent {
           The <stache-code>Component</stache-code> class from Angular provides functionality to the component that we are defining.
         </li>
         <li>
-          The <stache-code>SkyModalService</stache-code> provider from the SKY UX template launches the modal, and the <stache-code>SkyModalCloseArgs</stache-code> object from the template is emitted when the modal instance closes.
+          The <stache-code>SkyModalService</stache-code> provider from the SKY UX template launches the modal, and the <stache-code>SkyModalCloseArgs</stache-code> object is emitted when the modal instance closes.
         </li>
         <li>
           The <stache-code>SkyModalDemoContext</stache-code> class from the <stache-code>modal-demo-context.ts</stache-code> file that we just created passes a context object to prepopulate the modal field.
         </li>
         <li>
-          The <stache-code>SkyModalDemoFormComponent</stache-code> class from the <stache-code>modal-demo-form.component.ts</stache-code> file that we still need to create provides a header and constructs the modal instance.
+          The <stache-code>SkyModalDemoFormComponent</stache-code> class from the <stache-code>modal-demo-form.component.ts</stache-code> file that we will create provides a header and constructs the modal instance.
         </li>
       </ul>
 
       <p>
-        The <stache-code>@Component</stache-code> section is a decorator for the component, and it defines our selector and template. The decorator takes normal JavaScript classes and  extends the JavaScript functionality to convert them into Angular components.
+        The <stache-code>@Component</stache-code> section is a decorator for the component, and it defines our selector and template. The decorator takes normal JavaScript classes and  extends the functionality to convert them into Angular components.
       </p>
       <p>
-        The <stache-code>export</stache-code> portion defines the component class.
+        The <stache-code>export</stache-code> section defines the component class.
       </p>
     </li>
     <li>
@@ -175,7 +170,7 @@ export class SkyModalDemoComponent {
     </li>
     <li>
       <p>
-        In the <stache-code>modal</stache-code> folder, add another new file and name it <stache-code>modal-demo-launcher.component.html</stache-code>. This file serves as the template for the button component that launches the modal form. Add the following code:
+        In the <stache-code>modal</stache-code> folder, create a <stache-code>modal-demo-launcher.component.html</stache-code file to serve as the template for the button component that launches the modal form and add the following code:
       </p>
       <sky-code-block langaugeType="markup">
         <button type="button" class="sky-btn sky-btn-primary" (click)="openModal()">
@@ -190,7 +185,7 @@ export class SkyModalDemoComponent {
     </li>
     <li>
       <p>
-        In the <stache-code>modal</stache-code> folder, add another new file and name it <stache-code>modal-demo-form.component.ts</stache-code>. This file defines the modal form component and its functionality. Add the following code:
+        In the <stache-code>modal</stache-code> folder, create a <stache-code>modal-demo-form.component.ts</stache-code> file to define the modal form component and its functionality and add the following code:
       </p>
 <sky-code-block languageType="typescript">
 import { Component } from '@angular/core';
@@ -210,7 +205,7 @@ export class SkyModalDemoFormComponent {
 }
 </sky-code-block>
       <p>
-        The <stache-code>import</stache-code> commands import several items:
+        This imports several items.
       </p>
 
       <ul>
@@ -226,10 +221,10 @@ export class SkyModalDemoFormComponent {
       </ul>
 
       <p>
-        The <stache-code>@Component</stache-code> section is a decorator for the component, and it defines our selector and template. The decorator takes normal JavaScript classes and  extends the JavaScript functionality to convert them into Angular components.
+        The <stache-code>@Component</stache-code> section is a decorator for the component, and it defines our selector and template. The decorator takes normal JavaScript classes and  extends the functionality to convert them into Angular components.
       </p>
       <p>
-        The <stache-code>export</stache-code> portion defines the component class.
+        The <stache-code>export</stache-code> section defines the component class.
       </p>
     </li>
     <li>
@@ -239,7 +234,7 @@ export class SkyModalDemoFormComponent {
     </li>
     <li>
       <p>
-        In the <stache-code>modal</stache-code> folder, add another new file and name it <stache-code>modal-demo-form.component.html</stache-code>. This file will serve as the template for the modal component. Add the following code:
+        In the <stache-code>modal</stache-code> folder, create a <stache-code>modal-demo-form.component.html</stache-code>  to serve as the template for the modal component and add the following code:
       </p>
       <sky-code-block languageType="markup">
         <sky-modal>
@@ -266,10 +261,7 @@ export class SkyModalDemoFormComponent {
     </li>
     <li>
       <p>
-        Go to the <stache-code>src/app</stache-code> folder, and open the <stache-code>app-extras.module.ts</stache-code> file. At the top of the file, import the <stache-code>SkyModalDemoFormComponent</stache-code>.
-      </p>
-      <p>
-        In the <stache-code>entryComponents</stache-code> property, add an entry to register the modal as an entry component.
+        In the <stache-code>src/app</stache-code> folder, open the <stache-code>app-extras.module.ts</stache-code> file and import the <stache-code>SkyModalDemoFormComponent</stache-code>. In the <stache-code>entryComponents</stache-code> property, add an entry to register the modal as an entry component.
       </p>
 <sky-code-block languageType="typescript">
 import { NgModule } from '@angular/core';
@@ -288,11 +280,11 @@ export class AppExtrasModule { }
     </li>
     <li>
       <p>
-        Save the changes to the <stache-code>app-extras.module.ts</stache-code> file.
+        Save the <stache-code>app-extras.module.ts</stache-code> file.
       </p>
     </li>
     <li>
-      <p>Return to the <stache-code>index.html</stache-code> file, and add the <stache-code>sky-modal-demo-launcher</stache-code> selector that we defined in the <stache-code>modal-demo-context.ts</stache-code> file.
+      <p>In the <stache-code>index.html</stache-code> file, add the <stache-code>sky-modal-demo-launcher</stache-code> selector that we defined in the <stache-code>modal-demo-context.ts</stache-code> file.
       </p>
       <sky-code-block languageType="markup">
         <app-nav></app-nav>
@@ -303,22 +295,12 @@ export class AppExtrasModule { }
     </li>
     <li>
       <p>
-        Save the <stache-code>index.html</stache-code> file, and if any other files are not saved, save them now as well.
+        Save the <stache-code>index.html</stache-code> file and any other files with unsaved changes. If <stache-code>skyux serve</stache-code> is running, it detects the changes and updates the SPA. If not, run <stache-code>skyux serve</stache-code> to launch the SPA in your default browser.
       </p>
     </li>
     <li>
       <p>
-        Return to the command prompt. If <stache-code>skyux serve</stache-code> is running, it detects the changes and updates the SPA. If not, run <stache-code>skyux serve</stache-code> to launch the SPA in your default browser.
-      </p>
-    </li>
-    <li>
-      <p>
-        Return to the default site to see the updates in place. The Modal item appears in the menu, and you can click <strong>Modal</strong> to view the new page.
-      </p>
-    </li>
-    <li>
-      <p>
-        To launch the modal, click the <strong>Open modal</strong> button.
+        In the browser, the default site displays our changes. The Modal item appears in the menu, and you can click <strong>Modal</strong> to view the new page. To launch the modal, select the <strong>Open modal</strong> button.
       </p>
     </li>
   </ol>

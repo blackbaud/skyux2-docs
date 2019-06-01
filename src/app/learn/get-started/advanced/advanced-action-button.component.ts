@@ -15,7 +15,7 @@ export class AdvancedActionButtonsComponent {
     },
     {
       name: 'Accessibility analyzer',
-      path: '/learn/get-started/advanced/',
+      path: '/learn/get-started/advanced/accessibility-analyzer',
       icon: 'tachometer',
       // tslint:disable-next-line
       summary: 'Run aXe automated accessibility tests in your e2e tests.'
@@ -28,74 +28,74 @@ export class AdvancedActionButtonsComponent {
       summary: 'Use child routes to extend the paths of parent routes.'
     },
     {
-      name: 'Edit a SPA',
-      path: '/learn/get-started/advanced/',
-      icon: 'wrench',
-      // tslint:disable-next-line
-      summary: 'Add and edit pages and components in your SPA.'
-    },
-    {
-      name: 'Use SKY UX modules',
-      path: '/learn/get-started/advanced/',
+      name: 'Entry components',
+      path: '/learn/get-started/advanced/add-entry-components',
       icon: 'cubes',
       // tslint:disable-next-line
-      summary: 'Set up SKY UX components, directives, pipes, and services.'
+      summary: 'Declare entry components to generate them dynamically.'
     },
     {
-      name: 'Navigation',
-      path: '/learn/get-started/advanced/',
+      name: 'Localization',
+      path: '/learn/get-started/advanced/localization',
+      icon: 'globe',
+      // tslint:disable-next-line
+      summary: 'Use SKY UX Builder methods for localization.'
+    },
+    {
+      name: 'Module-level providers',
+      path: '/learn/get-started/advanced/module-level-providers',
+      icon: 'cubes',
+      // tslint:disable-next-line
+      summary: 'Import providers and services to supplement SKY UX.'
+    },
+    {
+      name: 'Pact testing',
+      path: '/learn/get-started/advanced/pact-tests',
+      icon: 'tachometer',
+      // tslint:disable-next-line
+      summary: 'Test dependent systems where integration is based on HTTP.'
+    },
+    {
+      name: 'Route guards',
+      path: '/learn/get-started/advanced/route-guards',
       icon: 'compass',
       // tslint:disable-next-line
-      summary: 'Take advantage of the Angular Router class for SPA navigation.'
+      summary: 'Enable or disable the rendering of routes at runtime.'
     },
     {
-      name: 'Build and publish',
-      path: '/learn/get-started/advanced/',
-      icon: 'cog',
-      // tslint:disable-next-line
-      summary: 'Build your single-page application into the dist folder.'
-    },
-    {
-      name: 'Navigation',
-      path: '/learn/get-started/advanced/',
+      name: 'Route parameters',
+      path: '/learn/get-started/advanced/route-params',
       icon: 'compass',
       // tslint:disable-next-line
-      summary: 'Take advantage of the Angular Router class for SPA navigation.'
+      summary: 'Use Angular route parameters to use variables in your routes.'
     },
     {
-      name: 'Build and publish',
-      path: '/learn/get-started/advanced/',
-      icon: 'cog',
-      // tslint:disable-next-line
-      summary: 'Build your single-page application into the dist folder.'
-    },
-    {
-      name: 'Navigation',
-      path: '/learn/get-started/advanced/',
+      name: 'Route wildcards',
+      path: '/learn/get-started/advanced/route-wildcard',
       icon: 'compass',
       // tslint:disable-next-line
-      summary: 'Take advantage of the Angular Router class for SPA navigation.'
+      summary: 'Gracefully handle requests to unknown routes in a SPA.'
     },
     {
-      name: 'Build and publish',
-      path: '/learn/get-started/advanced/',
-      icon: 'cog',
+      name: 'Static assets',
+      path: '/learn/get-started/advanced/include-static-assets',
+      icon: 'cubes',
       // tslint:disable-next-line
-      summary: 'Build your single-page application into the dist folder.'
+      summary: 'Reference static assets in your HTML, CSS, or SCSS.'
     },
     {
-      name: 'Build and publish',
-      path: '/learn/get-started/advanced/',
-      icon: 'cog',
+      name: 'Sticky settings',
+      path: '/learn/get-started/advanced/sticky-settings',
+      icon: 'cubes',
       // tslint:disable-next-line
-      summary: 'Build your single-page application into the dist folder.'
+      summary: 'Save settings for users across sessions.'
     },
     {
-      name: 'Update CLI',
-      path: '/learn/get-started/advanced/',
-      icon: 'wrench',
+      name: 'Unit tests for modals',
+      path: '/learn/get-started/advanced/unit-test-modals',
+      icon: 'tachometer',
       // tslint:disable-next-line
-      summary: 'Get the latest version of the SKY UX CLI.'
+      summary: 'Create unit tests for the modals in your single-page application.'
     }
   ];
 }
