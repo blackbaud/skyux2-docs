@@ -10,11 +10,7 @@
       border-bottom: none;
     }
   }
-
-    .property-required {
-      margin-top: $sky-margin-stacked-default;
-    }
-
+  
     .property-heading {
       display: none;
     }
@@ -34,12 +30,10 @@
     }
   
   @media (max-width: $sky-screen-sm-max) {
-
-    .property-heading {
-      display: block;
-      margin-bottom: $sky-margin-stacked-default;
+    .property-table-header {
+      display: none;
     }
-
+    
     .property-name, .property-description, .property-default, .property-optional {
       width: 100%;
     }
