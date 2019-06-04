@@ -19,10 +19,10 @@
   </p>
   <ol>
     <li>
-      The CLI provides <stache-code>skyux</stache-code> as a known command from any location in your system. Internally, it handles a few commands such as <stache-code>skyux new</stache-code> and <stache-code>skyux help</stache-code> that can run anywhere and are not limited to the context of an existing SPA.
+      The CLI provides <sky-code>skyux</sky-code> as a known command from any location in your system. Internally, it handles a few commands such as <sky-code>skyux new</sky-code> and <sky-code>skyux help</sky-code> that can run anywhere and are not limited to the context of an existing SPA.
     </li>
     <li>
-      The CLI locates packages to handle <stache-code>skyux</stache-code> commands and passes commands to those packages. Packages can be installed globally or locally in the working directory. SKY UX Builder is the most common example of a module versioned in a specific directory that handles commands. For example, Builder handles <stache-code>skyux build</stache-code> after the CLI passes along the command.
+      The CLI locates packages to handle <sky-code>skyux</sky-code> commands and passes commands to those packages. Packages can be installed globally or locally in the working directory. SKY UX Builder is the most common example of a module versioned in a specific directory that handles commands. For example, Builder handles <sky-code>skyux build</sky-code> after the CLI passes along the command.
     </li>
   </ol>
   <p>
@@ -34,7 +34,7 @@
   </stache-page-anchor>
 
   <p>
-    SKY UX Builder is intended to be listed as a <stache-code>devDependency</stache-code> in the <stache-code>package.json</stache-code> file for every SPA. Builder handles the majority of <stache-code>skyux</stache-code> commands, including testing, serving, and building, and it wraps up the logic and configuration for other tools such as the Angular Compiler, Webpack, Karma, and Protractor.
+    SKY UX Builder is intended to be listed as a <sky-code>devDependency</sky-code> in the <sky-code>package.json</sky-code> file for every SPA. Builder handles the majority of <sky-code>skyux</sky-code> commands, including testing, serving, and building, and it wraps up the logic and configuration for other tools such as the Angular Compiler, Webpack, Karma, and Protractor.
   </p>
 
   <stache-page-anchor>
@@ -47,17 +47,17 @@
   <ul>
     <li>
       <p>
-        Start the module name with <stache-code>skyux-builder</stache-code> or <stache-code>@skyux-sdk/builder</stache-code>. The SKY UX team follows the syntax <stache-code>@skyux-sdk/builder-[module-name-here]</stache-code>, but non-SKY UX creators need to use the syntax <stache-code>skyux-builder-[module-name-here]</stache-code> because they don't have access to publish to the <stache-code>@skyux-sdk/</stache-code> scope.
+        Start the module name with <sky-code>skyux-builder</sky-code> or <sky-code>@skyux-sdk/builder</sky-code>. The SKY UX team follows the syntax <sky-code>@skyux-sdk/builder-[module-name-here]</sky-code>, but non-SKY UX creators need to use the syntax <sky-code>skyux-builder-[module-name-here]</sky-code> because they don't have access to publish to the <sky-code>@skyux-sdk/</sky-code> scope.
       </p>
     </li>
     <li>
       <p>
-        Enable the module for use with <stache-code>require()</stache-code> by either specifying a valid JavaScript file with the <stache-code>main</stache-code> property in the module's <stache-code>package.json</stache-code> file or by including an <stache-code>index.js</stache-code> file in the module's root.
+        Enable the module for use with <sky-code>require()</sky-code> by either specifying a valid JavaScript file with the <sky-code>main</sky-code> property in the module's <sky-code>package.json</sky-code> file or by including an <sky-code>index.js</sky-code> file in the module's root.
       </p>
     </li>
     <li>
       <p>
-        Expose a <stache-code>runCommand</stache-code> method in the module. This method is called with two parameters: the requested command and an arguments object. It returns a boolean value to indicate whether it successfully handled the command.
+        Expose a <sky-code>runCommand</sky-code> method in the module. This method is called with two parameters: the requested command and an arguments object. It returns a boolean value to indicate whether it successfully handled the command.
       </p>
       <sky-code-block>
         module.exports = {
@@ -87,7 +87,7 @@
     SKY UX Builder is also extensible, but in a different way than SKY UX CLI. Each file that's parsed as part of your project can be modified at build time. This technique is very useful to dynamically inject common boilerplate behavior.
   </p>
   <p>
-    To create custom packages, enable the package for use with <stache-code>require()</stache-code> by either specifying a valid JavaScript file with the <stache-code>main</stache-code> property in the package's <stache-code>package.json</stache-code> or by including an <stache-code>index.js</stache-code> file in the package's root.
+    To create custom packages, enable the package for use with <sky-code>require()</sky-code> by either specifying a valid JavaScript file with the <sky-code>main</sky-code> property in the package's <sky-code>package.json</sky-code> or by including an <sky-code>index.js</sky-code> file in the package's root.
   </p>
   <sky-code-block>
     module.exports = {
@@ -106,7 +106,7 @@
   <ul>
     <li>
       <p>
-        Users add the package as a dependency in <stache-code>package.json</stache-code>.
+        Users add the package as a dependency in <sky-code>package.json</sky-code>.
       </p>
       <sky-code-block>
         {
@@ -118,7 +118,7 @@
     </li>
     <li>
       <p>
-        Then in the <stache-code>skyuxconfig.json</stache-code> file, they specify the module in the <stache-code>plugins</stache-code> array.
+        Then in the <sky-code>skyuxconfig.json</sky-code> file, they specify the module in the <sky-code>plugins</sky-code> array.
       </p>
       <sky-code-block>
         {

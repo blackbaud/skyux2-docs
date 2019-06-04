@@ -6,10 +6,10 @@
 
   <sky-demo-page-summary>
     <p>
-      The modal component and service allow you to launch modals in a consistent way in SKY UX applications. The <stache-code>SkyModalService</stache-code> provider lauches modals, and the <stache-code>sky-modal</stache-code> component provides a common look-and-feel for modal content. Within the <stache-code>sky-modal</stache-code> component, you have options to display a common modal header, specify body content, and display a common modal footer and buttons. The <stache-code>SkyModalInstance</stache-code> class allows you to close the modal and return data from the launched modal. For information about how to test modals in SKY UX, see <a routerLink="/learn/get-started/advanced/unit-test-modals">write unit tests for modals</a>.
+      The modal component and service allow you to launch modals in a consistent way in SKY UX applications. The <sky-code>SkyModalService</sky-code> provider lauches modals, and the <sky-code>sky-modal</sky-code> component provides a common look-and-feel for modal content. Within the <sky-code>sky-modal</sky-code> component, you have options to display a common modal header, specify body content, and display a common modal footer and buttons. The <sky-code>SkyModalInstance</sky-code> class allows you to close the modal and return data from the launched modal. For information about how to test modals in SKY UX, see <a routerLink="/learn/get-started/advanced/unit-test-modals">write unit tests for modals</a>.
     </p>
     <sky-alert alertType="info">
-      Keep in mind that modals are not child components. Any component in a SPA can use <stache-code>SkyModalService</stache-code> to launch a modal, but the modal is launched independently through the service.
+      Keep in mind that modals are not child components. Any component in a SPA can use <sky-code>SkyModalService</sky-code> to launch a modal, but the modal is launched independently through the service.
     </sky-alert>
   </sky-demo-page-summary>
 
@@ -17,7 +17,7 @@
     <sky-demo-page-property
       propertyName="open(component, config?)"
     >
-    Opens a modal using the specified component. The optional <stache-code>config</stache-code> parameter is an object literal to be passed to the component's constructor. This method returns the modal instance.
+    Opens a modal using the specified component. The optional <sky-code>config</sky-code> parameter is an object literal to be passed to the component's constructor. This method returns the modal instance.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -34,32 +34,32 @@
       defaultValue="false"
       isOptional="true"
     >
-    Indicates whether the modal uses tiles. When set to <stache-code>true</stache-code>, the modal's background switches to <stache-code>$sky-background-color-neutral-light</stache-code> and tile headings are styled as subsection headings.
+    Indicates whether the modal uses tiles. When set to <sky-code>true</sky-code>, the modal's background switches to <sky-code>$sky-background-color-neutral-light</sky-code> and tile headings are styled as subsection headings.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="providers"
     >
-    An array property of <stache-code>providers</stache-code>. In Angular, a provider is something that can create or deliver a service. This property can be used to pass context values from the component that launches the modal to the modal component.
+    An array property of <sky-code>providers</sky-code>. In Angular, a provider is something that can create or deliver a service. This property can be used to pass context values from the component that launches the modal to the modal component.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="size"
       defaultValue="medium"
       isOptional="true"
     >
-    Specifies a size for the modal. The valid options are <stache-code>small</stache-code>, <stache-code>medium</stache-code>, and <stache-code>large</stache-code>.
+    Specifies a size for the modal. The valid options are <sky-code>small</sky-code>, <sky-code>medium</sky-code>, and <sky-code>large</sky-code>.
     </sky-demo-page-property>
 
     <sky-demo-page-property
       propertyName="ariaLabelledBy"
       isOptional="true"
     >
-    Sets the <stache-code>aria-labelledby</stache-code> attribute for the modal dialog to support accessibility. The value should be an ID (without the leading <stache-code>#</stache-code>) that points to the element that labels the modal. Typically this is a header element. If no ID is specified, the default value is the content of the <stache-code>sky-modal-header</stache-code> component.
+    Sets the <sky-code>aria-labelledby</sky-code> attribute for the modal dialog to support accessibility. The value should be an ID (without the leading <sky-code>#</sky-code>) that points to the element that labels the modal. Typically this is a header element. If no ID is specified, the default value is the content of the <sky-code>sky-modal-header</sky-code> component.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="ariaDescribedBy"
       isOptional="true"
     >
-    Sets the <stache-code>aria-describedby</stache-code> attribute for the modal dialog to support accessibility. The value should be an ID (without the leading <stache-code>#</stache-code>) that points to the element that describes the modal. Typically, this is the text on the modal, not including anything that users interact with such as buttons or a form. If no ID is specified, the default value is the content of the <stache-code>sky-modal-content</stache-code> component.
+    Sets the <sky-code>aria-describedby</sky-code> attribute for the modal dialog to support accessibility. The value should be an ID (without the leading <sky-code>#</sky-code>) that points to the element that describes the modal. Typically, this is the text on the modal, not including anything that users interact with such as buttons or a form. If no ID is specified, the default value is the content of the <sky-code>sky-modal-content</sky-code> component.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="ariaRole"
@@ -72,7 +72,7 @@
       propertyName="helpKey"
       isOptional="true"
     >
-    Specifies a <stache-code>helpKey</stache-code> string. This property dispays the <i class="fa fa-question-circle" aria-hidden="true"></i> button in the modal header. When users click this button, the <stache-code>helpOpened</stache-code> event broadcasts the <stache-code>helpKey</stache-code> parameter. Blackbaud developers can use the Help Widget, which is for internal Blackbaud use only, to <a href="https://docs.blackbaud.com/bb-help-docs/components/modal-header">display help content in a flyout panel</a>.
+    Specifies a <sky-code>helpKey</sky-code> string. This property dispays the <i class="fa fa-question-circle" aria-hidden="true"></i> button in the modal header. When users click this button, the <sky-code>helpOpened</sky-code> event broadcasts the <sky-code>helpKey</sky-code> parameter. Blackbaud developers can use the Help Widget, which is for internal Blackbaud use only, to <a href="https://docs.blackbaud.com/bb-help-docs/components/modal-header">display help content in a flyout panel</a>.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -98,22 +98,22 @@
     <sky-demo-page-property
       propertyName="save(result?)"
     >
-    Closes the modal instance with <stache-code>reason=save</stache-code>. The optional <stache-code>result</stache-code> parameter specifies an object that will be emitted to subscribers of the <stache-code>closed</stache-code> event of the modal instance. The <stache-code>SkyModalInstance</stache-code> provider can be injected into a component's constructor so that this <stache-code>save</stache-code> function can be called from a button in the <stache-code>sky-modal-footer</stache-code>.
+    Closes the modal instance with <sky-code>reason=save</sky-code>. The optional <sky-code>result</sky-code> parameter specifies an object that will be emitted to subscribers of the <sky-code>closed</sky-code> event of the modal instance. The <sky-code>SkyModalInstance</sky-code> provider can be injected into a component's constructor so that this <sky-code>save</sky-code> function can be called from a button in the <sky-code>sky-modal-footer</sky-code>.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="cancel(result?)"
     >
-    Closes the modal instance with <stache-code>reason=cancel</stache-code>. The optional <stache-code>result</stache-code> parameter specifies an object that will be emitted to subscribers of the <stache-code>closed</stache-code> event of the modal instance. The <stache-code>SkyModalInstance</stache-code> provider can be injected into a component's constructor so that this <stache-code>cancel</stache-code> function can be called from a button in the <stache-code>sky-modal-footer</stache-code>.
+    Closes the modal instance with <sky-code>reason=cancel</sky-code>. The optional <sky-code>result</sky-code> parameter specifies an object that will be emitted to subscribers of the <sky-code>closed</sky-code> event of the modal instance. The <sky-code>SkyModalInstance</sky-code> provider can be injected into a component's constructor so that this <sky-code>cancel</sky-code> function can be called from a button in the <sky-code>sky-modal-footer</sky-code>.
     </sky-demo-page-property>
      <sky-demo-page-property
       propertyName="close(result?, reason?)"
     >
-    Closes the modal instance. The optional <stache-code>result</stache-code> parameter specifies an object that will be emitted to subscribers of the <stache-code>closed</stache-code> event of the modal instance, and it specifies a string that indicates the reason for the modal closing, with the default reason of <stache-code>close</stache-code>. The <stache-code>SkyModalInstance</stache-code> provider can be injected into a component's constructor so that this <stache-code>close</stache-code> function can be called from a button in the <stache-code>sky-modal-footer</stache-code>.
+    Closes the modal instance. The optional <sky-code>result</sky-code> parameter specifies an object that will be emitted to subscribers of the <sky-code>closed</sky-code> event of the modal instance, and it specifies a string that indicates the reason for the modal closing, with the default reason of <sky-code>close</sky-code>. The <sky-code>SkyModalInstance</sky-code> provider can be injected into a component's constructor so that this <sky-code>close</sky-code> function can be called from a button in the <sky-code>sky-modal-footer</sky-code>.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="openHelp(helpKey?)"
     >
-    Triggers the <stache-code>helpOpened</stache-code> event. The optional <stache-code>helpKey</stache-code> parameter specifies a string to emit to subscribers of the modal instance's <stache-code>helpOpened</stache-code> event. You can inject the <stache-code>SkyModalInstance</stache-code> provider into a component's constructor to call the <stache-code>openHelp</stache-code> function in the modal template.
+    Triggers the <sky-code>helpOpened</sky-code> event. The optional <sky-code>helpKey</sky-code> parameter specifies a string to emit to subscribers of the modal instance's <sky-code>helpOpened</sky-code> event. You can inject the <sky-code>SkyModalInstance</sky-code> provider into a component's constructor to call the <sky-code>openHelp</sky-code> function in the modal template.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -121,17 +121,17 @@
     <sky-demo-page-property
       propertyName="beforeClose"
     >
-      An event that the modal instance emits when it is about to close. It emits a <stache-code>SkyModalBeforeCloseHandler</stache-code> object with a <stache-code>closeModal</stache-code> method that closes the modal. If a subscription exists for this event, the modal does not close until the subscriber calls the <stache-code>closeModal</stache-code> method.
+      An event that the modal instance emits when it is about to close. It emits a <sky-code>SkyModalBeforeCloseHandler</sky-code> object with a <sky-code>closeModal</sky-code> method that closes the modal. If a subscription exists for this event, the modal does not close until the subscriber calls the <sky-code>closeModal</sky-code> method.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="closed"
     >
-    An event that the modal instance emits when it closes. It emits a <stache-code>SkyCloseModalArgs</stache-code> object with a <stache-code>data</stache-code> property that includes data passed from users on close or save and a <stache-code>reason</stache-code> property that indicates whether the modal was saved or closed without saving. The <stache-code>reason</stache-code> property accepts any string value. Common examples include <stache-code>cancel</stache-code>, <stache-code>close</stache-code>, and <stache-code>save</stache-code>.
+    An event that the modal instance emits when it closes. It emits a <sky-code>SkyCloseModalArgs</sky-code> object with a <sky-code>data</sky-code> property that includes data passed from users on close or save and a <sky-code>reason</sky-code> property that indicates whether the modal was saved or closed without saving. The <sky-code>reason</sky-code> property accepts any string value. Common examples include <sky-code>cancel</sky-code>, <sky-code>close</sky-code>, and <sky-code>save</sky-code>.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="helpOpened"
     >
-    An event that the modal instance emits when users click the <i class="fa fa-question-circle" aria-hidden="true"></i> button. If a <stache-code>helpKey</stache-code> parameter was specified, the <stache-code>helpOpened</stache-code> event broadcasts the <stache-code>helpKey</stache-code>.
+    An event that the modal instance emits when users click the <i class="fa fa-question-circle" aria-hidden="true"></i> button. If a <sky-code>helpKey</sky-code> parameter was specified, the <sky-code>helpOpened</sky-code> event broadcasts the <sky-code>helpKey</sky-code>.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 

@@ -14,16 +14,16 @@
   </stache-page-anchor>
   
   <p>
-    SKY UX automatically configures <a href="https://karma-runner.github.io">Karma</a> to run unit tests in the <stache-code>src/app</stache-code> folder that end with <stache-code>.spec.ts</stache-code>. Unit tests should follow <a href="https://angular.io/styleguide#!#naming">the Angular guidelines</a> for naming and storing spec files. Name them after the components or services that they test, and place them in the same folders as their components or services.
+    SKY UX automatically configures <a href="https://karma-runner.github.io">Karma</a> to run unit tests in the <sky-code>src/app</sky-code> folder that end with <sky-code>.spec.ts</sky-code>. Unit tests should follow <a href="https://angular.io/styleguide#!#naming">the Angular guidelines</a> for naming and storing spec files. Name them after the components or services that they test, and place them in the same folders as their components or services.
   </p>
   <p>
     The SKY UX template includes sample unit tests that <a routerLink="/learn/get-started/basics/run-tests">you can run to test the default single-page application</a>. <stache-include fileName="SkyAppTestModule-note.html"></stache-include>
   </p>
   <p>
-    To run unit tests from the command line, use <a routerLink="/learn/reference/cli-commands/test">the <stache-code>skyux test</stache-code> command</a>. To run unit tests and watch the file system for changes, use <a routerLink="/learn/reference/cli-commands/watch">the <stache-code>skyux watch</stache-code> command</a>. Code coverage results are stored in the <stache-code>coverage</stache-code> folder. To specify a minimum code coverage threshold required to pass the <stache-code>skyux test</stache-code> command, use <a routerLink="/learn/reference/configuration">the <stache-code>codeCoverageThreshold</stache-code> configuration option</a>.
+    To run unit tests from the command line, use <a routerLink="/learn/reference/cli-commands/test">the <sky-code>skyux test</sky-code> command</a>. To run unit tests and watch the file system for changes, use <a routerLink="/learn/reference/cli-commands/watch">the <sky-code>skyux watch</sky-code> command</a>. Code coverage results are stored in the <sky-code>coverage</sky-code> folder. To specify a minimum code coverage threshold required to pass the <sky-code>skyux test</sky-code> command, use <a routerLink="/learn/reference/configuration">the <sky-code>codeCoverageThreshold</sky-code> configuration option</a>.
   </p>
   <p>
-    SKY UX styles are loaded when running unit tests, so CSS rules defined in SKY UX take effect during tests. This allows you to check the expected computed style of an element when using things like the HTML <stache-code>hidden</stache-code> property that only take effect when SKY UX styles are loaded.
+    SKY UX styles are loaded when running unit tests, so CSS rules defined in SKY UX take effect during tests. This allows you to check the expected computed style of an element when using things like the HTML <sky-code>hidden</sky-code> property that only take effect when SKY UX styles are loaded.
   </p>
   <p>
     For tips and techniques on testing Angular applications, see the <a href="https://angular.io/guide/testing">Angular testing guidelines</a>. And for information about how to test modals in SKY UX, see <a routerLink="/learn/get-started/advanced/unit-test-modals">write unit tests for modals</a>.
@@ -35,10 +35,10 @@
   
   <stache-include fileName="e2e-recommendation.html"></stache-include>
   <p>
-    SKY UX automatically configures <a href="http://www.protractortest.org">Protractor</a> to run end-to-end tests in the <stache-code>e2e</stache-code> folder that end with <stache-code>.e2e-spec.ts</stache-code>. End-to-end tests should follow <a href="https://angular.io/styleguide#!#naming">the Angular guidelines</a> on naming and storing spec files. Name them after the components or services that they test, and place them in the <stache-code>e2e</stache-code> folder in the root of your project.
+    SKY UX automatically configures <a href="http://www.protractortest.org">Protractor</a> to run end-to-end tests in the <sky-code>e2e</sky-code> folder that end with <sky-code>.e2e-spec.ts</sky-code>. End-to-end tests should follow <a href="https://angular.io/styleguide#!#naming">the Angular guidelines</a> on naming and storing spec files. Name them after the components or services that they test, and place them in the <sky-code>e2e</sky-code> folder in the root of your project.
   </p>
   <p>
-    To run e2e tests from the command line, use <a routerLink="/learn/reference/cli-commands/e2e">the <stache-code>skyux e2e</stache-code> command</a>. For tips and techniques on testing Angular applications, see the <a href="https://angular.io/guide/testing">Angular testing guidelines</a>. And for guidance on troubleshooting e2e tests, see <a href="https://github.com/angular/protractor/blob/master/docs/debugging.md">Debugging Protractor Tests</a>.
+    To run e2e tests from the command line, use <a routerLink="/learn/reference/cli-commands/e2e">the <sky-code>skyux e2e</sky-code> command</a>. For tips and techniques on testing Angular applications, see the <a href="https://angular.io/guide/testing">Angular testing guidelines</a>. And for guidance on troubleshooting e2e tests, see <a href="https://github.com/angular/protractor/blob/master/docs/debugging.md">Debugging Protractor Tests</a>.
   </p>
 
   <h3>

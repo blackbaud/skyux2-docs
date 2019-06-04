@@ -9,7 +9,6 @@ import {
 
 import { SkyDemoPageCodeFile } from './demo-page-code-file';
 import { SkyDemoPageImports } from './demo-page-imports';
-import { SkyDemoPagePlunkerService } from './demo-page-plunker-service';
 import { SkyDemoPageStackBlitzService } from './demo-page-stackblitz-service';
 import { SkyDemoComponentsService } from '../demo-components.service';
 import { SkyDemoComponent } from '../demo-component';
@@ -21,7 +20,6 @@ import { SkyDemoPageDependencies } from './demo-page-dependencies';
   styleUrls: ['./demo-page-code.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [
-    SkyDemoPagePlunkerService,
     SkyDemoPageStackBlitzService
   ]
 })

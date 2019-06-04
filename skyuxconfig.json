@@ -1,4 +1,5 @@
 {
+  "$schema": "./node_modules/@skyux/config/skyuxconfig-schema.json",
   "name": "skyux",
   "mode": "easy",
   "compileMode": "aot",
@@ -6,7 +7,10 @@
     "url": "https://developer.blackbaud.com"
   },
   "app": {
-    "title": "Blackbaud SKY UX"
+    "title": "Blackbaud SKY UX",
+    "styles": [
+      "@skyux/theme/css/sky.css"
+    ]
   },
   "appSettings": {
     "stache": {
@@ -14,8 +18,7 @@
         "text": "Suggest edit",
         "url": "https://github.com/blackbaud/skyux2-docs"
       },
-      "footer": {
-      },
+      "footer": {},
       "searchConfig": {
         "is_internal": false,
         "site_names": [
@@ -69,7 +72,8 @@
     ]
   },
   "plugins": [
-    "@blackbaud/skyux-builder-plugin-stache"
+    "@blackbaud/skyux-builder-plugin-stache",
+    "@blackbaud/skyux-builder-plugin-code-block"
   ],
   "redirects": {
     "learn/get-started/1.-SSL-certification": "learn/get-started/prereqs/ssl-certificate",

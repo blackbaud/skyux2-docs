@@ -42,26 +42,26 @@
       isOptional="true"
       defaultValue="Vertical"
     >
-      Specifies whether to display the progress indicator vertically or horizontally. For <a routerLink="/components/wizard">modal wizards</a>, use the horizontal display mode. For waterfall pages and passive progress indicators, use the vertical display mode. This property accepts <stache-code>string</stache-code> values and a type of <a stacheRouterLink="." fragment="skyprogressindicatordisplaymode-properties">the <stache-code>SkyProgressIndicatorDisplayMode</stache-code> property</a>.
+      Specifies whether to display the progress indicator vertically or horizontally. For <a routerLink="/components/wizard">modal wizards</a>, use the horizontal display mode. For waterfall pages and passive progress indicators, use the vertical display mode. This property accepts <sky-code>string</sky-code> values and a type of <a stacheRouterLink="." fragment="skyprogressindicatordisplaymode-properties">the <sky-code>SkyProgressIndicatorDisplayMode</sky-code> property</a>.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="isPassive"
       isOptional="true"
       defaultValue="false"
     >
-      Indicates whether the progress indicator is passive. Passive progress indicators inform users of progress that concerns them but that they are not responsible for, and they must use the vertical display mode. This property accepts <stache-code>boolean</stache-code> values.
+      Indicates whether the progress indicator is passive. Passive progress indicators inform users of progress that concerns them but that they are not responsible for, and they must use the vertical display mode. This property accepts <sky-code>boolean</sky-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="messageStream"
       isOptional="true"
     >
-      Specifies <a stacheRouterLink="." fragment="skyprogressindicatormessagetype-properties">an observable of <stache-code>SkyProgressIndicatorMessageType</stache-code></a> that determines the status to display for progress items in the progress indicator. The message stream is a queue of commanding messages to change the state of the progress indicator based on one of the three message types. This property accepts <stache-code>string</stache-code> values.
+      Specifies <a stacheRouterLink="." fragment="skyprogressindicatormessagetype-properties">an observable of <sky-code>SkyProgressIndicatorMessageType</sky-code></a> that determines the status to display for progress items in the progress indicator. The message stream is a queue of commanding messages to change the state of the progress indicator based on one of the three message types. This property accepts <sky-code>string</sky-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="startingIndex"
       isOptional="true"
     >
-      Specifies the index for the first progress item to make active when the progress indicator loads. All steps that precede the first progress item are marked as complete. This property accepts <stache-code>number</stache-code> values.
+      Specifies the index for the first progress item to make active when the progress indicator loads. All steps that precede the first progress item are marked as complete. This property accepts <sky-code>number</sky-code> values.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -108,14 +108,14 @@
     <sky-demo-page-property
       propertyName="progressIndicator"
     >
-      Specifies the progress indicator component to associate with the reset button. This property accepts an array or Observable array of <stache-code>string</stache-code> values.
+      Specifies the progress indicator component to associate with the reset button. This property accepts an array or Observable array of <sky-code>string</sky-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="disabled"
       isOptional="true"
       defaultValue="false"
     >
-      Indicates whether to disable the reset button. This property accepts <stache-code>boolean</stache-code> values.
+      Indicates whether to disable the reset button. This property accepts <sky-code>boolean</sky-code> values.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -134,28 +134,28 @@
     <sky-demo-page-property
       propertyName="progressIndicator"
     >
-      Specifies the progress indicator component to associate with the nav button. This property accepts an array or Observable array of <stache-code>string</stache-code> values.
+      Specifies the progress indicator component to associate with the nav button. This property accepts an array or Observable array of <sky-code>string</sky-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="buttonText"
       isOptional="true"
       defaultValue="Next"
     >
-      Specifies the label to display on the nav button. The property accepts <stache-code>string</stache-code> values.
+      Specifies the label to display on the nav button. The property accepts <sky-code>string</sky-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="buttonType"
       isOptional="true"
       defaultValue="next"
     >
-      Specifies the type of nav button to include. The valid options are <stache-code>finish</stache-code>, <stache-code>next</stache-code>, and <stache-code>previous</stache-code>. This property accepts <stache-code>string</stache-code> values.
+      Specifies the type of nav button to include. The valid options are <sky-code>finish</sky-code>, <sky-code>next</sky-code>, and <sky-code>previous</sky-code>. This property accepts <sky-code>string</sky-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="disabled"
       isOptional="true"
       defaultValue="false"
     >
-      Indicates whether to disable the nav button. This property accepts <stache-code>boolean</stache-code> values.
+      Indicates whether to disable the nav button. This property accepts <sky-code>boolean</sky-code> values.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
