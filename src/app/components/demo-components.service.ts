@@ -88,7 +88,9 @@ export class SkyDemoComponentsService {
         name: 'Button',
         icon: 'square-o',
         summary: `The button classes create buttons to trigger actions from within an interface.`,
-        url: '/components/button'
+        url: '/components/button',
+        imports: {},
+        getCodeFiles: () => this.getDemoFiles('SkyButtonDemoComponent')
       },
       {
         name: 'Card',

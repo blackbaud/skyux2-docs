@@ -8,6 +8,10 @@ import {
 } from './summary-action-bar';
 
 import {
+  SkyButtonDemoComponent
+} from './button';
+
+import {
   SkyCodeBlockDemoComponent
 } from './code-block';
 
@@ -73,6 +77,27 @@ export class SkyDocsDemoCodeService {
           name: 'summary-action-bar-modal-demo.ts',
           fileContents: require('!!raw-loader!./summary-action-bar/summary-action-bar-modal-demo.component.ts'),
           componentName: 'SkySummaryActionBarModalDemoComponent'
+        }
+      ]
+    },
+
+    {
+      name: 'Button',
+      component: SkyButtonDemoComponent,
+      files: [
+        {
+          name: 'button-demo.component.html',
+          fileContents: require('!!raw-loader!./button/button-demo.component.html')
+        },
+        {
+          name: 'button-demo.component.scss',
+          fileContents: require('!!raw-loader!./button/button-demo.component.scss')
+        },
+        {
+          name: 'button-demo.component.ts',
+          fileContents: require('!!raw-loader!./button/button-demo.component.ts'),
+          componentName: 'SkyButtonDemoComponent',
+          bootstrapSelector: 'sky-button-demo'
         }
       ]
     },
