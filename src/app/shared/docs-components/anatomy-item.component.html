@@ -1,0 +1,9 @@
+<ng-template #content><ng-content></ng-content></ng-template>
+
+<ng-container *ngIf="isOptional; else requiredStyle">
+  <div class="anatomy-item anatomy-item-optional"><div class="anatomy-marker">{{anatomyNumber}}</div><div class="anatomy-description"><ng-container *ngTemplateOutlet="content"></ng-container> <span class="sky-deemphasized">(optional)</span></div></div>
+</ng-container>
+
+<ng-template #requiredStyle>
+  <div class="anatomy-item anatomy-item-required"><div class="anatomy-marker">{{anatomyNumber}}</div><div class="anatomy-description"><ng-container *ngTemplateOutlet="content"></ng-container></div></div>
+</ng-template>

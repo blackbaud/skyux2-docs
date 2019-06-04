@@ -1,0 +1,7 @@
+@import '~@blackbaud/skyux-design-tokens/scss/mixins';
+
+.component-states-table ::ng-deep .visual-example {
+  @include sky-border(row);
+  margin-bottom: 0 !important;
+  padding: $sky-space-xl $sky-space-default;
+}
