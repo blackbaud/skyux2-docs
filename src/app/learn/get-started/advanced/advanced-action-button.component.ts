@@ -29,7 +29,7 @@ export class AdvancedActionButtonsComponent {
     },
     {
       name: 'Entry components',
-      path: '/learn/get-started/advanced/add-entry-components',
+      path: '/learn/get-started/advanced/entry-components',
       icon: 'cubes',
       // tslint:disable-next-line
       summary: 'Declare entry components to generate them dynamically.'
