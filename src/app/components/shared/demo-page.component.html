@@ -1,45 +1,47 @@
-<stache
-  layout="sidebar"
-  showTableOfContents="true"
-  [pageTitle]="pageTitle">
+<div class="demo-page">
+  <stache
+    layout="sidebar"
+    showTableOfContents="true"
+    [pageTitle]="pageTitle">
 
-  <stache-page-summary>
-    <h4 *ngIf="skyuxModulesForDisplay && !installOnly">
-      <span class="sky-field-label">Defined in</span>
-      <span *ngFor="let moduleName of skyuxModulesForDisplay">
-        <stache-code>{{ moduleName }}</stache-code>
-      </span>
-      <ng-container *ngIf="packageName">
-        <span class="sky-field-label">in NPM package</span>
-        <a href="https://npmjs.org/{{ packageName }}">
-          <stache-code>{{ packageName }}</stache-code>
-        </a>
-      </ng-container>
-    </h4>
-    <h4 *ngIf="packageName && installOnly">
-      <span class="sky-field-label">Defined in NPM package</span>
-        <a href="https://npmjs.org/{{ packageName }}">
-          <stache-code>{{ packageName }}</stache-code>
-        </a>
-    </h4>
-    <ng-content select="sky-demo-page-summary"></ng-content>
-  </stache-page-summary>
+    <stache-page-summary>
+      <h4 *ngIf="skyuxModulesForDisplay && !installOnly">
+        <span class="sky-field-label">Defined in</span>
+        <span *ngFor="let moduleName of skyuxModulesForDisplay">
+          <stache-code>{{ moduleName }}</stache-code>
+        </span>
+        <ng-container *ngIf="packageName">
+          <span class="sky-field-label">in NPM package</span>
+          <a href="https://npmjs.org/{{ packageName }}">
+            <stache-code>{{ packageName }}</stache-code>
+          </a>
+        </ng-container>
+      </h4>
+      <h4 *ngIf="packageName && installOnly">
+        <span class="sky-field-label">Defined in NPM package</span>
+          <a href="https://npmjs.org/{{ packageName }}">
+            <stache-code>{{ packageName }}</stache-code>
+          </a>
+      </h4>
+      <ng-content select="sky-demo-page-summary"></ng-content>
+    </stache-page-summary>
 
-  <ng-container *ngIf="npmInstall">
-    <stache-page-anchor>
-      Installation
-    </stache-page-anchor>
-    <p>
-      <span *ngIf="!installOnly">To use any exports from <span *ngFor="let moduleName of skyuxModulesForDisplay"><stache-code>{{ moduleName }}</stache-code></span>, you must install it as a dependency to your project.</span> In the command prompt, run the following command from your SPA's root directory:
-    </p>
-    <sky-code-block [code]="npmInstall"></sky-code-block>
-    <p *ngIf="!installOnly">
-      After installation, you need to make any exports from <span *ngFor="let moduleName of skyuxModulesForDisplay"><stache-code>{{ moduleName }}</stache-code></span> available to your SPA by adding the module to the <stache-code>exports</stache-code> section of your SPA's main module. If you are using the SKY UX SDK, add <span *ngFor="let moduleName of skyuxModulesForDisplay"><stache-code>{{ moduleName }}</stache-code></span> as an export in your <stache-code>app-sky.module.ts</stache-code> file.
-    </p>
-  </ng-container>
+    <ng-container *ngIf="npmInstall">
+      <stache-page-anchor>
+        Installation
+      </stache-page-anchor>
+      <p>
+        <span *ngIf="!installOnly">To use any exports from <span *ngFor="let moduleName of skyuxModulesForDisplay"><stache-code>{{ moduleName }}</stache-code></span>, you must install it as a dependency to your project.</span> In the command prompt, run the following command from your SPA's root directory:
+      </p>
+      <sky-code-block [code]="npmInstall"></sky-code-block>
+      <p *ngIf="!installOnly">
+        After installation, you need to make any exports from <span *ngFor="let moduleName of skyuxModulesForDisplay"><stache-code>{{ moduleName }}</stache-code></span> available to your SPA by adding the module to the <stache-code>exports</stache-code> section of your SPA's main module. If you are using the SKY UX SDK, add <span *ngFor="let moduleName of skyuxModulesForDisplay"><stache-code>{{ moduleName }}</stache-code></span> as an export in your <stache-code>app-sky.module.ts</stache-code> file.
+      </p>
+    </ng-container>
 
-  <ng-content select="sky-demo-page-properties"></ng-content>
-  <ng-content select="sky-demo-page-example"></ng-content>
+    <ng-content select="sky-demo-page-properties"></ng-content>
+    <ng-content select="sky-demo-page-example"></ng-content>
 
-  <ng-content></ng-content>
-</stache>
+    <ng-content></ng-content>
+  </stache>
+</div>
