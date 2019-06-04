@@ -62,3 +62,26 @@ $app-info-padding: 45px;
 .row-developer ::ng-deep .stache-layout-wrapper {
   min-height: auto !important;
 }
+
+
+.screenshot {
+  box-sizing: border-box;
+  border: 30px solid;
+
+  &.screenshot-info {
+    border-color: $sky-background-color-info-light;
+  }
+
+  &.screenshot-success {
+    border-color: $sky-background-color-success;
+  }
+
+  &.screenshot-danger {
+    border-color: $sky-background-color-danger;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+  }
+}
