@@ -28,4 +28,4 @@ before_install:
 
 # Identical to package.json except for travis wait
 script:
-  - skyux lint && skyux test && skyux e2e && travis_wait skyux build --logFormat none --output-keep-alive
+  - skyux lint && skyux test && skyux e2e && skyux build
