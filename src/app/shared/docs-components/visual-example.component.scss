@@ -1,0 +1,15 @@
+.visual-example{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: 50px; //$sky-margin-stacked-content-section;
+  
+  .visual-example-text {
+    flex: 0 0 320px;
+    margin-right: 30px;
+  }
+  
+  .visual-example-image {
+    flex: 0;
+  }
+}
