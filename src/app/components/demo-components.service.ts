@@ -842,7 +842,8 @@ export class SkyDemoComponentsService {
             'SkyCheckboxModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyRepeaterDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('SkyRepeaterDemoComponent'),
+        disableStackblitz: true
       },
       {
         name: 'Search',
