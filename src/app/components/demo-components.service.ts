@@ -689,13 +689,17 @@ export class SkyDemoComponentsService {
         url: '/components/modal',
         imports: {
           '@skyux/modals': [
-            'SkyModalModule'
+            'SkyModalModule',
+            'SkyConfirmModule'
           ],
           '@skyux/indicators': [
             'SkyAlertModule'
           ],
           '@skyux/tiles': [
             'SkyTilesModule'
+          ],
+          '@skyux/forms': [
+            'SkyCheckboxModule'
           ]
         },
         getCodeFiles: () => this.getDemoFiles('SkyModalDemoComponent')

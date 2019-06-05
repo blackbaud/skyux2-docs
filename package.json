@@ -2,9 +2,6 @@
   "name": "skyux2",
   "version": "1.0.0",
   "description": "Documentation for SKY UX",
-  "engines": {
-    "node": ">=6.11.1"
-  },
   "scripts": {
     "test": "skyux lint && skyux test && skyux e2e && skyux build"
   },
@@ -26,7 +23,7 @@
     "@blackbaud/skyux-lib-code-block": "1.2.0",
     "@blackbaud/skyux-lib-media": "1.0.0",
     "@blackbaud/skyux-lib-stache": "3.1.0",
-    "@blackbaud/skyux2-demos": "1.0.0-alpha.0",
+    "@blackbaud/skyux2-demos": "1.0.0-alpha.1",
     "@skyux/action-bars": "3.0.1",
     "@skyux/animations": "3.0.0",
     "@skyux/assets": "3.0.0",
