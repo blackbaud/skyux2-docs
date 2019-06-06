@@ -8,10 +8,6 @@
     </p>
   </stache-page-summary>
 
-  <sky-alert alertType="info">
-    SKY UX Builder version <stache-code>1.14</stache-code> or later is required for a library to provide its own resource files. The consuming SPA must also be on version <stache-code>1.14</stache-code> or later.
-  </sky-alert>
-
 <stache-page-anchor>
   Localization for libraries
 </stache-page-anchor>
@@ -150,7 +146,7 @@
   </stache-page-anchor>
 
   <p>
-    SKY UX Builder provides the capability to declare localization strings <a routerLink="/learn/reference/naming-and-placement">in a JSON file </a> and then reference those strings throughout your SPA using the <stache-code>skyAppResources</stache-code> pipe or the <stache-code>SkyAppResourcesService</stache-code> service in <stache-code>@skyux/i18n</stache-code>.
+    SKY UX Builder enables you to declare localization strings <a routerLink="/learn/reference/naming-and-placement">in a JSON file </a> and then reference those strings throughout your SPA using the <stache-code>skyAppResources</stache-code> pipe or the <stache-code>SkyAppResourcesService</stache-code> service in <stache-code>@skyux/i18n</stache-code>.
   </p>
 
   <h3>
@@ -160,12 +156,7 @@
   <ol>
     <li>
       <p>
-        In the <stache-code>src/assets/locales</stache-code> folder, open the <stache-code>resources_en_US.json</stache-code> file.
-      </p>
-    </li>
-    <li>
-      <p>
-        Declare the localization strings to reuse throughout your SPA. Using JSON structure, specify a string name and then provide the string and a description.
+        In the <stache-code>src/assets/locales</stache-code> folder, declare localization strings to use throughout your SPA in the <stache-code>resources_en_US.json</stache-code> file. Use JSON structure to specify a string name, and then provide the string and a description.
       </p>
       <sky-code-block languageType="markup">
         {
@@ -178,7 +169,7 @@
     </li>
     <li>
       <p>
-        Reference the localization strings using the <stache-code>skyAppResources</stache-code> pipe or the <stache-code>SkyAppResourcesService</stache-code> service.
+        Reference the localization strings with the <stache-code>skyAppResources</stache-code> pipe or the <stache-code>SkyAppResourcesService</stache-code> service.
       </p>
 
       <ul>
@@ -211,12 +202,7 @@
   <ol>
     <li>
       <p>
-        In the <stache-code>src/assets/locales</stache-code> folder, open the <stache-code>resources_en_US.json</stache-code> file.
-      </p>
-    </li>
-    <li>
-      <p>
-        Declare templated localization strings with .NET-style tokens in the string that you can replace with dynamic values. For example:
+        In the <stache-code>src/assets/locales</stache-code> folder, open the <stache-code>resources_en_US.json</stache-code> file and declare templated localization strings with .NET-style tokens in the string that you can replace with dynamic values. For example:
       </p>
       <sky-code-block languageType="markup">
         {
@@ -269,7 +255,7 @@
   </h3>
 
   <p>
-    If your application determines the locale through a different mechanism, such as a setting stored in a database, you can provide a custom implementation of the <stache-code>SkyAppLocaleProvider</stache-code>.
+    If your application determines the locale through a mechanism other than the browser's default, such as a setting stored in a database, you can provide a custom implementation of the <stache-code>SkyAppLocaleProvider</stache-code>.
   </p>
 
   <p>
