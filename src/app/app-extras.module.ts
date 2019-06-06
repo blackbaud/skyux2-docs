@@ -4,7 +4,7 @@ import {
 
 import {
   StacheModule
-} from'@blackbaud/stache';
+} from'@blackbaud/skyux-lib-stache';
 
 import {
   SkyDemoComponentsModule
@@ -20,6 +20,10 @@ import {
 
 require('style-loader!./styles.scss');
 
+import {
+  AppSkyModule
+} from './app-sky.module';
+
 @NgModule({
   entryComponents: [
     SkyInlineFormDemoTileComponent
@@ -29,6 +33,7 @@ require('style-loader!./styles.scss');
     StacheModule
   ],
   exports: [
+    AppSkyModule,
     SkyDemoComponentsModule,
     StacheModule
   ],

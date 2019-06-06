@@ -5,7 +5,7 @@
   
   <stache-page-summary>
     <p>
-      Two interacting principles guide SKY UX hyperlinks and <a routerLink="/components/button">buttons</a>: style and implementation. Style determines the appropriate appearance of an affordance to the user, while implementation involves the core HTML decision to use the <stache-code>&lt;a&gt;</stache-code> element or the <stache-code>&lt;button&gt;</stache-code> element. In SKY UX, these guidelines overlap and interact: Differences in styling do not need to correspond to the use of different tags.
+      Two interacting principles guide SKY UX hyperlinks and <a routerLink="/components/button">buttons</a>: style and implementation. Style determines the appropriate appearance of an affordance to the user, while implementation involves the core HTML decision to use the <sky-code>&lt;a&gt;</sky-code> element or the <sky-code>&lt;button&gt;</sky-code> element. In SKY UX, these guidelines overlap and interact: Differences in styling do not need to correspond to the use of different tags.
     </p>
   </stache-page-summary>
 
@@ -98,7 +98,7 @@
   </stache-page-anchor>
   
   <p>
-    While SKY UX styling properties allow <stache-code>&lt;a&gt;</stache-code> and <stache-code>&lt;button&gt;</stache-code> elements to appear interchangeable, subtle differences in their behavior make it important to select the correct implementation. Most notably, these elements differ in:
+    While SKY UX styling properties allow <sky-code>&lt;a&gt;</sky-code> and <sky-code>&lt;button&gt;</sky-code> elements to appear interchangeable, subtle differences in their behavior make it important to select the correct implementation. Most notably, these elements differ in:
   </p>
   
   <ul>
@@ -131,18 +131,18 @@
   <ol>
     <li>
       <p>
-        If the ONLY result when users click, tap, or select the affordance is loading a new URL in the browser, then implement the affordance as an <stache-code>&lt;a&gt;</stache-code> element.
+        If the ONLY result when users click, tap, or select the affordance is loading a new URL in the browser, then implement the affordance as an <sky-code>&lt;a&gt;</sky-code> element.
       </p>
     </li>
     <li>
       <p>
-        Otherwise, implement the affordance as a <stache-code>&lt;button&gt;</stache-code> element.
+        Otherwise, implement the affordance as a <sky-code>&lt;button&gt;</sky-code> element.
       </p>
     </li>
   </ol>
   
   <p>
-    In other words, <stache-code>&lt;a&gt;</stache-code> elements are only appropriate when an affordance changes nothing about the state of the system and the only result is that the user traverses from one view of content to another. For example, a record page may contain an affordance to delete the record. If a user activates this affordance, the browser redirects to a new URL because the existing page presumably ceases to exist. However, since this also impacts the system by deleting data, you should implement the affordance as a <stache-code>&lt;button&gt;</stache-code> element.
+    In other words, <sky-code>&lt;a&gt;</sky-code> elements are only appropriate when an affordance changes nothing about the state of the system and the only result is that the user traverses from one view of content to another. For example, a record page may contain an affordance to delete the record. If a user activates this affordance, the browser redirects to a new URL because the existing page presumably ceases to exist. However, since this also impacts the system by deleting data, you should implement the affordance as a <sky-code>&lt;button&gt;</sky-code> element.
   </p>
   
 </stache>

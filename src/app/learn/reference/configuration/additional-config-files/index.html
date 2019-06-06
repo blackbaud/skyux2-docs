@@ -6,7 +6,7 @@
 
   <stache-page-summary>
     <p>
-      The SKY UX template provides the <stache-code>skyuxconfig.json</stache-code> file to specify configuration settings. In addition, you can create configuration files with the <stache-code>skyuxconfig.[COMMAND].json</stache-code> naming convention to apply configuration settings to specific <a routerLink="/learn/reference/cli-commands">SKY UX CLI commands</a>.
+      The SKY UX template provides the <sky-code>skyuxconfig.json</sky-code> file to specify configuration settings. In addition, you can create configuration files with the <sky-code>skyuxconfig.[COMMAND].json</sky-code> naming convention to apply configuration settings to specific <a routerLink="/learn/reference/cli-commands">SKY UX CLI commands</a>.
     </p>
   </stache-page-summary>
 
@@ -17,8 +17,8 @@
   <ol>
     <li>
       <p>
-        In a local editor, create a configuration file in the root directory alongside the project's default <stache-code>skyuxconfig.json</stache-code> file. Follow the <stache-code>skyuxconfig.[COMMAND].json</stache-code> naming convention.</p>
-        <p>For example, to apply configuration settings when <stache-code>skyux test</stache-code> runs, create <stache-code>skyuxconfig.test.json</stache-code>.
+        In a local editor, create a configuration file in the root directory alongside the project's default <sky-code>skyuxconfig.json</sky-code> file. Follow the <sky-code>skyuxconfig.[COMMAND].json</sky-code> naming convention.</p>
+        <p>For example, to apply configuration settings when <sky-code>skyux test</sky-code> runs, create <sky-code>skyuxconfig.test.json</sky-code>.
         </p>
       </li>
       <li>
@@ -26,7 +26,7 @@
           In the new file, specify the configuration settings to apply when the command runs.
         </p>
         <p>
-          For example, you can specify a mock server URL to use when you run <stache-code>skyux test</stache-code>.
+          For example, you can specify a mock server URL to use when you run <sky-code>skyux test</sky-code>.
         </p>
         <sky-code-block languageType="js">{
   "appSettings": {
@@ -37,10 +37,10 @@
     </li>
     <li>
       <p>
-        Save your changes. When you run SKY UX CLI commands, SKY UX automatically reads any files with the <stache-code>skyuxconfig.[COMMAND].json</stache-code> naming convention.
+        Save your changes. When you run SKY UX CLI commands, SKY UX automatically reads any files with the <sky-code>skyuxconfig.[COMMAND].json</sky-code> naming convention.
       </p>
       <p>
-        For example, SKY UX includes and merges the settings in <stache-code>skyuxconfig.test.json</stache-code> when you run <stache-code>skyux test</stache-code>.
+        For example, SKY UX includes and merges the settings in <sky-code>skyuxconfig.test.json</sky-code> when you run <sky-code>skyux test</sky-code>.
       </p>
     </li>
   </ol>
@@ -52,32 +52,32 @@
   <ul>
     <li>
       <p>
-        <stache-code>skyuxconfig.json</stache-code> — Specifies shared configuration settings for all types of execution. If you create configuration files for specific SKY UX CLI commands, the settings in those files override this configuration file.
+        <sky-code>skyuxconfig.json</sky-code> — Specifies shared configuration settings for all types of execution. If you create configuration files for specific SKY UX CLI commands, the settings in those files override this configuration file.
       </p>
     </li>
     <li>
       <p>
-        <stache-code>skyuxconfig.build.json</stache-code> — Specifies configuration settings for production builds. In general, put these production settings directly in <stache-code>skyuxconfig.json</stache-code> and override them as necessary in other configuration files.
+        <sky-code>skyuxconfig.build.json</sky-code> — Specifies configuration settings for production builds. In general, put these production settings directly in <sky-code>skyuxconfig.json</sky-code> and override them as necessary in other configuration files.
       </p>
     </li>
     <li>
       <p>
-        <stache-code>skyuxconfig.e2e.json</stache-code> — Specifies configuration settings for end-to-end tests, although we recommend using unit tests instead of end-to-end tests based on <a href="https://angular.io/guide/testing#why-not-rely-on-e2e-tests-of-dom-integration">Angular’s guidance on testing</a>.
+        <sky-code>skyuxconfig.e2e.json</sky-code> — Specifies configuration settings for end-to-end tests, although we recommend using unit tests instead of end-to-end tests based on <a href="https://angular.io/guide/testing#why-not-rely-on-e2e-tests-of-dom-integration">Angular’s guidance on testing</a>.
       </p>
     </li>
     <li>
       <p>
-        <stache-code>skyuxconfig.serve.json</stache-code> — Specifies configuration settings for local development runs.
+        <sky-code>skyuxconfig.serve.json</sky-code> — Specifies configuration settings for local development runs.
       </p>
     </li>
     <li>
       <p>
-        <stache-code>skyuxconfig.test.json</stache-code> — Specifies configuration settings for unit tests.
+        <sky-code>skyuxconfig.test.json</sky-code> — Specifies configuration settings for unit tests.
       </p>
     </li>
     <li>
       <p>
-        <stache-code>skyuxconfig.watch.json</stache-code> — Specifies configuration settings for when the <stache-code>watch</stache-code> command runs tests and watches the file system for changes.
+        <sky-code>skyuxconfig.watch.json</sky-code> — Specifies configuration settings for when the <sky-code>watch</sky-code> command runs tests and watches the file system for changes.
       </p>
     </li>
   </ul>
@@ -87,10 +87,10 @@
   </stache-page-anchor>
 
   <p>
-    <a routerLink="/learn/reference/configuration">The <stache-code>params</stache-code> configuration property</a> allows you to specify querystring parameters to track and exposes them through <stache-code>SkyAppConfig</stache-code>. To apply parameters to specific SKY UX CLI commands or apply specific values to CLI commands, you can create <stache-code>skyuxconfig.[COMMAND].json</stache-code> files and add your querystring parameters to the <stache-code>params</stache-code> property.
+    <a routerLink="/learn/reference/configuration">The <sky-code>params</sky-code> configuration property</a> allows you to specify querystring parameters to track and exposes them through <sky-code>SkyAppConfig</sky-code>. To apply parameters to specific SKY UX CLI commands or apply specific values to CLI commands, you can create <sky-code>skyuxconfig.[COMMAND].json</sky-code> files and add your querystring parameters to the <sky-code>params</sky-code> property.
   </p>
   <p>
-    For example, if you use a specific environment ID and service ID for testing, you can specify default <stache-code>svcid</stache-code> and <stache-code>envid</stache-code> values for local development in <stache-code>skyuxconfig.serve.json</stache-code>. This allows you to include the environment ID and service ID for testing when you serve without pasting the values in the URL. In addition, if you use the global nav exclusively and don’t want the local nav alongside it, you can set the <stache-code>routes</stache-code> property to <stache-code>false</stache-code>.
+    For example, if you use a specific environment ID and service ID for testing, you can specify default <sky-code>svcid</sky-code> and <sky-code>envid</sky-code> values for local development in <sky-code>skyuxconfig.serve.json</sky-code>. This allows you to include the environment ID and service ID for testing when you serve without pasting the values in the URL. In addition, if you use the global nav exclusively and don’t want the local nav alongside it, you can set the <sky-code>routes</sky-code> property to <sky-code>false</sky-code>.
   </p>
   <sky-code-block>
 {
@@ -106,7 +106,7 @@
 }
   </sky-code-block>
   <p>
-    The following code sample illustrates how you can use SKY UX Builder to track parameters in the URL and expose them through your app using the <stache-code>SkyAppConfig</stache-code> class:
+    The following code sample illustrates how you can use SKY UX Builder to track parameters in the URL and expose them through your app using the <sky-code>SkyAppConfig</sky-code> class:
   </p>
 
   <sky-code-block languageType="typescript">
@@ -125,7 +125,7 @@ export class HomeComponent {
 }
   </sky-code-block>
   <p>
-    For more information about <stache-code>envid</stache-code> and other querystring parameters, see <a routerLink="/learn/reference/configuration">the <stache-code>params</stache-code> configuration property</a>.
+    For more information about <sky-code>envid</sky-code> and other querystring parameters, see <a routerLink="/learn/reference/configuration">the <sky-code>params</sky-code> configuration property</a>.
   </p>
 
 </stache>

@@ -13,7 +13,7 @@
     For Blackbaud developers, the sticky settings functionality is available first-class through the UI Config Service. This service is for internal Blackbaud use only. Blackbaud developers can learn more about how to implement sticky settings on <a href="https://docs.blackbaud.com/ui-config-service-docs/">the UI Config Service website</a>.
   </sky-alert>
   <p>
-    To implement sticky settings, you must provide a class for <stache-code>SkyUIConfigService</stache-code> in your SPA's <stache-code>app-extras.module.ts</stache-code> file.
+    To implement sticky settings, you must provide a class for <sky-code>SkyUIConfigService</sky-code> in your SPA's <sky-code>app-extras.module.ts</sky-code> file.
   </p>
   <sky-code-block languageType="typescript">
     import {
@@ -34,7 +34,7 @@
     })
   </sky-code-block>
   <p>
-    Next, you implement a service to retrieve stored settings. The following example provides <stache-code>AppUIConfigService</stache-code> to utilize the <a href="https://github.com/dscheerens/ngx-webstorage-service">ngx-webstorage-service</a>. You could just as easily implement the service to call your backend if you store settings across devices.
+    Next, you implement a service to retrieve stored settings. The following example provides <sky-code>AppUIConfigService</sky-code> to utilize the <a href="https://github.com/dscheerens/ngx-webstorage-service">ngx-webstorage-service</a>. You could just as easily implement the service to call your backend if you store settings across devices.
   </p>
   <sky-code-block languageType="typescript">
 import {
@@ -78,7 +78,7 @@ export class SkyAppUIConfigService {
 }
   </sky-code-block>
   <p>
-    Currently, the <a routerLink="/components/grid">grid component</a> and <a routerLink="/components/tile">tile component</a> both support a <stache-code>settingsKey</stache-code> property for sticky settings. When you provide this property, the components automatically call the <stache-code>SkyUIConfigService</stache-code> stub to retrieve stored settings during appropriate actions. This is why you provide your own implementation as shown above.
+    Currently, the <a routerLink="/components/grid">grid component</a> and <a routerLink="/components/tile">tile component</a> both support a <sky-code>settingsKey</sky-code> property for sticky settings. When you provide this property, the components automatically call the <sky-code>SkyUIConfigService</sky-code> stub to retrieve stored settings during appropriate actions. This is why you provide your own implementation as shown above.
   </p>
 
 </stache>
