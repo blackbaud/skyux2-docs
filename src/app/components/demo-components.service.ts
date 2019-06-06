@@ -36,7 +36,7 @@ export class SkyDemoComponentsService {
             'SkyActionButtonModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyActionButtonDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('Action button')
       },
       {
         name: 'Alert',
@@ -51,7 +51,7 @@ export class SkyDemoComponentsService {
             'SkyCheckboxModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyAlertDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('Alert')
       },
       {
         name: 'Autocomplete',
@@ -67,7 +67,7 @@ export class SkyDemoComponentsService {
             'SkyIconModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyAutocompleteDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('Autocomplete')
       },
       {
         name: 'Avatar',
@@ -82,7 +82,7 @@ export class SkyDemoComponentsService {
             'SkyCheckboxModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyAvatarDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('Avatar')
       },
       {
         name: 'Button',
@@ -106,7 +106,7 @@ export class SkyDemoComponentsService {
             'SkyDropdownModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyCardDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('Card')
       },
       {
         name: 'Checkbox',
@@ -118,7 +118,7 @@ export class SkyDemoComponentsService {
             'SkyCheckboxModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyCheckboxDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('Checkbox')
       },
       {
         name: 'Code block',
@@ -135,7 +135,7 @@ export class SkyDemoComponentsService {
           '@blackbaud/skyux-lib-clipboard': '*',
           'prismjs': '*'
         },
-        getCodeFiles: () => this.getDemoFiles('SkyCodeBlockDemoComponent'),
+        getCodeFiles: () => this.getDemoFiles('Code block'),
         disableStackblitz: true
       },
       {
@@ -148,7 +148,7 @@ export class SkyDemoComponentsService {
             'SkyColorpickerModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyColorpickerDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('Colorpicker')
       },
       {
         name: 'Confirm',
@@ -164,7 +164,7 @@ export class SkyDemoComponentsService {
             'SkyAlertModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyConfirmDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('Confirm')
       },
       {
         name: 'Copy to clipboard',
@@ -180,7 +180,7 @@ export class SkyDemoComponentsService {
         dependencies: {
           '@blackbaud/skyux-lib-code-block': '*'
         },
-        getCodeFiles: () => this.getDemoFiles('SkyCopyToClipboardDemoComponent'),
+        getCodeFiles: () => this.getDemoFiles('Copy to clipboard'),
         disableStackblitz: true
       },
       {
@@ -193,14 +193,14 @@ export class SkyDemoComponentsService {
             'SkyDatepickerModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyDatepickerDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('Datepicker')
       },
       {
         name: 'Date range picker',
         icon: 'calendar',
         summary: `The date range picker component creates a text input for users to select a date range from a set of well-known options.`,
         url: '/components/date-range-picker',
-        getCodeFiles: () => this.getDemoFiles('SkyDateRangePickerDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('Date range picker')
       },
       {
         name: 'Definition list',
@@ -212,7 +212,7 @@ export class SkyDemoComponentsService {
             'SkyDefinitionListModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyDefinitionListDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('Definition list')
       },
       {
         name: 'Dropdown',
@@ -227,7 +227,7 @@ export class SkyDemoComponentsService {
             'SkyFluidGridModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyDropdownDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('Dropdown')
       },
       {
         name: 'Email validation',
@@ -240,7 +240,7 @@ export class SkyDemoComponentsService {
             'SkyEmailValidationModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyEmailValidationDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('Email validation')
       },
       {
         name: 'Error',
@@ -253,7 +253,7 @@ export class SkyDemoComponentsService {
             'SkyErrorModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyErrorDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('Error')
       },
       {
         name: 'File attachment',
@@ -268,7 +268,7 @@ export class SkyDemoComponentsService {
             'SkyAlertModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyFileAttachmentDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('File attachment')
       },
       {
         name: 'Filter',
@@ -295,8 +295,8 @@ export class SkyDemoComponentsService {
           ]
         },
         getCodeFiles: () => [
-          ...this.getDemoFiles('SkyFilterDemoComponent'),
-          ...this.getDemoFiles('SkyFilterInlineDemoComponent')
+          ...this.getDemoFiles('Filter'),
+          ...this.getDemoFiles('Filter inline')
         ]
       },
       {
@@ -310,7 +310,7 @@ export class SkyDemoComponentsService {
             'SkyFluidGridModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyFluidGridDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('Fluid grid')
       },
       {
         name: 'Flyout',
@@ -348,7 +348,7 @@ export class SkyDemoComponentsService {
           '@skyux/list-builder-view-checklist': '*',
           '@skyux/inline-form': '*'
         },
-        getCodeFiles: () => this.getDemoFiles('SkyFlyoutDemoComponent'),
+        getCodeFiles: () => this.getDemoFiles('Flyout'),
         disableStackblitz: true
       },
       {
@@ -370,7 +370,7 @@ export class SkyDemoComponentsService {
         dependencies: {
           '@skyux/list-builder-common': '*'
         },
-        getCodeFiles: () => this.getDemoFiles('SkyGridDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('Grid')
       },
       {
         name: 'Help inline',
@@ -382,7 +382,7 @@ export class SkyDemoComponentsService {
             'SkyHelpInlineModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyHelpInlineDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('Help inline')
       },
       {
         name: 'Highlight',
@@ -397,7 +397,7 @@ export class SkyDemoComponentsService {
             'SkyCheckboxModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyTextHighlightDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('Highlight')
       },
       {
         name: 'Icon',
@@ -409,7 +409,7 @@ export class SkyDemoComponentsService {
             'SkyIconModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyIconDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('Icon')
       },
       {
         name: 'Infinite scroll',
@@ -439,7 +439,7 @@ export class SkyDemoComponentsService {
           '@skyux/list-builder-common': '*',
           '@skyux/lookup': '*'
         },
-        getCodeFiles: () => this.getDemoFiles('SkyInfiniteScrollDemoComponent'),
+        getCodeFiles: () => this.getDemoFiles('Infinite scroll'),
         disableStackblitz: true
       },
       {
@@ -447,7 +447,7 @@ export class SkyDemoComponentsService {
         icon: 'keyboard-o',
         summary: 'The inline form component renders a form in the current view rather than in a modal.',
         url: '/components/inline-form',
-        getCodeFiles: () => this.getDemoFiles('SkyInlineFormDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('Inline form')
       },
       {
         name: 'Key info',
@@ -462,7 +462,7 @@ export class SkyDemoComponentsService {
             'SkyFluidGridModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyKeyInfoDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('Key info')
       },
       {
         name: 'Label',
@@ -474,7 +474,7 @@ export class SkyDemoComponentsService {
             'SkyLabelModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyLabelDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('Label')
       },
       {
         name: 'Link records',
@@ -489,7 +489,7 @@ export class SkyDemoComponentsService {
         dependencies: {
           'microedge-rxstate': '*'
         },
-        getCodeFiles: () => this.getDemoFiles('SkyLinkRecordsDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('Link records')
       },
       {
         name: 'List',
@@ -510,8 +510,8 @@ export class SkyDemoComponentsService {
         dependencies: listDependencies,
         disableStackblitz: true,
         getCodeFiles: () => [
-          ...this.getDemoFiles('SkyListDemoComponent'),
-          ...this.getDemoFiles('SkyListProviderDemoComponent')
+          ...this.getDemoFiles('List'),
+          ...this.getDemoFiles('List provider')
         ],
         components: [
           {
@@ -542,8 +542,8 @@ export class SkyDemoComponentsService {
             dependencies: listDependencies,
             disableStackblitz: true,
             getCodeFiles: () => [
-              ...this.getDemoFiles('SkyListFiltersDemoComponent'),
-              ...this.getDemoFiles('SkyListFiltersInlineDemoComponent')
+              ...this.getDemoFiles('List filters'),
+              ...this.getDemoFiles('List filters inline')
             ]
           },
           {
@@ -568,7 +568,7 @@ export class SkyDemoComponentsService {
             },
             dependencies: listDependencies,
             disableStackblitz: true,
-            getCodeFiles: () => this.getDemoFiles('SkyListPagingDemoComponent')
+            getCodeFiles: () => this.getDemoFiles('List paging')
           },
           {
             name: 'List toolbar',
@@ -602,8 +602,8 @@ export class SkyDemoComponentsService {
             dependencies: listDependencies,
             disableStackblitz: true,
             getCodeFiles: () => [
-              ...this.getDemoFiles('SkyListToolbarDemoComponent'),
-              ...this.getDemoFiles('SkyListToolbarCustomDemoComponent')
+              ...this.getDemoFiles('List toolbar'),
+              ...this.getDemoFiles('List toolbar custom')
             ]
           },
           {
@@ -626,7 +626,7 @@ export class SkyDemoComponentsService {
             },
             dependencies: listDependencies,
             disableStackblitz: true,
-            getCodeFiles: () => this.getDemoFiles('SkyListViewChecklistDemoComponent')
+            getCodeFiles: () => this.getDemoFiles('List view checklist')
           },
           {
             name: 'List view grid',
@@ -649,7 +649,7 @@ export class SkyDemoComponentsService {
             },
             dependencies: listDependencies,
             disableStackblitz: true,
-            getCodeFiles: () => this.getDemoFiles('SkyListViewGridDemoComponent')
+            getCodeFiles: () => this.getDemoFiles('List view grid')
           }
         ]
       },
@@ -664,7 +664,7 @@ export class SkyDemoComponentsService {
             'SkyLookupModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyLookupDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('Lookup')
       },
       {
         name: 'Media queries',
@@ -680,7 +680,7 @@ export class SkyDemoComponentsService {
             'SkyAlertModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyMediaQueryDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('Media queries')
       },
       {
         name: 'Modal',
@@ -702,7 +702,7 @@ export class SkyDemoComponentsService {
             'SkyCheckboxModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyModalDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('Modal')
       },
       {
         name: 'Navbar',
@@ -717,7 +717,7 @@ export class SkyDemoComponentsService {
             'SkyDropdownModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyNavbarDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('Navbar')
       },
       {
         name: 'Numeric',
@@ -732,7 +732,7 @@ export class SkyDemoComponentsService {
             'SkyDefinitionListModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyNumericDemoComponent'),
+        getCodeFiles: () => this.getDemoFiles('Numeric'),
         disableStackblitz: true
       },
       {
@@ -760,7 +760,7 @@ export class SkyDemoComponentsService {
             'SkyMediaQueryModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyPageSummaryDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('Page summary')
       },
       {
         name: 'Paging',
@@ -778,7 +778,7 @@ export class SkyDemoComponentsService {
         dependencies: {
           '@skyux/lists': '3.2.2'
         },
-        getCodeFiles: () => this.getDemoFiles('SkyPagingDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('Paging')
       },
       {
         name: 'Popover',
@@ -792,7 +792,7 @@ export class SkyDemoComponentsService {
             'SkyPopoverModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyPopoverDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('Popover')
       },
       {
         name: 'Progress indicator',
@@ -811,7 +811,7 @@ export class SkyDemoComponentsService {
             'SkyPopoverModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyProgressIndicatorDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('Progress indicator')
       },
       {
         name: 'Radio button',
@@ -823,7 +823,7 @@ export class SkyDemoComponentsService {
             'SkyRadioModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyRadioDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('Radio button')
       },
       {
         name: 'Repeater',
@@ -842,7 +842,7 @@ export class SkyDemoComponentsService {
             'SkyCheckboxModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyRepeaterDemoComponent'),
+        getCodeFiles: () => this.getDemoFiles('Repeater'),
         disableStackblitz: true
       },
       {
@@ -865,7 +865,7 @@ export class SkyDemoComponentsService {
             'SkyInlineFormModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkySearchDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('Search')
       },
       {
         name: 'Sectioned form',
@@ -884,7 +884,7 @@ export class SkyDemoComponentsService {
             'SkyCheckboxModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkySectionedFormDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('Sectioned form')
       },
       {
         name: 'Select field',
@@ -915,7 +915,7 @@ export class SkyDemoComponentsService {
           '@skyux/lists': '*',
           '@skyux/inline-form': '*'
         },
-        getCodeFiles: () => this.getDemoFiles('SkySelectFieldDemoComponent'),
+        getCodeFiles: () => this.getDemoFiles('Select field'),
         disableStackblitz: true
       },
       {
@@ -940,7 +940,7 @@ export class SkyDemoComponentsService {
           'microedge-rxstate': '*',
           '@skyux/list-builder-common': '*'
         },
-        getCodeFiles: () => this.getDemoFiles('SkySortDemoComponent'),
+        getCodeFiles: () => this.getDemoFiles('Sort'),
         disableStackblitz: true
       },
       {
@@ -967,7 +967,7 @@ export class SkyDemoComponentsService {
             'SkyModalModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkySummaryActionBarDemoComponent'),
+        getCodeFiles: () => this.getDemoFiles('Summary action bar'),
         disableStackblitz: true
       },
       {
@@ -980,7 +980,7 @@ export class SkyDemoComponentsService {
             'SkyTabsModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyTabsDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('Tabs')
       },
       {
         name: 'Text expand',
@@ -993,7 +993,7 @@ export class SkyDemoComponentsService {
             'SkyTextExpandModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyTextExpandDemoComponent'),
+        getCodeFiles: () => this.getDemoFiles('Text expand'),
         disableStackblitz: true
       },
       {
@@ -1007,7 +1007,7 @@ export class SkyDemoComponentsService {
             'SkyTextExpandRepeaterModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyTextExpandRepeaterDemoComponent'),
+        getCodeFiles: () => this.getDemoFiles('Text expand repeater'),
         disableStackblitz: true
       },
       {
@@ -1021,7 +1021,7 @@ export class SkyDemoComponentsService {
             'SkyTilesModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyTileDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('Tile')
       },
       {
         name: 'Timepicker',
@@ -1033,7 +1033,7 @@ export class SkyDemoComponentsService {
             'SkyTimepickerModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyTimepickerDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('Timepicker')
       },
       {
         name: 'Toast',
@@ -1049,7 +1049,7 @@ export class SkyDemoComponentsService {
             'SkyRadioModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyToastDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('Toast')
       },
       {
         name: 'Tokens',
@@ -1061,7 +1061,7 @@ export class SkyDemoComponentsService {
             'SkyTokensModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyTokensDemoComponent'),
+        getCodeFiles: () => this.getDemoFiles('Tokens'),
         disableStackblitz: true
       },
       {
@@ -1077,7 +1077,7 @@ export class SkyDemoComponentsService {
             'SkyIconModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyToolbarDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('Toolbar')
       },
       {
         name: 'URL validation',
@@ -1089,7 +1089,7 @@ export class SkyDemoComponentsService {
             'SkyUrlValidationModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyUrlValidationDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('URL validation')
       },
       {
         name: 'Vertical tabs',
@@ -1101,7 +1101,7 @@ export class SkyDemoComponentsService {
             'SkyVerticalTabsetModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyVerticalTabsDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('Vertical tabs')
       },
       {
         name: 'Wait',
@@ -1113,7 +1113,7 @@ export class SkyDemoComponentsService {
             'SkyWaitModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyWaitDemoComponent')
+        getCodeFiles: () => this.getDemoFiles('Wait')
       },
       {
         name: 'Wizard',
@@ -1132,26 +1132,26 @@ export class SkyDemoComponentsService {
             'SkyCheckboxModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('SkyWizardDemoComponent'),
+        getCodeFiles: () => this.getDemoFiles('Wizard'),
         disableStackblitz: true
       }
     ];
   }
 
-  public getDemoFiles(componentConstructorName: string): any {
-    const docsDemo = this.docsDemoService.getComponent(componentConstructorName);
+  public getDemoFiles(componentName: string): any {
+    const docsDemo = this.docsDemoService.getComponent(componentName);
 
     if (!docsDemo) {
-      const skyDemo = this.skyDemoService.getComponent(componentConstructorName);
+      const skyDemo = this.skyDemoService.getComponent(componentName);
 
       if (!skyDemo) {
-        console.warn('No demo files found for:', componentConstructorName);
+        console.warn('No demo files found for:', componentName);
         return [];
       } else {
-        return this.skyDemoService.getComponent(componentConstructorName).files;
+        return this.skyDemoService.getComponent(componentName).files;
       }
     } else {
-      return this.docsDemoService.getComponent(componentConstructorName).files;
+      return this.docsDemoService.getComponent(componentName).files;
     }
   }
 }
