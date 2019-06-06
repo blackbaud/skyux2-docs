@@ -116,6 +116,7 @@
     "components/list-view-checklist": "components/list/checklist",
     "components/list-view-grid": "components/list/grid",
     "learn/get-started/basics/update-components": "learn/get-started/basics/modules",
-    "learn/reference/helpers/SkyAuthHttpClientModule": "learn/reference/helpers"
+    "learn/reference/helpers/SkyAuthHttpClientModule": "learn/reference/helpers",
+    "learn/get-started/advanced/add-entry-components": "learn/get-started/advanced/entry-components"
   }
 }
