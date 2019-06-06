@@ -10,7 +10,7 @@
   </stache-page-summary>
 
   <p>
-    To import the color variables, add <stache-code>@import '~@blackbaud/skyux/dist/scss/mixins';</stache-code> to the top of your SCSS file. Do not include <stache-code>node_modules</stache-code> in the path because the SKY UX package may not always be in the root of <stache-code>node_modules</stache-code> and <stache-code>~</stache-code> resolves the dependency in those cases.
+    To import the color variables, add <stache-code>@import '~@skyux/theme/scss/mixins';</stache-code> to the top of your SCSS file. Do not include <stache-code>node_modules</stache-code> in the path because the SKY UX package may not always be in the root of <stache-code>node_modules</stache-code> and <stache-code>~</stache-code> resolves the dependency in those cases.
   </p>
   <p>
     After you import the colors, you can reference them by the variable names that are listed in the <strong>Code</strong> columns below.
@@ -21,9 +21,9 @@
     Text
   </stache-page-anchor>
   
-  <sky-alert alertType="warning">
-    For text, ensure that the contrast between the text color and the background color is at least 4.5:1 to meet Web Content Accessibility Guidelines 2.0 level AA.
-  </sky-alert>
+  <p>
+    Ensure that the contrast between the text color and the background color is at least 4.5:1 to meet Web Content Accessibility Guidelines 2.0 level AA.
+  </p>
 
   <div class="definition-table definition-table-wide">
     <div class="definition-item">
@@ -131,6 +131,26 @@
   <stache-page-anchor>
     Backgrounds
   </stache-page-anchor>
+
+  <div class="definition-table definition-table-wide">
+    <div class="definition-item">
+      <div class="swatch" style="background-color: #ffffff; border: 1px solid #e2e3e4;"></div>
+    </div>
+    <div class="definition-props">
+      <div class="definition-usage">
+        <div class="sky-field-label">Usage</div>
+        <div>The default color for pages</div>
+      </div>
+      <div class="definition-code">
+        <div class="sky-field-label">Code</div>
+        <stache-code>$sky-background-color-page-default</stache-code>
+      </div>
+      <div class="definition-styling">
+        <div class="sky-field-label">Styling</div>
+        <div>#ffffff</div>
+      </div>
+    </div>
+  </div>
 
   <div class="definition-table definition-table-wide">
     <div class="definition-item">
