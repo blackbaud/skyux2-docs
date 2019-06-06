@@ -397,7 +397,7 @@ export class SkyDemoComponentsService {
             'SkyCheckboxModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('Highlight')
+        getCodeFiles: () => this.getDemoFiles('Text highlight')
       },
       {
         name: 'Icon',
@@ -680,7 +680,7 @@ export class SkyDemoComponentsService {
             'SkyAlertModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('Media queries')
+        getCodeFiles: () => this.getDemoFiles('Media query')
       },
       {
         name: 'Modal',
@@ -811,7 +811,7 @@ export class SkyDemoComponentsService {
             'SkyPopoverModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('Progress indicator')
+        getCodeFiles: () => this.getDemoFiles('Progress Indicator')
       },
       {
         name: 'Radio button',
@@ -823,7 +823,7 @@ export class SkyDemoComponentsService {
             'SkyRadioModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('Radio button')
+        getCodeFiles: () => this.getDemoFiles('Radio')
       },
       {
         name: 'Repeater',
