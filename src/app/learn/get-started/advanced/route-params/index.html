@@ -7,7 +7,10 @@
     SKY UX supports routes that contain <a href="https://angular.io/guide/router#route-parameters">Angular route parameters</a>. This allows you to use variables in your routes and complements the fact that SKY UX Builder automatically registers routes and creates components for all <sky-code>index.html</sky-code> files in the <sky-code>src/app</sky-code> directory.
   </p>
   <p>
-    To create a route parameter, you create a subfolder and prefix its name with an underscore. The subfolder name must be a valid TypeScript variable because SKY UX Builder creates a <sky-code>string</sky-code> variable with that name (minus the underscore). For example, if you create a page at <sky-code>src/app/dogs</sky-code> for users to view dogs that are up for adoption, you can use route parameters to display individual dogs by creating a <sky-code>src/app/dogs/_id</sky-code> subfolder and adding an <sky-code>index.html</sky-code> file with the following content:
+    To create a route parameter, you create a subfolder and prefix its name with an underscore. The subfolder name must be a valid TypeScript variable because SKY UX Builder creates a <sky-code>string</sky-code> variable with that name minus the underscore.
+  </p>
+  <p>
+    For example, if you create a page at <sky-code>src/app/dogs</sky-code> for users to view dogs that are up for adoption, you can use route parameters to display individual dogs by creating a <sky-code>src/app/dogs/_id</sky-code> subfolder and adding an <sky-code>index.html</sky-code> file with the following content:
   </p>
   <sky-code-block>
     You are viewing dog {{ id }}.

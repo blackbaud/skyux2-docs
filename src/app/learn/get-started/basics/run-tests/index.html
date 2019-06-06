@@ -24,22 +24,16 @@
   <p>
     <stache-include fileName="SkyAppTestModule-note.html"></stache-include>
   </p>
-    
+
   <ol>
     <li>
       <p>
-        To view the unit test spec files in a local editor, open the project's <sky-code>about.component.spec.ts</sky-code> file in the <sky-code>src/app/about</sky-code> folder and the <sky-code>home.component.spec.ts</sky-code> file in the <sky-code>src/app</sky-code> folder.
-      </p>
-      <p>
-        SKY UX unit tests should use the same name as the components or services that they test, but they should end with <sky-code>.spec.ts.</sky-code> The spec files should also be in the same folder as the components or services that they test.
+        To view the unit test spec files in a local editor, open the project's <sky-code>about.component.spec.ts</sky-code> file in the <sky-code>src/app/about</sky-code> folder and the <sky-code>home.component.spec.ts</sky-code> file in the <sky-code>src/app</sky-code> folder. SKY UX unit tests should use the same name as the components or services that they test, but they should end with <sky-code>.spec.ts.</sky-code> The spec files should also be in the same folder as the components or services that they test.
       </p>
     </li>
     <li>
       <p>
-        In the command prompt, enter <sky-code>skyux test</sky-code> to run the unit tests.
-      </p>
-      <p>
-        You can also use <sky-code>skyux watch</sky-code> to run the unit tests and watch the file system for changes. Tests run repeatedly as you save changes to files.
+        In the command prompt, enter <sky-code>skyux test</sky-code> to run the unit tests. You can also use <sky-code>skyux watch</sky-code> to run the unit tests and watch the file system for changes. Tests run repeatedly as you save changes to files.
       </p>
     </li>
     <li>
@@ -53,13 +47,13 @@
     Run sample end-to-end test
   </stache-page-anchor>
 
+  <stache-include fileName="e2e-recommendation.html"></stache-include>
   <p>
     End-to-end tests identify system dependencies and ensure that an application flows as expected from start to finish. You can follow the steps in this tutorial to run any end-to-end tests that you create.
   </p>
   <p>
     For information about end-to-end tests in SKY UX, see <a routerLink="/learn/reference/tests">the tests reference</a>. For tips and techniques on testing Angular applications, see the <a href="https://angular.io/guide/testing">Angular testing guidelines</a>. And for guidance on troubleshooting e2e tests, see <a href="https://github.com/angular/protractor/blob/master/docs/debugging.md">Debugging Protractor Tests</a>.
   </p>
-  <stache-include fileName="e2e-recommendation.html"></stache-include>
 
   <ol>
     <li>
@@ -78,15 +72,15 @@
       </p>
     </li>
   </ol>
-  
+
   <stache-page-anchor>
     Control test runs
   </stache-page-anchor>
-  
+
   <p>
     During development, you can use the following steps to control which tests to include in a test run.
   </p>
-  
+
   <h3>
     Exclude tests from a test run
   </h3>
@@ -98,7 +92,7 @@
   <h3>
     Explicitly include tests in a test run
   </h3>
-  
+
   <p>
     To limit a test run to only include a subset of tests, change <sky-code>it</sky-code> to <sky-code>fit</sky-code> or <sky-code>describe</sky-code> to <sky-code>fdescribe</sky-code>. The test run only includes those tests or test suites.
   </p>
