@@ -5,7 +5,7 @@ import {
 
 import {
   ListSortFieldSelectorModel
-} from '@blackbaud/skyux/dist/core';
+} from '@skyux/list-builder-common';
 
 @Component({
   selector: 'app-packages-grid',

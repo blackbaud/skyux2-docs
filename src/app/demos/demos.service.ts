@@ -152,7 +152,7 @@ export class SkyDocsDemoCodeService {
 
   public getComponent(name: string): any {
     const found = this.components.find((component: any) => {
-      return component.component.name === name;
+      return component.name === name;
     });
 
     return found;

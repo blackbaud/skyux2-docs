@@ -20,9 +20,12 @@ import {
 
 import {
   Subject
-} from 'rxjs/Subject';
+} from 'rxjs';
 
-import 'rxjs/add/operator/distinctUntilChanged';
+import {
+  distinctUntilChanged,
+  takeUntil
+} from 'rxjs/operators';
 
 @Component({
   selector: 'sky-date-range-picker-demo',
@@ -49,26 +52,26 @@ export class SkyDateRangePickerDemoComponent implements OnInit, OnDestroy {
       lastDonation: new FormControl()
     });
 
-    this.reactiveRange.statusChanges
-      .distinctUntilChanged()
-      .takeUntil(this.ngUnsubscribe)
-      .subscribe((status) => {
-        console.log(
-          'Date range status change:',
-          status,
-          this.reactiveRange.errors
-        );
-      });
+    this.reactiveRange.statusChanges.pipe(
+      distinctUntilChanged(),
+      takeUntil(this.ngUnsubscribe)
+    ).subscribe((status) => {
+      console.log(
+        'Date range status change:',
+        status,
+        this.reactiveRange.errors
+      );
+    });
 
-    this.reactiveRange.valueChanges
-      .distinctUntilChanged()
-      .takeUntil(this.ngUnsubscribe)
-      .subscribe((value: SkyDateRangeCalculation) => {
-        console.log(
-          'Date range value change:',
-          value
-        );
-      });
+    this.reactiveRange.valueChanges.pipe(
+      distinctUntilChanged(),
+      takeUntil(this.ngUnsubscribe)
+    ).subscribe((value: SkyDateRangeCalculation) => {
+      console.log(
+        'Date range value change:',
+        value
+      );
+    });
   }
 
   public ngOnDestroy(): void {
