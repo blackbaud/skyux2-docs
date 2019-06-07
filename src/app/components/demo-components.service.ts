@@ -382,7 +382,7 @@ export class SkyDemoComponentsService {
         name: 'Phone field',
         icon: 'phone',
         // tslint:disable-next-line
-        summary: `The phone field module creates a field and dropdown to validate international phone numbers.`,
+        summary: `The phone field module creates a button and text input to validate international phone numbers.`,
         url: '/components/phone-field',
         getCodeFiles: () => this.getDemoFiles('SkyPhoneFieldDemoComponent')
       },
