@@ -24,21 +24,21 @@
   <p>
     <stache-include fileName="SkyAppTestModule-note.html"></stache-include>
   </p>
-    
+
   <ol>
     <li>
       <p>
-        To view the unit test spec files in a local editor, open the project's <stache-code>about.component.spec.ts</stache-code> file in the <stache-code>src/app/about</stache-code> folder and the <stache-code>home.component.spec.ts</stache-code> file in the <stache-code>src/app</stache-code> folder. SKY UX unit tests should use the same name as the components or services that they test, but they should end with <stache-code>.spec.ts.</stache-code> The spec files should also be in the same folder as the components or services that they test.
+        To view the unit test spec files in a local editor, open the project's <sky-code>about.component.spec.ts</sky-code> file in the <sky-code>src/app/about</sky-code> folder and the <sky-code>home.component.spec.ts</sky-code> file in the <sky-code>src/app</sky-code> folder. SKY UX unit tests should use the same name as the components or services that they test, but they should end with <sky-code>.spec.ts.</sky-code> The spec files should also be in the same folder as the components or services that they test.
       </p>
     </li>
     <li>
       <p>
-        In the command prompt, enter <stache-code>skyux test</stache-code> to run the unit tests. You can also use <stache-code>skyux watch</stache-code> to run the unit tests and watch the file system for changes. Tests run repeatedly as you save changes to files.
+        In the command prompt, enter <sky-code>skyux test</sky-code> to run the unit tests. You can also use <sky-code>skyux watch</sky-code> to run the unit tests and watch the file system for changes. Tests run repeatedly as you save changes to files.
       </p>
     </li>
     <li>
       <p>
-        The tests run, and the command prompt displays the results. Code coverage results for <stache-code>skyux test</stache-code> and <stache-code>skyux watch</stache-code> are stored in the <stache-code>coverage</stache-code> folder.
+        The tests run, and the command prompt displays the results. Code coverage results for <sky-code>skyux test</sky-code> and <sky-code>skyux watch</sky-code> are stored in the <sky-code>coverage</sky-code> folder.
       </p>
     </li>
   </ol>
@@ -58,12 +58,12 @@
   <ol>
     <li>
       <p>
-        When you create SKY UX end-to-end tests, use the same name as the components or services that they test, but they should end with <stache-code>.e2e-spec.ts.</stache-code> Place spec files for end-to-end tests in the <stache-code>e2e</stache-code> folder in the root of your project.
+        When you create SKY UX end-to-end tests, use the same name as the components or services that they test, but they should end with <sky-code>.e2e-spec.ts.</sky-code> Place spec files for end-to-end tests in the <sky-code>e2e</sky-code> folder in the root of your project.
       </p>
     </li>
     <li>
       <p>
-        In the command prompt, enter <stache-code>skyux e2e</stache-code> to run your end-to-end tests.
+        In the command prompt, enter <sky-code>skyux e2e</sky-code> to run your end-to-end tests.
       </p>
     </li>
     <li>
@@ -72,29 +72,29 @@
       </p>
     </li>
   </ol>
-  
+
   <stache-page-anchor>
     Control test runs
   </stache-page-anchor>
-  
+
   <p>
     During development, you can use the following steps to control which tests to include in a test run.
   </p>
-  
+
   <h3>
     Exclude tests from a test run
   </h3>
 
   <p>
-    To exclude tests from a test run, change <stache-code>it</stache-code> to <stache-code>xit</stache-code> for the test to exclude, or change <stache-code>describe</stache-code> to <stache-code>xdescribe</stache-code> to exclude an entire test suite.
+    To exclude tests from a test run, change <sky-code>it</sky-code> to <sky-code>xit</sky-code> for the test to exclude, or change <sky-code>describe</sky-code> to <sky-code>xdescribe</sky-code> to exclude an entire test suite.
   </p>
 
   <h3>
     Explicitly include tests in a test run
   </h3>
-  
+
   <p>
-    To limit a test run to only include a subset of tests, change <stache-code>it</stache-code> to <stache-code>fit</stache-code> or <stache-code>describe</stache-code> to <stache-code>fdescribe</stache-code>. The test run only includes those tests or test suites.
+    To limit a test run to only include a subset of tests, change <sky-code>it</sky-code> to <sky-code>fit</sky-code> or <sky-code>describe</sky-code> to <sky-code>fdescribe</sky-code>. The test run only includes those tests or test suites.
   </p>
 
 </stache>

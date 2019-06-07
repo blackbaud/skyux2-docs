@@ -11,22 +11,22 @@
       Blackbaud developers should create repos and provision applications through the SKY UX App Management Portal. Documentation on the SKY UX App Management Portal is available on <a href="https://host.nxt.blackbaud.com/engineering-system-docs/learn/spa/spa-app-portal">the Engineering System website</a>. This site is for Blackbaud internal use only and is not available to external developers.
     </p>
   </stache-page-summary>
-  
+
   <ol>
     <li>
       <p>
-        From the command prompt, <stache-code>cd</stache-code> into the directory where you want to create the application.
+        From the command prompt, <sky-code>cd</sky-code> into the directory where you want to create the application.
       </p>
       <p>
-        Do not use Git Bash with Windows because known issues occur with <stache-code>skyux new</stache-code>. We recommend the native Windows command prompt instead.
+        Do not use Git Bash with Windows because known issues occur with <sky-code>skyux new</sky-code>. We recommend the native Windows command prompt instead.
       </p>
     </li>
     <li>
       <p>
-        Enter <stache-code>skyux new</stache-code> to initialize a new local SKY UX project. This pulls in the latest version of the template and runs <stache-code>npm install</stache-code> to install the necessary dependencies.
+        Enter <sky-code>skyux new</sky-code> to initialize a new local SKY UX project. This pulls in the latest version of the template and runs <sky-code>npm install</sky-code> to install the necessary dependencies.
       </p>
       <p>
-        By default, <stache-code>skyux new</stache-code> uses <a href="https://github.com/blackbaud/skyux-template">the SKY UX application template</a> that includes <a routerLink="/learn/reference/template-items">the necessary items for a SKY UX single-page application</a>. If necessary, you can specify a different template such as the <a href="https://github.com/blackbaud/skyux-template-addin">SKY UX Add-in template</a> or the <a href="https://github.com/blackbaud/skyux-template-stache">Stache template</a>. For information about template items, see the <a routerLink="/learn/reference/cli-commands/new">SKY UX CLI reference</a>. 
+        By default, <sky-code>skyux new</sky-code> uses <a href="https://github.com/blackbaud/skyux-template">the SKY UX application template</a> that includes <a routerLink="/learn/reference/template-items">the necessary items for a SKY UX single-page application</a>. If necessary, you can specify a different template such as the <a href="https://github.com/blackbaud/skyux-template-addin">SKY UX Add-in template</a> or the <a href="https://github.com/blackbaud/skyux-template-stache">Stache template</a>. For information about template items, see the <a routerLink="/learn/reference/cli-commands/new">SKY UX CLI reference</a>.
       </p>
       <p>
         After you enter the command, a series of prompts appears.
@@ -42,14 +42,14 @@
         In the second prompt, specify the URL for a Git repo to store the source files for the application. You can use a Visual Studio Team System Git repo or a GitHub repo. The SKY UX CLI clones the repo and automatically pulls in the SKY UX template.
       </p>
       <p>
-        To work locally only, you can skip the second prompt and create the SPA without a repo. Later, you can manually add a repo as a remote to the local application. To do this, enter <stache-code>git remote add origin [URL]</stache-code> in the command prompt, where "[URL]" is the path for the repo. Then to push local content to the external repo, enter <stache-code>git push origin --all</stache-code>.
+        To work locally only, you can skip the second prompt and create the SPA without a repo. Later, you can manually add a repo as a remote to the local application. To do this, enter <sky-code>git remote add origin [URL]</sky-code> in the command prompt, where "[URL]" is the path for the repo. Then to push local content to the external repo, enter <sky-code>git push origin --all</sky-code>.
       </p>
     </li>
     <li>
       <p>
-        After the SKY UX CLI downloads the SKY UX template project and runs <stache-code>npm install</stache-code> to install dependencies, the command prompt displays the directory name: "SPA [directory name] created in directory "skyux-spa-[directory name]."
+        After the SKY UX CLI downloads the SKY UX template project and runs <sky-code>npm install</sky-code> to install dependencies, the command prompt displays the directory name: "SPA [directory name] created in directory "skyux-spa-[directory name]."
       </p>
     </li>
   </ol>
-  
+
 </stache>

@@ -13,17 +13,17 @@
   <ul>
     <li>
       <p>
-        <stache-code>import &#123; SkyAuthHttp &#125; from '@skyux/http'</stache-code> — In conjunction with <a routerLink="/learn/reference/configuration">the <stache-code>"auth": true</stache-code> configuration setting in the <stache-code>skyuxconfig.json</stache-code> file</a>, we provide a wrapper to the <stache-code>http</stache-code> utility class. Use <stache-code>SkyAuthHttp.get()</stache-code> to automatically add the necessary Authorization header containing the bearer token received from authentication. This helper is for internal Blackbaud use only.
+        <sky-code>import &#123; SkyAuthHttp &#125; from '@skyux/http';</sky-code> — In conjunction with <a routerLink="/learn/reference/configuration">the <sky-code>"auth": true</sky-code> configuration setting in the <sky-code>skyuxconfig.json</sky-code> file</a>, we provide a wrapper to the <sky-code>http</sky-code> utility class. Use <sky-code>SkyAuthHttp.get()</sky-code> to automatically add the necessary Authorization header containing the bearer token received from authentication. This helper is for internal Blackbaud use only.
       </p>
     </li>
     <li>
       <p>
-        <stache-code>import &#123; SkyHostBrowser &#125; from '@skyux-sdk/e2e'</stache-code> — Particularly useful when running <a routerLink="/learn/reference/cli-commands">the <stache-code>skyux e2e</stache-code> command in the SKY UX CLI</a>. Use <stache-code>SkyHostBrowser.get()</stache-code> to automatically add the SKY UX Host base URL, as well as the necessary configuration object to enable local development mode. For example, <stache-code>SkyHostBrowser.get(/my-page?my-qs=1');</stache-code>.
+        <sky-code>import &#123; SkyHostBrowser &#125; from '@skyux-sdk/e2e</sky-code> — Particularly useful when running <a routerLink="/learn/reference/cli-commands">the <sky-code>skyux e2e</sky-code> command in the SKY UX CLI</a>. Use <sky-code>SkyHostBrowser.get()</sky-code> to automatically add the SKY UX Host base URL, as well as the necessary configuration object to enable local development mode. For example, <sky-code>SkyHostBrowser.get(/my-page?my-qs=1');</sky-code>.
       </p>
     </li>
     <li>
       <p>
-        <stache-code>import &#123; SkyAuthClientHttpModule &#125; from '@skyux/http'</stache-code>  — Enables SKY UX SPAs to use the <stache-code>HttpClient</stache-code> Angular service instead of the deprecated <stache-code>Http</stache-code> service. Use the <stache-code>skyAuthHttpOptions()</stache-code> function in HTTP calls to capture Blackbaud URL params such as <stache-code>leid</stache-code> and <stache-code>envid</stache-code>. For more information, see <a routerLink="/learn/reference/helpers/SkyAuthHttpClientModule">the <stache-code>SkyAuthHttpClientModule</stache-code> reference</a>.
+        <sky-code>import &#123; SkyAuthClientHttpModule &#125; from '@skyux/http';</sky-code>  — Enables SKY UX SPAs to use the <sky-code>HttpClient</sky-code> Angular service instead of the deprecated <sky-code>Http</sky-code> service. Use the <sky-code>skyAuthHttpOptions()</sky-code> function in HTTP calls to capture Blackbaud URL params such as <sky-code>leid</sky-code> and <sky-code>envid</sky-code>. For more information, see <a routerLink="/learn/reference/helpers/SkyAuthHttpClientModule">the <sky-code>SkyAuthHttpClientModule</sky-code> reference</a>.
       </p>
     </li>
   </ul>

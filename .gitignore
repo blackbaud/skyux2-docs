@@ -26,6 +26,3 @@ dist
 
 # OS specific files
 .DS_Store
-
-# Lock files
-package-lock.json

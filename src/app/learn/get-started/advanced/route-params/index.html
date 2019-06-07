@@ -4,25 +4,25 @@
   navTitle="Route parameters">
 
   <p>
-    SKY UX supports routes that contain <a href="https://angular.io/guide/router#route-parameters">Angular route parameters</a>. This allows you to use variables in your routes and complements the fact that SKY UX Builder automatically registers routes and creates components for all <stache-code>index.html</stache-code> files in the <stache-code>src/app</stache-code> directory.
+    SKY UX supports routes that contain <a href="https://angular.io/guide/router#route-parameters">Angular route parameters</a>. This allows you to use variables in your routes and complements the fact that SKY UX Builder automatically registers routes and creates components for all <sky-code>index.html</sky-code> files in the <sky-code>src/app</sky-code> directory.
   </p>
   <p>
-    To create a route parameter, you create a subfolder and prefix its name with an underscore. The subfolder name must be a valid TypeScript variable because SKY UX Builder creates a <stache-code>string</stache-code> variable with that name minus the underscore.
+    To create a route parameter, you create a subfolder and prefix its name with an underscore. The subfolder name must be a valid TypeScript variable because SKY UX Builder creates a <sky-code>string</sky-code> variable with that name minus the underscore.
   </p>
   <p>
-    For example, if you create a page at <stache-code>src/app/dogs</stache-code> for users to view dogs that are up for adoption, you can use route parameters to display individual dogs by creating a <stache-code>src/app/dogs/_id</stache-code> subfolder and adding an <stache-code>index.html</stache-code> file with the following content:
+    For example, if you create a page at <sky-code>src/app/dogs</sky-code> for users to view dogs that are up for adoption, you can use route parameters to display individual dogs by creating a <sky-code>src/app/dogs/_id</sky-code> subfolder and adding an <sky-code>index.html</sky-code> file with the following content:
   </p>
   <sky-code-block>
     You are viewing dog {{ id }}.
   </sky-code-block>
   <p>
-    When users visit the route <stache-code>dogs/42</stache-code>, the <stache-code>id</stache-code> variable is set to "42" and renders as:
+    When users visit the route <sky-code>dogs/42</sky-code>, the <sky-code>id</sky-code> variable is set to "42" and renders as:
   </p>
   <sky-code-block>
     You are viewing dog 42.
   </sky-code-block>
   <p>
-    You can create routes with multiple route parameters by setting up nested parameter folders. For example, in the dogs example, you may you want to group dogs by their shelter locations. To do this, you can create a <stache-code>location</stache-code> folder with a <stache-code>_name</stache-code> subfolder and move the <stache-code>dogs</stache-code> folder and its <stache-code>_id</stache-code> subfolder within that path: <stache-code>src/app/location/_name/dogs/_id</stache-code>.
+    You can create routes with multiple route parameters by setting up nested parameter folders. For example, in the dogs example, you may you want to group dogs by their shelter locations. To do this, you can create a <sky-code>location</sky-code> folder with a <sky-code>_name</sky-code> subfolder and move the <sky-code>dogs</sky-code> folder and its <sky-code>_id</sky-code> subfolder within that path: <sky-code>src/app/location/_name/dogs/_id</sky-code>.
   </p>
   <p>
     We recommend against creating paramaterized routes as siblings of static routes. Nesting paramaterized routes alongside static routes is not a problem, but when paramaterized routes and static routes are siblings, it can create ambiguity for the router.
@@ -32,18 +32,18 @@
     Route parameter example
   </stache-page-anchor>
   <p>
-    To demonstrate how to use route parameters, let's modify the About page that the SKY UX template includes in your SPA. For this example, we'll create a service to mimic communication with a database, and then we'll create an <stache-code>_id</stache-code> subfolder for the route parameters.
+    To demonstrate how to use route parameters, let's modify the About page that the SKY UX template includes in your SPA. For this example, we'll create a service to mimic communication with a database, and then we'll create an <sky-code>_id</sky-code> subfolder for the route parameters.
   </p>
 
   <ol>
     <li>
       <p>
-        In a local editor, create an <stache-code>about.service.ts</stache-code> file in the <stache-code>src/app/shared</stache-code> folder to move data into a service so that we can share data between the About page and the subfolder we will create.
+        In a local editor, create an <sky-code>about.service.ts</sky-code> file in the <sky-code>src/app/shared</sky-code> folder to move data into a service so that we can share data between the About page and the subfolder we will create.
       </p>
     </li>
     <li>
       <p>
-        In <stache-code>about.service.ts</stache-code>, add data to the shared service so that multiple components can use it. First, import <stache-code>Injectable</stache-code> from Angular. Then copy the <stache-code>AboutService</stache-code> data from the <stache-code>about.component.ts</stache-code> file in <stache-code>src/app/about</stache-code>. Update the data to replace <stache-code>team</stache-code> with <stache-code>users</stache-code>, and add <stache-code>id</stache-code> properties for each user. Then expose the public properties.
+        In <sky-code>about.service.ts</sky-code>, add data to the shared service so that multiple components can use it. First, import <sky-code>Injectable</sky-code> from Angular. Then copy the <sky-code>AboutService</sky-code> data from the <sky-code>about.component.ts</sky-code> file in <sky-code>src/app/about</sky-code>. Update the data to replace <sky-code>team</sky-code> with <sky-code>users</sky-code>, and add <sky-code>id</sky-code> properties for each user. Then expose the public properties.
       </p>
       <sky-code-block languageType="typescript">
 import { Injectable } from '@angular/core';
@@ -76,7 +76,7 @@ export class AboutService {
     </li>
     <li>
       <p>
-        In the <stache-code>about.component.ts</stache-code> file in <stache-code>src/app/about</stache-code>, import <stache-code>AboutService</stache-code> and update the public <stache-code>team</stache-code> method so that we can declare it in the constructor and use it to get users. We can also remove data from the public <stache-code>team</stache-code> method.
+        In the <sky-code>about.component.ts</sky-code> file in <sky-code>src/app/about</sky-code>, import <sky-code>AboutService</sky-code> and update the public <sky-code>team</sky-code> method so that we can declare it in the constructor and use it to get users. We can also remove data from the public <sky-code>team</sky-code> method.
       </p>
       <sky-code-block languageType="typescript">
 import { Component } from '@angular/core';
@@ -99,7 +99,7 @@ export class AboutComponent {
     </li>
     <li>
       <p>
-        In the <stache-code>app-extras.module.ts</stache-code> file in <stache-code>src/app</stache-code>, import <stache-code>AboutService</stache-code> and add it to the <stache-code>providers</stache-code> array.
+        In the <sky-code>app-extras.module.ts</sky-code> file in <sky-code>src/app</sky-code>, import <sky-code>AboutService</sky-code> and add it to the <sky-code>providers</sky-code> array.
       </p>
       <sky-code-block languageType="typescript">
 import { NgModule } from '@angular/core';
@@ -117,11 +117,11 @@ export class AppExtrasModule { }
     </li>
     <li>
       <p>
-        In the <stache-code>src/app/about</stache-code> folder, create an <stache-code>_id</stache-code> subfolder for the route parameters. Everything after the underscore becomes a public property in the auto-generated component that the <stache-code>index.html</stache-code> file acts as the template for.</p>
+        In the <sky-code>src/app/about</sky-code> folder, create an <sky-code>_id</sky-code> subfolder for the route parameters. Everything after the underscore becomes a public property in the auto-generated component that the <sky-code>index.html</sky-code> file acts as the template for.</p>
     </li>
     <li>
       <p>
-        In the <stache-code>_id</stache-code> subfolder, add <stache-code>about-user.component.ts</stache-code> to create a component. We need to import <stache-code>Component</stache-code>, <stache-code>Input</stache-code>, and <stache-code>OnInit</stache-code> from Angular and also <stache-code>AboutService</stache-code>. After we define the component's selector and template, we can define the component class and the public <stache-code>userId</stache-code> and <stache-code>user</stache-code> input variables. We'll use <stache-code>userId</stache-code> to pass the ID into the component. Since we don't know when the <stache-code>userId</stache-code> property will be set or who will set it, we'll use the <stache-code>getter/setter</stache-code> technique to accommodate the value changing.
+        In the <sky-code>_id</sky-code> subfolder, add <sky-code>about-user.component.ts</sky-code> to create a component. We need to import <sky-code>Component</sky-code>, <sky-code>Input</sky-code>, and <sky-code>OnInit</sky-code> from Angular and also <sky-code>AboutService</sky-code>. After we define the component's selector and template, we can define the component class and the public <sky-code>userId</sky-code> and <sky-code>user</sky-code> input variables. We'll use <sky-code>userId</sky-code> to pass the ID into the component. Since we don't know when the <sky-code>userId</sky-code> property will be set or who will set it, we'll use the <sky-code>getter/setter</sky-code> technique to accommodate the value changing.
       </p>
       <sky-code-block languageType="typescript">
 import {
@@ -159,7 +159,7 @@ export class AboutUserComponent {
     </li>
     <li>
       <p>
-        In the <stache-code>_id</stache-code> subfolder, add <stache-code>about-user.component.html</stache-code> to create a template for the component. On the template, we can display the user name and email along with a link to the About page.
+        In the <sky-code>_id</sky-code> subfolder, add <sky-code>about-user.component.html</sky-code> to create a template for the component. On the template, we can display the user name and email along with a link to the About page.
       </p>
       <sky-code-block>
 <h1>
@@ -174,7 +174,7 @@ export class AboutUserComponent {
     </li>
     <li>
       <p>
-        In the <stache-code>_id</stache-code> subfolder, add <stache-code>index.html</stache-code> to create a page and insert the <stache-code>my-about-user</stache-code> component. The component requires an ID, which we can set with the <stache-code>userId</stache-code> attribute. For this tutorial, let's also include the shared <stache-code>app-nav</stache-code> and a note to highlight how we handle the ID.
+        In the <sky-code>_id</sky-code> subfolder, add <sky-code>index.html</sky-code> to create a page and insert the <sky-code>my-about-user</sky-code> component. The component requires an ID, which we can set with the <sky-code>userId</sky-code> attribute. For this tutorial, let's also include the shared <sky-code>app-nav</sky-code> and a note to highlight how we handle the ID.
       </p>
       <sky-code-block>
 <app-nav></app-nav>
@@ -186,7 +186,7 @@ export class AboutUserComponent {
     </li>
     <li>
       <p>
-        In the <stache-code>src/app/about</stache-code> folder, edit <stache-code>about-user.component.html</stache-code> to link from the About page to information about team members. We can remove the avatar element since we included it in <stache-code>about-user.component.html</stache-code>, and we can replace the email address with a <stache-code>routerLink</stache-code> to more information about a user.
+        In the <sky-code>src/app/about</sky-code> folder, edit <sky-code>about-user.component.html</sky-code> to link from the About page to information about team members. We can remove the avatar element since we included it in <sky-code>about-user.component.html</sky-code>, and we can replace the email address with a <sky-code>routerLink</sky-code> to more information about a user.
       </p>
       <sky-code-block>
 <app-nav></app-nav>
@@ -214,7 +214,7 @@ export class AboutUserComponent {
     </li>
     <li>
       <p>
-        Save the new files and changes, and then run <stache-code>skyux serve</stache-code> from the command prompt to launch the SPA in your default browser. The SPA's About page is updated, and you can click <strong>Learn More</strong> to access information about team members.
+        Save the new files and changes, and then run <sky-code>skyux serve</sky-code> from the command prompt to launch the SPA in your default browser. The SPA's About page is updated, and you can click <strong>Learn More</strong> to access information about team members.
       </p>
     </li>
   </ol>

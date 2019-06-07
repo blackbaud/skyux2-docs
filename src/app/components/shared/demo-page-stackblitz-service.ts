@@ -76,6 +76,7 @@ export class SkyDemoPageStackBlitzService {
       '@angular/platform-browser': angularVersion,
       '@angular/platform-browser-dynamic': angularVersion,
       '@angular/router': angularVersion,
+      '@blackbaud/auth-client': '*',
       '@skyux/animations': skyuxVersion,
       '@skyux/assets': skyuxVersion,
       '@skyux/config': skyuxVersion,
