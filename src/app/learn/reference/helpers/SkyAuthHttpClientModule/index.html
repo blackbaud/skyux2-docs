@@ -4,7 +4,7 @@
 
   <stache-page-summary>
     <p>
-      <sky-code>SkyAuthHttpClientModule</sky-code> enables SKY UX SPAs to use Angular's <sky-code>HttpClient</sky-code> service instead of the deprecated <sky-code>Http</sky-code> service. SKY UX SPAs can use <sky-code>HttpClient</sky-code> directly, but they need to supply the <sky-code>skyAuthHttpOptions()</sky-code> function to HTTP calls to capture Blackbaud URL params such as <sky-code>leid</sky-code> and <sky-code>envid</sky-code>.
+      <sky-code>SkyAuthHttpClientModule</sky-code> enables SKY UX SPAs to use <a href="https://angular.io/guide/http">Angular's <sky-code>HttpClient</sky-code> service</a> to make authenticated calls to Blackbaud services.
     </p>
   </stache-page-summary>
 
@@ -42,9 +42,14 @@
     </li>
     <li>
       <p>
-        Use the <sky-code>HttpClient</sky-code> service instead of <sky-code>SkyAuthHttp</sky-code> to communicate between the front-end application and backend services. To make authenticated calls, pass in the result of <sky-code>skyAuthHttpOptions()</sky-code>, which is also defined by <sky-code>@skyux/http</sky-code>, to the <sky-code>HttpClient</sky-code> methods.
+        Use the <sky-code>HttpClient</sky-code> service communicate with the Blackbaud web service. To ensure calls are authenticated using Blackbaud ID, pass in the result of <sky-code>skyAuthHttpOptions()</sky-code>, which is also defined in <sky-code>@skyux/http</sky-code>, as the <sky-code>options </sky-code> parameter to the <sky-code>HttpClient</sky-code> methods.
       </p>
+
       <sky-code-block languageType="typescript">
+        import {
+          Injectable
+        } from '@angular/core';
+
         import {
           HttpClient
         } from '@angular/common/http';
@@ -53,23 +58,40 @@
           skyAuthHttpOptions
         } from '@skyux/http';
 
-        @Component({
-          selector: 'app-foo',
-          templateUrl: './foo.component.html'
-        })
-        export class FooComponent implements OnInit {
-          constructor(
-            private http: HttpClient
-          ) { }
+        @Injectable()
+        export class FooService implements OnInit {
 
-          public ngOnInit(): void {
+          constructor(private http: HttpClient) { }
+
+          public getData() {
             // Available options are defined here:
             // https://github.com/blackbaud/skyux-http/blob/master/src/app/public/modules/auth-http-client/auth-options.ts#L20-L29
             const options: any = {};
 
-            this.http.get('my/api/endpoint', skyAuthHttpOptions(options));
+            return this.http.get(
+              'https://example.com/my/api/endpoint',
+              skyAuthHttpOptions(options)
+            );
           }
         }
+      </sky-code-block>
+
+      <p>
+        When providing a type parameter to <sky-code>HttpClient</sky-code> methods (e.g. <sky-code>http.get&lt;Foo&gt;()</sky-code>), <sky-code>skyAuthHttpOptions()</sky-code> may cause TypeScript to incorrectly infer the return type. One way to fix this is to cast the result of <sky-code>skyAuthHttpOptions()</sky-code> to force the correct return type. Another way is if you are requesting JSON data and do not need to <a href="https://angular.io/guide/http#reading-the-full-response">read the full HTTP response</a>, you can use the <sky-code>skyAuthHttpJsonOptions()</sky-code> method, also defined in <sky-code>@skyux/http</sky-code>, instead.
+      </p>
+
+      <sky-code-block languageType="typescript">
+        // TypeScript will infer a return type of `Observable&lt;HttpEvent&lt;Foo&gt;&gt;`
+        this.http.get&lt;Foo&gt;(
+          'https://example.com/my/api/endpoint',
+          skyAuthHttpOptions()
+        );
+
+        // TypeScript will infer a return type of `Observable&lt;Foo&gt;`
+        this.http.get&lt;Foo&gt;(
+          'https://example.com/my/api/endpoint',
+          skyAuthHttpJsonOptions()
+        );
       </sky-code-block>
     </li>
   </ol>
@@ -105,4 +127,92 @@
     </li>
   </ul>
 
+  <stache-page-anchor>
+    Unit testing services with <sky-code>SkyAuthHttpClientTestingModule</sky-code>
+  </stache-page-anchor>
+
+  In conjunction with Angular's <sky-code>HttpClientTestingModule</sky-code>, <sky-code>SkyAuthHttpClientTestingModule</sky-code> enables unit testing Angular services that make authenticated calls to Blackbaud web services.
+
+  <ol>
+    <li>
+      <p>
+        Add the required imports to the spec file.
+      </p>
+      <sky-code-block languageType="typescript">
+        import {
+          fakeAsync,
+          getTestBed,
+          TestBed,
+          tick
+        } from '@angular/core/testing';
+
+        import {
+          HttpClientTestingModule,
+          HttpTestingController
+        } from '@angular/common/http/testing';
+
+        import {
+          SkyAuthHttpClientTestingModule,
+          SkyAuthHttpTestingController
+        } from '@skyux/http/testing';
+
+        import {
+          FooService
+        } from './foo.service';
+      </sky-code-block>
+    </li>
+    <li>
+      <p>
+        Import <sky-code>HttpClientTestingModule</sky-code> and <sky-code>SkyAuthHttpClientTestingModule</sky-code> into your <sky-code>TestBed</sky-code>, then store the mock controllers injected by those modules in local variables.
+      </p>
+
+      <sky-code-block languageType="typescript">
+        describe(('Foo service') => {
+          let httpMock: HttpTestingController;
+          let authMock: SkyAuthHttpTestingController;
+          let svc: FooService;
+
+          beforeEach(() => {
+            TestBed.configureTestingModule({
+              imports: [
+                SkyAuthHttpClientTestingModule,
+                HttpClientTestingModule
+              ],
+              providers: [
+                FooService
+              ]
+            });
+
+            const injector = getTestBed();
+
+            httpMock = injector.get(HttpTestingController);
+            authMock = injector.get(SkyAuthHttpTestingController);
+            svc = injector.get(FooService);
+          });
+
+        });
+      </sky-code-block>
+    </li>
+    <li>
+      <p>
+        Write a test that validates that the service makes an authenticated call to the epxected endpoint. Due to how <sky-code>SkyAuthHttpClientModule</sky-code> provides an HTTP interceptor to asynchronously retrieve a Blackbaud ID token and append it to the request, tests must be run in Angular's fake async zone, and <sky-code>tick()</sky-code> must be called to flush the pending <sky-code>Promise</sky-code> before validating the request.
+      </p>
+
+      <sky-code-block languageType="typescript">
+        it('should call the expected endpoint', fakeAsync(() => {
+          svc.getData().subscribe();
+
+          tick();
+
+          const request = httpMock.expectOne('https://example.com/my/api/endoint');
+
+          authMock.expectAuth(request);
+
+          request.flush({});
+
+          httpMock.verify();
+        }));
+      </sky-code-block>
+    </li>
+  </ol>
 </stache>
