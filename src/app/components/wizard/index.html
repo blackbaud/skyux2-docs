@@ -9,10 +9,10 @@
       A wizard guides users through a set of pre-defined steps in a particular order. It uses a <a routerLink="/components/progress-indicator">progress indicator component</a> within a <a routerLink="/components/modal">modal component</a> to represent a series of related decisions in a user’s direct workflow. Wizards illustrate the step-wise nature of tasks and reinforce the progress toward final goals as users complete steps. Wizards are most useful when users must perform steps in a particular order.
     </p>
     <p>
-      To create a wizard, place a progress indicator inside a modal and set its <stache-code>displayMode</stache-code> property to <stache-code>Horizontal</stache-code>. For information about progress indicators, see the <a routerLink="/components/progress-indicator">progress indicator component</a>. And for information about modals, see the <a routerLink="/components/modal">modal component</a>.
+      To create a wizard, place a progress indicator inside a modal and set its <sky-code>displayMode</sky-code> property to <sky-code>Horizontal</sky-code>. For information about progress indicators, see the <a routerLink="/components/progress-indicator">progress indicator component</a>. And for information about modals, see the <a routerLink="/components/modal">modal component</a>.
     </p>
     <sky-alert alertType="info">
-      This wizard implementation replaces a previous version that was deprecated because of limitations that interfered with complex configuration tasks. The deprecated wizard used the <a routerLink="/components/tabs">tabs module</a> within a modal component and set <stache-code>tabStyle="wizard"</stache-code> on the <stache-code>sky-tabset</stache-code> component to guide users through a set of pre-defined steps. We recommend that you create wizards with the progress indicator component instead of this deprectated implementation.
+      This wizard implementation replaces a previous version that was deprecated because of limitations that interfered with complex configuration tasks. The deprecated wizard used the <a routerLink="/components/tabs">tabs module</a> within a modal component and set <sky-code>tabStyle="wizard"</sky-code> on the <sky-code>sky-tabset</sky-code> component to guide users through a set of pre-defined steps. We recommend that you create wizards with the progress indicator component instead of this deprectated implementation.
     </sky-alert>
   </sky-demo-page-summary>
 
@@ -22,7 +22,7 @@
       isOptional="true"
       defaultValue="Vertical"
     >
-      Specifies whether to display the progress indicator vertically or horizontally. For modal wizards, set the display mode to <stache-code>Horizontal</stache-code>. For information about other types of progress indicators, see the <a routerLink="/components/progress-indicator">progress indicator component</a>.
+      Specifies whether to display the progress indicator vertically or horizontally. For modal wizards, set the display mode to <sky-code>Horizontal</sky-code>. For information about other types of progress indicators, see the <a routerLink="/components/progress-indicator">progress indicator component</a>.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -42,7 +42,7 @@
       isOptional="true"
       defaultValue="next"
     >
-      Specifies the type of nav button to include. Options include <stache-code>finish</stache-code>, <stache-code>next</stache-code>, and <stache-code>previous</stache-code>.
+      Specifies the type of nav button to include. Options include <sky-code>finish</sky-code>, <sky-code>next</sky-code>, and <sky-code>previous</sky-code>.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="disabled"
@@ -60,7 +60,9 @@
 
   <sky-demo-page-example>
     <sky-wizard-demo></sky-wizard-demo>
-    <sky-demo-page-code demoName="Wizard"></sky-demo-page-code>
+    <sky-demo-page-code
+      demoName="Wizard">
+    </sky-demo-page-code>
   </sky-demo-page-example>
 
   <sky-demo-page-content sectionHeading="UX guidelines">

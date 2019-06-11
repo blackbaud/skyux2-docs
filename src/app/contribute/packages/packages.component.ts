@@ -299,7 +299,7 @@ export class PackagesComponent {
       repo: 'blackbaud/skyux-logger'
     },
     {
-      id: '@blackbaud/stache',
+      id: '@blackbaud/skyux-lib-stache',
       provider: 'github',
       repo: 'blackbaud/stache2'
     }

@@ -1,0 +1,308 @@
+<stache
+  pageTitle="Entry Components"
+  showTableofContents="true"
+  navTitle="Entry components">
+
+  <stache-page-summary>
+    <p>
+      Entry components are components such as tiles and modals that you generate dynamically instead of with HTML selectors. You must declare entry components to ensure that Webpack does not remove them as unused code during tree-shaking.
+    </p>
+    <p>
+      You register entry components in the SPA's <sky-code>app-extras.modules.ts</sky-code> file. Entry components are not tied to routes. They are loaded dynamically and are not referenced in component templates. For more information about entry components, see the <a href="https://angular.io/guide/ngmodule-faq#what-is-an-entry-component">Angular documentation</a>.
+    </p>
+  </stache-page-summary>
+
+  <stache-page-anchor>
+    Add an entry component
+  </stache-page-anchor>
+  <p>
+    The following tutorial walks you through the process to create a page with a SKY UX modal component and declare that component as an entry component.
+  </p>
+  <ol>
+    <li>
+      <p>
+        Open your project in a local editor, and create a folder within <sky-code>src/app</sky-code>. The folder name is represented in the page's URL. For this tutorial, create a <sky-code>modal</sky-code> folder.
+      </p>
+    </li>
+    <li>
+      <p>
+        In the new folder, create an <sky-code>index.html</sky-code> file for the page. Insert the <sky-code>app-nav</sky-code> component and basic content, and then save the file.
+      </p>
+      <sky-code-block languageType="markup">
+        <app-nav></app-nav>
+        <h1>Modal launch page</h1>
+        <p>This page displays a button to launch a modal.</p>
+      </sky-code-block>
+      <p>
+        The <sky-code>app-nav</sky-code> component is an example of a shared component. It manually creates top-level navigation within your app.
+      </p>
+    </li>
+    <li>
+      <p>
+        In the <sky-code>src/app/shared</sky-code> folder, open the <sky-code>app-nav.component.ts</sky-code> file.
+      </p>
+    </li>
+    <li>
+      <p>
+        Add a path for the new page with <sky-code>name</sky-code> set to "Modal" and <sky-code>path</sky-code> set to "/modal." The <sky-code>name</sky-code> provides the label for the menu, and the <sky-code>path</sky-code> specifies the name of the folder.
+      </p>
+<sky-code-block languageType="typescript">
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-nav',
+  templateUrl: './app-nav.component.html',
+  styleUrls: ['./app-nav.component.scss']
+})
+export class AppNavComponent {
+  public nav = [
+    {
+      name: 'Home',
+      path: '/'
+    },
+    {
+      name: 'About',
+      path: '/about'
+    },
+    {
+      name: 'Demo',
+      path: '/demo'
+    },
+    {
+      name: 'Modal',
+      path: '/modal'
+    }
+  ];
+}
+</sky-code-block>
+    </li>
+    <li>
+      <p>
+        Save the changes and run <sky-code>skyux serve</sky-code> to view them in the SPA. The Modal item appears in the menu, and you can click <strong>Modal</strong> to view the new page.
+      </p>
+    </li>
+    <li>
+      <p>
+        In the <sky-code>modal</sky-code> folder, create a <sky-code>modal-demo-context.ts</sky-code> file and add the following code:
+      </p>
+      <sky-code-block>
+       export class SkyModalDemoContext {
+          public value1: string;
+      }
+      </sky-code-block>
+      <p>
+        This file passes a context object to the modal to prepopulate the modal field. In this sample, we prepopulate dummy data, but in a production modal, you can pull data from records and use this file can supply the context to populate data based on the record where the form opens.
+      </p>
+    </li>
+    <li>
+      <p>
+        Save the <sky-code>modal-demo-context.ts</sky-code> file.
+      </p>
+    </li>
+    <li>
+      <p>
+        In the <sky-code>modal</sky-code> folder, create a <sky-code>modal-demo-launcher.component.ts</sky-code> file to define the button component that launches the modal and its functionality and add the following code:
+      </p>
+<sky-code-block languageType="typescript">
+import { Component } from '@angular/core';
+
+import { SkyModalService, SkyModalCloseArgs } from '@blackbaud/skyux/dist/core';
+
+import { SkyModalDemoContext } from './modal-demo-context';
+
+import { SkyModalDemoFormComponent } from './modal-demo-form.component';
+
+@Component({
+  selector: 'sky-modal-demo-launcher',
+  templateUrl: './modal-demo-launcher.component.html'
+})
+export class SkyModalDemoComponent {
+  constructor(private modal: SkyModalService) { }
+
+  public openModal() {
+    let context = new SkyModalDemoContext();
+    context.value1 = 'Default text';
+
+    let modalInstance = this.modal.open(SkyModalDemoFormComponent, {
+      providers: [
+        {
+          provide: SkyModalDemoContext, useValue: context
+        }
+      ]
+    });
+
+    modalInstance.closed.subscribe((result: SkyModalCloseArgs) => {
+      console.log('Modal closed with reason: ' + result.reason + ' and data: ' + result.data);
+    });
+  }
+}
+</sky-code-block>
+      <p>
+        This imports several items.
+      </p>
+
+      <ul>
+        <li>
+          The <sky-code>Component</sky-code> class from Angular provides functionality to the component that we are defining.
+        </li>
+        <li>
+          The <sky-code>SkyModalService</sky-code> provider from the SKY UX template launches the modal, and the <sky-code>SkyModalCloseArgs</sky-code> object is emitted when the modal instance closes.
+        </li>
+        <li>
+          The <sky-code>SkyModalDemoContext</sky-code> class from the <sky-code>modal-demo-context.ts</sky-code> file that we just created passes a context object to prepopulate the modal field.
+        </li>
+        <li>
+          The <sky-code>SkyModalDemoFormComponent</sky-code> class from the <sky-code>modal-demo-form.component.ts</sky-code> file that we will create provides a header and constructs the modal instance.
+        </li>
+      </ul>
+
+      <p>
+        The <sky-code>@Component</sky-code> section is a decorator for the component, and it defines our selector and template. The decorator takes normal JavaScript classes and  extends the functionality to convert them into Angular components.
+      </p>
+      <p>
+        The <sky-code>export</sky-code> section defines the component class.
+      </p>
+    </li>
+    <li>
+      <p>
+        Save the <sky-code>modal-demo-launcher.component.ts</sky-code> file.
+      </p>
+    </li>
+    <li>
+      <p>
+        In the <sky-code>modal</sky-code> folder, create a <sky-code>modal-demo-launcher.component.html</sky-code> file to serve as the template for the button component that launches the modal form and add the following code:
+      </p>
+      <sky-code-block langaugeType="markup">
+        <button type="button" class="sky-btn sky-btn-primary" (click)="openModal()">
+          Open modal
+        </button>
+      </sky-code-block>
+    </li>
+    <li>
+      <p>
+        Save the <sky-code>modal-demo-launcher.component.html</sky-code> file.
+      </p>
+    </li>
+    <li>
+      <p>
+        In the <sky-code>modal</sky-code> folder, create a <sky-code>modal-demo-form.component.ts</sky-code> file to define the modal form component and its functionality and add the following code:
+      </p>
+<sky-code-block languageType="typescript">
+import { Component } from '@angular/core';
+
+import { SkyModalInstance } from '@blackbaud/skyux/dist/core';
+
+import { SkyModalDemoContext } from './modal-demo-context';
+
+@Component({
+  selector: 'sky-modal-demo-form',
+  templateUrl: './modal-demo-form.component.html'
+})
+export class SkyModalDemoFormComponent {
+  public title = 'Modal demo form';
+
+  constructor(public context: SkyModalDemoContext, public instance: SkyModalInstance) { }
+}
+</sky-code-block>
+      <p>
+        This imports several items.
+      </p>
+
+      <ul>
+        <li>
+          The <sky-code>Component</sky-code> class from Angular provides functionality to the component that we are defining.
+        </li>
+        <li>
+          The <sky-code>SkyModalInstance</sky-code> class provides the capability to close the modal and return data from the launched instance.
+        </li>
+        <li>
+          The <sky-code>SkyModalDemoContext</sky-code> class from the <sky-code>modal-demo-context.ts</sky-code> file that we created passes a context object to prepopulate the modal field.
+        </li>
+      </ul>
+
+      <p>
+        The <sky-code>@Component</sky-code> section is a decorator for the component, and it defines our selector and template. The decorator takes normal JavaScript classes and  extends the functionality to convert them into Angular components.
+      </p>
+      <p>
+        The <sky-code>export</sky-code> section defines the component class.
+      </p>
+    </li>
+    <li>
+      <p>
+        Save the <sky-code>modal-demo-form.component.ts</sky-code> file.
+      </p>
+    </li>
+    <li>
+      <p>
+        In the <sky-code>modal</sky-code> folder, create a <sky-code>modal-demo-form.component.html</sky-code>  to serve as the template for the modal component and add the following code:
+      </p>
+      <sky-code-block languageType="markup">
+        <sky-modal>
+          <sky-modal-header>
+            {{title}}
+          </sky-modal-header>
+          <sky-modal-content>
+            <label>
+              Field 1:
+              <input type="text" [(ngModel)]="context.value1">
+            </label>
+          </sky-modal-content>
+          <sky-modal-footer>
+            <button
+              type="button"
+              class="sky-btn sky-btn-primary"
+              (click)="instance.save('Something cool')"
+            >
+              Close
+            </button>
+          </sky-modal-footer>
+        </sky-modal>
+      </sky-code-block>
+    </li>
+    <li>
+      <p>
+        In the <sky-code>src/app</sky-code> folder, open the <sky-code>app-extras.module.ts</sky-code> file and import the <sky-code>SkyModalDemoFormComponent</sky-code>. In the <sky-code>entryComponents</sky-code> property, add an entry to register the modal as an entry component.
+      </p>
+<sky-code-block languageType="typescript">
+import { NgModule } from '@angular/core';
+
+import { SkyModalDemoFormComponent } from './modal/modal-demo-form.component';
+
+// Specify entry components, module-level providers, etc. here.
+@NgModule({
+  providers: [],
+  entryComponents: [
+    SkyModalDemoFormComponent
+  ]
+})
+export class AppExtrasModule { }
+</sky-code-block>
+    </li>
+    <li>
+      <p>
+        Save the <sky-code>app-extras.module.ts</sky-code> file.
+      </p>
+    </li>
+    <li>
+      <p>In the <sky-code>index.html</sky-code> file, add the <sky-code>sky-modal-demo-launcher</sky-code> selector that we defined in the <sky-code>modal-demo-context.ts</sky-code> file.
+      </p>
+      <sky-code-block languageType="markup">
+        <app-nav></app-nav>
+        <h1>Modal launch page</h1>
+        <p>This page displays a button to launch a modal.</p>
+        <sky-modal-demo-launcher></sky-modal-demo-launcher>
+      </sky-code-block>
+    </li>
+    <li>
+      <p>
+        Save the <sky-code>index.html</sky-code> file and any other files with unsaved changes. If <sky-code>skyux serve</sky-code> is running, it detects the changes and updates the SPA. If not, run <sky-code>skyux serve</sky-code> to launch the SPA in your default browser.
+      </p>
+    </li>
+    <li>
+      <p>
+        In the browser, the default site displays our changes. The Modal item appears in the menu, and you can click <strong>Modal</strong> to view the new page. To launch the modal, select the <strong>Open modal</strong> button.
+      </p>
+    </li>
+  </ol>
+
+</stache>

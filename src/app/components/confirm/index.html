@@ -5,14 +5,14 @@
 >
 
   <sky-demo-page-summary>
-    The confirm service launches simple confirmation dialogs to allow users to confirm actions. The <stache-code>SkyConfirmService</stache-code> provider launches the confirmation dialog. Within the service, you can specify the dialog's message and customize the button text.
+    The confirm service launches simple confirmation dialogs to allow users to confirm actions. The <sky-code>SkyConfirmService</sky-code> provider launches the confirmation dialog. Within the service, you can specify the dialog's message and customize the button text.
   </sky-demo-page-summary>
 
   <sky-demo-page-properties sectionHeading="Confirm service methods">
     <sky-demo-page-property
       propertyName="open(config)"
     >
-    Opens a confirmation dialog and passes the <stache-code>config</stache-code> parameter of type <stache-code>SkyConfirmConfig</stache-code> to the component's constructor. This method returns an object of type <stache-code>SkyConfirmInstance</stache-code>.
+    Opens a confirmation dialog and passes the <sky-code>config</sky-code> parameter of type <sky-code>SkyConfirmConfig</sky-code> to the component's constructor. This method returns an object of type <sky-code>SkyConfirmInstance</sky-code>.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -20,31 +20,31 @@
     <sky-demo-page-property
       propertyName="message"
     >
-    Specifies the message to display in a bold font at the top of the dialog. This property accepts <stache-code>string</stache-code> values.
+    Specifies the message to display in a bold font at the top of the dialog. This property accepts <sky-code>string</sky-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="body"
       isOptional="true"
     >
-    Specifies secondary text to display in plain font under the primary message. This property accepts <stache-code>string</stache-code> values.
+    Specifies secondary text to display in plain font under the primary message. This property accepts <sky-code>string</sky-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="buttons"
       isOptional="true"
     >
-    Specifies an array of <stache-code>SkyConfirmButtonConfig</stache-code> objects that overwrite the default configuration for buttons. The number of items in the array must match the number of buttons that the <stache-code>type</stache-code> property specifies. Each <stache-code>SkyConfirmButtonConfig</stache-code> object includes the following properties:
+    Specifies an array of <sky-code>SkyConfirmButtonConfig</sky-code> objects that overwrite the default configuration for buttons. The number of items in the array must match the number of buttons that the <sky-code>type</sky-code> property specifies. Each <sky-code>SkyConfirmButtonConfig</sky-code> object includes the following properties:
     <ul>
       <li>
-        <stache-code>action</stache-code> — Specifies an identifier to return when users select the button to close the confirmation dialog. This is useful to determine which button users select. This property accepts <stache-code>string</stache-code> values.
+        <sky-code>action</sky-code> — Specifies an identifier to return when users select the button to close the confirmation dialog. This is useful to determine which button users select. This property accepts <sky-code>string</sky-code> values.
       </li>
       <li>
-        <stache-code>text</stache-code> — Specifies the label for the button. This property accepts <stache-code>string</stache-code> values.
+        <sky-code>text</sky-code> — Specifies the label for the button. This property accepts <sky-code>string</sky-code> values.
       </li>
       <li>
-        <stache-code>autofocus</stache-code> — <em>(Optional.)</em> Indicates whether to place focus on this button by default. This property accepts <stache-code>boolean</stache-code> values. <em>(Default: false)</em>
+        <sky-code>autofocus</sky-code> — <em>(Optional.)</em> Indicates whether to place focus on this button by default. This property accepts <sky-code>boolean</sky-code> values. <em>(Default: false)</em>
       </li>
       <li>
-        <stache-code>styleType</stache-code> — <em>(Optional.)</em> Specifies a <a stacheRouterLink="/components/button" fragment="classes">SKY UX button class</a> to apply to the button. The valid options are <stache-code>primary</stache-code> to format the primary action on the dialog, <stache-code>default</stache-code> to format a secondary action, and <stache-code>link</stache-code> to format an action that takes users to another page. This property accepts <stache-code>string</stache-code> values.
+        <sky-code>styleType</sky-code> — <em>(Optional.)</em> Specifies a <a stacheRouterLink="/components/button" fragment="classes">SKY UX button class</a> to apply to the button. The valid options are <sky-code>primary</sky-code> to format the primary action on the dialog, <sky-code>default</sky-code> to format a secondary action, and <sky-code>link</sky-code> to format an action that takes users to another page. This property accepts <sky-code>string</sky-code> values.
       </li>
     </ul>
     </sky-demo-page-property>
@@ -52,19 +52,19 @@
       propertyName="type"
       isOptional="true"
     >
-    Specifies a <stache-code>SkyConfirmType</stache-code> enum that indicates how many buttons to include in the dialog. The valid options are:
+    Specifies a <sky-code>SkyConfirmType</sky-code> enum that indicates how many buttons to include in the dialog. The valid options are:
     <ul>
       <li>
-        <stache-code>Custom</stache-code> — Allows you to define your own buttons using the <stache-code>buttons</stache-code> property to specify an array of <stache-code>SkyConfirmButtonConfig</stache-code> objects.  The integer value equivalent is 0.
+        <sky-code>Custom</sky-code> — Allows you to define your own buttons using the <sky-code>buttons</sky-code> property to specify an array of <sky-code>SkyConfirmButtonConfig</sky-code> objects.  The integer value equivalent is 0.
       </li>
       <li>
-        <stache-code>OK</stache-code> — Displays one button with <strong>OK</strong> as the default label. The integer value equivalent is 1.
+        <sky-code>OK</sky-code> — Displays one button with <strong>OK</strong> as the default label. The integer value equivalent is 1.
       </li>
       <li>
-        <stache-code>YesCancel</stache-code> — Displays two buttons with <strong>Yes</strong> and <strong>Cancel</strong> as the default labels. The integer value equivalent is 2.
+        <sky-code>YesCancel</sky-code> — Displays two buttons with <strong>Yes</strong> and <strong>Cancel</strong> as the default labels. The integer value equivalent is 2.
       </li>
       <li>
-        <stache-code>YesNoCancel</stache-code> — Displays three buttons with <strong>Yes</strong>, <strong>No</strong>, and <strong>Cancel</strong> as the default labels. The integer value equivalent is 3.
+        <sky-code>YesNoCancel</sky-code> — Displays three buttons with <strong>Yes</strong>, <strong>No</strong>, and <strong>Cancel</strong> as the default labels. The integer value equivalent is 3.
       </li>
     </ul>
     </sky-demo-page-property>
@@ -74,10 +74,10 @@
     <sky-demo-page-property
       propertyName="closed"
     >
-    Fires when users select an action to close the confirmation dialog. This event returns a <stache-code>SkyConfirmCloseEventArgs</stache-code> object with information about the button that users select. The <stache-code>SkyConfirmCloseEventArgs</stache-code> object includes the following property:
+    Fires when users select an action to close the confirmation dialog. This event returns a <sky-code>SkyConfirmCloseEventArgs</sky-code> object with information about the button that users select. The <sky-code>SkyConfirmCloseEventArgs</sky-code> object includes the following property:
     <ul>
       <li>
-        <stache-code>action</stache-code> — The identifier for the button that users selected to close the confirmation dialog. 
+        <sky-code>action</sky-code> — The identifier for the button that users selected to close the confirmation dialog.
       </li>
     </ul>
     </sky-demo-page-property>

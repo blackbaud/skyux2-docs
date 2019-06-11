@@ -10,7 +10,7 @@
   </stache-page-summary>
 
   <p>
-    To import the color variables, add <stache-code>@import '~@blackbaud/skyux/dist/scss/mixins';</stache-code> to the top of your SCSS file. Do not include <stache-code>node_modules</stache-code> in the path because the SKY UX package may not always be in the root of <stache-code>node_modules</stache-code> and <stache-code>~</stache-code> resolves the dependency in those cases.
+    To import the color variables, add <sky-code>@import '~@skyux/theme/scss/mixins';</sky-code> to the top of your SCSS file. Do not include <sky-code>node_modules</sky-code> in the path because the SKY UX package may not always be in the root of <sky-code>node_modules</sky-code> and <sky-code>~</sky-code> resolves the dependency in those cases.
   </p>
   <p>
     After you import the colors, you can reference them by the variable names that are listed in the <strong>Code</strong> columns below.
@@ -21,9 +21,9 @@
     Text
   </stache-page-anchor>
   
-  <sky-alert alertType="warning">
-    For text, ensure that the contrast between the text color and the background color is at least 4.5:1 to meet Web Content Accessibility Guidelines 2.0 level AA.
-  </sky-alert>
+  <p>
+    Ensure that the contrast between the text color and the background color is at least 4.5:1 to meet Web Content Accessibility Guidelines 2.0 level AA.
+  </p>
 
   <div class="definition-table definition-table-wide">
     <div class="definition-item">
@@ -36,7 +36,7 @@
       </div>
       <div class="definition-code">
         <div class="sky-field-label">Code</div>
-        <stache-code>$sky-text-color-default</stache-code>
+        <sky-code>$sky-text-color-default</sky-code>
       </div>
       <div class="definition-styling">
         <div class="sky-field-label">Styling</div>
@@ -56,7 +56,7 @@
       </div>
       <div class="definition-code">
         <div class="sky-field-label">Code</div>
-        <stache-code>$sky-text-color-deemphasized</stache-code>
+        <sky-code>$sky-text-color-deemphasized</sky-code>
       </div>
       <div class="definition-styling">
         <div class="sky-field-label">Styling</div>
@@ -76,7 +76,7 @@
       </div>
       <div class="definition-code">
         <div class="sky-field-label">Code</div>
-        <stache-code>$sky-text-color-on-dark</stache-code>
+        <sky-code>$sky-text-color-on-dark</sky-code>
       </div>
       <div class="definition-styling">
         <div class="sky-field-label">Styling</div>
@@ -96,7 +96,7 @@
       </div>
       <div class="definition-code">
         <div class="sky-field-label">Code</div>
-        <stache-code>$sky-text-color-action-primary</stache-code>
+        <sky-code>$sky-text-color-action-primary</sky-code>
       </div>
       <div class="definition-styling">
         <div class="sky-field-label">Styling</div>
@@ -116,7 +116,7 @@
       </div>
       <div class="definition-code">
         <div class="sky-field-label">Code</div>
-        <stache-code>$sky-text-color-icon-borderless</stache-code>
+        <sky-code>$sky-text-color-icon-borderless</sky-code>
       </div>
       <div class="definition-styling">
         <div class="sky-field-label">Styling</div>
@@ -134,6 +134,26 @@
 
   <div class="definition-table definition-table-wide">
     <div class="definition-item">
+      <div class="swatch" style="background-color: #ffffff; border: 1px solid #e2e3e4;"></div>
+    </div>
+    <div class="definition-props">
+      <div class="definition-usage">
+        <div class="sky-field-label">Usage</div>
+        <div>The default color for pages</div>
+      </div>
+      <div class="definition-code">
+        <div class="sky-field-label">Code</div>
+        <sky-code>$sky-background-color-page-default</sky-code>
+      </div>
+      <div class="definition-styling">
+        <div class="sky-field-label">Styling</div>
+        <div>#ffffff</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="definition-table definition-table-wide">
+    <div class="definition-item">
       <div class="swatch" style="background-color: #eeeeef"></div>
     </div>
     <div class="definition-props">
@@ -143,7 +163,7 @@
       </div>
       <div class="definition-code">
         <div class="sky-field-label">Code</div>
-        <stache-code>$sky-background-color-neutral-light</stache-code>
+        <sky-code>$sky-background-color-neutral-light</sky-code>
       </div>
       <div class="definition-styling">
         <div class="sky-field-label">Styling</div>
@@ -163,7 +183,7 @@
       </div>
       <div class="definition-code">
         <div class="sky-field-label">Code</div>
-        <stache-code>$sky-background-color-primary-dark</stache-code>
+        <sky-code>$sky-background-color-primary-dark</sky-code>
       </div>
       <div class="definition-styling">
         <div class="sky-field-label">Styling</div>
@@ -183,7 +203,7 @@
       </div>
       <div class="definition-code">
         <div class="sky-field-label">Code</div>
-        <stache-code>$sky-background-color-disabled</stache-code>
+        <sky-code>$sky-background-color-disabled</sky-code>
       </div>
       <div class="definition-styling">
         <div class="sky-field-label">Styling</div>
@@ -203,7 +223,7 @@
       </div>
       <div class="definition-code">
         <div class="sky-field-label">Code</div>
-        <stache-code>$sky-background-color-selected</stache-code>
+        <sky-code>$sky-background-color-selected</sky-code>
       </div>
       <div class="definition-styling">
         <div class="sky-field-label">Styling</div>
@@ -223,7 +243,7 @@
       </div>
       <div class="definition-code">
         <div class="sky-field-label">Code</div>
-        <stache-code>$sky-background-color-info</stache-code>
+        <sky-code>$sky-background-color-info</sky-code>
       </div>
       <div class="definition-styling">
         <div class="sky-field-label">Styling</div>
@@ -243,7 +263,7 @@
       </div>
       <div class="definition-code">
         <div class="sky-field-label">Code</div>
-        <stache-code>$sky-background-color-info-light</stache-code>
+        <sky-code>$sky-background-color-info-light</sky-code>
       </div>
       <div class="definition-styling">
         <div class="sky-field-label">Styling</div>
@@ -263,7 +283,7 @@
       </div>
       <div class="definition-code">
         <div class="sky-field-label">Code</div>
-        <stache-code>$sky-background-color-success</stache-code>
+        <sky-code>$sky-background-color-success</sky-code>
       </div>
       <div class="definition-styling">
         <div class="sky-field-label">Styling</div>
@@ -283,7 +303,7 @@
       </div>
       <div class="definition-code">
         <div class="sky-field-label">Code</div>
-        <stache-code>$sky-background-color-warning</stache-code>
+        <sky-code>$sky-background-color-warning</sky-code>
       </div>
       <div class="definition-styling">
         <div class="sky-field-label">Styling</div>
@@ -303,7 +323,7 @@
       </div>
       <div class="definition-code">
         <div class="sky-field-label">Code</div>
-        <stache-code>$sky-background-color-danger</stache-code>
+        <sky-code>$sky-background-color-danger</sky-code>
       </div>
       <div class="definition-styling">
         <div class="sky-field-label">Styling</div>
@@ -323,7 +343,7 @@
       </div>
       <div class="definition-code">
         <div class="sky-field-label">Code</div>
-        <stache-code>$sky-background-color-danger-dark</stache-code>
+        <sky-code>$sky-background-color-danger-dark</sky-code>
       </div>
       <div class="definition-styling">
         <div class="sky-field-label">Styling</div>
@@ -350,7 +370,7 @@
       </div>
       <div class="definition-code">
         <div class="sky-field-label">Code</div>
-        <stache-code>$sky-highlight-color-info</stache-code>
+        <sky-code>$sky-highlight-color-info</sky-code>
       </div>
       <div class="definition-styling">
         <div class="sky-field-label">Styling</div>
@@ -370,7 +390,7 @@
       </div>
       <div class="definition-code">
         <div class="sky-field-label">Code</div>
-        <stache-code>$sky-highlight-color-success</stache-code>
+        <sky-code>$sky-highlight-color-success</sky-code>
       </div>
       <div class="definition-styling">
         <div class="sky-field-label">Styling</div>
@@ -390,7 +410,7 @@
       </div>
       <div class="definition-code">
         <div class="sky-field-label">Code</div>
-        <stache-code>$sky-highlight-color-warning</stache-code>
+        <sky-code>$sky-highlight-color-warning</sky-code>
       </div>
       <div class="definition-styling">
         <div class="sky-field-label">Styling</div>
@@ -410,7 +430,7 @@
       </div>
       <div class="definition-code">
         <div class="sky-field-label">Code</div>
-        <stache-code>$sky-highlight-color-danger</stache-code>
+        <sky-code>$sky-highlight-color-danger</sky-code>
       </div>
       <div class="definition-styling">
         <div class="sky-field-label">Styling</div>
@@ -437,7 +457,7 @@
       </div>
       <div class="definition-code">
         <div class="sky-field-label">Code</div>
-        <stache-code>$sky-border-color-neutral-light</stache-code>
+        <sky-code>$sky-border-color-neutral-light</sky-code>
       </div>
       <div class="definition-styling">
         <div class="sky-field-label">Styling</div>
@@ -457,7 +477,7 @@
       </div>
       <div class="definition-code">
         <div class="sky-field-label">Code</div>
-        <stache-code>$sky-border-color-neutral-medium</stache-code>
+        <sky-code>$sky-border-color-neutral-medium</sky-code>
       </div>
       <div class="definition-styling">
         <div class="sky-field-label">Styling</div>

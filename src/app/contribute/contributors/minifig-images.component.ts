@@ -6,7 +6,7 @@ import {
 
 import {
   SkyAppAssetsService
-} from '@blackbaud/skyux-builder/runtime/assets.service';
+} from '@skyux/assets';
 
 import {
   MinifigImage

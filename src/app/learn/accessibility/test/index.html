@@ -1,7 +1,7 @@
 <stache
   navOrder="3"  
-  navTitle="Testing"  
-  pageTitle="Testing for Accessibility"
+  navTitle="Test"  
+  pageTitle="Test for Accessibility"
   showTableOfContents="true">
   
   <stache-page-summary>
@@ -15,7 +15,7 @@
   </stache-page-anchor>
   
   <p>
-    The <a stacheRouterLink="https://github.com/blackbaud/skyux-sdk-testing">SKY UX SDK testing library</a> provides methods to run <a stacheRouterLink="https://github.com/dequelabs/axe-core">aXe automated accessibility tests</a> in your <a stacheRouterLink="/learn/get-started/advanced/accessibility-unit-tests">unit tests</a>. aXe includes 50-60 rules covering a subset of the W3C's WCAG 2.0 success criteria. For guidance on how to run accessibility checks in SKY UX unit tests, see <a stacheRouterLink="/learn/get-started/advanced/accessibility-unit-tests">accessibility tests</a>.
+    The <a stacheRouterLink="https://github.com/blackbaud/skyux-sdk-testing">SKY UX SDK testing library</a> provides methods to run <a stacheRouterLink="https://github.com/dequelabs/axe-core">aXe automated accessibility tests</a> in your unit tests. aXe includes 50-60 rules covering a subset of the W3C's WCAG 2.0 success criteria. For guidance on how to run accessibility checks in SKY UX unit tests, see <a stacheRouterLink="/learn/get-started/advanced/accessibility-unit-tests">accessibility tests</a>.
   </p>
   <p>
     You can also use the deprecated <a stacheRouterLink="/learn/get-started/advanced/accessibility-analyzer">accessibility analyzer</a> to include accessibility checks for end-to-end tests. However, SKY UX recommends unit tests instead of end-to-end tests based on Angular's guidance on testing. Use e2e tests only as a last resort when you can't use Angular's testing framework to interact with the DOM.
@@ -39,7 +39,7 @@
   <ol>
     <li>
       <p>
-        Ensure that <stache-code>alt</stache-code> attributes on <stache-code>&lt;img&gt;</stache-code> elements accurately reflect the content and/or function of the image in the <a href="http://webaim.org/techniques/alttext/#context">context that the image</a> is used.
+        Ensure that <sky-code>alt</sky-code> attributes on <sky-code>&lt;img&gt;</sky-code> elements accurately reflect the content and/or function of the image in the <a href="http://webaim.org/techniques/alttext/#context">context that the image</a> is used.
       </p>
     </li>
     <li>
@@ -49,7 +49,7 @@
     </li>
     <li>
       <p>
-        Ensure that any decorative images have the <stache-code>role="presentation"</stache-code> attribute.
+        Ensure that any decorative images have the <sky-code>role="presentation"</sky-code> attribute.
       </p>
     </li>
   </ol>
@@ -67,7 +67,7 @@
   </h3>
   
   <p>
-    Ensure that you use proper semantic HTML elements to describe the content of the page or component. For example, use <stache-code>&lt;ul&gt;</stache-code> for unordered lists, use <stache-code>&lt;h1&gt;</stache-code>-<stache-code>&lt;h6&gt;</stache-code> for headings, and use <stache-code>&lt;nav&gt;</stache-code> for navigation.
+    Ensure that you use proper semantic HTML elements to describe the content of the page or component. For example, use <sky-code>&lt;ul&gt;</sky-code> for unordered lists, use <sky-code>&lt;h1&gt;</sky-code> through <sky-code>&lt;h6&gt;</sky-code> for headings, and use <sky-code>&lt;nav&gt;</sky-code> for navigation.
   </p>
   <p>
     For details of semantic markup, see <a href="http://learn.shayhowe.com/html-css/getting-to-know-html/">Getting to know HTML</a> and <a href="http://learn.shayhowe.com/advanced-html-css/semantics-accessibility/">Extending Semantics and Accessibility</a>.

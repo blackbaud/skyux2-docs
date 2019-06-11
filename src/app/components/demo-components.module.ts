@@ -4,7 +4,7 @@ import {
 
 import {
   SkyDemoModule
-} from '@blackbaud/skyux/dist/demo';
+} from '@blackbaud/skyux2-demos/dist/demo';
 
 import {
   SkyDateRangePickerModule

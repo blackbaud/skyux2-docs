@@ -1,10 +1,10 @@
 <stache
-  navOrder="8"
+  navOrder="11"
   pageTitle="Navigation"
   showTableOfContents="true">
 
   <stache-page-summary>
-    SKY UX takes advantage of <a href="https://angular.io/api/router/Router">the Angular Router class</a> to enable navigation within a SPA, and you can use <a href="https://angular.io/api/router/RouterLink">Angular's <stache-code>RouterLink</stache-code> directive</a> to create links between pages in a SPA. In addition, SKY UX's <stache-code>SkyAppLink</stache-code> and <stache-code>SkyAppLinkExternal</stache-code> directives extend the <stache-code>RouterLink</stache-code> directive and allow you to create links that automatically include parameters in the URL.
+    SKY UX takes advantage of <a href="https://angular.io/api/router/Router">the Angular Router class</a> to enable navigation within a SPA, and you can use <a href="https://angular.io/api/router/RouterLink">Angular's <sky-code>RouterLink</sky-code> directive</a> to create links between pages in a SPA. In addition, SKY UX's <sky-code>SkyAppLink</sky-code> and <sky-code>SkyAppLinkExternal</sky-code> directives extend the <sky-code>RouterLink</sky-code> directive and allow you to create links that automatically include parameters in the URL.
   </stache-page-summary>
 
   <stache-page-anchor>
@@ -12,16 +12,19 @@
   </stache-page-anchor>
 
   <p>
-    To use any exports from <stache-code>SkyAppLinkModule</stache-code>, you must install it as a dependency to your project. In the command prompt, run the following command from your SPA's root directory:
+    SKY UX defines the <sky-code>SkyAppLink</sky-code> and <sky-code>SkyAppLinkExternal</sky-code> directives in <sky-code>SkyAppLinkModule</sky-code> in the <sky-code>@skyux/router</sky-code> NPM package.
+  </p>
+  <p>
+    To use any exports from <sky-code>SkyAppLinkModule</sky-code>, you must install it as a dependency to your project. In the command prompt, run the following command from your SPA's root directory:
   </p>
 
   <sky-code-block
   >
-    npm install @skyux/router --save --save-exact
+    npm install --save --save-exact @skyux/router
   </sky-code-block>
 
   <p>
-    After installation, you need to make any exports from <stache-code>SkyAppLinkModule</stache-code> available to your SPA by adding the module to the exports section of your SPA's main module. If you are using the SKY UX SDK, add <stache-code>SkyAppLinkModule</stache-code> as an export in your <stache-code>app-sky.module.ts</stache-code> file.
+    After installation, you need to make any exports from <sky-code>SkyAppLinkModule</sky-code> available to your SPA by adding the module to the exports section of your SPA's main module. If you are using the SKY UX SDK, add <sky-code>SkyAppLinkModule</sky-code> as an export in your <sky-code>app-sky.module.ts</sky-code> file.
   </p>
 
   <stache-page-anchor>
@@ -29,19 +32,19 @@
   </stache-page-anchor>
 
   <p>
-    To create links between pages in a SPA, use the standard HTML <stache-code>a</stache-code> element. If the SPA's URL includes parameters, specify the path to link to with the SKY UX <stache-code>skyAppLink</stache-code> attribute. If not, use the Angular <stache-code>routerLink</stache-code> attribute.
+    To create links between pages in a SPA, use the standard HTML <sky-code>a</sky-code> element. If the SPA's URL includes <a stacheRouterLink="/learn/reference/configuration" fragment="params">parameters</a>, specify the path to link to with the SKY UX <sky-code>skyAppLink</sky-code> attribute. If not, use the Angular <sky-code>routerLink</sky-code> attribute.
   </p>
   <p>
-    The <stache-code>skyAppLink</stache-code> attribute automatically includes the SPA's parameters in the URL. The most common parameters are <stache-code>envid</stache-code> and <stache-code>svcid</stache-code>, but the URL can include any parameters that are provided to the SPA when it loads.
+    The <sky-code>skyAppLink</sky-code> attribute automatically includes the SPA's parameters in the URL. The most common parameters are <sky-code>envid</sky-code> and <sky-code>svcid</sky-code>, but the URL can include any parameters that are provided to the SPA when it loads.
   </p>
   <sky-code-block>
     <a skyAppLink="sample-route">Sample Link 2</a>
   </sky-code-block>
   <p>
-    If this SPA has a <stache-code>svcid</stache-code> of "abc" and an <stache-code>envid</stache-code> of "1234," the sample directs users to <stache-code>/sample-spa/sample-route?svcid=abc&envid=1234</stache-code>.
+    If this SPA has a <sky-code>svcid</sky-code> of "abc" and an <sky-code>envid</sky-code> of "1234," the sample directs users to <sky-code>/sample-spa/sample-route?svcid=abc&envid=1234</sky-code>.
   </p>
   <p>
-    You can also use <stache-code>routerLink</stache-code> to specify the path to link to and then use the <stache-code>queryParams</stache-code> attribute to manually specify the SPA's parameters, but we recommend letting the <stache-code>SkyAppLink</stache-code> directive handle this for you. Keep in mind that if a parameter's current value is the same as the default value from <stache-code>skyuxconfig.json</stache-code>, the <stache-code>SkyAppLink</stache-code> directive does not include the parameter in the query string.
+    You can also use <sky-code>routerLink</sky-code> to specify the path to link to and then use the <sky-code>queryParams</sky-code> attribute to manually specify the SPA's parameters, but we recommend letting the <sky-code>SkyAppLink</sky-code> directive handle this for you. Keep in mind that if a parameter's current value is the same as the default value from <sky-code>skyuxconfig.json</sky-code>, the <sky-code>SkyAppLink</sky-code> directive does not include the parameter in the query string.
   </p>
 
   <stache-page-anchor>
@@ -49,15 +52,15 @@
   </stache-page-anchor>
 
   <p>
-    To create links to other SPAs, use the standard HTML <stache-code>a</stache-code> element. If the external SPA URL includes parameters, specify the path to link to with the SKY UX <stache-code>skyAppLink</stache-code> attribute. If not, use the standard HTML <stache-code>href</stache-code> attribute.
+    To create links to other SPAs, use the standard HTML <sky-code>a</sky-code> element. If the external SPA URL includes parameters, specify the path to link to with the SKY UX <sky-code>skyAppLinkExternal</sky-code> attribute. If not, use the standard HTML <sky-code>href</sky-code> attribute.
   </p>
-    The <stache-code>skyAppLinkExternal</stache-code> attribute automatically includes the external SPA's parameters in the URL. The most common parameters are <stache-code>envid</stache-code> and <stache-code>svcid</stache-code>, but the URL can include any parameters that are provided to the SPA when it loads.
+    The <sky-code>skyAppLinkExternal</sky-code> attribute automatically includes the external SPA's parameters in the URL. The most common parameters are <sky-code>envid</sky-code> and <sky-code>svcid</sky-code>, but the URL can include any parameters that are provided to the SPA when it loads.
   </p>
   <sky-code-block>
     <a skyAppLinkExternal="/another-spa/sample-route">Sample Link 4</a>
   </sky-code-block>
   <p>
-    If this external SPA has a <stache-code>svcid</stache-code> of "abc" and an <stache-code>envid</stache-code> of "1234," the sample directs users to <stache-code>/another-spa/sample-route?svid=abc&envid=1234</stache-code>.
+    If this external SPA has a <sky-code>svcid</sky-code> of "abc" and an <sky-code>envid</sky-code> of "1234," the sample directs users to <sky-code>/another-spa/sample-route?svid=abc&envid=1234</sky-code>.
   </p>
 
 </stache>

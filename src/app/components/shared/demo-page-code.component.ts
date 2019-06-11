@@ -1,22 +1,29 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  Input
+  ElementRef,
+  Input,
+  ViewChild,
+  AfterViewInit
 } from '@angular/core';
 
 import { SkyDemoPageCodeFile } from './demo-page-code-file';
-import { SkyDemoPagePlunkerService } from './demo-page-plunker-service';
+import { SkyDemoPageImports } from './demo-page-imports';
+import { SkyDemoPageStackBlitzService } from './demo-page-stackblitz-service';
 import { SkyDemoComponentsService } from '../demo-components.service';
 import { SkyDemoComponent } from '../demo-component';
+import { SkyDemoPageDependencies } from './demo-page-dependencies';
 
 @Component({
   selector: 'sky-demo-page-code',
   templateUrl: './demo-page-code.component.html',
   styleUrls: ['./demo-page-code.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [SkyDemoPagePlunkerService]
+  providers: [
+    SkyDemoPageStackBlitzService
+  ]
 })
-export class SkyDemoPageCodeComponent {
+export class SkyDemoPageCodeComponent implements AfterViewInit {
   @Input()
   public codeFilesForBinding: SkyDemoPageCodeFile[];
 
@@ -26,27 +33,61 @@ export class SkyDemoPageCodeComponent {
     const items = this.getItems(this.componentsService.getComponents(), value);
 
     items.map((item: SkyDemoComponent) => {
-      this.codeFilesForBinding = item.getCodeFiles().map((codeFile: any) => {
-        return new SkyDemoPageCodeFile(
+
+      this.imports = item.imports;
+      this.dependencies = item.dependencies;
+      this.disableStackblitz = item.disableStackblitz;
+
+      this.codeFilesForBinding = item.getCodeFiles()
+        .map((codeFile: any) => new SkyDemoPageCodeFile(
           codeFile.name,
           codeFile.fileContents,
           codeFile.componentName,
           codeFile.bootstrapSelector
-        );
-      });
+        )
+      );
+
+      if (this.codeFilesForBinding.length) {
+        this.codeFilesForBinding[0].active = true;
+      }
     });
   }
 
-  public get plunkerFiles(): any[] {
-    return [
-      ...this.plunkerService.getFiles(this.codeFilesForBinding)
-    ];
-  }
+  public disableStackblitz = false;
+
+  public showStackblitzRunButton = true;
+
+  public showStackblitzEmbed = false;
+
+  @ViewChild('stackblitzEmbed')
+  public embedRef: ElementRef;
+
+  private imports: SkyDemoPageImports;
+  private dependencies: SkyDemoPageDependencies;
 
   constructor(
-    private plunkerService: SkyDemoPagePlunkerService,
+    private stackBlitzService: SkyDemoPageStackBlitzService,
     private componentsService: SkyDemoComponentsService
   ) { }
+
+  public ngAfterViewInit() {
+    if (this.embedRef) {
+      this.stackBlitzService.embedProject(
+        this.embedRef.nativeElement,
+        this.codeFilesForBinding,
+        this.imports,
+        this.dependencies
+      );
+    }
+  }
+
+  public openProjectInStackBlitz() {
+    this.stackBlitzService.openProject(
+      this.codeFilesForBinding,
+      this.imports,
+      this.dependencies
+    );
+  }
 
   private getItems(components: SkyDemoComponent[], value: string): SkyDemoComponent[] {
     let items: SkyDemoComponent[] = [];

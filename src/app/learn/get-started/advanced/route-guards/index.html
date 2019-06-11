@@ -1,0 +1,48 @@
+<stache
+  pageTitle="Route Guards"
+  navTitle="Route guards"
+  showTableofContents="true">
+
+  <stache-page-summary>
+    <p>
+      Route guards allow SPAs to enable or disable the rendering of routes at runtime, usually based on external information such as login status or permissions.
+    </p>
+  </stache-page-summary>
+
+  <p>
+    Route guards behave the same way in SKY UX SPAs as in Angular CLI-based SPAs. They are hierarchical, and you can nest route guards to implement different levels of control for different routes in your SPAs. You can implement <a href="https://angular.io/api/router/CanActivate">the <sky-code>CanActivate</sky-code> interface</a> to handle navigation to a route, <a href="https://angular.io/api/router/CanActivateChild">the <sky-code>CanActivateChild</sky-code> interface</a> to handle navigation to a child route, and <a href="https://angular.io/api/router/CanDeactivate">the <sky-code>CanDeactivate</sky-code> interface</a> to handle navigation away from a route. For more information about route guards, see <a href="https://angular.io/guide/router#milestone-5-route-guards">the Angular routing and navigation documentation</a>.
+  </p>
+  <p>
+    The only difference between route guards in SKY UX SPAs and Angular CLI-based SPAs is how you register the route guards. SKY UX <a routerLink="/learn/get-started/basics/navigate-spa">automatically creates routes</a>, and to apply a route guard to one of those routes, you create an <sky-code>index.guard.ts</sky-code> file in its directory alongside the <sky-code>index.html</sky-code> file .
+  </p>
+  <p>The following code sample provides an example of a route guard.</p>
+  <sky-code-block languageType="typescript">
+import {
+  Injectable
+} from '@angular/core';
+
+import {
+  CanActivate
+} from '@angular/router';
+
+import {
+  MyPermissionService
+} from './services/my-permission.service';
+
+@Injectable()
+export class AppRouteGuard implements CanActivate {
+
+    constructor(
+      private myPermissionService: MyPermissionService
+    ) { }
+
+    public canActivate(
+      route: ActivatedRouteSnapshot,
+      state: RouterStateSnapshot
+    ): Observable<boolean> {
+      return this.myPermissionService.isAuthorized();
+    }
+}
+  </sky-code-block>
+
+</stache>

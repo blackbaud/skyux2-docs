@@ -19,7 +19,7 @@
   </stache-page-anchor>
 
   <p>
-    To create a SKY UX library, you must first create a SPA for the library and specify a base template with a starter module for front-end libraries. From the SKY UX CLI, run <stache-code>skyux new</stache-code> and use the <stache-code>--template</stache-code> option to specify the <stache-code>library</stache-code> template. This creates a SPA with the library template and places source files in <stache-code>/src/app/public</stache-code>.
+    To create a SKY UX library, you must first create a SPA for the library and specify a base template with a starter module for front-end libraries. From the SKY UX CLI, run <sky-code>skyux new</sky-code> and use the <sky-code>--template</sky-code> option to specify the <sky-code>library</sky-code> template. This creates a SPA with the library template and places source files in <sky-code>/src/app/public</sky-code>.
   </p>
   <sky-code-block>
     skyux new --template library
@@ -33,10 +33,10 @@
   </stache-page-anchor>
 
   <p>
-    In the SPA for your library, create your components and services. SKY UX Builder ignores components in <stache-code>/src/app/public</stache-code>, so they are not automatically declared in <stache-code>SkyModule</stache-code>. This allows you to write Angular modules, components, and services outside of SKY UX's scope.
+    In the SPA for your library, create your components and services. SKY UX Builder ignores components in <sky-code>/src/app/public</sky-code>, so they are not automatically declared in <sky-code>SkyModule</sky-code>. This allows you to write Angular modules, components, and services outside of SKY UX's scope.
   </p>
   <p>
-    The entry point for the component library is <stache-code>/src/app/public/index.ts</stache-code>. This file is responsible for exporting any code that you want to make available to the bundler.
+    The entry point for the component library is <sky-code>/src/app/public/index.ts</sky-code>. This file is responsible for exporting any code that you want to make available to the bundler.
   </p>
   <p>
     To serve your SPA locally during development, you must configure the name and import and export your module.
@@ -45,7 +45,7 @@
   <ul>
     <li>
       <p>
-        The <stache-code>name</stache-code> property in <stache-code>skyuxconfig.json</stache-code> specifies the name of the project when running in SKY UX Host. You must update this property to the name of your library. For more information about configuration options, see the <a routerLink="/learn/reference/configuration">configuration options reference</a>.
+        The <sky-code>name</sky-code> property in <sky-code>skyuxconfig.json</sky-code> specifies the name of the project when running in SKY UX Host. You must update this property to the name of your library. For more information about configuration options, see the <a routerLink="/learn/reference/configuration">configuration options reference</a>.
       </p>
       <sky-code-block>
         "name": "your-library"
@@ -53,7 +53,7 @@
     </li>
     <li>
       <p>
-        The <stache-code>app-extras.module.ts</stache-code> file in <stache-code>/src/app</stache-code> handles tasks such as registering providers and entry components, and SKY UX Builder automatically imports it into the build process. You must import and export your module in this file.
+        The <sky-code>app-extras.module.ts</sky-code> file in <sky-code>/src/app</sky-code> handles tasks such as registering providers and entry components, and SKY UX Builder automatically imports it into the build process. You must import and export your module in this file.
       </p>
       <sky-code-block>
 import { NgModule } from '@angular/core';
@@ -80,7 +80,7 @@ export class AppExtrasModule { }
   </stache-page-anchor>
 
   <p>
-    SKY UX Builder provides two methods for localization: <stache-code>skyAppResources</stache-code> for SPAs and <stache-code>skyLibResources</stache-code> for libraries. For more information, see <a stacheRouterLink="/learn/get-started/advanced/localization">our localization guidance</a>.
+    SKY UX Builder provides two methods for localization: <sky-code>skyAppResources</sky-code> for SPAs and <sky-code>skyLibResources</sky-code> for libraries. For more information, see <a stacheRouterLink="/learn/get-started/advanced/localization">our localization guidance</a>.
   </p>
 
   <stache-page-anchor>
@@ -88,13 +88,13 @@ export class AppExtrasModule { }
   </stache-page-anchor>
 
   <p>
-    After you create your library, you are ready to bundle it into a consumable NPM module that you can publish to an NPM stream such as <a href="https://www.npmjs.com/">npmjs.org</a>. From the SKY UX CLI, run <stache-code>skyux build-public-library</stache-code>.
+    After you create your library, you are ready to bundle it into a consumable NPM module that you can publish to an NPM stream such as <a href="https://www.npmjs.com/">npmjs.org</a>. From the SKY UX CLI, run <sky-code>skyux build-public-library</sky-code>.
   </p>
   <sky-code-block>
     skyux build-public-library
   </sky-code-block>
   <p>
-    This creates a bundle that is NPM-ready and places it in a <stache-code>/dist</stache-code> directory. It bundles the library's components and services in <stache-code>/src/app/public</stache-code> and ignores all other files, but it does not publish the component library.
+    This creates a bundle that is NPM-ready and places it in a <sky-code>/dist</sky-code> directory. It bundles the library's components and services in <sky-code>/src/app/public</sky-code> and ignores all other files, but it does not publish the component library.
   </p>
 
   <stache-page-anchor>
@@ -113,7 +113,7 @@ export class AppExtrasModule { }
   </stache-page-anchor>
 
   <p>
-    After you publish a front-end library, other SKY UX SPAs can install it. To consume a SKY UX library, import the library into your SPA through <stache-code>/app/src/app-extras.module.ts</stache-code>
+    After you publish a front-end library, other SKY UX SPAs can install it. To consume a SKY UX library, import the library into your SPA through <sky-code>/app/src/app-extras.module.ts</sky-code>
   </p>
   <sky-code-block languageType="typescript">
     import { NgModule } from '@angular/core';
@@ -136,7 +136,7 @@ export class AppExtrasModule { }
   </stache-page-anchor>
 
   <p>
-    You can provide configuration for the library through the <stache-code>skyuxconfig.json</stache-code> file in the project's directory. In this file, the <stache-code>appSettings</stache-code> property specifies data that is available for reuse throughout the application, and you can use it to add any properties that are necessary for the library.
+    You can provide configuration for the library through the <sky-code>skyuxconfig.json</sky-code> file in the project's directory. In this file, the <sky-code>appSettings</sky-code> property specifies data that is available for reuse throughout the application, and you can use it to add any properties that are necessary for the library.
   </p>
   <sky-code-block languageType="json">
     {
@@ -149,7 +149,7 @@ export class AppExtrasModule { }
     }
   </sky-code-block>
   <p>
-    After you add properties through <stache-code>appSettings</stache-code> for the library, you can access them in your components and services by injecting <stache-code>SkyAppConfig</stache-code> from <stache-code>@skyux/config</stache-code>.
+    After you add properties through <sky-code>appSettings</sky-code> for the library, you can access them in your components and services by injecting <sky-code>SkyAppConfig</sky-code> from <sky-code>@skyux/config</sky-code>.
   </p>
   <sky-code-block languageType="typescript">
     import { SkyAppConfig } from '@skyux/config';

@@ -5,7 +5,7 @@
 
   <stache-page-summary>
     <p>
-      To include static assets such as images in your SPA, you place them in the <stache-code>assets</stache-code> folder in the <stache-code>src</stache-code> directory. You can then reference the files in your HTML, CSS, or SCSS. If you need programmatic access to the files, you can use the <stache-code>SkyAppAssetsService</stache-code>. For more information about static assets, see the <stache-code>src/assets</stache-code> entry in <a routerLink="/learn/reference/naming-and-placement">the file name and placement reference.
+      To include static assets such as images in your SPA, you place them in the <sky-code>assets</sky-code> folder in the <sky-code>src</sky-code> directory. You can then reference the files in your HTML, CSS, or SCSS. If you need programmatic access to the files, you can use the <sky-code>SkyAppAssetsService</sky-code>. For more information about static assets, see the <sky-code>src/assets</sky-code> entry in <a routerLink="/learn/reference/naming-and-placement">the file name and placement reference.
     </p>
   </stache-page-summary>
 
@@ -16,15 +16,15 @@
   <ol>
     <li>
       <p>
-        Store the static asset in the <stache-code>src/assets</stache-code> folder or a subfolder. If your SPA includes many static assets, we recommend organizing them in subfolders.
+        Store the static asset in the <sky-code>src/assets</sky-code> folder or a subfolder. If your SPA includes many static assets, we recommend organizing them in subfolders.
       </p>
     </li>
     <li>
       <p>
-        On the file where you want to include the static asset, reference the static asset with <stache-code>&#126;/assets/</stache-code> before the filename and path.
+        On the file where you want to include the static asset, reference the static asset with <sky-code>&#126;/assets/</sky-code> before the filename and path.
       </p>
       <p>
-        References to static assets must start with <stache-code>&#126;/assets/</stache-code> for the <stache-code>SkyAppAssetsService</stache-code> to retrieve the assets from the <stache-code>src/assets</stache-code> folder because the filenames are updated at build time to include hashes that represent the content of the files.
+        References to static assets must start with <sky-code>&#126;/assets/</sky-code> for the <sky-code>SkyAppAssetsService</sky-code> to retrieve the assets from the <sky-code>src/assets</sky-code> folder because the filenames are updated at build time to include hashes that represent the content of the files.
       </p>
       <p>
         For example, you can display an image on a page.
@@ -50,21 +50,21 @@
   </ol>
 
   <stache-page-anchor>
-    Retrieve a static asset with <stache-code>SkyAppAssetsService</stache-code>
+    Retrieve a static asset with <sky-code>SkyAppAssetsService</sky-code>
   </stache-page-anchor>
 
   <p>
-    For programmatic access to static assets during runtime outside of your template, you can use the <stache-code>SkyAppAssetsService</stache-code>. The service's only method is <stache-code>getUrl</stache-code>, which takes a string value with the path and file name, relative to the <stache-code>assets</stache-code> folder.
+    For programmatic access to static assets during runtime outside of your template, you can use the <sky-code>SkyAppAssetsService</sky-code>. The service's only method is <sky-code>getUrl</sky-code>, which takes a string value with the path and file name, relative to the <sky-code>assets</sky-code> folder.
   </p>
   <ol>
     <li>
       <p>
-        Store the static asset in the <stache-code>src/assets</stache-code> folder or a subfolder.
+        Store the static asset in the <sky-code>src/assets</sky-code> folder or a subfolder.
       </p>
     </li>
     <li>
       <p>
-        In the file where you want to access the static asset, import <stache-code>SkyAppAssetsService</stache-code>.
+        In the file where you want to access the static asset, import <sky-code>SkyAppAssetsService</sky-code>.
       </p>
       <sky-code-block languageType="typescript">
         import { SkyAppAssetsService } from '@skyux/assets;
@@ -72,13 +72,13 @@
     </li>
     <li>
       <p>
-        In the <stache-code>getUrl</stache-code> method, specify the path and file name for the static asset.
+        In the <sky-code>getUrl</sky-code> method, specify the path and file name for the static asset. Do not include the <sky-code>~/assets</sky-code> prefix, and note that param is case-sensitive.
       </p>
       <sky-code-block>
         skyAppAssetsService.getUrl('json/example.json')
       </sky-code-block>
       <p>
-        For example, you can use the <stache-code>SkyAppAssetsService</stache-code> to display data from a JSON file.
+        For example, you can use the <sky-code>SkyAppAssetsService</sky-code> to display data from a JSON file.
       </p>
       <sky-code-block languageType="typescript">
         import { Component } from '@angular/core';

@@ -51,6 +51,10 @@ export class SkyDocsDemoCodeService {
           fileContents: require('!!raw-loader!./summary-action-bar/summary-action-bar-demo.component.html')
         },
         {
+          name: 'summary-action-bar-demo.component.scss',
+          fileContents: require('!!raw-loader!./summary-action-bar/summary-action-bar-demo.component.scss')
+        },
+        {
           name: 'summary-action-bar-demo.ts',
           fileContents: require('!!raw-loader!./summary-action-bar/summary-action-bar-demo.component.ts'),
           componentName: 'SkySummaryActionBarDemoComponent',
@@ -59,6 +63,14 @@ export class SkyDocsDemoCodeService {
         {
           name: 'summary-action-bar-modal-demo.component.html',
           fileContents: require('!!raw-loader!./summary-action-bar/summary-action-bar-modal-demo.component.html')
+        },
+        {
+          name: 'summary-action-bar-modal-demo.component.scss',
+          fileContents: require('!!raw-loader!./summary-action-bar/summary-action-bar-modal-demo.component.scss')
+        },
+        {
+          name: 'summary-action-bar-modal-demo.component.ts',
+          fileContents: require('!!raw-loader!./summary-action-bar/summary-action-bar-modal-demo.component.ts')
         },
         {
           name: 'summary-action-bar-modal-demo.ts',
@@ -73,11 +85,15 @@ export class SkyDocsDemoCodeService {
       component: SkyCodeBlockDemoComponent,
       files: [
         {
-          name: 'code-block-demo-component.html',
+          name: 'code-block-demo.component.html',
           fileContents: require('!!raw-loader!./code-block/code-block-demo.component.html')
         },
         {
-          name: 'code-block-demo-component.ts',
+          name: 'code-block-demo.component.scss',
+          fileContents: require('!!raw-loader!./code-block/code-block-demo.component.scss')
+        },
+        {
+          name: 'code-block-demo.component.ts',
           fileContents: require('!!raw-loader!./code-block/code-block-demo.component.ts'),
           componentName: 'SkyCodeBlockDemoComponent',
           bootstrapSelector: 'sky-code-block-demo'
@@ -139,7 +155,7 @@ export class SkyDocsDemoCodeService {
 
   public getComponent(name: string): any {
     const found = this.components.find((component: any) => {
-      return component.component.name === name;
+      return component.name === name;
     });
 
     return found;
