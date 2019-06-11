@@ -1,0 +1,133 @@
+<sky-tabbed-demo-page
+  pageTitle="Tabs"
+>
+  
+<sky-tabset id="content-tabs">
+	
+	<sky-tab
+		tabHeading="Design">	
+		
+	<sky-demo-page-content sectionHeading="Anatomy">
+		<sky-docs-anatomy imagePath="~/assets/img/guidelines/phone-field/anatomy.png">
+      <sky-docs-anatomy-item anatomyNumber="1">Country selector button</sky-docs-anatomy-item>
+      <sky-docs-anatomy-item anatomyNumber="2">Phone number input</sky-docs-anatomy-item>
+      <sky-docs-anatomy-item anatomyNumber="3">Country search input</sky-docs-anatomy-item>
+      <sky-docs-anatomy-item anatomyNumber="4">Country search close button</sky-docs-anatomy-item>
+      <sky-docs-anatomy-item anatomyNumber="5">Country search results</sky-docs-anatomy-item>
+    </sky-docs-anatomy>
+	</sky-demo-page-content>
+	
+	<sky-demo-page-content sectionHeading="Options">
+		<h3>Default country</h3>
+		<div class="sky-text-block">
+      <p>By default, the country selector will be set to the United States. You can specify a different default value or set the default dynamically, for example by using location detection.</p>
+    </div>
+	</sky-demo-page-content>
+	
+	<sky-demo-page-content sectionHeading="Behavior & states">
+		<h3>Country selection</h3>
+			<sky-docs-visual-example>
+				<sky-docs-visual-example-text>
+					<p>If the user is entering a phone number from a country other than that currently selected, they must choose the correct country to ensure the phone number passes validation.</p>
+				</sky-docs-visual-example-text>
+				<sky-docs-visual-example-image>
+				  <img src="~/assets/img/guidelines/phone-field/phone-country-picker.png" />
+				</sky-docs-visual-example-image>
+			</sky-docs-visual-example>
+    <h3>Phone format validation</h3>
+			<sky-docs-visual-example>
+				<sky-docs-visual-example-text>
+					<p>The phone input is validated against the format expected for the selected country. You have to specify the error message; in most cases the error message should say "Enter a valid phone number."</p>
+				</sky-docs-visual-example-text>
+				<sky-docs-visual-example-image>
+				  <img src="~/assets/img/guidelines/phone-field/phone-input-error.png" />
+				</sky-docs-visual-example-image>
+			</sky-docs-visual-example>
+		<h3>States</h3>
+    <sky-demo-page-component-states>
+      <sky-demo-page-component-state stateName="Unfocused" imagePath="~/assets/img/guidelines/phone-field/phone-input-base.png"></sky-demo-page-component-state>
+      <sky-demo-page-component-state stateName="Focused" imagePath="~/assets/img/guidelines/phone-field/phone-input-focused.png"></sky-demo-page-component-state>
+      <sky-demo-page-component-state stateName="Validation error" imagePath="~/assets/img/guidelines/phone-field/phone-input-error-no-message.png"></sky-demo-page-component-state>
+      <sky-demo-page-component-state stateName="Country input, blank" imagePath="~/assets/img/guidelines/phone-field/phone-country-input.png"></sky-demo-page-component-state>
+      <sky-demo-page-component-state stateName="Country input, search results" imagePath="~/assets/img/guidelines/phone-field/phone-country-picker.png"></sky-demo-page-component-state>
+    </sky-demo-page-component-states>
+			
+	</sky-demo-page-content>
+	
+	<sky-demo-page-content sectionHeading="Content">
+		<h3>Page titles</h3>
+			<p>
+        If tabs are the main navigation on a page, display the tab header in the page title. Use the following format: <span class="sky-emphasized">&lt;Page title&gt; — &lt;Company, product, or site identifier&gt;</span>. For example: <span class="sky-emphasized">Portfolio — Work center — Blackbaud</span>. In addition, follow these guidelines for page titles:
+			</p>
+			<ul>
+				<li>Keep titles short.</li>
+				<li>Make titles unique.</li>
+				<li>Provide concise descriptions of each page's contents or purpose. Titles should stand on their own and make sense out of context.</li>
+				<li>Start with the most meaningful, differentiating terms for users to scan in browser tabs, window lists, and browser bookmarks.</li>
+			</ul>
+			<p>
+				For information about how to use <a href="https://angular.io/docs/ts/latest/cookbook/set-document-title.html">the Angular <sky-code>Title</sky-code> service</a> and the SKY UX <sky-code>title</sky-code> configuration property to specify the title, see <a stacheRouterLink="learn/reference/configuration" fragment="app">the configuration reference</a>.
+			</p>
+	</sky-demo-page-content>
+		
+	<sky-demo-page-content sectionHeading="Layout">
+		<sky-docs-visual-example>
+			<sky-docs-visual-example-text>
+				<p>Tabs are always the last (bottommost) content in their container. Don’t put additional content under tabs.</p>
+			</sky-docs-visual-example-text>
+			<sky-docs-visual-example-image>
+				<div>
+					<img class="bordered" src="~/assets/img/guidelines/tab/layout-bottommost.png" />
+					<div class="caption caption-danger sky-text-danger">Don't put additional content under tabs.</div>
+				</div>
+			</sky-docs-visual-example-image>
+		</sky-docs-visual-example>
+		<sky-docs-visual-example>
+			<sky-docs-visual-example-text>
+				<p>The tab border extends the full width of the container. Don’t use left or right margins on the tab border, and ignore any padding that the container defines.</p>
+			</sky-docs-visual-example-text>
+			<sky-docs-visual-example-image>
+				<div class="sky-margin-stacked-content-section">
+					<img src="~/assets/img/guidelines/tab/layout-full-width.png" />
+					<div class="caption caption-success sky-text-success">Do extend the tab border to the full width of the container.</div>
+				</div>
+				<div>
+					<img src="~/assets/img/guidelines/tab/layout-dont-pad-line.png" />
+					<div class="caption caption-danger sky-text-danger">Don't apply the container's padding to the tab border.</div>
+				</div>
+			</sky-docs-visual-example-image>
+		</sky-docs-visual-example>
+		<sky-docs-visual-example>
+			<sky-docs-visual-example-text>
+				<p>Tab content does not have additional left or right padding. The left and right gutters align with the gutters for content outside the tabs.</p>
+			</sky-docs-visual-example-text>
+			<sky-docs-visual-example-image>
+				<div>
+					<img class="bordered" src="~/assets/img/guidelines/tab/layout-dont-pad-content.png" />
+					<div class="caption caption-danger sky-text-danger">Don't apply additional left or right padding to tab content.</div>
+				</div>
+			</sky-docs-visual-example-image>
+		</sky-docs-visual-example>
+	</sky-demo-page-content>
+	
+	<sky-demo-page-content sectionHeading="Related information">
+		<h3>Components</h3>
+			<ul>
+				<li><a routerLink="/components/vertical-tabs">Vertical tabs</a></li>
+			</ul>
+		<h3>Guidelines</h3>
+			<ul>
+				<li><a routerLink="/design/guidelines/content-containers">Content containers</a></li>
+				<li><a routerLink="/design/guidelines/page-layouts">Page design</a></li>
+			</ul>
+	</sky-demo-page-content>
+		
+	</sky-tab>
+	
+	<sky-tab
+		tabHeading="Development">
+  </sky-tab>
+
+</sky-tabset>
+  
+</sky-tabbed-demo-page>
