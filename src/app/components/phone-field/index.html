@@ -1,7 +1,5 @@
-<sky-demo-page
+<sky-tabbed-demo-page
   pageTitle="Phone field"
-  skyuxModule="SkyPhoneFieldModule"
-  packageName="@skyux/phone-field"
 >
 
   <sky-demo-page-summary>
@@ -10,82 +8,180 @@
     </p>
   </sky-demo-page-summary>
 
-  <sky-demo-page-properties
-    sectionHeading="Phone field component properties"
-  >
-    <sky-demo-page-property
+  <div class="sky-margin-stacked-content-section">
+    <sky-demo-page-example>
+      <sky-phone-field-demo></sky-phone-field-demo>
+    </sky-demo-page-example>
+  </div>
+  
+  <sky-tabset id="content-tabs">
+	
+	<sky-tab
+		tabHeading="Design">	
+  
+  <sky-demo-page-content sectionHeading="Usage">
+		<sky-docs-visual-example>
+			<sky-docs-visual-example-text>
+					<p>Use the phone field to validate the phone number the user enters against the correct format for the selected country.</p>
+			</sky-docs-visual-example-text>
+			<sky-docs-visual-example-image>
+				<div>
+					<img src="~/assets/img/guidelines/phone-field/phone-input-form.png" />
+				</div>
+			</sky-docs-visual-example-image>
+		</sky-docs-visual-example>
+    </sky-demo-page-content>
+  
+	<sky-demo-page-content sectionHeading="Anatomy">
+		<sky-docs-anatomy imagePath="~/assets/img/guidelines/phone-field/anatomy.png">
+      <sky-docs-anatomy-item anatomyNumber="1">Country selector button</sky-docs-anatomy-item>
+      <sky-docs-anatomy-item anatomyNumber="2">Phone number input</sky-docs-anatomy-item>
+      <sky-docs-anatomy-item anatomyNumber="3">Country search input</sky-docs-anatomy-item>
+      <sky-docs-anatomy-item anatomyNumber="4">Country search close button</sky-docs-anatomy-item>
+      <sky-docs-anatomy-item anatomyNumber="5">Country search results</sky-docs-anatomy-item>
+    </sky-docs-anatomy>
+	</sky-demo-page-content>
+	
+	<sky-demo-page-content sectionHeading="Options">
+		<h3>Default country</h3>
+		<div class="sky-text-block">
+      <p>By default, the country selector will be set to the United States. You can specify a different default value or set the default dynamically, for example by using location detection.</p>
+    </div>
+	</sky-demo-page-content>
+	
+	<sky-demo-page-content sectionHeading="Behavior & states">
+		<h3>Country selection</h3>
+			<sky-docs-visual-example>
+				<sky-docs-visual-example-text>
+					<p>If the user is entering a phone number from a country other than that currently selected, they must choose the correct country to ensure the phone number is validated against the expected format.</p>
+				</sky-docs-visual-example-text>
+				<sky-docs-visual-example-image>
+				  <img src="~/assets/img/guidelines/phone-field/phone-country-picker.png" />
+				</sky-docs-visual-example-image>
+			</sky-docs-visual-example>
+    <h3>Phone format validation</h3>
+			<sky-docs-visual-example>
+				<sky-docs-visual-example-text>
+					<p>The phone input is validated against the format expected for the selected country. You have to specify the error message; in most cases the error message should say "Enter a valid phone number."</p>
+				</sky-docs-visual-example-text>
+				<sky-docs-visual-example-image>
+				  <img src="~/assets/img/guidelines/phone-field/phone-input-error.png" />
+				</sky-docs-visual-example-image>
+			</sky-docs-visual-example>
+		<h3>States</h3>
+    <sky-demo-page-component-states>
+      <sky-demo-page-component-state stateName="Phone number input" imagePath="~/assets/img/guidelines/phone-field/phone-input-base.png"></sky-demo-page-component-state>
+      <sky-demo-page-component-state stateName="Phone number input, focused" imagePath="~/assets/img/guidelines/phone-field/phone-input-focused.png"></sky-demo-page-component-state>
+      <sky-demo-page-component-state stateName="Phone number input, validation error" imagePath="~/assets/img/guidelines/phone-field/phone-input-error-no-message.png"></sky-demo-page-component-state>
+      <sky-demo-page-component-state stateName="Country search, blank" imagePath="~/assets/img/guidelines/phone-field/phone-country-input.png"></sky-demo-page-component-state>
+      <sky-demo-page-component-state stateName="Country search, search results" imagePath="~/assets/img/guidelines/phone-field/phone-country-picker.png"></sky-demo-page-component-state>
+    </sky-demo-page-component-states>
+			
+	</sky-demo-page-content>
+	
+	<sky-demo-page-content sectionHeading="Related information">
+		<h3>Components</h3>
+			<ul>
+				<li><a routerLink="/components/form">Forms</a></li>
+			</ul>
+		<h3>Guidelines</h3>
+			<ul>
+				<li><a routerLink="/design/guidelines/form-design">Form design</a></li>
+			</ul>
+	</sky-demo-page-content>
+		
+	</sky-tab>
+	
+	<sky-tab
+		tabHeading="Development">
+    
+    <sky-demo-page-module-info
+      skyuxModule="SkyPhoneFieldModule"
+      packageName="@skyux/phone-field"
+      githubRepo="skyux-phone-field"
+    >
+    </sky-demo-page-module-info>
+
+    <sky-demo-page-properties
+      sectionHeading="Phone field component properties"
+    >
+      <sky-demo-page-property
         propertyName="defaultCountry"
         defaultValue="us"
         [isOptional]="true"
       >
         Specifies the <a href="https://www.nationsonline.org/oneworld/country_code_list.htm">International Organization for Standardization Alpha 2</a> country code for the default country. The phone field button displays a flag icon for this default country until users select a different country. This property accepts <sky-code>string</sky-code> values.
       </sky-demo-page-property>
-  </sky-demo-page-properties>
+    </sky-demo-page-properties>
 
-  <sky-demo-page-properties
-    sectionHeading="Phone field input directive properties"
-  >
-    <sky-demo-page-property
-      propertyName="skyPhoneFieldInput"
+    <sky-demo-page-properties
+      sectionHeading="Phone field input directive properties"
     >
-      Creates a phone field button and text input. Place this attribute on an <sky-code>input</sky-code> element, and wrap that element in a <sky-code>sky-phone-field</sky-code> component. By default, the phone field button displays a flag icon for the default country, and the text input displays a sample of the correct phone number format. When users select the phone field button, they enable <a stacheRouterLink="components/autocomplete">an autocomplete text input</a> to select a different country.
-    </sky-demo-page-property>
-    <sky-demo-page-property
-      propertyName="disabled"
-      defaultValue="false"
-      [isOptional]="true"
-    >
-      Indicates whether to disable the phone field. This property accepts <sky-code>boolean</sky-code> values.
-    </sky-demo-page-property>
-    <sky-demo-page-property
-      propertyName="skyPhoneFieldNoValidate"
-      defaultValue="false"
-      [isOptional]="true"
-    >
-      Indicates whether to prevent validation on the phone field text input. When set to <sky-code>true</sky-code>, date validation does not run on the input. This property accepts <sky-code>boolean</sky-code> values.
-    </sky-demo-page-property>
-  </sky-demo-page-properties>
+      <sky-demo-page-property
+        propertyName="skyPhoneFieldInput"
+      >
+        Creates a phone field button and text input. Place this attribute on an <sky-code>input</sky-code> element, and wrap that element in a <sky-code>sky-phone-field</sky-code> component. By default, the phone field button displays a flag icon for the default country, and the text input displays a sample of the correct phone number format. When users select the phone field button, they enable <a stacheRouterLink="components/autocomplete">an autocomplete text input</a> to select a different country.
+      </sky-demo-page-property>
+      <sky-demo-page-property
+        propertyName="disabled"
+        defaultValue="false"
+        [isOptional]="true"
+      >
+        Indicates whether to disable the phone field. This property accepts <sky-code>boolean</sky-code> values.
+      </sky-demo-page-property>
+      <sky-demo-page-property
+        propertyName="skyPhoneFieldNoValidate"
+        defaultValue="false"
+        [isOptional]="true"
+      >
+        Indicates whether to prevent validation on the phone field text input. When set to <sky-code>true</sky-code>, date validation does not run on the input. This property accepts <sky-code>boolean</sky-code> values.
+      </sky-demo-page-property>
+    </sky-demo-page-properties>
 
-  <sky-demo-page-properties
-    sectionHeading="Phone field component events"
-  >
-    <sky-demo-page-property
-      propertyName="selectedCountryChanged"
-      isOptional="true"
+    <sky-demo-page-properties
+      sectionHeading="Phone field component events"
     >
-      Emits <a stacheRouterLink="." fragment="skyphonefieldcountry-properties">a <sky-code>SkyPhoneFieldCountry</sky-code> object</a> when the selected country in the phone field dropdown changes.
-    </sky-demo-page-property>
-  </sky-demo-page-properties>
+      <sky-demo-page-property
+        propertyName="selectedCountryChanged"
+        isOptional="true"
+      >
+        Emits <a stacheRouterLink="." fragment="skyphonefieldcountry-properties">a <sky-code>SkyPhoneFieldCountry</sky-code> object</a> when the selected country in the phone field dropdown changes.
+      </sky-demo-page-property>
+    </sky-demo-page-properties>
 
-  <sky-demo-page-properties
-    sectionHeading="SkyPhoneFieldCountry properties"
-  >
-    <sky-demo-page-property
-      propertyName="dialCode"
+    <sky-demo-page-properties
+      sectionHeading="SkyPhoneFieldCountry properties"
     >
-      Specifies the country's international dial code.
-    </sky-demo-page-property>
-    <sky-demo-page-property
-      propertyName="iso2"
-    >
-      Specifies the country's <a href="https://www.nationsonline.org/oneworld/country_code_list.htm">International Organization for Standardization Alpha 2</a> country code.
-    </sky-demo-page-property>
-    <sky-demo-page-property
-      propertyName="name"
-    >
-      Specifies the name of the country.
-    </sky-demo-page-property>
-    <sky-demo-page-property
-      propertyName="exampleNumber"
-      isOptional="true"
-    >
-      Specifies a placeholder value to demonstrate the country's number format. This value is <sky-code>undefined</sky-code> until a country is selected to validate against.
-    </sky-demo-page-property>
-  </sky-demo-page-properties>
+      <sky-demo-page-property
+        propertyName="dialCode"
+      >
+        Specifies the country's international dial code.
+      </sky-demo-page-property>
+      <sky-demo-page-property
+        propertyName="iso2"
+      >
+        Specifies the country's <a href="https://www.nationsonline.org/oneworld/country_code_list.htm">International Organization for Standardization Alpha 2</a> country code.
+      </sky-demo-page-property>
+      <sky-demo-page-property
+        propertyName="name"
+      >
+        Specifies the name of the country.
+      </sky-demo-page-property>
+      <sky-demo-page-property
+        propertyName="exampleNumber"
+        isOptional="true"
+      >
+        Specifies a placeholder value to demonstrate the country's number format. This value is <sky-code>undefined</sky-code> until a country is selected to validate against.
+      </sky-demo-page-property>
+    </sky-demo-page-properties>
 
   <sky-demo-page-example>
     <sky-phone-field-demo></sky-phone-field-demo>
     <sky-demo-page-code demoName="Phone field"></sky-demo-page-code>
   </sky-demo-page-example>
+    
+  </sky-tab>
 
-</sky-demo-page>
+</sky-tabset>
+  
+</sky-tabbed-demo-page>
