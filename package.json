@@ -51,6 +51,7 @@
     "@skyux/modals": "3.0.3",
     "@skyux/navbar": "3.0.1",
     "@skyux/omnibar-interop": "3.1.0",
+    "@skyux/phone-field": "3.0.1",
     "@skyux/popovers": "3.0.0",
     "@skyux/progress-indicator": "3.1.0",
     "@skyux/router": "3.1.1",
