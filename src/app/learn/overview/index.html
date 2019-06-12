@@ -10,18 +10,13 @@
   </stache-page-summary>
 
   <p>
-    The SKY UX framework also provides additional benefits. The SKY UX Builder developer tool takes the application-building aspects of Angular and wraps them up to abstract many of the complexities of modern web development. We still expect developers to write JavaScript/TypeScript and build features, but we don’t expect them to handle all the underlying details. In addition, SKY UX now includes a continuous integration layer for testing and validation, and SKY UX Host provides a hosting solution for Blackbaud applications.
+    In addition, the SKY UX Builder developer tool takes the application-building aspects of Angular and wraps them up to abstract many of the complexities of modern web development. We still expect developers to write JavaScript/TypeScript and build features, but we don’t expect them to handle all the underlying details. SKY UX also includes a continuous integration layer for testing and validation, and SKY UX Host provides a hosting solution for Blackbaud applications.
   </p>
   <p>
-    Keep in mind that <a href="https://angular.io/">Angular</a> is at the heart of SKY UX, so developers need to be familiar with this technology to build with SKY UX. For training materials on Angular and other SKY UX tools and technologies, see <a routerLink="/learn/reference/resources">the training resources.</a>
+    Keep in mind that <a href="https://angular.io/">Angular</a> is at the heart of SKY UX, so developers need to be familiar with this technology. For training materials on Angular and other SKY UX tools and technologies, see <a routerLink="/learn/reference/resources">the training resources.</a>
   </p>
-  <!--
-    <p>
-      SKY UX enables developers to focus on features instead of infrastructure. It creates user experience interactions and allows feature engineers to consume them.
-    </p>
-  -->
   <sky-alert alertType="info">
-    This site describes the version of SKY UX that supports the latest version of Angular. For information about the version of SKY UX that supports the AngularJS framework, visit <a href="https://skyux.developer.blackbaud.com/">skyux.developer.blackbaud.com/</a>.
+    This site describes the version of SKY UX that supports the latest version of Angular. For information about the version of SKY UX that supports the AngularJS (1.x) implementation, visit <a href="https://skyux.developer.blackbaud.com/">the SKY UX 1 documentation</a>.
   </sky-alert>
 
   <stache-page-anchor>
@@ -29,9 +24,8 @@
   </stache-page-anchor>
 
   <p>
-    SKY UX continues to provide the same benefits as <a href="http://skyux.developer.blackbaud.com/">the previous version</a>: Angular components, services, and modules enable developers to create user interfaces that incorporate SKY UX styles and patterns. SKY UX design patterns allow developers to implement a consistent, cohesive user experience and provide guidance on how to apply components and the context for when to use them. In addition, SKY UX also includes the following improvements and new capabilities:
+    SKY UX continues to provide the same benefits as <a href="http://skyux.developer.blackbaud.com/">the AngularJS (1.x) implementation</a>. Angular components, services, and modules enable developers to create user interfaces that incorporate SKY UX styles and patterns. SKY UX design patterns allow developers to implement a consistent, cohesive user experience and provide guidance on how to apply components and the context for when to use them. In addition, SKY UX now provides the following improvements and new capabilities:
   </p>
-  
   <ul>
     <li>
       <p>
@@ -40,7 +34,7 @@
     </li>
     <li>
       <p>
-        SKY UX Builder provides for a rapid development process with minimal developer setup. It creates single-page applications and handles configuration details for developers.
+        SKY UX Builder provides for a rapid development process with minimal developer setup. It creates single-page applications (SPAs) and handles configuration details for developers.
       </p>
     </li>
     <li>
@@ -104,7 +98,7 @@
   </stache-page-anchor>
   
   <p>
-    The continuous integration layer of SKY UX runs unit tests, visual regression tests, and end-to-end tests in multiple platforms and browsers when SPA code changes or when a dependency releases a new version. It also handles staging SPAs for additional testing and validation.
+    SKY UX's continuous integration layer runs unit tests, visual regression tests, and end-to-end tests in multiple platforms and browsers when SPA code changes or when a dependency releases a new version. It also handles staging SPAs for additional testing and validation.
   </p>
   <p>
     The CI layer is primarily for internal Blackbaud use. External developers can use this layer when developing SPAs locally, but it is not open source like the components, services, and modules in <a routerLink="/contribute/packages">our GitHub repositories</a>.
