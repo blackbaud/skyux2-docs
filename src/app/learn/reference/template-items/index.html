@@ -35,17 +35,12 @@
     </li>
     <li>
       <p>
-        <sky-code>coverage</sky-code> folder — Stores code coverage results for unit tests. This folder is generated when you run <sky-code>skyux test</sky-code> or <sky-code>skyux watch</sky-code>, and it provides a convenient way for developers to see what code the tests reached and what code they did not reach. We recommend that all new code should have 100 percent unit test code coverage. For information about the code coverage requirements to contribute to SKY UX, see the <a href="https://github.com/blackbaud/skyux2/blob/master/CONTRIBUTING.md">SKY UX contribution guidelines</a>.
+        <sky-code>coverage</sky-code> folder — Stores code coverage results for unit tests. This folder is generated when you run <sky-code>skyux test</sky-code> or <sky-code>skyux watch</sky-code>, and it provides a convenient way for developers to see what code the tests reached and what code they did not reach. We recommend that all new code should have 100 percent unit test code coverage. For information about the code coverage requirements to contribute to SKY UX, see the <a stacheRouterLink="/contribute/guidelines">contribution guidelines</a>.
       </p>
     </li>
     <li>
       <p>
         <sky-code>dist</sky-code> folder — Contains files that are deployed through the continuous integration pipeline. This folder is generated when you run <sky-code>skyux build</sky-code>.
-      </p>
-    </li>
-    <li>
-      <p>
-        <sky-code>e2e</sky-code> folder — The required location <a routerLink="/learn/reference/tests">to store end-to-end tests</a>. However, we strongly recommend that you use unit tests instead of end-to-end tests based on <a href="https://angular.io/guide/testing#why-not-rely-on-e2e-tests-of-dom-integration">Angular’s guidance on testing</a>.
       </p>
     </li>
     <li>
@@ -78,6 +73,11 @@
             <li>
               <p>
                 <sky-code>app-extras.module.ts</sky-code> — Handles tasks such as registering providers and entry components. When this file exists, SKY UX Builder automatically imports it into the build process. For an example of how to register an entry component, see <a routerLink="/learn/get-started/advanced/add-entry-components">add an entry component</a>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <sky-code>app-sky.module.ts</sky-code> — Imports all of the SKY UX modules used throughout your SPA. This module is imported in the <sky-code>app-extras.module.ts</sky-code> file.
               </p>
             </li>
             <li>
