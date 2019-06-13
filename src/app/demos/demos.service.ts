@@ -1,28 +1,15 @@
-// #region imports
 import {
   Injectable
 } from '@angular/core';
 
 import {
-  SkySummaryActionBarDemoComponent
-} from './summary-action-bar';
-
-import {
-  SkyCodeBlockDemoComponent
-} from './code-block';
-
-import {
-  SkyCopyToClipboardDemoComponent
-} from './copy-to-clipboard';
-
-import {
-  SkyDateRangePickerDemoComponent
-} from './date-range-picker';
-
-import {
+  SkyPhoneFieldDemoComponent,
+  SkySummaryActionBarDemoComponent,
+  SkyCodeBlockDemoComponent,
+  SkyCopyToClipboardDemoComponent,
+  SkyDateRangePickerDemoComponent,
   SkyInlineFormDemoComponent
-} from './inline-form/inline-form-demo.component';
-// #endregion
+} from '.';
 
 /**
  * This service provides consumers with the raw file contents for each component demo.
@@ -39,6 +26,22 @@ import {
 @Injectable()
 export class SkyDocsDemoCodeService {
   public components: any[] = [
+    {
+      name: 'Phone field',
+      component: SkyPhoneFieldDemoComponent,
+      files: [
+        {
+          name: 'phone-field-demo.component.html',
+          fileContents: require('!!raw-loader!./phone-field/phone-field-demo.component.html')
+        },
+        {
+          name: 'phone-field-demo.ts',
+          fileContents: require('!!raw-loader!./phone-field/phone-field-demo.component.ts'),
+          componentName: 'SkyPhoneFieldDemoComponent',
+          bootstrapSelector: 'sky-phone-field-demo'
+        }
+      ]
+    },
     {
       name: 'Summary action bar',
       component: SkySummaryActionBarDemoComponent,

@@ -147,6 +147,11 @@ export class PackagesComponent {
       repo: 'blackbaud/skyux-modals'
     },
     {
+      id: '@skyux/phone-field',
+      provider: 'github',
+      repo: 'blackbaud/skyux-phone-field'
+    },
+    {
       id: '@skyux/popovers',
       provider: 'github',
       repo: 'blackbaud/skyux-popovers'
