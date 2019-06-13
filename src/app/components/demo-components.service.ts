@@ -784,7 +784,7 @@ export class SkyDemoComponentsService {
         name: 'Phone field',
         icon: 'phone',
         // tslint:disable-next-line
-        summary: `The phone field module creates a button and text input to validate international phone numbers.`,
+        summary: `The phone field module creates a button, search input, and text input for entering and validating phone numbers.`,
         url: '/components/phone-field',
         imports: {
           '@skyux/phone-field': [
