@@ -11,6 +11,9 @@
     <sky-alert alertType="warning">
       The selector for a tile component to display in a tile dashboard must begin with <sky-code>div.</sky-code> followed by a custom selector.
     </sky-alert>
+    <p>
+      <stache-include fileName="components/entry-component.html"></stache-include>
+    </p>
   </sky-demo-page-summary>
 
   <sky-demo-page-properties sectionHeading="Tile properties">
@@ -111,7 +114,7 @@
     An array of <sky-code>SkyTileDashboardConfigTile</sky-code> objects that specifies the tiles to include in the dashboard. Each <sky-code>SkyTileDashboardConfigTile</sky-code> object includes the following properties:
     <ul>
       <li>
-        <sky-code>componentType</sky-code> — Specifies the class type of the tile component.
+        <sky-code>componentType</sky-code> — Specifies the class type of the tile component. <stache-include fileName="components/entry-component.html"></stache-include>
       </li>
       <li>
         <sky-code>id</sky-code> — Specifies the ID of the tile. This property accepts <sky-code>string</sky-code> values.
