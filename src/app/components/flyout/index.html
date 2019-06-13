@@ -8,9 +8,6 @@
     <p>
       The flyout service launches a container over a page's content to display large quantities of supplementary information related to a task. The <sky-code>SkyFlyoutService</sky-code> provider gives flyouts a common look and feel. This service dynamically generates the flyout component and appends it directly to the document's <sky-code>body</sky-code> element. The <sky-code>SkyFlyoutInstance</sky-code> class watches for and triggers flyout events.
     </p>
-    <p>
-      <stache-include fileName="components/entry-component.html"></stache-include>
-    </p>
   </sky-demo-page-summary>
 
   <sky-demo-page-properties sectionHeading="Flyout service methods">
@@ -25,7 +22,7 @@
     <sky-demo-page-property
       propertyName="open(component, config?)"
     >
-      Opens a flyout and displays the specified component. The <sky-code>component</sky-code> parameter determines the component to render. The optional <sky-code>config</sky-code> parameter is of type <sky-code>SkyFlyoutConfig</sky-code> and is passed to the specified component's constructor. This method returns a <sky-code>SkyFlyoutInstance</sky-code> object.
+      Opens a flyout and displays the specified component. The <sky-code>component</sky-code> parameter determines the component to render. <stache-include fileName="components/entry-component.html"></stache-include> The optional <sky-code>config</sky-code> parameter is of type <sky-code>SkyFlyoutConfig</sky-code> and is passed to the specified component's constructor. This method returns a <sky-code>SkyFlyoutInstance</sky-code> object.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
