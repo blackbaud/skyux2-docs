@@ -1,5 +1,6 @@
 <sky-demo-page
-  pageTitle="Date range picker"
+  pageTitle="Date Range Picker"
+  navTitle="Date range picker"
   skyuxModule="SkyDateRangePickerModule"
   packageName="@skyux/datetime"
 >
@@ -7,9 +8,7 @@
     The date range picker component creates a text input with a dropdown for users to select a date range from a set of well-known options. This includes options that enable users to specify dates to create their own date range. The text input is a composite component of <a stacheRouterLink="/components/datepicker">up to two <sky-code>sky-datepicker</sky-code> components</a>.
   </sky-demo-page-summary>
 
-  <sky-demo-page-properties
-    sectionHeading="Date range picker component properties"
-  >
+  <sky-demo-page-properties sectionHeading="Date range picker component properties">
     <sky-demo-page-property
       propertyName="label"
     >
@@ -37,9 +36,7 @@
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
-  <sky-demo-page-properties
-    sectionHeading="Date range calculation"
-  >
+  <sky-demo-page-properties sectionHeading="Date range calculation">
     <p>
       The form model for the date range picker field returns a value with a type of <sky-code>SkyDateRangeCalculation</sky-code>.
     </p>
@@ -62,9 +59,7 @@
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
-  <sky-demo-page-properties
-    sectionHeading="SkyDateRangeCalculatorId properties"
-  >
+  <sky-demo-page-properties sectionHeading="SkyDateRangeCalculatorId properties">
     <p>
       <sky-code>SkyDateRangeCalculatorId</sky-code> values specify calculator objects that return two <sky-code>Date</sky-code> objects to represent date ranges. The <sky-code>SkyDateRangeCalculatorId</sky-code> values are used to populate the options in the date range picker's dropdown.
     </p>
@@ -73,119 +68,139 @@
     </p>
     <sky-demo-page-property
       propertyName="After"
+      isOptional="true"
     >
       Enables users to select a start date with no end date.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="AnyTime"
+      isOptional="true"
     >
       Selects no dates and considers all dates within the date range. This is the default selection.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="Before"
+      isOptional="true"
     >
       Enables users to select an end date with no starting date.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="LastCalendarYear"
+      isOptional="true"
     >
       Sets the start date to the first day of the year before the current year and the end date to the last day of that year.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="LastFiscalYear"
+      isOptional="true"
     >
       Sets the start date to the first day of the fiscal year before the current fiscal year and the end date to the last day of that fiscal year. The fiscal year is Oct. 1 to Sept. 30.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="LastMonth"
+      isOptional="true"
     >
       Sets the start date to the first day of the month before the current month and the end date to the final day of that month.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="LastQuarter"
+      isOptional="true"
     >
       Sets the start date to the first day of the quarter before the current quarter and the end date to the last day of that quarter. Quarters are January to March, April to June, July to September, and October to December.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="LastWeek"
+      isOptional="true"
     >
       Sets the start date to Sunday of the week before the current week and the end date to Saturday of that week.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="NextCalendarYear"
+      isOptional="true"
     >
       Sets the start date to the first day of the year after the current year and the end date to the last day of that year.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="NextFiscalYear"
+      isOptional="true"
     >
       Sets the start date to the first day of the fiscal year after the current fiscal year and the end date to the last day of that fiscal year. The fiscal year is Oct. 1 to Sept. 30.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="NextMonth"
+      isOptional="true"
     >
       Sets the start date to the first day of the month after the current month and the end date to the last day of that month.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="NextQuarter"
+      isOptional="true"
     >
       Sets the start date to the first day of the quarter after the current quarter and the end date to the last day of that quarter. Quarters are January to March, April to June, July to September, and October to December.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="NextWeek"
+      isOptional="true"
     >
       Sets the start date to Sunday of the week after the current week and the end date to Saturday of that week.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="SpecificRange"
+      isOptional="true"
     >
       Enables users to select specific start and end dates.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="ThisCalendarYear"
+      isOptional="true"
     >
       Sets the start date to the first day of the current year and the end date to the last day of the year.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="ThisFiscalYear"
+      isOptional="true"
     >
       Sets the start date to the first day of the current fiscal year and the end date to the last day of the fiscal year. The fiscal year is Oct. 1 to Sept. 30.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="ThisMonth"
+      isOptional="true"
     >
       Sets the start date to the first day of the current month and the end date to the last day of the month.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="ThisQuarter"
+      isOptional="true"
     >
       Sets the start date to the first day of the current quarter and the end date to the last day of the quarter. Quarters are January to March, April to June, July to September, and October to December.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="ThisWeek"
+      isOptional="true"
     >
       Sets the start date to Sunday of the current week and the end date to Saturday.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="Today"
+      isOptional="true"
     >
       Sets the start and end dates to the current day.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="Tomorrow"
+      isOptional="true"
     >
       Sets the start and end dates to the day after the current day.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="Yesterday"
+      isOptional="true"
     >
       Sets the start and end dates to the day before the current day.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
-  <sky-demo-page-properties
-    sectionHeading="Error handling"
-  >
+  <sky-demo-page-properties sectionHeading="Error handling">
     <p>
       Each calculator in the date range picker's dropdown has its own validator that runs when the value changes. Errors are returned in the following format:
     </p>
