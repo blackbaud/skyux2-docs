@@ -5,13 +5,13 @@
 
   <stache-page-summary>
     <p>
-      Before you build and publish your SPA, you must first choose a web server to host your site. We recommend <a href="https://pages.github.com/">GitHub Pages</a>, a free tool suitable for front-end projects. 
+      Before you build and publish your SPA, you must first choose a web server to host your site. We recommend <a href="https://pages.github.com/">GitHub Pages</a>, a free tool suitable for front-end projects.
     </p>
     <sky-alert alertType="info">
       Blackbaud developers should create repos and provision applications through the SKY UX App Management Portal. Documentation on the SKY UX App Management Portal is available on <a href="https://host.nxt.blackbaud.com/engineering-system-docs/learn/spa/spa-app-portal">the Engineering System website</a>. This site is for Blackbaud internal use only and is not available to external developers.
     </sky-alert>
   </stache-page-summary>
-  
+
   <ol>
     <li>
       <p>
@@ -41,9 +41,9 @@
         In a browser, enter <sky-code>https://example.com/my-spa</sky-code> to view your SPA.
       </p>
       <p>
-        <sky-alert alertType="info">You must configure your host to redirect all requests to the root <sky-code>index.html</sky-code> file because SKY UX SPAs use HTML5 push states for routing.</sky-alert>
+        <sky-alert alertType="info">SKY UX uses HTML5 push states for routing, so you must either configure your host to redirect all requests to the root <sky-code>index.html</sky-code> or enable <a routerLink="/learn/reference/configuration" fragment="usehashrouting">the <sky-code>useHashRouting</sky-code> configuration option</a>.</sky-alert>
       </p>
     </li>
   </ol>
-  
+
 </stache>
