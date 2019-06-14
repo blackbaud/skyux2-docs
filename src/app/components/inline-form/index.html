@@ -1,5 +1,6 @@
 <sky-demo-page
-  pageTitle="Inline form"
+  pageTitle="Inline Form"
+  navTitle="Inline form"
   skyuxModule="SkyInlineFormModule"
   packageName="@skyux/inline-form"
 >
@@ -17,22 +18,23 @@
   Specifies configuration options for the buttons to display with the inline form. This property accepts <a stacheRouterLink="." fragment="skyinlineformconfig-properties">a <sky-code>SkyInlineFormConfig</sky-code> object</a>.
   </sky-demo-page-property>
 	<sky-demo-page-property
+    propertyName="template"
+  >
+  Specifies a template to use to instantiate the inline form. This property accepts <a href="https://angular.io/api/core/TemplateRef">an Angular <sky-code>TemplateRef</sky-code> class</a>.
+  </sky-demo-page-property>
+	<sky-demo-page-property
     propertyName="showForm"
 		isOptional="true"
 		defaultValue="false"
   >
   Indicates whether to display the inline form. Users can toggle between displaying and hiding the inline form. This property accepts <sky-code>boolean</sky-code> values.
   </sky-demo-page-property>
-	<sky-demo-page-property
-    propertyName="template"
-  >
-  Specifies a template to use to instantiate the inline form. This property accepts <a href="https://angular.io/api/core/TemplateRef">an Angular <sky-code>TemplateRef</sky-code> class</a>.
-  </sky-demo-page-property>
 </sky-demo-page-properties>
 
 <sky-demo-page-properties sectionHeading='Inline form events'>
 	<sky-demo-page-property
     propertyName="close"
+		isOptional="true"
   >
   Fires when users close the inline form. This event emits <a stacheRouterLink="." fragment="skyinlineformcloseargs-properties">a <sky-code>SkyInlineFormCloseArgs</sky-code> type</a>.
   </sky-demo-page-property>

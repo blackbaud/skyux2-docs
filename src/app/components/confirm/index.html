@@ -11,6 +11,7 @@
   <sky-demo-page-properties sectionHeading="Confirm service methods">
     <sky-demo-page-property
       propertyName="open(config)"
+      isOptional="true"
     >
     Opens a confirmation dialog and passes the <sky-code>config</sky-code> parameter of type <sky-code>SkyConfirmConfig</sky-code> to the component's constructor. This method returns an object of type <sky-code>SkyConfirmInstance</sky-code>.
     </sky-demo-page-property>
@@ -73,6 +74,7 @@
   <sky-demo-page-properties sectionHeading="SkyConfirmInstance events">
     <sky-demo-page-property
       propertyName="closed"
+      isOptional="true"
     >
     Fires when users select an action to close the confirmation dialog. This event returns a <sky-code>SkyConfirmCloseEventArgs</sky-code> object with information about the button that users select. The <sky-code>SkyConfirmCloseEventArgs</sky-code> object includes the following property:
     <ul>

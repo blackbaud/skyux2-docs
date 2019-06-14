@@ -13,6 +13,7 @@
   <sky-demo-page-properties sectionHeading="Sectioned form events">
     <sky-demo-page-property
       propertyName="indexChanged"
+      isOptional="true"
     >
     Fires when the active tab changes and emits the index of the active section. The index is based on the section's position when the form loads.
     </sky-demo-page-property>
@@ -56,11 +57,13 @@
   <sky-demo-page-properties sectionHeading="Section form service methods">
     <sky-demo-page-property
       propertyName="invalidFieldChanged(isInvalid: boolean)"
+      isOptional="true"
     >
       Sets the current section's invalid state based on the <sky-code>isInvalid</sky-code> parameter. This method is used within a <sky-code>sky-sectioned-form-section</sky-code> element.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="requiredFieldChanged(isRequired: boolean)"
+      isOptional="true"
     >
       Sets the current section's required state based on the <sky-code>isRequired</sky-code> parameter. This method is used within a <sky-code>sky-sectioned-form-section</sky-code> element.
     </sky-demo-page-property>
