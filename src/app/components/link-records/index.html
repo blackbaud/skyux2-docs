@@ -1,5 +1,6 @@
 <sky-demo-page
   pageTitle="Link Records"
+  navTitle="Link records"
   skyuxModule="SkyLinkRecordsModule"
   packageName="@skyux/link-records"
 >
@@ -16,43 +17,15 @@
     Specifies the data that we will be finding matches to. Acceptable values: <sky-code>Observable&lt;Array&lt;any&gt;&gt;</sky-code> or <sky-code>Array&lt;any&gt;</sky-code>.
     </sky-demo-page-property>
     <sky-demo-page-property
-      propertyName="matches"
-      defaultValue="[]"
-      isOptional="true"
+      propertyName="results"
     >
-    Specifies the match data for the items provided. Acceptable values: <sky-code>Observable&lt;Array&lt;SkyLinkRecordsMatchModel&gt;&gt;</sky-code> or <sky-code>Array&lt;SkyLinkRecordsMatchModel&gt;</sky-code>.
-    </sky-demo-page-property>
-    <sky-demo-page-property
-      propertyName="matchFields"
-      defaultValue="[]"
-      isOptional="true"
-    >
-    Specifies the property names of the fields that can be updated when editing. Takes in an object with a <sky-code>key</sky-code> and <sky-code>label</sky-code> property. the key specifies the field name, and the label defines the text to show when matching fields. if no label is defined, the key name is displayed instead. Acceptable values: <sky-code>Observable&lt;Array&lt;any&gt;&gt;</sky-code> or <sky-code>Array&lt;any&gt;</sky-code>.
-    </sky-demo-page-property>
-    <sky-demo-page-property
-      propertyName="showNewFieldValues"
-      defaultValue="true"
-      isOptional="true"
-    >
-    Specifies whether or not the user will be able to choose to update new values for a matched field that contains no current value. If false, the field will be updated automatically without input needed from the user. Acceptable values: <sky-code>true</sky-code> or <sky-code>false</sky-code>.
+    Returns the results of the link record matching. Return Type: <sky-code>Observable&lt;Array&lt;SkyLinkRecordsResultModel&gt;&gt;</sky-code>.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="itemTemplate"
       isOptional="true"
     >
     Specifies the <sky-code>TemplateRef</sky-code> for the item template content section.
-    </sky-demo-page-property>
-    <sky-demo-page-property
-      propertyName="matchTemplate"
-      isOptional="true"
-    >
-    Specifies the <sky-code>TemplateRef</sky-code> for the match template content section.
-    </sky-demo-page-property>
-    <sky-demo-page-property
-      propertyName="noMatchTemplate"
-      isOptional="true"
-    >
-    Specifies the <sky-code>TemplateRef</sky-code> for the no match template content section.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="itemTitleTemplate"
@@ -68,9 +41,30 @@
     Specifies the key property name to use to link the original item with the matching item. Must provide <sky-code>string</sky-code>.
     </sky-demo-page-property>
     <sky-demo-page-property
-      propertyName="results"
+      propertyName="matches"
+      defaultValue="[]"
+      isOptional="true"
     >
-    Returns the results of the link record matching. Return Type: <sky-code>Observable&lt;Array&lt;SkyLinkRecordsResultModel&gt;&gt;</sky-code>.
+    Specifies the match data for the items provided. Acceptable values: <sky-code>Observable&lt;Array&lt;SkyLinkRecordsMatchModel&gt;&gt;</sky-code> or <sky-code>Array&lt;SkyLinkRecordsMatchModel&gt;</sky-code>.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="matchFields"
+      defaultValue="[]"
+      isOptional="true"
+    >
+    Specifies the property names of the fields that can be updated when editing. Takes in an object with a <sky-code>key</sky-code> and <sky-code>label</sky-code> property. the key specifies the field name, and the label defines the text to show when matching fields. if no label is defined, the key name is displayed instead. Acceptable values: <sky-code>Observable&lt;Array&lt;any&gt;&gt;</sky-code> or <sky-code>Array&lt;any&gt;</sky-code>.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="matchTemplate"
+      isOptional="true"
+    >
+    Specifies the <sky-code>TemplateRef</sky-code> for the match template content section.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="noMatchTemplate"
+      isOptional="true"
+    >
+    Specifies the <sky-code>TemplateRef</sky-code> for the no match template content section.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="selectedByDefault"
@@ -78,6 +72,13 @@
       isOptional="true"
     >
     Specifies whether the edit fields should be selected by default.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="showNewFieldValues"
+      defaultValue="true"
+      isOptional="true"
+    >
+    Specifies whether or not the user will be able to choose to update new values for a matched field that contains no current value. If false, the field will be updated automatically without input needed from the user. Acceptable values: <sky-code>true</sky-code> or <sky-code>false</sky-code>.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 

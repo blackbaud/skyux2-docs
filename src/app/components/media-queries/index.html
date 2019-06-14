@@ -1,5 +1,6 @@
 <sky-demo-page
   pageTitle="Media Queries"
+  navTitle="Media queries"
   skyuxModule="SkyMediaQueryModule"
   packageName="@skyux/core"
 >
@@ -11,6 +12,7 @@
   <sky-demo-page-properties sectionHeading="Media query service methods">
     <sky-demo-page-property
       propertyName="subscribe(listener)"
+      isOptional="true"
     >
     Suscribes to screen size changes. The <sky-code>listener</sky-code> function is called when breakpoints change. It is called with a <sky-code>SkyMediaBreakpoints</sky-code> argument, which is an enum that represents the new breakpoint. The possible values for the argument are <sky-code>xs</sky-code> for screen widths of 767px or less, <sky-code>sm</sky-code> for screen widths of 768px to 991px, <sky-code>md</sky-code> for screen widths of 992px to 1199px, and <sky-code>lg</sky-code> for screen widths of 1200px or greater).
     </sky-demo-page-property>

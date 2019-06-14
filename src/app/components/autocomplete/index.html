@@ -13,67 +13,78 @@
     <sky-demo-page-property
       propertyName="data"
       defaultValue="[]"
-      isOptional="true">
+      isOptional="true"
+    >
       Specifies a static data source for the autocomplete component to search when users enter text. This property accepts an array of objects. For a dynamic data source such as an array that changes due to server calls, use the <sky-code>search</sky-code> property instead.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="debounceTime"
       defaultValue="0"
-      isOptional="true">
+      isOptional="true"
+    >
       Specifies how many milliseconds to wait before searching while users enter text in the autocomplete field. This property accepts <sky-code>number</sky-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="descriptorProperty"
       isOptional="true"
-      defaultValue="name">
+      defaultValue="name"
+    >
       Specifies an object property to display in the text input after users select an item in the dropdown list. This property accepts <sky-code>string</sky-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="propertiesToSearch"
       isOptional="true"
-      defaultValue="['name']">
+      defaultValue="['name']"
+    >
       Specifies the object properties to search. This property accepts an array of <sky-code>string</sky-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="search"
-      isOptional="true">
+      isOptional="true"
+    >
       Specifies a function to dynamically manage the data source when users change the text in the autocomplete field. The search function must return an array or a promise of an array. The <sky-code>search</sky-code> property is particularly useful when the data source does not live in the source code. Acceptable value: <sky-code>(searchText: string, data?: any[]) => any[] | Promise&lt;any[]&gt;</sky-code>.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="searchFilters"
-      isOptional="true">
+      isOptional="true"
+    >
       Specifies an array of functions to call against each search result in order to filter the search results when using the default search function. When using the <sky-code>search</sky-code> property to specify a custom search function, you must manually apply filters inside that function. The function must return <sky-code>true</sky-code> or <sky-code>false</sky-code> for each result to indicate whether to display it in the dropdown list. Acceptable value: <sky-code>(searchText: string, item: any) => boolean</sky-code>.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="searchResultsLimit"
-      isOptional="true">
+      isOptional="true"
+    >
       Specifies the maximum number of search results to display in the dropdown list. By default, the component displays all matching results. This property accepts <sky-code>number</sky-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="searchResultTemplate"
-      isOptional="true">
+      isOptional="true"
+    >
       Specifies a template to format each search result in the dropdown list. The autocomplete component injects search result values into the template as <sky-code>item</sky-code> variables that reference all of the object properties of the search results.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="searchTextMinimumCharacters"
       isOptional="true"
-      defaultValue="1">
+      defaultValue="1"
+    >
       Specifies the minimum number of characters that users must enter before the autocomplete component searches the data source and displays search results in the dropdown list. This property accepts <sky-code>number</sky-code> values.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
-  <sky-demo-page-properties
-    sectionHeading="Autocomplete events">
+  <sky-demo-page-properties sectionHeading="Autocomplete events">
     <sky-demo-page-property
-      propertyName="selectionChange">
+      propertyName="selectionChange"
+      isOptional="true"
+  >
       Fires when users select items in the dropdown list and provides an argument of type <sky-code>SkyAutocompleteSelectionChange</sky-code>.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
-  <sky-demo-page-properties
-    sectionHeading="SkyAutocompleteSelectionChange type">
+  <sky-demo-page-properties sectionHeading="SkyAutocompleteSelectionChange type">
     <sky-demo-page-property
-      propertyName="selectedItem">
+      propertyName="selectedItem"
+      isOptional="true"
+    >
       References a search result object that users select in the dropdown list.
     </sky-demo-page-property>
   </sky-demo-page-properties>

@@ -43,16 +43,19 @@
   <sky-demo-page-properties sectionHeading="Tile events">
     <sky-demo-page-property
       propertyName="helpClick"
+      isOptional="true"
     >
     Fires when users select the help button in the tile header. The help button only appears when the <sky-code>showHelp</sky-code> property is set to <sky-code>true</sky-code>.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="isCollapsedChange"
+      isOptional="true"
     >
     Fires when the tile's collapsed state changes. Returns <sky-code>true</sky-code> when the tile collapses and <sky-code>false</sky-code> when it expands.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="settingsClick"
+      isOptional="true"
     >
     Fires when users select the settings button in the tile header. The settings button only appears when the <sky-code>showSettings</sky-code> property is set to <sky-code>true</sky-code>.
     </sky-demo-page-property>
@@ -75,6 +78,7 @@
   <sky-demo-page-properties sectionHeading="Tile dashboard events">
     <sky-demo-page-property
       propertyName="configChange"
+      isOptional="true"
     >
     Fires when the tile dashboard changes state and emits a <sky-code>SkyTileDashboardConfig</sky-code> object. This occurs when tiles collapse or expand and when users drag and drop tiles to rearrange them.
     </sky-demo-page-property>
@@ -145,16 +149,19 @@
   <sky-demo-page-properties sectionHeading="Tile dashboard service methods">
     <sky-demo-page-property
       propertyName="addTileComponent(tile: SkyTileDashboardConfigLayoutTile, component: ComponentRef<SkyTileComponent>)"
+      isOptional="true"
     >
       Adds a new tile to the tile dashboard. The <sky-code>tile</sky-code> parameter specifies the tile's configuration, and the <sky-code>component</sky-code> parameter specifies its component.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="tileIsCollapsed(tile: SkyTileComponent)"
+      isOptional="true"
     >
       Checks whether a specified tile is collapsed. The <sky-code>tile</sky-code> parameter specifies the tile to check. This method returns a <sky-code>boolean</sky-code> value.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="setTileCollapsed(tile: SkyTileComponent, isCollapsed: boolean)"
+      isOptional="true"
     >
       Sets the collapsed state of a specified tile. The <sky-code>tile</sky-code> parameter specifies the tile, and the <sky-code>isCollapsed</sky-code> parameter indicates whether it is collapsed.
     </sky-demo-page-property>
@@ -163,6 +170,7 @@
   <sky-demo-page-properties sectionHeading="Tile dashboard service events">
     <sky-demo-page-property
       propertyName="dashboardInitialized"
+      isOptional="true"
     >
     Fires when the tile dashboard's initialization is complete.
     </sky-demo-page-property>
