@@ -29,7 +29,7 @@ export class SkyDemoComponentsService {
         icon: 'square-o',
         // tslint:disable-next-line
         summary:
-        `The action button component creates a large button with an icon, heading, and details.`,
+        `The action button module creates a large button with an icon, heading, and details.`,
         url: '/components/action-button',
         imports: {
           '@skyux/layout': [
