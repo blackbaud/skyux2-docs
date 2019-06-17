@@ -6,11 +6,11 @@
 
   <sky-demo-page-summary>
     <p>
-      The card component creates a small container to highlight important information. Multiple cards are generally grouped together to display information about related items, and each card can include three optional parts: a title, body content, and an action.
+      The card module creates a small container to highlight important information. Multiple cards are generally grouped together to display information about related items, and each card can include three optional parts: a title, body content, and an action.
     </p>
   </sky-demo-page-summary>
 
-  <sky-demo-page-properties sectionHeading="Action button components">
+  <sky-demo-page-properties sectionHeading="Card components">
     <sky-demo-page-property
       propertyName="sky-card"
     >
@@ -36,20 +36,20 @@
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
-  <sky-demo-page-properties>
+  <sky-demo-page-properties sectionHeading="Card properties">
     <sky-demo-page-property
       propertyName="selectable"
       isOptional="true"
       defaultValue="false"
     >
-      Indicates whether to display a checkbox to the right of the card title. Users can select multiple checkboxes to perform actions on all selected cards. This property accepts <sky-code>boolean</sky-code> values.
+      Indicates whether to display a checkbox to the right of the card title. Users can select multiple checkboxes and perform actions on the selected cards. This property accepts <sky-code>boolean</sky-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="selected"
       isOptional="true"
       defaultValue="false"
     >
-      Indicates whether the card is selected. This only applies to card where <sky-code>selectable</sky-code> is <sky-code>true</sky-code>. This property accepts <sky-code>boolean</sky-code> values.
+      Indicates whether the card is selected. This only applies to card where <sky-code>selectable</sky-code> is set to <sky-code>true</sky-code>. This property accepts <sky-code>boolean</sky-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="size"
@@ -60,7 +60,7 @@
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
-  <sky-demo-page-properties sectionHeading="Events">
+  <sky-demo-page-properties sectionHeading="Card events">
     <sky-demo-page-property
       propertyName="selectedChange"
       isOptional="true"

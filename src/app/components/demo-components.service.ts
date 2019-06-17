@@ -93,7 +93,7 @@ export class SkyDemoComponentsService {
       {
         name: 'Card',
         icon: 'th-large',
-        summary: `The card component creates a small container to highlight important information.`,
+        summary: `The card module creates a small container to highlight important information.`,
         url: '/components/card',
         imports: {
           '@skyux/layout': [
@@ -205,7 +205,7 @@ export class SkyDemoComponentsService {
       {
         name: 'Definition list',
         icon: 'list-alt',
-        summary: `The definition list component displays a list of label-value pairs.`,
+        summary: `The definition list module displays a list of label-value pairs.`,
         url: '/components/definition-list',
         imports: {
           '@skyux/layout': [
