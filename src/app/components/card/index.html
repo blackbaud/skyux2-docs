@@ -6,37 +6,57 @@
 
   <sky-demo-page-summary>
     <p>
-      The card component creates a small container to highlight important information. Generally, multiple cards are organized together to display information about a collection of related items. For example, cards can present a stack or carousel of to-do items or a matrix of images.
-    </p>
-    <p>
-      Cards frequently present users with a call to action. They can use visual cues to alert users about the need for action, and they can also include actions directly on the cards.
-    </p>
-    <p>
-      You can modify cards to handle a variety of scenarios, but they generally consist of three main parts: a title to identify what the card represents, content to display in the body of the card, and an action to let users act on the card. Each item is optional.
+      The card component creates a small container to highlight important information. Multiple cards are generally grouped together to display information about related items, and each card can include three optional parts: a title, body content, and an action.
     </p>
   </sky-demo-page-summary>
 
-  <sky-demo-page-properties>
+  <sky-demo-page-properties sectionHeading="Action button components">
     <sky-demo-page-property
-      propertyName="size"
-      isOptional="true"
-      defaultValue="large"
+      propertyName="sky-card"
     >
-      Specifies the size of the card. For a large container, specify <sky-code>large</sky-code>. For a small container, specify <sky-code>small</sky-code>.
+      Creates a a small container to highlight important information.
     </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="sky-card-actions"
+      isOptional="true"
+    >
+      Specifies an action that users can perform on the card.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="sky-card-content"
+      isOptional="true"
+    >
+      Specifies the content to display in the body of the card.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="sky-card-title"
+      isOptional="true"
+    >
+      Specifies a title to identify what the card represents.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-properties>
     <sky-demo-page-property
       propertyName="selectable"
       isOptional="true"
       defaultValue="false"
     >
-      Specifies whether to display a checkbox to the right of the title. Users can select the checkbox for one or more cards to then perform an action on the selected cards.
+      Indicates whether to display a checkbox to the right of the card title. Users can select multiple checkboxes to perform actions on all selected cards. This property accepts <sky-code>boolean</sky-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="selected"
       isOptional="true"
       defaultValue="false"
     >
-      Specifies whether the card is selected.  This property only applies when the card's <sky-code>selectable</sky-code> property is <sky-code>true</sky-code>.
+      Indicates whether the card is selected. This only applies to card where <sky-code>selectable</sky-code> is <sky-code>true</sky-code>. This property accepts <sky-code>boolean</sky-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="size"
+      isOptional="true"
+      defaultValue="large"
+    >
+      Specifies the size of the card. The valid options are <sky-code>large</sky-code> and <sky-code>small</sky-code>. This property accepts <sky-code>string</sky-code> values.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -45,7 +65,7 @@
       propertyName="selectedChange"
       isOptional="true"
     >
-      Fires when the user selects or deselects the card.
+      Fires when users select or deselect the card.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -55,5 +75,15 @@
       demoName="Card">
     </sky-demo-page-code>
   </sky-demo-page-example>
+
+  <sky-demo-page-content sectionHeading="UX guidelines">
+    <div class="sky-subsection-heading">Button text</div>
+    <p>
+      Cards can handle a variety of scenarios, but multiple cards are generally grouped together to display information about related items. For example, cards can present a stack or carousel of to-do items or a matrix of images.
+    </p>
+    <p>
+      Cards frequently present users with a call to action. They can use visual cues to alert users about the need for action, and they can also include actions directly on the cards.
+    </p>
+  </sky-demo-page-content>
 
 </sky-demo-page>
