@@ -55,12 +55,6 @@ export class ReferenceActionButtonsComponent {
       summary: 'SKY UX helper for making authenticated HTTP requests.'
     },
     {
-      name: 'FAQ',
-      path: '/learn/reference/faq',
-      icon: 'question-circle-o',
-      summary: 'The FAQ addresses frequently asked questions about SKY UX.'
-    },
-    {
       name: 'Resources',
       path: '/learn/reference/resources',
       icon: 'search',
