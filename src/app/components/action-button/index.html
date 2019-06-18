@@ -7,19 +7,47 @@
 
   <sky-demo-page-summary>
     <p>
-      The action button component creates a large button with an icon, header, and description. Action buttons present users with multiple, branching options to move forward with tasks.
-    </p>
-    <p>
-      The <sky-code>sky-action-button-container</sky-code> component wraps <sky-code>sky-action-button</sky-code> components and ensures that they have consistent height and spacing. The <sky-code>sky-action-button</sky-code> component consists of three inner components: <sky-code>sky-action-button-icon</sky-code>, <sky-code>sky-action-button-header</sky-code>, and <sky-code>sky-action-button-details</sky-code>.
+      The action button module creates a large button with an icon, header, and description. Action buttons present users with multiple, branching options to move forward with tasks.
     </p>
   </sky-demo-page-summary>
+
+  <sky-demo-page-properties sectionHeading="Action button components">
+    <sky-demo-page-property
+      propertyName="sky-action-button"
+    >
+      Creates a large button that represents a decision point within a task where users must select a method of completion. The action button can display an icon, header, and description.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="sky-action-button-container"
+    >
+      Wraps action buttons to ensures that they have consistent height and spacing.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="sky-action-button-details"
+      isOptional="true"
+    >
+      Specifies a description to display on an action button.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="sky-action-button-header"
+      isOptional="true"
+    >
+      Specifies a header to display on an action button.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="sky-action-button-icon"
+      isOptional="true"
+    >
+      Specifies an icon to display on an action button.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
 
   <sky-demo-page-properties sectionHeading="Action button properties">
     <sky-demo-page-property
       propertyName="permalink"
       isOptional="true"
     >
-      Specifies a link for the action button. This property accepts the <sky-code>SkyActionButtonPermalink</sky-code> object type, which specifies an Angular router link with the <sky-code>route</sky-code> property or a direct link the <sky-code>url</sky-code> property. If <sky-code>SkyActionButtonPermalink</sky-code> provides both, the action button uses the <sky-code>route</sky-code> property.
+      Specifies a link for the action button. This property accepts an object with <a stacheRouterLink="." fragment="skyactionbuttonpermalink-properties">the <sky-code>SkyActionButtonPermalink</sky-code> type</a>. The object specifies an Angular router link with the <sky-code>route</sky-code> property or a direct link with the <sky-code>url</sky-code> property. If it provides both, the action button uses the <sky-code>route</sky-code> property.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -28,14 +56,14 @@
       propertyName="actionClick"
       isOptional="true"
     >
-      Fires when users click the action button.
+      Fires when users select the action button.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
   <sky-demo-page-properties sectionHeading="Action button icon properties">
     <sky-demo-page-property
       propertyName="iconType">
-      Specifies an icon from the Font Awesome library. For example, to display the <sky-code>fa-filter</sky-code> icon on the action button, set <sky-code>iconType</sky-code> to <sky-code>filter</sky-code>. This property accepts <sky-code>string</sky-code> values.
+      Specifies an icon from <a href="https://fontawesome.com/v4.7.0/">the Font Awesome library</a>. For example, to display the <sky-code>fa-filter</sky-code> icon on the action button, set <sky-code>iconType</sky-code> to <sky-code>filter</sky-code>. SKY UX supports version 4.7.0 of Font Awesome. For more information about icons in SKY UX, see <a stacheRouterLink="/design/styles/icons">the icons design pattern</a>. This property accepts <sky-code>string</sky-code> values.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -44,7 +72,7 @@
       propertyName="route"
       isOptional="true"
     >
-      Specifies an Angular router link for the action button. This property accepts a custom object with a <sky-code>commands</sky-code> property for router commands and an <sky-code>extras</sky-code> property for Angular <a href="https://angular.io/api/router/NavigationExtras"><sky-code>NavigationExtras</sky-code></a>.
+      Specifies an Angular router link for the action button. This property accepts a custom object with a <sky-code>commands</sky-code> property to specify router commands and an <sky-code>extras</sky-code> property to specify <a href="https://angular.io/api/router/NavigationExtras">Angular <sky-code>NavigationExtras</sky-code></a>.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="url"
@@ -127,7 +155,7 @@
     <sky-row>
         <sky-column screenSmall="6">
             <p>
-            Do not use actions buttons to present different methods of completing tasks before users initate the tasks. Action buttons should not compete against other content for user attention.
+            Do not use actions buttons to present different methods of completing tasks before users initiate the tasks. Action buttons should not compete against other content for user attention.
             </p>
         </sky-column>
         <sky-column screenSmall="6">
@@ -158,7 +186,7 @@
             Use action buttons inside modals when tasks mostly take place within modals. For example, when tasks create records or pages that do not exist until users complete the tasks, place action buttons in modals. This is common for add processes that have multiple methods of completion and only require standard modals to create records.
             </p>
             <ul>
-                <li>Use the default size for 2 action buttons, and use a large modal for 3 or more.</li>
+                <li>Use the default-size modal for 2 action buttons, and use a large modal for 3 or more.</li>
                 <ul>
                     <li>Center the action buttons inside the modal and wrap to another row if needed.</li>
                 </ul>
