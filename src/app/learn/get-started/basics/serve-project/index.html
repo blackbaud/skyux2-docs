@@ -25,7 +25,6 @@
       <p>
         By default, <sky-code>skyux serve</sky-code> launches the Host URL, which means that it reaches out to SKY UX Host for an HTML page to host your local files. However, you can use the <sky-code>-l</sky-code> or <sky-code>--launch</sky-code> options to specify the URL to launch.
       </p>
-      
       <ul>
         <li>
           <p>
@@ -43,14 +42,16 @@
           </p>
         </li>
       </ul>
-      
       <p>
         By default, the SPA automatically opens in the default browser, but you can specify a different browser with the <sky-code>--browser</sky-code> option. This option is useful for cross-browser manual testing, and the available values are <sky-code>chrome</sky-code>, <sky-code>edge</sky-code>, <sky-code>firefox</sky-code>, <sky-code>iexplore</sky-code>, and <sky-code>safari</sky-code>. For example, <sky-code>skyux serve --browser firefox</sky-code>.
+      </p>
+      <p>
+        If you see the <sky-code>webpack: Failed to compile.</sky-code> error in the output in the command prompt, review the script console in your web browser for information about the specific files with errors.
       </p>
     </li>
     <li>
       <p>
-        In the command prompt, <sky-code>skyux serve</sky-code> continues to run, and changes to your project are automatically displayed as you save them.
+        <sky-code>skyux serve</sky-code> continues to run, and changes to your project are automatically displayed as you save them.
       </p>
     </li>
     <li>

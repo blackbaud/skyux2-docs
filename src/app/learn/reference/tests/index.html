@@ -41,12 +41,15 @@
     To run e2e tests from the command line, use <a routerLink="/learn/reference/cli-commands/e2e">the <sky-code>skyux e2e</sky-code> command</a>. For tips and techniques on testing Angular applications, see the <a href="https://angular.io/guide/testing">Angular testing guidelines</a>. And for guidance on troubleshooting e2e tests, see <a href="https://github.com/angular/protractor/blob/master/docs/debugging.md">Debugging Protractor Tests</a>.
   </p>
 
-  <h3>
+  <stache-page-anchor>
     Accessibility tests
-  </h3>
+  </stache-page-anchor>
   
   <p>
-    SKY UX includes a tool to run automated accessibility tests within e2e tests. For information on how to use it in e2e specs and how to enable and disable rules for accessibility tests, see <a routerLink="/learn/get-started/advanced/accessibility-analyzer">the accessibility analyzer</a>.
+    The <a href="https://github.com/blackbaud/skyux-sdk-testing">SKY UX SDK testing library</a> provides methods to run <a href="https://github.com/dequelabs/axe-core">aXe automated accessibility tests</a> in your unit tests. For information, see the <a stacheRouterLink="/learn/get-started/advanced/accessibility-unit-tests">guidance for accessibility tests</a>.
+  </p>
+  <p>
+    We strongly recommend that you use unit tests instead of end-to-end tests based, SKY UX also includes a deprecated tool to run automated accessibility tests within e2e tests. For information , see the <a routerLink="/learn/get-started/advanced/accessibility-analyzer">e2e guidance for accessibility tests</a>.
   </p>
   
 </stache>
