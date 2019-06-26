@@ -180,6 +180,10 @@ img.bordered {
 	padding: $sky-padding-even-large;
 }
 
+video.bordered {
+  @include sky-border(light, top, right, bottom, left);
+}
+
 .sky-margin-stacked-content-section {
 	margin-bottom: 50px;
 }
