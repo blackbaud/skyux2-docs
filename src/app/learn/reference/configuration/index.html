@@ -35,7 +35,7 @@
       <p>
         <sky-code>externals</sky-code> — Dynamically injects CSS and JavaScript files into SKY UX Host for the <sky-code>skyux serve</sky-code> or <sky-code>skyux build</sky-code> commands. You should have a specific use-case for an external. For example, Office Addins require their library to load through CDN in the head. The <sky-code>before</sky-code> and <sky-code>after</sky-code> sections of an external indicate whether to include the external resource before or after the default SKY UX Builder resources. The <sky-code>head</sky-code> property, which only applies to JS resources, indicates whether to inject elements within the HTML <sky-code>head</sky-code> element or just before the closing <sky-code>body</sky-code> tag.
       </p>
-      <p>
+      <p *skyRestrictedView>
         For Blackbaud-hosted SPAs, Blackbaud developers must whitelist all URLs in the <sky-code>externals</sky-code> property. If <sky-code>skyuxconfig.json</sky-code> includes externals that are not whitelisted, then the SPA won’t load. To whitelist externals, contact the SKY UX team.
       </p>
       <p>
@@ -108,7 +108,7 @@
     The <sky-code>appSettings</sky-code> configuration option specifies data that is available for reuse throughout the application. The data type of this property is <sky-code>any</sky-code>. After you specify data in the <sky-code>appSettings</sky-code> property, you can <a routerLink="/learn/reference/configuration/apply-appsettings">access that data throughout the SPA</a>.
   </p>
 
-  <stache-page-anchor>
+  <stache-page-anchor *skyRestrictedview>
     <sky-code>auth</sky-code>
   </stache-page-anchor>
   <p>
@@ -150,7 +150,7 @@
     The <sky-code>cssPath</sky-code> configuration option specifies a path to reference CSS styles. This property is specific to the SKY UX docs site and is for internal Blackbaud use only. To bundle CSS or SCSS files with your SPA, use the <sky-code>styles</sky-code> property of <a stacheRouterLink="." fragment="app">the <sky-code>app</sky-code> configuration option</a> instead.
   </p>
 
-  <stache-page-anchor>
+  <stache-page-anchor *skyRestrictedView>
     <sky-code>help</sky-code>
   </stache-page-anchor>
   <p>
@@ -199,7 +199,7 @@
     The <sky-code>name</sky-code> configuration option specifies the name of the project when running in SKY UX Host. For example, if you specify "demo" as the name, then your SPA is accessible from https://host.nxt.blackbaud.com/demo. By default, SKY UX Builder uses the <sky-code>name</sky-code> property in the <sky-code>package.json</sky-code> file, minus the "blackbaud-skyux-spa-" prefix. That value is based on the root directory name that you specify when you <a routerLink="/learn/get-started/basic/create-project">create a SKY UX project</a>. You can use the <sky-code>name</sky-code> property in <sky-code>skyuxconfig.json</sky-code> to overwrite the default name if you do not want the root directory name in your public-facing URL. For example, if you publish the SPA to NPM, you use the <sky-code>name</sky-code> property in <sky-code>package.json</sky-code>, so you may want to use a different name for the project in SKY UX Host.
   </p>
 
-  <stache-page-anchor>
+  <stache-page-anchor *skyRestrictedView>
     <sky-code>omnibar</sky-code>
   </stache-page-anchor>
   <p>
@@ -215,12 +215,12 @@
     <ul>
       <li>
         <p>
-          <sky-code>consumer</sky-code> — Specifies the consumer that calls the provider's API. This is a string value that the developer uses to represent the consumer in the consumer-provider relationship. Blackbaud developers register their consumer with the pact broker at <a href="https://host.nxt.blackbaud.com/pact/">https://host.nxt.blackbaud.com/pact/</a>. This internal Blackbaud-only site is not available to external developers.
+          <sky-code>consumer</sky-code> — Specifies the consumer that calls the provider's API. This is a string value that the developer uses to represent the consumer in the consumer-provider relationship. <sky-restricted-view>Blackbaud developers register their consumer with the pact broker at <a href="https://host.nxt.blackbaud.com/pact/">https://host.nxt.blackbaud.com/pact/</a>. This internal Blackbaud-only site is not available to external developers.</sky-restricted-view>
         </p>
       </li>
       <li>
         <p>
-          <sky-code>dir</sky-code> — Specifies a directory for the pact file that the pact server generates when <sky-code>skyux pact</sky-code> runs. By default, the pact server stores the JSON file in the <sky-code>app/pacts</sky-code> directory. The file includes an array of request/response pairs called interactions to describe the behaviors that the consumer expects from the provider service. The file name follows the format of <sky-code>&#123;consumer}-&#123;provider}.json</sky-code>, where <sky-code>&#123;consumer}</sky-code> is the name of the consumer and <sky-code>&#123;provider}</sky-code> is the name of the provider. The pact file needs to be uploaded to the pact broker. Blackbaud developers can find information on registered services at <a href="https://host.nxt.blackbaud.com/pact/">https://host.nxt.blackbaud.com/pact/</a>. This internal Blackbaud-only site is not available to external developers.
+          <sky-code>dir</sky-code> — Specifies a directory for the pact file that the pact server generates when <sky-code>skyux pact</sky-code> runs. By default, the pact server stores the JSON file in the <sky-code>app/pacts</sky-code> directory. The file includes an array of request/response pairs called interactions to describe the behaviors that the consumer expects from the provider service. The file name follows the format of <sky-code>&#123;consumer}-&#123;provider}.json</sky-code>, where <sky-code>&#123;consumer}</sky-code> is the name of the consumer and <sky-code>&#123;provider}</sky-code> is the name of the provider. The pact file needs to be uploaded to the pact broker. <sky-restricted-view>Blackbaud developers can find information on registered services at <a href="https://host.nxt.blackbaud.com/pact/">https://host.nxt.blackbaud.com/pact/</a>. This internal Blackbaud-only site is not available to external developers.</sky-restricted-view>
         </p>
       </li>
       <li>
@@ -245,7 +245,7 @@
       </li>
       <li>
         <p>
-          <sky-code>provider</sky-code> — Specifies the provider of a service that exposes an API to the consumer. This is a string value that the developer uses to represent the provider in the consumer-provider relationship. Blackbaud developers register the provider with the pact broker at <a href="https://host.nxt.blackbaud.com/pact/">https://host.nxt.blackbaud.com/pact/</a>. This internal Blackbaud-only site is not available to external developers.
+          <sky-code>provider</sky-code> — Specifies the provider of a service that exposes an API to the consumer. This is a string value that the developer uses to represent the provider in the consumer-provider relationship. <sky-restricted-view>Blackbaud developers register the provider with the pact broker at <a href="https://host.nxt.blackbaud.com/pact/">https://host.nxt.blackbaud.com/pact/</a>. This internal Blackbaud-only site is not available to external developers.</sky-restricted-view>
         </p>
       </li>
       <li>
@@ -376,7 +376,7 @@
   }
   </sky-code-block>
 
-  <stache-page-anchor>
+  <stache-page-anchor *skyRestrictedView>
     <sky-code>routes</sky-code>
   </stache-page-anchor>
   <p>
@@ -402,7 +402,7 @@
         </li>
         <li>
           <p>
-            <sky-code>browserSet</sky-code> — Specifies the set of browsers to use during continuous integration e2e testing. For Blackbaud developers, <a href="https://host.nxt.blackbaud.com/browserstack/learn/automated">the Browserstack documentation</a> describes the available values.
+            <sky-code>browserSet</sky-code> — Specifies the set of browsers to use during continuous integration e2e testing. <sky-restricted-view>For Blackbaud developers, <a href="https://host.nxt.blackbaud.com/browserstack/learn/automated">the Browserstack documentation</a> describes the available values.</sky-restricted-view>
           </p>
         </li>
         <li>
@@ -429,7 +429,7 @@
       <ul>
         <li>
           <p>
-            <sky-code>browserSet</sky-code> — Specifies the set of browsers to use during continuous integration unit testing. For Blackbaud developers, <a href="https://host.nxt.blackbaud.com/browserstack/learn/automated">the Browserstack documentation</a> describes the available values.
+            <sky-code>browserSet</sky-code> — Specifies the set of browsers to use during continuous integration unit testing. <sky-restricted-view>For Blackbaud developers, <a href="https://host.nxt.blackbaud.com/browserstack/learn/automated">the Browserstack documentation</a> describes the available values.</sky-restricted-view>
           </p>
         </li>
       </ul>

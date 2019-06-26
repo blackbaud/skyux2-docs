@@ -102,7 +102,7 @@
 						<p>
 							For complex tasks where users require comprehensive documentation for the entire task, they invoke help at the page or modal level depending on the context.
 						</p>
-						<p>
+						<p *skyRestrictedView>
 							In Blackbaud products, users can invoke the help service from the omnibar or a <a routerLink="/components/modal">modal</a> header bar. <stache-include fileName="help-widget.html"></stache-include>
 						</p>
 						</sky-repeater-item-content>
@@ -191,6 +191,7 @@
 		</sky-column>
 	</sky-row>
 
+	<sky-restricted-view>
 	<stache-page-anchor>
 		Preloaded Help Widget
 	</stache-page-anchor>
@@ -214,5 +215,6 @@
 			</div>
 		</sky-column>
 	</sky-row>
+	</sky-restricted-view>
 
 </stache>

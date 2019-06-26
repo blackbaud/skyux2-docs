@@ -17,6 +17,10 @@ import {
 } from '@blackbaud/skyux-lib-media';
 
 import {
+  SkyRestrictedViewModule
+} from '@blackbaud/skyux-lib-restricted-view';
+
+import {
   SkyAvatarModule
 } from '@skyux/avatar';
 
@@ -210,6 +214,7 @@ import {
     SkyProgressIndicatorModule,
     SkyRadioModule,
     SkyRepeaterModule,
+    SkyRestrictedViewModule,
     SkySearchModule,
     SkySectionedFormModule,
     SkySelectFieldModule,

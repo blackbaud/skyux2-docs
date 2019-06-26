@@ -22,6 +22,7 @@
     "@blackbaud/skyux-lib-clipboard": "1.1.0",
     "@blackbaud/skyux-lib-code-block": "1.2.0",
     "@blackbaud/skyux-lib-media": "1.0.0",
+    "@blackbaud/skyux-lib-restricted-view": "1.0.0",
     "@blackbaud/skyux-lib-stache": "3.1.0",
     "@blackbaud/skyux2-demos": "1.0.0-alpha.5",
     "@skyux/action-bars": "3.0.1",
