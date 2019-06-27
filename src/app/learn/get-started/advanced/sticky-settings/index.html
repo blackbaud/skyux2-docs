@@ -81,4 +81,22 @@ export class SkyAppUIConfigService {
     Currently, the <a routerLink="/components/grid">grid component</a> and <a routerLink="/components/tile">tile component</a> both support a <sky-code>settingsKey</sky-code> property for sticky settings. When you provide this property, the components automatically call the <sky-code>SkyUIConfigService</sky-code> stub to retrieve stored settings during appropriate actions. This is why you provide your own implementation as shown above.
   </p>
 
+  <stache-page-anchor>
+    Unit Tests
+  </stache-page-anchor>
+  <p>
+    To avoid external dependencies, unit tests should inject the base class when you provide a custom <sky-code>SkyUIConfig Service</sky-code>.
+  </p>
+
+  <sky-code-block languageType="typescript">
+    TestBed.configureTestingModule({
+      providers: [
+        {
+          provide: SkyUIConfigService,
+          useClass: SkyUIConfigService
+        }
+      ]
+    });
+  </sky-code-block>
+
 </stache>
