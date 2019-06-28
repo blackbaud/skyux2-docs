@@ -85,7 +85,7 @@ export class SkyAppUIConfigService {
     Unit tests
   </stache-page-anchor>
   <p>
-    To avoid external dependencies, inject the base class when you provide a custom <sky-code>SkyUIConfigService</sky-code>.
+    To avoid external dependencies, either inject the default <sky-code>SkyUIConfigService</sky-code> in your <sky-code>TestBed</sky-code> configuration or provide your own class to return fake data.
   </p>
 
   <sky-code-block languageType="typescript">
