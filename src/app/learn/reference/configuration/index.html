@@ -108,11 +108,11 @@
     The <sky-code>appSettings</sky-code> configuration option specifies data that is available for reuse throughout the application. The data type of this property is <sky-code>any</sky-code>. After you specify data in the <sky-code>appSettings</sky-code> property, you can <a routerLink="/learn/reference/configuration/apply-appsettings">access that data throughout the SPA</a>.
   </p>
 
-  <stache-page-anchor *skyRestrictedview>
+  <stache-page-anchor>
     <sky-code>auth</sky-code>
   </stache-page-anchor>
   <p>
-    The <sky-code>auth</sky-code> configuration option indicates whether the application requires an authenticated Blackbaud ID. This property is for internal Blackbaud use only. By default, this property is set to <sky-code>false</sky-code>. To require authentication, set this property to <sky-code>true</sky-code>. For Blackbaud developers, <a routerLink="/learn/reference/helpers">the helpers reference</a> provides information about how to make authenticated HTTP requests.
+    The <sky-code>auth</sky-code> configuration option indicates whether the application requires an authenticated Blackbaud ID. This property is for internal Blackbaud use only. <sky-restricted-view>By default, this property is set to <sky-code>false</sky-code>. To require authentication, set this property to <sky-code>true</sky-code>. For Blackbaud developers, <a routerLink="/learn/reference/helpers">the helpers reference</a> provides information about how to make authenticated HTTP requests.</sky-restricted-view>
   </p>
 
   <stache-page-anchor>
@@ -150,11 +150,11 @@
     The <sky-code>cssPath</sky-code> configuration option specifies a path to reference CSS styles. This property is specific to the SKY UX docs site and is for internal Blackbaud use only. To bundle CSS or SCSS files with your SPA, use the <sky-code>styles</sky-code> property of <a stacheRouterLink="." fragment="app">the <sky-code>app</sky-code> configuration option</a> instead.
   </p>
 
-  <stache-page-anchor *skyRestrictedView>
+  <stache-page-anchor>
     <sky-code>help</sky-code>
   </stache-page-anchor>
   <p>
-    The <sky-code>help</sky-code> configuration option indicates whether to automatically include the Help Widget in the application to identify the current page and display relevant help content. This property is for internal Blackbaud use only. By default, this property is set to <sky-code>false</sky-code>. For Blackbaud developers who want to include the Help Widget, <a href="https://docs.blackbaud.com/bb-help-docs/learn/configuration/recommended">the Help Widget configuration options documentation</a> describes the configuration object to set the <sky-code>help</sky-code> property to.
+    The <sky-code>help</sky-code> configuration option indicates whether to automatically include the Help Widget in the application to identify the current page and display relevant help content. This property is for internal Blackbaud use only. <sky-restricted-view>By default, this property is set to <sky-code>false</sky-code>. For Blackbaud developers who want to include the Help Widget, <a href="https://docs.blackbaud.com/bb-help-docs/learn/configuration/recommended">the Help Widget configuration options documentation</a> describes the configuration object to set the <sky-code>help</sky-code> property to.</sky-restricted-view>
   </p>
 
   <stache-page-anchor>
@@ -199,11 +199,11 @@
     The <sky-code>name</sky-code> configuration option specifies the name of the project when running in SKY UX Host. For example, if you specify "demo" as the name, then your SPA is accessible from https://host.nxt.blackbaud.com/demo. By default, SKY UX Builder uses the <sky-code>name</sky-code> property in the <sky-code>package.json</sky-code> file, minus the "blackbaud-skyux-spa-" prefix. That value is based on the root directory name that you specify when you <a routerLink="/learn/get-started/basic/create-project">create a SKY UX project</a>. You can use the <sky-code>name</sky-code> property in <sky-code>skyuxconfig.json</sky-code> to overwrite the default name if you do not want the root directory name in your public-facing URL. For example, if you publish the SPA to NPM, you use the <sky-code>name</sky-code> property in <sky-code>package.json</sky-code>, so you may want to use a different name for the project in SKY UX Host.
   </p>
 
-  <stache-page-anchor *skyRestrictedView>
+  <stache-page-anchor>
     <sky-code>omnibar</sky-code>
   </stache-page-anchor>
   <p>
-    The <sky-code>omnibar</sky-code> configuration option specifies an object to pass to the omnibar's <sky-code>load</sky-code> method. This property is for internal Blackbaud use only. The omnibar provides a common UI element for Blackbaud applications that allows users to navigate between applications. For Blackbaud developers, <a href="https://docs.blackbaud.com/omnibar-docs/learn/configuring">the omnibar configuration options documentation</a> describes the available options to pass to the omnibar.
+    The <sky-code>omnibar</sky-code> configuration option specifies an object to pass to the omnibar's <sky-code>load</sky-code> method. This property is for internal Blackbaud use only. <sky-restricted-view>The omnibar provides a common UI element for Blackbaud applications that allows users to navigate between applications. For Blackbaud developers, <a href="https://docs.blackbaud.com/omnibar-docs/learn/configuring">the omnibar configuration options documentation</a> describes the available options to pass to the omnibar.</sky-restricted-view>
   </p>
 
   <stache-page-anchor>
@@ -376,11 +376,11 @@
   }
   </sky-code-block>
 
-  <stache-page-anchor *skyRestrictedView>
+  <stache-page-anchor>
     <sky-code>routes</sky-code>
   </stache-page-anchor>
   <p>
-    The <sky-code>routes</sky-code> configuration option allows you to use the omnibar but still define navigation items. This property is for internal Blackbaud use only. For Blackbaud developers, the Engineering System website describes how to <a href="https://host.nxt.blackbaud.com/engineering-system-docs/learn/spa/spa-global-navigation">add your SPA to global navigation</a>.
+    The <sky-code>routes</sky-code> configuration option allows you to use the omnibar but still define navigation items. This property is for internal Blackbaud use only. <sky-restricted-view>For Blackbaud developers, the Engineering System website describes how to <a href="https://host.nxt.blackbaud.com/engineering-system-docs/learn/spa/spa-global-navigation">add your SPA to global navigation</a>.</sky-restricted-view>
   </p>
 
   <stache-page-anchor>
