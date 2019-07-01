@@ -226,6 +226,7 @@ import {
     SkyToolbarModule,
     SkyUrlValidationModule,
     SkyVerticalTabsetModule,
+    SkyVideoModule,
     SkyWaitModule
   ]
 })
