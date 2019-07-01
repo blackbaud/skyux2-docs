@@ -13,7 +13,8 @@ import {
 
 import {
   SkyHeroModule,
-  SkyImageModule
+  SkyImageModule,
+  SkyVideoModule
 } from '@blackbaud/skyux-lib-media';
 
 import {
