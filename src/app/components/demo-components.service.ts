@@ -960,6 +960,13 @@ export class SkyDemoComponentsService {
         disableStackblitz: true
       },
       {
+        name: 'Split view',
+        icon: 'columns',
+        summary: `The split view component allows users to work through a list of items, while displaying each item's details in context.`,
+        url: '/components/split-view',
+        getCodeFiles: () => this.getDemoFiles('Split view')
+      },
+      {
         name: 'Status indicator',
         icon: 'exclamation-triangle',
         // tslint:disable-next-line
