@@ -1,0 +1,57 @@
+<sky-demo-page
+  pageTitle="Split View"
+  skyuxModule="SkySplitViewModule"
+  packageName="@skyux/split-view"
+>
+
+  <sky-demo-page-summary>
+    <p>
+      The split view component allows users to work through a list of items, while displaying each item's details in context. The split view component consists of two panels: the list panel, and the workspace panel. The <stache-code>SkySplitViewService</stache-code> allows consumers to control what is displayed in the workspace panel. The <stache-code>SkySplitViewInstance</stache-code> class watches for and triggers events that come from the split view component.
+    </p>
+  </sky-demo-page-summary>
+
+  <sky-demo-page-properties sectionHeading="Split view properties">
+    <sky-demo-page-property
+      propertyName="listPanelWidth"
+      isOptional="true"
+    >
+      Specifies the default width of the left-side list panel. This property accepts number values. (Default: 320)
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="listPanelResizable"
+      isOptional="true"
+    >
+      Allows users to resize the panels by clicking and dragging the panel separator. (Default: true)
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <!-- <sky-demo-page-example>
+    <sky-flyout-demo>
+    </sky-flyout-demo>
+    <sky-demo-page-code
+      demoName="Flyout">
+    </sky-demo-page-code>
+  </sky-demo-page-example>
+
+  <sky-demo-page-content sectionHeading="Accessibility">
+    <p>
+      Follow these guidelines to ensure that people can use flyouts with assistive technology or keyboards.
+    </p>
+    <ul>
+      <li>
+        When a flyout opens, place focus on the first focusable item. If the flyout does not include focusable items, then place focus on the flyout container element.
+      </li>
+      <li>
+        While a flyout is open, limit focus to elements in the flyout. Do not move focus back to the initiating page behind the flyout. On the last focusable item, the Tab key should return focus to the first focusable item. And on the first focusable item, the Shift+Tab keys should switch focus to the last focusable item.
+      </li>
+      <li>
+        When a flyout closes, return focus to the element that had focus before the flyout opened. This is usually the element that opened the flyout.
+      </li>
+    </ul>
+  </sky-demo-page-content>
+
+  <sky-demo-page-content sectionHeading="UX guidelines">
+		<sky-flyout-guidelines></sky-flyout-guidelines>
+  </sky-demo-page-content> -->
+
+</sky-demo-page>
