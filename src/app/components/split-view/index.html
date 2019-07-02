@@ -1,15 +1,99 @@
-<sky-demo-page
-  pageTitle="Split View"
-  skyuxModule="SkySplitViewModule"
-  packageName="@skyux/split-view"
+<sky-tabbed-demo-page
+  pageTitle="Split view"
 >
-
   <sky-demo-page-summary>
     <p>
       The split view component allows users to work through a list of items, while displaying each item's details in context. The split view component consists of two panels: the list panel, and the workspace panel. The <sky-code>SkySplitViewService</sky-code> allows consumers to control what is displayed in the workspace panel.
     </p>
   </sky-demo-page-summary>
+  
+  <sky-demo-page-example>
+    <sky-split-view-demo></sky-split-view-demo>
+  </sky-demo-page-example>
+  
+<sky-tabset id="content-tabs">
 
+  <sky-tab
+    tabHeading="Design">
+
+    <sky-demo-page-content sectionHeading="Usage">
+      <h3>Use when</h3>
+        
+      <h3>Don't use when</h3>
+        
+    </sky-demo-page-content>
+
+    <sky-demo-page-content sectionHeading="Anatomy">
+      <h3>Large viewport</h3>
+      <sky-docs-anatomy imagePath="">
+        <sky-docs-anatomy-item anatomyNumber="1">List panel</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item anatomyNumber="2">Workspace panel</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item anatomyNumber="3" isOptional="true">Summary action bar</sky-docs-anatomy-item>
+      </sky-docs-anatomy>
+      <h3>Small viewport</h3>
+      <sky-docs-anatomy imagePath="">
+        <sky-docs-anatomy-item anatomyNumber="4">List panel</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item anatomyNumber="5">Responsive header bar</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item anatomyNumber="6">Workspace panel</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item anatomyNumber="7" isOptional="true">Summary action bar</sky-docs-anatomy-item>
+      </sky-docs-anatomy>
+    </sky-demo-page-content>
+
+    <sky-demo-page-content sectionHeading="Options">
+      <h3>Placeholder</h3>
+      <sky-docs-visual-example>
+        <sky-docs-visual-example-text>
+          <p>Placeholder</p>
+        </sky-docs-visual-example-text>
+        <sky-docs-visual-example-image>
+          
+        </sky-docs-visual-example-image>
+      </sky-docs-visual-example>
+    </sky-demo-page-content>
+
+    <sky-demo-page-content sectionHeading="Behavior and states">
+      <h3>Placeholder</h3>
+      <sky-docs-visual-example>
+        <sky-docs-visual-example-text>
+          <p>Placeholder</p>
+        </sky-docs-visual-example-text>
+        <sky-docs-visual-example-image>
+          
+        </sky-docs-visual-example-image>
+      </sky-docs-visual-example>
+    </sky-demo-page-content>
+    
+    <sky-demo-page-content sectionHeading="Layout">
+      <sky-docs-visual-example>
+        <sky-docs-visual-example-text>
+          <p>Placeholder</p>
+        </sky-docs-visual-example-text>
+        <sky-docs-visual-example-image>
+          
+        </sky-docs-visual-example-image>
+      </sky-docs-visual-example>
+    </sky-demo-page-content>
+
+    <sky-demo-page-content sectionHeading="Related information">
+      <h3>Components</h3>
+      <ul>
+        <li><a routerLink="/components/repeater">Repeater</a></li>
+        <li><a routerLink="/components/summary-actionbar">Summary action bar</a></li>
+      </ul>
+    </sky-demo-page-content>
+
+  </sky-tab>
+
+  <sky-tab
+    tabHeading="Development">
+
+  <sky-demo-page-module-info
+    skyuxModule="SkySplitViewModule"
+    packageName="@skyux/split-view"
+    githubRepo="skyux-split-view"
+  >
+  </sky-demo-page-module-info>  
+  
   <sky-demo-page-properties sectionHeading="Split view properties">
     <sky-demo-page-property
       propertyName="listWidth"
@@ -103,32 +187,14 @@
       Sets the workspace panel's aria-label attribute to support accessibility. This property accepts string values.
     </sky-demo-page-property>
   </sky-demo-page-properties>
-
+  
   <sky-demo-page-example>
     <sky-split-view-demo></sky-split-view-demo>
     <sky-demo-page-code demoName="Split view"></sky-demo-page-code>
-  </sky-demo-page-example>
+  </sky-demo-page-example>  
+  
+  </sky-tab>
+  
+  </sky-tabset>
 
-  <!--
-  <sky-demo-page-content sectionHeading="Accessibility">
-    <p>
-      Follow these guidelines to ensure that people can use flyouts with assistive technology or keyboards.
-    </p>
-    <ul>
-      <li>
-        When a flyout opens, place focus on the first focusable item. If the flyout does not include focusable items, then place focus on the flyout container element.
-      </li>
-      <li>
-        While a flyout is open, limit focus to elements in the flyout. Do not move focus back to the initiating page behind the flyout. On the last focusable item, the Tab key should return focus to the first focusable item. And on the first focusable item, the Shift+Tab keys should switch focus to the last focusable item.
-      </li>
-      <li>
-        When a flyout closes, return focus to the element that had focus before the flyout opened. This is usually the element that opened the flyout.
-      </li>
-    </ul>
-  </sky-demo-page-content>
-
-  <sky-demo-page-content sectionHeading="UX guidelines">
-		<sky-flyout-guidelines></sky-flyout-guidelines>
-  </sky-demo-page-content> -->
-
-</sky-demo-page>
+</sky-tabbed-demo-page>
