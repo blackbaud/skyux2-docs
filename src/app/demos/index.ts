@@ -4,3 +4,4 @@ export * from './code-block';
 export * from './copy-to-clipboard';
 export * from './inline-form';
 export * from './date-range-picker';
+export * from './split-view';
