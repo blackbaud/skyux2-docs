@@ -18,9 +18,16 @@
 
     <sky-demo-page-content sectionHeading="Usage">
       <h3>Use when</h3>
-        
+        <sky-docs-visual-example>
+          <sky-docs-visual-example-text>
+            <p>Use a split view if a user needs to work through a list of items with the intent of taking an action on each item in the list.</p>
+          </sky-docs-visual-example-text>
+          <sky-docs-visual-example-image>
+            <img src="~/assets/img/guidelines/split-view/use-when.png" />
+          </sky-docs-visual-example-image>
+        </sky-docs-visual-example>
       <h3>Don't use when</h3>
-        
+        <div class="sky-text-block"><p>Don't use a split view if the user is likely to interact with a small number of items in the list. Use a regular list instead, following the <a routerLink="/components/flyout">flyout</a> guidelines to determine whether to use a flyout or navigate to the selected record.</p></div>        
     </sky-demo-page-content>
 
     <sky-demo-page-content sectionHeading="Anatomy">
@@ -43,7 +50,7 @@
       <h3>List type</h3>
         <sky-docs-visual-example>
           <sky-docs-visual-example-text>
-            <p><a routerLink="/components/repeater">Repeaters</a> will be the most common component used for the list of items due to the flexible content layouts they enable.</p>
+            <a routerLink="/components/repeater">Repeaters</a> will be the most common component used for the list of items due to the flexible content layouts they enable.
           </sky-docs-visual-example-text>
           <sky-docs-visual-example-image>
 
@@ -77,25 +84,43 @@
     </sky-demo-page-content>
 
     <sky-demo-page-content sectionHeading="Behavior and states">
-      <h3>Responsiveness</h3>
+      <h3>Set focus in the workspace</h3>
         <sky-docs-visual-example>
           <sky-docs-visual-example-text>
-            <p>Placeholder</p>
+            <p>When the user selects a new item in the list, set focus on the first focusable element in the workspace so the user can immediately start working.</p>
           </sky-docs-visual-example-text>
           <sky-docs-visual-example-image>
 
           </sky-docs-visual-example-image>
       </sky-docs-visual-example>
-      <h3>List item iteration</h3>
+      <h3>Change navigation panel width</h3>
         <sky-docs-visual-example>
           <sky-docs-visual-example-text>
-            <p>Placeholder</p>
+            <p>The user can change the width of the navigation panel by drag-and-drop or keyboard interactions. If the navigation list content is wider than the panel, the panel will have a horizontal scrollbar.</p>
+          </sky-docs-visual-example-text>
+          <sky-docs-visual-example-image>
+
+          </sky-docs-visual-example-image>
+      </sky-docs-visual-example>
+      <h3>Automatically advance to the next item</h3>
+        <sky-docs-visual-example>
+          <sky-docs-visual-example-text>
+            <p>If the user is likely to work through the list of items sequentially, automatically advance to the next item in the list when the user invokes the primary action on the record.</p>
           </sky-docs-visual-example-text>
           <sky-docs-visual-example-image>
 
           </sky-docs-visual-example-image>
         </sky-docs-visual-example>
     </sky-demo-page-content>
+    <h3>Responsiveness</h3>
+        <sky-docs-visual-example>
+          <sky-docs-visual-example-text>
+            <p>In smaller viewports the split view automatically switches from a side-by-side view to a panel-switching interaction where the user flips between the list and the workspace. The responsive workspace header should have iterator buttons so the user can move between items without having to go back to the list.</p>
+          </sky-docs-visual-example-text>
+          <sky-docs-visual-example-image>
+             <img src="~/assets/img/guidelines/split-view/behavior-responsive.png" />
+          </sky-docs-visual-example-image>
+      </sky-docs-visual-example>
     
     <sky-demo-page-content sectionHeading="Layout">
       <sky-docs-visual-example>
