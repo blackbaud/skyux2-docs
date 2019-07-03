@@ -25,48 +25,82 @@
 
     <sky-demo-page-content sectionHeading="Anatomy">
       <h3>Large viewport</h3>
-      <sky-docs-anatomy imagePath="">
+      <sky-docs-anatomy imagePath="~/assets/img/guidelines/split-view/anatomy-desktop.png">
         <sky-docs-anatomy-item anatomyNumber="1">List panel</sky-docs-anatomy-item>
         <sky-docs-anatomy-item anatomyNumber="2">Workspace panel</sky-docs-anatomy-item>
         <sky-docs-anatomy-item anatomyNumber="3" isOptional="true">Summary action bar</sky-docs-anatomy-item>
       </sky-docs-anatomy>
       <h3>Small viewport</h3>
-      <sky-docs-anatomy imagePath="">
-        <sky-docs-anatomy-item anatomyNumber="4">List panel</sky-docs-anatomy-item>
-        <sky-docs-anatomy-item anatomyNumber="5">Responsive header bar</sky-docs-anatomy-item>
-        <sky-docs-anatomy-item anatomyNumber="6">Workspace panel</sky-docs-anatomy-item>
-        <sky-docs-anatomy-item anatomyNumber="7" isOptional="true">Summary action bar</sky-docs-anatomy-item>
+      <sky-docs-anatomy imagePath="~/assets/img/guidelines/split-view/anatomy-mobile.png">
+        <sky-docs-anatomy-item anatomyNumber="1">List panel</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item anatomyNumber="2">Responsive header bar</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item anatomyNumber="3">Workspace panel</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item anatomyNumber="4" isOptional="true">Summary action bar</sky-docs-anatomy-item>
       </sky-docs-anatomy>
     </sky-demo-page-content>
 
     <sky-demo-page-content sectionHeading="Options">
-      <h3>Placeholder</h3>
-      <sky-docs-visual-example>
-        <sky-docs-visual-example-text>
-          <p>Placeholder</p>
-        </sky-docs-visual-example-text>
-        <sky-docs-visual-example-image>
-          
-        </sky-docs-visual-example-image>
-      </sky-docs-visual-example>
+      <h3>List type</h3>
+        <sky-docs-visual-example>
+          <sky-docs-visual-example-text>
+            <p><a routerLink="/components/repeater">Repeaters</a> will be the most common component used for the list of items due to the flexible content layouts they enable.</p>
+          </sky-docs-visual-example-text>
+          <sky-docs-visual-example-image>
+
+          </sky-docs-visual-example-image>
+        </sky-docs-visual-example>
+        <sky-docs-visual-example>
+          <sky-docs-visual-example-text>
+            <p>Tree views can also be used if the items in the list are hierarchical. You may use different views in the workspace panel if the items at different levels of the tree are of different types.</p>
+          </sky-docs-visual-example-text>
+          <sky-docs-visual-example-image>
+
+          </sky-docs-visual-example-image>
+        </sky-docs-visual-example>
+        <sky-docs-visual-example>
+          <sky-docs-visual-example-text>
+            <p>While <a routerLink="/components/grid">grids</a> may technically be used, avoid them if possible. They do not scale well to the typically-small width of the navigation list.</p>
+          </sky-docs-visual-example-text>
+          <sky-docs-visual-example-image>
+
+          </sky-docs-visual-example-image>
+        </sky-docs-visual-example>
+      <h3>List manipulation</h3>
+        <sky-docs-visual-example>
+          <sky-docs-visual-example-text>
+            <p>You may include a list toolbar so that users can filter, sort and search the list, or add new items to the list.</p>
+          </sky-docs-visual-example-text>
+          <sky-docs-visual-example-image>
+
+          </sky-docs-visual-example-image>
+        </sky-docs-visual-example>
     </sky-demo-page-content>
 
     <sky-demo-page-content sectionHeading="Behavior and states">
-      <h3>Placeholder</h3>
-      <sky-docs-visual-example>
-        <sky-docs-visual-example-text>
-          <p>Placeholder</p>
-        </sky-docs-visual-example-text>
-        <sky-docs-visual-example-image>
-          
-        </sky-docs-visual-example-image>
+      <h3>Responsiveness</h3>
+        <sky-docs-visual-example>
+          <sky-docs-visual-example-text>
+            <p>Placeholder</p>
+          </sky-docs-visual-example-text>
+          <sky-docs-visual-example-image>
+
+          </sky-docs-visual-example-image>
       </sky-docs-visual-example>
+      <h3>List item iteration</h3>
+        <sky-docs-visual-example>
+          <sky-docs-visual-example-text>
+            <p>Placeholder</p>
+          </sky-docs-visual-example-text>
+          <sky-docs-visual-example-image>
+
+          </sky-docs-visual-example-image>
+        </sky-docs-visual-example>
     </sky-demo-page-content>
     
     <sky-demo-page-content sectionHeading="Layout">
       <sky-docs-visual-example>
         <sky-docs-visual-example-text>
-          <p>Placeholder</p>
+          <p>A split view should be the last item on a page; there should not be additional content below it.</p>
         </sky-docs-visual-example-text>
         <sky-docs-visual-example-image>
           
