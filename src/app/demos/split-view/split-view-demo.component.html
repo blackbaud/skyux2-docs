@@ -91,12 +91,11 @@
           >
             Comments
           </label>
-          <input
+          <textarea
             name="comments"
             class="sky-form-control"
-            type="text"
             [(ngModel)]="activeRecord.comments"
-          />
+          ></textarea>
         </div>
 
         <div
@@ -121,6 +120,13 @@
             type="submit"
           >
             Approve expense
+          </button>
+          <button
+            class="sky-btn sky-btn-link"
+            name="deny"
+            type="button"
+          >
+            Deny request
           </button>
         </div>
 

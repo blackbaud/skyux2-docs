@@ -1,2 +1,11 @@
 @import '~@skyux/theme/scss/mixins.scss';
 
+/*
+  This is a temporary style until repeaters support an "active" class.
+*/
+::ng-deep .sky-repeater-active .sky-repeater-item {
+  background-color: #eeeeef;
+  color: #212327;
+  padding-left: 6px;
+  border-left: 4px solid #00b4f1;
+}
