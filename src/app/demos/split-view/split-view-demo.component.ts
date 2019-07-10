@@ -100,7 +100,7 @@ export class SkySplitViewDemoComponent implements AfterViewInit {
   public onItemClick(index: number) {
     if (this.hasUnsavedWork && index !== this.activeIndex) {
       this.confirmService.open({
-        message: 'You have unsaved work. Are you sure you want to load a new item and lose your work?',
+        message: 'You have unsaved work. Would you like to save it before you change records?',
         type: SkyConfirmType.YesCancel
       }).closed.subscribe((closeArgs: SkyConfirmCloseEventArgs) => {
         if (closeArgs.action.toLowerCase() === 'yes') {
