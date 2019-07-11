@@ -1,24 +1,181 @@
-<sky-demo-page
-  pageTitle="Status Indicator"
-  navTitle="Status indicator"
-  packageName="@skyux/theme"
-  [installOnly]="true"
+<sky-tabbed-demo-page
+  pageTitle="Status indicator"
 >
 
 <sky-demo-page-summary>
-	The status indicator classes provide icons to draw attention to status information that users need to address. Statuses indicate a state or condition at a particular time and fall into four categories: danger, info, success, and warning. For example, a status can indicate that a submission is late, submitted, or awaiting approval.
+	The status indicator classes provide icons to highlight important status information that users need to address.
 </sky-demo-page-summary>
 
-<sky-demo-page-content sectionHeading="Status indicator classes">
+<sky-tabset id="content-tabs">
+
+<sky-tab
+    tabHeading="Design">
+      
+    <sky-demo-page-content sectionHeading="Usage">
+      <h3 class="sky-text-success">Use when</h3>
+        <sky-docs-visual-example>
+			<sky-docs-visual-example-text>
+					<p>Use status indicators when users must address or be aware of important information when completing tasks.</p>
+			</sky-docs-visual-example-text>
+			<sky-docs-visual-example-image>
+				<sky-image
+                  caption="Use status indicators when users must address or be aware of important information when completing tasks."
+                  captionType="success"
+                  imageAlt="FIGURE THIS OUT LATER"
+                  imageSource="~/assets/img/guidelines/status-indicator/status-indicator-usage-1.png">
+                </sky-image>
+			</sky-docs-visual-example-image>
+		</sky-docs-visual-example>
+        <sky-docs-visual-example>
+			<sky-docs-visual-example-text>
+					<p>Use status indicators to call out important status information for items in a list or specific properties on a record.</p>
+			</sky-docs-visual-example-text>
+			<sky-docs-visual-example-image>
+				<div>
+					<img src="~/assets/img/guidelines/status-indicator/status-indicator-usage-2.png" />
+					<div class="caption caption-success sky-text-success">Do use status indicators to draw attention to items in a list that require action.</div>
+				</div>
+			</sky-docs-visual-example-image>
+		</sky-docs-visual-example>
+        <sky-docs-visual-example>
+			<sky-docs-visual-example-text>
+					<p>Use status indicators to highlight validation errors on input fields.</p>
+			</sky-docs-visual-example-text>
+			<sky-docs-visual-example-image>
+				<div>
+					<img src="~/assets/img/guidelines/status-indicator/status-indicator-usage-2'5.png" />
+					<div class="caption caption-success sky-text-success">Do use status indicators for validation error messages</div>
+				</div>
+			</sky-docs-visual-example-image>
+		</sky-docs-visual-example>
+        
+      <h3 class="sky-text-danger">Don't use when</h3>
+        <sky-docs-visual-example>
+			<sky-docs-visual-example-text>
+					<p>Don't use status indicators to highlight statuses in the page summary. Use <a routerLink="/components/label">labels</a> instead.</p>
+			</sky-docs-visual-example-text>
+			<sky-docs-visual-example-image>
+				<div>
+					<img src="~/assets/img/guidelines/status-indicator/status-indicator-usage-3.png" />
+					<div class="caption caption-danger sky-text-danger">Don't use status indicators for statuses in the page summary.</div>
+				</div>
+			</sky-docs-visual-example-image>
+		</sky-docs-visual-example>
+        <sky-docs-visual-example>
+			<sky-docs-visual-example-text>
+					
+			</sky-docs-visual-example-text>
+			<sky-docs-visual-example-image>
+				<div>
+					<img src="~/assets/img/guidelines/status-indicator/status-indicator-usage-4.png" />
+                    <div class="caption caption-success sky-text-success">Do use <a routerLink="/components/label">labels</a> for statuses in the page summary.</div>
+				</div>
+			</sky-docs-visual-example-image>
+		</sky-docs-visual-example>
+        
+        <sky-docs-visual-example>
+			<sky-docs-visual-example-text>
+					<p>Don't use status indicators when no user action is necessary, and status information is not important enough to highlight. Use plain text instead to avoid the overuse of status indicators.</p>
+			</sky-docs-visual-example-text>
+			<sky-docs-visual-example-image>
+				<div>
+					<img src="~/assets/img/guidelines/status-indicator/status-indicator-usage-5.png" />
+					<div class="caption caption-danger sky-text-danger">Don't use status indicators when statuses do not convey critical information.</div>
+				</div>
+			</sky-docs-visual-example-image>
+		</sky-docs-visual-example>
+        
+        <sky-docs-visual-example>
+			<sky-docs-visual-example-text>
+					
+			</sky-docs-visual-example-text>
+			<sky-docs-visual-example-image>
+				<div>
+					<img src="~/assets/img/guidelines/status-indicator/status-indicator-usage-6.png" />
+					<div class="caption caption-success sky-text-success">Do use statuses indicators to emphasize only important statuses.</div>
+				</div>
+			</sky-docs-visual-example-image>
+		</sky-docs-visual-example>
+    </sky-demo-page-content>
+    
+    <sky-demo-page-content sectionHeading="Anatomy">
+      <sky-docs-anatomy imagePath="~/assets/img/guidelines/status-indicator/status-indicator-anatomy.png">
+        <sky-docs-anatomy-item anatomyNumber="1">Icon</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item anatomyNumber="2">Text label</sky-docs-anatomy-item>
+      </sky-docs-anatomy>
+    </sky-demo-page-content>
+    
+    <sky-demo-page-content sectionHeading="Options">
+        <h3>Status type</h3>
+    
+    <div class="definition-table definition-table-wide">
+        <div class="definition-item">
+            <div class="sky-text-danger">Danger</div>
+        </div>
+        <div class="definition-props">
+            <div class="definition-usage">
+                <div>The danger class represents statuses or content that requires immediate attention.<br>Use this type for items such as failed processes, overdue items, and inputs with invalid values.</div>
+            </div>
+        </div>
+    </div>
+    <div class="definition-table definition-table-wide">
+        <div class="definition-item">
+            <div class="sky-text-info">Info</div>
+        </div>
+        <div class="definition-props">
+            <div class="definition-usage">
+                <div>The info class represents statuses or content with high interest but neutral meaning.<br>Use this type for items such as high-level classifications on records and highlighted fields.</div>
+            </div>
+        </div>
+    </div>
+    <div class="definition-table definition-table-wide">
+        <div class="definition-item">
+            <div class="sky-text-success">Success</div>
+        </div>
+        <div class="definition-props">
+            <div class="definition-usage">
+                <div>The success class represents statuses of positive completion.<br>Use this type for items such as successfully finished processes, completed tasks, and objects that meet workflow requirements.</div>
+            </div>
+        </div>
+    </div>
+    <div class="definition-table definition-table-wide">
+        <div class="definition-item">
+            <div class="sky-text-warning">Warning</div>
+        </div>
+        <div class="definition-props">
+            <div class="definition-usage">
+                <div>The warning class represents statuses or decisions with significant consequences.<br>Use this type for items such as approaching expirations and changes with far-reaching or irreversible consequences.</div>
+            </div>
+        </div>
+    </div>
+        
+    </sky-demo-page-content>
+    
+    <sky-demo-page-content sectionHeading="Related information">
+      <h3>Components</h3>
+      <ul>
+        <li><a routerLink="/components/alert">Alert</a></li>
+        <li><a routerLink="/components/label">Label</a></li>
+          <li><a routerLink="/components/toast">Toast</a></li>
+      </ul>
+      <h3>Guidelines</h3>
+      <ul>
+        <li><a routerLink="/design/guidelines/call-out-info">Call out information</a></li>
+      </ul>
+    </sky-demo-page-content>
+    
+</sky-tab>
+    
+    <sky-tab
+        tabHeading="Development">
+    
+    <sky-demo-page-content sectionHeading="Status indicator classes">
   <div class="definition-table definition-table-wide">
     <div class="definition-item">
       <div class="sky-text-danger">Danger</div>
     </div>
     <div class="definition-props">
-      <div class="definition-usage">
-        <div class="sky-field-label">Usage</div>
-        <div>This class prepends a red warning icon to provide a compact way to indicate a "danger" status.</div>
-      </div>
+      
       <div class="definition-code">
         <div class="sky-field-label">Code</div>
         <sky-code>&lt;div class=&quot;sky-text-danger&quot;&gt;Danger&lt;/div&gt;</sky-code>
@@ -35,10 +192,7 @@
       <div class="sky-text-info">Info</div>
     </div>
     <div class="definition-props">
-      <div class="definition-usage">
-        <div class="sky-field-label">Usage</div>
-        <div>This class prepends a blue info icon to provide a compact way to indicate an "info" status.</div>
-      </div>
+      
       <div class="definition-code">
         <div class="sky-field-label">Code</div>
         <sky-code>&lt;div class=&quot;sky-text-info&quot;&gt;Info&lt;/div&gt;</sky-code>
@@ -55,10 +209,7 @@
       <div class="sky-text-success">Success</div>
     </div>
     <div class="definition-props">
-      <div class="definition-usage">
-        <div class="sky-field-label">Usage</div>
-        <div>This class prepends a green checkmark icon to provide a compact way to indicate a "success" status.</div>
-      </div>
+      
       <div class="definition-code">
         <div class="sky-field-label">Code</div>
         <sky-code>&lt;div class=&quot;sky-text-success&quot;&gt;Success&lt;/div&gt;</sky-code>
@@ -75,10 +226,7 @@
       <div class="sky-text-warning">Warning</div>
     </div>
     <div class="definition-props">
-      <div class="definition-usage">
-        <div class="sky-field-label">Usage</div>
-        <div>This class prepends a yellow warning icon to provide a compact way to indicate a "warning" status.</div>
-      </div>
+      
       <div class="definition-code">
         <div class="sky-field-label">Code</div>
         <sky-code>&lt;div class=&quot;sky-text-warning&quot;&gt;Warning&lt;/div&gt;</sky-code>
@@ -91,18 +239,9 @@
   </div>
 </sky-demo-page-content>
 
-<sky-demo-page-content sectionHeading="UX guidelines">		
-	<div class="sky-subsection-heading">Status importance</div>
-		<p>If statuses are crucial to user tasks, use status indicators. However, if one status in an area is crucial, that does not mean all statuses are. For example, in a list of invoices with a mix of paid, unpaid, and overdue invoices, it's likely that only overdue invoices require status indicators because only they require immediate attention.</p>
-		<p>If statuses are not crucial to user tasks, use regular text.</p>
-			
-	<div class="sky-subsection-heading">Status indicator placement</div>
-		<p>Use status indicators inline to indicate that they are tied to specific pieces of data. For example, you can place status indicators in grid cells or cards. However, don't use status indicators in summary areas. To convey higher-level statuses in summary areas, use <a routerLink="../label">labels</a> instead.</p>
-	
-	<div class="sky-subsection-heading">Related guidelines</div>
-		<ul>
-			<li><a routerLink="/design/guidelines/call-out-info">Calling out information</a></li>
-		</ul>
-</sky-demo-page-content>	
-</sky-demo-page>	
+
+
+    </sky-tab>
+    </sky-tabset>
+</sky-tabbed-demo-page>	
 
