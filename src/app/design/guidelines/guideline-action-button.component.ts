@@ -7,6 +7,13 @@ import { Component } from '@angular/core';
 export class GuidelineActionButtonsComponent {
   public routes = [
     {
+      name: 'Back button',
+      path: '/design/guidelines/back-button',
+      icon: 'arrow-circle-o-left',
+      // tslint:disable-next-line
+      summary: 'Describes when to enable back button behavior.'
+    },
+    {
       name: 'Buttons and links',
       path: '/design/guidelines/buttons-links',
       icon: 'link',
