@@ -1,15 +1,127 @@
-<sky-demo-page
-  pageTitle="Dropdown"
-  skyuxModule="SkyDropdownModule"
-  packageName="@skyux/popovers"
+<sky-tabbed-demo-page
+  pageTitle="Dropodown"
 >
 
-  <sky-demo-page-summary>
-    <p>
-      The dropdown component renders a button that displays a menu when users click it. The menu displays a set of actions or functions. <strong>Do not use the dropdown component as a select input</strong> for users to set the menu's value to one of the options. If you need a select input, see the <a routerLink="/design/guidelines/select-items">options to select items from lists</a>.
-    </p>
-  </sky-demo-page-summary>
+<sky-demo-page-summary>
+  <p>
+    The dropdown component renders a button that displays a menu when users click it. The menu displays a set of actions or functions. <strong>Do not use the dropdown component as a select input</strong> for users to set the menu's value to one of the options. If you need a select input, see the <a routerLink="/design/guidelines/select-items">options to select items from lists</a>.
+  </p>
+</sky-demo-page-summary>  
 
+<sky-demo-page-example>
+  <sky-dropdown-demo>
+  </sky-dropdown-demo>
+</sky-demo-page-example>  
+  
+<sky-tabset id="content-tabs">
+
+  <sky-tab
+    tabHeading="Design">
+    
+    <sky-demo-page-content sectionHeading="Usage">
+      <h3 class="sky-text-success">Use when</h3>
+        <sky-docs-visual-example>
+          <sky-docs-visual-example-text>
+            <p>Use dropdowns when users require access to multiple actions and there is not enough space to use separate buttons for each action.</p>
+          </sky-docs-visual-example-text>
+          <sky-docs-visual-example-image>
+            <img src="~/assets/img/guidelines/dropdown/usage-multi-actions.png" />
+            <div class="caption caption-success sky-text-success">Use dropdowns to let users access multiple actions.</div>
+          </sky-docs-visual-example-image>
+        </sky-docs-visual-example>  
+      <h3 class="sky-text-danger">Don't use when</h3>
+        <sky-docs-visual-example>
+          <sky-docs-visual-example-text>
+            <p>Don't use dropdowns as a form input. Use an HTML <sky-code>&lt;select&gt;</sky-code> instead.</p>
+          </sky-docs-visual-example-text>
+          <sky-docs-visual-example-image>
+            <img src="~/assets/img/guidelines/dropdown/usage-dont-input.png" />
+            <div class="caption caption-danger sky-text-danger">Don't use dropdowns as a form input.</div>
+          </sky-docs-visual-example-image>
+        </sky-docs-visual-example>
+    </sky-demo-page-content>
+
+    <sky-demo-page-content sectionHeading="Anatomy">
+      <sky-docs-anatomy imagePath="~/assets/img/guidelines/dropdown/anatomy.png">
+        <sky-docs-anatomy-item anatomyNumber="1">Dropdown button</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item anatomyNumber="2">Dropdown menu</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item anatomyNumber="3">Action</sky-docs-anatomy-item>
+      </sky-docs-anatomy>
+    </sky-demo-page-content>
+
+    <sky-demo-page-content sectionHeading="Options">
+      <h3>Button types</h3>
+      <sky-demo-page-component-states>
+        <sky-demo-page-component-state stateName="Default" imagePath="~/assets/img/guidelines/dropdown/option-type-default.png"></sky-demo-page-component-state>
+        <sky-demo-page-component-state stateName="Context menu" imagePath="~/assets/img/guidelines/dropdown/option-type-context.png"></sky-demo-page-component-state>
+        <sky-demo-page-component-state stateName="Icon" imagePath="~/assets/img/guidelines/dropdown/option-type-icon.png"></sky-demo-page-component-state>
+      </sky-demo-page-component-states>
+    </sky-demo-page-content>
+    
+    <sky-demo-page-content sectionHeading="Content">
+      <h3>Dropdown menu action text</h3>
+      <sky-docs-visual-example>
+        <sky-docs-visual-example-text>
+          <p>If the context menu is tied to the direct object of a context menu item, use the following format for the action wording:</p>
+          <p><span class="sky-emphasized">&lt;Verb&gt;</span></p>
+        </sky-docs-visual-example-text>
+        <sky-docs-visual-example-image>
+          <img class="bordered" src="~/assets/img/guidelines/wording/context-menu.png" alt="context menu actions: View, Edit, Delete" />
+        </sky-docs-visual-example-image>
+      </sky-docs-visual-example>
+      <sky-docs-visual-example>
+        <sky-docs-visual-example-text>
+          <p>For a dropdown button with one type of action, use the following format:</p>
+          <p>Button text: <span class="sky-emphasized">&lt;Verb&gt;</span></p>
+          <p>Menu item: <span class="sky-emphasized">&lt;Direct object&gt;</span></p>
+        </sky-docs-visual-example-text>
+        <sky-docs-visual-example-image>
+          <img class="bordered" src="~/assets/img/guidelines/wording/dropdown-single-action.png" alt="dropdown menu Edit: Addresses, Email addresses, Phone numbers" />
+        </sky-docs-visual-example-image>
+      </sky-docs-visual-example>
+      <sky-docs-visual-example>
+        <sky-docs-visual-example-text>
+          <p>For a dropdown button with more than one type of action, use the following format:</p>
+          <p>Button text: <span class="sky-emphasized">More</span></p>
+          <p>Menu item: <span class="sky-emphasized">&lt;Verb&gt; &lt;direct object&gt;</span></p>
+        </sky-docs-visual-example-text>
+        <sky-docs-visual-example-image>
+          <img class="bordered" src="~/assets/img/guidelines/wording/more-button.png" alt="dropdown menu More: Place vendor on hold, Archive vendor" />
+        </sky-docs-visual-example-image>
+      </sky-docs-visual-example>
+      
+			<div class="sky-text-block sky-margin-stacked-content-section">
+        <p>Additional button text guidelines:</p>
+				<ul>
+					<li>Use sentence-case capitalization.</li>
+					<li>The direct object can be singular or plural depending on whether the action acts on one or multiple items.</li>
+					<li>Don’t append extra words such as “details.” For example, use “Edit constituent” rather than “Edit constituent details.”</li>
+				</ul>
+      </div>
+    </sky-demo-page-content>
+    
+    <sky-demo-page-content sectionHeading="Related information">
+		<h3>Components</h3>
+			<ul>
+				<li><a routerLink="/components/button">Buttons</a></li>
+			</ul>
+		<h3>Guidelines</h3>
+			<ul>
+				<li><a routerLink="/design/guidelines/buttons-links">Buttons and links</a></li>
+			</ul>
+	</sky-demo-page-content>
+    
+  </sky-tab>
+
+  <sky-tab
+    tabHeading="Development">
+
+  <sky-demo-page-module-info
+    skyuxModule="SkyDropdownModule"
+    packageName="@skyux/popovers"
+    githubRepo="skyux-popovers"
+  >
+  </sky-demo-page-module-info>
   <sky-demo-page-properties sectionHeading="Dropdown properties">
     <sky-demo-page-property
       propertyName="alignment"
@@ -172,35 +284,9 @@
       demoName="Dropdown">
     </sky-demo-page-code>
   </sky-demo-page-example>
+    
+  </sky-tab>
+  
+</sky-tabset>
 
-	<sky-demo-page-content sectionHeading="UX guidelines">
-		<div class="sky-subsection-heading">Dropdown menu action text</div>
-			<p>If the context menu is tied to the direct object of a context menu item, use the following format for the action wording:</p>
-			<p><span class="sky-emphasized">&lt;Verb&gt;</span></p>
-			<div style="margin-bottom: 20px;">
-				<img class="screenshot screenshot-info" src="~/assets/img/guidelines/wording/context-menu.png" alt="context menu actions: View, Edit, Delete"/>
-			</div>
-
-			<p>For a dropdown button with one type of action, use the following format:</p>
-			<p>Button text: <span class="sky-emphasized">&lt;Verb&gt;</span></p>
-			<p>Menu item: <span class="sky-emphasized">&lt;Direct object&gt;</span></p>
-			<div style="margin-bottom: 20px;">
-				<img class="screenshot screenshot-info" src="~/assets/img/guidelines/wording/dropdown-single-action.png" alt="dropdown menu Edit: Addresses, Email addresses, Phone numbers"/>
-			</div>
-
-			<p>For a dropdown button with more than one type of action, use the following format:</p>
-			<p>Button text: <span class="sky-emphasized">More</span></p>
-			<p>Menu item: <span class="sky-emphasized">&lt;Verb&gt; &lt;direct object&gt;</span></p>
-			<div style="margin-bottom: 20px;">
-				<img class="screenshot screenshot-info" src="~/assets/img/guidelines/wording/more-button.png" alt="dropdown menu More: Place vendor on hold, Archive vendor"/>
-			</div>
-
-			<p>Additional button text guidelines:</p>
-				<ul>
-					<li>Use sentence-case capitalization.</li>
-					<li>The direct object can be singular or plural depending on whether the action acts on one or multiple items.</li>
-					<li>Don’t append extra words such as “details.” For example, use “Edit constituent” rather than “Edit constituent details.”</li>
-				</ul>
-	</sky-demo-page-content>
-
-</sky-demo-page>
+</sky-tabbed-demo-page>
