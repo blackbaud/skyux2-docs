@@ -1,6 +1,6 @@
 <div
-  id="example-simple"
   class="sky-margin-stacked-separate"
+  id="example-simple"
 >
   <h3>Split view demo</h3>
 
@@ -28,7 +28,10 @@
     <sky-split-view-workspace
       [ariaLabel]="'Transaction form'"
     >
-      <form>
+      <form
+        [formGroup]="splitViewDemoForm"
+        (ngSubmit)="onSubmit()"
+      >
         <sky-definition-list
           labelWidth="150px"
         >
@@ -75,10 +78,10 @@
             Approved amount
           </label>
           <input
-            name="approvedAmount"
             class="sky-form-control"
+            formControlName="approvedAmount"
+            name="approvedAmount"
             type="text"
-            [(ngModel)]="activeRecord.approvedAmount"
           />
         </div>
 
@@ -92,23 +95,10 @@
             Comments
           </label>
           <textarea
-            name="comments"
             class="sky-form-control"
-            [(ngModel)]="activeRecord.comments"
+            formControlName="comments"
+            name="comments"
           ></textarea>
-        </div>
-
-        <div
-          class="sky-form-group"
-        >
-          <label>
-            <input
-              name="unsavedWork"
-              type="checkbox"
-              [(ngModel)]="hasUnsavedWork"
-            />
-            Has unsaved work (demonstration only)
-          </label>
         </div>
 
         <div
@@ -133,5 +123,4 @@
       </form>
     </sky-split-view-workspace>
   </sky-split-view>
-
 </div>

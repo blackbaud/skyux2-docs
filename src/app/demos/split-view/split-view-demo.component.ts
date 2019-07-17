@@ -1,8 +1,11 @@
 import {
-  AfterViewInit,
-  Component,
-  ChangeDetectorRef
+  Component
 } from '@angular/core';
+
+import {
+  FormControl,
+  FormGroup
+} from '@angular/forms';
 
 import {
   SkyConfirmCloseEventArgs,
@@ -27,7 +30,7 @@ import {
   templateUrl: './split-view-demo.component.html',
   styleUrls: ['./split-view-demo.component.scss']
 })
-export class SkySplitViewDemoComponent implements AfterViewInit {
+export class SkySplitViewDemoComponent {
 
   public splitViewStream = new Subject<SkySplitViewMessage>();
 
@@ -77,6 +80,7 @@ export class SkySplitViewDemoComponent implements AfterViewInit {
   public set activeIndex(value: number) {
     this._activeIndex = value;
     this.activeRecord = this.items[this._activeIndex];
+    this.loadFormGroup(this.activeRecord);
   }
 
   public get activeIndex(): number {
@@ -85,33 +89,53 @@ export class SkySplitViewDemoComponent implements AfterViewInit {
 
   public activeRecord: any;
 
+  public splitViewDemoForm: FormGroup;
+
   private _activeIndex = 0;
 
   constructor(
-    public confirmService: SkyConfirmService,
-    public changeDetectorRef: ChangeDetectorRef
+    public confirmService: SkyConfirmService
   ) {
+    // Start with the first item selected.
     this.activeIndex = 0;
   }
 
-  public ngAfterViewInit(): void {
-  }
-
   public onItemClick(index: number) {
-    if (this.hasUnsavedWork && index !== this.activeIndex) {
+    // Prevent workspace from loading new data if the current workspace form is dirty.
+    if (this.splitViewDemoForm.dirty && index !== this.activeIndex) {
       this.confirmService.open({
         message: 'You have unsaved work. Would you like to save it before you change records?',
-        type: SkyConfirmType.YesCancel
+        type: SkyConfirmType.Custom,
+        buttons: [
+          {
+            action: 'yes',
+            text: 'Yes',
+            styleType: 'primary'
+          },
+          {
+            action: 'discard',
+            text: 'Discard changes',
+            styleType: 'link'
+          }
+        ]
       }).closed.subscribe((closeArgs: SkyConfirmCloseEventArgs) => {
         if (closeArgs.action.toLowerCase() === 'yes') {
-          this.activeIndex = index;
-          this.setFocusInWorkspace();
+          this.saveForm();
         }
+        this.loadWorkspace(index);
       });
     } else {
-      this.activeIndex = index;
-      this.setFocusInWorkspace();
+      this.loadWorkspace(index);
     }
+  }
+
+  public onSubmit(): void {
+    this.saveForm();
+  }
+
+  private loadWorkspace(index: number): void {
+    this.activeIndex = index;
+    this.setFocusInWorkspace();
   }
 
   private setFocusInWorkspace(): void {
@@ -119,6 +143,19 @@ export class SkySplitViewDemoComponent implements AfterViewInit {
       type: SkySplitViewMessageType.FocusWorkspace
     };
     this.splitViewStream.next(message);
+  }
+
+  private loadFormGroup(record: any): void {
+    this.splitViewDemoForm = new FormGroup({
+      approvedAmount: new FormControl(record.approvedAmount),
+      comments: new FormControl(record.comments)
+    });
+  }
+
+  private saveForm(): void {
+    this.activeRecord.approvedAmount = this.splitViewDemoForm.value.approvedAmount;
+    this.activeRecord.comments = this.splitViewDemoForm.value.comments;
+    this.splitViewDemoForm.reset(this.splitViewDemoForm.value);
   }
 
 }
