@@ -8,22 +8,19 @@ import {
 } from '@angular/forms';
 
 import {
+  Subject
+} from 'rxjs/Subject';
+
+import {
   SkyConfirmCloseEventArgs,
   SkyConfirmService,
   SkyConfirmType
 } from '@skyux/modals';
 
 import {
-  Subject
-} from 'rxjs/Subject';
-
-import {
-  SkySplitViewMessage
-} from '@skyux/split-view/modules/split-view/types/split-view-message';
-
-import {
+  SkySplitViewMessage,
   SkySplitViewMessageType
-} from '@skyux/split-view/modules/split-view/types/split-view-message-type';
+} from '@skyux/split-view';
 
 @Component({
   selector: 'sky-split-view-demo',
@@ -32,11 +29,17 @@ import {
 })
 export class SkySplitViewDemoComponent {
 
-  public splitViewStream = new Subject<SkySplitViewMessage>();
+  public set activeIndex(value: number) {
+    this._activeIndex = value;
+    this.activeRecord = this.items[this._activeIndex];
+    this.loadFormGroup(this.activeRecord);
+  }
 
-  public hasUnsavedWork = false;
+  public get activeIndex(): number {
+    return this._activeIndex;
+  }
 
-  public listWidth: number;
+  public activeRecord: any;
 
   public items = [
     {
@@ -77,19 +80,11 @@ export class SkySplitViewDemoComponent {
     }
   ];
 
-  public set activeIndex(value: number) {
-    this._activeIndex = value;
-    this.activeRecord = this.items[this._activeIndex];
-    this.loadFormGroup(this.activeRecord);
-  }
-
-  public get activeIndex(): number {
-    return this._activeIndex;
-  }
-
-  public activeRecord: any;
+  public listWidth: number;
 
   public splitViewDemoForm: FormGroup;
+
+  public splitViewStream = new Subject<SkySplitViewMessage>();
 
   private _activeIndex = 0;
 
@@ -100,7 +95,7 @@ export class SkySplitViewDemoComponent {
     this.activeIndex = 0;
   }
 
-  public onItemClick(index: number) {
+  public onItemClick(index: number): void {
     // Prevent workspace from loading new data if the current workspace form is dirty.
     if (this.splitViewDemoForm.dirty && index !== this.activeIndex) {
       this.confirmService.open({
@@ -133,18 +128,6 @@ export class SkySplitViewDemoComponent {
     this.saveForm();
   }
 
-  private loadWorkspace(index: number): void {
-    this.activeIndex = index;
-    this.setFocusInWorkspace();
-  }
-
-  private setFocusInWorkspace(): void {
-    const message: SkySplitViewMessage = {
-      type: SkySplitViewMessageType.FocusWorkspace
-    };
-    this.splitViewStream.next(message);
-  }
-
   private loadFormGroup(record: any): void {
     this.splitViewDemoForm = new FormGroup({
       approvedAmount: new FormControl(record.approvedAmount),
@@ -152,10 +135,22 @@ export class SkySplitViewDemoComponent {
     });
   }
 
+  private loadWorkspace(index: number): void {
+    this.activeIndex = index;
+    this.setFocusInWorkspace();
+  }
+
   private saveForm(): void {
     this.activeRecord.approvedAmount = this.splitViewDemoForm.value.approvedAmount;
     this.activeRecord.comments = this.splitViewDemoForm.value.comments;
     this.splitViewDemoForm.reset(this.splitViewDemoForm.value);
+  }
+
+  private setFocusInWorkspace(): void {
+    const message: SkySplitViewMessage = {
+      type: SkySplitViewMessageType.FocusWorkspace
+    };
+    this.splitViewStream.next(message);
   }
 
 }
