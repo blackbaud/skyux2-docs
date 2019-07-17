@@ -24,6 +24,7 @@
           </sky-docs-visual-example-text>
           <sky-docs-visual-example-image>
             <img src="~/assets/img/guidelines/split-view/use-when.png" />
+            <div class="caption caption-success sky-text-success">Use a split view when the user will take the same action for each item in the list.</div>
           </sky-docs-visual-example-image>
         </sky-docs-visual-example>
       <h3 class="sky-text-danger">Don't use when</h3>
@@ -66,7 +67,7 @@
         </sky-docs-visual-example>
         <sky-docs-visual-example>
           <sky-docs-visual-example-text>
-            <p>You can technically use <a routerLink="/components/grid">grids</a>, but we recommend that you avoid them if possible. They do not scale well at the typically small width of the list.</p>
+            <p>We recommend against using <a routerLink="/components/grid">grids</a> if possible. They do not scale well at the typically small width of the list.</p>
           </sky-docs-visual-example-text>
           <sky-docs-visual-example-image>
             <img src="~/assets/img/guidelines/split-view/option-list-type-grid.png" />
@@ -76,10 +77,19 @@
       <h3>List manipulation</h3>
         <sky-docs-visual-example>
           <sky-docs-visual-example-text>
-            <p>You can include a <a routerLink="/components/list/toolbar">list toolbar</a> to let users add items to the list or filter, sort, and search the list.</p>
+            <p>If users need to search for specific items in the list or show/hide items with certain statuses, include a search input or status checkbox filter in the list panel.</p>
+          </sky-docs-visual-example-text>
+          <sky-docs-visual-example-image>
+            <img src="~/assets/img/guidelines/split-view/option-search-toggle.png" />
+          </sky-docs-visual-example-image>
+        </sky-docs-visual-example>
+        <sky-docs-visual-example>
+          <sky-docs-visual-example-text>
+            <p>When possible, pre-filter the list to relevant items and pre-sort it to the expected useful order. If you can't predict how users will use the list, include a <a routerLink="/components/list/toolbar">list toolbar</a> to let them add items or filter, sort, and search the list.</p>
           </sky-docs-visual-example-text>
           <sky-docs-visual-example-image>
             <img src="~/assets/img/guidelines/split-view/option-toolbar.png" />
+            <div class="caption caption-warning sky-text-warning">Use caution when using a full toolbar with a split view. Automatically filter and sort the list when possible.</div>
           </sky-docs-visual-example-image>
         </sky-docs-visual-example>
     </sky-demo-page-content>
