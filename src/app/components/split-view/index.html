@@ -3,7 +3,7 @@
 >
   <sky-demo-page-summary>
     <p>
-      The split view component allows users to work through a list of items, while displaying each item's details in context. The split view component consists of two children components: the drawer and the workspace.
+      The split view component displays a list alongside a workspace where users can view details for the selected item and take actions.
     </p>
   </sky-demo-page-summary>
 
@@ -20,14 +20,14 @@
       <h3 class="sky-text-success">Use when</h3>
         <sky-docs-visual-example>
           <sky-docs-visual-example-text>
-            <p>Use a split view if a user needs to work through a list of items with the intent of taking an action on each item in the list.</p>
+            <p>Use a split view when users need to work through a list of items with the intent of taking action on each item.</p>
           </sky-docs-visual-example-text>
           <sky-docs-visual-example-image>
             <img src="~/assets/img/guidelines/split-view/use-when.png" />
           </sky-docs-visual-example-image>
         </sky-docs-visual-example>
       <h3 class="sky-text-danger">Don't use when</h3>
-        <div class="sky-text-block"><p>Don't use a split view if the user is likely to interact with a small number of items in the list. Use a regular list instead, following the <a routerLink="/components/flyout">flyout</a> guidelines to determine whether to use a flyout or navigate to the selected record.</p></div>
+        <div class="sky-text-block"><p>Don't use a split view when users are likely to interact with a small number of items in the list. Use a regular list instead, and follow the <a stacheRouterLink="/components/flyout" fragment="ux-guidelines">flyout</a> guidelines to determine whether to use a flyout or navigate to the selected record.</p></div>
     </sky-demo-page-content>
 
     <sky-demo-page-content sectionHeading="Anatomy">
@@ -50,7 +50,7 @@
       <h3>List type</h3>
         <sky-docs-visual-example>
           <sky-docs-visual-example-text>
-            <p><a routerLink="/components/repeater">Repeaters</a> will be the most common component used for the list of items due to the flexible content layouts they enable.</p>
+            <p><a routerLink="/components/repeater">Repeaters</a> are the most common list type because they enable flexible content layouts.</p>
           </sky-docs-visual-example-text>
           <sky-docs-visual-example-image>
             <img src="~/assets/img/guidelines/split-view/option-list-type-repeater.png" />
@@ -58,7 +58,7 @@
         </sky-docs-visual-example>
         <sky-docs-visual-example>
           <sky-docs-visual-example-text>
-            <p>Tree views can also be used if the items in the list are hierarchical. You may use different views in the workspace panel if the items at different levels of the tree are of different types.</p>
+            <p>Tree views can be used when items are hierarchical. If items at different levels have different types, you can use multiple views in the workspace panel.</p>
           </sky-docs-visual-example-text>
           <sky-docs-visual-example-image>
             <img src="~/assets/img/guidelines/split-view/option-list-type-tree.png" />
@@ -66,17 +66,17 @@
         </sky-docs-visual-example>
         <sky-docs-visual-example>
           <sky-docs-visual-example-text>
-            <p>While <a routerLink="/components/grid">grids</a> may technically be used, avoid them if possible. They do not scale well to the typically-small width of the navigation list.</p>
+            <p>You can technically use <a routerLink="/components/grid">grids</a>, but we recommend that you avoid them if possible. They do not scale well at the typically small width of the list.</p>
           </sky-docs-visual-example-text>
           <sky-docs-visual-example-image>
             <img src="~/assets/img/guidelines/split-view/option-list-type-grid.png" />
-            <div class="caption caption-warning sky-text-warning">Use caution when using grids as the list type as they do not perform well at narrow widths.</div>
+            <div class="caption caption-warning sky-text-warning">Use caution with grids because they do not perform well at narrow widths.</div>
           </sky-docs-visual-example-image>
         </sky-docs-visual-example>
       <h3>List manipulation</h3>
         <sky-docs-visual-example>
           <sky-docs-visual-example-text>
-            <p>You may include a list toolbar so that users can filter, sort and search the list, or add new items to the list.</p>
+            <p>You can include a <a routerLink="/components/list/toolbar">list toolbar</a> to let users add items to the list or filter, sort, and search the list.</p>
           </sky-docs-visual-example-text>
           <sky-docs-visual-example-image>
             <img src="~/assets/img/guidelines/split-view/option-toolbar.png" />
@@ -87,12 +87,12 @@
     <sky-demo-page-content sectionHeading="Behavior and states">
       <h3>Automatically advance to the next item</h3>
         <div class="sky-text-block">
-          <p>If the user is likely to work through the list of items sequentially, automatically advance to the next item in the list when the user invokes the primary action on the record.</p>
+          <p>If users are likely to work through the list sequentially, automatically advance to the next item after users invoke the primary action in the workspace.</p>
         </div>
-      <h3>Set focus in the workspace</h3>
+      <h3>Place focus in the workspace</h3>
         <sky-docs-visual-example>
           <sky-docs-visual-example-text>
-            <p>When the user selects a new item in the list, set focus on the first focusable element in the workspace so the user can immediately start working.</p>
+            <p>When users select an item in the list, place focus on the first focusable element in the workspace so that users can start working immediately.</p>
           </sky-docs-visual-example-text>
           <sky-docs-visual-example-image>
             <img src="~/assets/img/guidelines/split-view/behavior-focus.png" />
@@ -101,7 +101,7 @@
       <h3>Change panel width</h3>
         <sky-docs-visual-example>
           <sky-docs-visual-example-text>
-            <p>The user can change the width of the panels by drag-and-drop or keyboard interactions. If the navigation list content is wider than the panel, the panel will have a horizontal scrollbar.</p>
+            <p>Users can change the panel widths using drag-and-drop or keyboard interactions. If the list content is wider than the panel, a horizontal scrollbar appears.</p>
           </sky-docs-visual-example-text>
           <sky-docs-visual-example-image>
             <img src="~/assets/img/guidelines/split-view/behavior-resize.png" />
@@ -111,7 +111,7 @@
     <h3>Responsiveness</h3>
         <sky-docs-visual-example>
           <sky-docs-visual-example-text>
-            <p>In smaller viewports the split view automatically switches from a side-by-side view to a panel-switching interaction where the user flips between the list and the workspace. The responsive workspace header should have iterator buttons so the user can move between items without having to go back to the list.</p>
+            <p>In smaller viewports, the split view automatically switches from a side-by-side view to a panel-switching interaction where users switch between the list and the workspace. The responsive workspace header should include iterator buttons for users to move between items without going back to the list.</p>
           </sky-docs-visual-example-text>
           <sky-docs-visual-example-image>
              <img src="~/assets/img/guidelines/split-view/behavior-responsive.png" />
@@ -121,7 +121,7 @@
     <sky-demo-page-content sectionHeading="Layout">
       <sky-docs-visual-example>
         <sky-docs-visual-example-text>
-          <p>A split view should be the last item on a page; there should not be additional content below it.</p>
+          <p>A split view should be the last item on a page. Do not place additional content below it.</p>
         </sky-docs-visual-example-text>
         <sky-docs-visual-example-image>
           <img src="~/assets/img/guidelines/split-view/layout-last-item.png" />
@@ -156,13 +156,13 @@
       isOptional="true"
       defaultValue="Back to list"
     >
-      Specifies the text of the button that appears in the workspace header when in responsive mode. This button will return the user to the list. This property accepts string values.
+      Specifies a label for the button that appears in the workspace header in responsive mode. This button returns users to the list. This property accepts <sky-code>string</sky-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="messageStream"
       isOptional="true"
     >
-      Provides an observable to send commands to the split view component. The commands should respect the <sky-code>SkySplitViewMessage</sky-code> type.
+      Provides an observable to send commands to the split view component. The commands should respect <a stacheRouterLink="." fragment="skysplitviewmessage-type">the <sky-code>SkySplitViewMessage</sky-code> type</a>.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -174,7 +174,7 @@
       Sets <sky-code>SkySplitViewMessage</sky-code> to one of the following types:
       <ul>
         <li>
-          <sky-code>SkySplitViewMessageType.FocusWorkspace</sky-code> — Sets focus on the first focussable element in the workspace.
+          <sky-code>SkySplitViewMessageType.FocusWorkspace</sky-code> — Places focus on the first focusable element in the workspace.
         </li>
       </ul>
     </sky-demo-page-property>
@@ -184,12 +184,12 @@
     <sky-demo-page-property
       propertyName="sky-split-view-drawer"
     >
-      Specifies content to display in the split view's drawer.
+      Specifies the content to display in the split view's list panel.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="sky-split-view-workspace"
     >
-      Specifies content to display in the split view's workspace panel.
+      Specifies the content to display in the split view's workspace panel.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -198,13 +198,13 @@
       propertyName="ariaLabel"
       isOptional="true"
     >
-      Sets the drawer's aria-label attribute to support accessibility. This property accepts string values.
+      Sets the list panel's <sky-code>aria-label</sky-code> attribute to support accessibility. This property accepts <sky-code>string</sky-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="width"
       isOptional="true"
     >
-      Sets the drawer's width in pixels. This property accepts numeric values.
+      Sets the list panel's width in pixels. This property accepts <sky-code>numeric</sky-code> values.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -213,7 +213,7 @@
       propertyName="ariaLabel"
       isOptional="true"
     >
-      Sets the workspace panel's aria-label attribute to support accessibility. This property accepts string values.
+      Sets the workspace panel's <sky-code>aria-label</sky-code> attribute to support accessibility. This property accepts <sky-code>string</sky-code> values.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 

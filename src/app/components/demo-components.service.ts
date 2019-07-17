@@ -962,7 +962,7 @@ export class SkyDemoComponentsService {
       {
         name: 'Split view',
         icon: 'columns',
-        summary: `The split view component allows users to work through a list of items, while displaying each item's details in context.`,
+        summary: `The split view component displays a list alongside a workspace where users can view details and take actions.`,
         url: '/components/split-view',
         getCodeFiles: () => this.getDemoFiles('Split view')
       },
