@@ -41,9 +41,16 @@
     Specifies a template to use to instantiate an inline form within the repeater. This property accepts <a href="https://angular.io/api/core/TemplateRef">an Angular <sky-code>TemplateRef</sky-code> class</a>.
     </sky-demo-page-property>
     <sky-demo-page-property
-      propertyName="isExpanded"
+      propertyName="isActive"
       isOptional="true"
       defaultValue="true"
+    >
+    Indicates whether to visually indicate that the repeater item is in an active state. For example, you can use this property in conjunction with <a stacheRouterLink="/components/split-view">the split view component</a> to highlight the repeater item that is currently being edited. This property accepts <sky-code>boolean</sky-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="isExpanded"
+      isOptional="true"
+      defaultValue="false"
     >
     Indicates whether the repeater item is expanded. This property accepts <sky-code>boolean</sky-code> values.
     </sky-demo-page-property>
