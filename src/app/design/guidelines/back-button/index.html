@@ -1,5 +1,5 @@
 <stache
-  pageTitle="Back button"
+  pageTitle="Back Button"
   navTitle="Back button"
   showTableOfContents="true">
 
@@ -8,10 +8,10 @@
   </stache-page-anchor>
 
   <p>
-    Actions where a user navigates to a new context, such as a new record, list, or section, should create new entries in the browser history with a new page title. The new entry enables users to select the browser's back button and return to the previous page or view.
+    When users navigate to a new context such as a new record, list or section, the action should create an entry in the browser history with a new page title. This entry enables users to select the browser's back button to return to the previous page or view.
   </p>
   <p>
-    As a rule of thumb, create a new page in the browser history if the majority of the page content changes or a user would perceive a signficant change of context. Don't create a new URL or new browser entry for inline interactions such as steps in a wizard or opening a detail panel.
+    As a rule of thumb, create a new page in the browser history if the majority of the page content changes or users perceive a signficant change of context. Don't create a new URL or new browser entry for an inline interaction such as steps in a wizard or opening a detail panel.
   </p>
 
   <div class="sky-subsection-heading">Focus</div>
@@ -20,21 +20,18 @@
     After loading a new page, users should be able to use the tab key to reach the first focusable element on the page.
   </p>
 
-  <div class="sky-subsection-heading">New page annoucement for screenreaders</div>
+  <div class="sky-subsection-heading">Screen readers</div>
 
   <p>
-    When a new page loads a SKY UX SPA, the page should behave similarly to what users would expect from a regular server-side application. The page should announce the page's &lt;title&gt; to the screen reader and inform users the page loaded via an ARIA live region when the &lt;title&gt;element is ready.
-  </p>
-  <p>
-    Behaviors vary based on different browser and screen reader combinations, but SKY UX applications use the combination listed above.
+    When a page loads, it should behave similarly to what users expect from a regular server-side application. The page should announce the page's <sky-code>&lt;title&gt;</sky-code> to the screen reader and inform users that it loaded via an ARIA live region when the <sky-code>&lt;title&gt;</sky-code> element is ready. Behaviors vary based on different browser and screen reader combinations, but SKY UX applications use this combination.
   </p>
 
   <stache-page-anchor>
-    Tabs and vertical tabs as site level navigation
+    Tabs and vertical tabs as site-level navigation
   </stache-page-anchor>
 
   <p>
-    If you use tabs as page navigation, each tab should be a page in the browser history, and users should be able to use the back button to return to the previous view. Tabs contain all of a page's content and can't be dismissed.
+    If you use tabs or vertical tabs as page navigation, each one should have an entry in the browser history with a distinct title. This enables users to select the browser's back button to return to the previous view. Tabs and vertical tabs that are used as site-level navigation contain all of a page's content and can't be dismissed.
   </p>
 
   <div class="screenshot screenshot-info">
@@ -44,72 +41,72 @@
   <div class="sky-subsection-heading" style="margin-top: 20px;">Focus</div>
 
   <p>
-    Based on guidance from <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#tabpanel">W3C's WAI-ARIA Authoring Practices for tabs</a>, maintain focus on activated tabs.
+    Based on guidance from the <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#tabpanel">W3C's WAI-ARIA Authoring Practices for tabs</a>, maintain focus on activated tabs.
   </p>
 
-  <div class="sky-subsection-heading">New page announcement for screenreaders</div>
+  <div class="sky-subsection-heading">Screen readers</div>
 
   <p>
-    Titles are announced as described in <a stacheRouterLink="." fragment="new-page-behavior">New page annoucement for screenreaders</a>.
+    Titles are announced as described in <a stacheRouterLink="." fragment="new-page-behavior">New page behavior</a>.
   </p>
 
   <stache-page-anchor>
-    Tabs as containers for viewing items
+    Tabs and vertical tabs as containers for viewing items
   </stache-page-anchor>
 
   <p>
-    If tabs contain removable items such as lists or reports, don't include each tab in the browser history.
+    If tabs and vertical tabs contain removable items such as lists or reports, don't create entries in the browser history.
   </p>
 
 	<div class="screenshot screenshot-info"> 
-    <img src="~/assets/img/guidelines/back-button/tabcontainers-backbutton.png" alt="Tabs as page navigation" />
+    <img src="~/assets/img/guidelines/back-button/tabcontainers-backbutton.png" alt="Tabs as containers for viewing items" />
 	</div>
 
 <br>
 
   <sky-row>
     <sky-column>
-      <img class="screenshot screenshot-info" src="~/assets/img/guidelines/back-button/verticaltabs-backbutton.png" alt="Vertical tabs as navigation" />
+      <img class="screenshot screenshot-info" src="~/assets/img/guidelines/back-button/verticaltabs-backbutton.png" alt="Vertical tabs as containers for viewing items" />
     </sky-column>
   </sky-row>
 
   <div class="sky-subsection-heading" style="margin-top: 20px;">Focus</div>
 
   <p>
-    Based on guidance from <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#tabpanel">WAI-ARIA Authoring Practices for tabs</a>, maintain focus on activated tabs.
+    Based on guidance from the <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#tabpanel">WAI-ARIA Authoring Practices for tabs</a>, maintain focus on activated tabs.
   </p>
 
-  <div class="sky-subsection-heading">New page announcement for screenreaders</div>
+  <div class="sky-subsection-heading">Screen readers</div>
 
   <p>
-    This option doesn't require new page announcements. The selected tab receives an updated <sky-code>aria-selected="true"</sky-code> property which is communicated to assistive technologies.
+    This option doesn't require new page announcements. The selected tab receives an updated <sky-code>aria-selected="true"</sky-code> property that is communicated to assistive technologies.
   </p>
 
   <stache-page-anchor>
-    Modals (all sizes)
+    Modals
   </stache-page-anchor>
 
   <p>
-    When users open a modal from a SKY UX SPA, they should be able to use the back button to close the modal and return to the original context.
+    When users open a modal, they should be able to use the back button to close the modal and return to the original context.
   </p>
 
   <div class="sky-subsection-heading">Avoid loss of work</div>
 
   <p>
-    If a user selects the back button on a form with unsaved data, the SKY UX application asks the user if they want to close the form without saving their data or work using the confirmation dialog.
+    If users select the back button on a modal with unsaved data, the SPA displays a dialog to confirm that they want to close the modal without saving their work.
   </p>
 
   <div class="sky-subsection-heading">Focus</div>
 
   <p>
-    In all circumstances, focus moves to an element contained in the dialog. Set the initial focus on the first focusable element unless a condition where doing otherwise is advisable.
+    When a modal opens, always place focus on an element in the modal. In general, place the initial focus on the first focusable element.
   </p>
 
   <p>
-    If focus on the first interactive element causes the content to scroll out of view, add <sky-code>tabindex=-1</sky-code> to a static element at the top of a dialog. For example, add the code to a dialog title or the first paragraph to initially focus the element. For more best practices, see <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#dialog_modal">W3C's WAI-ARIA Authoring Practices for Dialog (Modal)</a>.
+    If placing focus on the first interactive element causes the content to scroll out of view, add <sky-code>tabindex=-1</sky-code> to a static element at the top of a modal. For example, add <sky-code>tabindex=-1</sky-code> to the title or first paragraph to initially focus the element. For more best practices, see <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#dialog_modal">W3C's WAI-ARIA Authoring Practices for modals</a>.
   </p>
 
-  <div class="sky-subsection-heading">New page annoucement for screenreaders</div>
+  <div class="sky-subsection-heading">Screen readers</div>
 
   <p>
     This option doesn't require new page announcements.
@@ -120,46 +117,38 @@
   </stache-page-anchor>
 
   <p>
-    For inline interactions, determine the persistence level that makes sense for the change of state the user initiated. When users select the back button, return them to the context they left and don’t make them re-orient, and in some cases re-interact with the system, to return to where they were.
+    For inline interactions, determine the persistence level that makes sense for the change of state that user initiates. When users select the back button, return them to the context they left. Don't make them re-orient, and in some cases re-interact with the system, to return to that context.
   </p>
 
   <p>
-    If you expect users to maintain a specific context within a SKY UX app, retain the UI component states across sessions. Examples include:
+    If you expect users to maintain a specific context within a SPA, retain the UI component states across sessions. Examples include:
   </p>
 
   <ul>
     <li>
-      Tile position
+      Positions of tiles
     </li>
     <li>
-      Tile expanded/collapsed states
+      Expanded and collapsed states of tiles
     </li>
     <li>
-      Tab selected (list or tabs)
+      Selected tabs
     </li>
     <li>
-      Lists
+      Sort order for lists
     </li>
-    <ul>
-      <li>
-        Sort order for a specific list
-      </li>
-      <li>
-        Column choices for a specific list
-      </li>
-      <li>
-        View state for a specific list
-      </li>
-      <li>
-        Grid view, compact and regular, across lists
-      </li>
-    </ul>
     <li>
-      Page context (e.g. user, credit card, environment)
+      Column choices for lists
+    </li>
+    <li>
+      View state for lists
+    </li>
+    <li>
+      Grid view across lists
+    </li>
+    <li>
+      Page contexts such as user, credit card, environment
     </li>
   </ul>
-
-
-
 
 </stache>
