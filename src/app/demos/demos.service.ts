@@ -10,6 +10,7 @@ import {
   SkyDateRangePickerDemoComponent,
   SkyInlineFormDemoComponent
 } from '.';
+import { SkyToggleSwitchDemoComponent } from './toggle-switch/toggle-switch-demo.component';
 
 /**
  * This service provides consumers with the raw file contents for each component demo.
@@ -148,6 +149,23 @@ export class SkyDocsDemoCodeService {
           fileContents: require('!!raw-loader!./inline-form/inline-form-demo.component.ts'),
           componentName: 'SkyInlineFormDemoComponent',
           bootstrapSelector: 'sky-inline-form-demo'
+        }
+      ]
+    },
+
+    {
+      name: 'Toggle switch',
+      component: SkyToggleSwitchDemoComponent,
+      files: [
+        {
+          name: 'toggle-switch-demo-component.html',
+          fileContents: require('!!raw-loader!./toggle-switch/toggle-switch-demo.component.html')
+        },
+        {
+          name: 'toggle-switch-demo-component.ts',
+          fileContents: require('!!raw-loader!./toggle-switch/toggle-switch-demo.component.ts'),
+          componentName: 'SkyToggleSwitchDemoComponent',
+          bootstrapSelector: 'sky-toggle-switch-demo'
         }
       ]
     }
