@@ -1070,7 +1070,7 @@ export class SkyDemoComponentsService {
       {
         name: 'Toggle switch',
         icon: 'toggle-on',
-        summary: `The toggle switch component renders a SKY UX themed on and off switch.`,
+        summary: `The toggle switch component renders a SKY UX-themed switch for values that can either be "on" or "off."`,
         url: '/components/toggle-switch',
         imports: {
           '@skyux/forms': [
