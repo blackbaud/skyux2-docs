@@ -24,8 +24,7 @@ import {
 
 @Component({
   selector: 'sky-split-view-demo',
-  templateUrl: './split-view-demo.component.html',
-  styleUrls: ['./split-view-demo.component.scss']
+  templateUrl: './split-view-demo.component.html'
 })
 export class SkySplitViewDemoComponent {
 
@@ -98,27 +97,7 @@ export class SkySplitViewDemoComponent {
   public onItemClick(index: number): void {
     // Prevent workspace from loading new data if the current workspace form is dirty.
     if (this.splitViewDemoForm.dirty && index !== this.activeIndex) {
-      this.confirmService.open({
-        message: 'You have unsaved work. Would you like to save it before you change records?',
-        type: SkyConfirmType.Custom,
-        buttons: [
-          {
-            action: 'yes',
-            text: 'Yes',
-            styleType: 'primary'
-          },
-          {
-            action: 'discard',
-            text: 'Discard changes',
-            styleType: 'link'
-          }
-        ]
-      }).closed.subscribe((closeArgs: SkyConfirmCloseEventArgs) => {
-        if (closeArgs.action.toLowerCase() === 'yes') {
-          this.saveForm();
-        }
-        this.loadWorkspace(index);
-      });
+      this.openConfirmModal(index);
     } else {
       this.loadWorkspace(index);
     }
@@ -138,6 +117,30 @@ export class SkySplitViewDemoComponent {
   private loadWorkspace(index: number): void {
     this.activeIndex = index;
     this.setFocusInWorkspace();
+  }
+
+  private openConfirmModal(index: number): void {
+    this.confirmService.open({
+      message: 'You have unsaved work. Would you like to save it before you change records?',
+      type: SkyConfirmType.Custom,
+      buttons: [
+        {
+          action: 'yes',
+          text: 'Yes',
+          styleType: 'primary'
+        },
+        {
+          action: 'discard',
+          text: 'Discard changes',
+          styleType: 'link'
+        }
+      ]
+    }).closed.subscribe((closeArgs: SkyConfirmCloseEventArgs) => {
+      if (closeArgs.action.toLowerCase() === 'yes') {
+        this.saveForm();
+      }
+      this.loadWorkspace(index);
+    });
   }
 
   private saveForm(): void {

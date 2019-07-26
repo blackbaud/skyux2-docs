@@ -11,9 +11,10 @@
       [ariaLabel]="'Transaction list'"
       [width]="listWidth"
     >
-      <sky-repeater>
+      <sky-repeater
+        [activeIndex]="activeIndex"
+      >
         <sky-repeater-item *ngFor="let item of items; let i = index"
-          [ngClass]="{ 'sky-repeater-active' : activeIndex === i }"
           (click)="onItemClick(i)"
         >
           <sky-repeater-item-content>
