@@ -1,16 +1,111 @@
-<sky-demo-page
-  pageTitle="Toggle switch"
-  navTitle="Toggle switch"
-  skyuxModule="SkyToggleSwitchModule"
-  packageName="@skyux/forms"
+<sky-tabbed-demo-page
+               
+  pageTitle="Toggle"
 >
 
-  <sky-demo-page-summary>
+<sky-demo-page-summary>
     <p>
-      The toggle switch component is useful when a value can either be "on" or "off". When users interact with a toggle switch, its value is driven through an <sky-code>ngModel</sky-code> attribute that you specify on the <sky-code>sky-toggle-switch</sky-code> element.
+      The toggle component creates an input for users to toggle between two states. The change takes effect immediately.
     </p>
-  </sky-demo-page-summary>
+</sky-demo-page-summary>
 
+<sky-demo-page-example>
+    <sky-toggle-switch-demo>
+    </sky-toggle-switch-demo>
+</sky-demo-page-example>
+
+<sky-tabset id="content-tabs">
+
+    <sky-tab tabHeading="Design">
+        <sky-demo-page-content sectionHeading="Usage">
+        <h3 class="sky-text-success">Use when</h3>
+            
+        <sky-docs-visual-example>
+			<sky-docs-visual-example-text>
+					<p>Use toggles when users can toggle between two states or options, and the changes take effect immediately.</p>
+			</sky-docs-visual-example-text>
+			<sky-docs-visual-example-image>
+				<div>
+					<img src="~/assets/img/guidelines/toggle/toggle-usage-1.png" />
+					<div class="caption caption-success sky-text-success">Do use toggles to alternate between two states when changes take effect immediately.</div>
+				</div>
+			</sky-docs-visual-example-image>
+            <sky-docs-visual-example-image>
+				<div>
+					<img src="~/assets/img/guidelines/toggle/toggle-usage-2.png" />
+					<div class="caption caption-success sky-text-success">Do use toggles to set binary states on multiple items.</div>
+				</div>
+			</sky-docs-visual-example-image>
+		</sky-docs-visual-example>
+        
+        <h3 class="sky-text-danger">Don't use when</h3>
+
+        <sky-docs-visual-example>
+			<sky-docs-visual-example-text>
+					<p>Don’t use toggles when the options require confirmation before changes take effect.</p>
+			</sky-docs-visual-example-text>
+			<sky-docs-visual-example-image>
+				<div>
+					<img src="~/assets/img/guidelines/toggle/toggle-usage-3.png" />
+					<div class="caption caption-danger sky-text-danger">Don't use toggles for states with significant consequences. Use a workflow where users must confirm the changes instead.</div>
+				</div>
+			</sky-docs-visual-example-image>
+        </sky-docs-visual-example>
+        <sky-docs-visual-example>
+			<sky-docs-visual-example-text>
+					<p>Don’t use toggles when the input is presented in a modal.</p>
+			</sky-docs-visual-example-text>
+			<sky-docs-visual-example-image>
+				<div>
+					<img src="~/assets/img/guidelines/toggle/toggle-usage-4.png" />
+                    <div class="caption caption-danger sky-text-danger">Don't use toggles inside modals where they won't take effect immediately. Use <a routerLink="/components/checkbox">checkboxes</a> instead.</div>
+				</div>
+			</sky-docs-visual-example-image>
+        </sky-docs-visual-example>
+        </sky-demo-page-content>
+        
+        <sky-demo-page-content sectionHeading="Anatomy">
+            <sky-docs-anatomy imagePath="~/assets/img/guidelines/toggle/toggle-anatomy.png">
+                <sky-docs-anatomy-item anatomyNumber="1">Toggle body</sky-docs-anatomy-item>
+                <sky-docs-anatomy-item isOptional="true" anatomyNumber="2">Text label</sky-docs-anatomy-item>
+            </sky-docs-anatomy>
+        </sky-demo-page-content>
+        
+        <sky-demo-page-content sectionHeading="Content">
+            <h4>Text label</h4>
+            <p>When toggles are in grid columns, the text label is not required. Use text labels for all other states.
+            </p>
+            <p>If the scenario allows for toggles to become disabled, always include a text label on each toggle.</p>
+        </sky-demo-page-content>
+        
+        <sky-demo-page-content sectionHeading="Behavior and states">
+            <sky-demo-page-component-states>
+              <sky-demo-page-component-state stateName="Unselected" imagePath="~/assets/img/guidelines/toggle/toggle-state-unselected.png"></sky-demo-page-component-state>
+              <sky-demo-page-component-state stateName="Selected" imagePath="~/assets/img/guidelines/toggle/toggle-state-selected.png"></sky-demo-page-component-state>
+              <sky-demo-page-component-state stateName="Hover" imagePath="~/assets/img/guidelines/toggle/toggle-state-hover.png"></sky-demo-page-component-state>
+              <sky-demo-page-component-state stateName="Disabled unselected" imagePath="~/assets/img/guidelines/toggle/toggle-state-disabled-unselected.png"></sky-demo-page-component-state>
+              <sky-demo-page-component-state stateName="Disabled selected" imagePath="~/assets/img/guidelines/toggle/toggle-state-disabled-selected.png"></sky-demo-page-component-state>
+            </sky-demo-page-component-states>
+        </sky-demo-page-content>
+        
+        <sky-demo-page-content sectionHeading="Related content">
+		      <h3>Components</h3>
+			<ul>
+				<li><a routerLink="/components/checkbox">Checkbox</a></li>
+                <li><a routerLink="/components/radio">Radio</a></li>
+			</ul>
+		
+        </sky-demo-page-content>
+    </sky-tab>
+    
+    <sky-tab tabHeading="Development">
+    
+        <sky-demo-page-module-info
+    skyuxModule="SkyToggleSwitchModule"
+    packageName="@skyux/toggle-switch"
+    githubRepo="skyux-toggle-switch"
+  >
+  </sky-demo-page-module-info>
   <sky-demo-page-properties
     sectionHeading="Toggle switch properties"
   >
@@ -74,4 +169,5 @@
     </sky-demo-page-code>
   </sky-demo-page-example>
 
-</sky-demo-page>
+</sky-tab>        
+</sky-tabbed-demo-page>
