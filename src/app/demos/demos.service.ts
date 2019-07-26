@@ -8,9 +8,9 @@ import {
   SkyCodeBlockDemoComponent,
   SkyCopyToClipboardDemoComponent,
   SkyDateRangePickerDemoComponent,
-  SkyInlineFormDemoComponent
+  SkyInlineFormDemoComponent,
+  SkyToggleSwitchDemoComponent
 } from '.';
-import { SkyToggleSwitchDemoComponent } from './toggle-switch/toggle-switch-demo.component';
 
 /**
  * This service provides consumers with the raw file contents for each component demo.
