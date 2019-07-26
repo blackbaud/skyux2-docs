@@ -1,41 +1,14 @@
-<p>
-  <sky-toggle-switch
-    [checked]="true"
-  >
-    <sky-toggle-switch-label>
-      Switch is "on"
-    </sky-toggle-switch-label>
-  </sky-toggle-switch>
-</p>
+<h3>
+  Standard setup
+</h3>
 
 <p>
   <sky-toggle-switch
-    [checked]="false"
+    [disabled]="disabled"
+    [(ngModel)]="checked"
   >
     <sky-toggle-switch-label>
-      Switch is "off"
-    </sky-toggle-switch-label>
-  </sky-toggle-switch>
-</p>
-
-<p>
-  <sky-toggle-switch
-    [checked]="true"
-    [disabled]="true"
-  >
-    <sky-toggle-switch-label>
-      Switch is "on", readonly
-    </sky-toggle-switch-label>
-  </sky-toggle-switch>
-</p>
-
-<p>
-  <sky-toggle-switch
-    [checked]="false"
-    [disabled]="true"
-  >
-    <sky-toggle-switch-label>
-      Switch is "off", readonly
+      Switch is "{{ switchStatus }}"
     </sky-toggle-switch-label>
   </sky-toggle-switch>
 </p>
@@ -58,3 +31,13 @@
     </sky-toggle-switch>
   </div>
 </form>
+
+<p>
+  <button
+    class="sky-btn sky-btn-default"
+    type="button"
+    (click)="toggleDisabled()"
+  >
+    Toggle disabled
+  </button>
+</p>
