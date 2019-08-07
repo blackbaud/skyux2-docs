@@ -56,7 +56,7 @@
 
         <sky-docs-visual-example-text>
           <p>
-            Don’t use toggles when the options require confirmation before changes take effect.
+            Don’t use toggles when the options have significant consequences that the user needs to confirm before changes take effect. Use a workflow where users must confirm the changes instead.
           </p>
         </sky-docs-visual-example-text>
 
@@ -64,7 +64,7 @@
           <div>
             <img src="~/assets/img/guidelines/toggle/toggle-usage-3.png" />
             <div class="caption caption-danger sky-text-danger">
-              Don't use toggles for states with significant consequences. Use a workflow where users must confirm the changes instead.
+              Don't use toggles for states with significant consequences.
             </div>
           </div>
         </sky-docs-visual-example-image>
@@ -73,14 +73,14 @@
       <sky-docs-visual-example>
         <sky-docs-visual-example-text>
           <p>
-            Don’t use toggles when the input is presented in a modal.
+            Don’t use toggles when the input is presented in a modal. Use <a routerLink="/components/checkbox">checkboxes</a> instead.
           </p>
         </sky-docs-visual-example-text>
         <sky-docs-visual-example-image>
           <div>
             <img src="~/assets/img/guidelines/toggle/toggle-usage-4.png" />
             <div class="caption caption-danger sky-text-danger">
-              Don't use toggles inside modals where they won't take effect immediately. Use <a routerLink="/components/checkbox">checkboxes</a> instead.
+              Don't use toggles inside modals where they won't take effect immediately.
             </div>
           </div>
         </sky-docs-visual-example-image>
@@ -96,7 +96,7 @@
 
         <sky-demo-page-content sectionHeading="Options">
             <h3>Text label</h3>
-            <p>When toggles are in grid columns, the text label is not required. Use text labels for all other states.
+            <p>When toggles are in grid columns, the text label is not required if you use a column heading. Use text labels for all other states.
             </p>
             <p>If the scenario allows for toggles to become disabled, always include a text label on each toggle.</p>
         </sky-demo-page-content>
