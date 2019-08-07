@@ -1,0 +1,55 @@
+<h3>
+  Tabs and vertical tabs as site navigation
+</h3>
+
+<p>
+  If you use tabs or vertical tabs as page navigation, each one should have an entry in the browser history with a distinct title. This enables users to select the browser's back button to return to the previous view. Tabs and vertical tabs that are used as site-level navigation contain all of a page's content and can't be dismissed.
+</p>
+
+<div class="screenshot screenshot-info">
+  <img src="~/assets/img/guidelines/back-button/tabs-backbutton.png" alt="Tabs as page navigation" style="width: 100%" />
+</div>
+
+<div class="sky-subsection-heading" style="margin-top: 20px;">Focus</div>
+
+<p>
+  Based on guidance from the <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#tabpanel">W3C's WAI-ARIA Authoring Practices for tabs</a>, maintain focus on activated tabs.
+</p>
+
+<div class="sky-subsection-heading">Screen readers</div>
+
+<p>
+  Titles are announced as described in <a stacheRouterLink="." fragment="new-page-behavior">New page behavior</a>.
+</p>
+
+<h3>
+  Tabs and vertical tabs as containers for viewing items
+</h3>
+
+<p>
+  If tabs and vertical tabs contain removable items such as lists or reports, don't create entries in the browser history.
+</p>
+
+<div class="screenshot screenshot-info"> 
+  <img src="~/assets/img/guidelines/back-button/tabcontainers-backbutton.png" alt="Tabs as containers for viewing items" />
+</div>
+
+<br>
+
+<sky-row>
+  <sky-column>
+    <img class="screenshot screenshot-info" src="~/assets/img/guidelines/back-button/verticaltabs-backbutton.png" alt="Vertical tabs as containers for viewing items" />
+  </sky-column>
+</sky-row>
+
+<div class="sky-subsection-heading" style="margin-top: 20px;">Focus</div>
+
+<p>
+  Based on guidance from the <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#tabpanel">WAI-ARIA Authoring Practices for tabs</a>, maintain focus on activated tabs.
+</p>
+
+<div class="sky-subsection-heading">Screen readers</div>
+
+<p>
+  This option doesn't require new page announcements. The selected tab receives an updated <sky-code>aria-selected="true"</sky-code> property that is communicated to assistive technologies.
+</p>
