@@ -1068,6 +1068,18 @@ export class SkyDemoComponentsService {
         getCodeFiles: () => this.getDemoFiles('Toast')
       },
       {
+        name: 'Toggle switch',
+        icon: 'toggle-on',
+        summary: `The toggle switch component renders a SKY UX-themed switch for values that can either be "on" or "off."`,
+        url: '/components/toggle-switch',
+        imports: {
+          '@skyux/forms': [
+            'SkyToggleSwitchModule'
+          ]
+        },
+        getCodeFiles: () => this.getDemoFiles('Toggle switch')
+      },
+      {
         name: 'Tokens',
         icon: 'th-large',
         summary: `The tokens component displays a series of objects for users to interact with.`,
