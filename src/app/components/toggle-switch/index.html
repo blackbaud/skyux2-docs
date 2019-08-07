@@ -1,0 +1,200 @@
+<sky-tabbed-demo-page
+  pageTitle="Toggle switch"
+  navTitle="Toggle switch"
+  skyuxModule="SkyToggleSwitchModule"
+  packageName="@skyux/forms"
+>
+  <sky-demo-page-summary>
+    <p>
+      The toggle switch component renders a SKY UX-themed switch for values that can either be "on" or "off." The change takes effect immediately.
+    </p>
+  </sky-demo-page-summary>
+
+  <div class="sky-margin-stacked-separate">
+    <sky-demo-page-example>
+      <sky-toggle-switch-demo>
+      </sky-toggle-switch-demo>
+    </sky-demo-page-example>
+  </div>
+
+  <sky-tabset id="content-tabs">
+
+    <sky-tab tabHeading="Design">
+      <sky-demo-page-content sectionHeading="Usage">
+        <h3 class="sky-text-success">
+          Use when
+        </h3>
+
+        <sky-docs-visual-example>
+          <sky-docs-visual-example-text>
+            <p>
+              Use toggles when users can toggle between two states or options, and the changes take effect immediately.
+            </p>
+          </sky-docs-visual-example-text>
+
+          <sky-docs-visual-example-image>
+            <div class="sky-margin-stacked-content-section">
+              <img src="~/assets/img/guidelines/toggle/toggle-usage-1.png" />
+              <div class="caption caption-success sky-text-success">
+                Do use toggles to alternate between two states when changes take effect immediately.
+              </div>
+            </div>
+            <div>
+              <img src="~/assets/img/guidelines/toggle/toggle-usage-2.png" />
+              <div class="caption caption-success sky-text-success">
+                Do use toggles to set binary states on multiple items.
+              </div>
+            </div>
+          </sky-docs-visual-example-image>
+        </sky-docs-visual-example>
+
+        <h3 class="sky-text-danger">
+          Don't use when
+        </h3>
+
+        <sky-docs-visual-example>
+
+        <sky-docs-visual-example-text>
+          <p>
+            Don’t use toggles when the options have significant consequences that the user needs to confirm before changes take effect. Use a workflow where users must confirm the changes instead.
+          </p>
+        </sky-docs-visual-example-text>
+
+        <sky-docs-visual-example-image>
+          <div>
+            <img src="~/assets/img/guidelines/toggle/toggle-usage-3.png" />
+            <div class="caption caption-danger sky-text-danger">
+              Don't use toggles for states with significant consequences.
+            </div>
+          </div>
+        </sky-docs-visual-example-image>
+      </sky-docs-visual-example>
+
+      <sky-docs-visual-example>
+        <sky-docs-visual-example-text>
+          <p>
+            Don’t use toggles when the input is presented in a modal. Use <a routerLink="/components/checkbox">checkboxes</a> instead.
+          </p>
+        </sky-docs-visual-example-text>
+        <sky-docs-visual-example-image>
+          <div>
+            <img src="~/assets/img/guidelines/toggle/toggle-usage-4.png" />
+            <div class="caption caption-danger sky-text-danger">
+              Don't use toggles inside modals where they won't take effect immediately.
+            </div>
+          </div>
+        </sky-docs-visual-example-image>
+      </sky-docs-visual-example>
+    </sky-demo-page-content>
+
+        <sky-demo-page-content sectionHeading="Anatomy">
+            <sky-docs-anatomy imagePath="~/assets/img/guidelines/toggle/toggle-anatomy.png">
+                <sky-docs-anatomy-item anatomyNumber="1">Toggle body</sky-docs-anatomy-item>
+                <sky-docs-anatomy-item isOptional="true" anatomyNumber="2">Text label</sky-docs-anatomy-item>
+            </sky-docs-anatomy>
+        </sky-demo-page-content>
+
+        <sky-demo-page-content sectionHeading="Options">
+            <h3>Text label</h3>
+            <p>When toggles are in grid columns, the text label is not required if you use a column heading. Use text labels for all other states.
+            </p>
+            <p>If the scenario allows for toggles to become disabled, always include a text label on each toggle.</p>
+        </sky-demo-page-content>
+
+        <sky-demo-page-content sectionHeading="Behavior & states">
+            <sky-demo-page-component-states>
+              <sky-demo-page-component-state stateName="Unselected" imagePath="~/assets/img/guidelines/toggle/toggle-state-unselected.png"></sky-demo-page-component-state>
+              <sky-demo-page-component-state stateName="Selected" imagePath="~/assets/img/guidelines/toggle/toggle-state-selected.png"></sky-demo-page-component-state>
+              <sky-demo-page-component-state stateName="Hover" imagePath="~/assets/img/guidelines/toggle/toggle-state-hover.png"></sky-demo-page-component-state>
+              <sky-demo-page-component-state stateName="Disabled unselected" imagePath="~/assets/img/guidelines/toggle/toggle-state-disabled-unselected.png"></sky-demo-page-component-state>
+              <sky-demo-page-component-state stateName="Disabled selected" imagePath="~/assets/img/guidelines/toggle/toggle-state-disabled-selected.png"></sky-demo-page-component-state>
+            </sky-demo-page-component-states>
+        </sky-demo-page-content>
+
+        <sky-demo-page-content sectionHeading="Related content">
+          <h3>Components</h3>
+      <ul>
+        <li><a routerLink="/components/checkbox">Checkbox</a></li>
+        <li><a routerLink="/components/radio">Radio button</a></li>
+      </ul>
+
+        </sky-demo-page-content>
+    </sky-tab>
+
+    <sky-tab tabHeading="Development">
+
+      <sky-demo-page-module-info
+        skyuxModule="SkyToggleSwitchModule"
+        packageName="@skyux/forms"
+        githubRepo="skyux-forms"
+      >
+      </sky-demo-page-module-info>
+
+      <sky-demo-page-properties
+        sectionHeading="Toggle switch properties"
+      >
+        <sky-demo-page-property
+          propertyName="ariaLabel"
+          [isOptional]="true"
+        >
+          Sets the <sky-code>aria-label</sky-code> attribute of the toggle switch. Only use this value if the <sky-code>sky-toggle-switch-label</sky-code> component is not used. This property accepts <sky-code>string</sky-code> values.
+        </sky-demo-page-property>
+
+        <sky-demo-page-property
+          propertyName="checked"
+          defaultValue="false"
+          [isOptional]="true"
+        >
+          Indicates whether the toggle switch is selected. This property accepts <sky-code>boolean</sky-code> values.
+        </sky-demo-page-property>
+
+        <sky-demo-page-property
+          propertyName="disabled"
+          defaultValue="false"
+          [isOptional]="true"
+        >
+          Indicates whether to disable the toggle switch. This property accepts <sky-code>boolean</sky-code> values.
+        </sky-demo-page-property>
+
+        <sky-demo-page-property
+          propertyName="tabIndex"
+          defaultValue="0"
+          [isOptional]="true"
+        >
+          Specifies a tab index for the toggle switch. If not defined, the index is set to the position of the toggle switch on load. This property accepts <sky-code>number</sky-code> values.
+        </sky-demo-page-property>
+      </sky-demo-page-properties>
+
+      <sky-demo-page-properties
+        sectionHeading="Toggle switch events"
+      >
+        <sky-demo-page-property
+          propertyName="toggleChange"
+          [isOptional]="true"
+        >
+          Fires when the checked state of a toggle switch changes. The event provides an argument with <a stacheRouterLink="." fragment="skytoggleswitchchange-type">the <sky-code>SkyToggleSwitchChange</sky-code> type</a>.
+        </sky-demo-page-property>
+      </sky-demo-page-properties>
+
+      <sky-demo-page-properties
+        sectionHeading="SkyToggleSwitchChange type"
+      >
+        <sky-demo-page-property
+          propertyName="checked"
+        >
+          References the <sky-code>checked</sky-code> state of the toggle switch.
+        </sky-demo-page-property>
+      </sky-demo-page-properties>
+
+      <sky-demo-page-example>
+        <sky-toggle-switch-demo>
+        </sky-toggle-switch-demo>
+        <sky-demo-page-code
+          demoName="Toggle switch"
+        >
+        </sky-demo-page-code>
+      </sky-demo-page-example>
+
+    </sky-tab>
+  </sky-tabset>
+</sky-tabbed-demo-page>
