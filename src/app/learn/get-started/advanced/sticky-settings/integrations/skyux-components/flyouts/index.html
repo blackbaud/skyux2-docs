@@ -1,0 +1,25 @@
+<stache
+  pageTitle="Sticky Settings for Flyouts"
+  navTitle="Flyouts">
+
+  <stache-page-summary>
+    <p>
+      To save user configuration settings in flyouts, add the <sky-code>settingsKey</sky-code> property to the <sky-code>config</sky-code> parameter of the <sky-code>open(component, config?)</sky-code> property that the flyout service uses to open the flyout. The UI Config Service preserves the width of flyouts.
+    </p>
+
+    <sky-code-block languageType="typescript">
+       public openFlyoutWithCutsomWidth(): void {
+        const flyoutConfig: SkyFlyoutConfig = {
+          defaultWidth: 350,
+          maxWidth: 500,
+          minWidth: 200,
+          settingsKey: my-flyout
+      };
+      this.flyout = this.flyoutService.open(SkyFlyoutDemoInternalSimpleComponent, flyoutConfig);
+    </sky-code-block>
+
+    <p>
+      That's it! The UI Config Service now saves the width of the flyout when users close it and restores the width when users reopen it.
+    </p>
+
+</stache>
