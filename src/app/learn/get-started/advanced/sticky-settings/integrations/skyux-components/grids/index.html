@@ -4,8 +4,12 @@
 
   <stache-page-summary>
     <p>
-      To save user configuration settings in grids, add the <sky-code>settingsKey</sky-code> property to the <sky-code>sky-grid</sky-code> element. The UI Config Service returns <sky-code>selectedColumnIds</sky-code> to preserve column order and the sorting of columns.
+      To save user configuration settings in grids, add the <sky-code>settingsKey</sky-code> property to the <sky-code>sky-grid</sky-code> element. The <sky-code>settingsKey</sky-code> must be unique to the component.
     </p>
+    <p>
+      The UI Config Service returns <sky-code>selectedColumnIds</sky-code> to preserve column order and the sorting of columns.
+    </p>
+    <stache-include fileName="sticky-settings-whitelist.html"></stache-include>
 
     <sky-code-block languageType="html">
       &lt;sky-grid

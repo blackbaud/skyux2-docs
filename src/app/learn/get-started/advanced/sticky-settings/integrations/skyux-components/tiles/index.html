@@ -4,8 +4,12 @@
 >
   <stache-page-summary>
     <p>
-      To save user configuration settings in tile dashboards, add the <sky-code>settingsKey</sky-code> property to the <sky-code>sky-tile-dashboard</sky-code> element. The UI Config Service preserves the layout and collapsed state of tile dashboards.
+      To save user configuration settings in tile dashboards, add the <sky-code>settingsKey</sky-code> property to the <sky-code>sky-tile-dashboard</sky-code> element. The <sky-code>settingsKey</sky-code> must be unique to the component.
     </p>
+    <p>
+      The UI Config Service preserves the layout and collapsed state of tile dashboards.
+    </p>
+    <stache-include fileName="sticky-settings-whitelist.html"></stache-include>
 
     <sky-code-block languageType="html">
       &lt;sky-tile-dashboard
