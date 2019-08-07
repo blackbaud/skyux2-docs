@@ -1,24 +1,4 @@
 {
-  "learn": [
-    {
-      "name": "Getting started",
-      "path": "/learn/getting-started",
-      "icon": "compass",
-      "summary": "Set up the UI Config Service in your SKY UX SPA."
-    },
-    {
-      "name": "Integrations",
-      "path": "/learn/integrations",
-      "icon": "cogs",
-      "summary": "Learn how to integrate with the UI Config Service."
-    },
-    {
-      "name": "API",
-      "path": "/learn/api",
-      "icon": "file-code-o",
-      "summary": "Learn about the UI Config Service's REST API."
-    }
-  ],
   "ui_config": [
     {
       "name": "Overview",
