@@ -1,0 +1,43 @@
+<h3>
+  Standard setup
+</h3>
+
+<p>
+  <sky-toggle-switch
+    [disabled]="disabled"
+    [(ngModel)]="checked"
+  >
+    <sky-toggle-switch-label>
+      Switch is "{{ switchStatus }}"
+    </sky-toggle-switch-label>
+  </sky-toggle-switch>
+</p>
+
+<h3>
+  Reactive form setup
+</h3>
+
+<form
+  [formGroup]="formGroup"
+  novalidate
+>
+  <div class="sky-form-group">
+    <sky-toggle-switch
+      formControlName="notifyByEmail"
+    >
+      <sky-toggle-switch-label>
+        Notify me by email
+      </sky-toggle-switch-label>
+    </sky-toggle-switch>
+  </div>
+</form>
+
+<p>
+  <button
+    class="sky-btn sky-btn-default"
+    type="button"
+    (click)="toggleDisabled()"
+  >
+    Toggle disabled
+  </button>
+</p>
