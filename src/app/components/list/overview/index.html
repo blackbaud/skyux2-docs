@@ -24,14 +24,15 @@
       defaultValue="[]"
       isOptional="true"
     >
-    Specifies the data to display. Must provide <sky-code>data</sky-code> or <sky-code>dataProvider</sky-code>. Acceptable values: <sky-code>Observable Array</sky-code> or <sky-code>Array</sky-code>. To update data in your view outside of a <sky-code>dataProvider</sky-code>, you must use an observable instead of a static array).
+    Specifies the data to display. The list component requires this property or the <sky-code>dataProvider</sky-code> property. For checklist or multiselect grids, each row requires an <sky-code>id</sky-code> property to manage selected items with the <sky-code>selectedIds</sky-code> input property and the <sky-code>selectedIdsChange</sky-code> event. If you do not provide an <sky-code>id</sky-code>, the list automatically generates one. This property accepts <sky-code>Observable Array</sky-code> or <sky-code>Array</sky-code> values. (To update data in your view outside of a <sky-code>dataProvider</sky-code>, you must use an observable instead of a static array.)
     </sky-demo-page-property>
+
     <sky-demo-page-property
       propertyName="dataProvider"
       defaultValue="SkyListInMemoryDataProvider"
       isOptional="true"
     >
-    Specifies a data provider used to obtain data to display. Must provide <sky-code>data</sky-code> or <sky-code>dataProvider</sky-code>. Acceptable values: <sky-code>extends ListDataProvider</sky-code>. To extend ListDataProvider, provide a <sky-code>get</sky-code> function that accepts a <sky-code>ListDataRequestModel</sky-code> as an argument and returns an <sky-code>Observable ListDataResponseModel </sky-code>, and a <sky-code>count</sky-code> function that returns an <sky-code>Observable number</sky-code> that indicates how many total records are in the list.
+    Specifies a data provider to obtain the data to display. The list component requires this property or the <sky-code>data</sky-code> property. Acceptable values: <sky-code>extends ListDataProvider</sky-code>. To extend ListDataProvider, provide a <sky-code>get</sky-code> function that accepts a <sky-code>ListDataRequestModel</sky-code> as an argument and returns an <sky-code>Observable ListDataResponseModel </sky-code>, and a <sky-code>count</sky-code> function that returns an <sky-code>Observable number</sky-code> that indicates how many total records are in the list.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="initialTotal"
