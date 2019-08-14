@@ -151,11 +151,8 @@
     <p>Follow these guidelines to ensure that people can use modals with assistive technology or keyboards.</p>
     <ul>
       <li>When a modal opens, focus should be on the first focusable item in the modal. If the modal does not include focusable items, then focus should be on the modal container element.
-        <ul>
-          <li>
-            If placing focus on the first interactive element causes the content to scroll out of view, add <sky-code>tabindex=-1</sky-code> to a static element at the top of a modal. For example, add <sky-code>tabindex=-1</sky-code> to the title or first paragraph to initially focus the element. For more best practices, see <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#dialog_modal">W3C's WAI-ARIA Authoring Practices for modals</a>.
-          </li>
-        </ul>
+      <li>If placing focus on the first interactive element causes the content to scroll out of view, add <sky-code>tabindex=-1</sky-code> to a static element at the top of a modal. For example, add <sky-code>tabindex=-1</sky-code> to the title or first paragraph to initially focus the element. For more best practices, see <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#dialog_modal">W3C's WAI-ARIA Authoring Practices for modals</a>.
+      </li>
       <li>While a modal is open, focus should remain on elements in the modal when using Tab key to navigate. Focus should not move back to the initiating page behind the modal. At the end of the modal, the Tab key should return focus to the first focusable item in the modal. Conversely, at the top of the modal, the Shift+Tab keys should switch focus to the last focusable item in the modal. </li>
       <li>When a modal closes, focus should return to the element that had focus before the modal opened. Usually this is the element that opened the modal.</li>
     </ul>
@@ -199,6 +196,9 @@
 				<li>Use a primary <a routerLink="/components/button">button</a> for the most important action the user will take. Use secondary buttons for less important actions. Use a link button for the Cancel action.</li>
 				<li>If a modal has only one action, you should generally use the <a routerLink="/components/confirm">confirm</a> component instead.</li>
 			</ul>
+
+    <div class="sky-subsection-heading">Back button</div>
+      <p>When users open a modal, they should be able to use the back button to close the modal and return to the original context. If users select the back button on a modal with unsaved data, the SPA displays a dialog to confirm that they want to close the modal without saving their work.</p>
   </sky-demo-page-content>
 
 </sky-demo-page>
