@@ -103,8 +103,13 @@ export class SkySplitViewDemoComponent {
     }
   }
 
-  public onSubmit(): void {
+  public onApprove(): void {
+    console.log('Approved clicked!');
     this.saveForm();
+  }
+
+  public onDeny(): void {
+    console.log('Denied clicked!');
   }
 
   private loadFormGroup(record: any): void {

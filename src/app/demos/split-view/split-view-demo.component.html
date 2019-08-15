@@ -29,99 +29,103 @@
     <sky-split-view-workspace
       [ariaLabel]="'Transaction form'"
     >
-      <form
-        [formGroup]="splitViewDemoForm"
-        (ngSubmit)="onSubmit()"
+      <sky-split-view-workspace-content
+        class="sky-padding-even-large"
       >
-        <sky-definition-list
-          labelWidth="150px"
+        <form
+          [formGroup]="splitViewDemoForm"
+          (ngSubmit)="onApprove()"
         >
-          <sky-definition-list-content>
-            <sky-definition-list-label>
-              Receipt amount
-            </sky-definition-list-label>
-            <sky-definition-list-value>
-              {{ activeRecord.amount }}
-            </sky-definition-list-value>
-          </sky-definition-list-content>
-          <sky-definition-list-content>
-            <sky-definition-list-label>
-              Date
-            </sky-definition-list-label>
-            <sky-definition-list-value>
-              {{ activeRecord.date }}
-            </sky-definition-list-value>
-          </sky-definition-list-content>
-          <sky-definition-list-content>
-            <sky-definition-list-label>
-              Vendor
-            </sky-definition-list-label>
-            <sky-definition-list-value>
-              {{ activeRecord.vendor }}
-            </sky-definition-list-value>
-          </sky-definition-list-content>
-          <sky-definition-list-content>
-            <sky-definition-list-label>
-              Receipt image
-            </sky-definition-list-label>
-            <sky-definition-list-value>
-              {{ activeRecord.receiptImage }}
-            </sky-definition-list-value>
-          </sky-definition-list-content>
-        </sky-definition-list>
-        <div
-          class="sky-form-group"
-        >
-          <label
-            class="sky-control-label"
-            for="approvedAmount"
+          <sky-definition-list
+            labelWidth="150px"
           >
-            Approved amount
-          </label>
-          <input
-            class="sky-form-control"
-            formControlName="approvedAmount"
-            name="approvedAmount"
-            type="text"
-          />
-        </div>
+            <sky-definition-list-content>
+              <sky-definition-list-label>
+                Receipt amount
+              </sky-definition-list-label>
+              <sky-definition-list-value>
+                {{ activeRecord.amount }}
+              </sky-definition-list-value>
+            </sky-definition-list-content>
+            <sky-definition-list-content>
+              <sky-definition-list-label>
+                Date
+              </sky-definition-list-label>
+              <sky-definition-list-value>
+                {{ activeRecord.date }}
+              </sky-definition-list-value>
+            </sky-definition-list-content>
+            <sky-definition-list-content>
+              <sky-definition-list-label>
+                Vendor
+              </sky-definition-list-label>
+              <sky-definition-list-value>
+                {{ activeRecord.vendor }}
+              </sky-definition-list-value>
+            </sky-definition-list-content>
+            <sky-definition-list-content>
+              <sky-definition-list-label>
+                Receipt image
+              </sky-definition-list-label>
+              <sky-definition-list-value>
+                {{ activeRecord.receiptImage }}
+              </sky-definition-list-value>
+            </sky-definition-list-content>
+          </sky-definition-list>
+          <div
+            class="sky-form-group"
+          >
+            <label
+              class="sky-control-label"
+              for="approvedAmount"
+            >
+              Approved amount
+            </label>
+            <input
+              class="sky-form-control"
+              formControlName="approvedAmount"
+              name="approvedAmount"
+              type="text"
+            />
+          </div>
 
-        <div
-          class="sky-form-group"
+          <div
+            class="sky-form-group"
+          >
+            <label
+              class="sky-control-label"
+              for="comments"
+            >
+              Comments
+            </label>
+            <textarea
+              class="sky-form-control"
+              formControlName="comments"
+              name="comments"
+            ></textarea>
+          </div>
+        </form>
+      </sky-split-view-workspace-content>
+      <sky-split-view-workspace-footer>
+        <sky-summary-action-bar
+          id="summary-action-bar"
         >
-          <label
-            class="sky-control-label"
-            for="comments"
-          >
-            Comments
-          </label>
-          <textarea
-            class="sky-form-control"
-            formControlName="comments"
-            name="comments"
-          ></textarea>
-        </div>
-
-        <div
-          class="sky-form-group"
-        >
-          <button
-            class="sky-btn sky-btn-primary"
-            name="submit"
-            type="submit"
-          >
-            Approve expense
-          </button>
-          <button
-            class="sky-btn sky-btn-link"
-            name="deny"
-            type="button"
-          >
-            Deny request
-          </button>
-        </div>
-
-      </form>
+          <sky-summary-action-bar-actions>
+            <sky-summary-action-bar-primary-action
+              (actionClick)="onApprove()"
+            >
+              Approve expense
+            </sky-summary-action-bar-primary-action>
+            <sky-summary-action-bar-secondary-actions>
+              <sky-summary-action-bar-secondary-action
+                (actionClick)="onDeny()"
+              >
+                Deny request
+              </sky-summary-action-bar-secondary-action>
+            </sky-summary-action-bar-secondary-actions>
+          </sky-summary-action-bar-actions>
+        </sky-summary-action-bar>
+      </sky-split-view-workspace-footer>
     </sky-split-view-workspace>
   </sky-split-view>
 </div>
