@@ -6,7 +6,7 @@
       The split view component displays a list alongside a workspace where users can view details for the selected item and take actions.
     </p>
     <sky-alert alertType="warning">
-      This component is an initial release candidate.
+      This component is a release candidate. We do not plan to make any breaking changes the component before the official release, but such changes are possible.
     </sky-alert>
   </sky-demo-page-summary>
 
@@ -199,7 +199,18 @@
     <sky-demo-page-property
       propertyName="sky-split-view-workspace"
     >
+      Contains the content and footer to display in the split view's workspace panel.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="sky-split-view-workspace-content"
+    >
       Specifies the content to display in the split view's workspace panel.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="sky-split-view-workspace-footer"
+      isOptional="true"
+    >
+      Specifies the footer to display in the split view's workspace panel.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
