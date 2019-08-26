@@ -1,18 +1,168 @@
-<sky-demo-page
+<sky-tabbed-demo-page
   pageTitle="Progress Indicator"
-  navTitle="Progress indicator"
-  skyuxModule="SkyProgressIndicatorModule"
-  packageName="@skyux/progress-indicator"
 >
 
   <sky-demo-page-summary>
     <p>
-      The progress indicator component visually represents progress through a series of sequential steps toward a final goal. Active progress indicators represent tasks where user actions are broken into discrete steps, and passive progress indicators represent tasks that concern users but where they do not directly act upon the steps.
+      The progress indicator component shows progress through steps toward a goal. The passive progress indicator represents steps that take place outside of the user’s control. The active progress indicator walks users through a multi-step process, either in the waterfall page (below) or in the <a routerLink="/components/wizard">Wizard</a> component.
     </p>
-    <p>
-      Active progress indicators can be modal wizards or waterfall pages. For <a routerLink="/components/wizard">modal wizards</a>, place progress indicator components within modal components to guide users through tasks that require a series of related decisions. For waterfall pages, place progress indicator components on pages where records or system settings are in an incomplete state until users complete steps to activate them.
-    </p>
- </sky-demo-page-summary>
+  </sky-demo-page-summary>
+    
+<div class="sky-margin-stacked-content-section">
+    <sky-demo-page-example>
+        <sky-progress-indicator-demo>
+        </sky-progress-indicator-demo>
+    </sky-demo-page-example>
+</div>
+    
+<sky-tabset id="content-tabs">
+	
+	<sky-tab
+		tabHeading="Design">
+        
+	<sky-demo-page-content sectionHeading="Passive progress indicator usage">
+	<h3 class="sky-text-success">Use when</h3>
+		<sky-docs-visual-example>
+			<sky-docs-visual-example-text>
+					<p>Use passive progress indicators when users must be aware of sequential progress that concerns them, but they are not responsible for.</p>
+			</sky-docs-visual-example-text>
+			<sky-docs-visual-example-image>
+				<div>
+					<img src="~/assets/img/guidelines/progress-indicator/passive-progress-usage-1.png" />
+					<div class="caption caption-success sky-text-success">Do use passive progress indicators to track sequential steps taken by other users in the system.</div>
+				</div>
+			</sky-docs-visual-example-image>
+		</sky-docs-visual-example>
+    
+    <h3 class="sky-text-danger">Don't use when</h3>
+        <sky-docs-visual-example>
+			<sky-docs-visual-example-text>
+					<p>Don't use passive progress indicators when users must interact with the steps.</p>
+			</sky-docs-visual-example-text>
+			<sky-docs-visual-example-image>
+				<div>
+					<img src="~/assets/img/guidelines/progress-indicator/passive-progress-usage-2.png" />
+					<div class="caption caption-danger sky-text-danger">Don't use passive progress when users must take action on one or more steps.</div>
+				</div>
+			</sky-docs-visual-example-image>
+		</sky-docs-visual-example>
+        
+        <sky-docs-visual-example>
+			<sky-docs-visual-example-text>
+					<p>Don’t use passive progress indicators to represent multiple independent statuses that are not sequentially related.</p>
+			</sky-docs-visual-example-text>
+			<sky-docs-visual-example-image>
+				<div>
+					<img src="~/assets/img/guidelines/progress-indicator/passive-progress-usage-3.png" />
+					<div class="caption caption-danger sky-text-danger">Don't use passive progress to track steps that have no sequence.</div>
+				</div>
+			</sky-docs-visual-example-image>
+		</sky-docs-visual-example>
+        
+        <sky-docs-visual-example>
+			<sky-docs-visual-example-text>
+					<p>Don't use multiple passive progress indicators at once on items in a list.</p>
+			</sky-docs-visual-example-text>
+			<sky-docs-visual-example-image>
+				<div class="sky-margin-stacked-separate">
+					<img src="~/assets/img/guidelines/progress-indicator/passive-progress-usage-4.png" />
+					<div class="caption caption-danger sky-text-danger">Don't expose multiple passive progress indicators at once.</div>
+				</div>
+                <div>
+					<img src="~/assets/img/guidelines/progress-indicator/passive-progress-usage-5.png" />
+					<div class="caption caption-success sky-text-success">Do roll up steps that are inconsequential into a single status. Use a container like Popover or Flyout to hold the additional details the passive progress indicator provides.</div>
+				</div>
+			</sky-docs-visual-example-image>
+		</sky-docs-visual-example>
+        
+    </sky-demo-page-content>
+    
+    <sky-demo-page-content sectionHeading="Waterfall progress indicator usage">
+	<h3 class="sky-text-success">Use when</h3>
+    
+        <sky-docs-visual-example>
+			<sky-docs-visual-example-text>
+				<p>Use waterfall progress indicators for workflows that require a long or complex multi-step setup process that will likely only be completed once. Waterfall progress indicators are ideal when these tasks may take more than one sitting, whether because of waiting for events outside of the system or because of the large amount of input required.</p>
+                <p>Use waterfall progress indicators when the number and name of steps is known, and the best experience requires at least three steps.</p>
+			</sky-docs-visual-example-text>
+			<sky-docs-visual-example-image>
+				<div>
+					<img src="~/assets/img/guidelines/progress-indicator/waterfall-progress-usage-1.png" />
+					<div class="caption caption-success sky-text-success">Do use waterfall progress indicators for complex configurations that are completed in stages.</div>
+				</div>
+            </sky-docs-visual-example-image>
+        </sky-docs-visual-example>
+        
+        <sky-docs-visual-example>
+			<sky-docs-visual-example-text>
+				<p>Use waterfall progress indicators when the interaction complexity of the steps varies drastically. One step may involve complex interactions that are best performed in a full-screen modal, while another step may require a few simple inputs in a small modal. A single waterfall step can, itself, be a wizard modal if needed.</p>
+			</sky-docs-visual-example-text>
+			<sky-docs-visual-example-image>
+				<div class="sky-margin-stacked-separate">
+					<img src="~/assets/img/guidelines/progress-indicator/waterfall-progress-usage-2.png" />
+					<div class="caption caption-success sky-text-success">Do use modals of whatever size needed to contain the interactions in each waterfall step.</div>
+				</div>
+                <div>
+					<img src="~/assets/img/guidelines/progress-indicator/waterfall-progress-usage-3.png" />
+					<div class="caption caption-danger sky-text-danger">Don't mix modalities by putting inputs inside of a waterfall progress indicator</div>
+				</div>
+            </sky-docs-visual-example-image>
+		</sky-docs-visual-example>
+        
+    <h3 class="sky-text-danger">Don't use when</h3>
+        <sky-docs-visual-example>
+			<sky-docs-visual-example-text>
+					<p>Don’t use waterfall progress indicators when a task is best presented as multiple setps but will be completed in a single sitting, or if the task is performed repeatedly. Use Wizards instead.</p>
+			</sky-docs-visual-example-text>
+			<sky-docs-visual-example-image>
+				<div class="sky-margin-stacked-separate">
+					<img src="~/assets/img/guidelines/progress-indicator/waterfall-progress-usage-4.png" />
+					<div class="caption caption-danger sky-text-danger">Don't use waterfall progress indicators for short interactions, even if they are best divided into separate steps.</div>
+				</div>
+                <div>
+					<img src="~/assets/img/guidelines/progress-indicator/waterfall-progress-usage-5.png" />
+					<div class="caption caption-success sky-text-success">Do use Wizards for multi-step tasks that are still short in duration.</div>
+				</div>
+			</sky-docs-visual-example-image>
+		</sky-docs-visual-example>
+        
+        <sky-docs-visual-example>
+			<sky-docs-visual-example-text>
+					<p>Don’t use waterfall progress indicators when the required steps and their number is not known. If decisions will branch the workflow into different potential steps, arrange the workflow to make those decisions first, before the waterfall progress indicator is reached. </p>
+			</sky-docs-visual-example-text>
+			<sky-docs-visual-example-image>
+				<div class="sky-margin-stacked-separate">
+					<img src="~/assets/img/guidelines/progress-indicator/waterfall-progress-usage-6.png" />
+					<div class="caption caption-danger sky-text-danger">Don't present a waterfall progress indicator before the extent of the task is known.</div>
+				</div>
+                <div>
+					<img src="~/assets/img/guidelines/progress-indicator/waterfall-progress-usage-7.png" />
+					<div class="caption caption-success sky-text-success">Do present decisions that will determine the required steps before showing the steps themselves.</div>
+				</div>
+			</sky-docs-visual-example-image>
+		</sky-docs-visual-example>
+        
+        <sky-docs-visual-example>
+			<sky-docs-visual-example-text>
+				<p>Don’t use waterfall progress indicators for editing existing properties once an initial configuration process has been completed. Edit related groups of properties inside of isolated modals.</p>
+                <p>If properties or settings are so interrelated or codependent that making changes to them requires reexamining and adjusting most of the other properties, it may be more appropriate to frame the task of editing them as “starting over” and begin the waterfall over again.</p>
+			</sky-docs-visual-example-text>
+			<sky-docs-visual-example-image>
+				<div class="sky-margin-stacked-separate">
+					<img src="~/assets/img/guidelines/progress-indicator/waterfall-progress-usage-8.png" />
+					<div class="caption caption-danger sky-text-danger">Don't revert a finished state back into a waterfall to edit it.</div>
+				</div>
+                <div>
+					<img src="~/assets/img/guidelines/progress-indicator/waterfall-progress-usage-9.png" />
+					<div class="caption caption-success sky-text-success">Do divide pieces of the finished state into groups that can edited in isolation.</div>
+				</div>
+			</sky-docs-visual-example-image>
+		</sky-docs-visual-example>
+        
+    </sky-demo-page-content>
+    </sky-tab>
+    
+    <sky-tab tabHeading="Development">
 
   <sky-demo-page-properties sectionHeading="Progress indicator child components">
     <sky-demo-page-property
@@ -278,6 +428,8 @@
         Combined with other passive indicators to create excessive noise for information that does not drive user action.
       </li>
 		</ul>
-  </sky-demo-page-content>
+        
+    </sky-tab>
+  </sky-tabset>
 
-</sky-demo-page>
+</sky-tabbed-demo-page>
