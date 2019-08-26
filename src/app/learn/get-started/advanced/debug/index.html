@@ -1,0 +1,23 @@
+<stache
+  pageTitle="Debugging"
+  navTitle="Debugging"
+  showTableofContents="true">
+
+  <p>
+    Although we recommend debugging with Firefox or Chrome, you can also use Visual Studio Code to debug your code.
+  </p>
+
+  <stache-page-anchor>
+    Debug in Visual Studio Code
+  </stache-page-anchor>
+
+  <ol>
+    <li>Follow the procedures listed in the <a href="https://github.com/Microsoft/vscode-chrome-debug">VS Code Debugger for Chrome README</a>.</li>
+    <li>Close any previously opened instances of Chrome and then launch Chrome with <sky-code>--remote-debugging-port=9222</sky-code>.</li>
+    <li>In VS Code, run <sky-code>skyux serve</sky-code>.</li>
+    <li>Run the <sky-code>Attach to Chrome</sky-code> or <sky-code>Attach to Edge</sky-code> task in VS Code.</li>
+  </ol>
+
+</stache>
+
+
