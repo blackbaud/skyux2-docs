@@ -51,20 +51,20 @@ The email validation directive validates the format of email addresses in input 
         <sky-demo-page-content sectionHeading="Anatomy">
             <sky-docs-anatomy imagePath="~/assets/img/guidelines/email-validation/email-validation-anatomy.png">
                 <sky-docs-anatomy-item anatomyNumber="1">Input field</sky-docs-anatomy-item>
-                <sky-docs-anatomy-item anatomyNumber="2">Status indicator (danger)</sky-docs-anatomy-item>
+                <sky-docs-anatomy-item anatomyNumber="2"><a routerLink="/components/form">Status indicator</a> (danger)</sky-docs-anatomy-item>
             </sky-docs-anatomy>
         </sky-demo-page-content>
         
         <sky-demo-page-content sectionHeading="Behavior & states">
             <div class="sky-text-block">
-                <p>The email validation directive applies its logic when the input field loses focus and does not trigger error states while users type. After the field enters an error state, it remains in that state even after regaining focus and does not change until the content matches a valid email format.</p>
                 <p>The email validation directive is applied to an input field. The directive triggers the normal and error states, but the input field defines styles and the appearance of those states.</p>
+                <p>The directive applies its logic when the input field loses focus. It does not trigger error states while users type. After the field enters an error state, it remains in that state until the content matches a valid email address format.</p>
             </div>
         </sky-demo-page-content>
         
         <sky-demo-page-content sectionHeading="Content">
             <div class="sky-text-block">
-             <p>Make the error message succinct, and provide an example of an acceptable email format. For example, tell users to “Enter a valid email in the joe@abc.com format.”</p>
+             <p>Use a succinct error message, and provide an example of an acceptable email address format. For example, tell users to “Enter a valid email address with the joe@abc.com format.”</p>
             </div>
         </sky-demo-page-content>
         
