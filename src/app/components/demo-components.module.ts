@@ -15,9 +15,11 @@ import {
 } from '../demos/demos.service';
 
 import {
+  SkyInlineFormDemoModule,
   SkyPhoneFieldDemoModule,
+  SkySplitViewDemoModule,
   SkySummaryActionBarDemoModule,
-  SkyInlineFormDemoModule
+  SkyToggleSwitchDemoModule
 } from '../demos';
 
 import {
@@ -30,16 +32,20 @@ require('style-loader!prismjs/themes/prism.css');
   imports: [
     SkyDateRangePickerModule,
     SkyDemoModule,
+    SkyInlineFormDemoModule,
     SkyPhoneFieldDemoModule,
+    SkySplitViewDemoModule,
     SkySummaryActionBarDemoModule,
-    SkyInlineFormDemoModule
+    SkyToggleSwitchDemoModule
   ],
   exports: [
     SkyDateRangePickerModule,
     SkyDemoModule,
+    SkyInlineFormDemoModule,
     SkyPhoneFieldDemoModule,
+    SkySplitViewDemoModule,
     SkySummaryActionBarDemoModule,
-    SkyInlineFormDemoModule
+    SkyToggleSwitchDemoModule
   ],
   providers: [
     SkyDemoComponentsService,
