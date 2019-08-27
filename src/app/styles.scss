@@ -204,6 +204,10 @@ video.bordered {
   &.caption-success {
     border-color: $sky-highlight-color-success;
   }
+  
+  &.caption-warning {
+    border-color: $sky-highlight-color-warning;
+  }
 
   &.caption-danger {
     border-color: $sky-highlight-color-danger;
