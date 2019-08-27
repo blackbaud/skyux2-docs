@@ -158,8 +158,72 @@
 				</div>
 			</sky-docs-visual-example-image>
 		</sky-docs-visual-example>
-        
     </sky-demo-page-content>
+        
+    <sky-demo-page-content sectionHeading="Passive progress indicator anatomy">
+        <sky-docs-anatomy imagePath="~/assets/img/guidelines/progress-indicator/passive-progress-anatomy.png">
+            <sky-docs-anatomy-item anatomyNumber="1">Step indicator</sky-docs-anatomy-item>
+            <sky-docs-anatomy-item anatomyNumber="2">Step label</sky-docs-anatomy-item>
+            <sky-docs-anatomy-item isOptional="true" anatomyNumber="3">Step details</sky-docs-anatomy-item>
+        </sky-docs-anatomy>
+    </sky-demo-page-content>
+        
+    <sky-demo-page-content sectionHeading="Passive progress indicator options">
+        <h3>Step details</h3>
+        <p>You can provide addition details about a completed or current step. This can give extra context to the user, but avoid adding too many details or implying that the user should take action.</p>
+    </sky-demo-page-content>
+        
+    <sky-demo-page-content sectionHeading="Waterfall progress indicator anatomy">
+        <sky-docs-anatomy imagePath="~/assets/img/guidelines/progress-indicator/waterfall-progress-anatomy.png">
+            <sky-docs-anatomy-item anatomyNumber="1">Step indicator</sky-docs-anatomy-item>
+            <sky-docs-anatomy-item anatomyNumber="2">Step label</sky-docs-anatomy-item>
+            <sky-docs-anatomy-item anatomyNumber="3">Previous step action</sky-docs-anatomy-item>
+            <sky-docs-anatomy-item anatomyNumber="4">Current step action</sky-docs-anatomy-item>
+            <sky-docs-anatomy-item isOptional="true" anatomyNumber="5">Waterfall title</sky-docs-anatomy-item>
+            <sky-docs-anatomy-item isOptional="true" anatomyNumber="6">Step details</sky-docs-anatomy-item>
+            <sky-docs-anatomy-item isOptional="true" anatomyNumber="7">"Start over" action</sky-docs-anatomy-item>
+        </sky-docs-anatomy>
+    </sky-demo-page-content>
+    
+    <sky-demo-page-content sectionHeading="Waterfall progress indicator options">
+        <h3>Waterfall title</h3>
+        <p>It is usually best to include a title to reflect the context of the overall task. The title does not change as the user progresses through the waterfall steps.</p>
+        
+        <h3>Step details</h3>
+        <p>You can provide additional details about a completed step, limited to a single field. Don’t go overboard; users can reopen the modal to review their choices if they need.</p>
+        
+        <h3>"Start over"</h3>
+        <p>You can include an optional “start over” button that allows the user to erase all of the saved information for the waterfall process. This can return the user to the first step in the waterfall or, if some decision in the task occured before the waterfall, to another previous point in the workflow.</p>
+    </sky-demo-page-content>
+    
+    <sky-demo-page-content sectionHeading="Waterfall progress indicator behavior">
+        <p>To guide users through the steps in a waterfall, only one action is “current” at a time. When the current interaction is completed (i.e. when its modal is saved), the waterfall advances to the next step by changing the styling of the action to the “previous” state, changing the step indicators to reflect the new current step, and displaying the new “current” action.</p>
+        <p>The previous step actions allow the user to review and/or edit earlier decisions, but the waterfall progress indicator does not “un-complete” any steps.</p>
+        <p>The final step modal in a waterfall progerss indicator is an opportunity to summarize the change to the system that will take effect and ask the user for confirmation. It is not necessary to review all of the information entered during the waterfall steps, but the final step must involve at least a simple confirmation. After the final step is completed, replace the waterfall progress indicator with the “finished” or “active” state of the system. This can be any page type (record page, work center, list page, etc.).</p>
+    </sky-demo-page-content>
+        
+    <sky-demo-page-content sectionHeading="Passive progress indicator content">
+        <p>Use past tense verbs for step labels and keep them concise (e.g. Submitted, Approved, etc.). Include a datestamp in parentheses in most cases, but only include a timestamp if necessary. Use step details sparingly and keep them concise as well.</p>    
+    </sky-demo-page-content>
+    
+    <sky-demo-page-content sectionHeading="Waterfall progress indicator content">
+        <p>Step labels in waterfall progress indicators begin with the step number and describe the objective of the step concisely. Use a <b>&lt;verb&gt; &lt;direct object&gt;</b> format. The label of the last step in the waterfall should relate somehow to the transformation that takes place at the conclusion of the waterfall (“Activate”, “Tun on”, “Publish”, etc.).</p>
+        <p>The labels for “current step actions” should closely follow the description of the step label, but do not have to be identical. In particular, the action on the first step can be more generic and conversational (e.g. “Get started”). The labels for “previous step actions” should use verbs appropriate for post hoc actions (e.g. “Change”, “Edit”, etc.).</p>
+    </sky-demo-page-content>
+    
+    <sky-demo-page-content sectionHeading="Related information">
+		<h3>Components</h3>
+			<ul>
+				<li><a routerLink="/components/Modal">Modal</a></li>
+                <li><a routerLink="/components/Popover">Popover</a></li>
+                <li><a routerLink="/components/Wizard">Wizard</a></li>
+			</ul>
+		<h3>Guidelines</h3>
+			<ul>
+				<li><a routerLink="/design/guidelines/form-design">Form design</a></li>
+			</ul>
+	</sky-demo-page-content>    
+    
     </sky-tab>
     
     <sky-tab tabHeading="Development">
