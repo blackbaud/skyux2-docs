@@ -72,7 +72,22 @@
       propertyName="route"
       isOptional="true"
     >
-      Specifies an Angular router link for the action button. This property accepts a custom object with a <sky-code>commands</sky-code> property to specify router commands and an <sky-code>extras</sky-code> property to specify <a href="https://angular.io/api/router/NavigationExtras">Angular <sky-code>NavigationExtras</sky-code></a>. This property passes the <sky-code>commands</sky-code> property to the <a href="https://angular.io/api/router/RouterLink">Angular <sky-code>routerLink</sky-code></a>.
+      Specifies an Angular router link for the action button. This property accepts a custom object with a <sky-code>commands</sky-code> property to specify router commands and an <sky-code>extras</sky-code> property to specify <a href="https://angular.io/api/router/NavigationExtras">Angular <sky-code>NavigationExtras</sky-code></a>. This property passes the following properties:
+      <ul>
+        <li>
+          <sky-code>permalink.route?.extras?.fragment</sky-code> to <sky-code><a href=
+          "https://angular.io/api/router/NavigationExtras#fragment">fragment</a></sky-code>
+        </li>
+        <li>
+          <sky-code>permalink.route?.extras?.queryParams</sky-code> to <sky-code><a href="https://angular.io/api/router/NavigationExtras#queryParams">queryParams</a></sky-code>
+        </li>
+        <li>
+          <sky-code>permalink.route?.extras?.queryParamsHandling</sky-code> to <sky-code><a href="https://angular.io/api/router/NavigationExtras#queryParamsHandling">queryParamsHandling</a></sky-code>
+        </li>
+        <li>
+          <sky-code>permalink.route?.commands</sky-code> to <sky-code><a href="https://angular.io/api/router/RouterLink">routerLink</a></sky-code>
+        </li>
+      </ul>
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="url"
