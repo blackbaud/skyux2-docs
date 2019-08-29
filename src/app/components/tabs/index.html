@@ -19,10 +19,10 @@
 	<sky-tab
 		tabHeading="Design">	
 	<sky-demo-page-content sectionHeading="Usage">
-	<h3>Use when</h3>
+	<h3 class="sky-text-success">Use when</h3>
 		<sky-docs-visual-example>
 			<sky-docs-visual-example-text>
-					<p>Users require quick access to different slices of the same data.</p>
+					<p>Use tabs when users require quick access to different slices of the same data.</p>
 			</sky-docs-visual-example-text>
 			<sky-docs-visual-example-image>
 				<div>
@@ -33,7 +33,7 @@
 		</sky-docs-visual-example>
 		<sky-docs-visual-example>
 			<sky-docs-visual-example-text>
-				<p>Users need to complete different tasks on a page, and each task includes a significant amount of data.</p>
+				<p>Use tabs when users need to complete different tasks on a page, and each task includes a significant amount of data.</p>
 			</sky-docs-visual-example-text>
 			<sky-docs-visual-example-image>				
 				<div>
@@ -43,10 +43,10 @@
 			</sky-docs-visual-example-image>
 		</sky-docs-visual-example>
 		
-	<h3>Don't use when</h3>
+	<h3 class="sky-text-danger">Don't use when</h3>
 		<sky-docs-visual-example>
 			<sky-docs-visual-example-text>
-					<p>A page already has a set of tabs. Change the workflow instead of using multiple sets of tabs.</p>
+					<p>Don't use tabs when a page already has a set of tabs. Change the workflow instead of using multiple sets of tabs.</p>
 			</sky-docs-visual-example-text>
 			<sky-docs-visual-example-image>
 				<div class="sky-margin-stacked-content-section">
@@ -228,9 +228,15 @@
     Specifies the index of the active tab. This property accepts <sky-code>number</sky-code> or <sky-code>string</sky-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
+      propertyName="permalinkId"
+	  isOptional="true"
+    >
+    Distinguishes a tabset's unique state in the URL by generating a query parameter that is written as <sky-code>?&#60;queryParam>-active-tab=&#60;sanitized-tab-heading</sky-code>. The query parameter's value is parsed automatically from the selected tab's heading text, but you can supply a custom query parameter value for each tab with its <sky-code>permalinkValue</sky-code>. This property accepts <sky-code>string</sky-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
       propertyName="tabStyle"
       defaultValue="tabs"
-			isOptional="true"
+	  isOptional="true"
     >
     This property is deprecated. It specifies the behavior for a series of tabs. The property was designed to create wizards by setting <sky-code>tabStyle="wizard"</sky-code> on tabsets in modals, but this wizard implementation was replaced by <a stacheRouterLink="/components/progress-indicator">the progress indicator component</a>. This property accepts <sky-code>string</sky-code> values.
     </sky-demo-page-property>
@@ -243,7 +249,7 @@
     >
     Fires when the active tab changes. This event emits the index of the active tab.
     </sky-demo-page-property>
-		<sky-demo-page-property
+	<sky-demo-page-property
       propertyName="newTab"
       isOptional="true"
     >
@@ -276,6 +282,12 @@
       defaultValue="false"
     >
     Indicates whether to disable the tab. This property accepts <sky-code>boolean</sky-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="permalinkValue"
+	  isOptional="true"
+    >
+    Specifies a custom query parameter value for the tab. This works in conjunction with the tabset's <sky-code>permalinkId</sky-code> to distinguish the tab's unique state in the URL by generating a query parameter that is written as <sky-code>?&#60;queryParam>-active-tab=&#60;sanitized-tab-heading</sky-code>. By default, the query parameter's value is parsed automatically from the tab's heading text. This property accepts <sky-code>string</sky-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="tabHeaderCount"
