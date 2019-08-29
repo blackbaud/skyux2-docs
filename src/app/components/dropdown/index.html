@@ -61,10 +61,25 @@
     <sky-demo-page-content sectionHeading="Options">
       <h3>Button types</h3>
       <sky-demo-page-component-states>
-        <sky-demo-page-component-state stateName="Default" imagePath="~/assets/img/guidelines/dropdown/option-type-default.png"></sky-demo-page-component-state>
-        <sky-demo-page-component-state stateName="Context menu" imagePath="~/assets/img/guidelines/dropdown/option-type-context.png"></sky-demo-page-component-state>
-        <sky-demo-page-component-state stateName="Icon" imagePath="~/assets/img/guidelines/dropdown/option-type-icon.png"></sky-demo-page-component-state>
+        <sky-demo-page-component-state stateName="Use the default dropdown type when combining multiple related actions." imagePath="~/assets/img/guidelines/dropdown/option-type-default.png"></sky-demo-page-component-state>
+        <sky-demo-page-component-state stateName="Use the context menu dropdown for actions that will affect one item in a list." imagePath="~/assets/img/guidelines/dropdown/option-type-context.png"></sky-demo-page-component-state>
+        <sky-demo-page-component-state stateName="Use the icon dropdown in responsive designs for small viewports." imagePath="~/assets/img/guidelines/dropdown/option-type-icon.png"></sky-demo-page-component-state>
       </sky-demo-page-component-states>
+        <h3>Button style</h3>
+        <div class="sky-text-block" "sky-margin-stacked-content-section">
+            <p>Dropdowns can use the default or primary style inherited from SKY UX buttons. See the <a routerLink="/design/guidelines/page-layouts" fragment="primary-action-guidelines">primary action guidelines</a> for details about when to use the primary style.</p>
+        </div>
+    </sky-demo-page-content>
+      
+    <sky-demo-page-content sectionHeading="Behavior and states">
+        <h3>Behavior</h3>
+        <div class="sky-text-block" "sky-margin-stacked-content-section">
+            <p>The behavior of the dropdown menu is defined by the <a routerLink="/components/popover">popover</a> component.</p>
+        </div>
+        <h3>States</h3>
+        <div class="sky-text-block" "sky-margin-stacked-content-section">
+            <p>Dropdowns inherit the styling for their different states (hover, disabled, etc.) from <a routerLink="/components/button">SKY UX buttons</a>.</p>
+        </div>
     </sky-demo-page-content>
     
     <sky-demo-page-content sectionHeading="Content">
@@ -100,7 +115,7 @@
         </sky-docs-visual-example-image>
       </sky-docs-visual-example>
       
-			<div class="sky-text-block sky-margin-stacked-content-section">
+        <div class="sky-text-block sky-margin-stacked-content-section">
         <p>Additional button text guidelines:</p>
 				<ul>
 					<li>Use sentence-style capitalization.</li>
@@ -108,6 +123,21 @@
 					<li>Don’t append extra words such as “details.” For example, use “Edit constituent” rather than “Edit constituent details.”</li>
 				</ul>
       </div>
+    </sky-demo-page-content>
+      
+    <sky-demo-page-content sectionHeading="Layout">
+        
+        <sky-docs-visual-example>
+          <sky-docs-visual-example-text>
+            <p>Place context menus to the left of all row-specific content, but to the right of all list controls (such as checkboxes in a grid or repeater, or the expand-collapse actions in a tree view).</p>
+            <p>Default dropdowns are positioned like SKY UX buttons, with the same alignment and margins.</p>
+          </sky-docs-visual-example-text>
+          <sky-docs-visual-example-image>
+            <img src="~/assets/img/guidelines/dropdown/dropdown-layout-1.png" />
+            <div class="caption caption-success sky-text-success">Do put context menu dropdowns to the left of all row-specific content in lists.</div>
+          </sky-docs-visual-example-image>
+        </sky-docs-visual-example>
+        
     </sky-demo-page-content>
     
     <sky-demo-page-content sectionHeading="Related information">
