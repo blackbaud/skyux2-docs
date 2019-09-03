@@ -1115,6 +1115,13 @@ export class SkyDemoComponentsService {
         getCodeFiles: () => this.getDemoFiles('Toolbar')
       },
       {
+        name: 'Tree view',
+        icon: 'sitemap',
+        // tslint:disable-next-line
+        summary: `The tree view provides a hierarchical list view.`,
+        url: '/components/tree-view'
+      },
+      {
         name: 'URL validation',
         icon: 'check',
         summary: 'The URL validation module allows users to validate URL format.',

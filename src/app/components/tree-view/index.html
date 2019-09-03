@@ -1,0 +1,100 @@
+<sky-tabbed-demo-page
+  pageTitle="Tree view"
+>
+
+  <sky-demo-page-summary>
+    The tree view provides a hierarchical view for a list of items.
+  </sky-demo-page-summary>
+
+  <sky-demo-page-example>
+  </sky-demo-page-example>
+
+<sky-tabset id="content-tabs">
+
+  <sky-tab
+    tabHeading="Design">
+
+    <sky-demo-page-content sectionHeading="Usage">
+      <h3 class="sky-text-success">Use when</h3>
+        <sky-docs-visual-example>
+          <sky-docs-visual-example-text>
+              <p>Use tree views to show lists of hierarchical items. They can be used in view-only or selection contexts.</p>
+          </sky-docs-visual-example-text>
+          <sky-docs-visual-example-image>
+            <div>
+              <img class="bordered" src="~/assets/img/guidelines/tab/use-slices.png" />
+              <div class="caption caption-success sky-text-success">Do use tree views to show lists of hierarchical items.</div>
+            </div>
+          </sky-docs-visual-example-image>
+        </sky-docs-visual-example>
+    </sky-demo-page-content>
+
+    <sky-demo-page-content sectionHeading="Anatomy">
+      <sky-docs-anatomy imagePath="~/assets/img/guidelines/popover/anatomy.png">
+        <sky-docs-anatomy-item anatomyNumber="1">List item</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item anatomyNumber="2">Expand/collapse button</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item anatomyNumber="3" isOptional="true">Checkbox</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item anatomyNumber="4" isOptional="true">Context menu</sky-docs-anatomy-item>
+      </sky-docs-anatomy>
+    </sky-demo-page-content>
+
+    <sky-demo-page-content sectionHeading="Options">
+      <h3>Selection</h3>
+        <sky-docs-visual-example>
+          <sky-docs-visual-example-text>
+            <p>You can use single- or multi-select mode when you use a tree view in a selection context.</p>
+          </sky-docs-visual-example-text>
+          <sky-docs-visual-example-image>
+            <img src="~/assets/img/guidelines/popover/option-position.png" />
+          </sky-docs-visual-example-image>
+        </sky-docs-visual-example>
+        <sky-docs-visual-example>
+          <sky-docs-visual-example-text>
+            <p>Use the cascading selection mode if it's likely that users will want to select a node and all nodes below it in the hierarchy.</p>
+          </sky-docs-visual-example-text>
+          <sky-docs-visual-example-image>
+            <img src="~/assets/img/guidelines/popover/option-position.png" />
+          </sky-docs-visual-example-image>
+        </sky-docs-visual-example>
+        <sky-docs-visual-example>
+          <sky-docs-visual-example-text>
+            <p>Use the leaf-node-only selection mode if the higher-level nodes in the tree are categories and you want the user to only select the leaf node items.</p>
+          </sky-docs-visual-example-text>
+          <sky-docs-visual-example-image>
+            <img src="~/assets/img/guidelines/popover/option-position.png" />
+          </sky-docs-visual-example-image>
+        </sky-docs-visual-example>
+      <h3>Split view</h3>
+        <sky-docs-visual-example>
+          <sky-docs-visual-example-text>
+            <p>You can use tree views as the list in a <a routerLink="/components/split-view">split view</a> if the user needs to work with hierarchical items.</p>
+          </sky-docs-visual-example-text>
+          <sky-docs-visual-example-image>
+            <img src="~/assets/img/guidelines/tree-view/option-split-view.png" />
+          </sky-docs-visual-example-image>
+        </sky-docs-visual-example>
+      </sky-demo-page-content>
+
+    <sky-demo-page-content sectionHeading="Behavior and states">
+      <h3>Expand/collapse nodes</h3>
+        <div class="sky-text-block">Clicking the expand/collapse button expands/collapses the descendant items of the node.</div>
+
+    </sky-demo-page-content>
+
+    <sky-demo-page-content sectionHeading="Related information">
+      <h3>Components</h3>
+      <ul>
+        <li><a routerLink="/components/flyout">Split view</a></li>
+      </ul>
+    </sky-demo-page-content>
+
+  </sky-tab>
+
+  <sky-tab
+    tabHeading="Development">
+  
+  </sky-tab>
+
+</sky-tabset>
+
+</sky-tabbed-demo-page>
