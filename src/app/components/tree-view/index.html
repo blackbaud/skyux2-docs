@@ -22,7 +22,7 @@
           </sky-docs-visual-example-text>
           <sky-docs-visual-example-image>
             <div>
-              <img class="bordered" src="~/assets/img/guidelines/tab/use-slices.png" />
+              <img src="~/assets/img/guidelines/tree-view/use-when.png" />
               <div class="caption caption-success sky-text-success">Do use tree views to show lists of hierarchical items.</div>
             </div>
           </sky-docs-visual-example-image>
@@ -30,9 +30,9 @@
     </sky-demo-page-content>
 
     <sky-demo-page-content sectionHeading="Anatomy">
-      <sky-docs-anatomy imagePath="~/assets/img/guidelines/popover/anatomy.png">
-        <sky-docs-anatomy-item anatomyNumber="1">List item</sky-docs-anatomy-item>
-        <sky-docs-anatomy-item anatomyNumber="2">Expand/collapse button</sky-docs-anatomy-item>
+      <sky-docs-anatomy imagePath="~/assets/img/guidelines/tree-view/anatomy.png">
+        <sky-docs-anatomy-item anatomyNumber="1">Expand/collapse button</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item anatomyNumber="2">List item content</sky-docs-anatomy-item>
         <sky-docs-anatomy-item anatomyNumber="3" isOptional="true">Checkbox</sky-docs-anatomy-item>
         <sky-docs-anatomy-item anatomyNumber="4" isOptional="true">Context menu</sky-docs-anatomy-item>
       </sky-docs-anatomy>
@@ -45,12 +45,12 @@
             <p>You can use single- or multi-select mode when you use a tree view in a selection context.</p>
           </sky-docs-visual-example-text>
           <sky-docs-visual-example-image>
-            <img src="~/assets/img/guidelines/popover/option-position.png" />
+            <img src="~/assets/img/guidelines/tree-view/option-select.png" />
           </sky-docs-visual-example-image>
         </sky-docs-visual-example>
         <sky-docs-visual-example>
           <sky-docs-visual-example-text>
-            <p>Use the cascading selection mode if it's likely that users will want to select a node and all nodes below it in the hierarchy.</p>
+            <p>With cascading selection when the user selects a node, all descendant nodes are also selected. Use this mode if it's likely that users will want to select a node and all its descendants.</p>
           </sky-docs-visual-example-text>
           <sky-docs-visual-example-image>
             <img src="~/assets/img/guidelines/tree-view/option-cascading.png" />
@@ -58,7 +58,7 @@
         </sky-docs-visual-example>
         <sky-docs-visual-example>
           <sky-docs-visual-example-text>
-            <p>Use the leaf-node-only selection mode if the higher-level nodes in the tree are categories and you want the user to only select the leaf node items.</p>
+            <p>With leaf-only selection the user can only select the leaf nodes in the tree. Use the leaf-node-only selection mode if the higher-level nodes in the tree are categories and you want the user to only select the leaf node items.</p>
           </sky-docs-visual-example-text>
           <sky-docs-visual-example-image>
             <img src="~/assets/img/guidelines/tree-view/option-leaf-only.png" />
@@ -77,7 +77,14 @@
 
     <sky-demo-page-content sectionHeading="Behavior and states">
       <h3>Expand/collapse nodes</h3>
-        <div class="sky-text-block">Clicking the expand/collapse button expands/collapses the descendant items of the node.</div>
+        <sky-docs-visual-example>
+          <sky-docs-visual-example-text>
+            <p>Clicking the expand/collapse button expands/collapses the node.</p>
+          </sky-docs-visual-example-text>
+          <sky-docs-visual-example-image>
+            <img src="~/assets/img/guidelines/tree-view/behavior-expand.png" />
+          </sky-docs-visual-example-image>
+        </sky-docs-visual-example>
 
     </sky-demo-page-content>
 
