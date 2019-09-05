@@ -1,14 +1,17 @@
 <stache
   pageTitle="Report bugs"
   showTableOfContents="true"
-  layout="sidebar">
+  layout="sidebar"
+  navOrder="5">
 
-  <p>
-    If you uncover a bug while working with a package, please file an issue in its repo. We use issues to track and assign work.
-  </p>
+  <stache-page-summary>
+    <p>
+      If you uncover a bug while working with a package, please file an issue in its repo. We use issues to track and assign work.
+    </p>
+  </stache-page-summary>
 
   <ol>
-    <li>Create a GitHub issue in the <a routerLink="../packages">applicable repo</a>.</li>
+    <li>Create a GitHub issue in the <a stacheRouterLink="/contribute/packages">applicable repo</a>.</li>
     <li>
       Fill out the template fields to provide:
       <ul>
@@ -22,4 +25,5 @@
     </li>
     <li>Subscribe to the issue to receive notifications.</li>
   </ol>
+
 </stache>

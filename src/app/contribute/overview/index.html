@@ -1,20 +1,14 @@
 <stache
-  pageTitle="Overview"
+  navTitle="Contribution process"
   showTableOfContents="false"
   layout="sidebar">
 
-  <stache-page-summary>
-    <p>
-      The SKY UX framework provides functionality through multiple repositories that target different areas of development. To learn how we organize these packages, see <a routerLink="../packages">the packages matrix</a>. For information about how to contribute to a particular package, see the <sky-code>CONTRIBUTING.md</sky-code> file in its repo.
-    </p>
-  </stache-page-summary>
-
   <stache-tutorial>
     <stache-tutorial-heading>
-      Contributing to SKY UX
+      Contribute to SKY UX
     </stache-tutorial-heading>
     <stache-tutorial-summary>
-      A step-by-step guide to contributing to SKY UX libraries.
+        We encourage contributions from all SKY UX users. To contribute, follow this step-by-step guide. Keep in mind that before you start, you should install the <a stacheRouterLink="/learn/get-started/prereqs">SKY UX prerequisites</a>.
     </stache-tutorial-summary>
 
     <stache-tutorial-step>
@@ -23,80 +17,88 @@
       </stache-tutorial-step-heading>
       <stache-tutorial-step-body>
         <p>
-          Before you start any work, file an issue. If an issue already exists, comment on the issue and tag the SKY UX team so we know you intend to work on it. The sooner we can discuss potential code changes, the better. To file a issue with SKY UX, follow these instructions:
+          Before you start any work, <a stacheRouterLink="/contribute/overview/file-issue">file an issue</a>. If an issue already exists, comment on it and tag the SKY UX team so that we know you intend to work on it. The sooner we discuss potential code changes, the better.
         </p>
-
-        <ol>
-          <li>
-            Create an issue in the <a stacheRouterLink="/contribute/packages">applicable repo</a>.
-          </li>
-          <li>
-            Delete the default fields for <a stacheRouterLink="../report-bugs">reporting bugs</a> and describe the contribution and potential code changes to SKY UX.
-          </li>
-          <li>
-            For new components or significant features, you must include design documents and requirements.
-          </li>
-          <li>
-            Subscribe to the issue to receive notifications.
-          </li>
-        </ol>
+        <p>
+          SKY UX provides functionality through multiple repositories that target different areas of development, so use the <a stacheRouterLink="../packages">packages matrix</a> to find the appropriate repo to file your issue.
+        </p>
       </stache-tutorial-step-body>
     </stache-tutorial-step>
-
+  
     <stache-tutorial-step>
-     <stache-tutorial-step-heading>
-        Discuss with the SKY UX team
+      <stache-tutorial-step-heading>
+        Discuss the contribution with the SKY UX team
       </stache-tutorial-step-heading>
       <stache-tutorial-step-body>
-        Once the issue is ready, meet with the SKY UX team to discuss architecture and implementation details, requirements, and timelines. A SKY UX developer will be assigned to the issue; they can help answer any questions you may have.
+        <p>
+          After you <a stacheRouterLink="/contribute/overview/file-issue">file an issue</a>, meet with the SKY UX team to discuss architecture and implementation details, requirements, and timelines. We will assign a developer to your issue to help answer questions.
+        </p>
+        <p>
+          Keep in mind that changes that impact the UI, such as new components or changes to existing components, require approval from the Blackbaud design council. Contributions that do not have design approval must include detailed design specifications. The design approval process can take significant time if components are complex or designs require significant changes, so account for that in your development timeline. If you need help with the design approval process, ask the SKY UX team.
+        </p>
       </stache-tutorial-step-body>
     </stache-tutorial-step>
 
     <stache-tutorial-step>
       <stache-tutorial-step-heading>
-         Write the feature code
-       </stache-tutorial-step-heading>
-       <stache-tutorial-step-body>
-        <a href="https://help.github.com/articles/fork-a-repo/">Create a fork</a> of the <a routerLink="../packages">appropriate repo</a> and push code to a kebab-cased feature branch. You don't need to write tests or documentation yet.
-       </stache-tutorial-step-body>
-     </stache-tutorial-step>
-
-     <stache-tutorial-step>
-      <stache-tutorial-step-heading>
-        Get a preliminary review
+        Write the code for your feature
       </stache-tutorial-step-heading>
-       <stache-tutorial-step-body>
-        Tag the SKY UX team in the issue to request a review of the initial implementation, functionality, and styling. Make changes and get additional reviews as needed. For large changes that include multiple components (more than 50 files), please submit changes in several small pull requests instead of one large pull request.
+      <stache-tutorial-step-body>
+        <p>
+          <a stacheRouterLink="/contribute/overview/get-code">Create a fork</a> of the <a routerLink="../packages">appropriate repo</a>, and then <a stacheRouterLink="/contribute/overview/write-code">write your code</a> and push it to a kebab-cased feature branch. Don't write tests or documentation yet.
+        </p>
+        <p>
+          To ensure that the SKY UX team can review and accept your contribution in a timely fashion, follow our <a stacheRouterLink="/contribute/overview/guidelines">contribution guidelines</a>.
+        </p>
+      </stache-tutorial-step-body>
+    </stache-tutorial-step>
 
-        We recommend waiting to add tests and documentation until after this review, as the implementation details could change.
-       </stache-tutorial-step-body>
-     </stache-tutorial-step>
+    <stache-tutorial-step>
+      <stache-tutorial-step-heading>
+        Request a preliminary review
+      </stache-tutorial-step-heading>
+      <stache-tutorial-step-body>
+        <p>
+          Create a pull request with the initial implementation, functionality, and styling, and tag the SKY UX team to request a review. Make changes and request additional reviews as necessary. For <a stacheRouterLink="/contribute/overview/guidelines" fragment="pull-requests">large changes that effect more than 50 files</a>, please submit changes in several small pull requests instead of one large pull request.
+        </p>
+        <p>
+          Wait until after the initial review to add tests and documentation because implementation details may change.
+        </p>
+      </stache-tutorial-step-body>
+    </stache-tutorial-step>
 
-     <stache-tutorial-step>
+    <stache-tutorial-step>
       <stache-tutorial-step-heading>
         Add tests
       </stache-tutorial-step-heading>
-       <stache-tutorial-step-body>
-        All new code should have 100% <a stacheRouterLink="../../learn/reference/tests" fragment="unit-tests">unit test</a> code coverage. Components should have <a stacheRouterLink="../../learn/reference/tests" fragment="end-to-end-e2e-tests">visual regression tests</a> and <a stacheRouterLink="../../learn/get-started/advanced/accessibility-unit-tests">accessibility tests</a> as well.
-       </stache-tutorial-step-body>
-     </stache-tutorial-step>
+      <stache-tutorial-step-body>
+        Write tests for your feature. All code requires 100 percent <a stacheRouterLink="/contribute/overview/guidelines" fragment="unit-tests">unit test</a> code coverage. Components also require <a stacheRouterLink="/contribute/overview/guidelines" fragment="visual-regression-tests">visual regression tests</a> and <a stacheRouterLink="/contribute/overview/guidelines" fragment="accessibility-tests">accessibility tests</a>.
+      </stache-tutorial-step-body>
+    </stache-tutorial-step>
 
-     <stache-tutorial-step>
+    <stache-tutorial-step>
       <stache-tutorial-step-heading>
-        Get a final review
+        Request a final review
       </stache-tutorial-step-heading>
-       <stache-tutorial-step-body>
-        Get a review of the complete contribution. We'll go over the implementation, testing, functionality, styling, <a stacheRouterLink="../../learn/get-started/advanced/localization">localization</a>, and <a stacheRouterLink="../../learn/accessibility">accessibility</a>.
-       </stache-tutorial-step-body>
-     </stache-tutorial-step>
+      <stache-tutorial-step-body>
+        Tag the SKY UX team to review the complete contribution. We review the implementation, testing, functionality, styling, <a stacheRouterLink="/contribute/overview/guidelines" fragment="localization">localization</a>, and <a stacheRouterLink="../../learn/accessibility">accessibility</a>.
+      </stache-tutorial-step-body>
+    </stache-tutorial-step>
 
-     <stache-tutorial-step>
+    <stache-tutorial-step>
       <stache-tutorial-step-heading>
         Document your contribution
       </stache-tutorial-step-heading>
-       <stache-tutorial-step-body>
-        Write or update the documentation for your contribution. For components, file an issue in the <a href="https://github.com/blackbaud/skyux2-docs">SKY UX docs repo</a> and work with a SKY UX docs writer. You can find more information on writing docs <a stacheRouterLink="../documentation">here</a>.
-       </stache-tutorial-step-body>
-     </stache-tutorial-step>
+      <stache-tutorial-step-body>
+        <p>
+          Write <a stacheRouterLink="/contribute/overview/guidelines" fragment="demos-and-documentation">documentation for your contribution</a> or file an issue in the <a href="https://github.com/blackbaud/skyux2-docs">SKY UX docs repo</a> to work with a SKY UX docs writer. All new components must include demos to accompany the reference documentation in the <a stacheRouterLink="/components">Components section</a> of the SKY UX website.
+        </p>
+        <p>
+          Write or update the documentation for your contribution. For components, file an issue in the <a href="https://github.com/blackbaud/skyux2-docs">SKY UX docs repo</a> and work with a SKY UX docs writer. You can find more information on writing docs <a stacheRouterLink="../documentation">here</a>.
+        </p>
+      </stache-tutorial-step-body>
+    </stache-tutorial-step>
+
   </stache-tutorial>
+
 </stache>

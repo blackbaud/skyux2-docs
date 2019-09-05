@@ -1,0 +1,27 @@
+<stache
+  pageTitle="Get the code"
+  showTableOfContents="true"
+  layout="sidebar">
+
+  <stache-page-summary>
+    <p>
+      To contribute to SKY UX, fork one of our repos and create a branch to commit and push changes.
+    </p>
+  </stache-page-summary>
+
+  <ol>
+    <li>
+      <a href="https://help.github.com/articles/fork-a-repo/">Fork the repo</a> into your own GitHub repo. To view a list of SKY UX repositories that target different areas of development, see the <a stacheRouterLink="/contribute/packages">packages matrix</a>.
+    </li>
+    <li>
+      Create a branch off of master named after the feature you will contribute. The branch name should be kebab-case (my-new-feature).
+    </li>
+    <li>
+      Clone your repo locally and run <sky-code>nvm use</sky-code> to ensure you have the preferred version of Node.js installed. Next, run <sky-code>npm install</sky-code> to install all required dependencies. For more information on prerequisites, see <a stacheRouterLink="/learn/get-started/prereqs">SKY UX prerequisites</a>.
+    </li>
+    <li>
+      <a stacheRouterLink="." fragment="write-visual-regression-tests">Run your first round of visual regression tests with <sky-code>skyux e2e</sky-code></a>. This establishes baseline screenshots of the components in the master repo so that as you make changes and run your visual regression tests, your changes are validated against the state of the repo before the changes.
+    </li>
+  </ol>
+
+</stache>
