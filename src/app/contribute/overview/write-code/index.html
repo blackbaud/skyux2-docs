@@ -16,10 +16,10 @@
       </li>
       <li>
         <p>
-          Launch a second command prompt, <sky-code>cd</sky-code> to the folder where you cloned your branch, and run <sky-code>skyux serve</sky-code>. This launches the visual testing pages where you can view updates based on your code changes. Depending on the nature of your changes, you may need to update the visual tests. Any changes here will impact the visual e2e tests, and you may need to reset the baselines after you make changes to get the build to pass. For more information, see <a stacheRouterLink="." fragment="write-visual-regression-tests">write visual regression tests</a>.
+          Launch a second command prompt, <sky-code>cd</sky-code> to the folder where you cloned your branch, and run <sky-code>skyux serve</sky-code>. This launches the visual testing pages where you can view updates based on your code changes. Depending on the nature of your changes, you may need to update the <a stacheRouterLink="/contribute/overview/guidelines" fragment="visual-regression-tests">visual regression tests</a>. Any changes will impact the visual e2e tests, and you may need to reset the baselines after you make changes to get the build to pass.
         </p>
         <p>
-          The <a href="https://github.com/blackbaud/skyux-sdk-cli">SKY UX CLI</a> authors SKY UX demos. If this is your first time using SKY UX Builder, then before you run <sky-code>skyux serve</sky-code>, you must install the CLI as a global NPM package: <sky-code>npm i -g @skyux-sdk/cli</sky-code>.
+          The <a href="https://github.com/blackbaud/skyux-sdk-cli">SKY UX CLI</a> authors SKY UX demos. If this is your first time using SKY UX Builder, then install the CLI as a global NPM package (<sky-code>npm i -g @skyux-sdk/cli</sky-code>) before you run <sky-code>skyux serve</sky-code>.
         </p>
       </li>
       <li>
@@ -30,7 +30,7 @@
       Keep in mind that when you create components, you must add public exports through <sky-code>./src/app/public/index.ts</sky-code> to allow users to import your component modules. The public exports provide entry points for the bundles that SKY UX deploys.
     </p>
     <p>
-      The recommended change detection strategy for SKY UX components is to use <a href="https://angular.io/api/core/ChangeDetectionStrategy">the <sky-code>OnPush</sky-code> property instead of <sky-code>Default</sky-code></a>.
+      Also note that the recommended change detection strategy for SKY UX components is to use <a href="https://angular.io/api/core/ChangeDetectionStrategy">the <sky-code>OnPush</sky-code> property instead of <sky-code>Default</sky-code></a>.
     </p>
         
 </stache>
