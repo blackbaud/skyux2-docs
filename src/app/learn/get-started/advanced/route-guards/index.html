@@ -39,7 +39,7 @@ export class AppRouteGuard implements CanActivate {
     public canActivate(
       route: ActivatedRouteSnapshot,
       state: RouterStateSnapshot
-    ): Observable<boolean> {
+    ): Observable&#60;boolean> {
       return this.myPermissionService.isAuthorized();
     }
 }

@@ -960,6 +960,13 @@ export class SkyDemoComponentsService {
         disableStackblitz: true
       },
       {
+        name: 'Split view',
+        icon: 'columns',
+        summary: `The split view component displays a list alongside a workspace where users can view details and take actions.`,
+        url: '/components/split-view',
+        getCodeFiles: () => this.getDemoFiles('Split view')
+      },
+      {
         name: 'Status indicator',
         icon: 'exclamation-triangle',
         // tslint:disable-next-line
@@ -1066,6 +1073,18 @@ export class SkyDemoComponentsService {
           ]
         },
         getCodeFiles: () => this.getDemoFiles('Toast')
+      },
+      {
+        name: 'Toggle switch',
+        icon: 'toggle-on',
+        summary: `The toggle switch component renders a SKY UX-themed switch for values that can either be "on" or "off."`,
+        url: '/components/toggle-switch',
+        imports: {
+          '@skyux/forms': [
+            'SkyToggleSwitchModule'
+          ]
+        },
+        getCodeFiles: () => this.getDemoFiles('Toggle switch')
       },
       {
         name: 'Tokens',

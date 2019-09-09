@@ -3,12 +3,14 @@ import {
 } from '@angular/core';
 
 import {
-  SkyPhoneFieldDemoComponent,
-  SkySummaryActionBarDemoComponent,
   SkyCodeBlockDemoComponent,
   SkyCopyToClipboardDemoComponent,
   SkyDateRangePickerDemoComponent,
-  SkyInlineFormDemoComponent
+  SkyInlineFormDemoComponent,
+  SkyPhoneFieldDemoComponent,
+  SkySplitViewDemoComponent,
+  SkySummaryActionBarDemoComponent,
+  SkyToggleSwitchDemoComponent
 } from '.';
 
 /**
@@ -140,14 +142,48 @@ export class SkyDocsDemoCodeService {
       component: SkyInlineFormDemoComponent,
       files: [
         {
-          name: 'inline-form-demo-component.html',
+          name: 'inline-form-demo.component.html',
           fileContents: require('!!raw-loader!./inline-form/inline-form-demo.component.html')
         },
         {
-          name: 'inline-form-demo-component.ts',
+          name: 'inline-form-demo.component.ts',
           fileContents: require('!!raw-loader!./inline-form/inline-form-demo.component.ts'),
           componentName: 'SkyInlineFormDemoComponent',
           bootstrapSelector: 'sky-inline-form-demo'
+        }
+      ]
+    },
+
+    {
+      name: 'Split view',
+      component: SkySplitViewDemoComponent,
+      files: [
+        {
+          name: 'split-view-demo-component.html',
+          fileContents: require('!!raw-loader!./split-view/split-view-demo.component.html')
+        },
+        {
+          name: 'split-view-demo-component.ts',
+          fileContents: require('!!raw-loader!./split-view/split-view-demo.component.ts'),
+          componentName: 'SkySplitViewDemoComponent',
+          bootstrapSelector: 'sky-split-view-demo'
+        }
+      ]
+    },
+
+    {
+      name: 'Toggle switch',
+      component: SkyToggleSwitchDemoComponent,
+      files: [
+        {
+          name: 'toggle-switch-demo.component.html',
+          fileContents: require('!!raw-loader!./toggle-switch/toggle-switch-demo.component.html')
+        },
+        {
+          name: 'toggle-switch-demo.component.ts',
+          fileContents: require('!!raw-loader!./toggle-switch/toggle-switch-demo.component.ts'),
+          componentName: 'SkyToggleSwitchDemoComponent',
+          bootstrapSelector: 'sky-toggle-switch-demo'
         }
       ]
     }

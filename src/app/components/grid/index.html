@@ -79,6 +79,12 @@
     Specifies the columns to display in the grid based on the <sky-code>id</sky-code> or <sky-code>field</sky-code> properties of the columns. If no columns are specified, then the grid displays all columns. This property accepts an array of <sky-code>string</sky-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
+      propertyName="selectedRowIds"
+      isOptional="true"
+    >
+    Specifies a set of IDs for the rows to select in a multiselect grid. The IDs match the <sky-code>id</sky-code> properties of the <sky-code>data</sky-code> objects. Rows with IDs that are not included are de-selected in the grid. This property accepts an array of <sky-code>string</sky-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
       propertyName="settingsKey"
       isOptional="true"
     >
@@ -199,7 +205,7 @@
       isOptional="true"
       defaultValue="false"
     >
-    Indicates whether the column is locked. If set to <sky-code>true</sky-code>, then users cannot drag the column to another position and or drag other columns before the locked column.
+    Indicates whether the column is locked. The intent is to display locked columns first on the left side of the grid. If set to <sky-code>true</sky-code>, then users cannot drag the column to another position and or drag other columns before the locked column.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="search"
