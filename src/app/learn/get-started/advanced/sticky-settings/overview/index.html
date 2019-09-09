@@ -28,7 +28,7 @@
       providers: [
         {
           provide: SkyUIConfigService,
-          useClass: SkyAppUIConfigService
+          useClass: AppUIConfigService
         }
       ]
     })
@@ -51,7 +51,7 @@ import {
 } from '@skyux/config';
 
 @Injectable()
-export class SkyAppUIConfigService {
+export class AppUIConfigService {
 
   constructor(
     @Inject(LOCAL_STORAGE) private storage: StorageService
