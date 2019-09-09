@@ -1,13 +1,170 @@
-<sky-demo-page
-  pageTitle="Radio Button"
-  skyuxModule="SkyRadioModule"
-  packageName="@skyux/forms"
+<sky-tabbed-demo-page
+  pageTitle="Radio button"
 >
 
   <sky-demo-page-summary>
-    The radio button component renders a SKY UX-themed replacement for an HTML <sky-code>input</sky-code> element with <sky-code>type="radio"</sky-code>. When users select a radio button, its value is driven through an <sky-code>ngModel</sky-code> attribute that you specify on the <sky-code>sky-radio</sky-code> element or the parent <sky-code>sky-radio-group</sky-code> element. The <sky-code>sky-radio-label</sky-code> component specifies labels for radio buttons, and the <sky-code>sky-radio-group</sky-code> component organizes radio buttons into a group. The <sky-code>sky-radio-group</sky-code> component is required for radio buttons on Angular reactive forms, and we recommend using it with all radio buttons.
-  </sky-demo-page-summary>
+The radio button component is a selection input for choosing one option from a small set.
+</sky-demo-page-summary>
+    
+<div class="sky-margin-stacked-content-section">
+    <sky-demo-page-example>
+        <sky-radio-demo></sky-radio-demo>
+    </sky-demo-page-example>
+</div>
 
+<sky-tabset id="content-tabs">
+	
+	<sky-tab tabHeading="Design">
+        
+        <sky-demo-page-content sectionHeading="Usage">
+            
+            <h3 class="sky-text-success">Use when</h3>
+            
+            <sky-docs-visual-example>
+                <sky-docs-visual-example-text>
+                    <p>Use radio buttons when the user must choose one option from a set of 2-5. Use radio buttons in a modal, where the user will confirm the decision before changes take effect.</p>
+                </sky-docs-visual-example-text>
+                
+                <sky-docs-visual-example-image>
+                    <div>
+                    <img src="~/assets/img/guidelines/radio-button/radio-button-usage-1.png" />
+                    <div class="caption caption-success sky-text-success">Do use radio buttons for single selections when the number of choices is low.</div>
+                    </div>
+                </sky-docs-visual-example-image>
+            </sky-docs-visual-example>
+            
+            <sky-docs-visual-example>
+                <sky-docs-visual-example-text>
+                    <p>Use radio buttons if the user’s decision will make a small number of other inputs relevant or irrelevant. The conditional inputs are visible and disabled when their activating radio is not selected.</p>
+                </sky-docs-visual-example-text>
+                
+                <sky-docs-visual-example-image>
+                    <div>
+                    <img src="~/assets/img/guidelines/radio-button/radio-button-usage-2.png" />
+                    <div class="caption caption-success sky-text-success">Do let radio buttons conditionally enable more inputs as part of a task.</div>
+                    </div>
+                </sky-docs-visual-example-image>
+            </sky-docs-visual-example>
+            
+            <sky-docs-visual-example>
+                <sky-docs-visual-example-text>
+                    <p>Use an icon radio group when choices can be clearly communicated with icons, and can be combined under a single field or question. </p>
+                </sky-docs-visual-example-text>
+                
+                <sky-docs-visual-example-image>
+                    <div>
+                    <img src="~/assets/img/guidelines/radio-button/radio-button-usage-3.png" />
+                    <div class="caption caption-success sky-text-success">Do use icon radio groups when choices can be clearly illustrated with icons.</div>
+                    </div>
+                </sky-docs-visual-example-image>
+            </sky-docs-visual-example>
+            
+            <sky-docs-visual-example>
+                <sky-docs-visual-example-text>
+                    <p>Use individual icon radio buttons when the radio group is spread across multiple rows or objects.</p>
+                </sky-docs-visual-example-text>
+                
+                <sky-docs-visual-example-image>
+                    <div>
+                    <img src="~/assets/img/guidelines/radio-button/radio-button-usage-4.png" />
+                    <div class="caption caption-success sky-text-success">Do use icon radio buttons when the choices cannot be grouped together.</div>
+                    </div>
+                </sky-docs-visual-example-image>
+            </sky-docs-visual-example>
+            
+            <h3 class="sky-text-danger">Don't use when</h3>
+            
+            <sky-docs-visual-example>
+                <sky-docs-visual-example-text>
+                    <p>Don’t use radio buttons when the set of available choices is more than 5.</p>
+                </sky-docs-visual-example-text>
+                
+                <sky-docs-visual-example-image>
+                    <div>
+                    <img src="~/assets/img/guidelines/radio-button/radio-button-usage-5.png" />
+                    <div class="caption caption-danger sky-text-danger">Don't use radio buttons when there are many choices.</div>
+                    </div>
+                    <div>
+                    <img src="~/assets/img/guidelines/radio-button/radio-button-usage-6.png" />
+                    <div class="caption caption-success sky-text-success">Do use different selection controls for more than 5 choices.</div>
+                    </div>
+                </sky-docs-visual-example-image>
+            </sky-docs-visual-example>
+            
+            <sky-docs-visual-example>
+                <sky-docs-visual-example-text>
+                    <p>Don’t use radio buttons when one choice is the exact opposite or absence of the other. Rephrase the question and use checkboxes instead.</p>
+                </sky-docs-visual-example-text>
+                
+                <sky-docs-visual-example-image>
+                    <div>
+                    <img src="~/assets/img/guidelines/radio-button/radio-button-usage-7.png" />
+                    <div class="caption caption-danger sky-text-danger">Don't represent two exact opposites with radio buttons.</div>
+                    </div>
+                    <div>
+                    <img src="~/assets/img/guidelines/radio-button/radio-button-usage-8.png" />
+                    <div class="caption caption-success sky-text-success">Do use checkboxes for choices between exact opposites.</div>
+                    </div>
+                </sky-docs-visual-example-image>
+            </sky-docs-visual-example>
+            
+            <sky-docs-visual-example>
+                <sky-docs-visual-example-text>
+                    <p>Don’t use radio buttons when the user must make a choice that will significantly change the rest of a workflow. Use action buttons instead and place that decision at the beginning of the task.</p>
+                </sky-docs-visual-example-text>
+                
+                <sky-docs-visual-example-image>
+                    <div>
+                    <img src="~/assets/img/guidelines/radio-button/radio-button-usage-9.png" />
+                    <div class="caption caption-danger sky-text-danger">Don't use radio buttons for decisions that will have a drastic effect on the rest of the decisions in a workflow.</div>
+                    </div>
+                    <div>
+                    <img src="~/assets/img/guidelines/radio-button/radio-button-usage-10.png" />
+                    <div class="caption caption-success sky-text-success">Do use action buttons for decisions that branch the user into signficantly different workflows.</div>
+                    </div>
+                </sky-docs-visual-example-image>
+            </sky-docs-visual-example>
+            
+            <sky-docs-visual-example>
+                <sky-docs-visual-example-text>
+                    <p>Don’t use icon radio buttons if the difference between the choices cannot be clearly communicated with icons. Use traditional radio buttons to provide the needed context with text.</p>
+                </sky-docs-visual-example-text>
+                
+                <sky-docs-visual-example-image>
+                    <div>
+                    <img src="~/assets/img/guidelines/radio-button/radio-button-usage-11.png" />
+                    <div class="caption caption-danger sky-text-danger">Don't use icon radio buttons when the icons may be unclear.</div>
+                    </div>
+                    <div>
+                    <img src="~/assets/img/guidelines/radio-button/radio-button-usage-12.png" />
+                    <div class="caption caption-success sky-text-success">Do use radio buttons with text labels when icons are not immediately obvious.</div>
+                    </div>
+                </sky-docs-visual-example-image>
+            </sky-docs-visual-example>
+            
+            <sky-docs-visual-example>
+                <sky-docs-visual-example-text>
+                    <p>Don’t use ungrouped icon radio buttons when the choices could be grouped together on the same line.</p>
+                </sky-docs-visual-example-text>
+                
+                <sky-docs-visual-example-image>
+                    <div>
+                    <img src="~/assets/img/guidelines/radio-button/radio-button-usage-13.png" />
+                    <div class="caption caption-danger sky-text-danger">Don't use individual icon radio buttons when they could be grouped.</div>
+                    </div>
+                    <div>
+                    <img src="~/assets/img/guidelines/radio-button/radio-button-usage-14.png" />
+                    <div class="caption caption-success sky-text-success">Do use icon radio groups when possible.</div>
+                    </div>
+                </sky-docs-visual-example-image>
+            </sky-docs-visual-example>
+            
+        </sky-demo-page-content>
+        
+    </sky-tab>
+    
+    <sky-tab tabHeading="Development">
+        
   <sky-demo-page-properties sectionHeading="Radio button group properties">
     <p>
       The <sky-code>sky-radio-group</sky-code> component wraps <sky-code>sky-radio</sky-code> components to organize radio buttons into a group. It is required for SKY UX radio buttons on Angular reactive forms to manage the selected values and keep the forms up-to-date. We recommend using the <sky-code>sky-radio-group</sky-code> component with all radio buttons.
@@ -133,5 +290,8 @@
       For icon radio buttons, use the <sky-code>label</sky-code> or <sky-code>labelledby</sky-code> input. For people using assistive technology, the visible icon may not convey sufficient information.
     </p>
   </sky-demo-page-content>
-
-</sky-demo-page>
+        
+    </sky-tab>
+    
+</sky-tabset>
+</sky-tabbed-demo-page>
