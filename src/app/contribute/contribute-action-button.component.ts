@@ -8,7 +8,7 @@ export class ContributeActionButtonsComponent {
   public routes = [
     {
       name: 'Contribution process',
-      path: '/contribute/overview',
+      path: '/contribute/contribution-process',
       icon: 'file',
       summary: 'Learn how to contribute to SKY UX, and review our contribution guidelines.'
     },

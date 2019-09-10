@@ -16,7 +16,7 @@
       </li>
       <li>
         <p>
-          Launch a second command prompt, <sky-code>cd</sky-code> to the folder where you cloned your branch, and run <sky-code>skyux serve</sky-code>. This launches the visual testing pages where you can view updates based on your code changes. Depending on the nature of your changes, you may need to update the <a stacheRouterLink="/contribute/overview/guidelines" fragment="visual-regression-tests">visual regression tests</a>. Any changes will impact the visual e2e tests, and you may need to reset the baselines after you make changes to get the build to pass.
+          Launch a second command prompt, <sky-code>cd</sky-code> to the folder where you cloned your branch, and run <sky-code>skyux serve</sky-code>. This launches the visual testing pages where you can view updates based on your code changes. Depending on the nature of your changes, you may need to update the <a stacheRouterLink="/contribute/contribution-process/guidelines" fragment="visual-regression-tests">visual regression tests</a>. Any changes will impact the visual e2e tests, and you may need to reset the baselines after you make changes to get the build to pass.
         </p>
         <p>
           The <a href="https://github.com/blackbaud/skyux-sdk-cli">SKY UX CLI</a> authors SKY UX demos. If this is your first time using SKY UX Builder, then install the CLI as a global NPM package (<sky-code>npm i -g @skyux-sdk/cli</sky-code>) before you run <sky-code>skyux serve</sky-code>.
@@ -31,6 +31,9 @@
     </p>
     <p>
       Also note that the recommended change detection strategy for SKY UX components is to use <a href="https://angular.io/api/core/ChangeDetectionStrategy">the <sky-code>OnPush</sky-code> property instead of <sky-code>Default</sky-code></a>.
+    </p>
+    <p>
+      For Blackbaud developers, additional <a href="https://docs.blackbaud.com/skyux-team-docs/style">style guidelines for authoring SKY UX components</a> are available in our team documentation site. This internal Blackbaud-only site is not available to external developers.
     </p>
         
 </stache>
