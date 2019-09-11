@@ -1,0 +1,139 @@
+<sky-tabbed-demo-page
+  pageTitle="Character Count"
+>
+
+<sky-demo-page-summary>
+The character count component is an extension for text input fields with character limits.
+</sky-demo-page-summary>
+
+<div class="sky-margin-stacked-content-section">
+    <!--demo--> 
+</div>
+    
+<sky-tabset id="content-tabs">
+	
+	<sky-tab tabHeading="Design">
+        
+        <sky-demo-page-content sectionHeading="Usage">
+            
+            <h3 class="sky-text-success">Use when</h3>
+            <sky-docs-visual-example>
+                <sky-docs-visual-example-text>
+                    <p>Use character count when a user has a high likelihood of being impacted by a character limit. This could be because technical requirements make the limit low, or because user input is freeform and could be very long.</p>
+                </sky-docs-visual-example-text>
+                <sky-docs-visual-example-image>
+                    <div>
+                        <img src="~/assets/img/guidelines/character-count/character-count-usage-1.png" />
+                        <div class="caption caption-success sky-text-success">Do use character count on input fields with character limits that a user could realistically exceed.</div>
+                    </div>
+                </sky-docs-visual-example-image>
+            </sky-docs-visual-example>
+            
+            <h3 class="sky-text-danger">Don't use when</h3>
+            
+            <sky-docs-visual-example>
+                <sky-docs-visual-example-text>
+                    <p>Don’t use character count on inputs where the character limit is apparent or implied by the data type.</p>
+                </sky-docs-visual-example-text>
+                <sky-docs-visual-example-image>
+                    <div>
+                        <img src="~/assets/img/guidelines/character-count/character-count-usage-2.png" />
+                        <div class="caption caption-danger sky-text-danger">Don't use character count when the content has an expected or standard length.</div>
+                    </div>
+                </sky-docs-visual-example-image>
+            </sky-docs-visual-example>
+            
+            <sky-docs-visual-example>
+                <sky-docs-visual-example-text>
+                    <p>Don’t use character count on inputs when exceeding the character limit is unrealistic. Use normal form validation to handle errors caused by character limit violations.</p>
+                </sky-docs-visual-example-text>
+                <sky-docs-visual-example-image>
+                    <div>
+                        <img src="~/assets/img/guidelines/character-count/character-count-usage-3.png" />
+                        <div class="caption caption-danger sky-text-danger">Don't use character count when the character limit is unlikely to be exceeded.</div>
+                    </div>
+                    <div>
+                        <img src="~/assets/img/guidelines/character-count/character-count-usage-4.png" />
+                        <div class="caption caption-success sky-text-success">Do use normal form validation for edge cases where a high character limit is exceeded.</div>
+                    </div>
+                </sky-docs-visual-example-image>
+            </sky-docs-visual-example>
+            
+        </sky-demo-page-content>
+        
+        <sky-demo-page-content sectionHeading="Anatomy">
+        
+            <sky-docs-anatomy imagePath="~/assets/img/guidelines/character-count/character-count-anatomy-1.png">
+                <sky-docs-anatomy-item anatomyNumber="1">Input field</sky-docs-anatomy-item>
+                <sky-docs-anatomy-item anatomyNumber="2">Character count/limit</sky-docs-anatomy-item>
+                <sky-docs-anatomy-item anatomyNumber="3">Danger icon</sky-docs-anatomy-item>
+                <sky-docs-anatomy-item anatomyNumber="4"><a routerLink="/components/form">Status indicator</a> (danger)</sky-docs-anatomy-item>
+            </sky-docs-anatomy>
+            
+        </sky-demo-page-content>
+        
+        <sky-demo-page-content sectionHeading="Behavior & states">
+        
+            <div class="sky-text-block">
+                <p>The character count component is an extension of the form component, which defines the styles and appearance of the input field states.</p>
+            </div>
+            
+            <sky-demo-page-component-states>
+                <sky-demo-page-component-state stateName="Empty field" imagePath="~/assets/img/guidelines/character-count/character-count-state-1.png"></sky-demo-page-component-state>
+                <sky-demo-page-component-state stateName="Adding text" imagePath="~/assets/img/guidelines/character-count/character-count-state-2.png"></sky-demo-page-component-state>
+                <sky-demo-page-component-state stateName="At character limit" imagePath="~/assets/img/guidelines/character-count/character-count-state-3.png"></sky-demo-page-component-state>
+                <sky-demo-page-component-state stateName="Over the limit with focus" imagePath="~/assets/img/guidelines/character-count/character-count-state-4.png"></sky-demo-page-component-state>
+                <sky-demo-page-component-state stateName="Over the limit without focus" imagePath="~/assets/img/guidelines/character-count/character-count-state-5.png"></sky-demo-page-component-state>
+            </sky-demo-page-component-states>
+            
+        </sky-demo-page-content>
+        
+        <sky-demo-page-content sectionHeading="Content">
+        
+            <div class="sky-text-block">
+                <p>For the validation message when the character limit is exceeded, use the following format:</p>
+                <p><b>Limit &lt;input field label&gt; to &lt;n&gt; characters.</b></p>
+            </div>
+            
+        </sky-demo-page-content>
+        
+        <sky-demo-page-content sectionHeading="Layout">
+        
+            <sky-docs-visual-example>
+                <sky-docs-visual-example-text>
+                    <p>The character count is always located above the right side of the input field. If the field label is long, it wraps to the next line without displacing the character count.</p>
+                </sky-docs-visual-example-text>
+                <sky-docs-visual-example-image>
+                    <div>
+                        <img src="~/assets/img/guidelines/character-count/character-count-layout-1.png" />
+                    </div>
+                </sky-docs-visual-example-image>
+            </sky-docs-visual-example>
+            
+        </sky-demo-page-content>
+        
+        <sky-demo-page-content sectionHeading="Related information">
+        
+            <h3>Components</h3>
+			<ul>
+				<li><a routerLink="/components/form">Form</a></li>
+                <li><a routerLink="/components/status-indicator">Status indicator</a></li>
+			</ul>
+		<h3>Guidelines</h3>
+			<ul>
+				<li><a routerLink="/design/guidelines/form-design">Form design</a></li>
+			</ul>
+            
+        </sky-demo-page-content>
+        
+    </sky-tab>
+    
+    <sky-tab tabHeading="Development">
+    
+        
+        
+    </sky-tab>
+    
+    </sky-tabset>
+    
+</sky-tabbed-demo-page>
