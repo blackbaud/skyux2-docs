@@ -1,8 +1,6 @@
-<sky-demo-page
+<sky-tabbed-demo-page
   pageTitle="File Attachment"
   navTitle="File attachment"
-  skyuxModule="SkyFileAttachmentsModule"
-  packageName="@skyux/forms"
 >
 
   <sky-demo-page-summary>
@@ -20,6 +18,90 @@
     </p>
   </sky-demo-page-summary>
 
+  <div class="sky-margin-stacked-content-section">
+	<sky-demo-page-example>
+    <sky-file-attachment-demo></sky-file-attachment-demo>
+  </sky-demo-page-example>
+	</div>
+  
+  <sky-tabset id="content-tabs">
+	
+	<sky-tab
+		tabHeading="Design - single file attachment">	
+	<sky-demo-page-content sectionHeading="Usage">
+	<h3 class="sky-text-success">Use when</h3>
+		<sky-docs-visual-example>
+			<sky-docs-visual-example-text>
+					<p>Use single file attachment when the user needs to upload one file to which they have local access.</p>
+			</sky-docs-visual-example-text>
+			<sky-docs-visual-example-image>
+				<div>
+					<img src="~/assets/img/guidelines/single-file-attach/use.png" />
+					<div class="caption caption-success sky-text-success">Do use single file attachment to upload one file.</div>
+				</div>
+			</sky-docs-visual-example-image>
+		</sky-docs-visual-example>
+		
+	<h3 class="sky-text-danger">Don't use when</h3>
+    <p class="sky-text-block">
+      Don't use single file attachment if the user might need to link to a URL instead of uploading a local file. Use file attachment instead.
+    </p>
+		<sky-docs-visual-example>
+			<sky-docs-visual-example-text>
+					<p>Don't use single file attachment when the user might need to upload more than one file. Use file attachment instead.</p>
+			</sky-docs-visual-example-text>
+			<sky-docs-visual-example-image>
+				<div>
+					<img src="~/assets/img/guidelines/single-file-attach/dont-use-multi.png" />
+					<div class="caption caption-danger sky-text-danger">Don't use single file attachment if the user might upload multiple files.</div>
+        </div>
+			</sky-docs-visual-example-image>
+		</sky-docs-visual-example>
+</sky-demo-page-content>
+  
+  <sky-demo-page-content sectionHeading="Anatomy">
+		<sky-docs-anatomy imagePath="~/assets/img/guidelines/single-file-attach/anatomy.png">
+      <sky-docs-anatomy-item anatomyNumber="1">File attachment button</sky-docs-anatomy-item>
+      <sky-docs-anatomy-item anatomyNumber="2">File name</sky-docs-anatomy-item>
+      <sky-docs-anatomy-item anatomyNumber="3">Delete button</sky-docs-anatomy-item>
+      <sky-docs-anatomy-item anatomyNumber="4">Image preview</sky-docs-anatomy-item>
+    </sky-docs-anatomy>
+	</sky-demo-page-content>
+    
+  <sky-demo-page-content sectionHeading="States">
+    <div class="sky-margin-stacked-content-section">
+    <sky-demo-page-component-states>
+      <sky-demo-page-component-state stateName="Base" imagePath="~/assets/img/guidelines/single-file-attach/state-base.png"></sky-demo-page-component-state>
+      <sky-demo-page-component-state stateName="Attached, image" imagePath="~/assets/img/guidelines/single-file-attach/state-attached-image.png"></sky-demo-page-component-state>
+      <sky-demo-page-component-state stateName="Attached, non-image" imagePath="~/assets/img/guidelines/single-file-attach/state-attached-non-image.png"></sky-demo-page-component-state>
+      <sky-demo-page-component-state stateName="Error" imagePath="~/assets/img/guidelines/single-file-attach/state-error.png"></sky-demo-page-component-state>
+    </sky-demo-page-component-states>
+    </div>
+	</sky-demo-page-content>
+  
+  <sky-demo-page-content sectionHeading="Related information">
+		<h3>Guidelines</h3>
+			<ul>
+				<li><a routerLink="/design/guidelines/form-design">Form design</a></li>
+			</ul>
+	</sky-demo-page-content>
+    
+  </sky-tab>
+
+  <sky-tab
+		tabHeading="Design - file attachment">	
+  </sky-tab>
+
+  <sky-tab
+    tabHeading="Development">
+
+    <sky-demo-page-module-info
+      skyuxModule="SkyFileAttachmentsModule"
+      packageName="@skyux/forms"
+      githubRepo="skyux-forms"
+    >
+	 </sky-demo-page-module-info>
+    
   <sky-demo-page-properties sectionHeading="File drop properties">
     <sky-demo-page-property
       propertyName="acceptedTypes"
@@ -107,4 +189,8 @@
     </sky-demo-page-code>
   </sky-demo-page-example>
 
-</sky-demo-page>
+  </sky-tab>
+    
+</sky-tabset>
+    
+</sky-tabbed-demo-page>
