@@ -1,0 +1,22 @@
+<stache
+  pageTitle="Debugging"
+  showTableofContents="true">
+
+  <p>
+    While you can debug SKY UX code in your browser using developer tools, you can also debug the code in Visual Studio Code. That option just requires a few additional steps.
+  </p>
+
+  <stache-page-anchor>
+    Debug in Visual Studio Code
+  </stache-page-anchor>
+
+  <ol>
+    <li>Follow the procedures in the <a href="https://github.com/microsoft/vscode-chrome-debug/blob/master/README.md">VS Code - Debugger for Chrome repo</a>.</li>
+    <li>From the terminal, launch Chrome with <sky-code>--remote-debugging-port=9222</sky-code>.</li>
+    <li>In VS Code, run <sky-code>skyux serve</sky-code>.</li>
+    <li>In VS Code, run the <sky-code>Attach to Chrome</sky-code> or <sky-code>Attach to Edge</sky-code> task in VS Code.</li>
+  </ol>
+
+</stache>
+
+
