@@ -35,19 +35,6 @@ The radio button component is a selection input for choosing one option from a s
             
             <sky-docs-visual-example>
                 <sky-docs-visual-example-text>
-                    <p>Use radio buttons if the user’s decision will make a small number of other inputs relevant or irrelevant. The conditional inputs are visible and disabled when their activating radio is not selected.</p>
-                </sky-docs-visual-example-text>
-                
-                <sky-docs-visual-example-image>
-                    <div>
-                    <img src="~/assets/img/guidelines/radio-button/radio-button-usage-2.png" />
-                    <div class="caption caption-success sky-text-success">Do let radio buttons conditionally enable more inputs as part of a task.</div>
-                    </div>
-                </sky-docs-visual-example-image>
-            </sky-docs-visual-example>
-            
-            <sky-docs-visual-example>
-                <sky-docs-visual-example-text>
                     <p>Use an icon radio group when choices can be clearly communicated with icons, and can be combined under a single field or question. </p>
                 </sky-docs-visual-example-text>
                 
@@ -68,6 +55,20 @@ The radio button component is a selection input for choosing one option from a s
                     <div>
                     <img src="~/assets/img/guidelines/radio-button/radio-button-usage-4.png" />
                     <div class="caption caption-success sky-text-success">Do use icon radio buttons when the choices cannot be grouped together.</div>
+                    </div>
+                </sky-docs-visual-example-image>
+            </sky-docs-visual-example>
+            
+            <sky-docs-visual-example>
+                <sky-docs-visual-example-text>
+                    <p>Use radio buttons if the user’s decision will make a small number of other inputs relevant or irrelevant. If 1-2 inputs are conditional on a certain selection, the conditional inputs are visible and disabled when their activating radio is not selected. If more inputs are conditional, hide them and progressively disclose them when their activating radio is selected.</p>
+                    <p>If every radio choice has subsequent conditional inputs, or if the workflow changes significantly based on the user's choice, consider using <a routerLink="/components/action-button">action buttons</a> to present the choices.</p>
+                </sky-docs-visual-example-text>
+                
+                <sky-docs-visual-example-image>
+                    <div>
+                    <img src="~/assets/img/guidelines/radio-button/radio-button-usage-2.png" />
+                    <div class="caption caption-success sky-text-success">Do let radio buttons conditionally enable/disclose more inputs as part of a task.</div>
                     </div>
                 </sky-docs-visual-example-image>
             </sky-docs-visual-example>
