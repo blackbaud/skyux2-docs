@@ -32,7 +32,7 @@
       defaultValue="SkyListInMemoryDataProvider"
       isOptional="true"
     >
-    Specifies a data provider to obtain the data to display. The list component requires this property or the <sky-code>data</sky-code> property. Acceptable values: <sky-code>extends ListDataProvider</sky-code>. To extend ListDataProvider, provide a <sky-code>get</sky-code> function that accepts a <sky-code>ListDataRequestModel</sky-code> as an argument and returns an <sky-code>Observable ListDataResponseModel </sky-code>, and a <sky-code>count</sky-code> function that returns an <sky-code>Observable number</sky-code> that indicates how many total records are in the list. You must control the filtering and searching when you opt in to the <sky-code>dataProvider</sky-code>.
+    Specifies a data provider to obtain the data to display. The list component requires this property or the <sky-code>data</sky-code> property. Acceptable values: <sky-code>extends ListDataProvider</sky-code>. To extend ListDataProvider, provide a <sky-code>get</sky-code> function that accepts a <sky-code>ListDataRequestModel</sky-code> as an argument and returns an <sky-code>Observable ListDataResponseModel </sky-code>, and a <sky-code>count</sky-code> function that returns an <sky-code>Observable number</sky-code> that indicates how many total records are in the list. For lists that use <sky-code>dataProvider</sky-code> instead of <sky-code>data</sky-code>, the consumer must take responsibility for managing all <sky-code>ListDataRequestModel</sky-code> properties. For examples of custom searching, filters, and paging, see the <a stacheRouterLink="." fragment="code">demo code</a> below.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="initialTotal"
