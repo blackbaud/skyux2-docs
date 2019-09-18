@@ -5,7 +5,7 @@
 >
 
   <sky-demo-page-summary>
-    The datepicker module contains directives to let users select dates.  It is a SKY UX-themed replacement for the HTML <sky-code>input</sky-code> element with <sky-code>type="date"</sky-code>. The value that users select is driven through the <sky-code>ngModel</sky-code> attribute specified on the <sky-code>input</sky-code> element.
+    The datepicker module contains directives to let users select dates or fuzzy dates.  It is a SKY UX-themed replacement for the HTML <sky-code>input</sky-code> element with <sky-code>type="date"</sky-code>. The value that users select is driven through the <sky-code>ngModel</sky-code> attribute specified on the <sky-code>input</sky-code> element.
 
     <p>
       To use the datepicker module, you must install <sky-code>SkyPopoverModule</sky-code> as a dependency to your project. For information on <sky-code>SkyPopoverModule</sky-code>, see <a routerLink="/components/popover">Popover module</a>.
@@ -55,6 +55,60 @@
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
+  <sky-demo-page-properties sectionHeading="Fuzzy datepicker input directive properties">
+    <sky-demo-page-property
+      propertyName="skyFuzzyDatepickerInput"
+    >
+      Creates the fuzzy datepicker input and calendar. Place this directive on an <sky-code>input</sky-code> element, and wrap the input in a <sky-code>sky-datepicker</sky-code> component.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="dateFormat"
+      isOptional="true"
+      defaultValue="MM/DD/YYYY">
+      Specifies the date format for the input. Place this attribute on the <sky-code>input</sky-code> element to override the default date format in <sky-code>SkyDatepickerConfigService</sky-code>. This property accepts <sky-code>string</sky-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="yearRequired"
+      isOptional="true"
+      defaultValue="false">
+      Indicates whether <sky-code>year</sky-code> is required in the resulting fuzzy date. Place this attribute on the <sky-code>input</sky-code> element set to true to require <sky-code>year</sky-code>. This property accepts a <sky-code>boolean</sky-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="cannotBeFuture"
+      isOptional="true"
+      defaultValue="false">
+      Indicates whether the resulting fuzzy date may be in the future. Place this attribute on the <sky-code>input</sky-code> element set to true to prevent future fuzzy dates. This property accepts a <sky-code>boolean</sky-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="maxFuzzyDate"
+      isOptional="true">
+      Specifies the maximum fuzzy date. Place this attribute on the <sky-code>input</sky-code> element to restrict the valid fuzzy date. This property accepts a <sky-code>Fuzzy Date</sky-code> value which includes a numeric month/day/year values. e.g. <sky-code>&#123; month&#58; 1, day&#58; 1, year&#58; 2017 &#125;</sky-code>
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="minFuzzyDate"
+      isOptional="true"    >
+      Specifies the minimum fuzzy date. Place this attribute on the <sky-code>input</sky-code> element to restrict the valid fuzzy date. This property accepts a <sky-code>Fuzzy Date</sky-code> value which includes a numeric month/day/year values. e.g. <sky-code>&#123; month&#58; 1, day&#58; 1, year&#58; 2017 &#125;</sky-code>
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="skyDatepickerNoValidate"
+      isOptional="true"
+      defaultValue="false">
+      Indicates whether to prevent validation on the datepicker input. When set to <sky-code>true</sky-code>, date validation does not run on the input. This property accepts <sky-code>boolean</sky-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="startingDay"
+      isOptional="true"
+      defaultValue="0">
+      Specifies the starting day of the week in the calendar, where <sky-code>0</sky-code> sets the starting day to Sunday. Place this attribute on the <sky-code>input</sky-code> element to override the default starting day in <sky-code>SkyDatepickerConfigService</sky-code>. This property accepts <sky-code>number</sky-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="disabled"
+      isOptional="true"
+      defaultValue="false">
+      Indicates whether to disable the datepicker. This property accepts <sky-code>boolean</sky-code> values.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
   <sky-demo-page-properties sectionHeading="SkyDatepickerConfigService properties">
     <sky-demo-page-property
       propertyName="dateFormat"
@@ -87,4 +141,10 @@
     </sky-demo-page-code>
   </sky-demo-page-example>
 
+  <sky-demo-page-example>
+    <sky-fuzzy-datepicker-demo></sky-fuzzy-datepicker-demo>
+    <sky-demo-page-code
+      demoName="Fuzzy datepicker">
+    </sky-demo-page-code>
+  </sky-demo-page-example>
 </sky-demo-page>
