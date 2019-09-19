@@ -89,7 +89,91 @@
   </sky-tab>
 
   <sky-tab
-		tabHeading="Design - file attachment">	
+		tabHeading="Design - file attachment">
+    <sky-demo-page-content sectionHeading="Usage">
+    <h3 class="sky-text-success">Use when</h3>
+      <sky-docs-visual-example>
+        <sky-docs-visual-example-text>
+            <p>Use file attachment when the user needs to upload multiple files or attach a file from a URL rather than the local device.</p>
+        </sky-docs-visual-example-text>
+        <sky-docs-visual-example-image>
+          <div>
+            <img src="~/assets/img/guidelines/file-attach/use-multi.png" />
+            <div class="caption caption-success sky-text-success">Do use file attachment to upload more than one file.</div>
+          </div>
+        </sky-docs-visual-example-image>
+      </sky-docs-visual-example>
+      
+      <sky-docs-visual-example>
+        <sky-docs-visual-example-text>
+            <p>Use file attachment when the user needs to add metadata to the uploaded file.</p>
+        </sky-docs-visual-example-text>
+        <sky-docs-visual-example-image>
+          <div>
+            <img src="~/assets/img/guidelines/file-attach/use-metadata.png" />
+            <div class="caption caption-success sky-text-success">Do use file attachment to add metadata about the uploaded file.</div>
+          </div>
+        </sky-docs-visual-example-image>
+      </sky-docs-visual-example>
+
+    <h3 class="sky-text-danger">Don't use when</h3>
+      <p class="sky-text-block">
+        Don't use file attachment if the user needs to upload one local file. Use single file attachment instead.
+      </p>
+  </sky-demo-page-content>
+
+    <sky-demo-page-content sectionHeading="Anatomy">
+      <sky-docs-anatomy imagePath="~/assets/img/guidelines/file-attach/anatomy.png">
+        <sky-docs-anatomy-item anatomyNumber="1">Browse or drop local file</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item anatomyNumber="2">Attach from a URL</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item anatomyNumber="3">File name</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item anatomyNumber="4">File size</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item anatomyNumber="5">File preview</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item anatomyNumber="6">Delete button</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item anatomyNumber="7" isOptional="true">Additional metadata</sky-docs-anatomy-item>
+      </sky-docs-anatomy>
+    </sky-demo-page-content>
+    
+    <sky-demo-page-content sectionHeading="Options">
+      <h3>Attach from URL</h3>
+        <p class="sky-text-block">
+          You can specify whether you want the user to be able to attach a file from a URL or only from the local device.
+        </p>
+      <h3>Validation</h3>
+        <p class="sky-text-block">
+          You can specify the parameters for a valid file, including file type, file size or a custom validation function.
+        </p>
+    </sky-demo-page-content>
+    
+    <sky-demo-page-content sectionHeading="Behavior & states">
+      <h3>Responsiveness</h3>
+      <sky-docs-visual-example>
+        <sky-docs-visual-example-text>
+            <p>File attachment switches from a horizontal to a vertical layout in smaller viewports.</p>
+        </sky-docs-visual-example-text>
+        <sky-docs-visual-example-image>
+          <div>
+            <img src="~/assets/img/guidelines/file-attach/behavior-responsive.png" />
+          </div>
+        </sky-docs-visual-example-image>
+      </sky-docs-visual-example>
+      
+      <div class="sky-margin-stacked-content-section">
+      <h3>States</h3>
+      <sky-demo-page-component-states>
+        <sky-demo-page-component-state stateName="Base" imagePath="~/assets/img/guidelines/file-attach/state-base.png"></sky-demo-page-component-state>
+        <sky-demo-page-component-state stateName="Attached, image" imagePath="~/assets/img/guidelines/file-attach/state-attached-image.png"></sky-demo-page-component-state>
+        <sky-demo-page-component-state stateName="Attached, non-image" imagePath="~/assets/img/guidelines/file-attach/state-attached-other.png"></sky-demo-page-component-state>
+      </sky-demo-page-component-states>
+      </div>
+    </sky-demo-page-content>
+
+    <sky-demo-page-content sectionHeading="Related information">
+      <h3>Guidelines</h3>
+        <ul>
+          <li><a routerLink="/design/guidelines/form-design">Form design</a></li>
+        </ul>
+    </sky-demo-page-content>
   </sky-tab>
 
   <sky-tab
