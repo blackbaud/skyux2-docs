@@ -1146,7 +1146,7 @@ export class SkyDemoComponentsService {
       {
         name: 'URL validation',
         icon: 'check',
-        summary: 'The URL validation module ensures that user entries in an input element are valid URs.',
+        summary: 'The URL validation module ensures that user entries in an input element are valid URLs.',
         url: '/components/url-validation',
         imports: {
           '@skyux/validation': [
