@@ -2,8 +2,8 @@
   pageTitle="Radio button"
 >
 
-  <sky-demo-page-summary>
-The radio button component is a selection input for choosing one option from a small set.
+<sky-demo-page-summary>
+The radio button module ceates a small set of selection inputs and allows users to select one option only.
 </sky-demo-page-summary>
     
 <div class="sky-margin-stacked-content-section">
@@ -22,26 +22,26 @@ The radio button component is a selection input for choosing one option from a s
             
             <sky-docs-visual-example>
                 <sky-docs-visual-example-text>
-                    <p>Use radio buttons when the user must choose one option from a set of 2-5. Use radio buttons in a modal, where the user will confirm the decision before changes take effect.</p>
+                    <p>Use radio buttons when users must choose one option from a set of up to five. Use radio buttons in modals where users confirm decisions before changes take effect.</p>
                 </sky-docs-visual-example-text>
                 
                 <sky-docs-visual-example-image>
                     <div>
                     <img src="~/assets/img/guidelines/radio-button/radio-button-usage-1.png" />
-                    <div class="caption caption-success sky-text-success">Do use radio buttons for single selections when the number of choices is low.</div>
+                    <div class="caption caption-success sky-text-success">Do use radio buttons when users select a single item from a short list of options in a modal.</div>
                     </div>
                 </sky-docs-visual-example-image>
             </sky-docs-visual-example>
             
             <sky-docs-visual-example>
                 <sky-docs-visual-example-text>
-                    <p>Use an icon radio group when choices can be clearly communicated with icons, and can be combined under a single field or question. </p>
+                    <p>Use icon radio button groups when icons clearly communicate the options and fit under a single label. </p>
                 </sky-docs-visual-example-text>
                 
                 <sky-docs-visual-example-image>
                     <div>
                     <img src="~/assets/img/guidelines/radio-button/radio-button-usage-3.png" />
-                    <div class="caption caption-success sky-text-success">Do use icon radio groups when choices can be clearly illustrated with icons.</div>
+                    <div class="caption caption-success sky-text-success">Do use icon radio button groups when icons clearly illustrate the options.</div>
                     </div>
                 </sky-docs-visual-example-image>
             </sky-docs-visual-example>
@@ -61,14 +61,13 @@ The radio button component is a selection input for choosing one option from a s
             
             <sky-docs-visual-example>
                 <sky-docs-visual-example-text>
-                    <p>Use radio buttons if the user’s decision will make a small number of other inputs relevant or irrelevant. If 1-2 inputs are conditional on a certain selection, the conditional inputs are visible and disabled when their activating radio is not selected. If more inputs are conditional, hide them and progressively disclose them when their activating radio is selected.</p>
-                    <p>If every radio choice has subsequent conditional inputs, or if the workflow changes significantly based on the user's choice, consider using <a routerLink="/components/action-button">action buttons</a> to present the choices.</p>
+                    <p>Use radio buttons to enable conditional inputs. For options that enable one or two inputs, disable the inputs until users select the radio buttons. For options that enable more inputs, hide the inputs until users select the radio buttons. If all options in a radio button group enable conditional inputs or significantly change the workflow, consider using <a routerLink="/components/action-button">action buttons</a> instead.</p>
                 </sky-docs-visual-example-text>
                 
                 <sky-docs-visual-example-image>
                     <div>
                     <img src="~/assets/img/guidelines/radio-button/radio-button-usage-2.png" />
-                    <div class="caption caption-success sky-text-success">Do let radio buttons conditionally enable/disclose more inputs as part of a task.</div>
+                    <div class="caption caption-success sky-text-success">Do use radio buttons to enable conditional inputs as part of a task.</div>
                     </div>
                 </sky-docs-visual-example-image>
             </sky-docs-visual-example>
@@ -77,13 +76,13 @@ The radio button component is a selection input for choosing one option from a s
             
             <sky-docs-visual-example>
                 <sky-docs-visual-example-text>
-                    <p>Don’t use radio buttons when the set of available choices is more than 5.</p>
+                    <p>Don’t use radio buttons when users must choose from more than five items. Use a different <a routerLink="/design/guidelines/form-design" fragment="selection-inputs">selection input</a> instead.</p>
                 </sky-docs-visual-example-text>
                 
                 <sky-docs-visual-example-image>
                     <div class="sky-margin-stacked-content-section">
                     <img src="~/assets/img/guidelines/radio-button/radio-button-usage-5.png" />
-                    <div class="caption caption-danger sky-text-danger">Don't use radio buttons when there are many choices.</div>
+                    <div class="caption caption-danger sky-text-danger">Don't use radio buttons for a long list of options.</div>
                     </div>
                     <div>
                     <img src="~/assets/img/guidelines/radio-button/radio-button-usage-6.png" />
@@ -94,34 +93,34 @@ The radio button component is a selection input for choosing one option from a s
             
             <sky-docs-visual-example>
                 <sky-docs-visual-example-text>
-                    <p>Don’t use radio buttons when one choice is the exact opposite or absence of the other. Rephrase the question and use checkboxes instead.</p>
+                    <p>Don’t use radio buttons for two options that are exact opposites. Use a <a routerLink="/components/checkbox">checkbox</a> instead.</p>
                 </sky-docs-visual-example-text>
                 
                 <sky-docs-visual-example-image>
                     <div class="sky-margin-stacked-content-section">
                     <img src="~/assets/img/guidelines/radio-button/radio-button-usage-7.png" />
-                    <div class="caption caption-danger sky-text-danger">Don't represent two exact opposites with radio buttons.</div>
+                    <div class="caption caption-danger sky-text-danger">Don't use radio buttons to represent exact opposites.</div>
                     </div>
                     <div>
                     <img src="~/assets/img/guidelines/radio-button/radio-button-usage-8.png" />
-                    <div class="caption caption-success sky-text-success">Do use checkboxes for choices between exact opposites.</div>
+                    <div class="caption caption-success sky-text-success">Do use a checkbox to represent exact opposites.</div>
                     </div>
                 </sky-docs-visual-example-image>
             </sky-docs-visual-example>
             
             <sky-docs-visual-example>
                 <sky-docs-visual-example-text>
-                    <p>Don’t use radio buttons when the user must make a choice that will significantly change the rest of a workflow. Use <a routerLink="/components/action-button">action buttons</a> instead and place that decision at the beginning of the task.</p>
+                    <p>Don't use radio buttons when user selections significantly alter the workflow. Use <a routerLink="/components/action-button">action buttons</a> instead, and place them at the beginning of the task.</p>
                 </sky-docs-visual-example-text>
                 
                 <sky-docs-visual-example-image>
                     <div class="sky-margin-stacked-content-section">
                     <img src="~/assets/img/guidelines/radio-button/radio-button-usage-9.png" />
-                    <div class="caption caption-danger sky-text-danger">Don't use radio buttons for decisions that will have a drastic effect on the rest of the decisions in a workflow.</div>
+                    <div class="caption caption-danger sky-text-danger">Don't use radio buttons for options that significantly alter the workflow.</div>
                     </div>
                     <div>
                     <img src="~/assets/img/guidelines/radio-button/radio-button-usage-10.png" />
-                    <div class="caption caption-success sky-text-success">Do use action buttons for decisions that branch the user into signficantly different workflows.</div>
+                    <div class="caption caption-success sky-text-success">Do use action buttons for decisions that branch users into signficantly different workflows.</div>
                     </div>
                 </sky-docs-visual-example-image>
             </sky-docs-visual-example>
@@ -266,7 +265,7 @@ The radio button component is a selection input for choosing one option from a s
         
   <sky-demo-page-properties sectionHeading="Radio button group properties">
     <p>
-      The <sky-code>sky-radio-group</sky-code> component wraps <sky-code>sky-radio</sky-code> components to organize radio buttons into a group. It is required for SKY UX radio buttons on Angular reactive forms to manage the selected values and keep the forms up-to-date. We recommend using the <sky-code>sky-radio-group</sky-code> component with all radio buttons.
+       The <sky-code>sky-radio-group</sky-code> component is required for radio buttons on Angular reactive forms, and we recommend using it with all radio buttons. On Angular forms, the component manages the selected values and keeps the forms up-to-date. When users select a radio button, its value is driven through an <sky-code>ngModel</sky-code> attribute that you specify on the <sky-code>sky-radio-group</sky-code> element.
     </p>
     <sky-demo-page-property
       propertyName="name"
@@ -303,7 +302,7 @@ The radio button component is a selection input for choosing one option from a s
     <sky-demo-page-property
       propertyName="name"
     >
-    This property is deprecated in favor of <a stacheRouterLink="." fragment="radio-button-group-properties">the <sky-code>name</sky-code> property on the <sky-code>sky-radio-group</sky-code> element</a>. It specifies a name for a group of radio buttons. This property accepts <sky-code>string</sky-code> values.
+    We recommend using the <a stacheRouterLink="." fragment="radio-button-group-properties"><sky-code>sky-radio-group</sky-code></a> element with all radio buttons, but if you opt not to, then this property specifies a name for a group of radio buttons. This property accepts <sky-code>string</sky-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="value"
