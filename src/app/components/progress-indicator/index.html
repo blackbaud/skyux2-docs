@@ -151,6 +151,13 @@
         </div>
     </sky-demo-page-content>
     
+    <sky-demo-page-content sectionHeading="Layout">
+        <div class="sky-text-block">
+            <p>Waterfall progress indicators are 400 pixels wide and centered inside the page. The title of the waterfall is the title of the page. Do not combine waterfall indicators with any other content or actions on the page.</p>
+            <p>If the waterfall requires extra context or instruction, include descriptions or links below the waterfall title and above the first waterfall step.</p>
+        </div>
+    </sky-demo-page-content>
+    
     <sky-demo-page-content sectionHeading="Related information">
 		<h3>Components</h3>
 			<ul>
@@ -167,7 +174,7 @@
     
     <sky-tab tabHeading="Passive indicator design">
     
-    <sky-demo-page-content sectionHeading="Usage usage">
+    <sky-demo-page-content sectionHeading="Usage">
 	<h3 class="sky-text-success">Use when</h3>
 		<sky-docs-visual-example>
 			<sky-docs-visual-example-text>
@@ -241,7 +248,14 @@
         
     <sky-demo-page-content sectionHeading="Content">
         <div class="sky-text-block">
-            <p>Use past tense verbs for step labels and keep them concise (e.g. Submitted, Approved, etc.). Include a datestamp in parentheses in most cases, but only include a timestamp if necessary. Use step details sparingly and keep them concise as well.</p>
+            <p>Use past tense verbs for step labels and keep them concise (e.g. Submitted, Approved, etc.). Include a datestamp in parentheses in most cases, but only include a timestamp if necessary. Use step details sparingly and keep them concise, as well.</p>
+        </div>
+    </sky-demo-page-content>
+        
+    <sky-demo-page-content sectionHeading="Layout">
+        <div class="sky-text-block">
+            <p>Passive progress indicators are used one-at-a-time. When they apply to a record view, use them in page summaries or other containers (like a tile) in the page.</p>
+            <p>When displaying passive progress about multiple items in a list, put the passive progress indicator inside of a dynamic container, like a <a routerLink="/components/Popover">popover</a> or a <a routerLink="/components/Flyout">flyout</a>.</p>
         </div>
     </sky-demo-page-content>
         
@@ -413,117 +427,6 @@
     </sky-progress-indicator-demo>
     <sky-demo-page-code demoName="Progress indicator"></sky-demo-page-code>
   </sky-demo-page-example>
-
-  <sky-demo-page-content sectionHeading="UX guidelines">
-    <header><div class="sky-section-heading">Active progress indicators</div></header>
-  	<p>
-      Active progress indicators illustrate the step-wise nature of tasks and reinforce progress as users complete steps. They isolate users inside the scope of tasks, contain all interactions necessary for each step, and provide controls to move through the steps.
-    </p>
-    <p>
-      Use active progress indicators when:
-    </p>
-    <ul>
-			<li>
-        Tasks can be broken into discrete, predetermined steps.
-      </li>
-			<li>
-        The order of decisions within tasks matters because the system requires decisions in a certain order or because early decisions affect later decisions.
-      </li>
-		</ul>
-    <p>
-      Do not use active progress indicators when:
-    </p>
-    <ul>
-      <li>
-        The best experience requires fewer than three mandatory steps.
-      </li>
-      <li>
-        Decisions within tasks change the number of steps or the order of steps. Instead, move decisions that affect the number or order of steps to the start of workflows and branch users to different active progress contexts.
-      </li>
-      <li>
-        Users need to edit preset properties.
-      </li>
-      </li>
-    </ul>
-    <header><div class="sky-subsection-heading">Modal wizards vs. waterfall pages</div></header>
-    <p>
-      Modal wizards guide users through tasks that require a series of related decisions, while waterfall pages walk users through the steps to activate records or system settings that are created in an incomplete state. For more information about modal wizards, see the <a stacheRouterLink="/components/wizard">wizard component</a>.
-    </p>
-    <p>
-      Use modal wizards when:
-    </p>
-    <ul>
-			<li>
-        Tasks are best presented as multiple steps that users can complete in a single sitting.
-      </li>
-			<li>
-        Tasks do not result in records or settings with page-level views.
-      </li>
-			<li>
-        The interaction complexity of each step is low. For example, steps use standard form inputs and controls.
-      </li>
-			<li>
-        Tasks include no more than six steps.
-      </li>
-		</ul>
-    <p>
-      Use waterfall pages when:
-    </p>
-    <ul>
-			<li>
-        The complexity of tasks warrants a multi-step approach.
-      </li>
-			<li>
-        Tasks take a significant amount of time, and users may not complete the steps in a single sitting.
-      </li>
-			<li>
-        Tasks result in records or settings with page-level views.
-      </li>
-			<li>
-        Tasks complete initial setup or configuration for records or system settings that do not work until users complete steps that are infrequently revisited.
-      </li>
-			<li>
-        The complexity of steps varies drastically. For example, one step may involve interactions that are best performed in a full-screen modal while another step may require a small number of inputs or selections.
-      </li>
-		</ul>
-    <header><div class="sky-section-heading">Passive progress indicators</div></header>
-  	<p>
-      Passive progress indicators inform users of progress that concerns them but that they are not responsible for. For example, passive progress indicators can track the progress of steps that other users in the system perform or steps that are completed outside the system. They provide details on an individually scoped level such as record pages, detail panels, or popovers.
-    </p>
-    <p>
-      Use passive progress indicators when:
-    </p>
-    <ul>
-			<li>
-        Steps represent stages of completion that are essentially invisible to users because they take place outside of user control.
-      </li>
-			<li>
-        The stages of progression are known in advance and branching does not dynamically route processes.
-      </li>
-			<li>
-        Progress is represented in the individual context of record pages, detail panels, etc.
-      </li>
-		</ul>
-    <p>
-      Do not use passive progress indicators when:
-    </p>
-    <ul>
-			<li>
-        User interaction is required.
-      </li>
-			<li>
-        Steps represent multiple independent statuses that are not sequentially related.
-      </li>
-			<li>
-        Progress is represented in collective context such as lists, repeaters, and tables.
-      </li>
-			<li>
-        Statuses drive decision-making or user responses.
-      </li>
-			<li>
-        Combined with other passive indicators to create excessive noise for information that does not drive user action.
-      </li>
-		</ul>
         
     </sky-tab>
   </sky-tabset>
