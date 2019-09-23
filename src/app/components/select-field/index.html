@@ -33,7 +33,7 @@
       propertyName="customPicker"
       isOptional="true"
     >
-      Specifies <a stacheRouterLink="." fragment="skyselectfieldcustompicker-properties">a <sky-code>SkySelectFieldCustomPicker</sky-code> object</a> that allows a custom UI for selecting values to be displayed when the user clicks the select field's button.
+      Specifies <a stacheRouterLink="." fragment="skyselectfieldcustompicker-properties">a <sky-code>SkySelectFieldCustomPicker</sky-code> object</a> to display a custom UI when users click the select field button.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="descriptorKey"
@@ -149,13 +149,13 @@
     <sky-demo-page-property
       propertyName="open"
     >
-      Specifies a function to call when the user clicks the select field's button. The function accepts two parameters:
+      Specifies a function to call when users click the select field button. The function accepts two parameters:
       <ul>
         <li>
-          <sky-code>pickerContext</sky-code> - A <sky-code>SkySelectFieldPickerContext</sky-code> object that provides values that can be used by the custom picker.
+          <sky-code>pickerContext</sky-code> — <a stacheRouterLink="." fragment="skyselectfieldpickercontext-properties">A <sky-code>SkySelectFieldPickerContext</sky-code> object</a> that provides the values to the custom picker.
         </li>
         <li>
-          <sky-code>updateValue</sky-code> - A function that accepts an array of <sky-code>SkySelectField</sky-code> objects representing the value selected in the custom picker.
+          <sky-code>updateValue</sky-code> — A function that accepts an array <a stacheRouterLink="." fragment="skyselectfield-properties">of <sky-code>SkySelectField</sky-code> objects</a> that represents the values selected in the custom picker.
         </li>
       </ul>
     </sky-demo-page-property>
@@ -164,33 +164,34 @@
   <sky-demo-page-properties sectionHeading="SkySelectFieldPickerContext properties">
     <sky-demo-page-property
       propertyName="data"
-      isOptional="true"
+      isOptional="false"
     >
-      An array of <a stacheRouterLink="." fragment="skyselectfield-properties">The <sky-code>SkySelectField</sky-code> objects</a> provided to the select field's <sky-code>data</sky-code> property. Use this property to populate your custom picker with options for the user to select.
+      Specifies an array <a stacheRouterLink="." fragment="skyselectfield-properties">of <sky-code>SkySelectField</sky-code> objects</a> and provides it to the select field's <sky-code>data</sky-code> property. This populates the custom picker with items for users to select.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="headingText"
       isOptional="true"
     >
-      The text provided to the select field's <sky-code>headingText</sky-code> property. If your custom picker is a modal, use this property for the modal's title.
-    </sky-demo-page-property>
-    <sky-demo-page-property
-      propertyName="selectedValue"
-      isOptional="true"
-    >
-      The select field's current value. If the select field's <sky-code>selectMode</sky-code> is set to <sky-code>single</sky-code>, this will be a <sky-code>SkySelectField</sky-code> object; otherwise it will be an array of <sky-code>SkySelectField</sky-code> objects. Use this property to select the corresponding items in the custom picker.
+      Specifies a header for the select field component's modal and provides it to the select field's <sky-code>pickerHeading</sky-code> property. This property accepts <sky-code>string</sky-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="selectMode"
       isOptional="true"
     >
-      The value provided to the select field's <sky-code>selectMode</sky-code> property. Use this property to determine whether the custom picker should allow more than one value to be selected.
+      Specifies the selection mode that determines whether users can select one item or multiple items and provides the value to the select field's <sky-code>selectMode</sky-code> property.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="selectedValue"
+      isOptional="true"
+    >
+      Specifies the select field's current value. If <sky-code>selectMode</sky-code> is set to <sky-code>single</sky-code>, then this value is <a stacheRouterLink="." fragment="skyselectfield-properties">a <sky-code>SkySelectField</sky-code> object</a>. If <sky-code>selectMode</sky-code> is set to <sky-code>multiple</sky-code>, then this value is an array <a stacheRouterLink="." fragment="skyselectfield-properties">of <sky-code>SkySelectField</sky-code> objects</a>. Use this property to select the corresponding items in the custom picker.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="showAddNewRecordButton"
       isOptional="true"
+      defaultValue="false"
     >
-      The value provided to the select field's <sky-code>showAddNewRecordButton</sky-code> property. Use this property to determine whether a new record can be added from the custom picker when the desired value is not in the list of options.
+      Indicates whether to display a button for users to add new items directly from the select field modal and provides the value to the select field's <sky-code>showAddNewRecordButton</sky-code> property. This property accepts <sky-code>boolean</sky-code> values.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
