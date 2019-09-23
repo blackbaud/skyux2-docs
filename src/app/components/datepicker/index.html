@@ -1,16 +1,90 @@
-<sky-demo-page
+<sky-tabbed-demo-page
   pageTitle="Datepicker"
-  skyuxModule="SkyDatepickerModule"
-  packageName="@skyux/datetime"
 >
 
   <sky-demo-page-summary>
-    The datepicker module contains directives to let users select dates or fuzzy dates.  It is a SKY UX-themed replacement for the HTML <sky-code>input</sky-code> element with <sky-code>type="date"</sky-code>. The value that users select is driven through the <sky-code>ngModel</sky-code> attribute specified on the <sky-code>input</sky-code> element.
-
-    <p>
-      To use the datepicker module, you must install <sky-code>SkyPopoverModule</sky-code> as a dependency to your project. For more information, see the <a routerLink="/components/popover">popover module</a>.
-    </p>
+    The datepicker module contains directives to let users select dates or fuzzy dates.  It is a SKY UX-themed replacement for the HTML <sky-code>input</sky-code> element with <sky-code>type="date"</sky-code>.
   </sky-demo-page-summary>
+  
+  <sky-demo-page-example>
+    <sky-datepicker-demo></sky-datepicker-demo>
+  </sky-demo-page-example>
+
+<sky-tabset id="content-tabs">
+	
+	<sky-tab
+		tabHeading="Design">	
+	<sky-demo-page-content sectionHeading="Usage">
+	<h3 class="sky-text-success">Use when</h3>
+    <p class="sky-text-block">Use datepickers when users need to enter a valid date.</p>
+  </sky-demo-page-content>
+  
+  <sky-demo-page-content sectionHeading="Anatomy">
+		<sky-docs-anatomy imagePath="~/assets/img/guidelines/datepicker/anatomy.png">
+      <sky-docs-anatomy-item anatomyNumber="1">Input field</sky-docs-anatomy-item>
+      <sky-docs-anatomy-item anatomyNumber="2">Picker button</sky-docs-anatomy-item>
+      <sky-docs-anatomy-item anatomyNumber="3">Picker</sky-docs-anatomy-item>
+    </sky-docs-anatomy>
+	</sky-demo-page-content>
+	
+	<sky-demo-page-content sectionHeading="Options">
+		<h3>Fuzzy dates</h3>
+      <div class="sky-text-block">
+        <p>Fuzzy dates let the user enter a partial date. Supported formats include:</p>
+		    <ul>
+          <li>Month and day</li>
+          <li>Month and year</li>
+          <li>Year only</li>
+        </ul>
+      </div>
+		<h3>Minimum and maximum dates</h3>
+			<p class="sky-text-block">You can specify minimum and maximum dates if you want to limit input to a certain range.</p>
+	</sky-demo-page-content>
+	
+	<sky-demo-page-content sectionHeading="Behavior & states">
+		<h3>Fuzzy date month string conversion</h3>
+			<sky-docs-visual-example>
+				<sky-docs-visual-example-text>
+					<p>If the user enters the month as text rather than a number the datepicker will convert it to a number on loss of focus.</p>
+				</sky-docs-visual-example-text>
+				<sky-docs-visual-example-image>
+				  <img src="~/assets/img/guidelines/datepicker/behavior-fuzzy-text.png" />
+				</sky-docs-visual-example-image>
+			</sky-docs-visual-example>
+		<h3>States</h3>
+    <sky-demo-page-component-states>
+      <sky-demo-page-component-state stateName="Blank" imagePath="~/assets/img/guidelines/datepicker/state-blank.png"></sky-demo-page-component-state>
+      <sky-demo-page-component-state stateName="Picker" imagePath="~/assets/img/guidelines/datepicker/state-picker.png"></sky-demo-page-component-state>
+      <sky-demo-page-component-state stateName="Date entered" imagePath="~/assets/img/guidelines/datepicker/state-filled.png"></sky-demo-page-component-state>
+      <sky-demo-page-component-state stateName="Error" imagePath="~/assets/img/guidelines/datepicker/state-error.png"></sky-demo-page-component-state>
+    </sky-demo-page-component-states>
+			
+	</sky-demo-page-content>  
+    
+  <sky-demo-page-content sectionHeading="Related information">
+		<h3>Components</h3>
+			<ul>
+				<li><a routerLink="/components/date-range-picker">Date range picker</a></li>
+			</ul>
+	</sky-demo-page-content>
+    
+  </sky-tab>
+  
+  <sky-tab
+		tabHeading="Development">
+
+  <p>The value that users select is driven through the <sky-code>ngModel</sky-code> attribute specified on the <sky-code>input</sky-code> element.</p>  
+    
+  <p>
+  To use the datepicker module, you must install <sky-code>SkyPopoverModule</sky-code> as a dependency to your project. For more information, see the <a routerLink="/components/popover">popover module</a>.
+  </p>  
+    
+	<sky-demo-page-module-info
+		skyuxModule="SkyDatepickerModule"
+    packageName="@skyux/datetime"
+    githubRepo="skyux-datetime"
+	>
+  </sky-demo-page-module-info>
 
   <sky-demo-page-properties sectionHeading="Datepicker input directive properties">
     <sky-demo-page-property
@@ -158,4 +232,8 @@
       demoName="Datepicker">
     </sky-demo-page-code>
   </sky-demo-page-example>
-</sky-demo-page>
+
+  </sky-tab>
+</sky-tabset>
+    
+</sky-tabbed-demo-page>
