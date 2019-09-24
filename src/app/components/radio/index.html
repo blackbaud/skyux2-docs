@@ -127,34 +127,34 @@ The radio button module ceates a small set of selection inputs and allows users 
             
             <sky-docs-visual-example>
                 <sky-docs-visual-example-text>
-                    <p>Don’t use icon radio buttons if the difference between the choices cannot be clearly communicated with icons. Use traditional radio buttons to provide the needed context with text.</p>
+                    <p>Don’t use icon radio buttons when icons don't clearly communicate options. Use  radio buttons with text labels to provide context.</p>
                 </sky-docs-visual-example-text>
                 
                 <sky-docs-visual-example-image>
                     <div class="sky-margin-stacked-content-section">
                     <img src="~/assets/img/guidelines/radio-button/radio-button-usage-11.png" />
-                    <div class="caption caption-danger sky-text-danger">Don't use icon radio buttons when the icons may be unclear.</div>
+                    <div class="caption caption-danger sky-text-danger">Don't use icon radio buttons when the icons are unclear.</div>
                     </div>
                     <div>
                     <img src="~/assets/img/guidelines/radio-button/radio-button-usage-12.png" />
-                    <div class="caption caption-success sky-text-success">Do use radio buttons with text labels when icons are not immediately obvious.</div>
+                    <div class="caption caption-success sky-text-success">Do use radio buttons with text labels when icons do not clearly communicate options.</div>
                     </div>
                 </sky-docs-visual-example-image>
             </sky-docs-visual-example>
             
             <sky-docs-visual-example>
                 <sky-docs-visual-example-text>
-                    <p>Don’t use ungrouped icon radio buttons when the choices could be grouped together on the same line.</p>
+                    <p>Don’t use ungrouped icon radio buttons. Use icon radio button groups to connect the options visually.</p>
                 </sky-docs-visual-example-text>
                 
                 <sky-docs-visual-example-image>
                     <div class="sky-margin-stacked-content-section">
                     <img src="~/assets/img/guidelines/radio-button/radio-button-usage-13.png" />
-                    <div class="caption caption-danger sky-text-danger">Don't use individual icon radio buttons when they could be grouped.</div>
+                    <div class="caption caption-danger sky-text-danger">Don't use icon radio buttons without grouping them together.</div>
                     </div>
                     <div>
                     <img src="~/assets/img/guidelines/radio-button/radio-button-usage-14.png" />
-                    <div class="caption caption-success sky-text-success">Do use icon radio groups when possible.</div>
+                    <div class="caption caption-success sky-text-success">Do use icon radio button groups to connect the options.</div>
                     </div>
                 </sky-docs-visual-example-image>
             </sky-docs-visual-example>
@@ -163,15 +163,15 @@ The radio button module ceates a small set of selection inputs and allows users 
         
         <sky-demo-page-content sectionHeading="Anatomy">
         
-            <h3>Regular radio buttons</h3>
+            <h3>Traditional radio buttons</h3>
             <sky-docs-anatomy imagePath="~/assets/img/guidelines/radio-button/radio-button-anatomy-1.png">
-                <sky-docs-anatomy-item anatomyNumber="1">Radio glyph</sky-docs-anatomy-item>
+                <sky-docs-anatomy-item anatomyNumber="1">Radio button glyph</sky-docs-anatomy-item>
                 <sky-docs-anatomy-item isOptional="true" anatomyNumber="2">Text label</sky-docs-anatomy-item>
             </sky-docs-anatomy>
             
             <h3>Icon radio buttons</h3>
             <sky-docs-anatomy imagePath="~/assets/img/guidelines/radio-button/radio-button-anatomy-2.png">
-                <sky-docs-anatomy-item anatomyNumber="1">Radio type</sky-docs-anatomy-item>
+                <sky-docs-anatomy-item anatomyNumber="1">Icon radio button type</sky-docs-anatomy-item>
                 <sky-docs-anatomy-item anatomyNumber="2">Icon</sky-docs-anatomy-item>
             </sky-docs-anatomy>
             
@@ -181,11 +181,11 @@ The radio button module ceates a small set of selection inputs and allows users 
             
             <h3>Text label</h3>
             <div class="sky-text-block">
-                <p>When radio buttons are in grid columns, the text label is not required if you use a column heading. Use text labels for all other states.</p>
+                <p>When radio buttons are in grid columns, text labels are not required if column headings provide the necessary context. Use text labels for all other states.</p>
             </div>
-            <h3>Radio type</h3>
+            <h3>Icon radio button type</h3>
             <div class="sky-text-block">
-                <p>Icon radio buttons can set a background and border color to match an implied “status” (success, danger, etc.) that corresponds to the types of <a routerLink="/components/status-indicator">status indicator</a>.</p>
+                <p>Icon radio buttons can use background and border color that match <a routerLink="/components/status-indicator" fragment="options">status indicator types</a> such as success or danger.</p>
             </div>
             
         </sky-demo-page-content>
@@ -204,9 +204,9 @@ The radio button module ceates a small set of selection inputs and allows users 
         <sky-demo-page-content sectionHeading="Content">
         
             <div class="sky-text-block">
-                <p>Radio buttons may or may not use a preceeding question or statement to provide context for the options. When one is not included, provide the context for the consequences of the choice in the radio button text labels themselves.</p>
-                <p>Icon radio buttons use the <a href="https://fontawesome/v4.7.0/">FontAwesome 4.7</a> icon library. See the <a routerLink="/design/styles/icons">SKY UX icon dictionary</a> for a list of common icons.</p>
-                <p><b>Note:</b> Icon radio buttons must still use a <sky-code>label</sky-code> or <sky-code>labelledby</sky-code> input for accessibility.</p>
+                <p>Radio buttons may or may not use a preceeding label to provide context for the options. Unlike text input labels, this label may use verbs or questions. If you do not include a label, provide context for the consequences of the choices in the radio button text labels.</p>
+                <p>Icon radio buttons use the <a href="https://fontawesome/v4.7.0/">FontAwesome 4.7</a> icon library. For a list of common icons, see the <a routerLink="/design/styles/icons">SKY UX icon dictionary</a>.</p>
+                <p>Icon radio buttons must use a <sky-code>label</sky-code> or <sky-code>labelledBy</sky-code> property for accessibility.</p>
             </div>
         
         </sky-demo-page-content>
@@ -215,7 +215,7 @@ The radio button module ceates a small set of selection inputs and allows users 
         
             <sky-docs-visual-example>
                 <sky-docs-visual-example-text>
-                    <p>Arrange a group of traditional radio buttons in a vertical stack to make it as easy as possible to see all options, scan their labels, and see which option is selected.</p>
+                    <p>Arrange traditional radio buttons vertically to make it easy to see all options, scan their labels, and see the selected option.</p>
                 </sky-docs-visual-example-text>
                 
                 <sky-docs-visual-example-image>
@@ -238,7 +238,7 @@ The radio button module ceates a small set of selection inputs and allows users 
                 <sky-docs-visual-example-image>
                     <div>
                     <img src="~/assets/img/guidelines/radio-button/radio-button-layout-3.png" />
-                    <div class="caption caption-success sky-text-success">Do use vertical spacing to visually separate radio groups from the inputs before and after them.</div>
+                    <div class="caption caption-success sky-text-success">Do use vertical spacing to visually separate radio button groups from other form elements.</div>
                     </div>
                 </sky-docs-visual-example-image>
             </sky-docs-visual-example>
@@ -249,9 +249,12 @@ The radio button module ceates a small set of selection inputs and allows users 
             <h3>Components</h3>
 			<ul>
 				<li><a routerLink="/components/action-button">Action button</a></li>
+                <li><a routerLink="/components/autocomplete">Autocomplete</a></li>
                 <li><a routerLink="/components/checkbox">Checkbox</a></li>
                 <li><a routerLink="/components/form">Form</a></li>
+                <li><a routerLink="/components/lookup">Lookup</a></li>
                 <li><a routerLink="/components/modal">Modal</a></li>
+                <li><a routerLink="/components/select-field">Select field</a></li>
 			</ul>
 		<h3>Guidelines</h3>
 			<ul>
