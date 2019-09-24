@@ -39,6 +39,17 @@ export class SkyDemoComponentsService {
         getCodeFiles: () => this.getDemoFiles('Action button')
       },
       {
+        name: 'AG Grid',
+        icon: 'table',
+        summary: 'A service to provide SKY UX components and styles for AG Grid.',
+        url: '/components/ag-grid',
+        imports: {
+          '@skyux/ag-grid': [
+            'SkyAgGridModule'
+          ]
+        }
+      },
+      {
         name: 'Alert',
         icon: 'bell',
         summary: 'The alert component displays a SKY UX-themed alert.',
