@@ -193,7 +193,10 @@ export class SkyDemoComponentsService {
             'SkyDatepickerModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('Datepicker')
+        getCodeFiles: () => [
+          ...this.getDemoFiles('Datepicker'),
+          ...this.getDemoFiles('Fuzzy datepicker')
+        ]
       },
       {
         name: 'Date range picker',
