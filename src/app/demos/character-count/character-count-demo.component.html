@@ -1,0 +1,103 @@
+<div
+  style="width: 50%;"
+>
+  <h3>
+    Reactive form setup
+  </h3>
+
+  <form
+    novalidate
+    [formGroup]="characterCountForm"
+  >
+    <div
+      style="display: flex;"
+    >
+      <label
+        class="sky-control-label"
+        for="input-count-example"
+        style="flex-grow: 1;"
+      >
+        First name
+      </label>
+
+      <sky-character-counter-indicator
+        #indicator
+      >
+      </sky-character-counter-indicator>
+    </div>
+
+    <input
+      class="sky-form-control"
+      formControlName="firstName"
+      type="text"
+      skyCharacterCounter
+      [skyCharacterCounterIndicator]="indicator"
+      [skyCharacterCounterLimit]="maxCharacterCount"
+    />
+
+    <div *ngIf="firstName.errors?.skyCharacterCounter"
+      class="sky-error-label"
+    >
+      Limit First name to {{maxCharacterCount}} characters.
+    </div>
+  </form>
+
+  <table>
+    <tr>
+      <th>Valid</th>
+      <td>{{ characterCountForm.valid }}</td>
+    </tr>
+    <tr>
+      <th>Value</th>
+      <td>{{ firstName.value || 'Nothing entered...' }}</td>
+    </tr>
+  </table>
+
+  <h3>
+    Template-driven form setup
+  </h3>
+
+  <div
+    style="display: flex;"
+  >
+    <label
+      class="sky-control-label"
+      for="input-count-example"
+      style="flex-grow: 1;"
+    >
+      First name
+    </label>
+
+    <sky-character-counter-indicator
+      #templateIndicator
+    >
+    </sky-character-counter-indicator>
+  </div>
+
+  <input
+    class="sky-form-control"
+    type="text"
+    skyCharacterCounter
+    [skyCharacterCounterIndicator]="templateIndicator"
+    [skyCharacterCounterLimit]="maxCharacterCount"
+    [(ngModel)]="nameValue"
+    #counterTextInput="ngModel"
+  />
+
+  <div *ngIf="counterTextInput.errors?.skyCharacterCounter"
+    class="sky-error-label"
+  >
+    Limit First name to {{maxCharacterCount}} characters.
+  </div>
+
+  <table>
+    <tr>
+      <th>Valid</th>
+      <td>{{ counterTextInput.valid }}</td>
+    </tr>
+    <tr>
+      <th>Value</th>
+      <td>{{ nameValue || 'Nothing entered...' }}</td>
+    </tr>
+  </table>
+</div>
