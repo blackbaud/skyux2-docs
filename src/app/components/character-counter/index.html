@@ -1,0 +1,70 @@
+<sky-tabbed-demo-page
+  pageTitle="Character counter"
+  navTitle="Character counter"
+  skyuxModule="SkyCharacterCounterModule"
+  packageName="@skyux/forms"
+>
+  <sky-demo-page-summary>
+    <p>
+      The character counter module contains a directive and component to display and enforce characte limits in form fields. Form values that exceed the character limit display an error indicator by the character count and mark the field is invalid.
+    </p>
+  </sky-demo-page-summary>
+
+  <div class="sky-margin-stacked-separate">
+    <sky-demo-page-example>
+      <sky-character-counter-demo>
+      </sky-character-counter-demo>
+    </sky-demo-page-example>
+  </div>
+
+  <sky-tabset id="content-tabs">
+
+    <sky-tab tabHeading="Design">
+      Design guidelines coming soon.
+    </sky-tab>
+
+    <sky-tab tabHeading="Development">
+
+      <sky-demo-page-module-info
+        skyuxModule="SkyCharacterCounterModule"
+        packageName="@skyux/forms"
+        githubRepo="skyux-forms"
+      >
+      </sky-demo-page-module-info>
+
+      <sky-demo-page-properties
+        sectionHeading="Character counter input directive properties"
+      >
+        <sky-demo-page-property
+          propertyName="skyCharacterCounter"
+          isOptional="false"
+        >
+          Creates an input that validates the number of characters in a value. Place this attribute on an <sky-code>input</sky-code> element. If users enter more characters than the provided limit, the input is invalid and an error indicator is displayed by the character counter.
+        </sky-demo-page-property>
+        <sky-demo-page-property
+          propertyName="skyCharacterCounterIndicator"
+          isOptional="true"
+        >
+          The character counter indicator component. This is the component that displays the count, limit, and over the limit indicator.
+        </sky-demo-page-property>
+        <sky-demo-page-property
+          propertyName="skyCharacterCounterLimit"
+          defaultValue="0"
+          isOptional="true"
+        >
+          The maximum number of characters allowed.
+        </sky-demo-page-property>
+      </sky-demo-page-properties>
+
+      <sky-demo-page-example>
+        <sky-character-counter-demo>
+        </sky-character-counter-demo>
+        <sky-demo-page-code
+          demoName="Character counter"
+        >
+        </sky-demo-page-code>
+      </sky-demo-page-example>
+
+    </sky-tab>
+  </sky-tabset>
+</sky-tabbed-demo-page>
