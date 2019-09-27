@@ -7,15 +7,6 @@
     <p>
       The file attachment module contains two components to add files to forms and display summary information about attachments.
     </p>
-    <p>
-      The <sky-code>sky-file-drop</sky-code> component provides an element that users can click to select files from their local drives or use as a drop zone to drag and drop files. The component can also display controls for users to provide hyperlinks to files on the web. You can leave the contents of the component blank to display the drop zone's default UI, or you can specify custom content to display instead.
-    </p>
-    <p>
-      When the SKY UX module initializes, it disables the ability to drag and drop files for the entire window. This prevents the browser from opening files that are accidentally dropped outside the target zone. If you implement your own file drop functionality outside of the file drop component, you can place the <sky-code>sky-file-drop-target</sky-code> CSS class on the element that receives drop events to exempt it from the drop exclusion rule.
-    </p>
-    <p>
-      The <sky-code>sky-file-item</sky-code> component displays summary information about files that users attach to forms. By default, the component displays file names, delete buttons, and fields for names and tags.. For files from local drives, the component also displays file sizes and thumbnails.
-    </p>
   </sky-demo-page-summary>
 
   <div class="sky-margin-stacked-content-section">
@@ -68,7 +59,18 @@
     </sky-docs-anatomy>
 	</sky-demo-page-content>
     
-  <sky-demo-page-content sectionHeading="States">
+  <sky-demo-page-content sectionHeading="Behavior & states">
+    <h3>Image preview</h3>
+    <sky-docs-visual-example>
+			<sky-docs-visual-example-text>
+					<p>When the user attaches an image, a small preview of the image displays below the file attach button.</p>
+			</sky-docs-visual-example-text>
+			<sky-docs-visual-example-image>
+				<img src="~/assets/img/guidelines/single-file-attach/behavior-preview.png" />
+			</sky-docs-visual-example-image>
+		</sky-docs-visual-example>
+    
+    <h3>States</h3>
     <div class="sky-margin-stacked-content-section">
     <sky-demo-page-component-states>
       <sky-demo-page-component-state stateName="Base" imagePath="~/assets/img/guidelines/single-file-attach/state-base.png"></sky-demo-page-component-state>
@@ -125,11 +127,11 @@
     <sky-demo-page-content sectionHeading="Anatomy">
       <sky-docs-anatomy imagePath="~/assets/img/guidelines/file-attach/anatomy.png">
         <sky-docs-anatomy-item anatomyNumber="1">Browse or drop local file</sky-docs-anatomy-item>
-        <sky-docs-anatomy-item anatomyNumber="2">Attach from a URL</sky-docs-anatomy-item>
-        <sky-docs-anatomy-item anatomyNumber="3">File name</sky-docs-anatomy-item>
-        <sky-docs-anatomy-item anatomyNumber="4">File size</sky-docs-anatomy-item>
-        <sky-docs-anatomy-item anatomyNumber="5">File preview</sky-docs-anatomy-item>
-        <sky-docs-anatomy-item anatomyNumber="6">Delete button</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item anatomyNumber="2">File name</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item anatomyNumber="3">File size</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item anatomyNumber="4">File preview</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item anatomyNumber="5">Delete button</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item anatomyNumber="6" isOptional="true">Attach from a URL</sky-docs-anatomy-item>
         <sky-docs-anatomy-item anatomyNumber="7" isOptional="true">Additional metadata</sky-docs-anatomy-item>
       </sky-docs-anatomy>
     </sky-demo-page-content>
@@ -146,6 +148,16 @@
     </sky-demo-page-content>
     
     <sky-demo-page-content sectionHeading="Behavior & states">
+      <h3>File information</h3>
+      <sky-docs-visual-example>
+        <sky-docs-visual-example-text>
+            <p>When the user attaches a file, summary information for that file appears in a card below the file attach input. By default the summary information includes file name, name and tag input fields, and a delete button. For files from local drives, the component also displays file size and a file thumbnail. You can include additional inputs to collect more metadata about the file.</p>
+        </sky-docs-visual-example-text>
+        <sky-docs-visual-example-image>
+          <img src="~/assets/img/guidelines/single-file-attach/behavior-preview.png" />
+        </sky-docs-visual-example-image>
+      </sky-docs-visual-example>
+      
       <h3>Responsiveness</h3>
       <sky-docs-visual-example>
         <sky-docs-visual-example-text>
@@ -179,6 +191,16 @@
   <sky-tab
     tabHeading="Development">
 
+    <p>
+      The <sky-code>sky-file-drop</sky-code> component provides an element that users can click to select files from their local drives or use as a drop zone to drag and drop files. The component can also display controls for users to provide hyperlinks to files on the web. You can leave the contents of the component blank to display the drop zone's default UI, or you can specify custom content to display instead.
+    </p>
+    <p>
+      When the SKY UX module initializes, it disables the ability to drag and drop files for the entire window. This prevents the browser from opening files that are accidentally dropped outside the target zone. If you implement your own file drop functionality outside of the file drop component, you can place the <sky-code>sky-file-drop-target</sky-code> CSS class on the element that receives drop events to exempt it from the drop exclusion rule.
+    </p>
+    <p>
+      The <sky-code>sky-file-item</sky-code> component displays summary information about files that users attach to forms. By default, the component displays file names, delete buttons, and fields for names and tags. For files from local drives, the component also displays file sizes and thumbnails.
+    </p>
+    
     <sky-demo-page-module-info
       skyuxModule="SkyFileAttachmentsModule"
       packageName="@skyux/forms"
