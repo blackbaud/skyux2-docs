@@ -30,6 +30,7 @@
       <p>
           For example, if you provided <sky-code>my-spa</sky-code> after running <sky-code>skyux new</sky-code>, change the <sky-code>dist/</sky-code> folder to <sky-code>my-spa/</sky-code>.
       </p>
+      <sky-alert alertType="info">If you would like to host your SPA at the root, without having to use a subfolder, you can set the <a routerLink="/learn/reference/configuration/apply-appsettings">base property</a> in <sky-code>skyuxconfig.json</sky-code> to <sky-code>/</sky-code>.</sky-alert>
     </li>
     <li>
       <p>
@@ -41,7 +42,7 @@
         In a browser, enter <sky-code>https://example.com/my-spa</sky-code> to view your SPA.
       </p>
       <p>
-        <sky-alert alertType="info">SKY UX uses HTML5 push states for routing, so you must either configure your host to redirect all requests to the root <sky-code>index.html</sky-code> or enable <a routerLink="/learn/reference/configuration" fragment="usehashrouting">the <sky-code>useHashRouting</sky-code> configuration option</a>.</sky-alert>
+        <sky-alert alertType="warning">SKY UX uses HTML5 push states for routing, so you must either configure your host to redirect all requests to the root <sky-code>index.html</sky-code> or enable <a routerLink="/learn/reference/configuration" fragment="usehashrouting">the <sky-code>useHashRouting</sky-code> configuration option</a>.</sky-alert>
       </p>
     </li>
   </ol>
