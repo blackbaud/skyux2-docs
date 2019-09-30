@@ -249,7 +249,7 @@ export class SkyDemoComponentsService {
         name: 'Email validation',
         icon: 'check',
         // tslint:disable-next-line
-        summary: `The email validation directive ensures that user entries in an input element are valid email addresses.`,
+        summary: `The email validation module ensures that user entries in an input element are valid email addresses.`,
         url: '/components/email-validation',
         imports: {
           '@skyux/validation': [
@@ -1161,7 +1161,7 @@ export class SkyDemoComponentsService {
       {
         name: 'URL validation',
         icon: 'check',
-        summary: 'The URL validation module allows users to validate URL format.',
+        summary: 'The URL validation module ensures that user entries in an input element are valid URLs.',
         url: '/components/url-validation',
         imports: {
           '@skyux/validation': [
