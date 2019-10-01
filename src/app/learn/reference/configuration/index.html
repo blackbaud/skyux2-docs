@@ -32,6 +32,9 @@
   </p>
   <ul>
     <li>
+      <sky-code>base</sky-code> — Controls the value of the <sky-code>&lt;base href&gt;</sky-code> property when using the default local template from <sky-code>skyux build</sky-code>.
+    </li>
+    <li>
       <p>
         <sky-code>externals</sky-code> — Dynamically injects CSS and JavaScript files into SKY UX Host for the <sky-code>skyux serve</sky-code> or <sky-code>skyux build</sky-code> commands. You should have a specific use-case for an external. For example, Office Addins require their library to load through CDN in the head. The <sky-code>before</sky-code> and <sky-code>after</sky-code> sections of an external indicate whether to include the external resource before or after the default SKY UX Builder resources. The <sky-code>head</sky-code> property, which only applies to JS resources, indicates whether to inject elements within the HTML <sky-code>head</sky-code> element or just before the closing <sky-code>body</sky-code> tag.
       </p>
