@@ -17,6 +17,7 @@ import {
 import {
   SkyInlineFormDemoModule,
   SkyPhoneFieldDemoModule,
+  SkySingleFileAttachmentDemoModule,
   SkySplitViewDemoModule,
   SkySummaryActionBarDemoModule,
   SkyToggleSwitchDemoModule
@@ -34,6 +35,7 @@ require('style-loader!prismjs/themes/prism.css');
     SkyDemoModule,
     SkyInlineFormDemoModule,
     SkyPhoneFieldDemoModule,
+    SkySingleFileAttachmentDemoModule,
     SkySplitViewDemoModule,
     SkySummaryActionBarDemoModule,
     SkyToggleSwitchDemoModule
@@ -43,6 +45,7 @@ require('style-loader!prismjs/themes/prism.css');
     SkyDemoModule,
     SkyInlineFormDemoModule,
     SkyPhoneFieldDemoModule,
+    SkySingleFileAttachmentDemoModule,
     SkySplitViewDemoModule,
     SkySummaryActionBarDemoModule,
     SkyToggleSwitchDemoModule

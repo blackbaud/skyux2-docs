@@ -12,13 +12,14 @@
   <div class="sky-margin-stacked-content-section">
 	<sky-demo-page-example>
     <sky-file-attachment-demo></sky-file-attachment-demo>
+    <sky-single-file-attachment-demo></sky-single-file-attachment-demo>
   </sky-demo-page-example>
-	</div>
-  
+  </div>
+
   <sky-tabset id="content-tabs">
-	
+
 	<sky-tab
-		tabHeading="Design - single file attachment">	
+		tabHeading="Design - single file attachment">
 	<sky-demo-page-content sectionHeading="Usage">
 	<h3 class="sky-text-success">Use when</h3>
 		<sky-docs-visual-example>
@@ -32,7 +33,7 @@
 				</div>
 			</sky-docs-visual-example-image>
 		</sky-docs-visual-example>
-		
+
 	<h3 class="sky-text-danger">Don't use when</h3>
     <p class="sky-text-block">
       Don't use single file attachment if the user might need to link to a URL instead of uploading a local file. Use file attachment instead.
@@ -49,7 +50,7 @@
 			</sky-docs-visual-example-image>
 		</sky-docs-visual-example>
 </sky-demo-page-content>
-  
+
   <sky-demo-page-content sectionHeading="Anatomy">
 		<sky-docs-anatomy imagePath="~/assets/img/guidelines/single-file-attach/anatomy.png">
       <sky-docs-anatomy-item anatomyNumber="1">File attachment button</sky-docs-anatomy-item>
@@ -59,7 +60,7 @@
       <sky-docs-anatomy-item anatomyNumber="5">Image preview</sky-docs-anatomy-item>
     </sky-docs-anatomy>
 	</sky-demo-page-content>
-    
+
   <sky-demo-page-content sectionHeading="Behavior & states">
     <h3>Image preview</h3>
     <sky-docs-visual-example>
@@ -70,7 +71,7 @@
 				<img src="~/assets/img/guidelines/single-file-attach/behavior-preview.png" />
 			</sky-docs-visual-example-image>
 		</sky-docs-visual-example>
-    
+
     <h3>States</h3>
     <div class="sky-margin-stacked-content-section">
     <sky-demo-page-component-states>
@@ -81,14 +82,14 @@
     </sky-demo-page-component-states>
     </div>
 	</sky-demo-page-content>
-  
+
   <sky-demo-page-content sectionHeading="Related information">
 		<h3>Guidelines</h3>
 			<ul>
 				<li><a routerLink="/design/guidelines/form-design">Form design</a></li>
 			</ul>
 	</sky-demo-page-content>
-    
+
   </sky-tab>
 
   <sky-tab
@@ -106,7 +107,7 @@
           </div>
         </sky-docs-visual-example-image>
       </sky-docs-visual-example>
-      
+
       <sky-docs-visual-example>
         <sky-docs-visual-example-text>
             <p>Use file attachment when the user needs to add metadata to the uploaded file.</p>
@@ -136,7 +137,7 @@
         <sky-docs-anatomy-item anatomyNumber="7" isOptional="true">Additional metadata</sky-docs-anatomy-item>
       </sky-docs-anatomy>
     </sky-demo-page-content>
-    
+
     <sky-demo-page-content sectionHeading="Options">
       <h3>Attach from URL</h3>
         <p class="sky-text-block">
@@ -147,7 +148,7 @@
           You can specify the parameters for a valid file, including file type, file size or a custom validation function.
         </p>
     </sky-demo-page-content>
-    
+
     <sky-demo-page-content sectionHeading="Behavior & states">
       <h3>File information</h3>
       <sky-docs-visual-example>
@@ -158,7 +159,7 @@
           <img src="~/assets/img/guidelines/file-attach/behavior-preview.png" />
         </sky-docs-visual-example-image>
       </sky-docs-visual-example>
-      
+
       <h3>Responsiveness</h3>
       <sky-docs-visual-example>
         <sky-docs-visual-example-text>
@@ -170,7 +171,7 @@
           </div>
         </sky-docs-visual-example-image>
       </sky-docs-visual-example>
-      
+
       <div class="sky-margin-stacked-content-section">
       <h3>States</h3>
       <sky-demo-page-component-states>
@@ -190,7 +191,77 @@
   </sky-tab>
 
   <sky-tab
-    tabHeading="Development">
+  tabHeading="Development - single file attachment"
+  >
+
+    <p>
+      The <sky-code>sky-file-attachment</sky-code> component provides an element that users can click to select a single file from their local drives or use as a drop zone to drag and drop a single file. For image files, the component will display a preview. For all files, a link is displayed that emits an event when clicked.
+    </p>
+
+    <sky-demo-page-module-info
+      skyuxModule="SkyFileAttachmentsModule"
+      packageName="@skyux/forms"
+      githubRepo="skyux-forms"
+    >
+    </sky-demo-page-module-info>
+
+    <sky-demo-page-properties sectionHeading="File attachment properties">
+      <sky-demo-page-property
+        propertyName="acceptedTypes"
+      >
+        Provides a comma-delimited string literal of MIME types that users can drop or select (<sky-code>[acceptedTypes]="validFileTypes"</sky-code> or <sky-code>acceptedTypes="image/png,image/jpeg"</sky-code>). By default, any type of file is allowed.
+      </sky-demo-page-property>
+      <sky-demo-page-property
+        propertyName="maxFileSize"
+        isOptional="true"
+        defaultValue="500000"
+      >
+        Specifies the maximum size in bytes for valid files.
+      </sky-demo-page-property>
+      <sky-demo-page-property
+        propertyName="minFileSize"
+        isOptional="true"
+        defaultValue="0"
+      >
+        Specifies the minimum size in bytes for valid files.
+      </sky-demo-page-property>
+      <sky-demo-page-property
+        propertyName="validateFn"
+        isOptional="true"
+      >
+        Provides a custom validation function (<sky-code>[validateFn]="validateFile"</sky-code>). By default, any type of file is allowed.
+      </sky-demo-page-property>
+    </sky-demo-page-properties>
+
+    <sky-demo-page-properties sectionHeading="File drop events">
+      <sky-demo-page-property
+        propertyName="fileChange"
+        isOptional="true"
+      >
+        Fires when the user selects or removes a file.
+      </sky-demo-page-property>
+      <sky-demo-page-property
+        propertyName="fileClick"
+        isOptional="true"
+      >
+        Fires when the user clicks the file link.
+      </sky-demo-page-property>
+    </sky-demo-page-properties>
+
+    <sky-demo-page-example>
+      <sky-single-file-attachment-demo>
+      </sky-single-file-attachment-demo>
+      <sky-demo-page-code
+        demoName="Single file attachment"
+      >
+      </sky-demo-page-code>
+    </sky-demo-page-example>
+
+  </sky-tab>
+
+  <sky-tab
+    tabHeading="Development - file attachment"
+  >
 
     <p>
       The <sky-code>sky-file-drop</sky-code> component provides an element that users can click to select files from their local drives or use as a drop zone to drag and drop files. The component can also display controls for users to provide hyperlinks to files on the web. You can leave the contents of the component blank to display the drop zone's default UI, or you can specify custom content to display instead.
@@ -201,103 +272,103 @@
     <p>
       The <sky-code>sky-file-item</sky-code> component displays summary information about files that users attach to forms. By default, the component displays file names, delete buttons, and fields for names and tags. For files from local drives, the component also displays file sizes and thumbnails.
     </p>
-    
+
     <sky-demo-page-module-info
       skyuxModule="SkyFileAttachmentsModule"
       packageName="@skyux/forms"
       githubRepo="skyux-forms"
     >
-	 </sky-demo-page-module-info>
-    
-  <sky-demo-page-properties sectionHeading="File drop properties">
-    <sky-demo-page-property
-      propertyName="acceptedTypes"
-    >
-      Provides a comma-delimited string literal of MIME types that users can drop or select (<sky-code>[acceptedTypes]="validFileTypes"</sky-code> or <sky-code>acceptedTypes="image/png,image/jpeg"</sky-code>). By default, any type of file is allowed.
-    </sky-demo-page-property>
-    <sky-demo-page-property
-      propertyName="allowLinks"
-      isOptional="true"
-      defaultValue="false"
-    >
-      Indicates whether to display an option for users to provide hyperlinks to files on the web. To display this hyperlink option, you include this attribute with no value.
-    </sky-demo-page-property>
-    <sky-demo-page-property
-      propertyName="maxFileSize"
-      isOptional="true"
-      defaultValue="500000"
-    >
-      Specifies the maximum size in bytes for valid files.
-    </sky-demo-page-property>
-    <sky-demo-page-property
-      propertyName="minFileSize"
-      isOptional="true"
-    >
-      Specifies the minimum size in bytes for valid files.
-    </sky-demo-page-property>
-    <sky-demo-page-property
-      propertyName="multiple"
-      isOptional="true"
-      defaultValue="true"
-    >
-      Indicates whether users can drag and drop multiple files at the same time.
-    </sky-demo-page-property>
-    <sky-demo-page-property
-      propertyName="noClick"
-      isOptional="true"
-      defaultValue="false"
-    >
-      Disables the option for users to click the element and select files through a file dialog. To disable the option, you include this attribute with no value.
-    </sky-demo-page-property>
-    <sky-demo-page-property
-      propertyName="validateFn"
-      isOptional="true"
-    >
-      Provides a custom validation function (<sky-code>[validateFn]="validateFile"</sky-code>). By default, any type of file is allowed.
-    </sky-demo-page-property>
-  </sky-demo-page-properties>
+    </sky-demo-page-module-info>
 
-  <sky-demo-page-properties sectionHeading="File drop events">
-    <sky-demo-page-property
-      propertyName="filesChanged"
-      isOptional="true"
-    >
-      Fires when the user selects one or more files.
-    </sky-demo-page-property>
-    <sky-demo-page-property
-      propertyName="linkChanged"
-      isOptional="true"
-    >
-      Fires when the user adds a link.
-    </sky-demo-page-property>
-  </sky-demo-page-properties>
+    <sky-demo-page-properties sectionHeading="File drop properties">
+      <sky-demo-page-property
+        propertyName="acceptedTypes"
+      >
+        Provides a comma-delimited string literal of MIME types that users can drop or select (<sky-code>[acceptedTypes]="validFileTypes"</sky-code> or <sky-code>acceptedTypes="image/png,image/jpeg"</sky-code>). By default, any type of file is allowed.
+      </sky-demo-page-property>
+      <sky-demo-page-property
+        propertyName="allowLinks"
+        isOptional="true"
+        defaultValue="false"
+      >
+        Indicates whether to display an option for users to provide hyperlinks to files on the web. To display this hyperlink option, you include this attribute with no value.
+      </sky-demo-page-property>
+      <sky-demo-page-property
+        propertyName="maxFileSize"
+        isOptional="true"
+        defaultValue="500000"
+      >
+        Specifies the maximum size in bytes for valid files.
+      </sky-demo-page-property>
+      <sky-demo-page-property
+        propertyName="minFileSize"
+        isOptional="true"
+      >
+        Specifies the minimum size in bytes for valid files.
+      </sky-demo-page-property>
+      <sky-demo-page-property
+        propertyName="multiple"
+        isOptional="true"
+        defaultValue="true"
+      >
+        Indicates whether users can drag and drop multiple files at the same time.
+      </sky-demo-page-property>
+      <sky-demo-page-property
+        propertyName="noClick"
+        isOptional="true"
+        defaultValue="false"
+      >
+        Disables the option for users to click the element and select files through a file dialog. To disable the option, you include this attribute with no value.
+      </sky-demo-page-property>
+      <sky-demo-page-property
+        propertyName="validateFn"
+        isOptional="true"
+      >
+        Provides a custom validation function (<sky-code>[validateFn]="validateFile"</sky-code>). By default, any type of file is allowed.
+      </sky-demo-page-property>
+    </sky-demo-page-properties>
 
-  <sky-demo-page-properties sectionHeading="File item properties">
-    <sky-demo-page-property
-      propertyName="fileItem"
-    >
-      Displays summary information about files that users attach to forms. By default, the component displays file names, delete buttons, and fields for names and tags. For files from local drives, it also displays file sizes and thumbnails.
-    </sky-demo-page-property>
-  </sky-demo-page-properties>
+    <sky-demo-page-properties sectionHeading="File drop events">
+      <sky-demo-page-property
+        propertyName="filesChanged"
+        isOptional="true"
+      >
+        Fires when the user selects one or more files.
+      </sky-demo-page-property>
+      <sky-demo-page-property
+        propertyName="linkChanged"
+        isOptional="true"
+      >
+        Fires when the user adds a link.
+      </sky-demo-page-property>
+    </sky-demo-page-properties>
 
-  <sky-demo-page-properties sectionHeading="File item events">
-    <sky-demo-page-property
-      propertyName="deleteFile"
-      isOptional="true"
-    >
-      Fires when users click the delete button for an item. The deleted item is passed to the function.
-    </sky-demo-page-property>
-  </sky-demo-page-properties>
+    <sky-demo-page-properties sectionHeading="File item properties">
+      <sky-demo-page-property
+        propertyName="fileItem"
+      >
+        Displays summary information about files that users attach to forms. By default, the component displays file names, delete buttons, and fields for names and tags. For files from local drives, it also displays file sizes and thumbnails.
+      </sky-demo-page-property>
+    </sky-demo-page-properties>
 
-  <sky-demo-page-example>
-    <sky-file-attachment-demo></sky-file-attachment-demo>
-    <sky-demo-page-code
-      demoName="File attachment">
-    </sky-demo-page-code>
-  </sky-demo-page-example>
+    <sky-demo-page-properties sectionHeading="File item events">
+      <sky-demo-page-property
+        propertyName="deleteFile"
+        isOptional="true"
+      >
+        Fires when users click the delete button for an item. The deleted item is passed to the function.
+      </sky-demo-page-property>
+    </sky-demo-page-properties>
+
+    <sky-demo-page-example>
+      <sky-file-attachment-demo></sky-file-attachment-demo>
+      <sky-demo-page-code
+        demoName="File attachment">
+      </sky-demo-page-code>
+    </sky-demo-page-example>
 
   </sky-tab>
-    
+
 </sky-tabset>
-    
+
 </sky-tabbed-demo-page>
