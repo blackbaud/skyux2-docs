@@ -272,7 +272,10 @@ export class SkyDemoComponentsService {
             'SkyAlertModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('File attachment')
+        getCodeFiles: () => [
+          ...this.getDemoFiles('File attachment'),
+          ...this.getDemoFiles('Single file attachment')
+        ]
       },
       {
         name: 'Filter',
