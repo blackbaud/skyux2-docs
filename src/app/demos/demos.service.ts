@@ -117,23 +117,22 @@ export class SkyDocsDemoCodeService {
         }
       ]
     },
+
     {
-      'Single file attachment':
-      {
-        component: SkySingleFileAttachmentDemoComponent,
-        files: [
-          {
-            name: 'single-file-attachment-demo.component.html',
-            fileContents: require('!!raw-loader!./single-file-attachment/single-file-attachment-demo.component.html')
-          },
-          {
-            name: 'single-file-attachment-demo.component.ts',
-            fileContents: require('!!raw-loader!./single-file-attachment/single-file-attachment-demo.component.ts'),
-            componentName: 'SkySingleFileAttachmentDemoComponent',
-            bootstrapSelector: 'sky-single-file-attachment-demo'
-          }
-        ]
-      }
+      name: 'Single file attachment',
+      component: SkySingleFileAttachmentDemoComponent,
+      files: [
+        {
+          name: 'single-file-attachment-demo.component.html',
+          fileContents: require('!!raw-loader!./single-file-attachment/single-file-attachment-demo.component.html')
+        },
+        {
+          name: 'single-file-attachment-demo.component.ts',
+          fileContents: require('!!raw-loader!./single-file-attachment/single-file-attachment-demo.component.ts'),
+          componentName: 'SkySingleFileAttachmentDemoComponent',
+          bootstrapSelector: 'sky-single-file-attachment-demo'
+        }
+      ]
     },
 
     {
