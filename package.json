@@ -34,7 +34,7 @@
     "@skyux/datetime": "3.6.1",
     "@skyux/errors": "3.0.0",
     "@skyux/flyout": "3.2.1",
-    "@skyux/forms": "3.4.0",
+    "@skyux/forms": "3.4.1",
     "@skyux/grids": "3.2.0",
     "@skyux/http": "3.4.1",
     "@skyux/i18n": "3.7.1",
