@@ -10,94 +10,151 @@
     [formGroup]="characterCountForm"
   >
     <div
-      style="display: flex;"
+      class="sky-form-group"
     >
-      <label
-        class="sky-control-label"
-        for="input-count-example"
-        style="flex-grow: 1;"
+      <div
+        style="display: flex;"
       >
-        First name
-      </label>
+        <label
+          class="sky-control-label"
+          style="flex-grow: 1;"
+        >
+          First name
+        </label>
 
-      <sky-character-counter-indicator
-        #indicator
+        <sky-character-counter-indicator
+          #nameIndicator
+        >
+        </sky-character-counter-indicator>
+      </div>
+
+      <input
+        class="sky-form-control"
+        formControlName="firstName"
+        type="text"
+        skyCharacterCounter
+        [skyCharacterCounterIndicator]="nameIndicator"
+        [skyCharacterCounterLimit]="maxNameCharacterCount"
+      />
+
+      <div *ngIf="firstName.errors?.skyCharacterCounter"
+        class="sky-error-label"
       >
-      </sky-character-counter-indicator>
+        Limit First name to {{maxNameCharacterCount}} characters.
+      </div>
     </div>
 
-    <input
-      class="sky-form-control"
-      formControlName="firstName"
-      type="text"
-      skyCharacterCounter
-      [skyCharacterCounterIndicator]="indicator"
-      [skyCharacterCounterLimit]="maxCharacterCount"
-    />
-
-    <div *ngIf="firstName.errors?.skyCharacterCounter"
-      class="sky-error-label"
+    <div
+      class="sky-form-group"
     >
-      Limit First name to {{maxCharacterCount}} characters.
+      <div
+        style="display: flex;"
+      >
+        <label
+          class="sky-control-label"
+          style="flex-grow: 1;"
+        >
+          About me
+        </label>
+
+        <sky-character-counter-indicator
+          #aboutIndicator
+        >
+        </sky-character-counter-indicator>
+      </div>
+
+      <textarea
+        rows="3"
+        class="sky-form-control"
+        formControlName="aboutMe"
+        skyCharacterCounter
+        [skyCharacterCounterIndicator]="aboutIndicator"
+        [skyCharacterCounterLimit]="maxAboutCharacterCount"
+      >
+      </textarea>
+
+      <div *ngIf="aboutMe.errors?.skyCharacterCounter"
+        class="sky-error-label"
+      >
+        Limit About me to {{maxAboutCharacterCount}} characters.
+      </div>
     </div>
   </form>
-
-  <table>
-    <tr>
-      <th>Valid</th>
-      <td>{{ characterCountForm.valid }}</td>
-    </tr>
-    <tr>
-      <th>Value</th>
-      <td>{{ firstName.value || 'Nothing entered...' }}</td>
-    </tr>
-  </table>
 
   <h3>
     Template-driven form setup
   </h3>
 
   <div
-    style="display: flex;"
+    class="sky-form-group"
   >
-    <label
-      class="sky-control-label"
-      for="input-count-example"
-      style="flex-grow: 1;"
+    <div
+      style="display: flex;"
     >
-      First name
-    </label>
+      <label
+        class="sky-control-label"
+        style="flex-grow: 1;"
+      >
+        First name
+      </label>
 
-    <sky-character-counter-indicator
-      #templateIndicator
+      <sky-character-counter-indicator
+        #templateNameIndicator
+      >
+      </sky-character-counter-indicator>
+    </div>
+
+    <input
+      class="sky-form-control"
+      type="text"
+      skyCharacterCounter
+      [skyCharacterCounterIndicator]="templateNameIndicator"
+      [skyCharacterCounterLimit]="maxNameCharacterCount"
+      [(ngModel)]="person.firstName"
+      #templateNameInput="ngModel"
+    />
+
+    <div *ngIf="templateNameInput.errors?.skyCharacterCounter"
+      class="sky-error-label"
     >
-    </sky-character-counter-indicator>
+      Limit First name to {{maxNameCharacterCount}} characters.
+    </div>
   </div>
 
-  <input
-    class="sky-form-control"
-    type="text"
-    skyCharacterCounter
-    [skyCharacterCounterIndicator]="templateIndicator"
-    [skyCharacterCounterLimit]="maxCharacterCount"
-    [(ngModel)]="nameValue"
-    #counterTextInput="ngModel"
-  />
-
-  <div *ngIf="counterTextInput.errors?.skyCharacterCounter"
-    class="sky-error-label"
+  <div
+    class="sky-form-group"
   >
-    Limit First name to {{maxCharacterCount}} characters.
-  </div>
+    <div
+      style="display: flex;"
+    >
+      <label
+        class="sky-control-label"
+        style="flex-grow: 1;"
+      >
+        About me
+      </label>
 
-  <table>
-    <tr>
-      <th>Valid</th>
-      <td>{{ counterTextInput.valid }}</td>
-    </tr>
-    <tr>
-      <th>Value</th>
-      <td>{{ nameValue || 'Nothing entered...' }}</td>
-    </tr>
-  </table>
+      <sky-character-counter-indicator
+        #templateAboutIndicator
+      >
+      </sky-character-counter-indicator>
+    </div>
+
+    <textarea
+      rows="3"
+      class="sky-form-control"
+      skyCharacterCounter
+      [skyCharacterCounterIndicator]="templateAboutIndicator"
+      [skyCharacterCounterLimit]="maxAboutCharacterCount"
+      [(ngModel)]="person.aboutMe"
+      #templateAboutInput="ngModel"
+    >
+    </textarea>
+
+    <div *ngIf="templateAboutInput.errors?.skyCharacterCounter"
+      class="sky-error-label"
+    >
+      Limit About me to {{maxAboutCharacterCount}} characters.
+    </div>
+  </div>
 </div>

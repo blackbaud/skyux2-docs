@@ -16,8 +16,10 @@ import {
 export class SkyCharacterCountDemoComponent implements OnInit {
   public characterCountForm: FormGroup;
   public firstName: FormControl;
-  public maxCharacterCount: number = 10;
-  public nameValue: string = '';
+  public aboutMe: FormControl;
+  public maxNameCharacterCount: number = 10;
+  public maxAboutCharacterCount: number = 150;
+  public person: { firstName: string, aboutMe: string } = {firstName: '', aboutMe: ''};
 
   constructor(
     private formBuilder: FormBuilder
@@ -25,9 +27,12 @@ export class SkyCharacterCountDemoComponent implements OnInit {
 
   public ngOnInit(): void {
     this.firstName = this.formBuilder.control('John');
+    this.aboutMe = this.formBuilder.control('My name is John and I like to collect rocks. ' +
+    'When I\'m not collecting rocks, I like to learn about outer space.');
 
     this.characterCountForm = this.formBuilder.group({
-      firstName: this.firstName
+      firstName: this.firstName,
+      aboutMe: this.aboutMe
     });
   }
 }
