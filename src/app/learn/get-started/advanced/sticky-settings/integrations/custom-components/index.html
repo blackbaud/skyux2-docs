@@ -1,0 +1,53 @@
+<stache
+  pageTitle="Custom Components"
+  navTitle="Custom components"
+  navOrder="20">
+
+  <p>
+    To save user configuration settings in custom components, use the <sky-code>SkyUIConfigService</sky-code> as illustrated in the following code sample. The <sky-code>key</sky-code> that you provide to the <sky-code>UIConfigService</sky-code> must be unique within your SPA.
+  </p>
+  <stache-include fileName="sticky-settings-whitelist.html"></stache-include>
+
+  <sky-code-block languageType="js">
+    import {
+      OnInit
+    } from '@angular/core';
+
+    import {
+      SkyUIConfigService
+    } from '@skyux/core';
+
+    @Component({
+      selector: 'app-custom-component',
+      templateUrl: './custom.component.html'
+    })
+    export class CustomComponent implements OnInit {
+
+      constructor(
+        private configSvc: SkyUIConfigService
+      ) { }
+
+      public ngOnInit() {
+        this.configSvc
+          .getConfig(
+            this.acceptedKey,
+            this.acceptedValue
+          )
+          .subscribe(accepted => this.acceptedValue = accepted);
+      }
+
+      public saveChanges() {
+        this.configSvc
+          .setConfig(
+            this.acceptedKey,
+            this.acceptedValue
+          );
+      }
+
+      private acceptedValue = false;
+
+      private acceptedKey = 'agreement-accepted';
+    }
+  </sky-code-block>
+
+</stache>

@@ -1,0 +1,17 @@
+<stache
+  pageTitle="Integrations"
+  navTitle="Integrations"
+  navOrder="20">
+
+  <stache-page-summary>
+    <p>
+      To apply sticky settings with the UI Config Service, choose a level of integration.
+    </p>
+  </stache-page-summary>
+
+  <stache-action-buttons
+    [routes]="stache.jsonData.action_buttons.ui_config_integrations"
+    showSearch="false">
+  </stache-action-buttons>
+
+</stache>

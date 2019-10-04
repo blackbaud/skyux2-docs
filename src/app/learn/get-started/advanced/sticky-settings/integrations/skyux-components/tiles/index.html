@@ -1,0 +1,81 @@
+<stache
+  pageTitle="Sticky Settings for Tile Dashboards"
+  navTitle="Tile dashboards"
+>
+  <stache-page-summary>
+    <p>
+      To save user configuration settings in tile dashboards, add the <sky-code>settingsKey</sky-code> property to the <sky-code>sky-tile-dashboard</sky-code> element. The <sky-code>settingsKey</sky-code> must be unique to the component.
+    </p>
+    <p>
+      The UI Config Service preserves the layout and collapsed state of tile dashboards.
+    </p>
+    <stache-include fileName="sticky-settings-whitelist.html"></stache-include>
+
+    <sky-code-block languageType="html">
+      &lt;sky-tile-dashboard
+        [(config)]="dashboardConfig"
+        settingsKey="my-tile-dashboard"
+      &gt;
+      &lt;/sky-tile-dashboard&gt;
+    </sky-code-block>
+
+    <p>
+      That's it! The UI Config Service now saves user settings for the tile dashboard and restores them when users return. To save the user settings, the service depends on the <sky-code>id</sky-code> values that the <sky-code>config</sky-code> property uses to populate the tile dashboard. Sticky settings only save the layout and collapsed state of tiles, so you are free to update the content of tile components as necessary. If you remove tiles from the tile dashboard, they no longer appear. If you add tiles, they appear at the bottom of the tile dashboard for users who changed their tile layout or in the default position for users who didn't.
+    </p>
+
+    <p>
+      The service depends on tile IDs to apply user settings, so changes to tile IDs affect sticky settings. If you change a tile ID, that tile appears at the bottom of the tile dashboard for users who changed the tile layout.
+    </p>
+
+  <sky-code-block languageType="typescript">
+    @Component({
+      selector: 'my-component'
+    })
+    export class MyComponent {
+      public dashboardConfig: SkyTileDashboardConfig = {
+        tiles: [
+          {
+            id: 'tile1',
+            componentType: SkyTileDemoTile1Component
+          },
+          {
+            id: 'tile2',
+            componentType: SkyTileDemoTile2Component
+          }
+        ],
+        layout: {
+          singleColumn: {
+            tiles: [
+              {
+                id: 'tile2',
+                isCollapsed: true
+              },
+              {
+                id: 'tile1',
+                isCollapsed: true
+              }
+            ]
+          },
+          multiColumn: [
+            {
+              tiles: [
+                {
+                  id: 'tile1',
+                  isCollapsed: true
+                }
+              ]
+            },
+            {
+              tiles: [
+                {
+                  id: 'tile2',
+                  isCollapsed: true
+                }
+              ]
+            }
+          ]
+        }
+      };
+    }
+  </sky-code-block>
+</stache>

@@ -17,15 +17,15 @@
     tabHeading="Design">
 
     <sky-demo-page-content sectionHeading="Usage">
-      <h3>Use when</h3>
+      <h3 class="sky-text-success">Use when</h3>
         <div class="sky-text-block">
-          <p>Users require access to small chunks of contextual content that are only valuable some of the time.</p>
-          <p>Tasks include complex or unfamiliar capabilities, and users require guidance on subtle-but-important elements.</p>
+          <p>Use popovers when users require access to small chunks of contextual content that are only valuable some of the time.</p>
+          <p>Use popovers when tasks include complex or unfamiliar capabilities, and users require guidance on subtle-but-important elements.</p>
         </div>
-      <h3>Don't use when</h3>
+      <h3 class="sky-text-danger">Don't use when</h3>
         <div class="sky-text-block">
-          <p>The content is valuable most of the time. Use <a routerLink="/design/guidelines/user-assistance" fragment="persistent-inline-help">persistent inline help</a> instead.</p>
-          <p>A large amount of content is necessary. Use a <a routerLink="/components/flyout">flyout</a> instead.</p>
+          <p>Don't use popovers when the content is valuable most of the time. Use <a routerLink="/design/guidelines/user-assistance" fragment="persistent-inline-help">persistent inline help</a> instead.</p>
+          <p>Don't use popovers when a large amount of content is necessary. Use a <a routerLink="/components/flyout">flyout</a> instead.</p>
         </div>
     </sky-demo-page-content>
 
@@ -97,19 +97,26 @@
            <p>
             Limit popovers to small chunks of contextual content. The content can include plain text, formatted HTML, or Angular components.
             </p>
-            <p>
-              Don't include a large amount of content, form inputs, or complex interactions.
-           </p>
           </sky-docs-visual-example-text>
           <sky-docs-visual-example-image>
             <div class="sky-margin-stacked-content-section">
               <img src="~/assets/img/guidelines/popover/content-simple.png" />
               <div class="caption caption-success sky-text-success">Do use small chunks of plain text.</div>
             </div>
-            <div class="sky-margin-stacked-content-section">
+            <div>
               <img src="~/assets/img/guidelines/popover/content-html.png" />
               <div class="caption caption-success sky-text-success">Do use small chunks of formatted HTML.</div>
             </div>
+          </sky-docs-visual-example-image>
+        </sky-docs-visual-example>
+    
+        <sky-docs-visual-example>
+          <sky-docs-visual-example-text>
+            <p>
+              Don't include a large amount of content, form inputs, or complex interactions.
+           </p>
+          </sky-docs-visual-example-text>
+          <sky-docs-visual-example-image>
             <div>
               <img class="bordered" src="~/assets/img/guidelines/popover/content-dont-overload.png" />
               <div class="caption caption-danger sky-text-danger">Don't display large amounts of content in popovers.</div>
