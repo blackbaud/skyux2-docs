@@ -260,10 +260,10 @@ export class SkyDemoComponentsService {
         getCodeFiles: () => this.getDemoFiles('Error')
       },
       {
-        name: 'File drop',
+        name: 'File attachment',
         icon: 'cloud-upload',
-        summary: `The file attachment components allow users to add file attachments to forms.`,
-        url: '/components/file-attachments/file-drop',
+        summary: `The file attachment components allow users to attach files to forms.`,
+        url: '/components/file-attachments',
         imports: {
           '@skyux/forms': [
             'SkyFileAttachmentsModule'

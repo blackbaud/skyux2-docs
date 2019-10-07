@@ -7,18 +7,18 @@ import { Component } from '@angular/core';
 export class FileAttachmentsActionButtonsComponent {
   public routes = [
     {
-      name: 'File drop',
-      path: '/components/file-attachments/file-drop',
+      name: 'File attachment',
+      path: '/components/file-attachments/file-attachment',
       icon: 'files-o',
       // tslint:disable-next-line
-      summary: 'The list filters module provides components that allow users to select filter criteria.'
+      summary: 'The file attachment component allows users to attach multiple local files or links to external files.'
     },
     {
       name: 'Single file attachment',
       path: '/components/file-attachments/single-file-attachment',
       icon: 'file-o',
       // tslint:disable-next-line
-      summary: 'The list paging component displays a SKY UX-themed pagination control for a list.'
+      summary: 'The single file attachment component provides a simple input for users to attach a single local file.'
     }
   ];
 }

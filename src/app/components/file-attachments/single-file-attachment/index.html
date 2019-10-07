@@ -5,7 +5,7 @@
 
   <sky-demo-page-summary>
     <p>
-      The file attachment module contains a single file attachment component for use in forms.
+      The single file attachment component allows the user to select a single local file to upload.
     </p>
   </sky-demo-page-summary>
 
@@ -35,11 +35,11 @@
 
 	<h3 class="sky-text-danger">Don't use when</h3>
   <p class="sky-text-block">
-    Don't use single file attachment if the user might need to link to a URL instead of uploading a local file. Use file attachment instead.
+    Don't use single file attachment if the user might need to link to a URL instead of uploading a local file. Use <a routerLink="/components/file-attachments/file-attachment">file attachment</a> instead.
   </p>
 	<sky-docs-visual-example>
 		<sky-docs-visual-example-text>
-			<p>Don't use single file attachment when the user might need to upload more than one file. Use file attachment instead.</p>
+			<p>Don't use single file attachment when the user might need to upload more than one file. Use <a routerLink="/components/file-attachments/file-attachment">file attachment</a> instead.</p>
 		</sky-docs-visual-example-text>
 		<sky-docs-visual-example-image>
 			<div>
@@ -83,7 +83,11 @@
 	</sky-demo-page-content>
 
   <sky-demo-page-content sectionHeading="Related information">
-		<h3>Guidelines</h3>
+		<h3>Components</h3>
+      <ul>
+        <li><a routerLink="/components/file-attachments/file-attachment">File attachment</a></li>
+      </ul>
+    <h3>Guidelines</h3>
 			<ul>
 				<li><a routerLink="/design/guidelines/form-design">Form design</a></li>
 			</ul>

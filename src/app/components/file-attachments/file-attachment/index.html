@@ -5,7 +5,7 @@
 
   <sky-demo-page-summary>
     <p>
-      The file drop component allows the user to drag and drop or select files to upload, and the file item displays information about an attachment.
+      The file attachment component allows the user to drag and drop or select files to upload or link external files, and the file item displays information about an attachment.
     </p>
   </sky-demo-page-summary>
 
@@ -48,7 +48,7 @@
 
     <h3 class="sky-text-danger">Don't use when</h3>
       <p class="sky-text-block">
-        Don't use file attachment if the user needs to upload one local file. Use single file attachment instead.
+        Don't use file attachment if the user needs to upload one local file. Use <a routerLink="/components/file-attachments/single-file-attachment">single file attachment</a> instead.
       </p>
     </sky-demo-page-content>
 
@@ -109,6 +109,10 @@
     </sky-demo-page-content>
 
     <sky-demo-page-content sectionHeading="Related information">
+      <h3>Components</h3>
+        <ul>
+          <li><a routerLink="/components/file-attachments/single-file-attachment">Single file attachment</a></li>
+        </ul>
       <h3>Guidelines</h3>
         <ul>
           <li><a routerLink="/design/guidelines/form-design">Form design</a></li>
