@@ -204,14 +204,18 @@ export class SkyDemoComponentsService {
             'SkyDatepickerModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('Datepicker')
+        getCodeFiles: () => [
+          ...this.getDemoFiles('Datepicker'),
+          ...this.getDemoFiles('Fuzzy datepicker')
+        ]
       },
       {
         name: 'Date range picker',
         icon: 'calendar',
         summary: `The date range picker component creates a text input for users to select a date range from a set of well-known options.`,
         url: '/components/date-range-picker',
-        getCodeFiles: () => this.getDemoFiles('Date range picker')
+        getCodeFiles: () => this.getDemoFiles('Date range picker'),
+        disableStackblitz: true
       },
       {
         name: 'Definition list',
@@ -244,7 +248,7 @@ export class SkyDemoComponentsService {
         name: 'Email validation',
         icon: 'check',
         // tslint:disable-next-line
-        summary: `The email validation directive ensures that user entries in an input element are valid email addresses.`,
+        summary: `The email validation module ensures that user entries in an input element are valid email addresses.`,
         url: '/components/email-validation',
         imports: {
           '@skyux/validation': [
@@ -292,6 +296,9 @@ export class SkyDemoComponentsService {
             'SkyFilterModule',
             'SkyRepeaterModule'
           ],
+          '@skyux/list-builder': [
+            'SkyListModule'
+          ],
           '@skyux/inline-form': [
             'SkyInlineFormModule'
           ],
@@ -304,6 +311,11 @@ export class SkyDemoComponentsService {
           '@skyux/forms': [
             'SkyCheckboxModule'
           ]
+        },
+        dependencies: {
+          'microedge-rxstate': '*',
+          '@skyux/list-builder-common': '*',
+          '@skyux/lookup': '*'
         },
         getCodeFiles: () => [
           ...this.getDemoFiles('Filter'),
@@ -458,7 +470,8 @@ export class SkyDemoComponentsService {
         icon: 'keyboard-o',
         summary: 'The inline form component renders a form in the current view rather than in a modal.',
         url: '/components/inline-form',
-        getCodeFiles: () => this.getDemoFiles('Inline form')
+        getCodeFiles: () => this.getDemoFiles('Inline form'),
+        disableStackblitz: true
       },
       {
         name: 'Key info',
@@ -782,12 +795,18 @@ export class SkyDemoComponentsService {
           '@skyux/lists': [
             'SkyPagingModule'
           ],
+          '@skyux/list-builder': [
+            'SkyListModule'
+          ],
           '@skyux/inline-form': [
             'SkyInlineFormModule'
           ]
         },
         dependencies: {
-          '@skyux/lists': '3.2.2'
+          'microedge-rxstate': '*',
+          '@skyux/lists': '3.2.2',
+          '@skyux/list-builder-common': '*',
+          '@skyux/lookup': '*'
         },
         getCodeFiles: () => this.getDemoFiles('Paging')
       },
@@ -798,6 +817,9 @@ export class SkyDemoComponentsService {
         summary: `The phone field module creates a button, search input, and text input for entering and validating phone numbers.`,
         url: '/components/phone-field',
         imports: {
+          '@skyux/lookup': [
+            'SkyLookupModule'
+          ],
           '@skyux/phone-field': [
             'SkyPhoneFielddModule'
           ]
@@ -805,7 +827,8 @@ export class SkyDemoComponentsService {
         dependencies: {
           '@skyux/phone-field': '*'
         },
-        getCodeFiles: () => this.getDemoFiles('Phone field')
+        getCodeFiles: () => this.getDemoFiles('Phone field'),
+        disableStackblitz: true
       },
       {
         name: 'Popover',
@@ -879,6 +902,9 @@ export class SkyDemoComponentsService {
         summary: `The search component creates a mobile-responsive input control for users to enter search criteria.`,
         url: '/components/search',
         imports: {
+          '@skyux/list-builder': [
+            'SkyListModule'
+          ],
           '@skyux/lookup': [
             'SkySearchModule'
           ],
@@ -891,6 +917,10 @@ export class SkyDemoComponentsService {
           '@skyux/inline-form': [
             'SkyInlineFormModule'
           ]
+        },
+        dependencies: {
+          'microedge-rxstate': '*',
+          '@skyux/list-builder-common': '*'
         },
         getCodeFiles: () => this.getDemoFiles('Search')
       },
@@ -911,7 +941,8 @@ export class SkyDemoComponentsService {
             'SkyCheckboxModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('Sectioned form')
+        getCodeFiles: () => this.getDemoFiles('Sectioned form'),
+        disableStackblitz: true
       },
       {
         name: 'Select field',
@@ -975,7 +1006,8 @@ export class SkyDemoComponentsService {
         icon: 'columns',
         summary: `The split view component displays a list alongside a workspace where users can view details and take actions.`,
         url: '/components/split-view',
-        getCodeFiles: () => this.getDemoFiles('Split view')
+        getCodeFiles: () => this.getDemoFiles('Split view'),
+        disableStackblitz: true
       },
       {
         name: 'Status indicator',
@@ -1128,7 +1160,7 @@ export class SkyDemoComponentsService {
       {
         name: 'URL validation',
         icon: 'check',
-        summary: 'The URL validation module allows users to validate URL format.',
+        summary: 'The URL validation module ensures that user entries in an input element are valid URLs.',
         url: '/components/url-validation',
         imports: {
           '@skyux/validation': [
@@ -1147,7 +1179,8 @@ export class SkyDemoComponentsService {
             'SkyVerticalTabsetModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('Vertical tabs')
+        getCodeFiles: () => this.getDemoFiles('Vertical tabs'),
+        disableStackblitz: true
       },
       {
         name: 'Wait',
