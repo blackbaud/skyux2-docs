@@ -15,6 +15,7 @@ import {
 } from '../demos/demos.service';
 
 import {
+  SkyAngularTreeViewDemoModule,
   SkyInlineFormDemoModule,
   SkyPhoneFieldDemoModule,
   SkySplitViewDemoModule,
@@ -30,6 +31,7 @@ require('style-loader!prismjs/themes/prism.css');
 
 @NgModule({
   imports: [
+    SkyAngularTreeViewDemoModule,
     SkyDateRangePickerModule,
     SkyDemoModule,
     SkyInlineFormDemoModule,
@@ -39,6 +41,7 @@ require('style-loader!prismjs/themes/prism.css');
     SkyToggleSwitchDemoModule
   ],
   exports: [
+    SkyAngularTreeViewDemoModule,
     SkyDateRangePickerModule,
     SkyDemoModule,
     SkyInlineFormDemoModule,
