@@ -832,7 +832,7 @@ export class SkyDemoComponentsService {
       {
         name: 'Radio button',
         icon: 'circle-o',
-        summary: `The radio button component renders a SKY UX-themed radio button.`,
+        summary: `The radio button module ceates a small set of selection inputs and allows users to select one option only.`,
         url: '/components/radio',
         imports: {
           '@skyux/forms': [

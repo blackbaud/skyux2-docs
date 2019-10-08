@@ -255,7 +255,7 @@ The radio button module ceates a small set of selection inputs and allows users 
         
   <sky-demo-page-properties sectionHeading="Radio button group properties">
     <p>
-       The <sky-code>sky-radio-group</sky-code> component is required for radio buttons on Angular reactive forms, and we recommend using it with all radio buttons. On Angular forms, the component manages the selected values and keeps the forms up-to-date. When users select a radio button, its value is driven through an <sky-code>ngModel</sky-code> attribute that you specify on the <sky-code>sky-radio-group</sky-code> element.
+       The <sky-code>sky-radio-group</sky-code> component organizes radio buttons into a group. IT is required for radio buttons on Angular reactive forms, and we recommend using it with all radio buttons. On Angular forms, the component manages the selected values and keeps the forms up-to-date. When users select a radio button, its value is driven through an <sky-code>ngModel</sky-code> attribute that you specify on the <sky-code>sky-radio-group</sky-code> element.
     </p>
     <sky-demo-page-property
       propertyName="name"
@@ -289,6 +289,9 @@ The radio button module ceates a small set of selection inputs and allows users 
   </sky-demo-page-properties>
 
   <sky-demo-page-properties sectionHeading="Radio button properties">
+    <p>
+      The radio button component renders a SKY UX-themed replacement for an HTML <sky-code>input</sky-code> element with <sky-code>type="radio"</sky-code>. When users select a radio button, its value is driven through an <sky-code>ngModel</sky-code> attribute that you specify on the <sky-code>sky-radio</sky-code> element or the parent <sky-code>sky-radio-group</sky-code> element.
+    </p>
     <sky-demo-page-property
       propertyName="name"
     >
@@ -297,7 +300,7 @@ The radio button module ceates a small set of selection inputs and allows users 
     <sky-demo-page-property
       propertyName="value"
     >
-    Specifies a value for the radio button. The value usually corresponds to the radio button's label.
+    Specifies a value for the radio button. The value usually corresponds to the radio button's label, which you specify with the <sky-code>sky-radio-label</sky-code> component.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="checked"
