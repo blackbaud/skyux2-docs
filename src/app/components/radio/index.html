@@ -1,16 +1,260 @@
-<sky-demo-page
-  pageTitle="Radio Button"
-  skyuxModule="SkyRadioModule"
-  packageName="@skyux/forms"
+<sky-tabbed-demo-page
+  pageTitle="Radio button"
 >
 
-  <sky-demo-page-summary>
-    The radio button component renders a SKY UX-themed replacement for an HTML <sky-code>input</sky-code> element with <sky-code>type="radio"</sky-code>. When users select a radio button, its value is driven through an <sky-code>ngModel</sky-code> attribute that you specify on the <sky-code>sky-radio</sky-code> element or the parent <sky-code>sky-radio-group</sky-code> element. The <sky-code>sky-radio-label</sky-code> component specifies labels for radio buttons, and the <sky-code>sky-radio-group</sky-code> component organizes radio buttons into a group. The <sky-code>sky-radio-group</sky-code> component is required for radio buttons on Angular reactive forms, and we recommend using it with all radio buttons.
-  </sky-demo-page-summary>
+<sky-demo-page-summary>
+The radio button module ceates a small set of selection inputs and allows users to select one option only.
+</sky-demo-page-summary>
+    
+<div class="sky-margin-stacked-content-section">
+    <sky-demo-page-example>
+        <sky-radio-demo></sky-radio-demo>
+    </sky-demo-page-example>
+</div>
 
+<sky-tabset id="content-tabs">
+	
+	<sky-tab tabHeading="Design">
+        
+        <sky-demo-page-content sectionHeading="Usage">
+            
+            <h3 class="sky-text-success">Use when</h3>
+            
+            <sky-docs-visual-example>
+                <sky-docs-visual-example-text>
+                    <p>Use radio buttons when users must choose one option from a set of up to five. Use radio buttons in modals where users confirm decisions before changes take effect.</p>
+                </sky-docs-visual-example-text>
+                
+                <sky-docs-visual-example-image>
+                    <div>
+                    <img src="~/assets/img/guidelines/radio-button/radio-button-usage-1.png" />
+                    <div class="caption caption-success sky-text-success">Do use radio buttons when users select a single item from a short list of options in a modal.</div>
+                    </div>
+                </sky-docs-visual-example-image>
+            </sky-docs-visual-example>
+            
+            <sky-docs-visual-example>
+                <sky-docs-visual-example-text>
+                    <p>Use icon radio button groups when icons clearly communicate the options and fit under a single label. </p>
+                </sky-docs-visual-example-text>
+                
+                <sky-docs-visual-example-image>
+                    <div>
+                    <img src="~/assets/img/guidelines/radio-button/radio-button-usage-3.png" />
+                    <div class="caption caption-success sky-text-success">Do use icon radio button groups when icons clearly illustrate the options.</div>
+                    </div>
+                </sky-docs-visual-example-image>
+            </sky-docs-visual-example>
+            
+            <sky-docs-visual-example>
+                <sky-docs-visual-example-text>
+                    <p>Use radio buttons to enable conditional inputs. For options that enable one or two inputs, disable the inputs until users select the radio buttons. For options that enable more inputs, hide the inputs until users select the radio buttons. If all options in a radio button group enable conditional inputs or significantly change the workflow, consider using <a routerLink="/components/action-button">action buttons</a> instead.</p>
+                </sky-docs-visual-example-text>
+                
+                <sky-docs-visual-example-image>
+                    <div>
+                    <img src="~/assets/img/guidelines/radio-button/radio-button-usage-2.png" />
+                    <div class="caption caption-success sky-text-success">Do use radio buttons to enable conditional inputs as part of a task.</div>
+                    </div>
+                </sky-docs-visual-example-image>
+            </sky-docs-visual-example>
+            
+            <h3 class="sky-text-danger">Don't use when</h3>
+            
+            <sky-docs-visual-example>
+                <sky-docs-visual-example-text>
+                    <p>Don’t use radio buttons when users must choose from more than five items. Use a different <a routerLink="/design/guidelines/form-design" fragment="selection-inputs">selection input</a> instead.</p>
+                </sky-docs-visual-example-text>
+                
+                <sky-docs-visual-example-image>
+                    <div class="sky-margin-stacked-content-section">
+                    <img src="~/assets/img/guidelines/radio-button/radio-button-usage-5.png" />
+                    <div class="caption caption-danger sky-text-danger">Don't use radio buttons for a long list of options.</div>
+                    </div>
+                    <div>
+                    <img src="~/assets/img/guidelines/radio-button/radio-button-usage-6.png" />
+                    <div class="caption caption-success sky-text-success">Do use different selection controls for more than five choices.</div>
+                    </div>
+                </sky-docs-visual-example-image>
+            </sky-docs-visual-example>
+            
+            <sky-docs-visual-example>
+                <sky-docs-visual-example-text>
+                    <p>Don’t use radio buttons for two options that are exact opposites. Use a <a routerLink="/components/checkbox">checkbox</a> instead.</p>
+                </sky-docs-visual-example-text>
+                
+                <sky-docs-visual-example-image>
+                    <div class="sky-margin-stacked-content-section">
+                    <img src="~/assets/img/guidelines/radio-button/radio-button-usage-7.png" />
+                    <div class="caption caption-danger sky-text-danger">Don't use radio buttons to represent exact opposites.</div>
+                    </div>
+                    <div>
+                    <img src="~/assets/img/guidelines/radio-button/radio-button-usage-8.png" />
+                    <div class="caption caption-success sky-text-success">Do use a checkbox to represent exact opposites.</div>
+                    </div>
+                </sky-docs-visual-example-image>
+            </sky-docs-visual-example>
+            
+            <sky-docs-visual-example>
+                <sky-docs-visual-example-text>
+                    <p>Don't use radio buttons when user selections significantly alter the workflow. Use <a routerLink="/components/action-button">action buttons</a> instead, and place them at the beginning of the task.</p>
+                </sky-docs-visual-example-text>
+                
+                <sky-docs-visual-example-image>
+                    <div class="sky-margin-stacked-content-section">
+                    <img src="~/assets/img/guidelines/radio-button/radio-button-usage-9.png" />
+                    <div class="caption caption-danger sky-text-danger">Don't use radio buttons for options that significantly alter the workflow.</div>
+                    </div>
+                    <div>
+                    <img src="~/assets/img/guidelines/radio-button/radio-button-usage-10.png" />
+                    <div class="caption caption-success sky-text-success">Do use action buttons for decisions that branch users into signficantly different workflows.</div>
+                    </div>
+                </sky-docs-visual-example-image>
+            </sky-docs-visual-example>
+            
+            <sky-docs-visual-example>
+                <sky-docs-visual-example-text>
+                    <p>Don’t use icon radio buttons when icons don't clearly communicate options. Use  radio buttons with text labels to provide context.</p>
+                </sky-docs-visual-example-text>
+                
+                <sky-docs-visual-example-image>
+                    <div class="sky-margin-stacked-content-section">
+                    <img src="~/assets/img/guidelines/radio-button/radio-button-usage-11.png" />
+                    <div class="caption caption-danger sky-text-danger">Don't use icon radio buttons when the icons are unclear.</div>
+                    </div>
+                    <div>
+                    <img src="~/assets/img/guidelines/radio-button/radio-button-usage-12.png" />
+                    <div class="caption caption-success sky-text-success">Do use radio buttons with text labels when icons do not clearly communicate options.</div>
+                    </div>
+                </sky-docs-visual-example-image>
+            </sky-docs-visual-example>
+            
+            <sky-docs-visual-example>
+                <sky-docs-visual-example-text>
+                    <p>Don’t use ungrouped icon radio buttons. Use icon radio button groups to connect the options visually.</p>
+                </sky-docs-visual-example-text>
+                
+                <sky-docs-visual-example-image>
+                    <div class="sky-margin-stacked-content-section">
+                    <img src="~/assets/img/guidelines/radio-button/radio-button-usage-13.png" />
+                    <div class="caption caption-danger sky-text-danger">Don't use icon radio buttons without grouping them together.</div>
+                    </div>
+                    <div>
+                    <img src="~/assets/img/guidelines/radio-button/radio-button-usage-14.png" />
+                    <div class="caption caption-success sky-text-success">Do use icon radio button groups to connect the options.</div>
+                    </div>
+                </sky-docs-visual-example-image>
+            </sky-docs-visual-example>
+            
+        </sky-demo-page-content>
+        
+        <sky-demo-page-content sectionHeading="Anatomy">
+        
+            <h3>Traditional radio buttons</h3>
+            <sky-docs-anatomy imagePath="~/assets/img/guidelines/radio-button/radio-button-anatomy-1.png">
+                <sky-docs-anatomy-item anatomyNumber="1">Radio button glyph</sky-docs-anatomy-item>
+                <sky-docs-anatomy-item isOptional="true" anatomyNumber="2">Text label</sky-docs-anatomy-item>
+            </sky-docs-anatomy>
+            
+            <h3>Icon radio buttons</h3>
+            <sky-docs-anatomy imagePath="~/assets/img/guidelines/radio-button/radio-button-anatomy-2.png">
+                <sky-docs-anatomy-item anatomyNumber="1">Icon radio button type</sky-docs-anatomy-item>
+                <sky-docs-anatomy-item anatomyNumber="2">Icon</sky-docs-anatomy-item>
+            </sky-docs-anatomy>
+            
+        </sky-demo-page-content>
+        
+        <sky-demo-page-content sectionHeading="Options">
+            
+            <h3>Text label</h3>
+            <div class="sky-text-block">
+                <p>When radio buttons are in grid columns, text labels are not required if column headings provide the necessary context. Use text labels for all other states.</p>
+            </div>
+            <h3>Icon radio button type</h3>
+            <div class="sky-text-block">
+                <p>Icon radio buttons can use background and border color that match <a routerLink="/components/status-indicator" fragment="options">status indicator types</a> such as success or danger.</p>
+            </div>
+            
+        </sky-demo-page-content>
+        
+        <sky-demo-page-content sectionHeading="Behavior & states">
+        
+            <sky-demo-page-component-states>
+              <sky-demo-page-component-state stateName="Selected" imagePath="~/assets/img/guidelines/radio-button/radio-button-combined-state-2.png"></sky-demo-page-component-state>
+              <sky-demo-page-component-state stateName="Unselected" imagePath="~/assets/img/guidelines/radio-button/radio-button-combined-state-1.png"></sky-demo-page-component-state>
+              <sky-demo-page-component-state stateName="Hover" imagePath="~/assets/img/guidelines/radio-button/radio-button-combined-state-3.png"></sky-demo-page-component-state>
+              <sky-demo-page-component-state stateName="Disabled" imagePath="~/assets/img/guidelines/radio-button/radio-button-combined-state-4.png"></sky-demo-page-component-state>
+            </sky-demo-page-component-states>
+        
+        </sky-demo-page-content>
+        
+        <sky-demo-page-content sectionHeading="Content">
+        
+            <div class="sky-text-block">
+                <p>Radio buttons may or may not use a preceeding label to provide context for the options. Unlike text input labels, this label may use verbs or questions. If you do not include a label, provide context for the consequences of the choices in the radio button text labels.</p>
+                <p>Icon radio buttons use the <a href="https://fontawesome/v4.7.0/">FontAwesome 4.7</a> icon library. For a list of common icons, see the <a routerLink="/design/styles/icons">SKY UX icon dictionary</a>. Icon radio buttons must use a <sky-code>label</sky-code> or <sky-code>labelledBy</sky-code> property for accessibility.</p>
+            </div>
+        
+        </sky-demo-page-content>
+        
+        <sky-demo-page-content sectionHeading="Layout">
+        
+            <sky-docs-visual-example>
+                <sky-docs-visual-example-text>
+                    <p>Arrange traditional radio buttons vertically to make it easy to see all options, scan their labels, and see the selected option.</p>
+                </sky-docs-visual-example-text>
+                
+                <sky-docs-visual-example-image>
+                    <div class="sky-margin-stacked-content-section">
+                    <img src="~/assets/img/guidelines/radio-button/radio-button-layout-1.png" />
+                    <div class="caption caption-success sky-text-success">Do stack radio buttons vertically.</div>
+                    </div>
+                    <div>
+                    <img src="~/assets/img/guidelines/radio-button/radio-button-layout-2.png" />
+                    <div class="caption caption-danger sky-text-danger">Don't arrange radio buttons horizontally.</div>
+                    </div>
+                </sky-docs-visual-example-image>
+            </sky-docs-visual-example>
+            
+            <sky-docs-visual-example>
+                <sky-docs-visual-example-text>
+                    <p>Use the <a routerLink="/components/form">form classes</a> to separate radio button groups from other form elements.</p>
+                </sky-docs-visual-example-text>
+                
+                <sky-docs-visual-example-image>
+                    <div>
+                    <img src="~/assets/img/guidelines/radio-button/radio-button-layout-3.png" />
+                    <div class="caption caption-success sky-text-success">Do use vertical spacing to visually separate radio button groups from other form elements.</div>
+                    </div>
+                </sky-docs-visual-example-image>
+            </sky-docs-visual-example>
+        
+        </sky-demo-page-content>
+        
+        <sky-demo-page-content sectionHeading="Related information">
+            <h3>Components</h3>
+			<ul>
+				<li><a routerLink="/components/action-button">Action button</a></li>
+                <li><a routerLink="/components/autocomplete">Autocomplete</a></li>
+                <li><a routerLink="/components/checkbox">Checkbox</a></li>
+                <li><a routerLink="/components/form">Form</a></li>
+                <li><a routerLink="/components/lookup">Lookup</a></li>
+                <li><a routerLink="/components/modal">Modal</a></li>
+                <li><a routerLink="/components/select-field">Select field</a></li>
+			</ul>
+		<h3>Guidelines</h3>
+			<ul>
+				<li><a routerLink="/design/guidelines/form-design">Form design</a></li>
+			</ul>
+        </sky-demo-page-content>
+        
+    </sky-tab>
+    
+    <sky-tab tabHeading="Development">
+        
   <sky-demo-page-properties sectionHeading="Radio button group properties">
     <p>
-      The <sky-code>sky-radio-group</sky-code> component wraps <sky-code>sky-radio</sky-code> components to organize radio buttons into a group. It is required for SKY UX radio buttons on Angular reactive forms to manage the selected values and keep the forms up-to-date. We recommend using the <sky-code>sky-radio-group</sky-code> component with all radio buttons.
+       The <sky-code>sky-radio-group</sky-code> component organizes radio buttons into a group. IT is required for radio buttons on Angular reactive forms, and we recommend using it with all radio buttons. On Angular forms, the component manages the selected values and keeps the forms up-to-date. When users select a radio button, its value is driven through an <sky-code>ngModel</sky-code> attribute that you specify on the <sky-code>sky-radio-group</sky-code> element.
     </p>
     <sky-demo-page-property
       propertyName="name"
@@ -44,15 +288,18 @@
   </sky-demo-page-properties>
 
   <sky-demo-page-properties sectionHeading="Radio button properties">
+    <p>
+      The radio button component renders a SKY UX-themed replacement for an HTML <sky-code>input</sky-code> element with <sky-code>type="radio"</sky-code>. When users select a radio button, its value is driven through an <sky-code>ngModel</sky-code> attribute that you specify on the <sky-code>sky-radio</sky-code> element or the parent <sky-code>sky-radio-group</sky-code> element.
+    </p>
     <sky-demo-page-property
       propertyName="name"
     >
-    This property is deprecated in favor of <a stacheRouterLink="." fragment="radio-button-group-properties">the <sky-code>name</sky-code> property on the <sky-code>sky-radio-group</sky-code> element</a>. It specifies a name for a group of radio buttons. This property accepts <sky-code>string</sky-code> values.
+    This property is deprecated in favor of <a stacheRouterLink="." fragment="radio-button-group-properties">the <sky-code>name</sky-code> property on the <sky-code>sky-radio-group</sky-code> element</a>. We recommend using the <a stacheRouterLink="." fragment="radio-button-group-properties"><sky-code>sky-radio-group</sky-code></a> element with all radio buttons, but if you opt not to, then this property specifies a name for a group of radio buttons. This property accepts <sky-code>string</sky-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="value"
     >
-    Specifies a value for the radio button. The value usually corresponds to the radio button's label.
+    Specifies a value for the radio button. The value usually corresponds to the radio button's label, which you specify with the <sky-code>sky-radio-label</sky-code> component.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="checked"
@@ -133,5 +380,8 @@
       For icon radio buttons, use the <sky-code>label</sky-code> or <sky-code>labelledby</sky-code> input. For people using assistive technology, the visible icon may not convey sufficient information.
     </p>
   </sky-demo-page-content>
-
-</sky-demo-page>
+        
+    </sky-tab>
+    
+</sky-tabset>
+</sky-tabbed-demo-page>
