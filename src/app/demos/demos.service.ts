@@ -3,6 +3,7 @@ import {
 } from '@angular/core';
 
 import {
+  SkyAgGridDemoComponent,
   SkyCodeBlockDemoComponent,
   SkyCopyToClipboardDemoComponent,
   SkyDateRangePickerDemoComponent,
@@ -28,6 +29,27 @@ import {
 @Injectable()
 export class SkyDocsDemoCodeService {
   public components: any[] = [
+    {
+      name: 'ag-Grid',
+      component: SkyAgGridDemoComponent,
+      files: [
+        {
+          name: 'ag-grid-demo.component.html',
+          fileContents: require('!!raw-loader!./ag-grid/ag-grid-demo.component.html')
+        },
+        {
+          name: 'ag-grid-demo.component.ts',
+          fileContents: require('!!raw-loader!./ag-grid/ag-grid-demo.component.ts'),
+          componentName: 'SkyAgGridDemoComponent',
+          bootstrapSelector: 'sky-ag-grid-demo'
+        },
+        {
+          name: 'ag-grid-demo-data.ts',
+          fileContents: require('!!raw-loader!./ag-grid/ag-grid-demo-data.ts')
+        }
+      ]
+    },
+
     {
       name: 'Phone field',
       component: SkyPhoneFieldDemoComponent,
