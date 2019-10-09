@@ -186,7 +186,7 @@ export class SkyDemoComponentsService {
       {
         name: 'Datepicker',
         icon: 'calendar',
-        summary: `The datepicker module allows users to use an input and calendar to select dates.`,
+        summary: `The datepicker module contains directives to create an input and calendar picker for users select dates or fuzzy dates.`,
         url: '/components/datepicker',
         imports: {
           '@skyux/datetime': [
