@@ -30,6 +30,12 @@
     Identifies the element that defines a label for the select field component's text input or button. If the text input or button does not include a visible label on the screen, use the <sky-code>ariaLabel</sky-code> property instead. This property accepts <sky-code>string</sky-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
+      propertyName="customPicker"
+      isOptional="true"
+    >
+      Specifies <a stacheRouterLink="." fragment="skyselectfieldcustompicker-properties">a <sky-code>SkySelectFieldCustomPicker</sky-code> object</a> to display a custom UI when users select the select field button.
+    </sky-demo-page-property>
+    <sky-demo-page-property
       propertyName="descriptorKey"
       isOptional="true"
       defaultValue="label"
@@ -136,6 +142,56 @@
       isOptional="true"
     >
     Specifies a label for an item that users can select with the select field component. This property accepts <sky-code>string</sky-code> values.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-properties sectionHeading="SkySelectFieldCustomPicker properties">
+    <sky-demo-page-property
+      propertyName="open"
+    >
+      Specifies a function to call when users select the select field button. The function accepts two parameters:
+      <ul>
+        <li>
+          <sky-code>pickerContext</sky-code> — <a stacheRouterLink="." fragment="skyselectfieldpickercontext-properties">A <sky-code>SkySelectFieldPickerContext</sky-code> object</a> that provides values to the custom picker.
+        </li>
+        <li>
+          <sky-code>updateValue</sky-code> — A function that accepts an array <a stacheRouterLink="." fragment="skyselectfield-properties">of <sky-code>SkySelectField</sky-code> objects</a> that represents the values selected in the custom picker.
+        </li>
+      </ul>
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-properties sectionHeading="SkySelectFieldPickerContext properties">
+    <sky-demo-page-property
+      propertyName="data"
+      isOptional="true"
+    >
+      An array <a stacheRouterLink="." fragment="skyselectfield-properties">of <sky-code>SkySelectField</sky-code> objects</a> from the select field's <sky-code>data</sky-code> property. Use this property to populate the custom picker with items for users to select.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="headingText"
+      isOptional="true"
+    >
+      Text from the select field's <sky-code>pickerHeading</sky-code> property. If your custom picker is a modal, use this property to display a header.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="selectedValue"
+      isOptional="true"
+    >
+      The select field's current value. If the select field's <sky-code>selectMode</sky-code> is set to <sky-code>single</sky-code>, then this value is <a stacheRouterLink="." fragment="skyselectfield-properties">a <sky-code>SkySelectField</sky-code> object</a>. If the select field's <sky-code>selectMode</sky-code> is set to <sky-code>multiple</sky-code>, then this value is an array <a stacheRouterLink="." fragment="skyselectfield-properties">of <sky-code>SkySelectField</sky-code> objects</a>. Use this property to select the corresponding items in the custom picker.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="selectMode"
+      isOptional="true"
+    >
+      The <sky-code>SkySelectFieldSelectMode</sky-code> value from the select field's <sky-code>selectMode</sky-code> property. Use this property to determine whether users can select one item or multiple items.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="showAddNewRecordButton"
+      isOptional="true"
+      defaultValue="false"
+    >
+      The <sky-code>boolean</sky-code> value from the select field's <sky-code>showAddNewRecordButton</sky-code> property. Use this property to determine whether to display a button for users to add new items directly from the custom picker.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
