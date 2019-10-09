@@ -109,9 +109,9 @@ export class SkyDemoComponentsService {
         getCodeFiles: () => this.getDemoFiles('Card')
       },
       {
-        name: 'Character count',
-        icon: 'code',
-        summary: `The character count component provides character length restrictions for inputs.`,
+        name: 'Character count indicator',
+        icon: 'calculator',
+        summary: `The character count indicator component extends a text input to apply a character limit and display an indicator.`,
         url: '/components/character-count',
         imports: {
           '@skyux/forms': [
