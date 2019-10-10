@@ -1,9 +1,9 @@
 <sky-tabbed-demo-page
-  pageTitle="Character Count"
+  pageTitle="Character Count Indicator"
 >
 
   <sky-demo-page-summary>
-  The character count component is an extension for text input fields with character limits.
+    The character count indicator component extends a text input to apply a character limit and display an indicator with the number of characters entered and the character limit.
   </sky-demo-page-summary>
 
   <div
@@ -18,15 +18,12 @@
   <sky-tabset
     id="content-tabs"
   >
-
     <sky-tab
       tabHeading="Design"
     >
-
       <sky-demo-page-content
         sectionHeading="Usage"
       >
-
         <h3
           class="sky-text-success"
         >
@@ -35,7 +32,7 @@
         <sky-docs-visual-example>
           <sky-docs-visual-example-text>
             <p>
-              Use character count when a user has a high likelihood of being impacted by a character limit. This could be because technical requirements make the limit low, or because user input is freeform and could be very long.
+              Use character count indicators when users are likely to exceed character limits. Indicators are useful when technical requirements lead to restrictive character limits or when user entries are freeform and could be very long.
             </p>
           </sky-docs-visual-example-text>
 
@@ -47,7 +44,7 @@
               <div
                 class="caption caption-success sky-text-success"
               >
-                Do use character count on input fields with character limits that a user could realistically exceed.
+                Do use character count indicators on input fields where users may realistically exceed character limits.
               </div>
             </div>
           </sky-docs-visual-example-image>
@@ -62,7 +59,7 @@
         <sky-docs-visual-example>
           <sky-docs-visual-example-text>
             <p>
-              Don’t use character count on inputs where the character limit is apparent or implied by the data type.
+              Don’t use character count indicators when character limits are apparent or implied by the data type.
             </p>
           </sky-docs-visual-example-text>
 
@@ -74,7 +71,7 @@
               <div
                 class="caption caption-danger sky-text-danger"
               >
-                Don't use character count when the content has an expected or standard length.
+                Don't use character count indicators on input fields where user entries follow expected or standard lengths.
               </div>
             </div>
           </sky-docs-visual-example-image>
@@ -83,7 +80,7 @@
         <sky-docs-visual-example>
           <sky-docs-visual-example-text>
             <p>
-              Don’t use character count on inputs when exceeding the character limit is unrealistic. Use normal form validation to handle errors caused by character limit violations.
+              Don’t use character count indicators on inputs when users are unlikely to exceed character limits. Use <a routerLink="/design/guidelines/form-design" fragment="validation-and-error-handling">normal form validation</a> instead.
             </p>
           </sky-docs-visual-example-text>
 
@@ -97,7 +94,7 @@
               <div
                 class="caption caption-danger sky-text-danger"
               >
-                Don't use character count when the character limit is unlikely to be exceeded.
+                Don't use character count indicators on input fields where users should not realistically exceed character limits.
               </div>
             </div>
 
@@ -108,7 +105,7 @@
               <div
                 class="caption caption-success sky-text-success"
               >
-                Do use normal form validation for edge cases where a high character limit is exceeded.
+                Do use normal form validation for edge cases where users exceed character limits.
               </div>
             </div>
           </sky-docs-visual-example-image>
@@ -133,7 +130,7 @@
           <sky-docs-anatomy-item
             anatomyNumber="3"
           >
-            <a routerLink="/components/status-indicator"> Status indicator</a> (danger)
+            <a routerLink="/components/status-indicator">Status indicator</a> (danger)
           </sky-docs-anatomy-item>
         </sky-docs-anatomy>
       </sky-demo-page-content>
@@ -145,7 +142,7 @@
           class="sky-text-block"
         >
           <p>
-            The character count component is an extension of the <a routerLink="/components/form">form</a> component, which defines the styles and appearance of the input field states.
+            The character count indicator component extends the <a routerLink="/components/form">form classes</a> that define styles and the appearance of input field states.
           </p>
         </div>
 
@@ -161,7 +158,7 @@
           >
           </sky-demo-page-component-state>
           <sky-demo-page-component-state
-            stateName="At character limit"
+            stateName="At the character limit"
             imagePath="~/assets/img/guidelines/character-count/character-count-state-3.png"
           >
           </sky-demo-page-component-state>
@@ -185,7 +182,7 @@
           class="sky-text-block"
         >
           <p>
-            For the validation message when the character limit is exceeded, use the following format:
+            For validation messages when users exceed character limits, use the following format:
           </p>
           <p>
             <b>Limit &lt;input field label&gt; to &lt;n&gt; characters.</b>
@@ -199,7 +196,7 @@
         <sky-docs-visual-example>
           <sky-docs-visual-example-text>
             <p>
-              The character count is always located above the right side of the input field. If the field label is long, it wraps to the next line without displacing the character count.
+              The character count indicator always appears in the top right above the input field. Long field labels do not displace indicators. The labels wrap to multiple lines instead.
             </p>
           </sky-docs-visual-example-text>
 
@@ -247,22 +244,19 @@
       >
         <sky-demo-page-property
           propertyName="skyCharacterCounter"
-          isOptional="false"
         >
-          Creates an input that validates the number of characters in a value. Place this attribute on an <sky-code>input</sky-code> element. If users enter more characters than the provided limit, the input is invalid and an error indicator is displayed by the character count.
+          Creates an input field that validates the number of characters. Place this directive on an <sky-code>input</sky-code> or <sky-code>textarea</sky-code> element. If users enter more characters than allowed, then the input field is invalid and the component displays an error indicator.
+        </sky-demo-page-property>
+        <sky-demo-page-property
+          propertyName="skyCharacterCounterLimit"
+        >
+          Specifies the maximum number of characters allowed in the input field. Place this directive on an <sky-code>input</sky-code> or <sky-code>textarea</sky-code> element. This property accepts <sky-code>number</sky-code> values.
         </sky-demo-page-property>
         <sky-demo-page-property
           propertyName="skyCharacterCounterIndicator"
           isOptional="true"
         >
-          The character count indicator component. This is the component that displays the count, limit, and over the limit indicator.
-        </sky-demo-page-property>
-        <sky-demo-page-property
-          propertyName="skyCharacterCounterLimit"
-          defaultValue="0"
-          isOptional="true"
-        >
-          The maximum number of characters allowed.
+          Specifies the character count indicator component that displays the character count, character limit, and over-the-limit indicator. Place this directive on an <sky-code>input</sky-code> or <sky-code>textarea</sky-code> element.
         </sky-demo-page-property>
       </sky-demo-page-properties>
 
