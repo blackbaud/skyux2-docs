@@ -1,0 +1,22 @@
+<sky-demo-page
+  pageTitle="Window"
+  packageName="@skyux/core"
+  [installOnly]="true"
+>
+
+<sky-demo-page-summary>
+  <p>
+    The <sky-code>SkyAppWindowRef</sky-code> is the recommended service when there is a need to use the global <sky-code>window</sky-code> variable. Once injected into a component, it can be used to interact with <sky-code>window</sky-code> properties and event handlers by referencing its <sky-code>nativeWindow</sky-code> property.
+  </p>
+</sky-demo-page-summary>
+
+<sky-demo-page-properties sectionHeading="SkyAppWindowRef properties">
+  <sky-demo-page-property
+    propertyName="nativeWindow"
+    isOptional="true"
+  >
+    References the global <sky-code>window</sky-code> variable. For more information, see the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window">window API documentation on MDN web docs.</a>
+  </sky-demo-page-property>
+</sky-demo-page-properties>
+
+</sky-demo-page>

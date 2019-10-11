@@ -1184,6 +1184,12 @@ export class SkyDemoComponentsService {
         getCodeFiles: () => this.getDemoFiles('Wait')
       },
       {
+        name: 'Window',
+        icon: 'window-maximize',
+        summary: `The window service used to reference the global window variable`,
+        url: '/components/window'
+      },
+      {
         name: 'Wizard',
         icon: 'magic',
         // tslint:disable-next-line
