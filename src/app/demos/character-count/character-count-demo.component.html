@@ -19,28 +19,28 @@
           class="sky-control-label"
           style="flex-grow: 1;"
         >
-          First name
+          Transaction description
         </label>
 
         <sky-character-counter-indicator
-          #nameIndicator
+          #descriptionIndicator
         >
         </sky-character-counter-indicator>
       </div>
 
       <input
         class="sky-form-control"
-        formControlName="firstName"
+        formControlName="description"
         type="text"
         skyCharacterCounter
-        [skyCharacterCounterIndicator]="nameIndicator"
-        [skyCharacterCounterLimit]="maxNameCharacterCount"
+        [skyCharacterCounterIndicator]="descriptionIndicator"
+        [skyCharacterCounterLimit]="maxDescriptionCharacterCount"
       />
 
-      <div *ngIf="firstName.errors?.skyCharacterCounter"
+      <div *ngIf="description.errors?.skyCharacterCounter"
         class="sky-error-label"
       >
-        Limit First name to {{maxNameCharacterCount}} characters.
+        Limit Transaction description to {{maxDescriptionCharacterCount}} characters.
       </div>
     </div>
 
@@ -54,11 +54,11 @@
           class="sky-control-label"
           style="flex-grow: 1;"
         >
-          About me
+          Comments
         </label>
 
         <sky-character-counter-indicator
-          #aboutIndicator
+          #commentsIndicator
         >
         </sky-character-counter-indicator>
       </div>
@@ -66,17 +66,17 @@
       <textarea
         rows="3"
         class="sky-form-control"
-        formControlName="aboutMe"
+        formControlName="comments"
         skyCharacterCounter
-        [skyCharacterCounterIndicator]="aboutIndicator"
-        [skyCharacterCounterLimit]="maxAboutCharacterCount"
+        [skyCharacterCounterIndicator]="commentsIndicator"
+        [skyCharacterCounterLimit]="maxCommentsCharacterCount"
       >
       </textarea>
 
-      <div *ngIf="aboutMe.errors?.skyCharacterCounter"
+      <div *ngIf="comments.errors?.skyCharacterCounter"
         class="sky-error-label"
       >
-        Limit About me to {{maxAboutCharacterCount}} characters.
+        Limit Comments to {{maxCommentsCharacterCount}} characters.
       </div>
     </div>
   </form>
@@ -95,11 +95,11 @@
         class="sky-control-label"
         style="flex-grow: 1;"
       >
-        First name
+        Transaction description
       </label>
 
       <sky-character-counter-indicator
-        #templateNameIndicator
+        #templateDescriptionIndicator
       >
       </sky-character-counter-indicator>
     </div>
@@ -108,16 +108,16 @@
       class="sky-form-control"
       type="text"
       skyCharacterCounter
-      [skyCharacterCounterIndicator]="templateNameIndicator"
-      [skyCharacterCounterLimit]="maxNameCharacterCount"
-      [(ngModel)]="person.firstName"
-      #templateNameInput="ngModel"
+      [skyCharacterCounterIndicator]="templateDescriptionIndicator"
+      [skyCharacterCounterLimit]="maxDescriptionCharacterCount"
+      [(ngModel)]="transaction.description"
+      #templateDescriptionInput="ngModel"
     />
 
-    <div *ngIf="templateNameInput.errors?.skyCharacterCounter"
+    <div *ngIf="templateDescriptionInput.errors?.skyCharacterCounter"
       class="sky-error-label"
     >
-      Limit First name to {{maxNameCharacterCount}} characters.
+      Limit Transaction description to {{maxDescriptionCharacterCount}} characters.
     </div>
   </div>
 
@@ -131,11 +131,11 @@
         class="sky-control-label"
         style="flex-grow: 1;"
       >
-        About me
+        Comments
       </label>
 
       <sky-character-counter-indicator
-        #templateAboutIndicator
+        #templateCommentsIndicator
       >
       </sky-character-counter-indicator>
     </div>
@@ -144,17 +144,17 @@
       rows="3"
       class="sky-form-control"
       skyCharacterCounter
-      [skyCharacterCounterIndicator]="templateAboutIndicator"
-      [skyCharacterCounterLimit]="maxAboutCharacterCount"
-      [(ngModel)]="person.aboutMe"
-      #templateAboutInput="ngModel"
+      [skyCharacterCounterIndicator]="templateCommentsIndicator"
+      [skyCharacterCounterLimit]="maxCommentsCharacterCount"
+      [(ngModel)]="transaction.comments"
+      #templateCommentsInput="ngModel"
     >
     </textarea>
 
-    <div *ngIf="templateAboutInput.errors?.skyCharacterCounter"
+    <div *ngIf="templateCommentsInput.errors?.skyCharacterCounter"
       class="sky-error-label"
     >
-      Limit About me to {{maxAboutCharacterCount}} characters.
+      Limit Comments to {{maxCommentsCharacterCount}} characters.
     </div>
   </div>
 </div>
