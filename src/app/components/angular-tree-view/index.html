@@ -3,13 +3,20 @@
 >
 
   <sky-demo-page-summary>
-    The angular tree view provides a hierarchical view for a list of items.
+    <p>
+      The <sky-code>SkyAngularTreeModule</sky-code> provides styles and SKY UX components for displaying a hierarchical view of items using the <sky-code>angular-tree-component</sky-code> library. This page primarily describes the design use cases for a tree view and how to use the components included in <sky-code>SkyAngularTreeModule</sky-code>. For more in depth information about angular-tree-component and its capabilities, please reference <a href="https://angular2-tree.readme.io/docs">the angular-tree-component documentation</a>.
+    </p>
+    <sky-alert alertType="warning">
+      This component is a release candidate. We do not plan to make any breaking changes the component before the official release, but such changes are possible.
+    </sky-alert>
   </sky-demo-page-summary>
 
-  <sky-demo-page-example>
-    <sky-angular-tree-view-demo></sky-angular-tree-view-demo>
-    <sky-demo-page-code demoName="Angular tree view"></sky-demo-page-code>
-  </sky-demo-page-example>
+  <div class="sky-margin-stacked-separate">
+    <sky-demo-page-example>
+      <sky-angular-tree-view-demo></sky-angular-tree-view-demo>
+      <sky-demo-page-code demoName="Angular tree view"></sky-demo-page-code>
+    </sky-demo-page-example>
+  </div>
 
 <sky-tabset id="content-tabs">
 
@@ -104,8 +111,91 @@
 
   </sky-tab>
 
-  <sky-tab
-    tabHeading="Development">
+  <sky-tab tabHeading="Development">
+
+    <sky-demo-page-module-info
+      skyuxModule="SkyAngularTreeModule"
+      packageName="@skyux/angular-tree-component"
+      githubRepo="skyux-angular-tree-component"
+    >
+    </sky-demo-page-module-info>
+
+    <sky-demo-page-properties
+      sectionHeading="Angular tree view components"
+    >
+      <p>
+        To apply the SKY UX themes and additional functionality to the <sky-code>angular-tree-component</sky-code>, you must include the following components.
+      </p>
+
+      <sky-demo-page-property
+        propertyName="sky-angular-tree-wrapper"
+        isOptional="false"
+      >
+        Wraps the <sky-code>tree-root</sky-code> component. For more information on <sky-code>tree-root</sky-code>, refer to <a href="https://angular2-tree.readme.io/docs">the angular-tree-component documentation.</a>
+      </sky-demo-page-property>
+      <sky-demo-page-property
+        propertyName="sky-angular-tree-node"
+        isOptional="false"
+      >
+        Replaces the default tree node template with a SKY UX node. This component must be wrapped inside a <sky-code>ng-template</sky-code> tag with the template reference variable <sky-code>#treeNodeFullTemplate</sky-code>. For more information on templating the tree nodes, refer to <a href="https://angular2-tree.readme.io/docs">the angular-tree-component documentation.</a>
+      </sky-demo-page-property>
+    </sky-demo-page-properties>
+
+    <sky-demo-page-properties
+      sectionHeading="Angular tree wrapper component properties"
+    >
+      <sky-demo-page-property
+        propertyName="readOnly"
+        isOptional="true"
+        defaultValue="false"
+      >
+        Renders the tree in read only mode, which disables any "selected" or "active" states on the nodes. This property accepts <sky-code>boolean</sky-code> values.
+      </sky-demo-page-property>
+      <sky-demo-page-property
+        propertyName="selectLeafNodesOnly"
+        isOptional="true"
+        defaultValue="false"
+      >
+        If the tree has checkboxes enabled, this property prevents parent nodes from being selected. To enable checkboxes, refer to <a href="https://angular2-tree.readme.io/docs">the angular-tree-component documentation</a>. This property accepts <sky-code>boolean</sky-code> values.
+      </sky-demo-page-property>
+      <sky-demo-page-property
+        propertyName="selectSingle"
+        isOptional="true"
+        defaultValue="false"
+      >
+        If the tree has checkboxes enabled, this property only allows one node to be selected at a time. To enable checkboxes, refer to <a href="https://angular2-tree.readme.io/docs">the angular-tree-component documentation</a>. This property accepts <sky-code>boolean</sky-code> values.
+      </sky-demo-page-property>
+      <sky-demo-page-property
+        propertyName="showToolbar"
+        isOptional="true"
+        defaultValue="false"
+      >
+        Shows a toolbar that contains controls to expand and collapse all nodes, as well as buttons to select and clear all checkboxes. The select and clear all buttons will only show if the checkboxes have been enabled.
+      </sky-demo-page-property>
+    </sky-demo-page-properties>
+
+    <sky-demo-page-properties
+      sectionHeading="Angular tree node component properties"
+    >
+      <sky-demo-page-property
+        propertyName="index"
+        isOptional="false"
+      >
+        The <sky-code>index</sky-code> property from the parent <sky-code>ng-template</sky-code>. This property accepts <sky-code>number</sky-code> values.
+      </sky-demo-page-property>
+      <sky-demo-page-property
+        propertyName="node"
+        isOptional="false"
+      >
+        The <sky-code>node</sky-code> property from the parent <sky-code>ng-template</sky-code>.  This property accepts <sky-code>TreeNode</sky-code> values. Refer to <a href="https://angular2-tree.readme.io/docs">the angular-tree-component documentation</a> for information on the TreeNode object.
+      </sky-demo-page-property>
+      <sky-demo-page-property
+        propertyName="templates"
+        isOptional="false"
+      >
+        The <sky-code>templates</sky-code> property from the parent <sky-code>ng-template</sky-code>.  This property accepts <sky-code>any</sky-code> values.
+      </sky-demo-page-property>
+    </sky-demo-page-properties>
 
   </sky-tab>
 

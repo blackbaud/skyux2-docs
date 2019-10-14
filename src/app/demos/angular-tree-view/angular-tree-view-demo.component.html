@@ -1,7 +1,140 @@
 <div
   class="sky-margin-stacked-separate"
-  id="example-simple"
 >
-  <h3>Angular tree view demo</h3>
 
+<!-- #region [Checkboxes for demonstration purposes only.] -->
+<sky-fluid-grid>
+  <sky-row>
+    <sky-column screenSmall="6">
+      <ul
+        class="sky-list-unstyled"
+      >
+        <li>
+          <sky-checkbox
+            [(ngModel)]="showToolbar"
+          >
+            <sky-checkbox-label>
+              Show toolbar
+            </sky-checkbox-label>
+          </sky-checkbox>
+        </li>
+        <li>
+          <sky-checkbox
+            [(ngModel)]="showContextMenus"
+          >
+            <sky-checkbox-label>
+              Show context menus
+            </sky-checkbox-label>
+          </sky-checkbox>
+        </li>
+        <li>
+          <sky-checkbox
+            [(ngModel)]="readOnly"
+          >
+            <sky-checkbox-label>
+              Enable read only mode
+            </sky-checkbox-label>
+          </sky-checkbox>
+        </li>
+      </ul>
+    </sky-column>
+    <sky-column screenSmall="6">
+      <ul
+        class="sky-list-unstyled"
+      >
+        <li>
+          <sky-checkbox
+            [(ngModel)]="enableSelection"
+          >
+            <sky-checkbox-label>
+              Enable selection
+            </sky-checkbox-label>
+          </sky-checkbox>
+          <ul
+            class="sky-list-unstyled"
+            style="margin: 10px 0 10px 20px"
+          >
+            <li>
+              <sky-checkbox
+                [disabled]="!enableSelection || selectLeafNodesOnly || selectSingle"
+                [(ngModel)]="enableCascading"
+              >
+                <sky-checkbox-label>
+                  Enable cascading
+                </sky-checkbox-label>
+              </sky-checkbox>
+            </li>
+            <li>
+              <sky-checkbox
+              [disabled]="!enableSelection || enableCascading"
+                [(ngModel)]="selectLeafNodesOnly"
+              >
+                <sky-checkbox-label>
+                  Enable leaf-node selection only
+                </sky-checkbox-label>
+              </sky-checkbox>
+            </li>
+            <li>
+              <sky-checkbox
+                [disabled]="!enableSelection || enableCascading"
+                [(ngModel)]="selectSingle"
+              >
+                <sky-checkbox-label>
+                  Enable single select mode
+                </sky-checkbox-label>
+              </sky-checkbox>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </sky-column>
+  </sky-row>
+</sky-fluid-grid>
+<!-- #endregion -->
+
+  <div
+    class="sky-padding-even-default sky-demo-container"
+  >
+    <sky-angular-tree-wrapper
+      [readOnly]="readOnly"
+      [selectLeafNodesOnly]="selectLeafNodesOnly"
+      [selectSingle]="selectSingle"
+      [showToolbar]="showToolbar"
+    >
+      <tree-root
+        [nodes]="nodes"
+        [options]="treeOptions"
+        (stateChange)="onTreeStateChange($event)"
+        #tree
+      >
+        <ng-template
+          let-index="index"
+          let-node
+          let-templates="templates"
+          #treeNodeFullTemplate
+        >
+          <sky-angular-tree-node
+            [index]="index"
+            [node]="node"
+            [templates]="templates"
+          >
+            <sky-dropdown *ngIf="showContextMenus"
+              buttonType="context-menu"
+            >
+              <sky-dropdown-menu>
+                <sky-dropdown-item *ngFor="let item of dropdownItems">
+                  <button
+                    type="button"
+                    (click)="actionClicked(item.name, node)"
+                  >
+                    {{ item.name }}
+                  </button>
+                </sky-dropdown-item>
+              </sky-dropdown-menu>
+            </sky-dropdown>
+          </sky-angular-tree-node>
+        </ng-template>
+      </tree-root>
+    </sky-angular-tree-wrapper>
+  </div>
 </div>

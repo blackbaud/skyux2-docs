@@ -3,6 +3,7 @@ import {
 } from '@angular/core';
 
 import {
+  SkyAngularTreeViewDemoComponent,
   SkyCodeBlockDemoComponent,
   SkyCopyToClipboardDemoComponent,
   SkyDateRangePickerDemoComponent,
@@ -184,6 +185,23 @@ export class SkyDocsDemoCodeService {
           fileContents: require('!!raw-loader!./toggle-switch/toggle-switch-demo.component.ts'),
           componentName: 'SkyToggleSwitchDemoComponent',
           bootstrapSelector: 'sky-toggle-switch-demo'
+        }
+      ]
+    },
+
+    {
+      name: 'Angular tree view',
+      component: SkyAngularTreeViewDemoComponent,
+      files: [
+        {
+          name: 'angular-tree-view-demo.component.html',
+          fileContents: require('!!raw-loader!./angular-tree-view/angular-tree-view-demo.component.html')
+        },
+        {
+          name: 'angular-tree-view-demo.component.ts',
+          fileContents: require('!!raw-loader!./angular-tree-view/angular-tree-view-demo.component.ts'),
+          componentName: 'SkyAngularTreeViewDemoComponent',
+          bootstrapSelector: 'sky-angular-tree-view-demo'
         }
       ]
     }
