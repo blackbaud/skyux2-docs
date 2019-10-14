@@ -10,13 +10,22 @@ import {
   SkyAgGridModule
 } from '@skyux/ag-grid';
 
+import {
+  SkyToolbarModule
+} from '@skyux/layout';
+
+import {
+  SkyAgGridEditModalComponent
+} from './ag-grid-edit-modal.component';
+
 @NgModule({
-  imports: [
-    SkyAgGridModule
-  ],
   exports: [
     AgGridModule,
-    SkyAgGridModule
+    SkyAgGridModule,
+    SkyToolbarModule
+  ],
+  entryComponents: [
+    SkyAgGridEditModalComponent
   ]
 })
 export class SkyAgGridDemoModule { }
