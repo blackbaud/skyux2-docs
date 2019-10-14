@@ -262,7 +262,7 @@ export class SkyDemoComponentsService {
       {
         name: 'File attachment',
         icon: 'cloud-upload',
-        summary: `The file attachment components allow users to attach files to forms.`,
+        summary: `The file attachment module allow users to attach files to forms and display information about the attachments.`,
         url: '/components/file-attachments',
         imports: {
           '@skyux/forms': [

@@ -11,14 +11,14 @@ export class FileAttachmentsActionButtonsComponent {
       path: '/components/file-attachments/file-attachment',
       icon: 'files-o',
       // tslint:disable-next-line
-      summary: 'The file attachment component allows users to attach multiple local files or links to external files.'
+      summary: 'The file attachment component allows users to attach multiple local files or link to external files.'
     },
     {
       name: 'Single file attachment',
       path: '/components/file-attachments/single-file-attachment',
       icon: 'file-o',
       // tslint:disable-next-line
-      summary: 'The single file attachment component provides a simple input for users to attach a single local file.'
+      summary: 'The single file attachment component provides a simple input to attach a single local file.'
     }
   ];
 }
