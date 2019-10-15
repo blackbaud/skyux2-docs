@@ -109,6 +109,18 @@ export class SkyDemoComponentsService {
         getCodeFiles: () => this.getDemoFiles('Card')
       },
       {
+        name: 'Character count indicator',
+        icon: 'calculator',
+        summary: `The character count indicator component extends a text input to apply a character limit and display an indicator.`,
+        url: '/components/character-count',
+        imports: {
+          '@skyux/forms': [
+            'SkyCharacterCounterModule'
+          ]
+        },
+        getCodeFiles: () => this.getDemoFiles('Character count')
+      },
+      {
         name: 'Checkbox',
         icon: 'check-square',
         summary: `The checkbox component renders a SKY UX-themed checkbox.`,
