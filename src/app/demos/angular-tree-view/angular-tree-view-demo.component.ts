@@ -81,6 +81,8 @@ export class SkyAngularTreeViewDemoComponent {
     return this._enableSelection;
   }
 
+  public readOnly: boolean = false;
+
   public set showContextMenus(value: boolean) {
     this._showContextMenus = value;
   }
