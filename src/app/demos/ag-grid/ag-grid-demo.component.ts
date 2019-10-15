@@ -4,13 +4,14 @@ import {
 } from '@angular/core';
 
 import {
-  ColumnApi,
   GridApi,
   GridReadyEvent,
-  GridOptions
+  GridOptions,
+  ValueFormatterParams
 } from 'ag-grid-community';
 
 import {
+  SkyCellType,
   SkyAgGridService
 } from '@skyux/ag-grid';
 
@@ -28,8 +29,7 @@ import {
 } from './ag-grid-edit-modal.component';
 
 import {
-  SKY_AG_GRID_DEMO_DATA,
-  SKY_AG_GRID_DEMO_READ_COLUMN_DEFS
+  SKY_AG_GRID_DEMO_DATA
 } from './ag-grid-demo-data';
 
 @Component({
@@ -38,9 +38,49 @@ import {
 })
 export class SkyAgGridDemoComponent implements OnInit {
   public gridData = SKY_AG_GRID_DEMO_DATA;
-  public columnDefs = SKY_AG_GRID_DEMO_READ_COLUMN_DEFS;
+  public columnDefs = [
+    {
+      field: 'selected',
+      headerName: '',
+      maxWidth: 50,
+      sortable: false,
+      type: SkyCellType.RowSelector
+    },
+    {
+      field: 'name',
+      headerName: 'Name'
+    },
+    {
+      field: 'age',
+      headerName: 'Age',
+      type: SkyCellType.Number,
+      maxWidth: 60
+    },
+    {
+      field: 'startDate',
+      headerName: 'Start Date',
+      type: SkyCellType.Date,
+      sort: 'asc'
+    },
+    {
+      field: 'endDate',
+      headerName: 'End Date',
+      type: SkyCellType.Date,
+      valueFormatter: this.endDateFormatter
+    },
+    {
+      field: 'department',
+      headerName: 'Department',
+      type: SkyCellType.Autocomplete
+    },
+    {
+      field: 'jobTitle',
+      headerName: 'Title',
+      type: SkyCellType.Autocomplete
+    }
+  ];
+
   public gridOptions: GridOptions;
-  public columnApi: ColumnApi;
   public gridApi: GridApi;
   public searchText: string;
 
@@ -58,10 +98,9 @@ export class SkyAgGridDemoComponent implements OnInit {
   }
 
   public onGridReady(gridReadyEvent: GridReadyEvent): void {
-    this.columnApi = gridReadyEvent.columnApi;
     this.gridApi = gridReadyEvent.api;
 
-    this.columnApi.autoSizeColumns(['name', 'age']);
+    this.gridApi.sizeColumnsToFit();
   }
 
   public openModal(): void {
@@ -89,5 +128,10 @@ export class SkyAgGridDemoComponent implements OnInit {
   public searchApplied(searchText: string) {
     this.searchText = searchText;
     this.gridApi.setQuickFilter(searchText);
+  }
+
+  private endDateFormatter(params: ValueFormatterParams) {
+    const dateConfig = { year: 'numeric', month: '2-digit', day: '2-digit' };
+    return params.value ? params.value.toLocaleDateString('en-us', dateConfig) : 'N/A';
   }
 }

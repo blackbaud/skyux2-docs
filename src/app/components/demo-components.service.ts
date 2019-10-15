@@ -49,6 +49,9 @@ export class SkyDemoComponentsService {
           ],
           'ag-grid-angular': [
             'AgGridModule'
+          ],
+          '@skyux/layout': [
+            'SkyToolbarModule'
           ]
         },
         getCodeFiles: () => this.getDemoFiles('ag-Grid')

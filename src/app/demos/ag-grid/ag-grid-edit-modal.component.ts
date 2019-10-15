@@ -4,8 +4,13 @@ import {
 } from '@angular/core';
 
 import {
-  SkyAgGridService
+  SkyAgGridService,
+  SkyCellType
 } from '@skyux/ag-grid';
+
+import {
+  SkyAutocompleteSelectionChange
+} from '@skyux/lookup';
 
 import {
   SkyModalInstance
@@ -15,12 +20,15 @@ import {
   ColDef,
   GridApi,
   GridOptions,
-  GridReadyEvent
+  GridReadyEvent,
+  ICellEditorParams,
+  RowNode
 } from 'ag-grid-community';
 
 import {
   SkyAgGridDemoRow,
-  SKY_AG_GRID_DEMO_EDIT_COLUMN_DEFS
+  SKY_DEPARTMENTS,
+  SKY_JOB_TITLES
 } from './ag-grid-demo-data';
 
 import {
@@ -28,7 +36,7 @@ import {
 } from './ag-grid-edit-modal-context';
 
 @Component({
-  selector: 'sky-demo-modal-form',
+  selector: 'sky-demo-edit-modal-form',
   templateUrl: './ag-grid-edit-modal.component.html'
 })
 export class SkyAgGridEditModalComponent implements OnInit {
@@ -45,7 +53,64 @@ export class SkyAgGridEditModalComponent implements OnInit {
 
   public ngOnInit(): void {
     this.gridData = this.context.gridData;
-    this.columnDefs = SKY_AG_GRID_DEMO_EDIT_COLUMN_DEFS;
+    this.columnDefs = [
+      {
+        field: 'name',
+        headerName: 'Name'
+      },
+      {
+        field: 'age',
+        headerName: 'Age',
+        type: SkyCellType.Number,
+        maxWidth: 60,
+        editable: true
+      },
+      {
+        field: 'startDate',
+        headerName: 'Start Date',
+        type: SkyCellType.Date,
+        sort: 'asc'
+      },
+      {
+        field: 'endDate',
+        headerName: 'End Date',
+        type: SkyCellType.Date,
+        editable: true,
+        cellEditorParams: (params: ICellEditorParams): any => {
+          return { skyComponentProperties: { minDate: params.data.startDate } };
+        }
+      },
+      {
+        field: 'department',
+        headerName: 'Department',
+        type: SkyCellType.Autocomplete,
+        editable: true,
+        cellEditorParams: (params: ICellEditorParams) => {
+          return {
+            skyComponentProperties: {
+              data: SKY_DEPARTMENTS,
+              selectionChange: (change: SkyAutocompleteSelectionChange) => { this.departmentSelectionChange(change, params.node); }
+            }
+          };
+        }
+      },
+      {
+        field: 'jobTitle',
+        headerName: 'Title',
+        type: SkyCellType.Autocomplete,
+        editable: true,
+        cellEditorParams: (params: ICellEditorParams): any => {
+          const selectedDepartment: string = params.data && params.data.department && params.data.department.name;
+          let editParams: any = { skyComponentProperties: { data: [] } };
+
+          if (selectedDepartment) {
+            editParams.skyComponentProperties.data = SKY_JOB_TITLES[selectedDepartment];
+          }
+          return editParams;
+        }
+      }
+    ];
+
     this.gridOptions = {
       columnDefs: this.columnDefs,
       onGridReady: gridReadyEvent => this.onGridReady(gridReadyEvent)
@@ -57,5 +122,18 @@ export class SkyAgGridEditModalComponent implements OnInit {
     this.gridApi = gridReadyEvent.api;
 
     this.gridApi.sizeColumnsToFit();
+  }
+
+  private departmentSelectionChange(change: SkyAutocompleteSelectionChange, node: RowNode) {
+    console.log(change.selectedItem);
+    console.log(node.data.department);
+    if (change.selectedItem && change.selectedItem !== node.data.department) {
+      this.clearJobTitle(node);
+    }
+  }
+
+  private clearJobTitle(node: RowNode) {
+    node.data.jobTitle = undefined;
+    this.gridApi.refreshCells({rowNodes: [node]});
   }
 }

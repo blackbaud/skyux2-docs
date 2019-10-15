@@ -47,6 +47,20 @@ export class SkyDocsDemoCodeService {
         {
           name: 'ag-grid-demo-data.ts',
           fileContents: require('!!raw-loader!./ag-grid/ag-grid-demo-data.ts')
+        },
+        {
+          name: 'ag-grid-edit-modal-context.ts',
+          fileContents: require('!!raw-loader!./ag-grid/ag-grid-edit-modal-context.ts')
+        },
+        {
+          name: 'ag-grid-edit-modal.component.html',
+          fileContents: require('!!raw-loader!./ag-grid/ag-grid-edit-modal.component.html')
+        },
+        {
+          name: 'ag-grid-edit-modal.component.ts',
+          fileContents: require('!!raw-loader!./ag-grid/ag-grid-edit-modal.component.ts'),
+          componentName: 'SkyAgGridEditModalComponent',
+          bootstrapSelector: 'sky-demo-edit-modal-form'
         }
       ]
     },
