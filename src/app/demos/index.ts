@@ -1,4 +1,5 @@
 export * from './ag-grid';
+export * from './character-count';
 export * from './phone-field';
 export * from './summary-action-bar';
 export * from './code-block';

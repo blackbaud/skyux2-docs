@@ -124,6 +124,18 @@ export class SkyDemoComponentsService {
         getCodeFiles: () => this.getDemoFiles('Card')
       },
       {
+        name: 'Character count indicator',
+        icon: 'calculator',
+        summary: `The character count indicator component extends a text input to apply a character limit and display an indicator.`,
+        url: '/components/character-count',
+        imports: {
+          '@skyux/forms': [
+            'SkyCharacterCounterModule'
+          ]
+        },
+        getCodeFiles: () => this.getDemoFiles('Character count')
+      },
+      {
         name: 'Checkbox',
         icon: 'check-square',
         summary: `The checkbox component renders a SKY UX-themed checkbox.`,
@@ -201,7 +213,7 @@ export class SkyDemoComponentsService {
       {
         name: 'Datepicker',
         icon: 'calendar',
-        summary: `The datepicker module allows users to use an input and calendar to select dates.`,
+        summary: `The datepicker module contains directives to create an input and calendar picker for users select dates or fuzzy dates.`,
         url: '/components/datepicker',
         imports: {
           '@skyux/datetime': [
@@ -870,7 +882,7 @@ export class SkyDemoComponentsService {
       {
         name: 'Radio button',
         icon: 'circle-o',
-        summary: `The radio button component renders a SKY UX-themed radio button.`,
+        summary: `The radio button module ceates a small set of selection inputs and allows users to select one option only.`,
         url: '/components/radio',
         imports: {
           '@skyux/forms': [

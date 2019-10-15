@@ -1,0 +1,160 @@
+<div
+  style="width: 50%;"
+>
+  <h3>
+    Reactive form setup
+  </h3>
+
+  <form
+    novalidate
+    [formGroup]="characterCountForm"
+  >
+    <div
+      class="sky-form-group"
+    >
+      <div
+        style="display: flex;"
+      >
+        <label
+          class="sky-control-label"
+          style="flex-grow: 1;"
+        >
+          Transaction description
+        </label>
+
+        <sky-character-counter-indicator
+          #descriptionIndicator
+        >
+        </sky-character-counter-indicator>
+      </div>
+
+      <input
+        class="sky-form-control"
+        formControlName="description"
+        type="text"
+        skyCharacterCounter
+        [skyCharacterCounterIndicator]="descriptionIndicator"
+        [skyCharacterCounterLimit]="maxDescriptionCharacterCount"
+      />
+
+      <div *ngIf="description.errors?.skyCharacterCounter"
+        class="sky-error-label"
+      >
+        Limit Transaction description to {{maxDescriptionCharacterCount}} characters.
+      </div>
+    </div>
+
+    <div
+      class="sky-form-group"
+    >
+      <div
+        style="display: flex;"
+      >
+        <label
+          class="sky-control-label"
+          style="flex-grow: 1;"
+        >
+          Comments
+        </label>
+
+        <sky-character-counter-indicator
+          #commentsIndicator
+        >
+        </sky-character-counter-indicator>
+      </div>
+
+      <textarea
+        rows="4"
+        class="sky-form-control"
+        formControlName="comments"
+        skyCharacterCounter
+        [skyCharacterCounterIndicator]="commentsIndicator"
+        [skyCharacterCounterLimit]="maxCommentsCharacterCount"
+      >
+      </textarea>
+
+      <div *ngIf="comments.errors?.skyCharacterCounter"
+        class="sky-error-label"
+      >
+        Limit Comments to {{maxCommentsCharacterCount}} characters.
+      </div>
+    </div>
+  </form>
+
+  <h3>
+    Template-driven form setup
+  </h3>
+
+  <div
+    class="sky-form-group"
+  >
+    <div
+      style="display: flex;"
+    >
+      <label
+        class="sky-control-label"
+        style="flex-grow: 1;"
+      >
+        Transaction description
+      </label>
+
+      <sky-character-counter-indicator
+        #templateDescriptionIndicator
+      >
+      </sky-character-counter-indicator>
+    </div>
+
+    <input
+      class="sky-form-control"
+      type="text"
+      skyCharacterCounter
+      [skyCharacterCounterIndicator]="templateDescriptionIndicator"
+      [skyCharacterCounterLimit]="maxDescriptionCharacterCount"
+      [(ngModel)]="transaction.description"
+      #templateDescriptionInput="ngModel"
+    />
+
+    <div *ngIf="templateDescriptionInput.errors?.skyCharacterCounter"
+      class="sky-error-label"
+    >
+      Limit Transaction description to {{maxDescriptionCharacterCount}} characters.
+    </div>
+  </div>
+
+  <div
+    class="sky-form-group"
+  >
+    <div
+      style="display: flex;"
+    >
+      <label
+        class="sky-control-label"
+        style="flex-grow: 1;"
+      >
+        Comments
+      </label>
+
+      <sky-character-counter-indicator
+        #templateCommentsIndicator
+      >
+      </sky-character-counter-indicator>
+    </div>
+
+    <textarea
+      rows="4"
+      class="sky-form-control"
+      skyCharacterCounter
+      [skyCharacterCounterIndicator]="templateCommentsIndicator"
+      [skyCharacterCounterLimit]="maxCommentsCharacterCount"
+      [(ngModel)]="transaction.comments"
+      #templateCommentsInput="ngModel"
+    >
+    </textarea>
+
+    <div *ngIf="templateCommentsInput.errors?.skyCharacterCounter"
+      class="sky-error-label"
+    >
+      Limit Comments to {{maxCommentsCharacterCount}} characters.
+    </div>
+  </div>
+</div>
