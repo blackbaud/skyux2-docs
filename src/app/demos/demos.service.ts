@@ -4,6 +4,7 @@ import {
 
 import {
   SkyAngularTreeViewDemoComponent,
+  SkyCharacterCountDemoComponent,
   SkyCodeBlockDemoComponent,
   SkyCopyToClipboardDemoComponent,
   SkyDateRangePickerDemoComponent,
@@ -29,6 +30,22 @@ import {
 @Injectable()
 export class SkyDocsDemoCodeService {
   public components: any[] = [
+    {
+      name: 'Character count',
+      component: SkyCharacterCountDemoComponent,
+      files: [
+        {
+          name: 'character-count-demo.component.html',
+          fileContents: require('!!raw-loader!./character-count/character-count-demo.component.html')
+        },
+        {
+          name: 'character-count-demo.component.ts',
+          fileContents: require('!!raw-loader!./character-count/character-count-demo.component.ts'),
+          componentName: 'SkyCharacterCountDemoComponent',
+          bootstrapSelector: 'sky-character-count-demo'
+        }
+      ]
+    },
     {
       name: 'Phone field',
       component: SkyPhoneFieldDemoComponent,
