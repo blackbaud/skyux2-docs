@@ -1147,10 +1147,10 @@ export class SkyDemoComponentsService {
         getCodeFiles: () => this.getDemoFiles('Toolbar')
       },
       {
-        name: 'Angular tree view',
+        name: 'Tree view',
         icon: 'sitemap',
-        summary: `The angular tree view provides a hierarchical list view.`,
-        url: '/components/angular-tree-view',
+        summary: `The tree view provides a hierarchical list view.`,
+        url: '/components/tree-view',
         imports: {
           '@skyux/angular-tree-view': [
             'SkyAngularTreeViewModule'
