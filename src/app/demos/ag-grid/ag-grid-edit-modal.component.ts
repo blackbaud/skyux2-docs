@@ -22,7 +22,8 @@ import {
   GridOptions,
   GridReadyEvent,
   ICellEditorParams,
-  RowNode
+  RowNode,
+  CellValueChangedEvent
 } from 'ag-grid-community';
 
 import {
@@ -62,7 +63,7 @@ export class SkyAgGridEditModalComponent implements OnInit {
         field: 'age',
         headerName: 'Age',
         type: SkyCellType.Number,
-        maxWidth: 60,
+        maxWidth: 100,
         editable: true
       },
       {
@@ -92,6 +93,11 @@ export class SkyAgGridEditModalComponent implements OnInit {
               selectionChange: (change: SkyAutocompleteSelectionChange) => { this.departmentSelectionChange(change, params.node); }
             }
           };
+        },
+        onCellValueChanged: (changeEvent: CellValueChangedEvent) => {
+          if (changeEvent.newValue !== changeEvent.oldValue) {
+            this.clearJobTitle(changeEvent.node);
+          }
         }
       },
       {

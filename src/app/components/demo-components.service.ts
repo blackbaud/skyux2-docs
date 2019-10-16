@@ -51,7 +51,11 @@ export class SkyDemoComponentsService {
             'SkyDatepickerModule'
           ],
           '@skyux/lookup': [
-            'SkyAutocompleteModule'
+            'SkyAutocompleteModule',
+            'SkySearchModule'
+          ],
+          '@skyux/modals': [
+            'SkyModalModule'
           ],
           'ag-grid-angular': [
             'AgGridModule'
