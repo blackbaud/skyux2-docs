@@ -47,9 +47,19 @@ export class SkyDemoComponentsService {
           '@skyux/ag-grid': [
             'SkyAgGridModule'
           ],
+          '@skyux/datetime': [
+            'SkyDatepickerModule'
+          ],
+          '@skyux/lookup': [
+            'SkyAutocompleteModule'
+          ],
           'ag-grid-angular': [
             'AgGridModule'
           ]
+        },
+        dependencies: {
+          'ag-grid-angular': '*',
+          'ag-grid-community': '*'
         },
         getCodeFiles: () => this.getDemoFiles('ag-Grid')
       },
