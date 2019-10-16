@@ -262,7 +262,7 @@ export class SkyDemoComponentsService {
       {
         name: 'File attachment',
         icon: 'cloud-upload',
-        summary: `The file attachment module creates options to attach files to forms and to display information about the attachments.`,
+        summary: `The file attachment module creates options to attach files to forms and to display metadata about attachments.`,
         url: '/components/file-attachments',
         imports: {
           '@skyux/forms': [
@@ -277,7 +277,7 @@ export class SkyDemoComponentsService {
           {
             name: 'Single file attachment',
             icon: 'cloud-upload',
-            summary: `The single file attachment component allow users to add single file attachments to forms.`,
+            summary: `The single file attachment component creates an input to attach a single local file.`,
             url: '/components/file-attachments/single-file-attachment',
             imports: {
               '@skyux/forms': [

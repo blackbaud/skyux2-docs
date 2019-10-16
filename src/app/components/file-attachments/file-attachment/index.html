@@ -5,7 +5,7 @@
 
   <sky-demo-page-summary>
     <p>
-      The file attachment component creates options to attach multiple local files or to link to external files. It displays summary information about the attachments.
+      The file attachment module creates an element to attach multiple local files or to link to external files. It displays summary information about the attachments.
     </p>
   </sky-demo-page-summary>
 
@@ -24,58 +24,58 @@
     <h3 class="sky-text-success">Use when</h3>
       <sky-docs-visual-example>
         <sky-docs-visual-example-text>
-            <p>Use the file attachment component when users need to upload multiple files or attach files from URLs rather than local devices.</p>
+            <p>Use the file attachment element when users need to upload multiple files or attach files from URLs rather than from local devices.</p>
         </sky-docs-visual-example-text>
         <sky-docs-visual-example-image>
           <div>
             <img src="~/assets/img/guidelines/file-attach/use-multi.png" />
-            <div class="caption caption-success sky-text-success">Do use a file attachment component to upload more than one file.</div>
+            <div class="caption caption-success sky-text-success">Do use a file attachment element to upload more than one file.</div>
           </div>
         </sky-docs-visual-example-image>
       </sky-docs-visual-example>
 
       <sky-docs-visual-example>
         <sky-docs-visual-example-text>
-            <p>Use the file attachment component when users need to add metadata to uploaded files.</p>
+            <p>Use the file attachment element when users need to add metadata about uploaded files.</p>
         </sky-docs-visual-example-text>
         <sky-docs-visual-example-image>
           <div>
             <img src="~/assets/img/guidelines/file-attach/use-metadata.png" />
-            <div class="caption caption-success sky-text-success">Do use a file attachment component to let users add metadata about uploaded files.</div>
+            <div class="caption caption-success sky-text-success">Do use a file attachment element to add metadata about uploaded files.</div>
           </div>
         </sky-docs-visual-example-image>
       </sky-docs-visual-example>
 
     <h3 class="sky-text-danger">Don't use when</h3>
       <p class="sky-text-block">
-        Don't use the file attachment component when users only need to upload one local file. Use the <a routerLink="/components/file-attachments/single-file-attachment">single file attachment component</a> instead.
+        Don't use the file attachment element when users only need to upload a single local file. Use the <a routerLink="/components/file-attachments/single-file-attachment">single file attachment component</a> instead.
       </p>
     </sky-demo-page-content>
 
     <sky-demo-page-content sectionHeading="Anatomy">
       <sky-docs-anatomy imagePath="~/assets/img/guidelines/file-attach/anatomy.png">
-        <sky-docs-anatomy-item anatomyNumber="1">Upload local files option</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item anatomyNumber="1">Option to upload local files</sky-docs-anatomy-item>
         <sky-docs-anatomy-item anatomyNumber="2">File name</sky-docs-anatomy-item>
         <sky-docs-anatomy-item anatomyNumber="3">File size</sky-docs-anatomy-item>
         <sky-docs-anatomy-item anatomyNumber="4">File preview</sky-docs-anatomy-item>
         <sky-docs-anatomy-item anatomyNumber="5">Delete button</sky-docs-anatomy-item>
-        <sky-docs-anatomy-item anatomyNumber="6" isOptional="true">Link to files option</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item anatomyNumber="6" isOptional="true">Option to link to external files</sky-docs-anatomy-item>
         <sky-docs-anatomy-item anatomyNumber="7" isOptional="true">User-entered metadata</sky-docs-anatomy-item>
       </sky-docs-anatomy>
     </sky-demo-page-content>
 
     <sky-demo-page-content sectionHeading="Options">
-      <h3>Attach from URL</h3>
+      <h3>Link to external files</h3>
         <p class="sky-text-block">
-          You can allow users to attach files from URLs, or you can limit them to files from the local device.
+          You can indicate whether to include the option to attach external files using their URLs.
+        </p>
+        <h3>Metadata</h3>
+        <p class="sky-text-block">
+          You can include inputs for users to add metadata about file attachments.
         </p>
       <h3>Validation</h3>
         <p class="sky-text-block">
-          You can specify parameters for valid files, including accepted file types, minimum and maximum sizes, and a custom validation function.
-        </p>
-      <h3>Matadata</h3>
-        <p class="sky-text-block">
-          You can include inputs for users to add metadata about file attachments.
+          You can specify parameters for valid files, including file types, minimum and maximum sizes, and custom validation.
         </p>
     </sky-demo-page-content>
 
@@ -83,7 +83,7 @@
       <h3>File information</h3>
       <sky-docs-visual-example>
         <sky-docs-visual-example-text>
-            <p>After users attach files, summary information appears below the file attachment options. By default, the summary includes the file name and a delete button, plus the file size and a preview for files from a local drive. You can also include inputs for additional metadata.</p>
+            <p>After users attach files, summary information appears below the file attachment options. For local files, the default summary includes the file name, file size, file preview, and a delete button. For external files, the default summary includes the URL and a delete button. You can include additional inputs to display user-entered metadata.</p>
         </sky-docs-visual-example-text>
         <sky-docs-visual-example-image>
           <img src="~/assets/img/guidelines/file-attach/behavior-preview.png" />
@@ -93,7 +93,7 @@
       <h3>Responsiveness</h3>
       <sky-docs-visual-example>
         <sky-docs-visual-example-text>
-            <p>File attachment options switch to a vertical layout in smaller viewports.</p>
+            <p>The file attachment element switches to a vertical layout in smaller viewports.</p>
         </sky-docs-visual-example-text>
         <sky-docs-visual-example-image>
           <div>
@@ -128,68 +128,64 @@
     tabHeading="Development"
   >
 
-    <p>
-      The <sky-code>sky-file-drop</sky-code> component provides an element that users can click to select files from their local drives or use as a drop zone to drag and drop files. The component can also display controls for users to provide hyperlinks to files on the web. You can leave the contents of the component blank to display the drop zone's default UI, or you can specify custom content to display instead.
-    </p>
-    <p>
-      When the SKY UX module initializes, it disables the ability to drag and drop files for the entire window. This prevents the browser from opening files that are accidentally dropped outside the target zone. If you implement your own file drop functionality outside of the file drop component, you can place the <sky-code>sky-file-drop-target</sky-code> CSS class on the element that receives drop events to exempt it from the drop exclusion rule.
-    </p>
-    <p>
-      The <sky-code>sky-file-item</sky-code> component displays summary information about files that users attach to forms. By default, the component displays file names, delete buttons, and fields for names and tags. For files from local drives, the component also displays file sizes and thumbnails.
-    </p>
-
     <sky-demo-page-module-info
       skyuxModule="SkyFileAttachmentsModule"
       packageName="@skyux/forms"
       githubRepo="skyux-forms"
     >
     </sky-demo-page-module-info>
-
     <sky-demo-page-properties sectionHeading="File drop properties">
+      <p>
+        The file drop component provides an element to attach multiple files. It includes an option that users can select to browse for local files or use as a drop zone to drag and drop files. It also includes an option to provide hyperlinks to attach external files. You can leave the contents of the component blank to display the drop zone's default UI, or you can specify custom content to display instead.
+      </p>
+      <p>
+        When the SKY UX module initializes, it disables the ability to drag and drop files for the entire window. This prevents the browser from opening files that are accidentally dropped outside the target zone. If you implement your own file drop functionality outside of the file drop component, you can place the <sky-code>sky-file-drop-target</sky-code> CSS class on the element that receives drop events to exempt it from the drop exclusion rule.
+      </p>
       <sky-demo-page-property
         propertyName="acceptedTypes"
       >
-        Provides a comma-delimited string literal of MIME types that users can drop or select (<sky-code>[acceptedTypes]="validFileTypes"</sky-code> or <sky-code>acceptedTypes="image/png,image/jpeg"</sky-code>). By default, any type of file is allowed.
+        Specifies a comma-delimited string literal of MIME types that users can attach: <sky-code>[acceptedTypes]="validFileTypes"</sky-code> or <sky-code>acceptedTypes="image/png,image/jpeg"</sky-code>. By default, all file types are allowed. This property accepts <sky-code>string</sky-code> values.
       </sky-demo-page-property>
       <sky-demo-page-property
         propertyName="allowLinks"
         isOptional="true"
         defaultValue="false"
       >
-        Indicates whether to display an option for users to provide hyperlinks to files on the web. To display this hyperlink option, you include this attribute with no value.
+        Indicates whether to display the option to attach files from URLs rather than from local devices. This property accepts <sky-code>boolean</sky-code> values.
       </sky-demo-page-property>
       <sky-demo-page-property
         propertyName="maxFileSize"
         isOptional="true"
         defaultValue="500000"
       >
-        Specifies the maximum size in bytes for valid files.
+        Specifies the maximum size in bytes for valid files. This property accepts <sky-code>number</sky-code> values.
       </sky-demo-page-property>
       <sky-demo-page-property
         propertyName="minFileSize"
         isOptional="true"
+        defaultValue="0"
       >
-        Specifies the minimum size in bytes for valid files.
+        Specifies the minimum size in bytes for valid files. This property accepts <sky-code>number</sky-code> values.
       </sky-demo-page-property>
       <sky-demo-page-property
         propertyName="multiple"
         isOptional="true"
         defaultValue="true"
       >
-        Indicates whether users can drag and drop multiple files at the same time.
+        Indicates whether users can drag and drop multiple files at the same time. This property accepts <sky-code>boolean</sky-code> values.
       </sky-demo-page-property>
       <sky-demo-page-property
         propertyName="noClick"
         isOptional="true"
         defaultValue="false"
       >
-        Disables the option for users to click the element and select files through a file dialog. To disable the option, you include this attribute with no value.
+        Indicates whether to disable the option to browse for files to attach. This property accepts <sky-code>boolean</sky-code> values.
       </sky-demo-page-property>
       <sky-demo-page-property
         propertyName="validateFn"
         isOptional="true"
       >
-        Provides a custom validation function (<sky-code>[validateFn]="validateFile"</sky-code>). By default, any type of file is allowed.
+        Specifies a custom validation function: <sky-code>[validateFn]="validateFile"</sky-code>.
       </sky-demo-page-property>
     </sky-demo-page-properties>
 
@@ -198,13 +194,13 @@
         propertyName="filesChanged"
         isOptional="true"
       >
-        Fires when the user selects one or more files.
+        Fires when users add or remove files.
       </sky-demo-page-property>
       <sky-demo-page-property
         propertyName="linkChanged"
         isOptional="true"
       >
-        Fires when the user adds a link.
+        Fires when users add or remove links.
       </sky-demo-page-property>
     </sky-demo-page-properties>
 
@@ -212,7 +208,7 @@
       <sky-demo-page-property
         propertyName="fileItem"
       >
-        Displays summary information about files that users attach to forms. By default, the component displays file names, delete buttons, and fields for names and tags. For files from local drives, it also displays file sizes and thumbnails.
+        Specifies the summary information to display about file attachments. For local files, the default summary includes the file name, file size, file preview, and a delete button. For external files, the default summary includes the URL and a delete button. You can include additional inputs to display user-entered metadata.
       </sky-demo-page-property>
     </sky-demo-page-properties>
 
@@ -221,7 +217,7 @@
         propertyName="deleteFile"
         isOptional="true"
       >
-        Fires when users click the delete button for an item. The deleted item is passed to the function.
+        Fires when users select the delete button for an item. The deleted item is passed to the function.
       </sky-demo-page-property>
     </sky-demo-page-properties>
 

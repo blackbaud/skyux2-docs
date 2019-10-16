@@ -5,7 +5,7 @@
 
   <sky-demo-page-summary>
     <p>
-      The single file attachment component allows the user to select a single local file to upload.
+      The single file attachment component creates an input to attach a single local file.
     </p>
   </sky-demo-page-summary>
 
@@ -23,28 +23,28 @@
 	<h3 class="sky-text-success">Use when</h3>
 		<sky-docs-visual-example>
 			<sky-docs-visual-example-text>
-				<p>Use single file attachment when the user needs to upload one file to which they have local access.</p>
+				<p>Use the single file attachment input when users need to upload a single local file.</p>
 			</sky-docs-visual-example-text>
 			<sky-docs-visual-example-image>
 				<div>
 					<img src="~/assets/img/guidelines/single-file-attach/use.png" />
-					<div class="caption caption-success sky-text-success">Do use single file attachment to upload one file.</div>
+					<div class="caption caption-success sky-text-success">Do use the single file attachment input to upload one file.</div>
 				</div>
 			</sky-docs-visual-example-image>
 		</sky-docs-visual-example>
 
 	<h3 class="sky-text-danger">Don't use when</h3>
   <p class="sky-text-block">
-    Don't use single file attachment if the user might need to link to a URL instead of uploading a local file. Use <a routerLink="/components/file-attachments/file-attachment">file attachment</a> instead.
+    Don't use the single file attachment input when users need to link to a URL to attach an external file. Use <a routerLink="/components/file-attachments/file-attachment">the file attachment component</a> instead.
   </p>
 	<sky-docs-visual-example>
 		<sky-docs-visual-example-text>
-			<p>Don't use single file attachment when the user might need to upload more than one file. Use <a routerLink="/components/file-attachments/file-attachment">file attachment</a> instead.</p>
+			<p>Don't use the single file attachment input to upload multiple local files. Use <a routerLink="/components/file-attachments/file-attachment">the file attachment component</a> instead.</p>
 		</sky-docs-visual-example-text>
 		<sky-docs-visual-example-image>
 			<div>
 				<img src="~/assets/img/guidelines/single-file-attach/dont-use-multi.png" />
-				<div class="caption caption-danger sky-text-danger">Don't use single file attachment if the user might upload multiple files.</div>
+				<div class="caption caption-danger sky-text-danger">Don't use single file attachment inputs to upload more than one local file.</div>
         </div>
 		  </sky-docs-visual-example-image>
 		</sky-docs-visual-example>
@@ -64,7 +64,7 @@
     <h3>Image preview</h3>
     <sky-docs-visual-example>
 			<sky-docs-visual-example-text>
-					<p>When the user attaches an image, a small preview of the image displays below the file attach button.</p>
+					<p>When users attach images, a small preview appears below the replace file button.</p>
 			</sky-docs-visual-example-text>
 			<sky-docs-visual-example-image>
 				<img src="~/assets/img/guidelines/single-file-attach/behavior-preview.png" />
@@ -75,8 +75,8 @@
     <div class="sky-margin-stacked-content-section">
     <sky-demo-page-component-states>
       <sky-demo-page-component-state stateName="Base" imagePath="~/assets/img/guidelines/single-file-attach/state-base.png"></sky-demo-page-component-state>
-      <sky-demo-page-component-state stateName="Attached, image" imagePath="~/assets/img/guidelines/single-file-attach/state-attached-image.png"></sky-demo-page-component-state>
-      <sky-demo-page-component-state stateName="Attached, non-image" imagePath="~/assets/img/guidelines/single-file-attach/state-attached-non-image.png"></sky-demo-page-component-state>
+      <sky-demo-page-component-state stateName="Attached image" imagePath="~/assets/img/guidelines/single-file-attach/state-attached-image.png"></sky-demo-page-component-state>
+      <sky-demo-page-component-state stateName="Attached non-image" imagePath="~/assets/img/guidelines/single-file-attach/state-attached-non-image.png"></sky-demo-page-component-state>
       <sky-demo-page-component-state stateName="Error" imagePath="~/assets/img/guidelines/single-file-attach/state-error.png"></sky-demo-page-component-state>
     </sky-demo-page-component-states>
     </div>
@@ -99,10 +99,6 @@
   tabHeading="Development"
   >
 
-    <p>
-      The <sky-code>sky-file-attachment</sky-code> component provides an element that users can click to select a single file from their local drives or use as a drop zone to drag and drop a single file. For image files, the component will display a preview. For all files, a link is displayed that emits an event when clicked.
-    </p>
-
     <sky-demo-page-module-info
       skyuxModule="SkyFileAttachmentsModule"
       packageName="@skyux/forms"
@@ -111,30 +107,33 @@
     </sky-demo-page-module-info>
 
     <sky-demo-page-properties sectionHeading="File attachment properties">
-      <sky-demo-page-property
+      <p>
+        The file attachment component provides an input to browse for a single local file or to use as a drop zone to drag and drop a file. After users attach a file, the component displays a link that emits an event when selected, and it also displays a preview for image files.
+      </p>
+        <sky-demo-page-property
         propertyName="acceptedTypes"
       >
-        Provides a comma-delimited string literal of MIME types that users can drop or select (<sky-code>[acceptedTypes]="validFileTypes"</sky-code> or <sky-code>acceptedTypes="image/png,image/jpeg"</sky-code>). By default, any type of file is allowed.
+        Specifies a comma-delimited string literal of MIME types that users can attach: <sky-code>[acceptedTypes]="validFileTypes"</sky-code> or <sky-code>acceptedTypes="image/png,image/jpeg"</sky-code>. By default, all file types are allowed. This property accepts <sky-code>string</sky-code> values.
       </sky-demo-page-property>
       <sky-demo-page-property
         propertyName="maxFileSize"
         isOptional="true"
         defaultValue="500000"
       >
-        Specifies the maximum size in bytes for valid files.
-      </sky-demo-page-property>
+        Specifies the maximum size in bytes for valid files. This property accepts <sky-code>number</sky-code> values.
+    </sky-demo-page-property>
       <sky-demo-page-property
         propertyName="minFileSize"
         isOptional="true"
         defaultValue="0"
       >
-        Specifies the minimum size in bytes for valid files.
+        Specifies the minimum size in bytes for valid files. This property accepts <sky-code>number</sky-code> values.
       </sky-demo-page-property>
       <sky-demo-page-property
         propertyName="validateFn"
         isOptional="true"
       >
-        Provides a custom validation function (<sky-code>[validateFn]="validateFile"</sky-code>). By default, any type of file is allowed.
+        Specifies a custom validation function: <sky-code>[validateFn]="validateFile"</sky-code>.
       </sky-demo-page-property>
     </sky-demo-page-properties>
 
@@ -143,13 +142,13 @@
         propertyName="fileChange"
         isOptional="true"
       >
-        Fires when the user selects or removes a file.
+        Fires when users add or remove a file.
       </sky-demo-page-property>
       <sky-demo-page-property
         propertyName="fileClick"
         isOptional="true"
       >
-        Fires when the user clicks the file link.
+        Fires when users select the file link.
       </sky-demo-page-property>
     </sky-demo-page-properties>
 
