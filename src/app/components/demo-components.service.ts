@@ -262,7 +262,7 @@ export class SkyDemoComponentsService {
       {
         name: 'File attachment',
         icon: 'cloud-upload',
-        summary: `The file attachment components allow users to attach files to forms.`,
+        summary: `The file attachment module creates options to attach files to forms and to display metadata about attachments.`,
         url: '/components/file-attachments',
         imports: {
           '@skyux/forms': [
@@ -272,7 +272,21 @@ export class SkyDemoComponentsService {
             'SkyAlertModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('File attachment')
+        getCodeFiles: () => this.getDemoFiles('File attachment'),
+        components: [
+          {
+            name: 'Single file attachment',
+            icon: 'cloud-upload',
+            summary: `The single file attachment component creates an input to attach a single local file.`,
+            url: '/components/file-attachments/single-file-attachment',
+            imports: {
+              '@skyux/forms': [
+                'SkyFileAttachmentsModule'
+              ]
+            },
+            getCodeFiles: () => this.getDemoFiles('Single file attachment')
+          }
+        ]
       },
       {
         name: 'Filter',
@@ -964,18 +978,6 @@ export class SkyDemoComponentsService {
         },
         getCodeFiles: () => this.getDemoFiles('Select field'),
         disableStackblitz: true
-      },
-      {
-        name: 'Single file attachment',
-        icon: 'cloud-upload',
-        summary: `The single file attachment component allow users to add single file attachments to forms.`,
-        url: '/components/file-attachments/single-file-attachment',
-        imports: {
-          '@skyux/forms': [
-            'SkyFileAttachmentsModule'
-          ]
-        },
-        getCodeFiles: () => this.getDemoFiles('Single file attachment')
       },
       {
         name: 'Sort',
