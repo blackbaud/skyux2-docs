@@ -63,8 +63,8 @@ export class SkyDemoPageStackBlitzService {
     imports?: SkyDemoPageImports,
     dependencies?: SkyDemoPageDependencies
   ) {
-    const angularVersion = '^8.0.0';
-    const skyuxVersion = '^3.0.0';
+    const angularVersion = '^7.0.0';
+    const skyuxVersion = '*';
 
     const mergedDependencies: { [key: string]: string } = {
       '@angular/animations': angularVersion,
@@ -72,7 +72,7 @@ export class SkyDemoPageStackBlitzService {
       '@angular/compiler': angularVersion,
       '@angular/core': angularVersion,
       '@angular/forms': angularVersion,
-      '@angular/http': '^7.0.0',
+      '@angular/http': angularVersion,
       '@angular/platform-browser': angularVersion,
       '@angular/platform-browser-dynamic': angularVersion,
       '@angular/router': angularVersion,
