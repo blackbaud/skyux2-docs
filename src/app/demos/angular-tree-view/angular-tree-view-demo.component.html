@@ -45,6 +45,7 @@
         <li>
           <sky-checkbox
             [(ngModel)]="enableSelection"
+            [disabled]="readOnly"
           >
             <sky-checkbox-label>
               Enable selection
@@ -66,7 +67,7 @@
             </li>
             <li>
               <sky-checkbox
-              [disabled]="!enableSelection || enableCascading"
+                [disabled]="!enableSelection || enableCascading"
                 [(ngModel)]="selectLeafNodesOnly"
               >
                 <sky-checkbox-label>
