@@ -40,17 +40,17 @@
     </li>
     <li>
       <p>
+        SCSS file — To add custom styles, you create the SCSS file and add <sky-code>@import '~@skyux/theme/scss/mixins';</sky-code> to reference variables or mixins. For more information, see the <a href="http://sass-lang.com/">Sass website</a>.
+      </p>
+    </li>
+    <li>
+      <p>
         <sky-code>src/assets</sky-code> folder — To <a routerLink="/learn/get-started/advanced/include-static-assets">include static assets</a> such as images in your SPA, place them in the <sky-code>assets</sky-code> folder in the <sky-code>src</sky-code> directory. To reference files in this folder in your HTML, CSS, or SCSS, insert <sky-code>&#126;/assets/</sky-code> before the filename. For example, <sky-code>&#60;img src="&#126;/assets/photo.jpg" alt="Photo" /&#62;</sky-code> references a <sky-code>photo.jpg</sky-code> file in <sky-code>src/assets</sky-code>. You must reference static assets this way because the filenames are updated at build time to include hashes that represent the content of the files. During the CI build, files in the <sky-code>src/assets</sky-code> folder are automatically uploaded to the CDN if they are referenced in your HTML, CSS, or SCSS. Also during the CI build, all instances of <sky-code>&#126;/assets/</sky-code> are replaced with the CDN. To replace <sky-code>&#126;/assets/</sky-code> with a different value when <sky-code>skyux build</sky-code> runs, you can use the <sky-code>--assets</sky-code> option <a routerLink="/learn/reference/cli-commands">in the SKY UX CLI</a>.
       </p>
     </li>
     <li>
       <p>
         <sky-code>src/assets/locales</sky-code> folder — To <a routerLink="/learn/get-started/advanced/localization">specify localization strings</a> to reuse throughout your SPA, declare the strings in the <sky-code>resources_en_US.json</sky-code> file in <sky-code>src/assets/locales</sky-code>. To reference the localization strings in your SPA, use the <sky-code>skyAppResources</sky-code> pipe or the <sky-code>SkyAppResourcesService</sky-code> service.
-      </p>
-    </li>
-    <li>
-      <p>
-        <sky-code>SCSS</sky-code> file — This file contains the import that includes design tokens for SKY UX building styles. You can also add custom styles to this file because SCSS is a superset of CSS3 syntax. For more information, see the <a href="http://sass-lang.com/">SASS website</a>.
       </p>
     </li>
     <li>
