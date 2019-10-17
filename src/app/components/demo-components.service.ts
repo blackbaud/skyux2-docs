@@ -1161,7 +1161,7 @@ export class SkyDemoComponentsService {
       {
         name: 'Tree view',
         icon: 'sitemap',
-        summary: `The tree view provides a hierarchical list view.`,
+        summary: `The tree view module provides a hierarchical list view with multiple modes for selecting items in the list.`,
         url: '/components/tree-view',
         imports: {
           '@skyux/angular-tree-view': [
