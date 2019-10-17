@@ -59,8 +59,7 @@ export class SkyDocsDemoCodeService {
         {
           name: 'ag-grid-edit-modal.component.ts',
           fileContents: require('!!raw-loader!./ag-grid/ag-grid-edit-modal.component.ts'),
-          componentName: 'SkyAgGridEditModalComponent',
-          bootstrapSelector: 'sky-demo-edit-modal-form'
+          componentName: 'SkyAgGridEditModalComponent'
         }
       ]
     },
