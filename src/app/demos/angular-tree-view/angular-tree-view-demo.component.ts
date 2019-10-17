@@ -81,7 +81,15 @@ export class SkyAngularTreeViewDemoComponent {
     return this._enableSelection;
   }
 
-  public readOnly: boolean = false;
+  public set readOnly(value: boolean) {
+    this.resetSelection();
+    this.enableSelection = false;
+    this._readOnly = value;
+  }
+
+  public get readOnly(): boolean {
+    return this._readOnly;
+  }
 
   public set showContextMenus(value: boolean) {
     this._showContextMenus = value;
@@ -149,6 +157,8 @@ export class SkyAngularTreeViewDemoComponent {
 
   private _enableSelection = false;
 
+  private _readOnly = false;
+
   private _selectLeafNodesOnly = false;
 
   private _showContextMenus = false;
@@ -168,5 +178,6 @@ export class SkyAngularTreeViewDemoComponent {
 
   private resetSelection(): void {
     this.tree.selectedLeafNodeIds = {};
+    this.tree.activeNodeIds = {};
   }
 }
