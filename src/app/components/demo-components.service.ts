@@ -327,7 +327,7 @@ export class SkyDemoComponentsService {
         name: 'Fluid grid',
         icon: 'table',
         // tslint:disable-next-line
-        summary: `The fluid grid component provides a responsive 12-column layout to organize content.`,
+        summary: `The fluid grid component provides a responsive 12-column layout to organize content for all device sizes.`,
         url: '/components/fluid-grid',
         imports: {
           '@skyux/layout': [
@@ -1206,6 +1206,12 @@ export class SkyDemoComponentsService {
           ]
         },
         getCodeFiles: () => this.getDemoFiles('Wait')
+      },
+      {
+        name: 'Window',
+        icon: 'window-maximize',
+        summary: 'The application window reference service allows users to reference the global window variable.',
+        url: '/components/window'
       },
       {
         name: 'Wizard',
