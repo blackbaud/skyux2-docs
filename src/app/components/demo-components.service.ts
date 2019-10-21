@@ -109,6 +109,18 @@ export class SkyDemoComponentsService {
         getCodeFiles: () => this.getDemoFiles('Card')
       },
       {
+        name: 'Character count indicator',
+        icon: 'calculator',
+        summary: `The character count indicator component extends a text input to apply a character limit and display an indicator.`,
+        url: '/components/character-count',
+        imports: {
+          '@skyux/forms': [
+            'SkyCharacterCounterModule'
+          ]
+        },
+        getCodeFiles: () => this.getDemoFiles('Character count')
+      },
+      {
         name: 'Checkbox',
         icon: 'check-square',
         summary: `The checkbox component renders a SKY UX-themed checkbox.`,
@@ -315,7 +327,7 @@ export class SkyDemoComponentsService {
         name: 'Fluid grid',
         icon: 'table',
         // tslint:disable-next-line
-        summary: `The fluid grid component provides a responsive 12-column layout to organize content.`,
+        summary: `The fluid grid component provides a responsive 12-column layout to organize content for all device sizes.`,
         url: '/components/fluid-grid',
         imports: {
           '@skyux/layout': [
@@ -1182,6 +1194,12 @@ export class SkyDemoComponentsService {
           ]
         },
         getCodeFiles: () => this.getDemoFiles('Wait')
+      },
+      {
+        name: 'Window',
+        icon: 'window-maximize',
+        summary: 'The application window reference service allows users to reference the global window variable.',
+        url: '/components/window'
       },
       {
         name: 'Wizard',
