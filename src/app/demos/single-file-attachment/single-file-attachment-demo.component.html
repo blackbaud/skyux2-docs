@@ -11,7 +11,10 @@
   >
     <sky-file-attachment
       formControlName="attachment"
+      acceptedTypes="image/png"
       [validateFn]="validateFile"
+      [maxFileSize]="maxFileSize"
+      (fileChange)="reactiveFileUpdated($event)"
     >
       <sky-file-attachment-label
         *ngIf="showLabel"
@@ -19,11 +22,15 @@
         Profile picture
       </sky-file-attachment-label>
     </sky-file-attachment>
-
     <div *ngIf="attachment?.invalid && attachment?.dirty"
       class="sky-error-label"
     >
       Attach a file.
+    </div>
+    <div *ngIf="reactiveUploadError"
+      class="sky-error-label"
+    >
+      {{reactiveUploadError}}
     </div>
   </div>
 
@@ -55,7 +62,10 @@
 <div>
   <sky-file-attachment
     required
+    acceptedTypes="image/png"
     [validateFn]="validateFile"
+    [maxFileSize]="maxFileSize"
+    (fileChange)="templateFileUpdated($event)"
     [(ngModel)]="fileValue"
     #file="ngModel"
   >
@@ -69,6 +79,11 @@
     class="sky-error-label"
   >
     Attach a file.
+  </div>
+  <div *ngIf="templateUploadError"
+    class="sky-error-label"
+  >
+    {{templateUploadError}}
   </div>
 </div>
 
