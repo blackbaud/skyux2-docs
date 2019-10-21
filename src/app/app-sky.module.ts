@@ -45,8 +45,9 @@ import {
 
 import {
   SkyCheckboxModule,
+  SkyFileAttachmentsModule,
   SkyRadioModule,
-  SkyFileAttachmentsModule
+  SkyToggleSwitchModule
 } from '@skyux/forms';
 
 import {
@@ -222,6 +223,7 @@ import {
     SkyTilesModule,
     SkyTimepickerModule,
     SkyToastModule,
+    SkyToggleSwitchModule,
     SkyTokensModule,
     SkyToolbarModule,
     SkyUrlValidationModule,
