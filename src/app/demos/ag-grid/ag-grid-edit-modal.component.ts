@@ -9,6 +9,11 @@ import {
 } from '@skyux/ag-grid';
 
 import {
+  SkyAutocompleteProperties,
+  SkyDatepickerProperties
+} from '@skyux/ag-grid/modules/ag-grid/types';
+
+import {
   SkyAutocompleteSelectionChange
 } from '@skyux/lookup';
 
@@ -77,7 +82,7 @@ export class SkyAgGridEditModalComponent implements OnInit {
         headerName: 'End Date',
         type: SkyCellType.Date,
         editable: true,
-        cellEditorParams: (params: ICellEditorParams): any => {
+        cellEditorParams: (params: ICellEditorParams): { skyComponentProperties: SkyDatepickerProperties } => {
           return { skyComponentProperties: { minDate: params.data.startDate } };
         }
       },
@@ -86,15 +91,15 @@ export class SkyAgGridEditModalComponent implements OnInit {
         headerName: 'Department',
         type: SkyCellType.Autocomplete,
         editable: true,
-        cellEditorParams: (params: ICellEditorParams) => {
+        cellEditorParams: (params: ICellEditorParams): { skyComponentProperties: SkyAutocompleteProperties } => {
           return {
             skyComponentProperties: {
               data: SKY_DEPARTMENTS,
-              selectionChange: (change: SkyAutocompleteSelectionChange) => { this.departmentSelectionChange(change, params.node); }
+              selectionChange: (change: SkyAutocompleteSelectionChange): void => { this.departmentSelectionChange(change, params.node); }
             }
           };
         },
-        onCellValueChanged: (changeEvent: CellValueChangedEvent) => {
+        onCellValueChanged: (changeEvent: CellValueChangedEvent): void => {
           if (changeEvent.newValue !== changeEvent.oldValue) {
             this.clearJobTitle(changeEvent.node);
           }
@@ -105,9 +110,9 @@ export class SkyAgGridEditModalComponent implements OnInit {
         headerName: 'Title',
         type: SkyCellType.Autocomplete,
         editable: true,
-        cellEditorParams: (params: ICellEditorParams): any => {
+        cellEditorParams: (params: ICellEditorParams): { skyComponentProperties: SkyAutocompleteProperties } => {
           const selectedDepartment: string = params.data && params.data.department && params.data.department.name;
-          let editParams: any = { skyComponentProperties: { data: [] } };
+          let editParams: { skyComponentProperties: SkyAutocompleteProperties } = { skyComponentProperties: { data: [] } };
 
           if (selectedDepartment) {
             editParams.skyComponentProperties.data = SKY_JOB_TITLES[selectedDepartment];
@@ -121,24 +126,22 @@ export class SkyAgGridEditModalComponent implements OnInit {
       columnDefs: this.columnDefs,
       onGridReady: gridReadyEvent => this.onGridReady(gridReadyEvent)
     };
-    this.gridOptions = this.agGridService.getGridOptions({ gridOptions: this.gridOptions });
+    this.gridOptions = this.agGridService.getEditableGridOptions({ gridOptions: this.gridOptions });
   }
 
-  public onGridReady(gridReadyEvent: GridReadyEvent) {
+  public onGridReady(gridReadyEvent: GridReadyEvent): void {
     this.gridApi = gridReadyEvent.api;
 
     this.gridApi.sizeColumnsToFit();
   }
 
-  private departmentSelectionChange(change: SkyAutocompleteSelectionChange, node: RowNode) {
-    console.log(change.selectedItem);
-    console.log(node.data.department);
+  private departmentSelectionChange(change: SkyAutocompleteSelectionChange, node: RowNode): void {
     if (change.selectedItem && change.selectedItem !== node.data.department) {
       this.clearJobTitle(node);
     }
   }
 
-  private clearJobTitle(node: RowNode) {
+  private clearJobTitle(node: RowNode): void {
     node.data.jobTitle = undefined;
     this.gridApi.refreshCells({rowNodes: [node]});
   }

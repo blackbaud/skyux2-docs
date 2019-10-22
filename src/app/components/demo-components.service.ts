@@ -68,7 +68,8 @@ export class SkyDemoComponentsService {
           'ag-grid-angular': '*',
           'ag-grid-community': '*'
         },
-        getCodeFiles: () => this.getDemoFiles('ag-Grid')
+        getCodeFiles: () => this.getDemoFiles('ag-Grid'),
+        disableStackblitz: true
       },
       {
         name: 'Alert',

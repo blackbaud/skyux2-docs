@@ -107,7 +107,7 @@ export class SkyAgGridDemoComponent implements OnInit {
     const context = new SkyAgGridEditModalContext();
     context.gridData = this.gridData;
 
-    const options: any = {
+    const options = {
       providers: [{ provide: SkyAgGridEditModalContext, useValue: context }],
       ariaDescribedBy: 'docs-edit-grid-modal-content',
       size: 'large'
@@ -116,11 +116,12 @@ export class SkyAgGridDemoComponent implements OnInit {
     const modalInstance = this.modalService.open(SkyAgGridEditModalComponent, options);
 
     modalInstance.closed.subscribe((result: SkyModalCloseArgs) => {
-      if (result.reason === 'cancel') {
+      if (result.reason === 'cancel' || result.reason === 'close') {
         alert('Edits canceled!');
       } else {
+        this.gridData = result.data;
+        this.gridApi.refreshCells();
         alert('Saving data!');
-        console.log(result.data);
       }
     });
   }

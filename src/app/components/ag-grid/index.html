@@ -81,7 +81,7 @@
           </p>
 
           <p>
-            In read-only mode, the cell will display the currently selected value by default. If this value is an object or needs to be formatted in any way, you can <a href="https://www.ag-grid.com/javascript-grid-value-formatters/">define a <sky-code>valueFormatter</sky-code></a> on the column definition. See the demo for an example.
+            In read-only mode, the cell will display the currently selected value's name property by default. If the autocomplete needs to show a different property or needs to be formatted in any way, you can <a href="https://www.ag-grid.com/javascript-grid-value-formatters/">define a <sky-code>valueFormatter</sky-code></a> on the column definition.
           </p>
         </sky-demo-page-property>
         <sky-demo-page-property
@@ -93,7 +93,7 @@
           </p>
 
           <p>
-            In read-only mode, the cell will display the currently selected date formatted as <sky-code>MM-DD-YYYY</sky-code>, or the date format of the locale passed to <sky-code>getGridOptions()</sky-code>. If you would like to overwrite this format, you can <a href="https://www.ag-grid.com/javascript-grid-value-formatters/">define a <sky-code>valueFormatter</sky-code></a> on the column definition.
+            In read-only mode, the cell will display the currently selected date formatted as <sky-code>MM-DD-YYYY</sky-code>, or the date format of the locale passed to <sky-code>getGridOptions()</sky-code>. If you would like to overwrite this format, you can <a href="https://www.ag-grid.com/javascript-grid-value-formatters/">define a <sky-code>valueFormatter</sky-code></a> on the column definition. See the demo for an example.
           </p>
         </sky-demo-page-property>
 
@@ -121,6 +121,11 @@
           Any <a routerLink="..">SKY UX component</a> can be made into a <a href="https://www.ag-grid.com/javascript-grid-cell-editor/">cell editor</a> or <a href="https://www.ag-grid.com/javascript-grid-cell-rendering-components/">cell renderer</a> component. If you would like to use a component that does not have a column definition yet, please consider <a routerLink="../../contribute/contribution-process">contributing it</a> to the SKY UX ag-Grid module, or <a routerLink="../../contribute/contribution-process/file-issue">file an issue</a> in the <a href="https://github.com/blackbaud/skyux-ag-grid">@skyux/ag-grid repo.</a>
         </p>
       </sky-demo-page-properties>
+
+      <h2>Passing cell editor parameters</h2>
+      <p>
+        You can pass inputs to the SKY UX components used in cell editors via the <a href="https://www.ag-grid.com/javascript-grid-column-properties/">column definition's <sky-code>cellEditorParams</sky-code> property.</a> The component properties are nested under <sky-code>skyComponentProperties</sky-code>. All component properties should be supported, and you can see the defined types by importing <sky-code>SkyCellEditorDatepickerProperties</sky-code> or <sky-code>SkyCellEditorAutocompleteProperties</sky-code>. <sky-code>cellEditorParams</sky-code> can also be a function that returns a param object for dynamic editing params. See the demo for examples of using an object or a function.
+      </p>
 
       <h2>ag-Grid styles</h2>
       <p>
