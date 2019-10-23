@@ -41,6 +41,8 @@ export class SkyAngularTreeViewDemoComponent {
     return this._enableCascading;
   }
 
+  public mode: string = 'navigation';
+
   public set selectLeafNodesOnly(value: boolean) {
     console.log(value);
     this.resetSelection();

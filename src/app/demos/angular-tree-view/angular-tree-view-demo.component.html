@@ -2,10 +2,93 @@
   class="sky-margin-stacked-separate"
 >
 
-<!-- #region [Checkboxes for demonstration purposes only.] -->
+<!-- #region [Radio buttons for demonstration purposes only.] -->
 <sky-fluid-grid>
   <sky-row>
     <sky-column screenSmall="6">
+      <sky-radio-group
+        ariaLabelledBy="sky-demo-modes"
+        name="modes"
+        [(ngModel)]="mode"
+      >
+        <h4
+          id="sky-demo-modes"
+        >
+          Modes
+        </h4>
+        <ul
+          class="sky-list-unstyled"
+        >
+          <li>
+            <sky-radio
+              value="navigation"
+            >
+              <sky-radio-label>
+                Navigation
+              </sky-radio-label>
+            </sky-radio>
+          </li>
+          <li>
+              <sky-radio
+                value="readOnly"
+              >
+              <sky-radio-label>
+                Read-only
+              </sky-radio-label>
+            </sky-radio>
+          </li>
+          <li>
+              <sky-radio
+                value="selection"
+              >
+              <sky-radio-label>
+                Selection
+              </sky-radio-label>
+            </sky-radio>
+            <ul
+              class="sky-list-unstyled"
+              style="margin: 10px 0 10px 20px"
+            >
+                <li>
+                  <sky-checkbox
+                    [disabled]="!enableSelection || enableCascading"
+                    [(ngModel)]="selectLeafNodesOnly"
+                  >
+                    <sky-checkbox-label>
+                      Enable leaf-node selection only
+                    </sky-checkbox-label>
+                  </sky-checkbox>
+                </li>
+                <sky-radio-group
+                  ariaLabelledBy="sky-demo-modes"
+                  name="selectModes"
+                  [(ngModel)]="selectMode"
+                >
+                  <li>
+                    <sky-radio
+                      value="singleSelect"
+                    >
+                      <sky-radio-label>
+                        Single-select
+                      </sky-radio-label>
+                    </sky-radio>
+                  </li>
+                  <li>
+                    <sky-radio
+                      value="multiSelect"
+                    >
+                      <sky-radio-label>
+                        Multi-select
+                      </sky-radio-label>
+                    </sky-radio>
+                  </li>
+                </sky-radio-group>
+            </ul>
+          </li>
+        </ul>
+      </sky-radio-group>
+
+
       <ul
         class="sky-list-unstyled"
       >
@@ -65,16 +148,7 @@
                 </sky-checkbox-label>
               </sky-checkbox>
             </li>
-            <li>
-              <sky-checkbox
-                [disabled]="!enableSelection || enableCascading"
-                [(ngModel)]="selectLeafNodesOnly"
-              >
-                <sky-checkbox-label>
-                  Enable leaf-node selection only
-                </sky-checkbox-label>
-              </sky-checkbox>
-            </li>
+
             <li>
               <sky-checkbox
                 [disabled]="!enableSelection || enableCascading"
