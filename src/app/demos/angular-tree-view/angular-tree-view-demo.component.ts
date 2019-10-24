@@ -94,17 +94,13 @@ export class SkyAngularTreeViewDemoComponent {
       children: [
         { name: 'Cats', isExpanded: true, children: [
           { name: 'Burmese' },
-          { name: 'European Shorthair' },
           { name: 'Persian' },
-          { name: 'Siamese' },
           { name: 'Tabby' }
           ]
         },
         { name: 'Dogs', isExpanded: true, children: [
-          { name: 'Australian Cattle Dog' },
           { name: 'Beagle' },
           { name: 'German Shepard' },
-          { name: 'Jack Russel Terrier' },
           { name: 'Labrador Retriever' }
           ]
         }

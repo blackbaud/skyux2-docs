@@ -5,17 +5,15 @@
 
   <sky-demo-page-summary>
     <p>
-      The tree view module provides a hierarchical list view with multiple modes for selecting items.
+      The tree view module provides a hierarchical list view with multiple modes for selecting items in the list.
     </p>
-    <sky-alert alertType="warning">
-      This component is a release candidate. We do not plan to make any breaking changes the component before the official release, but such changes are possible.
-    </sky-alert>
+    <stache-include fileName="components/release-candidate-warning.html"></stache-include>
   </sky-demo-page-summary>
   
   <sky-demo-page-example>
     <sky-angular-tree-view-demo></sky-angular-tree-view-demo>
   </sky-demo-page-example>
-
+  
 <sky-tabset id="content-tabs">
 
   <sky-tab
@@ -25,21 +23,21 @@
       <h3 class="sky-text-success">Use when</h3>
         <sky-docs-visual-example>
           <sky-docs-visual-example-text>
-              <p>Use tree views to show lists of hierarchical items. They can be used in view-only or selection contexts.</p>
+              <p>Use tree views to represent hierarchical information. You can make tree views read-only or allow users to select list items.</p>
           </sky-docs-visual-example-text>
           <sky-docs-visual-example-image>
             <div>
-              <img src="~/assets/img/guidelines/angular-tree-view/use-when.png" />
-              <div class="caption caption-success sky-text-success">Do use tree views to show lists of hierarchical items.</div>
+              <img src="~/assets/img/guidelines/tree-view/use-when.png" />
+              <div class="caption caption-success sky-text-success">Do use tree views for hierarchical lists.</div>
             </div>
           </sky-docs-visual-example-image>
         </sky-docs-visual-example>
     </sky-demo-page-content>
 
     <sky-demo-page-content sectionHeading="Anatomy">
-      <sky-docs-anatomy imagePath="~/assets/img/guidelines/angular-tree-view/anatomy.png">
+      <sky-docs-anatomy imagePath="~/assets/img/guidelines/tree-view/anatomy.png">
         <sky-docs-anatomy-item anatomyNumber="1">Expand/collapse button</sky-docs-anatomy-item>
-        <sky-docs-anatomy-item anatomyNumber="2">List item content</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item anatomyNumber="2">List item</sky-docs-anatomy-item>
         <sky-docs-anatomy-item anatomyNumber="3" isOptional="true">Checkbox</sky-docs-anatomy-item>
         <sky-docs-anatomy-item anatomyNumber="4" isOptional="true">Context menu</sky-docs-anatomy-item>
       </sky-docs-anatomy>
@@ -49,71 +47,86 @@
       <h3>Selection</h3>
         <sky-docs-visual-example>
           <sky-docs-visual-example-text>
-            <p>You can use single-select or multiselect mode when you use a tree view in a selection context.</p>
+            <p>You can use the single-select and multiselect modes to allow users to select list items.</p>
           </sky-docs-visual-example-text>
           <sky-docs-visual-example-image>
-            <img src="~/assets/img/guidelines/angular-tree-view/option-select.png" />
+            <img src="~/assets/img/guidelines/tree-view/option-select.png" />
           </sky-docs-visual-example-image>
         </sky-docs-visual-example>
         <sky-docs-visual-example>
           <sky-docs-visual-example-text>
-            <p>With cascading selection, when users select a node the descendant nodes are also selected. Use this mode if it's likely that users will want to select a node and all its descendants.</p>
+            <p>You can use the cascading selection mode to select descendant nodes when users select items. Use this mode when users are likely to select all descendants within nodes.</p>
           </sky-docs-visual-example-text>
           <sky-docs-visual-example-image>
-            <img src="~/assets/img/guidelines/angular-tree-view/option-cascading.png" />
+            <img src="~/assets/img/guidelines/tree-view/option-cascading.png" />
           </sky-docs-visual-example-image>
         </sky-docs-visual-example>
         <sky-docs-visual-example>
           <sky-docs-visual-example-text>
-            <p>With leaf-only selection, users can only select the leaf nodes in the tree. Use the leaf-node-only selection mode if the higher-level nodes in the tree are categories and you want users to only select the leaf node items.</p>
+            <p>You can use the leaf-only selection mode to limit user selections to leaf nodes. Use this mode when higher-level nodes are categories that contain leaf nodes for users to select.</p>
           </sky-docs-visual-example-text>
           <sky-docs-visual-example-image>
-            <img src="~/assets/img/guidelines/angular-tree-view/option-leaf-only.png" />
+            <img src="~/assets/img/guidelines/tree-view/option-leaf-only.png" />
           </sky-docs-visual-example-image>
         </sky-docs-visual-example>
-      <h3>Split view</h3>
+      <h3>Navigation mode</h3>
         <sky-docs-visual-example>
           <sky-docs-visual-example-text>
-            <p>You can use tree views as lists in <a routerLink="/components/split-view">split views</a> if users need to work with hierarchical items.</p>
+            <p>When users need to work with the items in hierarchical lists and take actions, you can place tree views within <a routerLink="/components/split-view">split views</a>. When users select items to work on, tree views highlight those items with the active state.</p>
           </sky-docs-visual-example-text>
           <sky-docs-visual-example-image>
-            <img src="~/assets/img/guidelines/angular-tree-view/option-split-view.png" />
+            <img src="~/assets/img/guidelines/tree-view/option-split-view.png" />
           </sky-docs-visual-example-image>
         </sky-docs-visual-example>
-      </sky-demo-page-content>
+    <h3>Read-only mode</h3>
+      <sky-docs-visual-example>
+          <sky-docs-visual-example-text>
+            <p>You can use the read-only mode to allow users to view hierarchical information in cases where items are not selectable and are not used for navigation. You can still include interactive elements such as hyperlinks in the list items.</p>
+          </sky-docs-visual-example-text>
+          <sky-docs-visual-example-image>
+            <img src="~/assets/img/guidelines/tree-view/option-read-only.png" />
+          </sky-docs-visual-example-image>
+        </sky-docs-visual-example>
+    <h3>Context menu</h3>
+      <sky-docs-visual-example>
+        <sky-docs-visual-example-text>
+          <p>When users need to perform actions on items in hierarchical lists, you can include <a stacheRouterLink="/components/dropdown">context menus</a> to provide access to those actions.</p>
+        </sky-docs-visual-example-text>
+        <sky-docs-visual-example-image>
+          <img src="~/assets/img/guidelines/tree-view/option-context-menu.png" />
+        </sky-docs-visual-example-image>
+      </sky-docs-visual-example>
+    </sky-demo-page-content>
 
     <sky-demo-page-content sectionHeading="Behavior & states">
       <h3>Expand/collapse nodes</h3>
         <sky-docs-visual-example>
           <sky-docs-visual-example-text>
-            <p>Clicking the chevron button expands or collapses the node.</p>
+            <p>The expand/collapse button expands and collapses the node.</p>
           </sky-docs-visual-example-text>
           <sky-docs-visual-example-image>
-            <img src="~/assets/img/guidelines/angular-tree-view/behavior-expand.png" />
+            <img src="~/assets/img/guidelines/tree-view/behavior-expand.png" />
           </sky-docs-visual-example-image>
         </sky-docs-visual-example>
       <h3>States</h3>
       <sky-demo-page-component-states>
-        <sky-demo-page-component-state stateName="Active" imagePath="~/assets/img/guidelines/angular-tree-view/state-active.png"></sky-demo-page-component-state>
-        <sky-demo-page-component-state stateName="Selected" imagePath="~/assets/img/guidelines/angular-tree-view/state-selected.png"></sky-demo-page-component-state>
+        <sky-demo-page-component-state stateName="Active" imagePath="~/assets/img/guidelines/tree-view/state-active.png"></sky-demo-page-component-state>
+        <sky-demo-page-component-state stateName="Selected" imagePath="~/assets/img/guidelines/tree-view/state-selected.png"></sky-demo-page-component-state>
       </sky-demo-page-component-states>
-
     </sky-demo-page-content>
 
     <sky-demo-page-content sectionHeading="Related information">
       <h3>Components</h3>
       <ul>
-        <li><a routerLink="/components/flyout">Split view</a></li>
+        <li><a routerLink="/components/grid">Grid</a></li>
+        <li><a routerLink="/components/repeater">Repeater</a></li>
+        <li><a routerLink="/components/split-view">Split view</a></li>
       </ul>
     </sky-demo-page-content>
 
   </sky-tab>
 
   <sky-tab tabHeading="Development">
-
-    <p>
-      The <sky-code>SkyAngularTreeModule</sky-code> provides styles and SKY UX components for displaying a hierarchical view of items using the <sky-code>angular-tree-component</sky-code> library. For more in depth information about angular-tree-component and its capabilities, please reference <a href="https://angular2-tree.readme.io/docs">the angular-tree-component documentation</a>.
-    </p>
 
     <sky-demo-page-module-info
       skyuxModule="SkyAngularTreeModule"
@@ -123,23 +136,23 @@
     </sky-demo-page-module-info>
 
     <sky-demo-page-properties
-      sectionHeading="Angular tree view components"
+      sectionHeading="Tree view components"
     >
       <p>
-        To apply the SKY UX themes and additional functionality to the <sky-code>angular-tree-component</sky-code>, you must include the following components.
+        <sky-code>SkyAngularTreeModule</sky-code> provides SKY UX components and styles to complement the <sky-code>angular-tree-component</sky-code> library and apply SKY UX themes and functionality to hierarchical list views. For information about the Angular tree component and its capabilities, see the <a href="https://angular2-tree.readme.io/docs">Angular tree component documentation</a>.
       </p>
 
       <sky-demo-page-property
         propertyName="sky-angular-tree-wrapper"
         isOptional="false"
       >
-        Wraps the <sky-code>tree-root</sky-code> component. For more information on <sky-code>tree-root</sky-code>, refer to <a href="https://angular2-tree.readme.io/docs">the angular-tree-component documentation.</a>
+        Wraps the Angular <sky-code>tree-root</sky-code> component. For information about the <sky-code>tree-root</sky-code> component, see the <a href="https://angular2-tree.readme.io/docs/options-1">Angular tree component documentation</a>.
       </sky-demo-page-property>
       <sky-demo-page-property
         propertyName="sky-angular-tree-node"
         isOptional="false"
       >
-        Replaces the default tree node template with a SKY UX node. This component must be wrapped inside a <sky-code>ng-template</sky-code> tag with the template reference variable <sky-code>#treeNodeFullTemplate</sky-code>. For more information on templating the tree nodes, refer to <a href="https://angular2-tree.readme.io/docs">the angular-tree-component documentation.</a>
+        Replaces the default tree node template with a SKY UX node. You must wrap this component in an <sky-code>ng-template</sky-code> tag with the template reference variable <sky-code>#treeNodeFullTemplate</sky-code>. For information about tree node templates, see the <a href="https://angular2-tree.readme.io/docs/templates">Angular tree component documentation.</a>
       </sky-demo-page-property>
     </sky-demo-page-properties>
 
@@ -151,54 +164,56 @@
         isOptional="true"
         defaultValue="false"
       >
-        Renders the tree in read only mode, which disables any "selected" or "active" states on the nodes. This property accepts <sky-code>boolean</sky-code> values.
+        Indicates whether to render the tree view in read-only mode. This mode disables selected and active states on the tree view nodes. This property accepts <sky-code>boolean</sky-code> values.
       </sky-demo-page-property>
       <sky-demo-page-property
         propertyName="selectLeafNodesOnly"
         isOptional="true"
         defaultValue="false"
       >
-        If the tree has checkboxes enabled, this property prevents parent nodes from being selected. To enable checkboxes, refer to <a href="https://angular2-tree.readme.io/docs">the angular-tree-component documentation</a>. This property accepts <sky-code>boolean</sky-code> values.
+        Indicates whether to use leaf-only selection mode. For tree views with checkboxes, this mode limits user selections to leaf nodes and prevents users from selecting parent nodes. To enable checkboxes, see the <a href="https://angular2-tree.readme.io/docs/tri-state-checkboxes">Angular tree component documentation</a>. This property accepts <sky-code>boolean</sky-code> values.
       </sky-demo-page-property>
       <sky-demo-page-property
         propertyName="selectSingle"
         isOptional="true"
         defaultValue="false"
       >
-        If the tree has checkboxes enabled, this property only allows one node to be selected at a time. To enable checkboxes, refer to <a href="https://angular2-tree.readme.io/docs">the angular-tree-component documentation</a>. This property accepts <sky-code>boolean</sky-code> values.
+        Indicates whether to use single-select mode. For tree views with checkboxes, this mode limits user selections to one node at a time. To enable checkboxes, see the <a href="https://angular2-tree.readme.io/docs/tri-state-checkboxes">Angular tree component documentation</a>. This property accepts <sky-code>boolean</sky-code> values.
       </sky-demo-page-property>
       <sky-demo-page-property
         propertyName="showToolbar"
         isOptional="true"
         defaultValue="false"
       >
-        Shows a toolbar that contains controls to expand and collapse all nodes, as well as buttons to select and clear all checkboxes. The select and clear all buttons will only show if the checkboxes have been enabled.
+        Indicates whether to display a toolbar with buttons to expand and collapse all nodes and buttons to select and clear all checkboxes. The select and clear all buttons only appear when you enable checkboxes. To enable checkboxes, see the <a href="https://angular2-tree.readme.io/docs/tri-state-checkboxes">Angular tree component documentation</a>. This property accepts <sky-code>boolean</sky-code> values.
       </sky-demo-page-property>
     </sky-demo-page-properties>
 
     <sky-demo-page-properties
       sectionHeading="Angular tree node component properties"
     >
+      <p>
+        To display context menus with actions for individual items in hierarchical lists, place <a stacheRouterLink="/components/dropdown">dropdown components</a> inside the Angular tree node component. The Angular tree node component automatically handles styling and positioning for context menus.
+      </p>
       <sky-demo-page-property
         propertyName="index"
         isOptional="false"
       >
-        The <sky-code>index</sky-code> property from the parent <sky-code>ng-template</sky-code>. This property accepts <sky-code>number</sky-code> values.
+        Specifies the <sky-code>index</sky-code> property from the parent <sky-code>ng-template</sky-code>. This property accepts <sky-code>number</sky-code> values.
       </sky-demo-page-property>
       <sky-demo-page-property
         propertyName="node"
         isOptional="false"
       >
-        The <sky-code>node</sky-code> property from the parent <sky-code>ng-template</sky-code>.  This property accepts <sky-code>TreeNode</sky-code> values. Refer to <a href="https://angular2-tree.readme.io/docs">the angular-tree-component documentation</a> for information on the TreeNode object.
+        Specifies the <sky-code>node</sky-code> property from the parent <sky-code>ng-template</sky-code>. This property accepts <sky-code>TreeNode</sky-code> values. For information about the TreeNode object, see the <a href="https://angular2-tree.readme.io/docs/api">Angular tree component documentation</a>.
       </sky-demo-page-property>
       <sky-demo-page-property
         propertyName="templates"
         isOptional="false"
       >
-        The <sky-code>templates</sky-code> property from the parent <sky-code>ng-template</sky-code>.  This property accepts <sky-code>any</sky-code> values.
+        Specifies the <sky-code>templates</sky-code> property from the parent <sky-code>ng-template</sky-code>. This property accepts <sky-code>any</sky-code> values.
       </sky-demo-page-property>
     </sky-demo-page-properties>
-
 
     <sky-demo-page-example>
       <sky-angular-tree-view-demo></sky-angular-tree-view-demo>
