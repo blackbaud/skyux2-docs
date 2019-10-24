@@ -11,7 +11,7 @@ import {
 } from 'angular-tree-component';
 
 @Component({
-  selector: 'sky-angular-tree-view-demo',
+  selector: 'sky-angular-tree-component-demo',
   styles: [`
     .sky-demo-container {
       border: 1px solid #cdcfd2;
@@ -22,9 +22,9 @@ import {
       }
     }`
   ],
-  templateUrl: './angular-tree-view-demo.component.html'
+  templateUrl: './angular-tree-component-demo.component.html'
 })
-export class SkyAngularTreeViewDemoComponent {
+export class SkyAngularTreeComponentDemoComponent {
 
   // #region [For demonstration purposes only.]
   public set enableCascading(value: boolean) {

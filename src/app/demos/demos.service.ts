@@ -3,7 +3,7 @@ import {
 } from '@angular/core';
 
 import {
-  SkyAngularTreeViewDemoComponent,
+  SkyAngularTreeComponentDemoComponent,
   SkyCharacterCountDemoComponent,
   SkyCodeBlockDemoComponent,
   SkyCopyToClipboardDemoComponent,
@@ -207,18 +207,18 @@ export class SkyDocsDemoCodeService {
     },
 
     {
-      name: 'Angular tree view',
-      component: SkyAngularTreeViewDemoComponent,
+      name: 'Angular tree component',
+      component: SkyAngularTreeComponentDemoComponent,
       files: [
         {
-          name: 'angular-tree-view-demo.component.html',
-          fileContents: require('!!raw-loader!./angular-tree-view/angular-tree-view-demo.component.html')
+          name: 'angular-tree-component-demo.component.html',
+          fileContents: require('!!raw-loader!./angular-tree-component/angular-tree-component-demo.component.html')
         },
         {
-          name: 'angular-tree-view-demo.component.ts',
-          fileContents: require('!!raw-loader!./angular-tree-view/angular-tree-view-demo.component.ts'),
-          componentName: 'SkyAngularTreeViewDemoComponent',
-          bootstrapSelector: 'sky-angular-tree-view-demo'
+          name: 'angular-tree-component-demo.component.ts',
+          fileContents: require('!!raw-loader!./angular-tree-component/angular-tree-component-demo.component.ts'),
+          componentName: 'SkyAngularTreeComponentDemoComponent',
+          bootstrapSelector: 'sky-angular-tree-component-demo'
         }
       ]
     }

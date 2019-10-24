@@ -9,11 +9,11 @@
     </p>
     <stache-include fileName="components/release-candidate-warning.html"></stache-include>
   </sky-demo-page-summary>
-  
+
   <sky-demo-page-example>
-    <sky-angular-tree-view-demo></sky-angular-tree-view-demo>
+    <sky-angular-tree-component-demo></sky-angular-component-view-demo>
   </sky-demo-page-example>
-  
+
 <sky-tabset id="content-tabs">
 
   <sky-tab
@@ -144,13 +144,11 @@
 
       <sky-demo-page-property
         propertyName="sky-angular-tree-wrapper"
-        isOptional="false"
       >
         Wraps the Angular <sky-code>tree-root</sky-code> component. For information about the <sky-code>tree-root</sky-code> component, see the <a href="https://angular2-tree.readme.io/docs/options-1">Angular tree component documentation</a>.
       </sky-demo-page-property>
       <sky-demo-page-property
         propertyName="sky-angular-tree-node"
-        isOptional="false"
       >
         Replaces the default tree node template with a SKY UX node. You must wrap this component in an <sky-code>ng-template</sky-code> tag with the template reference variable <sky-code>#treeNodeFullTemplate</sky-code>. For information about tree node templates, see the <a href="https://angular2-tree.readme.io/docs/templates">Angular tree component documentation.</a>
       </sky-demo-page-property>
@@ -197,26 +195,23 @@
       </p>
       <sky-demo-page-property
         propertyName="index"
-        isOptional="false"
       >
         Specifies the <sky-code>index</sky-code> property from the parent <sky-code>ng-template</sky-code>. This property accepts <sky-code>number</sky-code> values.
       </sky-demo-page-property>
       <sky-demo-page-property
         propertyName="node"
-        isOptional="false"
       >
         Specifies the <sky-code>node</sky-code> property from the parent <sky-code>ng-template</sky-code>. This property accepts <sky-code>TreeNode</sky-code> values. For information about the TreeNode object, see the <a href="https://angular2-tree.readme.io/docs/api">Angular tree component documentation</a>.
       </sky-demo-page-property>
       <sky-demo-page-property
         propertyName="templates"
-        isOptional="false"
       >
         Specifies the <sky-code>templates</sky-code> property from the parent <sky-code>ng-template</sky-code>. This property accepts <sky-code>any</sky-code> values.
       </sky-demo-page-property>
     </sky-demo-page-properties>
 
     <sky-demo-page-example>
-      <sky-angular-tree-view-demo></sky-angular-tree-view-demo>
+      <sky-angular-tree-component-demo></sky-angular-tree-component-demo>
       <sky-demo-page-code demoName="Tree view"></sky-demo-page-code>
     </sky-demo-page-example>
 
