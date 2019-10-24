@@ -1168,7 +1168,8 @@ export class SkyDemoComponentsService {
             'SkyAngularTreeViewModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('Angular tree component')
+        getCodeFiles: () => this.getDemoFiles('Angular tree component'),
+        disableStackblitz: true
       },
       {
         name: 'URL validation',
