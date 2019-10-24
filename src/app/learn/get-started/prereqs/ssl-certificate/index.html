@@ -11,13 +11,24 @@
   </stache-page-summary>
 
   <stache-page-anchor>
-    Installation for Mac
+    Automated Installation For Linux, Mac, and Windows
+  </stache-page-anchor>
+
+  <skyux-code-block>
+    skyux certs trust
+  </skyux-code-block>
+
+  <p>Visit the <a routerLink="/learn/reference/cli-commands/certs"><sky-code>skyux certs</sky-code> documentation</a> to learn about other available options.</p>
+
+  <stache-page-anchor>
+    Manual Installation for Mac
   </stache-page-anchor>
 
   <ol>
     <li>
-      <p>Download the <a href="https://raw.githubusercontent.com/blackbaud/skyux-builder/master/ssl/skyux-ca.crt">skyux-ca.crt</a>. To download, right-click the link and save it to your computer.
-      </p>
+      <sky-code-block>
+        skyux certs generate
+      </sky-code-block>
     </li>
     <li>
       <p>
@@ -36,7 +47,7 @@
     </li>
     <li>
       <p>
-        Drag <sky-code>skyux-ca.crt</sky-code> into the list of certificates.
+        Open the <sky-code>.skyux/certs</sky-code> folder in your home directory and drag <sky-code></sky-code> into the list of certificates.
       </p>
     </li>
     <li>
@@ -57,18 +68,23 @@
   </ol>
 
   <stache-page-anchor>
-    Installation for iOS Simulator on Mac
+    Manual Installation for iOS Simulator on Mac
   </stache-page-anchor>
 
   <ol>
     <li>
+      <sky-code-block>
+        skyux certs generate
+      </sky-code-block>
+    </li>
+    <li>
       <p>
-        Download the <a href="https://raw.githubusercontent.com/blackbaud/skyux-builder/master/ssl/skyux-ca.crt">skyux-ca.crt</a> to your Mac. To download, right-click the link and save it to your computer.
+        Open the <sky-code>.skyux/certs</sky-code> folder in your home directory.
       </p>
     </li>
     <li>
       <p>
-        Drag and drop the certificate to your simulator.
+        Drag and drop the <sky-code>skyux-server-cert.pem</sky-code> certificate to your simulator.
       </p>
     </li>
     <li>
@@ -104,18 +120,23 @@
   </ol>
 
   <stache-page-anchor>
-    Installation for Windows
+    Manual Installation for Windows
   </stache-page-anchor>
 
   <ol>
     <li>
+      <sky-code-block>
+        skyux certs generate
+      </sky-code-block>
+    </li>
+    <li>
       <p>
-        Download the <a href="https://raw.githubusercontent.com/blackbaud/skyux-builder/master/ssl/skyux-ca.crt">skyux-ca.crt</a>. To download, right-click the link and save it to your computer.
+        Open the <sky-code>.skyux/certs</sky-code> folder in your home directory.
       </p>
     </li>
     <li>
       <p>
-        Open the file.
+        Open the <sky-code>skyux-server-cert.pem</sky-code> file.
       </p>
     </li>
     <li>
@@ -171,14 +192,14 @@
   </ol>
 
   <stache-page-anchor>
-    Installation for Firefox
+    Manual Installation for Firefox
   </stache-page-anchor>
 
   <ol>
     <li>
-      <p>
-        Download the <a href="https://raw.githubusercontent.com/blackbaud/skyux-builder/master/ssl/skyux-ca.crt">skyux-ca.crt</a>. To download, right-click the link and save it to your computer.
-      </p>
+      <sky-code-block>
+        skyux certs generate
+      </sky-code-block>
     </li>
     <li>
       <p>
@@ -192,12 +213,12 @@
     </li>
     <li>
       <p>
-        Under <strong>Authorities</strong> on the Certificate Manager, select <strong>Import</strong>.
+        Under <strong>Servers</strong> on the Certificate Manager, select <strong>Import</strong>.
       </p>
     </li>
     <li>
       <p>
-        Open the <strong>skyux-ca.crt</strong>.
+        Open the <sky-code>skyux-server-cert.pem</sky-code> from the <sky-code>.skyux/certs</sky-code> folder in your home directory.
       </p>
     </li>
     <li>
@@ -213,18 +234,18 @@
   </ol>
 
   <stache-page-anchor>
-    Installation for Linux
+    Manual Installation for Linux
   </stache-page-anchor>
 
   <ol>
     <li>
-      <p>
-        Download the <a href="https://raw.githubusercontent.com/blackbaud/skyux-builder/master/ssl/skyux-ca.crt">skyux-ca.crt</a>. To download, right-click the link and save it to your computer.
-      </p>
+      <sky-code-block>
+        skyux certs generate
+      </sky-code-block>
     </li>
     <li>
       <p>
-        Move the <sky-code>skyux-ca.crt</sky-code> to <sky-code>/usr/local/share/ca-certificates</sky-code>.
+        Copy the <sky-code>skyux-server-cert.pem</sky-code> from the <sky-code>.skyux/certs</sky-code> folder in your home directory to <sky-code>/usr/local/share/ca-certificates</sky-code>.
       </p>
     </li>
     <li>
