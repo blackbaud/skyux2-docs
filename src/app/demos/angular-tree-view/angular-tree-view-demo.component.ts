@@ -41,10 +41,13 @@ export class SkyAngularTreeViewDemoComponent {
     return this._enableCascading;
   }
 
-  public mode: string = 'navigation';
+  public readOnly: boolean = false;
+
+  public selectedMode: string = 'navigation';
+
+  public selectedSelectMode: string = 'multiSelect';
 
   public set selectLeafNodesOnly(value: boolean) {
-    console.log(value);
     this.resetSelection();
     this._selectLeafNodesOnly = value;
 
@@ -57,57 +60,15 @@ export class SkyAngularTreeViewDemoComponent {
     return this._selectLeafNodesOnly;
   }
 
-  public set selectSingle(value: boolean) {
-    this.resetSelection();
-    this._selectSingle = value;
+  public selectSingle: boolean = false;
 
-    if (value) {
-      this.enableCascading = false;
-    }
-  }
+  public showContextMenus: boolean = false;
 
-  public get selectSingle(): boolean {
-    return this._selectSingle;
-  }
+  public showToolbar: boolean = false;
 
-  public set enableSelection(value: boolean) {
-    this.resetSelection();
-    this.treeOptions.useCheckbox = value;
-    this._enableSelection = value;
-    this.selectLeafNodesOnly = false;
-    this.selectSingle = false;
-    this.enableCascading = false;
-  }
+  private _enableCascading = false;
 
-  public get enableSelection(): boolean {
-    return this._enableSelection;
-  }
-
-  public set readOnly(value: boolean) {
-    this.resetSelection();
-    this.enableSelection = false;
-    this._readOnly = value;
-  }
-
-  public get readOnly(): boolean {
-    return this._readOnly;
-  }
-
-  public set showContextMenus(value: boolean) {
-    this._showContextMenus = value;
-  }
-
-  public get showContextMenus(): boolean {
-    return this._showContextMenus;
-  }
-
-  public set showToolbar(value: boolean) {
-    this._showToolbar = value;
-  }
-
-  public get showToolbar(): boolean {
-    return this._showToolbar;
-  }
+  private _selectLeafNodesOnly = false;
   // #endregion
 
   public treeOptions: ITreeOptions = {
@@ -154,32 +115,68 @@ export class SkyAngularTreeViewDemoComponent {
   @ViewChild(TreeModel)
   private tree: TreeModel;
 
-  // #region [For demonstration purposes only.]
-  private _enableCascading = false;
-
-  private _enableSelection = false;
-
-  private _readOnly = false;
-
-  private _selectLeafNodesOnly = false;
-
-  private _showContextMenus = false;
-
-  private _showToolbar = false;
-
-  private _selectSingle = false;
-  // #endregion
-
   public actionClicked(name: string, node: TreeNode): void {
+    // Add custom actions here.
     console.log(name + `: "${node.data.name}"`);
   }
 
   public onTreeStateChange(treeModel: ITreeState): void {
+    // Watch for tree state changes here.
     console.log(treeModel);
+  }
+
+  // #region [For demonstration purposes only.]
+  public onModeChange(event: any): void {
+    switch (event.value) {
+      case 'selection':
+          this.readOnly = false;
+        this.enableSelection(true);
+        break;
+
+      case 'readOnly':
+          this.readOnly = true;
+          this.enableSelection(false);
+        break;
+
+      case 'navigation':
+          this.readOnly = false;
+          this.enableSelection(false);
+        break;
+
+      default:
+        break;
+    }
+  }
+
+  public onSelectModeChange(event: any): void {
+    switch (event.value) {
+      case 'singleSelect':
+          this.resetSelection();
+          this.selectSingle = true;
+          this.enableCascading = false;
+        break;
+
+      case 'multiSelect':
+          this.resetSelection();
+          this.selectSingle = false;
+          this.enableCascading = false;
+        break;
+
+      default:
+        break;
+    }
+  }
+
+  private enableSelection(value: boolean): void {
+    this.resetSelection();
+    this.treeOptions.useCheckbox = value;
+    this.selectLeafNodesOnly = false;
+    this.enableCascading = false;
   }
 
   private resetSelection(): void {
     this.tree.selectedLeafNodeIds = {};
     this.tree.activeNodeIds = {};
   }
+  // #endregion
 }
