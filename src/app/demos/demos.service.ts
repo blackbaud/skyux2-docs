@@ -3,11 +3,13 @@ import {
 } from '@angular/core';
 
 import {
+  SkyCharacterCountDemoComponent,
   SkyCodeBlockDemoComponent,
   SkyCopyToClipboardDemoComponent,
   SkyDateRangePickerDemoComponent,
   SkyInlineFormDemoComponent,
   SkyPhoneFieldDemoComponent,
+  SkySingleFileAttachmentDemoComponent,
   SkySplitViewDemoComponent,
   SkySummaryActionBarDemoComponent,
   SkyToggleSwitchDemoComponent
@@ -28,6 +30,22 @@ import {
 @Injectable()
 export class SkyDocsDemoCodeService {
   public components: any[] = [
+    {
+      name: 'Character count',
+      component: SkyCharacterCountDemoComponent,
+      files: [
+        {
+          name: 'character-count-demo.component.html',
+          fileContents: require('!!raw-loader!./character-count/character-count-demo.component.html')
+        },
+        {
+          name: 'character-count-demo.component.ts',
+          fileContents: require('!!raw-loader!./character-count/character-count-demo.component.ts'),
+          componentName: 'SkyCharacterCountDemoComponent',
+          bootstrapSelector: 'sky-character-count-demo'
+        }
+      ]
+    },
     {
       name: 'Phone field',
       component: SkyPhoneFieldDemoComponent,
@@ -155,6 +173,40 @@ export class SkyDocsDemoCodeService {
     },
 
     {
+      name: 'Phone field',
+      component: SkyPhoneFieldDemoComponent,
+      files: [
+        {
+          name: 'phone-field-demo.component.html',
+          fileContents: require('!!raw-loader!./phone-field/phone-field-demo.component.html')
+        },
+        {
+          name: 'phone-field-demo.ts',
+          fileContents: require('!!raw-loader!./phone-field/phone-field-demo.component.ts'),
+          componentName: 'SkyPhoneFieldDemoComponent',
+          bootstrapSelector: 'sky-phone-field-demo'
+        }
+      ]
+    },
+
+    {
+      name: 'Single file attachment',
+      component: SkySingleFileAttachmentDemoComponent,
+      files: [
+        {
+          name: 'single-file-attachment-demo.component.html',
+          fileContents: require('!!raw-loader!./single-file-attachment/single-file-attachment-demo.component.html')
+        },
+        {
+          name: 'single-file-attachment-demo.component.ts',
+          fileContents: require('!!raw-loader!./single-file-attachment/single-file-attachment-demo.component.ts'),
+          componentName: 'SkySingleFileAttachmentDemoComponent',
+          bootstrapSelector: 'sky-single-file-attachment-demo'
+        }
+      ]
+    },
+
+    {
       name: 'Split view',
       component: SkySplitViewDemoComponent,
       files: [
@@ -167,6 +219,44 @@ export class SkyDocsDemoCodeService {
           fileContents: require('!!raw-loader!./split-view/split-view-demo.component.ts'),
           componentName: 'SkySplitViewDemoComponent',
           bootstrapSelector: 'sky-split-view-demo'
+        }
+      ]
+    },
+
+    {
+      name: 'Summary action bar',
+      component: SkySummaryActionBarDemoComponent,
+      files: [
+        {
+          name: 'summary-action-bar-demo.component.html',
+          fileContents: require('!!raw-loader!./summary-action-bar/summary-action-bar-demo.component.html')
+        },
+        {
+          name: 'summary-action-bar-demo.component.scss',
+          fileContents: require('!!raw-loader!./summary-action-bar/summary-action-bar-demo.component.scss')
+        },
+        {
+          name: 'summary-action-bar-demo.ts',
+          fileContents: require('!!raw-loader!./summary-action-bar/summary-action-bar-demo.component.ts'),
+          componentName: 'SkySummaryActionBarDemoComponent',
+          bootstrapSelector: 'sky-summary-action-bar-demo'
+        },
+        {
+          name: 'summary-action-bar-modal-demo.component.html',
+          fileContents: require('!!raw-loader!./summary-action-bar/summary-action-bar-modal-demo.component.html')
+        },
+        {
+          name: 'summary-action-bar-modal-demo.component.scss',
+          fileContents: require('!!raw-loader!./summary-action-bar/summary-action-bar-modal-demo.component.scss')
+        },
+        {
+          name: 'summary-action-bar-modal-demo.component.ts',
+          fileContents: require('!!raw-loader!./summary-action-bar/summary-action-bar-modal-demo.component.ts')
+        },
+        {
+          name: 'summary-action-bar-modal-demo.ts',
+          fileContents: require('!!raw-loader!./summary-action-bar/summary-action-bar-modal-demo.component.ts'),
+          componentName: 'SkySummaryActionBarModalDemoComponent'
         }
       ]
     },
