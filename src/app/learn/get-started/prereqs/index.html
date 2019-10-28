@@ -1,13 +1,165 @@
 <stache
   pageTitle="Prerequisites"
-  navOrder="1">
+  navOrder="1"
+  showTableOfContents="true">
 
   <stache-page-summary>
     <p>
-      The prerequisites section gets you up and running with SKY UX. You only need to perform these steps when you first set up your developer environment. After the initial setup, <a routerLink="/learn/get-started/basics">the basic SKY UX tutorials</a> describe how to create and and manage single-page applications, and <a routerLink="/learn/get-started/advanced">the advanced tutorials</a> provide guidance beyond the basics.
+      To set up your developer machine for SKY UX, make sure you have the following prerequisites in place.
+    </p>
+    <p>
+      <stache-include fileName="supported-browsers.html"></stache-include>
     </p>
   </stache-page-summary>
 
-  <sky-prereqs-action-buttons></sky-prereqs-action-buttons>
+  <stache-page-anchor>
+    Node.js
+  </stache-page-anchor>
+  <p>
+    SKY UX highly recommends <a href="https://nodejs.org/en/download/releases/">the latest LTS Dubnium version</a> of Node.js. To check your version, run <sky-code>node –v</sky-code> from the command line.
+  </p>
+  <p>
+    In addition, SKY UX recommends Node Version Manager (NVM) to wrap your Node.js installation. NVM installs Node.js in your user directory to avoid permissions-related issues, and it also allows you to easily upgrade and manage multiple Node.js versions.
+  </p>
+  <ul>
+    <li>
+      For Mac OS X and Linux, follow <a href="https://github.com/creationix/nvm#installation-and-update">the installation and update instructions</a> in the <sky-code>README.md</sky-code> file for the NVM GitHub repo.
+    </li>
+    <li>
+      For Windows, follow <a href="https://github.com/coreybutler/nvm-windows#node-version-manager-nvm-for-windows">the installation and update instructions </a> in the <sky-code>README.md</sky-code> file for the NVM for Windows GitHub repo.
+    </li>
+  </ul>
+  <p>
+    For Windows machines, you must also install required tools and configurations using <a href="https://github.com/felixrieseberg/windows-build-tools">Microsoft's windows-build-tools</a>. Run <sky-code>npm install --global --production windows-build-tools</sky-code> as an administrator from an elevated PowerShell or CMD.exe.
+  </p>
+
+  <stache-page-anchor>
+    NPM
+  </stache-page-anchor>
+
+  <p>
+    We require at least version 3 of NPM. NPM is the default JavaScript package manager for Node.js. As of Node.js version 0.6.3, it is bundled and installed automatically with the environment. To check your version, run <sky-code>npm –v</sky-code> from the command line. To install a specific version, run <sky-code>npm install</sky-code> globally and specify the version. For example: <sky-code>npm install -g npm@4</sky-code>.
+  </p>
+
+  <stache-page-anchor>
+    Git
+  </stache-page-anchor>
+
+  <p>
+    Install <a href="https://git-scm.com/">Git</a>. We do not require a specific version but recommend you install the latest version. To confirm you have Git, run <sky-code>git version</sky-code> from the command line.
+  </p>
+
+  <stache-page-anchor>
+    SKY UX CLI
+  </stache-page-anchor>
+
+  <p>
+    The SKY UX CLI provides a command line interface for the SKY UX Builder that builds the output for SKY UX applications. To install the CLI from the command line, run <sky-code>npm install -g @skyux-sdk/cli</sky-code>.
+  </p>
+
+  <stache-page-anchor>
+    SKY UX certificate
+  </stache-page-anchor>
+  
+  <p>
+    For local development with SKY UX, you must install the self-signed certificate that enables your SPA to securely load local files. To add the certificate to your machine's list of trusted certificates and validate it, run the following command:
+  </p>
+  
+  <sky-code-block>
+    skyux certs install
+  </sky-code-block>
+
+  <p>
+    The certificate is required to securely run <sky-code>skyux serve</sky-code>, <sky-code>skyux e2e</sky-code>, and <sky-code>skyux build --serve</sky-code>. For more information, see the <a routerLink="/learn/reference/cli-commands/certs"><sky-code>skyux certs</sky-code> documentation</a>.
+  </p>
+
+  <h4>Additional steps for Firefox</h4>
+
+  <ol>
+    <li>
+      <p>
+        Run <sky-code>skyux serve</sky-code> to serve your SKY UX SPA.
+      </p>
+    </li>
+    <li>
+      <p>
+        Enter "about:preferences#privacy" in the Firefox address bar.
+      </p>
+    </li>
+    <li>
+      <p>
+        Near the bottom of the page, select <strong>View Certificates</strong>.
+      </p>
+    </li>
+    <li>
+      <p>
+        Under <strong>Servers</strong> on the Certificate Manager, select <strong>Add Exception</strong>.
+      </p>
+    </li>
+    <li>
+      <p>
+        Specify the location to use the certificate. The default location is https://localhost:8000, but you can configure a different port in <a routerLink="/learn/reference/configuration/additional-config-files">the <sky-code>skyuxconfig.json</sky-code> file</a> or set up command-specific ports <a routerLink="/learn/reference/configuration/additional-config-files">in additional configuration files</a>.
+      </p>
+      <sky-alert alertType="info">
+        To serve multiple SPAs, you must also specify the next available port. When you serve multiple SPAs, SKY UX uses the next available port after the first port is in use.  
+      </sky-alert>
+    </li>
+    <li>
+      <p>
+        Select <strong>Get Certificate</strong>, and then select <strong>Confirm Security Exception</strong>.
+      </p>
+    </li>
+  </ol>
+    
+  <h4>Additional steps for iOS Simulator on Mac</h4>
+
+  <ol>
+    <li>
+      <p>
+        Open the <sky-code>.skyux/certs</sky-code> folder in your home directory.
+      </p>
+    </li>
+    <li>
+      <p>
+        Drag and drop the SKY UX certificate to your simulator.
+      </p>
+    </li>
+    <li>
+      <p>
+        In the prompt that appears, select <strong>Allow</strong> to download the profile and then select <strong>Close</strong>.
+      </p>
+    </li>
+    <li>
+      <p>
+        Open the <strong>Settings</strong> app and navigate to <strong>General</strong> > <strong>Profile</strong> > <strong>SKY UX</strong>.
+      </p>
+    </li>
+    <li>
+      <p>
+        Select <strong>Install</strong> on each page (three times) to install the certificate.
+      </p>
+    </li>
+    <li>
+      <p>
+        Select <strong>Done</strong> to exit.
+      </p>
+    </li>
+    <li>
+      <p>
+        In <strong>Settings</strong> > <strong>General</strong> > <strong>About</strong>, select <strong>Certificate Trust Settings</strong>.
+      </p>
+    </li>
+    <li>
+      <p>
+        Select <strong>Enable Full Trust For Root Certificates</strong> for the SKY UX certificate and continue when prompted.
+      </p>
+    </li>
+  </ol>
+
+  <stache-page-anchor>
+    Recommended tools
+  </stache-page-anchor>
+
+  <stache-include fileName="tslint-tool.html">
 
 </stache>
