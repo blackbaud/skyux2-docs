@@ -29,15 +29,39 @@
   </stache-page-anchor>
 
   <ol>
-    </li>
     <li>
       <p>
-        Open the <strong>Settings</strong> app, and navigate to <strong>General</strong> > <strong>About</strong>.
+        Open the <sky-code>.skyux/certs</sky-code> folder in your home directory.
       </p>
     </li>
     <li>
       <p>
-        Select <strong>Certificate Trust Settings</strong>.
+        Drag and drop the SKY UX certificate to your simulator.
+      </p>
+    </li>
+    <li>
+      <p>
+        In the prompt that appears, select <strong>Allow</strong> to download the profile and then select <strong>Close</strong>.
+      </p>
+    </li>
+    <li>
+      <p>
+        Open the <strong>Settings</strong> app and navigate to <strong>General</strong> > <strong>Profile</strong> > <strong>SKY UX</strong>.
+      </p>
+    </li>
+    <li>
+      <p>
+        Select <strong>Install</strong> on each page (three times) to install the certificate.
+      </p>
+    </li>
+    <li>
+      <p>
+        Select <strong>Done</strong> to exit.
+      </p>
+    </li>
+    <li>
+      <p>
+        In <strong>Settings</strong> > <strong>General</strong> > <strong>About</strong>, select <strong>Certificate Trust Settings</strong>.
       </p>
     </li>
     <li>
@@ -54,6 +78,11 @@
   <ol>
     <li>
       <p>
+        Run <sky-code>skyux serve</sky-code> to serve your SKY UX SPA.
+      </p>
+    </li>
+    <li>
+      <p>
         Enter "about:preferences#privacy" in the Firefox address bar.
       </p>
     </li>
@@ -64,24 +93,20 @@
     </li>
     <li>
       <p>
-        Under <strong>Servers</strong> on the Certificate Manager, select <strong>Import</strong>.
+        Under <strong>Servers</strong> on the Certificate Manager, select <strong>Add Exception</strong>.
       </p>
     </li>
     <li>
       <p>
-        Open the SKY UX certificate from the <sky-code>.skyux/certs</sky-code> folder in your home directory.
+        Specify https://localhost:8000 as the location, or specify an alternate port if you configured one in the <sky-code>skyuxconfig.json</sky-code> file.
       </p>
     </li>
     <li>
       <p>
-        On the options dialog, select <strong>Trust this CA to identify websites</strong> and then select <strong>OK</strong>.
-      </p>
-    </li>
-    <li>
-      <p>
-        On the Certificate Manager, select <strong>OK</strong>.
+        Select <strong>Get Certificate</strong>, and then select <strong>Confirm Security Exception</strong>.
       </p>
     </li>
   </ol>
+  
 
 </stache>
