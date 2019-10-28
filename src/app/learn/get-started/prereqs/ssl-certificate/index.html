@@ -25,6 +25,43 @@
   </p>
 
   <stache-page-anchor>
+    Additional steps for Firefox
+  </stache-page-anchor>
+
+  <ol>
+    <li>
+      <p>
+        Run <sky-code>skyux serve</sky-code> to serve your SKY UX SPA.
+      </p>
+    </li>
+    <li>
+      <p>
+        Enter "about:preferences#privacy" in the Firefox address bar.
+      </p>
+    </li>
+    <li>
+      <p>
+        Near the bottom of the page, select <strong>View Certificates</strong>.
+      </p>
+    </li>
+    <li>
+      <p>
+        Under <strong>Servers</strong> on the Certificate Manager, select <strong>Add Exception</strong>.
+      </p>
+    </li>
+    <li>
+      <p>
+        Specify https://localhost:8000 as the location, or specify an alternate port if you configured one in the <sky-code>skyuxconfig.json</sky-code> file.
+      </p>
+    </li>
+    <li>
+      <p>
+        Select <strong>Get Certificate</strong>, and then select <strong>Confirm Security Exception</strong>.
+      </p>
+    </li>
+  </ol>
+    
+  <stache-page-anchor>
     Additional steps for iOS Simulator on Mac
   </stache-page-anchor>
 
@@ -70,43 +107,5 @@
       </p>
     </li>
   </ol>
-
-  <stache-page-anchor>
-    Additional steps for Firefox
-  </stache-page-anchor>
-
-  <ol>
-    <li>
-      <p>
-        Run <sky-code>skyux serve</sky-code> to serve your SKY UX SPA.
-      </p>
-    </li>
-    <li>
-      <p>
-        Enter "about:preferences#privacy" in the Firefox address bar.
-      </p>
-    </li>
-    <li>
-      <p>
-        Near the bottom of the page, select <strong>View Certificates</strong>.
-      </p>
-    </li>
-    <li>
-      <p>
-        Under <strong>Servers</strong> on the Certificate Manager, select <strong>Add Exception</strong>.
-      </p>
-    </li>
-    <li>
-      <p>
-        Specify https://localhost:8000 as the location, or specify an alternate port if you configured one in the <sky-code>skyuxconfig.json</sky-code> file.
-      </p>
-    </li>
-    <li>
-      <p>
-        Select <strong>Get Certificate</strong>, and then select <strong>Confirm Security Exception</strong>.
-      </p>
-    </li>
-  </ol>
-  
 
 </stache>

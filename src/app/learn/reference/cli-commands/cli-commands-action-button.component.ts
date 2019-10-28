@@ -25,7 +25,7 @@ export class CLICommandsActionButtonsComponent {
       path: '/learn/reference/cli-commands/certs',
       icon: 'file',
       // tslint:disable-next-line
-      summary: 'Install the certificate to load your SPA into SKY UX Host.'
+      summary: 'Install the certificate for local development.'
     },
     {
       name: 'e2e',
