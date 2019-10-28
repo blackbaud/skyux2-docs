@@ -129,9 +129,23 @@ showFooter="false">
           &nbsp;
         </sky-column>
         <sky-column screenSmall="4">
-          <a routerLink="/learn/reference" class="screenshot screenshot-info">
-            <img src="~/assets/home/feature-sdk-cli.png" alt="Example SDK" />
-          </a>
+          <div> <!-- single child needed -->
+            <div class="screenshot screenshot-info">
+              <sky-code-block 
+                hideCopyToClipboard="true"
+                hideHeader="true"
+                languageType="bash"
+              >
+                npm i -g @skyux-sdk/cli
+                skyux new --name hello-world
+                cd skyux-spa-hello-world
+                skyux serve -l none
+              </sky-code-block>
+            </div>
+            <p class="sky-deemphasized">
+              For a full list of prerequisites, see the <a routerLink="/learn/get-started">getting started guide</a>.
+            </p>
+          </div>
         </sky-column>
       </sky-row>
       <sky-row>
