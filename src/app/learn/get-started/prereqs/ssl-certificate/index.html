@@ -51,8 +51,11 @@
     </li>
     <li>
       <p>
-        Specify https://localhost:8000 as the location, or specify an alternate port if you configured one in the <sky-code>skyuxconfig.json</sky-code> file.
+        Specify the location to use the certificate. The default location is https://localhost:8000, but you can configure a different port in <a routerLink="/learn/reference/configuration/additional-config-files">the <sky-code>skyuxconfig.json</sky-code> file</a> or set up command-specific ports <a routerLink="/learn/reference/configuration/additional-config-files">in additional configuration files</a>.
       </p>
+      <sky-alert alertType="info">
+        To serve multiple SPAs, you must also specify the next available port. When you serve multiple SPAs, SKY UX uses the next available port after the first port is in use.  
+      </sky-alert>
     </li>
     <li>
       <p>
