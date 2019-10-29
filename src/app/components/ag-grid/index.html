@@ -21,8 +21,83 @@
   <sky-tabset id="content-tabs">
 
     <sky-tab tabHeading="Design">
-      Design guidelines coming soon!
-    </sky-tab>
+      <sky-demo-page-content sectionHeading="Usage">
+      <h3 class="sky-text-success">Use when</h3>
+        <div class="sky-text-block sky-margin-stacked-content-section">
+          <p>Use data entry grids when:</p>
+          <ul>
+            <li>Users have experience working with spreadsheets</li>
+            <li>Users will edit many values in one session</li>
+            <li>The dataset is large</li>
+          </ul>
+        </div>
+      <h3 class="sky-text-danger">Don't use when</h3>
+        <div class="sky-text-block">
+          <p>Don't use data entry grids when:</p>
+            <ul>
+            <li>Users need guidance for the task they are completing</li>
+            <li>Users will edit a small number of values in one session</li>
+            <li>The dataset is small</li>
+          </ul>
+        </div>
+    </sky-demo-page-content>
+
+    <sky-demo-page-content sectionHeading="Anatomy">
+      <h3>Edit mode</h3>
+      <sky-docs-anatomy imagePath="~/assets/img/guidelines/data-grid/anatomy-edit.png">
+        <sky-docs-anatomy-item anatomyNumber="1">Header row</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item anatomyNumber="2">Editable cell</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item anatomyNumber="3">Focused cell</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item anatomyNumber="4" isOptional="true">Read-only cell</sky-docs-anatomy-item>
+      </sky-docs-anatomy>
+      <h3>View mode</h3>
+      <sky-docs-anatomy imagePath="~/assets/img/guidelines/data-grid/anatomy-view.png">
+        <sky-docs-anatomy-item anatomyNumber="1">Header row</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item anatomyNumber="2">Unselected row</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item anatomyNumber="3" isOptional="true">Multiselect checkbox</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item anatomyNumber="4" isOptional="true">Selected row</sky-docs-anatomy-item>
+      </sky-docs-anatomy>
+    </sky-demo-page-content>
+      
+    <sky-demo-page-content sectionHeading="Options">
+		<h3>Disabled cells</h3>
+      <sky-docs-visual-example>
+				<sky-docs-visual-example-text>
+					<p>You can disable columns of cells within the grid if users should not edit that data.</p>
+				</sky-docs-visual-example-text>
+				<sky-docs-visual-example-image>
+				  <img src="~/assets/img/guidelines/data-grid/option-disable.png" />
+				</sky-docs-visual-example-image>
+			</sky-docs-visual-example>
+    <h3>Multiselect</h3>
+			<sky-docs-visual-example>
+				<sky-docs-visual-example-text>
+					<p>You can enable multiselect if users need to select multiple rows in the grid to take action on.</p>
+				</sky-docs-visual-example-text>
+				<sky-docs-visual-example-image>
+				  <img src="~/assets/img/guidelines/data-grid/option-multiselect.png" />
+				</sky-docs-visual-example-image>
+			</sky-docs-visual-example>
+		<h3>Input types</h3>
+			<p>In addition to the input types natively available in <a href="https://www.ag-grid.com/">ag-grid</a>, you can also use certain SKY UX input types:</p>
+      <ul>
+        <li><a routerLink="/components/autocomplete">Autocomplete</a></li>
+        <li><a routerLink="/components/datepicker">Datepicker</a></li>
+      </ul>
+	</sky-demo-page-content>
+
+  <sky-demo-page-content sectionHeading="Related information">
+		<h3>Components</h3>
+			<ul>
+				<li><a routerLink="/components/grid">Grid</a></li>
+			</ul>
+		<h3>Guidelines</h3>
+			<ul>
+				<li><a routerLink="/design/guidelines/form-design">Form design</a></li>
+			</ul>
+	</sky-demo-page-content>
+      
+    </sky-tab>  
 
     <sky-tab tabHeading="Development">
 
