@@ -5,6 +5,45 @@
 
 	<article class="blog-post">
 		<header>
+			<h2 class="sky-section-heading">Engineering update - October 29, 2019</h2>
+		</header>
+    <section>
+			<h3 class="sky-subsection-heading">Self-signed local development certificate</h3>
+
+			<p>The intermediate SKY UX certificate, which SKY UX developers needed to add to their trusted certificate store in order to do local development expires on Oct. 31 2019. This means <sky-code>skyux serve</sky-code>, <sky-code>skyux e2e</sky-code>, and <sky-code>skyux build –-serve</sky-code> will stop functioning correctly.</p>
+
+			<p>When planning to address the original problem, we re-evaluated our implementation of certificate management and drew inspiration from a changing landscape around certificate generation, specifically the .NET Core CLI.  The end result was a decision to introduce a more secure, robust technique where each developer generates a unique trusted certificate.</p>
+		</section>
+    <section>
+			<h3 class="sky-subsection-heading">Introducing new SKY UX CLI command</h3>
+
+			<p>Addressing the underlying expiration will require all users to globally upgrade to the latest version of <sky-code>@skyux-sdk/cli</sky-code> and to upgrade all SKY UX SPAs, SKY UX libraries, and Stache sites to the latest version of <sky-code>@skyux-sdk/builder</sky-code>. This update only affects local development.</p>
+
+			<h4 class="sky-emphasized">Run the following commands once on your machine:</h4>
+
+			<ul>
+				<li>
+					<sky-code>npm i -g @skyux-sdk/cli@latest</sky-code>
+				</li>
+				<li>
+					<sky-code>skyux certs install</sky-code>
+				</li>
+			</ul>
+
+			<h4 class="sky-emphasized">Run the following commands for each SKY UX SPA, SKY UX Library, SKY UX-based Add-in, Stache site:</h4>
+
+			<ul>
+				<li>
+					<sky-code>npm i --save-dev --save-exact @skyux-sdk/builder@latest</sky-code>
+				</li>
+			</ul>
+
+			<p> See our <a routerLink="/learn/get-started/prereqs" fragment="sky-ux-certificate">updated prerequisites documentation</a> for more information.</p>
+		</section>
+	</article>
+
+	<article class="blog-post">
+		<header>
 			<h2 class="sky-section-heading">Design update — September 2019</h2>
 		</header>
     <section>
