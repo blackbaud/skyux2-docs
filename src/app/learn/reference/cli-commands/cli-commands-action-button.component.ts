@@ -21,6 +21,13 @@ export class CLICommandsActionButtonsComponent {
       summary: 'Bundles components into an NPM module.'
     },
     {
+      name: 'certs',
+      path: '/learn/reference/cli-commands/certs',
+      icon: 'file',
+      // tslint:disable-next-line
+      summary: 'Install the certificate for local development.'
+    },
+    {
       name: 'e2e',
       path: '/learn/reference/cli-commands/e2e',
       icon: 'tachometer',
