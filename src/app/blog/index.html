@@ -1,25 +1,24 @@
 <stache
   layout="container"
   pageTitle="SKY UX Blog"
-  windowTitle="SKY UX Blog">
+	windowTitle="SKY UX Blog">
+	
+	
 
 	<article class="blog-post">
 		<header>
 			<h2 class="sky-section-heading">Engineering update - October 29, 2019</h2>
 		</header>
     <section>
-			<h3 class="sky-subsection-heading">Self-signed local development certificate</h3>
+			<h3 class="sky-subsection-heading">New SKY UX CLI command to manage local development certificate</h3>
 
-			<p>The intermediate SKY UX certificate, which SKY UX developers needed to add to their trusted certificate store in order to do local development expires on Oct. 31 2019. This means <sky-code>skyux serve</sky-code>, <sky-code>skyux e2e</sky-code>, and <sky-code>skyux build –-serve</sky-code> will stop functioning correctly.</p>
+			<p>The intermediate SKY UX certificate that developers need for local development expires on Oct. 31, 2019. <sky-code>skyux serve</sky-code>, <sky-code>skyux e2e</sky-code>, and <sky-code>skyux build –-serve</sky-code> will not function correctly without it.</p>
 
-			<p>When planning to address the original problem, we re-evaluated our implementation of certificate management and drew inspiration from a changing landscape around certificate generation, specifically the .NET Core CLI.  The end result was a decision to introduce a more secure, robust technique where each developer generates a unique trusted certificate.</p>
-		</section>
-    <section>
-			<h3 class="sky-subsection-heading">Introducing new SKY UX CLI command</h3>
+			<p>To address this problem, we re-evaluated our implementation of certificate management and drew inspiration from contemporary tools such as the .NET Core CLI. Our solution introduces a more secure, robust approach where each developer generates a unique trusted certificate.</p>
 
-			<p>Addressing the underlying expiration will require all users to globally upgrade to the latest version of <sky-code>@skyux-sdk/cli</sky-code> and to upgrade all SKY UX SPAs, SKY UX libraries, and Stache sites to the latest version of <sky-code>@skyux-sdk/builder</sky-code>. This update only affects local development.</p>
+			<p>To continue with local development, SKY UX developers must globally upgrade to the latest version of <sky-code>@skyux-sdk/cli</sky-code> and generate a new local certificate. They must also upgrade all SKY UX SPAs, SKY UX libraries, and Stache sites to the latest version of <sky-code>@skyux-sdk/builder</sky-code>.</p>
 
-			<h4 class="sky-emphasized">Run the following commands once on your machine:</h4>
+			<p>To upgrade <sky-code>@skyux-sdk/cli</sky-code> and generate a certificate, run the following commands globally:</p>
 
 			<ul>
 				<li>
@@ -30,7 +29,7 @@
 				</li>
 			</ul>
 
-			<h4 class="sky-emphasized">Run the following commands for each SKY UX SPA, SKY UX Library, SKY UX-based Add-in, Stache site:</h4>
+			<p>To upgrade <sky-code>@skyux-sdk/builder</sky-code>, run the following command for each SKY UX SPA, SKY UX library, and Stache site:</p>
 
 			<ul>
 				<li>
@@ -38,7 +37,7 @@
 				</li>
 			</ul>
 
-			<p> See our <a routerLink="/learn/get-started/prereqs" fragment="sky-ux-certificate">updated prerequisites documentation</a> for more information.</p>
+			<p>For more information and a few manual steps depending on your setup, see the <a routerLink="/learn/get-started/prereqs" fragment="sky-ux-certificate">SKY UX prerequisites</a>.</p>
 		</section>
 	</article>
 
