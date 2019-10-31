@@ -39,39 +39,6 @@ export class SkyDemoComponentsService {
         getCodeFiles: () => this.getDemoFiles('Action button')
       },
       {
-        name: 'ag-Grid',
-        icon: 'table',
-        summary: 'A service to provide SKY UX components and styles for ag-Grid.',
-        url: '/components/ag-grid',
-        imports: {
-          '@skyux/ag-grid': [
-            'SkyAgGridModule'
-          ],
-          '@skyux/datetime': [
-            'SkyDatepickerModule'
-          ],
-          '@skyux/lookup': [
-            'SkyAutocompleteModule',
-            'SkySearchModule'
-          ],
-          '@skyux/modals': [
-            'SkyModalModule'
-          ],
-          'ag-grid-angular': [
-            'AgGridModule'
-          ],
-          '@skyux/layout': [
-            'SkyToolbarModule'
-          ]
-        },
-        dependencies: {
-          'ag-grid-angular': '*',
-          'ag-grid-community': '*'
-        },
-        getCodeFiles: () => this.getDemoFiles('ag-Grid'),
-        disableStackblitz: true
-      },
-      {
         name: 'Alert',
         icon: 'bell',
         summary: 'The alert component displays a SKY UX-themed alert.',
@@ -242,6 +209,39 @@ export class SkyDemoComponentsService {
           ...this.getDemoFiles('Datepicker'),
           ...this.getDemoFiles('Fuzzy datepicker')
         ]
+      },
+      {
+        name: 'Data entry grid',
+        icon: 'table',
+        summary: 'Data entry grids provide a spreadsheet-like user interface for entering large amounts of data.',
+        url: '/components/data-entry-grid',
+        imports: {
+          '@skyux/ag-grid': [
+            'SkyAgGridModule'
+          ],
+          '@skyux/datetime': [
+            'SkyDatepickerModule'
+          ],
+          '@skyux/lookup': [
+            'SkyAutocompleteModule',
+            'SkySearchModule'
+          ],
+          '@skyux/modals': [
+            'SkyModalModule'
+          ],
+          'ag-grid-angular': [
+            'AgGridModule'
+          ],
+          '@skyux/layout': [
+            'SkyToolbarModule'
+          ]
+        },
+        dependencies: {
+          'ag-grid-angular': '*',
+          'ag-grid-community': '*'
+        },
+        getCodeFiles: () => this.getDemoFiles('ag-Grid'),
+        disableStackblitz: true
       },
       {
         name: 'Date range picker',
