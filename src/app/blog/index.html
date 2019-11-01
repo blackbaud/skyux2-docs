@@ -1,7 +1,45 @@
 <stache
   layout="container"
   pageTitle="SKY UX Blog"
-  windowTitle="SKY UX Blog">
+	windowTitle="SKY UX Blog">
+	
+	
+
+	<article class="blog-post">
+		<header>
+			<h2 class="sky-section-heading">Engineering update - October 29, 2019</h2>
+		</header>
+    <section>
+			<h3 class="sky-subsection-heading">New SKY UX CLI command to manage local development certificate</h3>
+
+			<p>The intermediate SKY UX certificate that developers need for local development expires on Oct. 31, 2019. <sky-code>skyux serve</sky-code>, <sky-code>skyux e2e</sky-code>, and <sky-code>skyux build –-serve</sky-code> will not function correctly without it.</p>
+
+			<p>To address this problem, we re-evaluated our implementation of certificate management and drew inspiration from contemporary tools such as the .NET Core CLI. Our solution introduces a more secure, robust approach where each developer generates a unique trusted certificate.</p>
+
+			<p>To continue with local development, SKY UX developers must globally upgrade to the latest version of <sky-code>@skyux-sdk/cli</sky-code> and generate a new local certificate. They must also upgrade all SKY UX SPAs, SKY UX libraries, and Stache sites to the latest version of <sky-code>@skyux-sdk/builder</sky-code>.</p>
+
+			<p>To upgrade <sky-code>@skyux-sdk/cli</sky-code> and generate a certificate, run the following commands globally:</p>
+
+			<ul>
+				<li>
+					<sky-code>npm i -g @skyux-sdk/cli@latest</sky-code>
+				</li>
+				<li>
+					<sky-code>skyux certs install</sky-code>
+				</li>
+			</ul>
+
+			<p>To upgrade <sky-code>@skyux-sdk/builder</sky-code>, run the following command for each SKY UX SPA, SKY UX library, and Stache site:</p>
+
+			<ul>
+				<li>
+					<sky-code>npm i --save-dev --save-exact @skyux-sdk/builder@latest</sky-code>
+				</li>
+			</ul>
+
+			<p>For more information, including more specific instructions for Firefox and iOS Simulator, see the <a routerLink="/learn/get-started/prereqs" fragment="sky-ux-certificate">SKY UX prerequisites</a>.</p>
+		</section>
+	</article>
 
 	<article class="blog-post">
 		<header>
