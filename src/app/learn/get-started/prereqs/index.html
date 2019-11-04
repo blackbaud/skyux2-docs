@@ -57,6 +57,24 @@
     The SKY UX CLI provides a command line interface for the SKY UX Builder that builds the output for SKY UX applications. To install the CLI from the command line, run <sky-code>npm install -g @skyux-sdk/cli</sky-code>.
   </p>
 
+  <h3 class="sky-subsection-heading">
+    Additional steps for Chrome on Linux
+  </h3>
+
+  <ol>
+    <li>
+      <p>
+        Install <sky-code>libnss3-tools</sky-code> using the applicable manager.
+      </p>
+      <p>
+        Debian, Ubuntu, Mint, etc. run <sky-code>sudo apt-get install libnss3-tools</sky-code>.
+      </p>
+      <p>
+        Fedora, Red Hat, etc. run <sky-code>sudo yum install nss-tools</sky-code>.
+      </p>
+    </li>
+  </ol>
+
   <stache-page-anchor>
     SKY UX certificate
   </stache-page-anchor>
@@ -159,6 +177,8 @@
       </p>
     </li>
   </ol>
+
+
 
   <stache-page-anchor>
     Recommended tools
