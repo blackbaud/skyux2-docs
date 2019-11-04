@@ -22,13 +22,13 @@ import {
 } from '@skyux/modals';
 
 import {
+  CellValueChangedEvent,
   ColDef,
   GridApi,
   GridOptions,
   GridReadyEvent,
   ICellEditorParams,
-  RowNode,
-  CellValueChangedEvent
+  RowNode
 } from 'ag-grid-community';
 
 import {
@@ -46,10 +46,10 @@ import {
   templateUrl: './ag-grid-edit-modal.component.html'
 })
 export class SkyAgGridEditModalComponent implements OnInit {
-  public gridData: SkyAgGridDemoRow[];
   public columnDefs: ColDef[];
-  public gridOptions: GridOptions;
   public gridApi: GridApi;
+  public gridData: SkyAgGridDemoRow[];
+  public gridOptions: GridOptions;
 
   constructor(
     private agGridService: SkyAgGridService,

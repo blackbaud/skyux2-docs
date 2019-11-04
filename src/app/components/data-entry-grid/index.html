@@ -56,7 +56,7 @@
         <sky-docs-anatomy-item anatomyNumber="4" isOptional="true">Selected row</sky-docs-anatomy-item>
       </sky-docs-anatomy>
     </sky-demo-page-content>
-      
+
     <sky-demo-page-content sectionHeading="Options">
 		<h3>Disabled cells</h3>
       <sky-docs-visual-example>
@@ -88,12 +88,12 @@
 				<li><a routerLink="/design/guidelines/form-design">Form design</a></li>
 			</ul>
 	</sky-demo-page-content>
-      
-    </sky-tab>  
+
+    </sky-tab>
 
     <sky-tab tabHeading="Development">
       <p>
-        The SKY UX ag-Grid module provides styles, a service for default gridOptions, and SKY UX components for cell rendering and editing in AG grid. If you have never used ag-Grid before, <a href="https://www.ag-grid.com/angular-getting-started/">the Angular getting started</a> guide covers the basics. For more in depth information about ag-Grid and its capabilities, please reference <a href="https://www.ag-grid.com/documentation-main/documentation.php">the ag-Grid documentation.</a>
+        The SKY UX ag-Grid module provides styles, a service for default gridOptions, and SKY UX components for cell rendering and editing in ag-Grid. If you have never used ag-Grid before, <a href="https://www.ag-grid.com/angular-getting-started/">the Angular getting started</a> guide covers the basics. For more in depth information about ag-Grid and its capabilities, please reference <a href="https://www.ag-grid.com/documentation-main/documentation.php">the ag-Grid documentation.</a>
       </p>
 
       <sky-demo-page-module-info
@@ -106,6 +106,9 @@
       <sky-demo-page-properties
       sectionHeading="SkyAgGridService methods"
       >
+        <p>
+          <sky-code>SkyAgGridService</sky-code> is a service that provides methods to get ag-Grid <sky-code>gridOptions.</sky-code> The <sky-code>gridOptions</sky-code> can be overridden, and include registered SKY UX column types. Use the service when you are using ag-Grid to ensure your grid matches the standard SKY UX functionality.
+        </p>
         <sky-demo-page-property
           propertyName="getGridOptions(args: SkyGetGridOptionsArgs)"
           isOptional="true"
@@ -172,7 +175,7 @@
           isOptional="true"
         >
           <p>
-            In edit mode, a cell in a number column will render as an HTML <sky-code>input</sky-code> of the type number. Only numbers can be entered.
+            In edit mode, a cell in a number column will render as an HTML number <sky-code>input</sky-code>. Only numbers can be entered.
           </p>
 
           <p>
@@ -185,6 +188,20 @@
           isOptional="true"
         >
           In edit or read-only mode, a cell in a row selector column will render as a <a routerLink="../checkbox">SKY UX checkbox component.</a> It allows the user to select multiple rows, and adds a highlight to selected rows. The <a href="https://www.ag-grid.com/javascript-grid-row-node/">ag-Grid <sky-code>rowNode</sky-code></a> will be updated to reflect the selected state.
+        </sky-demo-page-property>
+
+
+        <sky-demo-page-property
+          propertyName="SkyCellType.Text"
+          isOptional="true"
+        >
+          <p>
+            In edit mode, a cell in a text column will render as an HTML text <sky-code>input</sky-code>. Any characters can be entered.
+          </p>
+
+          <p>
+            In read-only mode, the cell will render as the string value.
+          </p>
         </sky-demo-page-property>
 
         <p>

@@ -80,8 +80,8 @@ export class SkyAgGridDemoComponent implements OnInit {
     }
   ];
 
-  public gridOptions: GridOptions;
   public gridApi: GridApi;
+  public gridOptions: GridOptions;
   public searchText: string;
 
   constructor(
@@ -126,12 +126,12 @@ export class SkyAgGridDemoComponent implements OnInit {
     });
   }
 
-  public searchApplied(searchText: string) {
+  public searchApplied(searchText: string): void {
     this.searchText = searchText;
     this.gridApi.setQuickFilter(searchText);
   }
 
-  private endDateFormatter(params: ValueFormatterParams) {
+  private endDateFormatter(params: ValueFormatterParams): string {
     const dateConfig = { year: 'numeric', month: '2-digit', day: '2-digit' };
     return params.value ? params.value.toLocaleDateString('en-us', dateConfig) : 'N/A';
   }
