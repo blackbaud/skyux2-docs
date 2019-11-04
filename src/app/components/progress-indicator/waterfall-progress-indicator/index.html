@@ -1,24 +1,10 @@
-<stache
-  pageTitle="Progress Indicator"
-  layout="sidebar"
+<sky-tabbed-demo-page
+  pageTitle="Waterfall Progress Indicator"
 >
 
   <sky-demo-page-summary>
     <p>
-        The progress indicator module visually represents progress through sequential steps toward a goal. Active progress indicators walk users through discrete steps in waterfall pages or in <a routerLink="/components/wizard">wizards</a>, while passive progress indicators represent steps outside of user control.
-    </p>
-    <sky-progress-indicator-action-buttons></sky-progress-indicator-action-buttons>
-  </sky-demo-page-summary>
-
-</stache>
-
-<!-- <sky-tabbed-demo-page
-  pageTitle="Progress Indicator"
->
-
-  <sky-demo-page-summary>
-    <p>
-      The progress indicator module visually represents progress through sequential steps toward a goal. Active progress indicators walk users through discrete steps in waterfall pages or in <a routerLink="/components/wizard">wizards</a>, while passive progress indicators represent steps outside of user control.
+      The progress indicator module visually represents progress through sequential steps toward a goal. Waterfall progress indicators walk users through discrete steps on a page.
     </p>
   </sky-demo-page-summary>
 
@@ -32,7 +18,7 @@
   <sky-tabset id="content-tabs">
     
     <sky-tab
-      tabHeading="Design — Waterfall indicator">
+      tabHeading="Design">
     
       <sky-demo-page-content sectionHeading="Usage">
         <h3 class="sky-text-success">Use when</h3>
@@ -175,105 +161,6 @@
         <h3>Guidelines</h3>
         <ul>
           <li><a routerLink="/design/guidelines/form-design">Form design</a></li>
-        </ul>
-      </sky-demo-page-content>
-    </sky-tab>
-    
-    <sky-tab tabHeading="Design — Passive indicator">
-      <sky-demo-page-content sectionHeading="Usage">
-        <h3 class="sky-text-success">Use when</h3>
-        <sky-docs-visual-example>
-          <sky-docs-visual-example-text>
-            <p>Use passive progress indicators when users must be aware of sequential progress that they are not responsible for.</p>
-          </sky-docs-visual-example-text>
-          <sky-docs-visual-example-image>
-            <div>
-              <img src="~/assets/img/guidelines/progress-indicator/passive-progress-usage-1.png" />
-              <div class="caption caption-success sky-text-success">Do use passive progress indicators to track sequential steps that other users take.</div>
-            </div>
-          </sky-docs-visual-example-image>
-        </sky-docs-visual-example>
-    
-        <h3 class="sky-text-danger">Don't use when</h3>
-        <sky-docs-visual-example>
-          <sky-docs-visual-example-text>
-            <p>Don't use passive progress indicators for tasks that require user interaction.</p>
-          </sky-docs-visual-example-text>
-          <sky-docs-visual-example-image>
-            <div>
-              <img src="~/assets/img/guidelines/progress-indicator/passive-progress-usage-2.png" />
-              <div class="caption caption-danger sky-text-danger">Don't use passive progress indicators when users must take action on any of the steps.</div>
-            </div>
-          </sky-docs-visual-example-image>
-        </sky-docs-visual-example>
-        
-        <sky-docs-visual-example>
-          <sky-docs-visual-example-text>
-            <p>Don’t use passive progress indicators to represent independent steps or statuses that are not sequential.</p>
-          </sky-docs-visual-example-text>
-          <sky-docs-visual-example-image>
-            <div>
-              <img src="~/assets/img/guidelines/progress-indicator/passive-progress-usage-3.png" />
-              <div class="caption caption-danger sky-text-danger">Don't use passive progress to track steps that are not sequential.</div>
-            </div>
-          </sky-docs-visual-example-image>
-        </sky-docs-visual-example>
-        
-        <sky-docs-visual-example>
-          <sky-docs-visual-example-text>
-            <p>Don't use passive progress indicators simultaneously for multiple items in lists.</p>
-          </sky-docs-visual-example-text>
-          <sky-docs-visual-example-image>
-            <div class="sky-margin-stacked-separate">
-              <img src="~/assets/img/guidelines/progress-indicator/passive-progress-usage-4.png" />
-              <div class="caption caption-danger sky-text-danger">Don't display multiple passive progress indicators in lists.</div>
-            </div>
-            <div>
-              <img src="~/assets/img/guidelines/progress-indicator/passive-progress-usage-5.png" />
-              <div class="caption caption-success sky-text-success">Do roll up steps into a single status in lists. Use a container such as <a routerLink="/components/flyout">flyouts</a> or <a routerLink="/components/popover">popovers</a> to display details from passive progress indicators.</div>
-            </div>
-          </sky-docs-visual-example-image>
-        </sky-docs-visual-example>
-      </sky-demo-page-content>
-    
-      <sky-demo-page-content sectionHeading="Anatomy">
-        <sky-docs-anatomy imagePath="~/assets/img/guidelines/progress-indicator/passive-progress-anatomy.png">
-          <sky-docs-anatomy-item anatomyNumber="1">Step indicator</sky-docs-anatomy-item>
-          <sky-docs-anatomy-item anatomyNumber="2">Step label</sky-docs-anatomy-item>
-          <sky-docs-anatomy-item isOptional="true" anatomyNumber="3">Step details</sky-docs-anatomy-item>
-        </sky-docs-anatomy>
-      </sky-demo-page-content>
-    
-      <sky-demo-page-content sectionHeading="Options">
-        <h3>Step details</h3>
-        <div class="sky-text-block">
-          <p>You can provide additional details about completed or current steps. Use step details to provide extra context to users, but avoid too many details or the implication that users should take action.</p>
-        </div>
-      </sky-demo-page-content>
-    
-      <sky-demo-page-content sectionHeading="Content">
-        <div class="sky-text-block">
-          <p>Be concise in step labels. For completed steps, use past tense verbs ("Submitted," "Approved") and include datestamps in parentheses in most cases. Only include timestamps if necessary.</p>
-          <p>Use step details sparingly, and be concise.</p>
-        </div>
-      </sky-demo-page-content>
-    
-      <sky-demo-page-content sectionHeading="Layout">
-        <div class="sky-text-block">
-          <p>Use passive progress indicators one at a time. When they apply to record views, use them in page summaries or other containers such as tiles.</p>
-          <p>To display passive progress indicators for items in lists, use dynamic containers such as <a routerLink="/components/flyout">flyouts</a> or <a routerLink="/components/popover">popovers</a>.</p>
-        </div>
-      </sky-demo-page-content>
-    
-      <sky-demo-page-content sectionHeading="Related information">
-        <h3>Components</h3>
-        <ul>
-          <li><a routerLink="/components/flyout">Flyout</a></li>
-          <li><a routerLink="/components/popover">Popover</a></li>
-        </ul>
-        <h3>Guidelines</h3>
-        <ul>
-          <li><a routerLink="/design/guidelines/call-out-info">Calling out information</a></li>
         </ul>
       </sky-demo-page-content>
     </sky-tab>
@@ -435,4 +322,4 @@
     </sky-tab>
   </sky-tabset>
 
-</sky-tabbed-demo-page> -->
+</sky-tabbed-demo-page>
