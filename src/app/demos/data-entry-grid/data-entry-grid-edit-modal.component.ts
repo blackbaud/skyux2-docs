@@ -35,17 +35,17 @@ import {
   SkyAgGridDemoRow,
   SKY_DEPARTMENTS,
   SKY_JOB_TITLES
-} from './ag-grid-demo-data';
+} from './data-entry-grid-demo-data';
 
 import {
-  SkyAgGridEditModalContext
-} from './ag-grid-edit-modal-context';
+  SkyDataEntryGridEditModalContext
+} from './data-entry-grid-edit-modal-context';
 
 @Component({
   selector: 'sky-demo-edit-modal-form',
-  templateUrl: './ag-grid-edit-modal.component.html'
+  templateUrl: './data-entry-grid-edit-modal.component.html'
 })
-export class SkyAgGridEditModalComponent implements OnInit {
+export class SkyDataEntryGridEditModalComponent implements OnInit {
   public columnDefs: ColDef[];
   public gridApi: GridApi;
   public gridData: SkyAgGridDemoRow[];
@@ -53,7 +53,7 @@ export class SkyAgGridEditModalComponent implements OnInit {
 
   constructor(
     private agGridService: SkyAgGridService,
-    public context: SkyAgGridEditModalContext,
+    public context: SkyDataEntryGridEditModalContext,
     public instance: SkyModalInstance
   ) { }
 

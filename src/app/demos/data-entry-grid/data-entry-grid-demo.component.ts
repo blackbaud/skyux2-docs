@@ -21,22 +21,22 @@ import {
 } from '@skyux/modals';
 
 import {
-  SkyAgGridEditModalContext
-} from './ag-grid-edit-modal-context';
+  SkyDataEntryGridEditModalContext
+} from './data-entry-grid-edit-modal-context';
 
 import {
-  SkyAgGridEditModalComponent
-} from './ag-grid-edit-modal.component';
+  SkyDataEntryGridEditModalComponent
+} from './data-entry-grid-edit-modal.component';
 
 import {
   SKY_AG_GRID_DEMO_DATA
-} from './ag-grid-demo-data';
+} from './data-entry-grid-demo-data';
 
 @Component({
-  selector: 'sky-ag-grid-demo',
-  templateUrl: './ag-grid-demo.component.html'
+  selector: 'sky-data-entry-grid-demo',
+  templateUrl: './data-entry-grid-demo.component.html'
 })
-export class SkyAgGridDemoComponent implements OnInit {
+export class SkyDataEntryGridDemoComponent implements OnInit {
   public gridData = SKY_AG_GRID_DEMO_DATA;
   public columnDefs = [
     {
@@ -104,16 +104,16 @@ export class SkyAgGridDemoComponent implements OnInit {
   }
 
   public openModal(): void {
-    const context = new SkyAgGridEditModalContext();
+    const context = new SkyDataEntryGridEditModalContext();
     context.gridData = this.gridData;
 
     const options = {
-      providers: [{ provide: SkyAgGridEditModalContext, useValue: context }],
+      providers: [{ provide: SkyDataEntryGridEditModalContext, useValue: context }],
       ariaDescribedBy: 'docs-edit-grid-modal-content',
       size: 'large'
     };
 
-    const modalInstance = this.modalService.open(SkyAgGridEditModalComponent, options);
+    const modalInstance = this.modalService.open(SkyDataEntryGridEditModalComponent, options);
 
     modalInstance.closed.subscribe((result: SkyModalCloseArgs) => {
       if (result.reason === 'cancel' || result.reason === 'close') {

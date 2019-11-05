@@ -240,7 +240,7 @@ export class SkyDemoComponentsService {
           'ag-grid-angular': '*',
           'ag-grid-community': '*'
         },
-        getCodeFiles: () => this.getDemoFiles('ag-Grid'),
+        getCodeFiles: () => this.getDemoFiles('Data entry grid'),
         disableStackblitz: true
       },
       {
