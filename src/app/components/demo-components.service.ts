@@ -1173,6 +1173,19 @@ export class SkyDemoComponentsService {
         getCodeFiles: () => this.getDemoFiles('Toolbar')
       },
       {
+        name: 'Tree view',
+        icon: 'sitemap',
+        summary: `The tree view module provides a hierarchical list view with multiple modes for selecting items in the list.`,
+        url: '/components/tree-view',
+        imports: {
+          '@skyux/angular-tree-view': [
+            'SkyAngularTreeViewModule'
+          ]
+        },
+        getCodeFiles: () => this.getDemoFiles('Angular tree component'),
+        disableStackblitz: true
+      },
+      {
         name: 'URL validation',
         icon: 'check',
         summary: 'The URL validation module ensures that user entries in an input element are valid URLs.',
