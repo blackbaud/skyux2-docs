@@ -58,22 +58,24 @@
   </p>
 
   <h3 class="sky-subsection-heading">
-    Additional steps for Chrome on Linux
+    Additional setup for Chrome on Linux
   </h3>
-
-  <ol>
+  
+  <p>
+    To use the SKY UX CLI with Chrome on Linux, you must install the <sky-code>libnss3-tools</sky-code> package with the applicable manager. The package is a set of tools on top of the Network Security Service libraries.
+  </p>
+  <ul>
     <li>
       <p>
-        Install <sky-code>libnss3-tools</sky-code> using the applicable manager.
-      </p>
-      <p>
-        Debian, Ubuntu, Mint, etc. run <sky-code>sudo apt-get install libnss3-tools</sky-code>.
-      </p>
-      <p>
-        Fedora, Red Hat, etc. run <sky-code>sudo yum install nss-tools</sky-code>.
+        For Debian, Ubuntu, and Mint, run <sky-code>sudo apt-get install libnss3-tools</sky-code>.
       </p>
     </li>
-  </ol>
+    <li>
+      <p>
+        For Fedora and Red Hat, run <sky-code>sudo yum install nss-tools</sky-code>.
+      </p>
+    </li>
+  </ul>
 
   <stache-page-anchor>
     SKY UX certificate
