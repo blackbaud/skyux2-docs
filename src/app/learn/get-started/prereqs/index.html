@@ -57,26 +57,6 @@
     The SKY UX CLI provides a command line interface for the SKY UX Builder that builds the output for SKY UX applications. To install the CLI from the command line, run <sky-code>npm install -g @skyux-sdk/cli</sky-code>.
   </p>
 
-  <h3 class="sky-subsection-heading">
-    Additional setup for Chrome on Linux
-  </h3>
-  
-  <p>
-    To use the SKY UX CLI with Chrome on Linux, you must install the <sky-code>libnss3-tools</sky-code> package with the applicable manager. The package is a set of tools on top of the Network Security Service libraries.
-  </p>
-  <ul>
-    <li>
-      <p>
-        For Debian, Ubuntu, and Mint, run <sky-code>sudo apt-get install libnss3-tools</sky-code>.
-      </p>
-    </li>
-    <li>
-      <p>
-        For Fedora and Red Hat, run <sky-code>sudo yum install nss-tools</sky-code>.
-      </p>
-    </li>
-  </ul>
-
   <stache-page-anchor>
     SKY UX certificate
   </stache-page-anchor>
@@ -92,6 +72,9 @@
   <p>
     The certificate is required to securely run <sky-code>skyux serve</sky-code>, <sky-code>skyux e2e</sky-code>, and <sky-code>skyux build --serve</sky-code>. For more information, see the <a routerLink="/learn/reference/cli-commands/certs"><sky-code>skyux certs</sky-code> documentation</a>.
   </p>
+  <sky-alert alertType="info">
+    For Chrome on Linux, you must install the <sky-code>libnss3-tools</sky-code> package to run the <sky-code>skyux certs</sky-code> command. The package is a set of tools on top of the Network Security Service libraries. For Debian, Ubuntu, and Mint, run <sky-code>sudo apt-get install libnss3-tools</sky-code>. For Fedora and Red Hat, run <sky-code>sudo yum install nss-tools</sky-code>.
+  </sky-alert>
 
   <h3 class="sky-subsection-heading">
     Additional steps for Firefox
@@ -122,7 +105,7 @@
       <p>
         Specify the location to use the certificate. The default location is https://localhost:8000, but you can configure a different port in <a routerLink="/learn/reference/configuration/additional-config-files">the <sky-code>skyuxconfig.json</sky-code> file</a> or set up command-specific ports <a routerLink="/learn/reference/configuration/additional-config-files">in additional configuration files</a>.
       </p>
-      <sky-alert alertType="info">
+      <sky-alert alertType="warning">
         To serve multiple SPAs, you must also specify the next available port. When you serve multiple SPAs, SKY UX uses the next available port after the first port is in use.  
       </sky-alert>
     </li>
