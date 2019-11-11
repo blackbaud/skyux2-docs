@@ -28,4 +28,4 @@ import {
     SkyDataEntryGridEditModalComponent
   ]
 })
-export class SkyAgGridDemoModule { }
+export class SkyDataEntryGridDemoModule { }
