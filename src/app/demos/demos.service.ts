@@ -3,6 +3,7 @@ import {
 } from '@angular/core';
 
 import {
+  SkyAngularTreeComponentDemoComponent,
   SkyCharacterCountDemoComponent,
   SkyCodeBlockDemoComponent,
   SkyCopyToClipboardDemoComponent,
@@ -274,6 +275,23 @@ export class SkyDocsDemoCodeService {
           fileContents: require('!!raw-loader!./toggle-switch/toggle-switch-demo.component.ts'),
           componentName: 'SkyToggleSwitchDemoComponent',
           bootstrapSelector: 'sky-toggle-switch-demo'
+        }
+      ]
+    },
+
+    {
+      name: 'Angular tree component',
+      component: SkyAngularTreeComponentDemoComponent,
+      files: [
+        {
+          name: 'angular-tree-component-demo.component.html',
+          fileContents: require('!!raw-loader!./angular-tree-component/angular-tree-component-demo.component.html')
+        },
+        {
+          name: 'angular-tree-component-demo.component.ts',
+          fileContents: require('!!raw-loader!./angular-tree-component/angular-tree-component-demo.component.ts'),
+          componentName: 'SkyAngularTreeComponentDemoComponent',
+          bootstrapSelector: 'sky-angular-tree-component-demo'
         }
       ]
     }
