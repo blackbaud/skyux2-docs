@@ -1,0 +1,114 @@
+<sky-tabbed-demo-page
+  pageTitle="List view switcher"
+>
+
+  <sky-demo-page-summary>
+    <p>
+      The list view switcher lets the user switch between different views of the same data.
+    </p>
+  </sky-demo-page-summary>
+
+  <sky-demo-page-example>
+    
+  </sky-demo-page-example>
+
+<sky-tabset id="content-tabs">
+
+  <sky-tab
+    tabHeading="Design">
+
+    <sky-demo-page-content sectionHeading="Usage">
+      <h3 class="sky-text-success">Use when</h3>
+        <sky-docs-visual-example>
+          <sky-docs-visual-example-text>
+              <p>Use the list view switcher when the user needs to switch between different views of the same data.</p>
+          </sky-docs-visual-example-text>
+          <sky-docs-visual-example-image>
+            <div>
+              <img src="~/assets/img/guidelines/list-view-switcher/use-when.png" />
+              <div class="caption caption-success sky-text-success">Do use the list view switcher when there is more than one view of the data.</div>
+            </div>
+          </sky-docs-visual-example-image>
+        </sky-docs-visual-example>
+      <h3 class="sky-text-success">Don't use when</h3>
+        <sky-docs-visual-example>
+          <sky-docs-visual-example-text>
+              <p>Don't use the list view switcher when there is only one view of the data.</p>
+          </sky-docs-visual-example-text>
+          <sky-docs-visual-example-image>
+            <div>
+              <img src="~/assets/img/guidelines/list-view-switcher/dont-use-when.png" />
+              <div class="caption caption-danger sky-text-danger">Don't use the list view switcher when there is only one view of the data.</div>
+            </div>
+          </sky-docs-visual-example-image>
+        </sky-docs-visual-example>
+    </sky-demo-page-content>
+
+    <sky-demo-page-content sectionHeading="Anatomy">
+      <sky-docs-anatomy imagePath="~/assets/img/guidelines/list-view-switcher/anatomy.png">
+        <sky-docs-anatomy-item anatomyNumber="1">Active view</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item anatomyNumber="2">Inactive view</sky-docs-anatomy-item>
+      </sky-docs-anatomy>
+    </sky-demo-page-content>
+
+    <sky-demo-page-content sectionHeading="Options">
+      <h3>Available views</h3>
+        <sky-docs-visual-example>
+          <sky-docs-visual-example-text>
+            <p>You must specify which views are available for the user to switch between.</p>
+          </sky-docs-visual-example-text>
+          <sky-docs-visual-example-image>
+            <img src="~/assets/img/guidelines/list-view-switcher/option-available.png" />
+          </sky-docs-visual-example-image>
+        </sky-docs-visual-example>
+      <h3>Default view</h3>
+        <div class="sky-text-block">
+          <p>You must specify the default view to show when the page loads.</p>
+        </div>
+      <h3>Custom views</h3>
+        <sky-docs-visual-example>
+          <sky-docs-visual-example-text>
+            <p>You can add custom views if the available SKY UX list types don't work for your scenario.</p>
+          </sky-docs-visual-example-text>
+          <sky-docs-visual-example-image>
+            <img src="~/assets/img/guidelines/list-view-switcher/option-custom.png" />
+          </sky-docs-visual-example-image>
+        </sky-docs-visual-example>
+    </sky-demo-page-content>
+
+    <sky-demo-page-content sectionHeading="Behavior & states">
+      <h3>Switch view</h3>
+        <div class="sky-text-block">
+          <p>When the user switches views, the view changes and filters remain applied.</p>
+        </div>
+      <h3>States</h3>
+      <sky-demo-page-component-states>
+        <sky-demo-page-component-state stateName="Active" imagePath="~/assets/img/guidelines/list-view-switcher/state-active.png"></sky-demo-page-component-state>
+        <sky-demo-page-component-state stateName="Inactive" imagePath="~/assets/img/guidelines/list-view-switcher/state-inactive.png"></sky-demo-page-component-state>
+      </sky-demo-page-component-states>
+    </sky-demo-page-content>
+
+    <sky-demo-page-content sectionHeading="Related information">
+      <h3>Components</h3>
+      <ul>
+        <li><a stacheRouterLink="/components/list">List</a></li>
+        <li><a routerLink="/components/list/toolbar">List toolbar</a></li>
+      </ul>
+    </sky-demo-page-content>
+
+  </sky-tab>
+
+  <sky-tab tabHeading="Development">
+
+    <sky-demo-page-module-info
+      skyuxModule="SkyListViewSwitcherModule"
+      packageName="@skyux/list-builder"
+      githubRepo="skyux-list-builder"
+    >
+    </sky-demo-page-module-info>
+
+  </sky-tab>
+
+</sky-tabset>
+
+</sky-tabbed-demo-page>
