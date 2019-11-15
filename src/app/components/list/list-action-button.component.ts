@@ -47,6 +47,13 @@ export class ListActionButtonsComponent {
       icon: 'table',
       // tslint:disable-next-line
       summary: 'The list view grid component provides a SKY UX-themed grid for a list of data.'
+    },
+    {
+      name: 'List view switcher',
+      path: '/components/list/view-switcher',
+      icon: 'eye',
+      // tslint:disable-next-line
+      summary: 'The list view switcher allows users to switch between different views of the same data.'
     }
   ];
 }
