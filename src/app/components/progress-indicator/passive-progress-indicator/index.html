@@ -35,7 +35,7 @@
         <h3 class="sky-text-danger">Don't use when</h3>
         <sky-docs-visual-example>
           <sky-docs-visual-example-text>
-            <p>Don't use passive progress indicators for tasks that require user interaction.</p>
+            <p>Don't use passive progress indicators for tasks that require user interaction. Use <a routerLink="/components/progress-indicator/waterfall-progress-indicator">waterfall pages</a> or <a routerLink="/components/wizad">wizards</a> instead.</p>
           </sky-docs-visual-example-text>
           <sky-docs-visual-example-image>
             <div>
@@ -76,9 +76,10 @@
     
       <sky-demo-page-content sectionHeading="Anatomy">
         <sky-docs-anatomy imagePath="~/assets/img/guidelines/progress-indicator/passive-progress-anatomy.png">
-          <sky-docs-anatomy-item anatomyNumber="1">Step indicator</sky-docs-anatomy-item>
-          <sky-docs-anatomy-item anatomyNumber="2">Step label</sky-docs-anatomy-item>
-          <sky-docs-anatomy-item isOptional="true" anatomyNumber="3">Step details</sky-docs-anatomy-item>
+          <sky-docs-anatomy-item anatomyNumber="1">Completed step indicator</sky-docs-anatomy-item>
+          <sky-docs-anatomy-item anatomyNumber="2">Pending step indicator</sky-docs-anatomy-item>
+            <sky-docs-anatomy-item anatomyNumber="3">Step label</sky-docs-anatomy-item>
+          <sky-docs-anatomy-item isOptional="true" anatomyNumber="4">Step details</sky-docs-anatomy-item>
         </sky-docs-anatomy>
       </sky-demo-page-content>
     
@@ -91,7 +92,7 @@
     
       <sky-demo-page-content sectionHeading="Content">
         <div class="sky-text-block">
-          <p>Be concise in step labels. For completed steps, use past tense verbs ("Submitted," "Approved") and include datestamps in parentheses in most cases. Only include timestamps if necessary.</p>
+          <p>Be concise in step labels. For completed steps, use past tense verbs ("Submitted," "Approved") and include datestamps in parentheses. Only include timestamps if the extra detail is necessary. For pending steps, use present tense verbs or gerunds ("Submitting", "Awaiting").</p>
           <p>Use step details sparingly, and be concise.</p>
         </div>
       </sky-demo-page-content>
@@ -108,6 +109,8 @@
         <ul>
           <li><a routerLink="/components/flyout">Flyout</a></li>
           <li><a routerLink="/components/popover">Popover</a></li>
+            <li><a routerLink="/components/progress-indicator/waterfall-progress-indicator">Waterfall page</a></li>
+            <li><a routerLink="/components/wizard">Wizard</a></li>
         </ul>
         <h3>Guidelines</h3>
         <ul>
