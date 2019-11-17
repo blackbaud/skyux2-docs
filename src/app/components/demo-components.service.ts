@@ -848,16 +848,8 @@ export class SkyDemoComponentsService {
       {
         name: 'Popover',
         icon: 'newspaper-o',
-        // tslint:disable-next-line
         summary: 'The popover module displays small chunks of contextual content in an HTML-formatted popover on pages or modals.',
-        url: '/components/popover',
-        imports: {
-          '@skyux/popovers': [
-            'SkyDropdownModule',
-            'SkyPopoverModule'
-          ]
-        },
-        getCodeFiles: () => this.getDemoFiles('Popover')
+        url: '/components/popover'
       },
       {
         name: 'Progress indicator',
