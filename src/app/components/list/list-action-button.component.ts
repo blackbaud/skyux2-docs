@@ -53,7 +53,7 @@ export class ListActionButtonsComponent {
       path: '/components/list/view-switcher',
       icon: 'eye',
       // tslint:disable-next-line
-      summary: 'The list view switcher allows users to switch between different views of the same data.'
+      summary: 'The list view switcher module displays toolbar options for users to change the list view.'
     }
   ];
 }
