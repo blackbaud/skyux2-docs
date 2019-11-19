@@ -120,7 +120,7 @@ import { SkyAppConfig } from '@skyux/config';
 export class HomeComponent {
   public envId: string;
   constructor(skyAppConfig: SkyAppConfig) {
-    this.envId = skyAppConfig.params.get('envid');
+    this.envId = skyAppConfig.runtime.params.get('envid');
   }
 }
   </sky-code-block>

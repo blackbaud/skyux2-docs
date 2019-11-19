@@ -274,8 +274,8 @@ export class SkyDemoComponentsService {
       {
         name: 'File attachment',
         icon: 'cloud-upload',
-        summary: `The file attachment components allow users to add file attachments to forms.`,
-        url: '/components/fileattachments',
+        summary: `The file attachment module creates options to attach files to forms and to display metadata about attachments.`,
+        url: '/components/file-attachments',
         imports: {
           '@skyux/forms': [
             'SkyFileAttachmentsModule'
@@ -284,7 +284,21 @@ export class SkyDemoComponentsService {
             'SkyAlertModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('File attachment')
+        getCodeFiles: () => this.getDemoFiles('File attachment'),
+        components: [
+          {
+            name: 'Single file attachment',
+            icon: 'cloud-upload',
+            summary: `The single file attachment component creates an input to attach a single local file.`,
+            url: '/components/file-attachments/single-file-attachment',
+            imports: {
+              '@skyux/forms': [
+                'SkyFileAttachmentsModule'
+              ]
+            },
+            getCodeFiles: () => this.getDemoFiles('Single file attachment')
+          }
+        ]
       },
       {
         name: 'Filter',
@@ -834,16 +848,8 @@ export class SkyDemoComponentsService {
       {
         name: 'Popover',
         icon: 'newspaper-o',
-        // tslint:disable-next-line
         summary: 'The popover module displays small chunks of contextual content in an HTML-formatted popover on pages or modals.',
-        url: '/components/popover',
-        imports: {
-          '@skyux/popovers': [
-            'SkyDropdownModule',
-            'SkyPopoverModule'
-          ]
-        },
-        getCodeFiles: () => this.getDemoFiles('Popover')
+        url: '/components/popover'
       },
       {
         name: 'Progress indicator',
@@ -1157,6 +1163,19 @@ export class SkyDemoComponentsService {
           ]
         },
         getCodeFiles: () => this.getDemoFiles('Toolbar')
+      },
+      {
+        name: 'Tree view',
+        icon: 'sitemap',
+        summary: `The tree view module provides a hierarchical list view with multiple modes for selecting items in the list.`,
+        url: '/components/tree-view',
+        imports: {
+          '@skyux/angular-tree-view': [
+            'SkyAngularTreeViewModule'
+          ]
+        },
+        getCodeFiles: () => this.getDemoFiles('Angular tree component'),
+        disableStackblitz: true
       },
       {
         name: 'URL validation',
