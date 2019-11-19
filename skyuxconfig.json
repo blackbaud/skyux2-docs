@@ -123,6 +123,10 @@
     "learn/get-started/advanced/add-entry-components": "learn/get-started/advanced/entry-components",
     "learn/reference/helpers/SkyAuthHttpClientModule": "learn/reference/helpers",
     "learn/reference/faq": "learn/reference",
-    "contribute/guidelines": "contribute/contribution-process"
+    "contribute/guidelines": "contribute/contribution-process",
+    "components/fileattachments": "components/file-attachments",
+    "learn/get-started/prereqs/ssl-certificate": "learn/get-started/prereqs",
+    "learn/get-started/prereqs/initial-setup": "learn/get-started/prereqs",
+    "design/resources": "design"
   }
 }

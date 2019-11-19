@@ -42,6 +42,11 @@ $app-info-padding: 45px;
   border-top: solid 1px rgba(226, 227, 228, .8);
 }
 
+.row-features ::ng-deep pre {
+  border: 0;
+  margin-bottom: 0;
+}
+
 .row-features ::ng-deep .sky-row,
 .row-developer ::ng-deep .sky-row {
   padding-bottom: $app-info-padding;

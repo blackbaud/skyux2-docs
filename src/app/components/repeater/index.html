@@ -32,6 +32,22 @@
     >
     Specifies the index of the repeater item to visually highlight as active. For example, use this property in conjunction with the <a stacheRouterLink="/components/split-view">split view component</a> to highlight a repeater item while users edit it. Only one item can be active at a time. This property accepts <sky-code>number</sky-code> values.
     </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="reorderable"
+      defaultValue="false"
+      isOptional="true"
+    >
+    Indicates whether users can change the order of items in the repeater list. Each repeater item also has <sky-code>reorderable</sky-code> property to indicate whether users can change its order. This property accepts <sky-code>boolean</sky-code> values.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-properties sectionHeading="Repeater events">
+    <sky-demo-page-property
+      propertyName="orderChange"
+      isOptional="true"
+    >
+    Fires when users change the order of repeater items. This event emits an ordered array of the <sky-code>tag</sky-code> properties that the consumer provides for each repeater item.
+    </sky-demo-page-property>
   </sky-demo-page-properties>
 
   <sky-demo-page-properties sectionHeading="Repeater item properties">
@@ -62,6 +78,13 @@
     Indicates whether the repeater item's checkbox is selected. When users select the repeater item, the specified property on your model is updated accordingly. This property accepts <sky-code>boolean</sky-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
+      propertyName="reorderable"
+      defaultValue="false"
+      isOptional="true"
+    >
+    Indicates whether users can change the order of the repeater item. The repeater component's <sky-code>reorderable</sky-code> property must also be set to <sky-code>true</sky-code>. This property accepts <sky-code>boolean</sky-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
       propertyName="selectable"
       defaultValue="false"
       isOptional="true"
@@ -75,7 +98,14 @@
     >
     Indicates whether to display an inline form within the repeater. Users can toggle between displaying and hiding the inline form. This property accepts <sky-code>boolean</sky-code> values.
     </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="tag"
+      isOptional="true"
+    >
+    Specifies an object that the repeater component returns for this repeater item when the <sky-code>orderChange</sky-code> event fires. Required if you set the <sky-code>reorderable</sky-code> property to <sky-code>true</sky-code>. This property accepts <sky-code>any</sky-code> values.
+    </sky-demo-page-property>
   </sky-demo-page-properties>
+
   <sky-demo-page-properties sectionHeading="Repeater item events">
     <sky-demo-page-property
       propertyName="collapse"
@@ -94,6 +124,12 @@
       isOptional="true"
     >
     Fires when the repeater includes an inline form and users close it. This event emits <a stacheRouterLink="/components/inline-form" fragment="skyinlineformcloseargs-properties">a <sky-code>SkyInlineFormCloseArgs</sky-code> type</a>.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="isSelectedChange"
+      isOptional="true"
+    >
+    Fires when users select or clear the checkbox for the repeater item.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
