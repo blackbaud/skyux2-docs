@@ -1,5 +1,6 @@
 import {
   ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
   Input,
   OnInit
@@ -65,16 +66,22 @@ export class SkyDemoPageComponent implements OnInit {
   private _packageName: string;
 
   constructor(
+    private changeDetectorRef: ChangeDetectorRef,
     private sidebarService: SkyDemoSidebarService,
     private titleService: SkyDemoTitleService
-  ) { }
+  ) {
+    this.sidebarRoutes = this.sidebarService.getDefaultSidebar();
+  }
 
   public ngOnInit() {
     this.updateTitle();
 
     this.sidebarService
       .getSidebar()
-      .subscribe((routes: StacheNavLink[]) => this.sidebarRoutes = routes);
+      .subscribe((routes: StacheNavLink[]) => {
+        this.sidebarRoutes = routes;
+        this.changeDetectorRef.markForCheck();
+      });
   }
 
   private updateTitle() {

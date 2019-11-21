@@ -1,6 +1,7 @@
 import {
   AfterContentInit,
   ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
   ContentChildren,
   Input,
@@ -59,15 +60,21 @@ export class SkyTabbedDemoPageComponent implements OnInit, AfterContentInit {
   private contentComponents: QueryList<SkyDemoPageContentComponent>;
 
   constructor(
+    private changeDetectorRef: ChangeDetectorRef,
     private sidebarService: SkyDemoSidebarService,
     private titleService: SkyDemoTitleService
-  ) { }
+  ) {
+    this.sidebarRoutes = this.sidebarService.getDefaultSidebar();
+  }
 
   public ngOnInit() {
     this.updateTitle();
     this.sidebarService
       .getSidebar()
-      .subscribe((routes: StacheNavLink[]) => this.sidebarRoutes = routes);
+      .subscribe((routes: StacheNavLink[]) => {
+        this.sidebarRoutes = routes;
+        this.changeDetectorRef.markForCheck();
+      });
   }
 
   public ngAfterContentInit(): void {
