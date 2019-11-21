@@ -129,13 +129,20 @@
         defaultValue="500000"
       >
         Specifies the maximum size in bytes for valid files. This property accepts <sky-code>number</sky-code> values.
-    </sky-demo-page-property>
+      </sky-demo-page-property>
       <sky-demo-page-property
         propertyName="minFileSize"
         isOptional="true"
         defaultValue="0"
       >
         Specifies the minimum size in bytes for valid files. This property accepts <sky-code>number</sky-code> values.
+      </sky-demo-page-property>
+      <sky-demo-page-property
+        propertyName="required"
+        defaultValue="false"
+        isOptional="true"
+      >
+        Indicates whether the input is required for form validation. When you set this property to <sky-code>true</sky-code>, the component adds <sky-code>aria-required</sky-code> and <sky-code>required</sky-code> attributes to the input element so that forms display an invalid state until the input element is complete. This property accepts a <sky-code>boolean</sky-code> value.
       </sky-demo-page-property>
       <sky-demo-page-property
         propertyName="validateFn"
