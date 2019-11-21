@@ -2,7 +2,8 @@
   <stache
     layout="sidebar"
     showTableOfContents="true"
-    [pageTitle]="pageTitle">
+    [pageTitle]="pageTitle"
+    [sidebarRoutes]="sidebarRoutes">
 
     <stache-page-summary>
       <h4 *ngIf="skyuxModulesForDisplay && !installOnly">
