@@ -63,6 +63,13 @@
     Specifies a name for a group of checkboxes. If you do not specify a name, an auto-incrementing integer generates a unique ID. This property accepts <sky-code>string</sky-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
+      propertyName="required"
+      defaultValue="false"
+      isOptional="true"
+    >
+    Indicates whether the input is required for form validation. When you set this property to <sky-code>true</sky-code>, the component adds <sky-code>aria-required</sky-code> and <sky-code>required</sky-code> attributes to the input element so that forms display an invalid state until the input element is complete. This property accepts a <sky-code>boolean</sky-code> value.
+    </sky-demo-page-property>
+    <sky-demo-page-property
       propertyName="tabIndex"
       defaultValue="0"
       isOptional="true"
