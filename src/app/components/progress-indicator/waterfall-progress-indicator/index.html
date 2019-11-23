@@ -134,7 +134,7 @@
       <sky-demo-page-content sectionHeading="Behavior & states">
         <div class="sky-text-block">
           <p>Waterfall progress indicators guide users through one active step at a time. When users complete a step, the progress indicator updates its step indicator and step action to the completed state and updates the next step indicator and step action to the active state. Users can review and edit completed steps, but this does not undo the completed state.</p>
-          <p>The final step summarizes the changes and requests user confirmation. You do not need to include all data that users enter in the summary, but confirmation is required. After users complete the final step, replace the waterfall progress indicator with a page that displays the finished or active state of the system. Any page type is allowed, including record pages, work centers, and list pages.</p>
+          <p>The final step summarizes the changes and requests user confirmation. You do not need to include all data that users enter in the summary, but confirmation is required. After users complete the final step, replace the waterfall progress indicator with a page that displays the finished or active state of the system.</p>
         </div>
       </sky-demo-page-content>
     
@@ -146,9 +146,19 @@
       </sky-demo-page-content>
     
       <sky-demo-page-content sectionHeading="Layout">
-        <div class="sky-text-block">
-          <p>Waterfall progress indicators are 400 pixels wide and centered inside the page. The waterfall title is the page title. Do not combine waterfall indicators with other content or actions.</p>
-          <p>If waterfall indicators require extra context such as descriptions, links, or instructions, include it after the waterfall title and before the first step.</p>
+        <sky-docs-visual-example>
+          <sky-docs-visual-example-text>
+            <p>Waterfall progress indicators are 400 pixels wide and centered inside the page. The waterfall title is the page title. Do not combine waterfall indicators with other content or actions. If waterfall indicators require extra context such as descriptions, links, or instructions, include it after the waterfall title and before the first step.</p>
+          </sky-docs-visual-example-text>
+          <sky-docs-visual-example-image>
+            <div>
+              <img src="~/assets/img/guidelines/progress-indicator/waterfall-progress-layout.png" />
+              <div class="caption caption-success sky-text-success">Do use waterfall progress indicators as the only content on a page while the user completes them.</div>
+            </div>
+          </sky-docs-visual-example-image>
+        </sky-docs-visual-example>
+          <div class="sky-text-block">
+              
         </div>
       </sky-demo-page-content>
     
@@ -156,7 +166,6 @@
         <h3>Components</h3>
         <ul>
           <li><a routerLink="/components/modal">Modal</a></li>
-            <li><a routerLink="/components/progress-indicator/passive-progress-indicator">Passive progress indicator</a></li>
           <li><a routerLink="/components/progress-indicator/passive-progress-indicator">Passive progress indicator</a></li>
           <li><a routerLink="/components/wizard">Wizard</a></li>
         </ul>
