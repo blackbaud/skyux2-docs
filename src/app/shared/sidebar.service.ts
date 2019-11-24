@@ -18,7 +18,7 @@ import {
 import 'rxjs/operators/map';
 
 import {
-  StacheNavLink,
+  StacheNavLink
 } from '@blackbaud/skyux-lib-stache';
 
 import {

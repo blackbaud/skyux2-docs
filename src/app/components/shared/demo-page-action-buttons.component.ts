@@ -23,7 +23,7 @@ import {
   templateUrl: 'demo-page-action-buttons.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class DemoPageActionButtons implements OnInit {
+export class DemoPageActionButtonsComponent implements OnInit {
   public routes: StacheNavLink[];
 
   @Input()
