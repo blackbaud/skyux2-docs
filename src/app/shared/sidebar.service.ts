@@ -3,6 +3,7 @@
  * It attepts to keep URLS relative so Stache uses RouterLink.
  * It's used in three places:
  *  - On the components landing page.
+ *  - On the landing pages of nested components, like List and File Attachment.
  *  - On the individual component pages using the old style.
  *  - On the individual component pages using the new "tabbed" style.
  */
@@ -18,7 +19,6 @@ import 'rxjs/operators/map';
 
 import {
   StacheNavLink,
-  StacheRouteService
 } from '@blackbaud/skyux-lib-stache';
 
 import {
@@ -30,10 +30,13 @@ import {
 export class SkyDemoSidebarService {
 
   public constructor(
-    private stacheRouteService: StacheRouteService,
     private skyDocsSupportalService: SkyDocsSupportalService
   ) { }
 
+  /**
+   * Gets the children for a specificed route
+   * @param name Name of route to match
+   */
   public getRoutesFor(name: string): Observable<StacheNavLink[]> {
     const nameUpperCase = name.toUpperCase();
 
@@ -47,17 +50,22 @@ export class SkyDemoSidebarService {
       .map((components: SkyDocsComponentInfo[]) => this.transform(components));
   }
 
+  /**
+   * Gets all routes.
+   */
   public getRoutes(): Observable<StacheNavLink[]> {
     return this.skyDocsSupportalService
       .getComponentsInfo()
       .map((components: SkyDocsComponentInfo[]) => this.transform(components));
   }
 
+  /**
+   * Gets all routes and adds "Components" parent.
+   */
   public getSidebar(): Observable<StacheNavLink[]> {
-    const active = this.stacheRouteService.getActiveUrl();
     return this.skyDocsSupportalService
       .getComponentsInfo()
-      .map((components: SkyDocsComponentInfo[]) => this.transform(components, active))
+      .map((components: SkyDocsComponentInfo[]) => this.transform(components))
       .map((routes: StacheNavLink[]) => {
         const sidebar = this.getDefaultSidebar();
         sidebar[0].children = routes;
@@ -75,11 +83,16 @@ export class SkyDemoSidebarService {
     ];
   }
 
-  private transform(components: SkyDocsComponentInfo[], active?: string): StacheNavLink[] {
+  /**
+   * Transforms an array of SkyDocsComponentInfo to an array of StacheNavLink.
+   * Recursively transforms any children.
+   * @param components Array of SkyDocsComponentInfo to transform.
+   */
+  private transform(components: SkyDocsComponentInfo[]): StacheNavLink[] {
     return components.map((component: SkyDocsComponentInfo) => {
 
       // Make links relative if possible so Stache will use RouterLink
-      const url = component.url.replace('https://developer.blackbaud.com/skyux/', '/');
+      const url = component.url.replace('https://developer.blackbaud.com/skyux/', '');
 
       // Also having to manually set isActive for Stache race condition
       const link: StacheNavLink = {
@@ -89,47 +102,11 @@ export class SkyDemoSidebarService {
         summary: component.summary
       };
 
-      if (active) {
-        link.isActive = this.isActive(active, { path: url });
-        link.isCurrent = this.isCurrent(active, { path: url });
-      }
-
       if (component.children) {
-        link.children = this.transform(component.children, active);
+        link.children = this.transform(component.children);
       }
 
       return link;
     });
-  }
-
-  // These two methods are lifted from:
-  // https://github.com/blackbaud/stache2/blob/src/app/public/src/modules/nav/nav.component.ts#L51-L79
-  private isActive(activeUrl: string, route: any): boolean {
-    let path = route.path;
-    let navDepth: number;
-
-    if (path.join) {
-      navDepth = path.length;
-      path = path.join('/');
-    } else {
-      navDepth = path.split('/').length;
-    }
-
-    if (path.indexOf('/') !== 0) {
-      path = `/${path}`;
-    }
-
-    const isActiveParent = (navDepth > 1 && `${activeUrl}/`.indexOf(`${path}/`) === 0);
-    return (isActiveParent || activeUrl === path);
-  }
-
-  private isCurrent(activeUrl: string, route: any): boolean {
-    let path = route.path;
-
-    if (path.join) {
-      path = path.join('/');
-    }
-
-    return (activeUrl === `${path}`);
   }
 }
