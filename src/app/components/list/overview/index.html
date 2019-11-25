@@ -17,7 +17,7 @@
       propertyName="appliedFilters"
       isOptional="true"
     >
-      Specifies a set of filters to apply to list data. These filters also create a filter summary if <a routerLink="../filter">the <sky-code>sky-list-filter-summary</sky-code> component</a> is included. Acceptable values: <sky-code>Array of ListFilterModel</sky-code>.
+      Specifies a set of filters to apply to list data. These filters create a filter summary when the list includes <a routerLink="../filters">the <sky-code>sky-list-filter-summary</sky-code> component</a>. This property accepts an <a stacheRouterLink="." fragment="listfiltermodel-properties">array <sky-code>ListFilterModel</sky-code> properties</a>.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="data"
@@ -32,7 +32,7 @@
       defaultValue="SkyListInMemoryDataProvider"
       isOptional="true"
     >
-    Specifies a data provider to obtain the data to display. The list component requires this property or the <sky-code>data</sky-code> property. Acceptable values: <sky-code>extends ListDataProvider</sky-code>. To extend ListDataProvider, provide a <sky-code>get</sky-code> function that accepts a <sky-code>ListDataRequestModel</sky-code> as an argument and returns an <sky-code>Observable ListDataResponseModel </sky-code>, and a <sky-code>count</sky-code> function that returns an <sky-code>Observable number</sky-code> that indicates how many total records are in the list. For lists that use <sky-code>dataProvider</sky-code> instead of <sky-code>data</sky-code>, consumers are responsible for managing all <sky-code>ListDataRequestModel</sky-code> properties. For examples of custom searching, filters, and paging, see the <a stacheRouterLink="." fragment="code">demo code</a> below.
+    Specifies a data provider to obtain the data to display. The list component requires this property or the <sky-code>data</sky-code> property. Acceptable values: <sky-code>extends ListDataProvider</sky-code>. To extend ListDataProvider, provide a <sky-code>get</sky-code> function that accepts a <sky-code>ListDataRequestModel</sky-code> as an argument and returns an <sky-code>Observable ListDataResponseModel</sky-code>, and a <sky-code>count</sky-code> function that returns an <sky-code>Observable number</sky-code> that indicates how many total records are in the list. For lists that use <sky-code>dataProvider</sky-code> instead of <sky-code>data</sky-code>, consumers are responsible for managing <a stacheRouterLink="." fragment="listdatarequestmodel-properties">all <sky-code>ListDataRequestModel</sky-code> properties</a>. For examples of custom searching, filters, and paging, see the <a stacheRouterLink="." fragment="code">demo code</a>.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="initialTotal"
@@ -72,6 +72,180 @@
       isOptional="true"
     >
     When using a list view that supports item selection, the list emits this event with a <sky-code>Map string, boolean</sky-code> object that indicates which data entries are selected.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-properties sectionHeading="ListDataRequestModel properties">
+    <sky-demo-page-property
+      propertyName="filters"
+      isOptional="true"
+    >
+    Specifies a function to determine whether items are filtered. This property is required when using an in-memory data provider. This property accepts an array of <a stacheRouterLink="." fragment="listfiltermodel-properties"><sky-code>ListFilterModel</sky-code> objects</a>.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="isToolbarDisabled"
+      defaultValue="false"
+      isOptional="true"
+    >
+    Indicates whether to disable the search bar and filter button. This property accepts <sky-code>boolean</sky-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="pageNumber"
+      isOptional="true"
+    >
+    Specifies the current page number. This property accepts <sky-code>number</sky-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="pageSize"
+      isOptional="true"
+    >
+    Specifies the number of items to display per page. This property accepts <sky-code>number</sky-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="search"
+      isOptional="true"
+    >
+    Specifies a function to dynamically manage the data source when users change the text in the list field. The search function must return an array or a promise of an array. The <sky-code>search</sky-code> property is particularly useful when the data source does not live in the source code. This property accepts <a stacheRouterLink="." fragment="listsearchmodel-properties">a <sky-code>ListSearchModel</sky-code> value</a>.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="sort"
+      isOptional="true"
+    >
+    Specifies a set of fields to sort by. This property accepts <a stacheRouterLink="." fragment="listsortmodel-properties"> <sky-code>ListSortModel</sky-code> value</a>.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-properties sectionHeading="ListFilterModel properties">
+    <sky-demo-page-property
+      propertyName="defaultValue"
+      isOptional="true"
+    >
+    Specifies the default value of the filter. When users do not set the default value, the filter does not affect the list. This property accepts <sky-code>any</sky-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="dismissible"
+      isOptional="true"
+    >
+    Indicates whether users can dismiss the filter's summary item. This property accepts <sky-code>boolean</sky-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="filterFunction"
+      isOptional="true"
+    >
+    Specifies a function to determine whether items are filtered. This property is required when using an in-memory data provider. This property accepts a function of type <sky-code>(item: ListItemModel, filter: any) => boolean</sky-code>.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="label"
+      isOptional="true"
+    >
+    Specifies a label for the filter's summary item. The label defaults to the <sky-code>value</sky-code> of the filter. This property accepts <sky-code>string</sky-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="name"
+      isOptional="true"
+    >
+    Specifies the name of the filter. This property accepts <sky-code>string</sky-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="value"
+      isOptional="true"
+    >
+    Specifies the current value of the filter. This property accepts <sky-code>any</sky-code> values.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-properties sectionHeading="ListSearchModel properties">
+    <sky-demo-page-property
+      propertyName="fieldSelectors"
+      isOptional="true"
+    >
+    Specifies the columns to search. The columns correspond to <sky-code>field</sky-code> values that you specify with the list component's <sky-code>data</sky-code> property. This property accepts an array of <sky-code>string</sky-code> values. 
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="functions"
+      isOptional="true"
+    >
+    Specifies an array of functions that returns a <sky-code>boolean</sky-code> value of <sky-code>true</sky-code> when the search is successful. This property accepts a function of type <sky-code>(data: any, searchText: string) => boolean></sky-code>.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="searchText"
+      isOptional="true"
+    >
+    Specifies the text to search. This property accepts <sky-code>string</sky-code> values.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-properties sectionHeading="ListSortFieldSelectorModel properties">
+    <p>These properties are a work in progress, and we do not recommend using them.</p>
+    <sky-demo-page-property
+      propertyName="descending"
+      isOptional="true"
+      defaultValue="false"
+    >
+    Indicates whether to sort in descending order. This property accepts <sky-code>boolean</sky-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="fieldSelector"
+      isOptional="true"
+    >
+    Specifies the fields to sort. This property accepts <sky-code>string</sky-code> values.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-properties sectionHeading="ListSortLabelModel properties">
+    <p>These properties are a work in progress, and we do not recommend using them.</p>
+    <sky-demo-page-property
+      propertyName="fieldType"
+      isOptional="true"
+    >
+    Specifies the label type. This property accepts <sky-code>string</sky-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="fieldSelector"
+      isOptional="true"
+    >
+    Specifies the fields to sort. This property accepts <sky-code>string</sky-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="global"
+      isOptional="true"
+      defaultValue="false"
+    >
+    Indicates whether to sort all fields. This property accepts <sky-code>boolean</sky-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="descending"
+      isOptional="true"
+      defaultValue="false"
+    >
+    Indicates whether to sort in descending order. This property accepts <sky-code>boolean</sky-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="text"
+      isOptional="true"
+    >
+    Specifies the text for the label. This property accepts <sky-code>string</sky-code> values.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-properties sectionHeading="ListSortModel properties">
+    <sky-demo-page-property
+      propertyName="available"
+      isOptional="true"
+    >
+    Specifies the list of available views to sort. This property accepts an array of <a stacheRouterLink="." fragment="listsortlabelmodel-properties"><sky-code>ListSortLabelModel</sky-code> objects.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="fieldSelectors"
+      isOptional="true"
+    >
+    Specifies the fields to sort. This property accepts an array of <a stacheRouterLink="." fragment="listsortfieldselectormodel-properties"><sky-code>ListSortFieldSelectorModel</sky-code> objects</a>.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="global"
+      isOptional="true"
+    >
+    Specifies whether the sort applies to all list views. This property accepts an array of <a stacheRouterLink="." fragment="listsortlabelmodel-properties"><sky-code>ListSortLabelModel</sky-code> objects</a>.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
