@@ -25,6 +25,7 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SkyDemoPageComponent implements OnInit {
+  @Input()
   public sidebarRoutes: StacheNavLink[];
 
   @Input()
