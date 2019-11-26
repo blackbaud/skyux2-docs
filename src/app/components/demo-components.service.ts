@@ -94,7 +94,7 @@ export class SkyDemoComponentsService {
         name: 'Card',
         icon: 'th-large',
         summary: `The card module creates a small container to highlight important information.`,
-        url: '/components/card',
+        url: 'https://developer.blackbaud.com/skyux-popovers/docs/popover',
         imports: {
           '@skyux/layout': [
             'SkyCardModule'
