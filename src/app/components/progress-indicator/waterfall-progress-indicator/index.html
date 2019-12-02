@@ -22,6 +22,7 @@
     
       <sky-demo-page-content sectionHeading="Usage">
         <h3 class="sky-text-success">Use when</h3>
+          
         <sky-docs-visual-example>
           <sky-docs-visual-example-text>
             <p>Use waterfall progress indicators for long (at least three steps) or complex setup processes that users typically complete only once. Waterfall indicators are ideal when events outside of the system force users to complete tasks in multiple sittings or when users must enter large amounts of data.</p>
@@ -51,7 +52,20 @@
         </sky-docs-visual-example>
     
         <h3 class="sky-text-danger">Don't use when</h3>
+          
         <sky-docs-visual-example>
+          <sky-docs-visual-example-text>
+            <p>Don’t use waterfall pages when users monitor a sequence of events, but are not responsible for completing the steps. Use <a routerLink="/components/progress-indicator/passive-progress-indicator">passive progress indicators</a> instead.</p>
+          </sky-docs-visual-example-text>
+          <sky-docs-visual-example-image>
+            <div class="sky-margin-stacked-separate">
+              <img src="~/assets/img/guidelines/progress-indicator/passive-progress-usage-6.png" />
+              <div class="caption caption-danger sky-text-danger">Don't use waterfall progress indicators for steps outside of a user's control.</div>
+            </div>
+          </sky-docs-visual-example-image>
+        </sky-docs-visual-example>
+          
+          <sky-docs-visual-example>
           <sky-docs-visual-example-text>
             <p>Don’t use waterfall progress indicators when users perform tasks repeatedly or when tasks are best presented as multiple steps but only require a single sitting. Use <a routerLink="/components/wizard">wizards</a> instead.</p>
           </sky-docs-visual-example-text>
