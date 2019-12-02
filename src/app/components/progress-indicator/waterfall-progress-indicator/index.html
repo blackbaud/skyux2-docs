@@ -1,10 +1,10 @@
 <sky-tabbed-demo-page
-  pageTitle="Waterfall Progress Indicator"
+  pageTitle="Waterfall Page"
 >
 
   <sky-demo-page-summary>
     <p>
-      The progress indicator module visually represents progress through sequential steps toward a goal. Waterfall progress indicators walk users through discrete steps on a page.
+      The waterfall page walks users through lengthy or complex tasks.
     </p>
   </sky-demo-page-summary>
 
@@ -24,8 +24,7 @@
         <h3 class="sky-text-success">Use when</h3>
         <sky-docs-visual-example>
           <sky-docs-visual-example-text>
-            <p>Use waterfall progress indicators for long or complex setup processes that users typically complete only once. Waterfall indicators are ideal when events outside of the system force users to complete tasks in multiple sittings or when users must enter large amounts of data.</p>
-            <p>Use waterfall progress indicators when processes include at least three steps and the number and order of steps do not change.</p>
+            <p>Use waterfall progress indicators for long (at least three steps) or complex setup processes that users typically complete only once. Waterfall indicators are ideal when events outside of the system force users to complete tasks in multiple sittings or when users must enter large amounts of data.</p>
           </sky-docs-visual-example-text>
           <sky-docs-visual-example-image>
             <div>
@@ -70,7 +69,7 @@
         
         <sky-docs-visual-example>
           <sky-docs-visual-example-text>
-            <p>Don’t use waterfall progress indicators when the number or order of steps may change. If early decisions branch in different directions, arrange the workflow so that users make those decisions before the progress indicator.</p>
+            <p>Don’t use waterfall progress indicators when the number of steps is less than three, or the number or order of steps may change. If early decisions branch in different directions, arrange the workflow so that users make those decisions before the progress indicator.</p>
           </sky-docs-visual-example-text>
           <sky-docs-visual-example-image>
             <div class="sky-margin-stacked-separate">
@@ -117,7 +116,7 @@
       <sky-demo-page-content sectionHeading="Options">
         <h3>Waterfall title</h3>
         <div class="sky-text-block">
-          <p>We recommend including a title to reflect the context of the overall task. The title does not change when users progress through the waterfall steps.</p>
+          <p>We strongly recommend including a waterfall title to reflect the context of the overall task. Do not use a left-aligned page title when you include a waterfall title. The waterfall title does not change when users progress through the waterfall steps.</p>
         </div>
         
         <h3>Step details</h3>
@@ -140,8 +139,9 @@
     
       <sky-demo-page-content sectionHeading="Content">
         <div class="sky-text-block">
-          <p>Step labels in waterfall progress indicators start with a number and concisely describe the objective. Use the <b>&lt;verb&gt; &lt;direct object&gt;</b> format. In the label for the last step, describe the cumulative change that occurs at the end of the process.</p>
-          <p>Step action labels closely follow step labels but do not need to be identical. For the first step action label, be generic and conversational (“Get started”), and for completed step actions, use verbs appropriate to post hoc actions (“Change,” “Edit”).</p>
+            <p>Use a waterfall title in place of an ordinary page title to provide context for the overall task. Begin the title with a verb to describe the action that the waterfall steps take when they are all completed, similar to the way modal titles are constructed.</p>
+            <p>Step labels in waterfall progress indicators start with a number and concisely describe the objective. Use the <b>&lt;verb&gt; &lt;direct object&gt;</b> format. In the label for the last step, describe the cumulative change that occurs at the end of the process.</p>
+            <p>Step action (button) labels closely follow step labels and use the same <b>&lt;verb&gt; &lt;direct object&gt;</b> format, but do not need to be identical. For the first step action label, be generic and conversational (“Get started”), and for completed step actions, use verbs appropriate to post hoc actions (“Change”, “Edit”).</p>
         </div>
       </sky-demo-page-content>
     
