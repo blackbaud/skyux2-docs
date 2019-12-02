@@ -1,11 +1,22 @@
 import {
   ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
   Input,
   OnInit
 } from '@angular/core';
 
-import { SkyDemoTitleService } from '../../shared/title.service';
+import {
+  StacheNavLink
+} from '@blackbaud/skyux-lib-stache';
+
+import {
+  SkyDemoSidebarService
+} from '../../shared/sidebar.service';
+
+import {
+  SkyDemoTitleService
+} from '../../shared/title.service';
 
 @Component({
   selector: 'sky-demo-page',
@@ -14,6 +25,9 @@ import { SkyDemoTitleService } from '../../shared/title.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SkyDemoPageComponent implements OnInit {
+  @Input()
+  public sidebarRoutes: StacheNavLink[];
+
   @Input()
   public pageTitle: string;
 
@@ -53,11 +67,22 @@ export class SkyDemoPageComponent implements OnInit {
   private _packageName: string;
 
   constructor(
+    private changeDetectorRef: ChangeDetectorRef,
+    private sidebarService: SkyDemoSidebarService,
     private titleService: SkyDemoTitleService
-  ) { }
+  ) {
+    this.sidebarRoutes = this.sidebarService.getDefaultSidebar();
+  }
 
   public ngOnInit() {
     this.updateTitle();
+
+    this.sidebarService
+      .getSidebar()
+      .subscribe((routes: StacheNavLink[]) => {
+        this.sidebarRoutes = routes;
+        this.changeDetectorRef.markForCheck();
+      });
   }
 
   private updateTitle() {

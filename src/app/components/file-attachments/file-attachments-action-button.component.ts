@@ -1,24 +1,35 @@
-import { Component } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component
+} from '@angular/core';
+
+import {
+  StacheNavLink
+} from '@blackbaud/skyux-lib-stache';
+
+import {
+  SkyDemoSidebarService
+} from '../../shared/sidebar.service';
 
 @Component({
   selector: 'sky-file-attachments-action-buttons',
-  templateUrl: './file-attachments-action-button.component.html'
+  templateUrl: 'file-attachments-action-button.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FileAttachmentsActionButtonsComponent {
-  public routes = [
-    {
-      name: 'File attachment',
-      path: '/components/file-attachments/file-attachment',
-      icon: 'files-o',
-      // tslint:disable-next-line
-      summary: 'The file attachment module creates an element to attach multiple local or external files.'
-    },
-    {
-      name: 'Single file attachment',
-      path: '/components/file-attachments/single-file-attachment',
-      icon: 'file-o',
-      // tslint:disable-next-line
-      summary: 'The single file attachment component creates an input to attach a single local file.'
-    }
-  ];
+  public sidebarRoutes: StacheNavLink[];
+
+  constructor(
+    private changeDetectorRef: ChangeDetectorRef,
+    private sidebarService: SkyDemoSidebarService
+  ) {
+    this.sidebarRoutes = this.sidebarService.getDefaultSidebar();
+    this.sidebarService
+      .getSidebar()
+      .subscribe((routes: StacheNavLink[]) => {
+        this.sidebarRoutes = routes;
+        this.changeDetectorRef.markForCheck();
+      });
+  }
 }
