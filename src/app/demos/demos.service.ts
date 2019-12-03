@@ -7,6 +7,7 @@ import {
   SkyCharacterCountDemoComponent,
   SkyCodeBlockDemoComponent,
   SkyCopyToClipboardDemoComponent,
+  SkyDataEntryGridDemoComponent,
   SkyDateRangePickerDemoComponent,
   SkyInlineFormDemoComponent,
   SkyPhoneFieldDemoComponent,
@@ -31,6 +32,39 @@ import {
 @Injectable()
 export class SkyDocsDemoCodeService {
   public components: any[] = [
+    {
+      name: 'Data entry grid',
+      component: SkyDataEntryGridDemoComponent,
+      files: [
+        {
+          name: 'data-entry-grid-demo.component.html',
+          fileContents: require('!!raw-loader!./data-entry-grid/data-entry-grid-demo.component.html')
+        },
+        {
+          name: 'data-entry-grid-demo.component.ts',
+          fileContents: require('!!raw-loader!./data-entry-grid/data-entry-grid-demo.component.ts'),
+          componentName: 'SkyAgGridDemoComponent',
+          bootstrapSelector: 'sky-data-entry-grid-demo'
+        },
+        {
+          name: 'data-entry-grid-demo-data.ts',
+          fileContents: require('!!raw-loader!./data-entry-grid/data-entry-grid-demo-data.ts')
+        },
+        {
+          name: 'data-entry-grid-edit-modal-context.ts',
+          fileContents: require('!!raw-loader!./data-entry-grid/data-entry-grid-edit-modal-context.ts')
+        },
+        {
+          name: 'data-entry-grid-edit-modal.component.html',
+          fileContents: require('!!raw-loader!./data-entry-grid/data-entry-grid-edit-modal.component.html')
+        },
+        {
+          name: 'data-entry-grid-edit-modal.component.ts',
+          fileContents: require('!!raw-loader!./data-entry-grid/data-entry-grid-edit-modal.component.ts'),
+          componentName: 'SkyAgGridEditModalComponent'
+        }
+      ]
+    },
     {
       name: 'Character count',
       component: SkyCharacterCountDemoComponent,
