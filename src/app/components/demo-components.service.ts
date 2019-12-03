@@ -211,6 +211,39 @@ export class SkyDemoComponentsService {
         ]
       },
       {
+        name: 'Data entry grid',
+        icon: 'table',
+        summary: 'Data entry grids provide a spreadsheet-like user interface for entering large amounts of data.',
+        url: '/components/data-entry-grid',
+        imports: {
+          '@skyux/ag-grid': [
+            'SkyAgGridModule'
+          ],
+          '@skyux/datetime': [
+            'SkyDatepickerModule'
+          ],
+          '@skyux/lookup': [
+            'SkyAutocompleteModule',
+            'SkySearchModule'
+          ],
+          '@skyux/modals': [
+            'SkyModalModule'
+          ],
+          'ag-grid-angular': [
+            'AgGridModule'
+          ],
+          '@skyux/layout': [
+            'SkyToolbarModule'
+          ]
+        },
+        dependencies: {
+          'ag-grid-angular': '*',
+          'ag-grid-community': '*'
+        },
+        getCodeFiles: () => this.getDemoFiles('Data entry grid'),
+        disableStackblitz: true
+      },
+      {
         name: 'Date range picker',
         icon: 'calendar',
         summary: `The date range picker component creates a text input for users to select a date range from a set of well-known options.`,
