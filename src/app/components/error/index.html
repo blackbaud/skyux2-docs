@@ -1,13 +1,196 @@
-<sky-demo-page
+<sky-tabbed-demo-page
   pageTitle="Error"
-  skyuxModule="SkyErrorModule"
-  packageName="@skyux/errors"
 >
 
-  <sky-demo-page-summary>
+  <sky-demo-page-summary class="sky-margin-stacked-content-section">
     The error component displays a SKY UX-themed error message. It includes options to specify an image, title, description, and action in the error message.
   </sky-demo-page-summary>
 
+  <sky-tabset id="content-tabs">
+    
+    <sky-tab tabHeading="Design">
+      
+    <sky-demo-page-content sectionHeading="Usage">
+        
+      <h3 class="sky-text-success">Use when</h3>
+        
+      <sky-docs-visual-example>
+        <sky-docs-visual-example-text>
+          <p>Use an error to communicate system status to users in circumstances when the system encounters an unexpected error.</p>
+        </sky-docs-visual-example-text>
+          <sky-docs-visual-example-image>
+            <div>
+              <img src="~/assets/img/guidelines/error/error-usage-1.png" />
+                <div class="caption caption-success sky-text-success"> Do use an error when a system error occurs.</div>
+            </div>
+          </sky-docs-visual-example-image>
+                
+        </sky-docs-visual-example>
+        
+        <h3 class="sky-text-danger">Don't use when</h3>
+        
+        <sky-docs-visual-example>
+            
+            <sky-docs-visual-example-text>
+              <p>Don’t use an error when there is an error with a background process. Information about background processes should use <a routerLink="/components/toast">toast</a> instead.</p>
+            </sky-docs-visual-example-text>
+            <sky-docs-visual-example-image>
+                <div class="sky-margin-stacked-content-section">
+                  <img src="~/assets/img/guidelines/error/error-usage-2.png" />
+                    <div class="caption caption-danger sky-text-danger">Don't use error for failed background processes.</div>
+                </div>
+                <div>
+                  <img src="~/assets/img/guidelines/error/error-usage-7.png" />
+                    <div class="caption caption-success sky-text-success">Do use a toast to inform the user about a process operating in the background.</div>
+                </div>
+            </sky-docs-visual-example-image>
+
+        </sky-docs-visual-example>
+        
+        <sky-docs-visual-example>
+        <sky-docs-visual-example-text>
+            <p>Don’t use an error when the status of specific content needs user attention, but the system has not necessarily broken. To notify the user of a broken status on a workflow or record, use an <a routerLink="/components/alert">alert</a> instead.</p>
+        </sky-docs-visual-example-text>
+          <sky-docs-visual-example-image>
+            <div class="sky-margin-stacked-content-section">
+              <img src="~/assets/img/guidelines/error/error-usage-3.png" />
+                <div class="caption caption-danger sky-text-danger">Don't use the error component to represent issuse with content that user would expect to address.</div>
+            </div>
+              <div>
+              <img src="~/assets/img/guidelines/error/error-usage-4.png" />
+                <div class="caption caption-success sky-text-success">Do use alert to call attention to issues that are intended to prompt user interaction.</div>
+            </div>
+          </sky-docs-visual-example-image>
+                
+        </sky-docs-visual-example>
+        
+        <sky-docs-visual-example>
+        <sky-docs-visual-example-text>
+          <p>Don’t use the security error type when a user doesn’t have permission to view a portion of the page such as a tile on a record page. Hide the tile from view instead.</p>
+        </sky-docs-visual-example-text>
+          <sky-docs-visual-example-image>
+            <div>
+              <img src="~/assets/img/guidelines/error/error-usage-5.png" />
+                <div class="caption caption-danger sky-text-danger">Don't use a security error in a portion of a page or modal. Hide the restricted content instead.</div>
+            </div>
+          </sky-docs-visual-example-image>
+                
+        </sky-docs-visual-example>
+        
+    </sky-demo-page-content>
+        
+    <sky-demo-page-content sectionHeading="Anatomy">
+        
+        <sky-docs-anatomy imagePath="~/assets/img/guidelines/error/error-anatomy.png">
+          <sky-docs-anatomy-item anatomyNumber="1">Title</sky-docs-anatomy-item>
+            <sky-docs-anatomy-item anatomyNumber="2" isOptional="true">Image</sky-docs-anatomy-item>
+            <sky-docs-anatomy-item anatomyNumber="3" isOptional="true">Description</sky-docs-anatomy-item>
+            <sky-docs-anatomy-item anatomyNumber="4" isOptional="true">Action</sky-docs-anatomy-item>
+          </sky-docs-anatomy>
+    
+    </sky-demo-page-content>
+        
+    <sky-demo-page-content sectionHeading="Options">
+        
+        <h3>Error type</h3>
+        
+        <sky-docs-visual-example>
+            <sky-docs-visual-example-text>
+              <p>Use the broken error type in situations where the underlying content doesn’t load or when there is an issue reaching the server, such as 500 errors.</p>
+            </sky-docs-visual-example-text>
+            <sky-docs-visual-example-image>
+                <div>
+                  <img src="~/assets/img/guidelines/error/error-option-broken.png" />
+                </div>
+            </sky-docs-visual-example-image>
+        </sky-docs-visual-example>
+        
+        <sky-docs-visual-example>
+            <sky-docs-visual-example-text>
+              <p>Use the construction error type when a page is under maintenance or is experiencing some sort of known outage.</p>
+            </sky-docs-visual-example-text>
+            <sky-docs-visual-example-image>
+                <div>
+                  <img src="~/assets/img/guidelines/error/error-option-construction.png" />
+                </div>
+            </sky-docs-visual-example-image>
+        </sky-docs-visual-example>
+        
+        <sky-docs-visual-example>
+            <sky-docs-visual-example-text>
+              <p>Use the not found error type when there is an error loading a page due to a 404 error.</p>
+            </sky-docs-visual-example-text>
+            <sky-docs-visual-example-image>
+                <div>
+                  <img src="~/assets/img/guidelines/error/error-option-notfound.png" />
+                </div>
+            </sky-docs-visual-example-image>
+        </sky-docs-visual-example>
+        
+        <sky-docs-visual-example>
+            <sky-docs-visual-example-text>
+              <p>Use the security error type when a user doesn’t have access to view content.</p>
+            </sky-docs-visual-example-text>
+            <sky-docs-visual-example-image>
+                <div>
+                  <img src="~/assets/img/guidelines/error/error-option-security.png" />
+                </div>
+            </sky-docs-visual-example-image>
+        </sky-docs-visual-example>
+        
+        <h3>Image and action</h3>
+        
+        <sky-docs-visual-example>
+            <sky-docs-visual-example-text>
+                <p>Include the optional image and action when the error component is the only content on the page. Tiles have limited space and may not be important to users' immediate tasks, so exclude the images and actions and only display error messages.</p>
+            </sky-docs-visual-example-text>
+            <sky-docs-visual-example-image>
+                <div>
+                  <img src="~/assets/img/guidelines/error/error-usage-6.png" />
+                    <div class="caption caption-success sky-text-success">Keep the error message more subtle when it affects only a portion of the content on a page.</div>
+                </div>
+            </sky-docs-visual-example-image>
+        </sky-docs-visual-example>
+        
+    </sky-demo-page-content>
+        
+    <sky-demo-page-content sectionHeading="Content">
+        
+        <h3>Style and tone</h3>
+        
+            <div class="sky-text-block">
+                <p>Make error and warning messages brief and as accurate as possible to help the user address the problem, and use a conversational approach. When possible, offer a solution along with an explanation of why the error or warning is occurring. Use the error component to provide a consistent user experience with error messages.</p>
+                <p>Errors can frustrate users and sometimes indicate serious problems, so be thoughtful and helpful with the wording. Limit the use of "please" and "sorry," be careful about how you use "can't" and "don't" (avoid "you can't" and "you don't"), and avoid humor.</p>
+            </div>
+        
+    </sky-demo-page-content>
+    
+    <sky-demo-page-content sectionHeading="Layout">
+        
+        <div class="sky-text-block">
+            <p>The error component, including all of its title and description text, is always centered within its container.</p>
+        </div>
+        
+    </sky-demo-page-content>
+        
+    <sky-demo-page-content sectionHeading="Related information">
+        
+        <h3>Components</h3>
+          <ul>
+            <li><a routerLink="/components/alert">Alert</a></li>
+            <li><a routerLink="/components/Toast">Toast</a></li>
+          </ul>
+        <h3>Guidelines</h3>
+          <ul>
+            <li><a routerLink="/design/guidelines/error-handling">Error handling</a></li>
+          </ul>
+        
+    </sky-demo-page-content>    
+    
+    </sky-tab>
+    
+    <sky-tab tabHeading="Development">
+    
   <sky-demo-page-properties sectionHeading="Error properties">
     <sky-demo-page-property
       propertyName="errorType"
@@ -99,4 +282,7 @@
       demoName="Error">
     </sky-demo-page-code>
   </sky-demo-page-example>
-</sky-demo-page>
+      
+    </sky-tab>  
+    </sky-tabset>
+</sky-tabbed-demo-page>
