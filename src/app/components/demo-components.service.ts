@@ -94,7 +94,7 @@ export class SkyDemoComponentsService {
         name: 'Card',
         icon: 'th-large',
         summary: `The card module creates a small container to highlight important information.`,
-        url: '/components/card',
+        url: 'https://developer.blackbaud.com/skyux-popovers/docs/popover',
         imports: {
           '@skyux/layout': [
             'SkyCardModule'
@@ -209,6 +209,39 @@ export class SkyDemoComponentsService {
           ...this.getDemoFiles('Datepicker'),
           ...this.getDemoFiles('Fuzzy datepicker')
         ]
+      },
+      {
+        name: 'Data entry grid',
+        icon: 'table',
+        summary: 'Data entry grids provide a spreadsheet-like user interface for entering large amounts of data.',
+        url: '/components/data-entry-grid',
+        imports: {
+          '@skyux/ag-grid': [
+            'SkyAgGridModule'
+          ],
+          '@skyux/datetime': [
+            'SkyDatepickerModule'
+          ],
+          '@skyux/lookup': [
+            'SkyAutocompleteModule',
+            'SkySearchModule'
+          ],
+          '@skyux/modals': [
+            'SkyModalModule'
+          ],
+          'ag-grid-angular': [
+            'AgGridModule'
+          ],
+          '@skyux/layout': [
+            'SkyToolbarModule'
+          ]
+        },
+        dependencies: {
+          'ag-grid-angular': '*',
+          'ag-grid-community': '*'
+        },
+        getCodeFiles: () => this.getDemoFiles('Data entry grid'),
+        disableStackblitz: true
       },
       {
         name: 'Date range picker',
