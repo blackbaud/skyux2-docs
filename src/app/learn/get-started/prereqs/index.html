@@ -80,12 +80,35 @@
     Additional steps for Firefox
   </h3>
 
+  <p>Choose one of the following techniques.</p>
+
+  <h4>Option 1</h4>
+
+  <p>Enable Firefox to allow Firefox to automatically trust certificates stored in the OS-level store.  <a href="https://support.mozilla.org/en-US/kb/setting-certificate-authorities-firefox">Learn more</a>.</p>
+
   <ol>
     <li>
       <p>
-        Run <sky-code>skyux serve</sky-code> to serve your SKY UX SPA.
+        Enter “about:config” in the address bar and continue to the list of preferences.
       </p>
     </li>
+    <li>
+      <p>
+        Set the preference <sky-code>security.enterprise_roots.enabled</sky-code> to <sky-code>true</sky-code>.
+      </p>
+    </li>
+    <li>
+      <p>
+        Restart Firefox.
+      </p>
+    </li>
+  </ol>
+
+  <h4>Option 2</h4>
+
+  <p>Manually trust the SKY UX CA.</p>
+
+  <ol>
     <li>
       <p>
         Enter "about:preferences#privacy" in the Firefox address bar.
@@ -98,20 +121,27 @@
     </li>
     <li>
       <p>
-        Under <strong>Servers</strong> on the Certificate Manager, select <strong>Add Exception</strong>.
+        Under <strong>Authorities</strong> tab on the Certificate Manager, select <strong>Import</strong>.
       </p>
     </li>
     <li>
       <p>
-        Specify the location to use the certificate. The default location is https://localhost:8000, but you can configure a different port in <a routerLink="/learn/reference/configuration/additional-config-files">the <sky-code>skyuxconfig.json</sky-code> file</a> or set up command-specific ports <a routerLink="/learn/reference/configuration/additional-config-files">in additional configuration files</a>.
+        Open the <sky-code>.skyux/certs/skyux-ca.crt</sky-code> in your home directory.
       </p>
-      <sky-alert alertType="warning">
-        To serve multiple SPAs, you must also specify the next available port. When you serve multiple SPAs, SKY UX uses the next available port after the first port is in use.  
-      </sky-alert>
     </li>
     <li>
       <p>
-        Select <strong>Get Certificate</strong>, and then select <strong>Confirm Security Exception</strong>.
+        On the options dialog, select <strong>Trust this CA to identify websites</strong> and then select <strong>OK</strong>.
+      </p>
+    </li>
+    <li>
+      <p>
+        On the Certificate Manager, select <strong>OK</strong>.
+      </p>
+    </li>
+    <li>
+      <p>
+        Restart Firefox.
       </p>
     </li>
   </ol>
@@ -128,7 +158,7 @@
     </li>
     <li>
       <p>
-        Drag and drop the SKY UX certificate to your simulator.
+        Drag and drop the <sky-code>skyux-ca.crt</sky-code> to your simulator.
       </p>
     </li>
     <li>
@@ -138,7 +168,7 @@
     </li>
     <li>
       <p>
-        Open the <strong>Settings</strong> app and navigate to <strong>General</strong> > <strong>Profile</strong> > <strong>SKY UX</strong>.
+        Open the <strong>Settings</strong> app and navigate to <strong>General</strong> > <strong>Profiles</strong> > <strong>SKYUX-Developer-CA</strong>.
       </p>
     </li>
     <li>
