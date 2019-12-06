@@ -82,31 +82,12 @@
 
   <p>Choose one of the following techniques.</p>
 
-  <h4>Option 1</h4>
+  <h4>Option 1: Enable Firefox to automatically trust certificatesin the OS-level store</h4>
+  <p>
+    Follow Firefox's instructions to <a href="https://support.mozilla.org/en-US/kb/setting-certificate-authorities-firefox">set up certificate authorities</a>.
+  </p>
 
-  <p>Enable Firefox to allow Firefox to automatically trust certificates stored in the OS-level store.  <a href="https://support.mozilla.org/en-US/kb/setting-certificate-authorities-firefox">Learn more</a>.</p>
-
-  <ol>
-    <li>
-      <p>
-        Enter “about:config” in the address bar and continue to the list of preferences.
-      </p>
-    </li>
-    <li>
-      <p>
-        Set the preference <sky-code>security.enterprise_roots.enabled</sky-code> to <sky-code>true</sky-code>.
-      </p>
-    </li>
-    <li>
-      <p>
-        Restart Firefox.
-      </p>
-    </li>
-  </ol>
-
-  <h4>Option 2</h4>
-
-  <p>Manually trust the SKY UX CA.</p>
+  <h4>Option 2: Manually trust the SKY UX CA</h4>
 
   <ol>
     <li>
@@ -121,7 +102,7 @@
     </li>
     <li>
       <p>
-        Under <strong>Authorities</strong> tab on the Certificate Manager, select <strong>Import</strong>.
+        On the Authorities tab of the Certificate Manager, select <strong>Import</strong>.
       </p>
     </li>
     <li>
