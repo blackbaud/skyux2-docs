@@ -68,6 +68,12 @@
     Populates the tile dashboard based on <a stacheRouterLink="." fragment="skytiledashboardconfig-properties">the <sky-code>SkyTileDashboardConfig</sky-code> object</a>.
     </sky-demo-page-property>
     <sky-demo-page-property
+      propertyName="messageStream"
+      isOptional="true"
+    >
+      Provides an observable to send commands to the tile dashboard. The commands should respect <a stacheRouterLink="." fragment="skytiledashboardmessage-type">the <sky-code>SkyTileDashboardMessage</sky-code> type</a>.
+    </sky-demo-page-property>
+    <sky-demo-page-property
       propertyName="settingsKey"
       isOptional="true"
     >
@@ -164,6 +170,23 @@
       isOptional="true"
     >
       Sets the collapsed state of a specified tile. The <sky-code>tile</sky-code> parameter specifies the tile, and the <sky-code>isCollapsed</sky-code> parameter indicates whether it is collapsed.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-properties sectionHeading="SkyTileDashboardMessage type">
+    <sky-demo-page-property
+      propertyName="type"
+      isOptional="true"
+    >
+      Sets <sky-code>SkyTileDashboardMessage</sky-code> to one of the following types:
+      <ul>
+        <li>
+          <sky-code>SkyTileDashboardType.ExpandAll</sky-code> &mdash; Expands all tiles in the tile dashboard.
+        </li>
+        <li>
+          <sky-code>SkyTileDashboardType.CollapseAll</sky-code> &mdash; Collapses all tiles in the tile dashboard.
+        </li>
+      </ul>
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
