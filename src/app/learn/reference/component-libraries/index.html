@@ -177,4 +177,24 @@ export class AppExtrasModule { }
     }
   </sky-code-block>
 
+  <stache-page-anchor>
+    Test modules
+  </stache-page-anchor>
+
+  <p>
+    You can generate a separate module for testing by adding a test directory. The test module uses a separate test file to prevent cluttering the production module during webpack builds.
+  </p>
+
+  <sky-code-block>
+    src/
+      app/
+        public/
+          testing/
+            index.ts
+  </sky-code-block>
+
+  <p>
+    The contents of the <sky-code>index.ts</sky-code> file export as a test module to NPM.
+  </p>
+
 </stache>
