@@ -182,19 +182,11 @@ export class AppExtrasModule { }
   </stache-page-anchor>
 
   <p>
-    You can generate a separate module for testing by adding a test directory. The test module uses a separate test file to prevent cluttering the production module during webpack builds.
+    Libraries can generate isolated test modules for consuming SPAs to use in unit tests. The testing module avoids cluttering the production module during Webpack builds.
   </p>
 
-  <sky-code-block>
-    src/
-      app/
-        public/
-          testing/
-            index.ts
-  </sky-code-block>
-
   <p>
-    The contents of the <sky-code>index.ts</sky-code> file export as a test module to NPM.
+    To create a testing module, add a <sky-code>testing</sky-code> directory to <sky-code>src/app/public</sky-code> and then add an <sky-code>index.ts</sky-code> file. The library exports the contents of the index.ts file to NPM as a testing module
   </p>
 
 </stache>
