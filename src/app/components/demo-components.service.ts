@@ -888,7 +888,7 @@ export class SkyDemoComponentsService {
         name: 'Progress indicator',
         icon: 'tasks',
         // tslint:disable-next-line
-        summary: 'The progress indicator component visually represents progress through a series of sequential steps toward a final goal.',
+        summary: 'The progress indicator module visually represents progress through sequential steps toward a goal.',
         url: '/components/progress-indicator',
         imports: {
           '@skyux/progress-indicator': [
