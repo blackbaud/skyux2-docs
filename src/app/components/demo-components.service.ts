@@ -901,7 +901,27 @@ export class SkyDemoComponentsService {
             'SkyPopoverModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('Progress Indicator')
+        getCodeFiles: () => this.getDemoFiles('Progress indicator — passive'),
+        components: [
+          {
+            name: 'Progress indicator — waterfall',
+            icon: 'tasks',
+            summary: `The waterfall indicator walks users through discrete steps on a page.`,
+            url: '/components/file-attachments/single-file-attachment',
+            imports: {
+              '@skyux/progress-indicator': [
+                'SkyProgressIndicatorModule'
+              ],
+              '@skyux/modals': [
+                'SkyModalModule'
+              ],
+              '@skyux/popovers': [
+                'SkyPopoverModule'
+              ]
+            },
+            getCodeFiles: () => this.getDemoFiles('Progress indicator — waterfall')
+          }
+        ]
       },
       {
         name: 'Radio button',
