@@ -901,13 +901,13 @@ export class SkyDemoComponentsService {
             'SkyPopoverModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('Progress indicator — passive'),
+        getCodeFiles: () => this.getDemoFiles('Progress indicator'),
         components: [
           {
             name: 'Progress indicator — waterfall',
             icon: 'tasks',
             summary: `The waterfall indicator walks users through discrete steps on a page.`,
-            url: '/components/file-attachments/single-file-attachment',
+            url: '/components/progress-indicator/waterfall-progress-indicator',
             imports: {
               '@skyux/progress-indicator': [
                 'SkyProgressIndicatorModule'
@@ -920,6 +920,24 @@ export class SkyDemoComponentsService {
               ]
             },
             getCodeFiles: () => this.getDemoFiles('Progress indicator — waterfall')
+          },
+          {
+            name: 'Progress indicator — passive',
+            icon: 'tasks',
+            summary: `The passive indicator represents steps outside of user control.`,
+            url: '/components/progress-indicator/passive-progress-indicator',
+            imports: {
+              '@skyux/progress-indicator': [
+                'SkyProgressIndicatorModule'
+              ],
+              '@skyux/modals': [
+                'SkyModalModule'
+              ],
+              '@skyux/popovers': [
+                'SkyPopoverModule'
+              ]
+            },
+            getCodeFiles: () => this.getDemoFiles('Progress indicator — passive')
           }
         ]
       },
