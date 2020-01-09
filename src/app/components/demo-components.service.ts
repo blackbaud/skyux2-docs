@@ -888,7 +888,7 @@ export class SkyDemoComponentsService {
         name: 'Progress indicator',
         icon: 'tasks',
         // tslint:disable-next-line
-        summary: 'The progress indicator component visually represents progress through a series of sequential steps toward a final goal.',
+        summary: 'The progress indicator module visually represents progress through sequential steps toward a goal.',
         url: '/components/progress-indicator',
         imports: {
           '@skyux/progress-indicator': [
@@ -901,7 +901,45 @@ export class SkyDemoComponentsService {
             'SkyPopoverModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('Progress Indicator')
+        getCodeFiles: () => this.getDemoFiles('Progress indicator'),
+        components: [
+          {
+            name: 'Progress indicator — waterfall',
+            icon: 'tasks',
+            summary: `The waterfall indicator walks users through discrete steps on a page.`,
+            url: '/components/progress-indicator/waterfall-progress-indicator',
+            imports: {
+              '@skyux/progress-indicator': [
+                'SkyProgressIndicatorModule'
+              ],
+              '@skyux/modals': [
+                'SkyModalModule'
+              ],
+              '@skyux/popovers': [
+                'SkyPopoverModule'
+              ]
+            },
+            getCodeFiles: () => this.getDemoFiles('Progress indicator — waterfall')
+          },
+          {
+            name: 'Progress indicator — passive',
+            icon: 'tasks',
+            summary: `The passive indicator represents steps outside of user control.`,
+            url: '/components/progress-indicator/passive-progress-indicator',
+            imports: {
+              '@skyux/progress-indicator': [
+                'SkyProgressIndicatorModule'
+              ],
+              '@skyux/modals': [
+                'SkyModalModule'
+              ],
+              '@skyux/popovers': [
+                'SkyPopoverModule'
+              ]
+            },
+            getCodeFiles: () => this.getDemoFiles('Progress indicator — passive')
+          }
+        ]
       },
       {
         name: 'Radio button',

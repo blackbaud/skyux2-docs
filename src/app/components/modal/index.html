@@ -8,9 +8,12 @@
     <p>
       The modal component and service allow you to launch modals in a consistent way in SKY UX applications. The <sky-code>SkyModalService</sky-code> provider lauches modals, and the <sky-code>sky-modal</sky-code> component provides a common look-and-feel for modal content. Within the <sky-code>sky-modal</sky-code> component, you have options to display a common modal header, specify body content, and display a common modal footer and buttons. The <sky-code>SkyModalInstance</sky-code> class allows you to close the modal and return data from the launched modal. For information about how to test modals in SKY UX, see <a routerLink="/learn/get-started/advanced/unit-test-modals">write unit tests for modals</a>.
     </p>
-    <sky-alert alertType="info">
-      Keep in mind that modals are not child components. Any component in a SPA can use <sky-code>SkyModalService</sky-code> to launch a modal, but the modal is launched independently through the service.
+    <sky-alert alertType="warning">
+      <stache-include fileName="components/entry-component.html"></stache-include>
     </sky-alert>
+    <p>
+      Keep in mind that modals are not child components. Any component in a SPA can use <sky-code>SkyModalService</sky-code> to launch a modal, but the modal is launched independently through the service.
+    </p>
   </sky-demo-page-summary>
 
   <sky-demo-page-properties sectionHeading="Modal service methods">
@@ -165,11 +168,11 @@
 				<li>Displaying the form inline would lead to substantial content shifting or require users to scroll to complete the form.</li>
 				<li>The form adds records from a paginated list or an infinite scroll list.</li>
 			</ul>
-			<div class="sky-subsection-heading">Full-page modal</div>
-			<p>A full-page modal is appropriate for forms that meet the following criteria:</p>
+			<div class="sky-subsection-heading">Full-screen modal</div>
+			<p>A full-screen modal is appropriate for forms that meet the following criteria:</p>
 			<ul>
 				<li>The task is functionally modal, and users must finish it before doing anything else.</li>
-				<li>Users usually perform the task in a large viewport, and a full-page modal can optimize the use of space.</li>
+				<li>Users usually perform the task in a large viewport, and a full-screen modal can optimize the use of space.</li>
 				<li>The context of the task is self-contained.</li>
 				<li>The form displays feedback based on users entering data or making choices. For example, the form may display running totals or preview emails as they are constructed.</li>
 				<li>The form supports a complex task for a list of objects such as filling out report cards for a class.</li>

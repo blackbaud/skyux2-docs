@@ -16,6 +16,7 @@ cache:
 
 before_install:
   - npm install -g @skyux-sdk/cli
+  - skyux certs install
 
 # Identical to package.json except for travis wait
 script:
