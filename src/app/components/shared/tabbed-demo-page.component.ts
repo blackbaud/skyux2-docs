@@ -1,6 +1,7 @@
 import {
   AfterContentInit,
   ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
   ContentChildren,
   Input,
@@ -8,10 +9,29 @@ import {
   QueryList
 } from '@angular/core';
 
-import { SkyDemoTitleService } from '../../shared/title.service';
-import { SkyDemoPagePropertiesComponent } from './demo-page-properties.component';
-import { SkyDemoPageExampleComponent } from './demo-page-example.component';
-import { SkyDemoPageContentComponent } from './demo-page-content.component';
+import {
+  StacheNavLink
+} from '@blackbaud/skyux-lib-stache';
+
+import {
+  SkyDemoSidebarService
+} from '../../shared/sidebar.service';
+
+import {
+  SkyDemoTitleService
+} from '../../shared/title.service';
+
+import {
+  SkyDemoPagePropertiesComponent
+} from './demo-page-properties.component';
+
+import {
+  SkyDemoPageExampleComponent
+} from './demo-page-example.component';
+
+import {
+  SkyDemoPageContentComponent
+} from './demo-page-content.component';
 
 @Component({
   selector: 'sky-tabbed-demo-page',
@@ -20,6 +40,8 @@ import { SkyDemoPageContentComponent } from './demo-page-content.component';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SkyTabbedDemoPageComponent implements OnInit, AfterContentInit {
+  public sidebarRoutes: StacheNavLink[];
+
   @Input()
   public pageTitle: string;
 
@@ -38,11 +60,21 @@ export class SkyTabbedDemoPageComponent implements OnInit, AfterContentInit {
   private contentComponents: QueryList<SkyDemoPageContentComponent>;
 
   constructor(
+    private changeDetectorRef: ChangeDetectorRef,
+    private sidebarService: SkyDemoSidebarService,
     private titleService: SkyDemoTitleService
-  ) { }
+  ) {
+    this.sidebarRoutes = this.sidebarService.getDefaultSidebar();
+  }
 
   public ngOnInit() {
     this.updateTitle();
+    this.sidebarService
+      .getSidebar()
+      .subscribe((routes: StacheNavLink[]) => {
+        this.sidebarRoutes = routes;
+        this.changeDetectorRef.markForCheck();
+      });
   }
 
   public ngAfterContentInit(): void {
