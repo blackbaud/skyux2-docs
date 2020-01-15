@@ -69,12 +69,12 @@
         
         <sky-docs-visual-example>
         <sky-docs-visual-example-text>
-            <p>Don’t use error messages when the status of specific content requires user attention, but there is no system error. To notify users of a broken status on a workflow or record, use <a routerLink="/components/alert">alerts</a> instead.</p>
+            <p>Don’t use error messages when statuses on specific content require user attention but when no system errors occurred. To notify users of broken statuses on workflows or records, use <a routerLink="/components/alert">alerts</a> instead.</p>
         </sky-docs-visual-example-text>
           <sky-docs-visual-example-image>
             <div class="sky-margin-stacked-content-section">
               <img src="~/assets/img/guidelines/error/error-usage-3.png" />
-                <div class="caption caption-danger sky-text-danger">Don't use error messages to highlight content that users must address when no error occurred.</div>
+                <div class="caption caption-danger sky-text-danger">Don't use error messages to highlight content that users must address when no errors occurred.</div>
             </div>
               <div>
               <img src="~/assets/img/guidelines/error/error-usage-4.png" />
@@ -86,12 +86,12 @@
         
         <sky-docs-visual-example>
         <sky-docs-visual-example-text>
-          <p>Don’t use security error messages when users lack permission to view portions of a page or modal such as a tile on a record page. Hide the content from view instead.</p>
+          <p>Don’t use security error messages when users lack permission to view portions of pages or modals such as tiles on record pages. Hide the content from view instead.</p>
         </sky-docs-visual-example-text>
           <sky-docs-visual-example-image>
             <div>
               <img src="~/assets/img/guidelines/error/error-usage-5.png" />
-                <div class="caption caption-danger sky-text-danger">Don't use security error messages in portions of a page or modal. Hide the restricted content instead.</div>
+                <div class="caption caption-danger sky-text-danger">Don't use security error messages in portions of pages or modals. Hide the restricted content instead.</div>
             </div>
           </sky-docs-visual-example-image>
                 
@@ -116,7 +116,7 @@
         
         <sky-docs-visual-example>
             <sky-docs-visual-example-text>
-              <p>Use the broken error type in situations when the underlying content doesn’t load or when an issue such as a 500 error reaches the server.</p>
+              <p>Use the broken error type in situations when underlying content doesn’t load or when issues such as 500 errors reach the server.</p>
             </sky-docs-visual-example-text>
             <sky-docs-visual-example-image>
                 <div>
@@ -127,7 +127,7 @@
         
         <sky-docs-visual-example>
             <sky-docs-visual-example-text>
-              <p>Use the under construction error type when a page is under maintenance or experiences a known outage.</p>
+              <p>Use the under construction error type when pages are under maintenance or experience known outages.</p>
             </sky-docs-visual-example-text>
             <sky-docs-visual-example-image>
                 <div>
@@ -138,7 +138,7 @@
         
         <sky-docs-visual-example>
             <sky-docs-visual-example-text>
-              <p>Use the not found error type when a page fails to load because of a 404 error.</p>
+              <p>Use the not found error type when pages fail to load because of 404 errors.</p>
             </sky-docs-visual-example-text>
             <sky-docs-visual-example-image>
                 <div>
@@ -149,7 +149,7 @@
         
         <sky-docs-visual-example>
             <sky-docs-visual-example-text>
-              <p>Use the security error type when a user doesn’t have access to view content.</p>
+              <p>Use the security error type when users don’t have access to view content.</p>
             </sky-docs-visual-example-text>
             <sky-docs-visual-example-image>
                 <div>
@@ -162,14 +162,14 @@
         
         <sky-docs-visual-example>
             <sky-docs-visual-example-text>
-                <p>Include the optional image when an error message is the only content on the page. Tiles have limited space and may not be important to users' immediate tasks, so exclude the image and only display the title and description.</p>
+                <p>Include images when error messages are the only content on pages. Tiles have limited space and may not be important to users' immediate tasks, so exclude images in tiles and only display the title and description.</p>
                 <h3>Action</h3>
-                <p>As with the image, include actions when an error message is the only content on the page. When it is not, the description should provide a suggestion to help correct the error, but do not use an attention-drawing action when users may be able to complete their tasks without addressing the error.</p>
+                <p>Include actions when error messages are the only content on pages. When users can complete other tasks without addressing errors, provide suggestions to correct errors in the description, but exclude attention-drawing actions.</p>
             </sky-docs-visual-example-text>
             <sky-docs-visual-example-image>
                 <div>
                   <img src="~/assets/img/guidelines/error/error-usage-6.png" />
-                    <div class="caption caption-success sky-text-success">Exclude images and actions when error messages only affect portions of the content on a page.</div>
+                    <div class="caption caption-success sky-text-success">Exclude images and actions when error messages only affect portions of the content on pages and users can still complete other tasks.</div>
                 </div>
             </sky-docs-visual-example-image>
         </sky-docs-visual-example>
@@ -177,7 +177,7 @@
         <h3>Description</h3>
         
         <div class="sky-text-block">
-            <p>Use the error description to recommend a course of action to users.</p>
+            <p>Use descriptions to recommend courses of action for users to resolve errors.</p>
         </div>
         
     </sky-demo-page-content>
@@ -187,8 +187,8 @@
         <h3>Style and tone</h3>
         
             <div class="sky-text-block">
-                <p>Make error messages brief and use a conversational tone. Explain why the error occurred, and when possible, offer a solution to help users address the problem.</p>
-                <p>Errors frustrate users and indicate serious problems, so error messages must be thoughtful and helpful. Avoid humor, limit the use of "please" and "sorry", and avoid negative constructions such as "you can't" and "you don't."</p>
+                <p>Make error messages brief, and use a conversational tone. Explain why the errors occurred, and when possible, offer solutions to help users address the problems.</p>
+                <p>Errors frustrate users and indicate serious problems, so error messages must be thoughtful and helpful. Avoid humor, limit the use of "please" and "sorry," and avoid negative constructions such as "you can't" and "you don't."</p>
             </div>
         
     </sky-demo-page-content>
@@ -196,7 +196,7 @@
     <sky-demo-page-content sectionHeading="Layout">
         
         <div class="sky-text-block">
-            <p>The error component, including all of its title and description text, is always centered within its container.</p>
+            <p>The error component, including its title and description text, is always centered within its container.</p>
         </div>
         
     </sky-demo-page-content>
@@ -206,7 +206,7 @@
         <h3>Components</h3>
           <ul>
             <li><a routerLink="/components/alert">Alert</a></li>
-            <li><a routerLink="/components/Toast">Toast</a></li>
+            <li><a routerLink="/components/toast">Toast</a></li>
           </ul>
         <h3>Guidelines</h3>
           <ul>
