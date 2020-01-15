@@ -7,17 +7,17 @@
       The tabs module renders tabs that divide large subsets of content on a page. It includes options to display buttons in the tab area and to make tabs closeable.
     </p>
   </sky-demo-page-summary>
-	
+
 	<div class="sky-margin-stacked-content-section">
 	<sky-demo-page-example>
     <sky-tabs-demo></sky-tabs-demo>
   </sky-demo-page-example>
 	</div>
-		
+
 	<sky-tabset id="content-tabs">
-	
+
 	<sky-tab
-		tabHeading="Design">	
+		tabHeading="Design">
 	<sky-demo-page-content sectionHeading="Usage">
 	<h3 class="sky-text-success">Use when</h3>
 		<sky-docs-visual-example>
@@ -35,14 +35,14 @@
 			<sky-docs-visual-example-text>
 				<p>Use tabs when users need to complete different tasks on a page, and each task includes a significant amount of data.</p>
 			</sky-docs-visual-example-text>
-			<sky-docs-visual-example-image>				
+			<sky-docs-visual-example-image>
 				<div>
 					<img class="bordered" src="~/assets/img/guidelines/tab/use-tasks.png" />
 					<div class="caption caption-success sky-text-success">Do use tabs to group content for different tasks.</div>
 				</div>
 			</sky-docs-visual-example-image>
 		</sky-docs-visual-example>
-		
+
 	<h3 class="sky-text-danger">Don't use when</h3>
 		<sky-docs-visual-example>
 			<sky-docs-visual-example-text>
@@ -59,7 +59,7 @@
         </div>
 			</sky-docs-visual-example-image>
 		</sky-docs-visual-example>
-    
+
     <sky-docs-visual-example>
 			<sky-docs-visual-example-text>
 					<p>The tabs are likely to overflow the available horizontal space. This leads to a collapsed tab dropdown and a large amount of unused space in the tab bar. Use <a routerLink="/components/vertical-tabs">vertical tabs</a> instead.</p>
@@ -71,20 +71,20 @@
 				</div>
 			</sky-docs-visual-example-image>
 		</sky-docs-visual-example>
-		
+
 	</sky-demo-page-content>
-	
+
 	<sky-demo-page-content sectionHeading="Anatomy">
 		<sky-docs-anatomy imagePath="~/assets/img/guidelines/tab/anatomy.png">
-      <sky-docs-anatomy-item anatomyNumber="1">Selected tab</sky-docs-anatomy-item>
-      <sky-docs-anatomy-item anatomyNumber="2">Unselected tab</sky-docs-anatomy-item>
-      <sky-docs-anatomy-item anatomyNumber="3">Tab border</sky-docs-anatomy-item>
-      <sky-docs-anatomy-item isOptional="true" anatomyNumber="4">Tab count</sky-docs-anatomy-item>
-      <sky-docs-anatomy-item isOptional="true" anatomyNumber="5">Close tab button</sky-docs-anatomy-item>
-      <sky-docs-anatomy-item isOptional="true" anatomyNumber="6">Add tab button</sky-docs-anatomy-item>
+      <sky-docs-anatomy-item>Selected tab</sky-docs-anatomy-item>
+      <sky-docs-anatomy-item>Unselected tab</sky-docs-anatomy-item>
+      <sky-docs-anatomy-item>Tab border</sky-docs-anatomy-item>
+      <sky-docs-anatomy-item isOptional="true">Tab count</sky-docs-anatomy-item>
+      <sky-docs-anatomy-item isOptional="true">Close tab button</sky-docs-anatomy-item>
+      <sky-docs-anatomy-item isOptional="true">Add tab button</sky-docs-anatomy-item>
     </sky-docs-anatomy>
 	</sky-demo-page-content>
-	
+
 	<sky-demo-page-content sectionHeading="Options">
 		<h3>Count</h3>
 			<sky-docs-visual-example>
@@ -106,7 +106,7 @@
 				</sky-docs-visual-example-image>
 		</sky-docs-visual-example>
 	</sky-demo-page-content>
-	
+
 	<sky-demo-page-content sectionHeading="Behavior & states">
 		<h3>Overflowing tabs</h3>
 			<sky-docs-visual-example>
@@ -125,9 +125,9 @@
       <sky-demo-page-component-state stateName="Collapsed, closed" imagePath="~/assets/img/guidelines/tab/state-collapsed-closed.png"></sky-demo-page-component-state>
       <sky-demo-page-component-state stateName="Collapsed, open" imagePath="~/assets/img/guidelines/tab/state-collapsed-open.png"></sky-demo-page-component-state>
     </sky-demo-page-component-states>
-			
+
 	</sky-demo-page-content>
-	
+
 	<sky-demo-page-content sectionHeading="Content">
 		<h3>Page titles</h3>
 			<p>
@@ -143,7 +143,7 @@
 				For information about how to use <a href="https://angular.io/docs/ts/latest/cookbook/set-document-title.html">the Angular <sky-code>Title</sky-code> service</a> and the SKY UX <sky-code>title</sky-code> configuration property to specify the title, see <a stacheRouterLink="learn/reference/configuration" fragment="app">the configuration reference</a>.
 			</p>
 	</sky-demo-page-content>
-		
+
 	<sky-demo-page-content sectionHeading="Layout">
 		<sky-docs-visual-example>
 			<sky-docs-visual-example-text>
@@ -183,7 +183,7 @@
 			</sky-docs-visual-example-image>
 		</sky-docs-visual-example>
 	</sky-demo-page-content>
-	
+
 	<sky-demo-page-content sectionHeading="Related information">
 		<h3>Components</h3>
 			<ul>
@@ -195,18 +195,18 @@
 				<li><a routerLink="/design/guidelines/page-layouts">Page design</a></li>
 			</ul>
 	</sky-demo-page-content>
-		
+
 	</sky-tab>
-	
+
 	<sky-tab
 		tabHeading="Development">
-		
+
 	<sky-demo-page-module-info
 		skyuxModule="SkyTabsModule"
 		packageName="@skyux/tabs"
     githubRepo="skyux-tabs"
 	>
-	</sky-demo-page-module-info>	
+	</sky-demo-page-module-info>
 
   <sky-demo-page-properties sectionHeading="Tabs module components">
     <sky-demo-page-property
@@ -318,8 +318,8 @@
       demoName="Tabs">
     </sky-demo-page-code>
   </sky-demo-page-example>
-  
+
 	</sky-tab>
-		
+
 	</sky-tabset>
 </sky-tabbed-demo-page>

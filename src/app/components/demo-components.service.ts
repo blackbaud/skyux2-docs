@@ -94,7 +94,7 @@ export class SkyDemoComponentsService {
         name: 'Card',
         icon: 'th-large',
         summary: `The card module creates a small container to highlight important information.`,
-        url: '/components/card',
+        url: 'https://developer.blackbaud.com/skyux-popovers/docs/popover',
         imports: {
           '@skyux/layout': [
             'SkyCardModule'
@@ -107,6 +107,18 @@ export class SkyDemoComponentsService {
           ]
         },
         getCodeFiles: () => this.getDemoFiles('Card')
+      },
+      {
+        name: 'Character count indicator',
+        icon: 'calculator',
+        summary: `The character count indicator component extends a text input to apply a character limit and display an indicator.`,
+        url: '/components/character-count',
+        imports: {
+          '@skyux/forms': [
+            'SkyCharacterCounterModule'
+          ]
+        },
+        getCodeFiles: () => this.getDemoFiles('Character count')
       },
       {
         name: 'Checkbox',
@@ -186,7 +198,7 @@ export class SkyDemoComponentsService {
       {
         name: 'Datepicker',
         icon: 'calendar',
-        summary: `The datepicker module allows users to use an input and calendar to select dates.`,
+        summary: `The datepicker module contains directives to create an input and calendar picker for users select dates or fuzzy dates.`,
         url: '/components/datepicker',
         imports: {
           '@skyux/datetime': [
@@ -197,6 +209,39 @@ export class SkyDemoComponentsService {
           ...this.getDemoFiles('Datepicker'),
           ...this.getDemoFiles('Fuzzy datepicker')
         ]
+      },
+      {
+        name: 'Data entry grid',
+        icon: 'table',
+        summary: 'Data entry grids provide a spreadsheet-like user interface for entering large amounts of data.',
+        url: '/components/data-entry-grid',
+        imports: {
+          '@skyux/ag-grid': [
+            'SkyAgGridModule'
+          ],
+          '@skyux/datetime': [
+            'SkyDatepickerModule'
+          ],
+          '@skyux/lookup': [
+            'SkyAutocompleteModule',
+            'SkySearchModule'
+          ],
+          '@skyux/modals': [
+            'SkyModalModule'
+          ],
+          'ag-grid-angular': [
+            'AgGridModule'
+          ],
+          '@skyux/layout': [
+            'SkyToolbarModule'
+          ]
+        },
+        dependencies: {
+          'ag-grid-angular': '*',
+          'ag-grid-community': '*'
+        },
+        getCodeFiles: () => this.getDemoFiles('Data entry grid'),
+        disableStackblitz: true
       },
       {
         name: 'Date range picker',
@@ -262,8 +307,8 @@ export class SkyDemoComponentsService {
       {
         name: 'File attachment',
         icon: 'cloud-upload',
-        summary: `The file attachment components allow users to add file attachments to forms.`,
-        url: '/components/fileattachments',
+        summary: `The file attachment module creates options to attach files to forms and to display metadata about attachments.`,
+        url: '/components/file-attachments',
         imports: {
           '@skyux/forms': [
             'SkyFileAttachmentsModule'
@@ -272,7 +317,21 @@ export class SkyDemoComponentsService {
             'SkyAlertModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('File attachment')
+        getCodeFiles: () => this.getDemoFiles('File attachment'),
+        components: [
+          {
+            name: 'Single file attachment',
+            icon: 'cloud-upload',
+            summary: `The single file attachment component creates an input to attach a single local file.`,
+            url: '/components/file-attachments/single-file-attachment',
+            imports: {
+              '@skyux/forms': [
+                'SkyFileAttachmentsModule'
+              ]
+            },
+            getCodeFiles: () => this.getDemoFiles('Single file attachment')
+          }
+        ]
       },
       {
         name: 'Filter',
@@ -315,7 +374,7 @@ export class SkyDemoComponentsService {
         name: 'Fluid grid',
         icon: 'table',
         // tslint:disable-next-line
-        summary: `The fluid grid component provides a responsive 12-column layout to organize content.`,
+        summary: `The fluid grid component provides a responsive 12-column layout to organize content for all device sizes.`,
         url: '/components/fluid-grid',
         imports: {
           '@skyux/layout': [
@@ -822,22 +881,14 @@ export class SkyDemoComponentsService {
       {
         name: 'Popover',
         icon: 'newspaper-o',
-        // tslint:disable-next-line
         summary: 'The popover module displays small chunks of contextual content in an HTML-formatted popover on pages or modals.',
-        url: '/components/popover',
-        imports: {
-          '@skyux/popovers': [
-            'SkyDropdownModule',
-            'SkyPopoverModule'
-          ]
-        },
-        getCodeFiles: () => this.getDemoFiles('Popover')
+        url: '/components/popover'
       },
       {
         name: 'Progress indicator',
         icon: 'tasks',
         // tslint:disable-next-line
-        summary: 'The progress indicator component visually represents progress through a series of sequential steps toward a final goal.',
+        summary: 'The progress indicator module visually represents progress through sequential steps toward a goal.',
         url: '/components/progress-indicator',
         imports: {
           '@skyux/progress-indicator': [
@@ -850,12 +901,50 @@ export class SkyDemoComponentsService {
             'SkyPopoverModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('Progress Indicator')
+        getCodeFiles: () => this.getDemoFiles('Progress indicator'),
+        components: [
+          {
+            name: 'Progress indicator — waterfall',
+            icon: 'tasks',
+            summary: `The waterfall indicator walks users through discrete steps on a page.`,
+            url: '/components/progress-indicator/waterfall-progress-indicator',
+            imports: {
+              '@skyux/progress-indicator': [
+                'SkyProgressIndicatorModule'
+              ],
+              '@skyux/modals': [
+                'SkyModalModule'
+              ],
+              '@skyux/popovers': [
+                'SkyPopoverModule'
+              ]
+            },
+            getCodeFiles: () => this.getDemoFiles('Progress indicator — waterfall')
+          },
+          {
+            name: 'Progress indicator — passive',
+            icon: 'tasks',
+            summary: `The passive indicator represents steps outside of user control.`,
+            url: '/components/progress-indicator/passive-progress-indicator',
+            imports: {
+              '@skyux/progress-indicator': [
+                'SkyProgressIndicatorModule'
+              ],
+              '@skyux/modals': [
+                'SkyModalModule'
+              ],
+              '@skyux/popovers': [
+                'SkyPopoverModule'
+              ]
+            },
+            getCodeFiles: () => this.getDemoFiles('Progress indicator — passive')
+          }
+        ]
       },
       {
         name: 'Radio button',
         icon: 'circle-o',
-        summary: `The radio button component renders a SKY UX-themed radio button.`,
+        summary: `The radio button module ceates a small set of selection inputs and allows users to select one option only.`,
         url: '/components/radio',
         imports: {
           '@skyux/forms': [
@@ -1147,6 +1236,19 @@ export class SkyDemoComponentsService {
         getCodeFiles: () => this.getDemoFiles('Toolbar')
       },
       {
+        name: 'Tree view',
+        icon: 'sitemap',
+        summary: `The tree view module provides a hierarchical list view with multiple modes for selecting items in the list.`,
+        url: '/components/tree-view',
+        imports: {
+          '@skyux/angular-tree-view': [
+            'SkyAngularTreeViewModule'
+          ]
+        },
+        getCodeFiles: () => this.getDemoFiles('Angular tree component'),
+        disableStackblitz: true
+      },
+      {
         name: 'URL validation',
         icon: 'check',
         summary: 'The URL validation module ensures that user entries in an input element are valid URLs.',
@@ -1182,6 +1284,12 @@ export class SkyDemoComponentsService {
           ]
         },
         getCodeFiles: () => this.getDemoFiles('Wait')
+      },
+      {
+        name: 'Window',
+        icon: 'window-maximize',
+        summary: 'The application window reference service allows users to reference the global window variable.',
+        url: '/components/window'
       },
       {
         name: 'Wizard',
