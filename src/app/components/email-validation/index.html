@@ -11,7 +11,7 @@
     <sky-email-validation-demo></sky-email-validation-demo>
   </sky-demo-page-example>
 </div>
-    
+
 <sky-tabset id="content-tabs">
   <sky-tab tabHeading="Design">
     <sky-demo-page-content sectionHeading="Usage">
@@ -26,14 +26,14 @@
                 <div class="caption caption-success sky-text-success">Do validate email addresses that users will store as data.</div>
             </div>
           </sky-docs-visual-example-image>
-                
+
         </sky-docs-visual-example>
           <h3 class="sky-text-danger">Don't use when</h3>
           <sky-docs-visual-example>
             <sky-docs-visual-example-text>
               <p>Don’t use email validation when users can enter multiple types of data in an input field.</p>
             </sky-docs-visual-example-text>
-                
+
           <sky-docs-visual-example-image>
             <div>
               <img src="~/assets/img/guidelines/email-validation/email-validation-usage-2.png" />
@@ -42,27 +42,27 @@
           </sky-docs-visual-example-image>
         </sky-docs-visual-example>
     </sky-demo-page-content>
-        
+
     <sky-demo-page-content sectionHeading="Anatomy">
       <sky-docs-anatomy imagePath="~/assets/img/guidelines/email-validation/email-validation-anatomy.png">
-          <sky-docs-anatomy-item anatomyNumber="1">Input field</sky-docs-anatomy-item>
-            <sky-docs-anatomy-item anatomyNumber="2"><a routerLink="/components/form">Status indicator</a> (danger)</sky-docs-anatomy-item>
+          <sky-docs-anatomy-item>Input field</sky-docs-anatomy-item>
+            <sky-docs-anatomy-item><a routerLink="/components/form">Status indicator</a> (danger)</sky-docs-anatomy-item>
           </sky-docs-anatomy>
       </sky-demo-page-content>
-        
+
       <sky-demo-page-content sectionHeading="Behavior & states">
         <div class="sky-text-block">
           <p>The email validation directive is applied to an input field. The directive triggers the normal and error states, but the input field defines styles and the appearance of those states.</p>
           <p>The directive applies its logic when the input field loses focus. It does not trigger error states while users type. After the field enters an error state, it remains in that state until the content matches a valid email address format.</p>
         </div>
       </sky-demo-page-content>
-        
+
       <sky-demo-page-content sectionHeading="Content">
         <div class="sky-text-block">
           <p>Use a succinct error message, and provide an example of an acceptable email address format. For example, tell users to “Enter a valid email address with the joe@abc.com format.”</p>
         </div>
       </sky-demo-page-content>
-        
+
       <sky-demo-page-content sectionHeading="Related information">
         <h3>Components</h3>
           <ul>
@@ -77,7 +77,7 @@
           </ul>
 	  </sky-demo-page-content>
     </sky-tab>
-    
+
     <sky-tab tabHeading="Development">
       <sky-demo-page-module-info
 		skyuxModule="SkyEmailValidationModule"
@@ -85,7 +85,7 @@
         githubRepo="skyux-validation"
       >
       </sky-demo-page-module-info>
-        
+
     <sky-demo-page-properties sectionHeading="Email validation input directive properties">
       <sky-demo-page-property
         propertyName="skyEmailValidation"
@@ -106,10 +106,10 @@
         demoName="Email validation">
       </sky-demo-page-code>
     </sky-demo-page-example>
-        
+
   </sky-tab>
-    
+
 </sky-tabset>
-  
+
 
 </sky-tabbed-demo-page>

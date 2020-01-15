@@ -25,6 +25,9 @@ import {
 require('style-loader!./styles.scss');
 
 import {
+  SkyDocsAnatomyModule,
+  SkyDocsDemoPageModule,
+  SkyDocsDesignGuidelinesModule,
   SkyDocsSupportalService
 } from '@skyux/docs-tools';
 
@@ -43,6 +46,9 @@ import {
   exports: [
     AppSkyModule,
     SkyDemoComponentsModule,
+    SkyDocsAnatomyModule,
+    SkyDocsDemoPageModule,
+    SkyDocsDesignGuidelinesModule,
     StacheModule
   ],
   providers: [
