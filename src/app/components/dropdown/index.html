@@ -6,18 +6,18 @@
   <p>
     The dropdown component renders a button that displays a menu when users click it. The menu displays a set of actions or functions.
   </p>
-</sky-demo-page-summary>  
+</sky-demo-page-summary>
 
 <sky-demo-page-example>
   <sky-dropdown-demo>
   </sky-dropdown-demo>
-</sky-demo-page-example>  
-  
+</sky-demo-page-example>
+
 <sky-tabset id="content-tabs">
 
   <sky-tab
     tabHeading="Design">
-    
+
     <sky-demo-page-content sectionHeading="Usage">
       <h3 class="sky-text-success">Use when</h3>
         <sky-docs-visual-example>
@@ -46,7 +46,7 @@
             <img src="~/assets/img/guidelines/dropdown/usage-icon.png" />
             <div class="caption caption-success sky-text-success">Do use icon-only dropdowns when there is not space to include a label.</div>
           </sky-docs-visual-example-image>
-        </sky-docs-visual-example>  
+        </sky-docs-visual-example>
       <h3 class="sky-text-danger">Don't use when</h3>
         <sky-docs-visual-example>
           <sky-docs-visual-example-text>
@@ -61,9 +61,9 @@
 
     <sky-demo-page-content sectionHeading="Anatomy">
       <sky-docs-anatomy imagePath="~/assets/img/guidelines/dropdown/anatomy.png">
-        <sky-docs-anatomy-item anatomyNumber="1">Dropdown button</sky-docs-anatomy-item>
-        <sky-docs-anatomy-item anatomyNumber="2">Dropdown menu</sky-docs-anatomy-item>
-        <sky-docs-anatomy-item anatomyNumber="3">Action</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item>Dropdown button</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item>Dropdown menu</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item>Action</sky-docs-anatomy-item>
       </sky-docs-anatomy>
     </sky-demo-page-content>
 
@@ -79,7 +79,7 @@
             <p>Dropdown buttons can use the default or primary styles inherited from SKY UX buttons. For details about when to use the primary style, see the <a routerLink="/design/guidelines/page-layouts" fragment="primary-action-guidelines">primary action guidelines</a>.</p>
         </div>
     </sky-demo-page-content>
-      
+
     <sky-demo-page-content sectionHeading="Behavior and states">
         <h3>Behavior</h3>
         <div class="sky-text-block sky-margin-stacked-content-section">
@@ -90,7 +90,7 @@
             <p>Dropdown buttons inherit the styling for states such as hover and disabled from <a routerLink="/components/button">SKY UX buttons</a>.</p>
         </div>
     </sky-demo-page-content>
-    
+
     <sky-demo-page-content sectionHeading="Content">
       <h3>Dropdown menu action text</h3>
       <sky-docs-visual-example>
@@ -123,7 +123,7 @@
           <img class="bordered" src="~/assets/img/guidelines/wording/more-button.png" alt="dropdown menu More: Place vendor on hold, Archive vendor" />
         </sky-docs-visual-example-image>
       </sky-docs-visual-example>
-      
+
         <div class="sky-text-block sky-margin-stacked-content-section">
         <p>Additional button text guidelines:</p>
 				<ul>
@@ -133,9 +133,9 @@
 				</ul>
       </div>
     </sky-demo-page-content>
-      
+
     <sky-demo-page-content sectionHeading="Layout">
-        
+
         <sky-docs-visual-example>
           <sky-docs-visual-example-text>
             <p>Place context menu dropdowns to the left of all row-specific content but to the right of all list controls such as expand-collapse actions in tree views and checkboxes in grids or repeaters.</p>
@@ -146,9 +146,9 @@
             <div class="caption caption-success sky-text-success">Do put context menu dropdowns to the left of all row-specific content in lists.</div>
           </sky-docs-visual-example-image>
         </sky-docs-visual-example>
-        
+
     </sky-demo-page-content>
-    
+
     <sky-demo-page-content sectionHeading="Related information">
 		<h3>Components</h3>
 			<ul>
@@ -160,7 +160,7 @@
 				<li><a routerLink="/design/guidelines/buttons-links">Buttons and links</a></li>
 			</ul>
 	</sky-demo-page-content>
-    
+
   </sky-tab>
 
   <sky-tab
@@ -218,7 +218,7 @@
       propertyName="messageStream"
       isOptional="true"
     >
-      Provides an observable to send commands to the dropdown. The commands should respect <a stacheRouterLink="." fragment="skydropdownmenuchange">the <sky-code>SkyDropdownMessage</sky-code> type</a>.
+      Provides an observable to send commands to the dropdown. The commands should respect <a stacheRouterLink="." fragment="skydropdownmessage-type">the <sky-code>SkyDropdownMessage</sky-code> type</a>.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="title"
@@ -334,9 +334,9 @@
       demoName="Dropdown">
     </sky-demo-page-code>
   </sky-demo-page-example>
-    
+
   </sky-tab>
-  
+
 </sky-tabset>
 
 </sky-tabbed-demo-page>
