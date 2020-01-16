@@ -4,7 +4,7 @@ import {
 
 import {
   ActivatedRouteSnapshot,
-  RouterStateSnapshot,
+  RouterStateSnapshot
 } from '@angular/router';
 
 import {
