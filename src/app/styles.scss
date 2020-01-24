@@ -187,15 +187,11 @@ video.bordered {
 	margin-bottom: 50px;
 }
 
-.sky-text-block {
-	width: 690px;
-}
-
 .caption {
   margin-top: $sky-margin-stacked-default;
   padding-top: $sky-margin-stacked-compact;
   border-top: 4px solid $sky-background-color-neutral-light;
-  
+
   &.caption-info {
     border-color: $sky-background-color-neutral-light;
   }
@@ -203,7 +199,7 @@ video.bordered {
   &.caption-success {
     border-color: $sky-highlight-color-success;
   }
-  
+
   &.caption-warning {
     border-color: $sky-highlight-color-warning;
   }
