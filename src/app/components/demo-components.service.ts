@@ -1180,12 +1180,6 @@ export class SkyDemoComponentsService {
         getCodeFiles: () => this.getDemoFiles('Timepicker')
       },
       {
-        name: 'Title',
-        icon: 'columns',
-        summary: `The title service enables SKY UX SPAs to set the window title as users navigate within the SPA.`,
-        url: '/components/title-service'
-      },
-      {
         name: 'Toast',
         icon: 'envelope',
         // tslint:disable-next-line
