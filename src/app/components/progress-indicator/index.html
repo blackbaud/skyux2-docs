@@ -130,37 +130,37 @@
     
       <sky-demo-page-content sectionHeading="Options">
         <h3>Waterfall title</h3>
-        <div class="sky-text-block">
+        <div class="sky-docs-text-block">
           <p>We recommend including a title to reflect the context of the overall task. The title does not change when users progress through the waterfall steps.</p>
         </div>
         
         <h3>Step details</h3>
-        <div class="sky-text-block">
+        <div class="sky-docs-text-block">
           <p>You can provide additional details about completed steps, but limit details to single pieces of information. Don’t go overboard because users can reopen modals to review choices as necessary.</p>
         </div>
         
         <h3>Start over action</h3>
-        <div class="sky-text-block">
+        <div class="sky-docs-text-block">
           <p>You can include a start over action to let users erase all saved data from the waterfall process. This returns user to the first step or to an earlier point in the workflow if decisions occured before the waterfall progress indicator.</p>
         </div>
       </sky-demo-page-content>
     
       <sky-demo-page-content sectionHeading="Behavior & states">
-        <div class="sky-text-block">
+        <div class="sky-docs-text-block">
           <p>Waterfall progress indicators guide users through one active step at a time. When users complete a step, the progress indicator updates its step indicator and step action to the completed state and updates the next step indicator and step action to the active state. Users can review and edit completed steps, but this does not undo the completed state.</p>
           <p>The final step summarizes the changes and requests user confirmation. You do not need to include all data that users enter in the summary, but confirmation is required. After users complete the final step, replace the waterfall progress indicator with a page that displays the finished or active state of the system. Any page type is allowed, including record pages, work centers, and list pages.</p>
         </div>
       </sky-demo-page-content>
     
       <sky-demo-page-content sectionHeading="Content">
-        <div class="sky-text-block">
+        <div class="sky-docs-text-block">
           <p>Step labels in waterfall progress indicators start with a number and concisely describe the objective. Use the <b>&lt;verb&gt; &lt;direct object&gt;</b> format. In the label for the last step, describe the cumulative change that occurs at the end of the process.</p>
           <p>Step action labels closely follow step labels but do not need to be identical. For the first step action label, be generic and conversational (“Get started”), and for completed step actions, use verbs appropriate to post hoc actions (“Change,” “Edit”).</p>
         </div>
       </sky-demo-page-content>
     
       <sky-demo-page-content sectionHeading="Layout">
-        <div class="sky-text-block">
+        <div class="sky-docs-text-block">
           <p>Waterfall progress indicators are 400 pixels wide and centered inside the page. The waterfall title is the page title. Do not combine waterfall indicators with other content or actions.</p>
           <p>If waterfall indicators require extra context such as descriptions, links, or instructions, include it after the waterfall title and before the first step.</p>
         </div>
@@ -246,20 +246,20 @@
     
       <sky-demo-page-content sectionHeading="Options">
         <h3>Step details</h3>
-        <div class="sky-text-block">
+        <div class="sky-docs-text-block">
           <p>You can provide additional details about completed or current steps. Use step details to provide extra context to users, but avoid too many details or the implication that users should take action.</p>
         </div>
       </sky-demo-page-content>
     
       <sky-demo-page-content sectionHeading="Content">
-        <div class="sky-text-block">
+        <div class="sky-docs-text-block">
           <p>Be concise in step labels. For completed steps, use past tense verbs ("Submitted," "Approved") and include datestamps in parentheses in most cases. Only include timestamps if necessary.</p>
           <p>Use step details sparingly, and be concise.</p>
         </div>
       </sky-demo-page-content>
     
       <sky-demo-page-content sectionHeading="Layout">
-        <div class="sky-text-block">
+        <div class="sky-docs-text-block">
           <p>Use passive progress indicators one at a time. When they apply to record views, use them in page summaries or other containers such as tiles.</p>
           <p>To display passive progress indicators for items in lists, use dynamic containers such as <a routerLink="/components/flyout">flyouts</a> or <a routerLink="/components/popover">popovers</a>.</p>
         </div>
