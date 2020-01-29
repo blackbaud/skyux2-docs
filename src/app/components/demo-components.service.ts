@@ -267,16 +267,7 @@ export class SkyDemoComponentsService {
         name: 'Dropdown',
         icon: 'caret-down',
         summary: `The dropdown component renders a button that displays a dropdown menu.`,
-        url: '/components/dropdown',
-        imports: {
-          '@skyux/popovers': [
-            'SkyDropdownModule'
-          ],
-          '@skyux/layout': [
-            'SkyFluidGridModule'
-          ]
-        },
-        getCodeFiles: () => this.getDemoFiles('Dropdown')
+        url: '/components/dropdown'
       },
       {
         name: 'Email validation',
