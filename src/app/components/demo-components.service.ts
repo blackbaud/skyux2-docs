@@ -1109,13 +1109,7 @@ export class SkyDemoComponentsService {
         name: 'Tabs',
         icon: 'folder-open-o',
         summary: `The tabs module renders tabs that divide large subsets of content on a page.`,
-        url: '/components/tabs',
-        imports: {
-          '@skyux/tabs': [
-            'SkyTabsModule'
-          ]
-        },
-        getCodeFiles: () => this.getDemoFiles('Tabs')
+        url: '/components/tabs'
       },
       {
         name: 'Text expand',
