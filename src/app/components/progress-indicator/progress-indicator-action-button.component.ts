@@ -1,31 +1,35 @@
-import { Component } from '@angular/core';
+import { 
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component 
+} from '@angular/core';
+
+import {
+  StacheNavLink
+} from '@blackbaud/skyux-lib-stache';
+
+import {
+  SkyDemoSidebarService
+} from '../../shared/sidebar.service';
 
 @Component({
   selector: 'sky-progress-indicator-action-buttons',
-  templateUrl: './progress-indicator-action-button.component.html'
+  templateUrl: 'progress-indicator-action-button.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProgressIndicatorActionButtonsComponent {
-  public routes = [
-    {
-      name: 'Passive indicator',
-      path: '/components/progress-indicator/passive-progress-indicator',
-      icon: 'tasks',
-      // tslint:disable-next-line
-      summary: 'The passive indicator represents steps outside of user control.'
-    },
-    {
-      name: 'Waterfall page',
-      path: '/components/progress-indicator/waterfall-progress-indicator',
-      icon: 'tasks',
-      // tslint:disable-next-line
-      summary: 'The waterfall indicator walks users through discrete steps on a page.'
-    },
-    {
-      name: 'Wizard',
-      path: '/components/wizard',
-      icon: 'magic',
-      // tslint:disable-next-line
-      summary: 'The wizard walks users through discrete steps in a modal.'
-    }
-  ];
+  public sidebarRoutes: StacheNavLink[];
+
+  constructor(
+    private changeDetectorRef: ChangeDetectorRef,
+    private sidebarService: SkyDemoSidebarService
+  ) {
+    this.sidebarRoutes = this.sidebarService.getDefaultSidebar();
+    this.sidebarService
+      .getSidebar()
+      .subscribe((routes: StacheNavLink[]) => {
+        this.sidebarRoutes = routes;
+        this.changeDetectorRef.markForCheck();
+      });
+  }
 }
