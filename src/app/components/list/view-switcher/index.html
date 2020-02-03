@@ -4,12 +4,12 @@
 
   <sky-demo-page-summary>
     <p>
-      The list view switcher lets the user switch between different views of the same data.
+      The list view switcher module displays toolbar options that enable users to switch between different views of the same data.
     </p>
   </sky-demo-page-summary>
 
   <sky-demo-page-example>
-    
+    <div class="sky-text-info sky-margin-stacked-content-section">We are still working on the demo and code samples for the list view switcher. We will update the documentation as soon as they are ready.</div>
   </sky-demo-page-example>
 
 <sky-tabset id="content-tabs">
@@ -21,24 +21,24 @@
       <h3 class="sky-text-success">Use when</h3>
         <sky-docs-visual-example>
           <sky-docs-visual-example-text>
-              <p>Use the list view switcher when the user needs to switch between different views of the same data.</p>
+              <p>Use list view switchers when users need to switch between different views of the same data. For example, users may want a sortable grid of events and a calendar view of those same events.</p>
           </sky-docs-visual-example-text>
           <sky-docs-visual-example-image>
             <div>
               <img src="~/assets/img/guidelines/list-view-switcher/use-when.png" />
-              <div class="caption caption-success sky-text-success">Do use the list view switcher when there is more than one view of the data.</div>
+              <div class="caption caption-success sky-text-success">Do use list view switchers when more than one view of data is available to users.</div>
             </div>
           </sky-docs-visual-example-image>
         </sky-docs-visual-example>
-      <h3 class="sky-text-success">Don't use when</h3>
+      <h3 class="sky-text-danger">Don't use when</h3>
         <sky-docs-visual-example>
           <sky-docs-visual-example-text>
-              <p>Don't use the list view switcher when there is only one view of the data.</p>
+              <p>Don't use list view switchers when only one view of data is available.</p>
           </sky-docs-visual-example-text>
           <sky-docs-visual-example-image>
             <div>
               <img src="~/assets/img/guidelines/list-view-switcher/dont-use-when.png" />
-              <div class="caption caption-danger sky-text-danger">Don't use the list view switcher when there is only one view of the data.</div>
+              <div class="caption caption-danger sky-text-danger">Don't use list view switchers when users cannot switch between different views.</div>
             </div>
           </sky-docs-visual-example-image>
         </sky-docs-visual-example>
@@ -46,19 +46,19 @@
 
     <sky-demo-page-content sectionHeading="Anatomy">
       <sky-docs-anatomy imagePath="~/assets/img/guidelines/list-view-switcher/anatomy.png">
-        <sky-docs-anatomy-item anatomyNumber="1">Active view</sky-docs-anatomy-item>
-        <sky-docs-anatomy-item anatomyNumber="2">Inactive view</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item anatomyNumber="1">Active view button</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item anatomyNumber="2">Inactive view button</sky-docs-anatomy-item>
       </sky-docs-anatomy>
     </sky-demo-page-content>
 
     <sky-demo-page-content sectionHeading="Options">
       <h3>Available views</h3>
         <div class="sky-text-block">
-          <p>You must specify which views are available for the user to switch between.</p>
+          <p>You must specify the views that are available to users.</p>
         </div>  
       <h3>Default view</h3>
         <div class="sky-text-block">
-          <p>You must specify the default view to show when the page loads.</p>
+          <p>You must specify the default view to display when the page loads. You specify this default on the list component, not on the list view switcher.</p>
         </div>
       <h3>Custom views</h3>
         <div class="sky-text-block">
@@ -67,14 +67,14 @@
     </sky-demo-page-content>
 
     <sky-demo-page-content sectionHeading="Behavior & states">
-      <h3>Switch view</h3>
+      <h3>Maintained state</h3>
         <div class="sky-text-block">
-          <p>When the user switches views, the view changes and filters remain applied.</p>
+          <p>When users switch views, the view changes while filters and sorting remain applied.</p>
         </div>
       <h3>Responsiveness</h3>
         <sky-docs-visual-example>
           <sky-docs-visual-example-text>
-            <p>On small viewports the view switcher collapses to a dropdown to conserve space.</p>
+            <p>On small viewports, the view switcher collapses to a <a routerLink="/components/dropdown">dropdown</a> to conserve space.</p>
           </sky-docs-visual-example-text>
           <sky-docs-visual-example-image>
             <img src="~/assets/img/guidelines/list-view-switcher/behavior-responsive.png" />
@@ -90,7 +90,7 @@
     <sky-demo-page-content sectionHeading="Related information">
       <h3>Components</h3>
       <ul>
-        <li><a stacheRouterLink="/components/list">List</a></li>
+        <li><a stacheRouterLink="/components/list/overview">List</a></li>
         <li><a routerLink="/components/list/toolbar">List toolbar</a></li>
       </ul>
     </sky-demo-page-content>
@@ -106,7 +106,30 @@
     >
     </sky-demo-page-module-info>
 
-  </sky-tab>
+    <sky-demo-page-properties
+    sectionHeading="List view switcher custom button properties"
+  >
+    <sky-demo-page-property
+      propertyName="icon"
+      isOptional="true"
+    >
+      Specifies the icon to display in the list view switcher custom button. This property accepts <sky-code>string</sky-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="label"
+      isOptional="true"
+    >
+      Specifies a label to display in the list view switcher custom button. This property accepts <sky-code>string</sky-code> values.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="view"
+      isOptional="true"
+    >
+      Specifies the view for the list view switcher custom button to display. The button is useful for custom views because they do not have built-in configurations and are not automatically included as options in the list view switcher. This property accepts <sky-code>ListViewComponent</sky-code> values.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+</sky-tab>
 
 </sky-tabset>
 
