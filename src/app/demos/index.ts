@@ -4,6 +4,7 @@ export * from './phone-field';
 export * from './summary-action-bar';
 export * from './code-block';
 export * from './copy-to-clipboard';
+export * from './data-entry-grid';
 export * from './date-range-picker';
 export * from './inline-form';
 export * from './phone-field';

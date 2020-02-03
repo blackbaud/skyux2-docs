@@ -15,10 +15,21 @@ import {
 } from './demos/inline-form/inline-form-demo-tile.component';
 
 import {
+  SkyDemoSidebarService
+} from './shared/sidebar.service';
+
+import {
   SkyDemoTitleService
 } from './shared/title.service';
 
 require('style-loader!./styles.scss');
+
+import {
+  SkyDocsAnatomyModule,
+  SkyDocsDemoPageModule,
+  SkyDocsDesignGuidelinesModule,
+  SkyDocsSupportalService
+} from '@skyux/docs-tools';
 
 import {
   AppSkyModule
@@ -35,9 +46,14 @@ import {
   exports: [
     AppSkyModule,
     SkyDemoComponentsModule,
+    SkyDocsAnatomyModule,
+    SkyDocsDemoPageModule,
+    SkyDocsDesignGuidelinesModule,
     StacheModule
   ],
   providers: [
+    SkyDocsSupportalService,
+    SkyDemoSidebarService,
     SkyDemoTitleService
   ]
 })

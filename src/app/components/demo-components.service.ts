@@ -94,7 +94,7 @@ export class SkyDemoComponentsService {
         name: 'Card',
         icon: 'th-large',
         summary: `The card module creates a small container to highlight important information.`,
-        url: '/components/card',
+        url: 'https://developer.blackbaud.com/skyux-popovers/docs/popover',
         imports: {
           '@skyux/layout': [
             'SkyCardModule'
@@ -211,6 +211,39 @@ export class SkyDemoComponentsService {
         ]
       },
       {
+        name: 'Data entry grid',
+        icon: 'table',
+        summary: 'Data entry grids provide a spreadsheet-like user interface for entering large amounts of data.',
+        url: '/components/data-entry-grid',
+        imports: {
+          '@skyux/ag-grid': [
+            'SkyAgGridModule'
+          ],
+          '@skyux/datetime': [
+            'SkyDatepickerModule'
+          ],
+          '@skyux/lookup': [
+            'SkyAutocompleteModule',
+            'SkySearchModule'
+          ],
+          '@skyux/modals': [
+            'SkyModalModule'
+          ],
+          'ag-grid-angular': [
+            'AgGridModule'
+          ],
+          '@skyux/layout': [
+            'SkyToolbarModule'
+          ]
+        },
+        dependencies: {
+          'ag-grid-angular': '*',
+          'ag-grid-community': '*'
+        },
+        getCodeFiles: () => this.getDemoFiles('Data entry grid'),
+        disableStackblitz: true
+      },
+      {
         name: 'Date range picker',
         icon: 'calendar',
         summary: `The date range picker component creates a text input for users to select a date range from a set of well-known options.`,
@@ -234,16 +267,7 @@ export class SkyDemoComponentsService {
         name: 'Dropdown',
         icon: 'caret-down',
         summary: `The dropdown component renders a button that displays a dropdown menu.`,
-        url: '/components/dropdown',
-        imports: {
-          '@skyux/popovers': [
-            'SkyDropdownModule'
-          ],
-          '@skyux/layout': [
-            'SkyFluidGridModule'
-          ]
-        },
-        getCodeFiles: () => this.getDemoFiles('Dropdown')
+        url: '/components/dropdown'
       },
       {
         name: 'Email validation',
@@ -848,22 +872,14 @@ export class SkyDemoComponentsService {
       {
         name: 'Popover',
         icon: 'newspaper-o',
-        // tslint:disable-next-line
         summary: 'The popover module displays small chunks of contextual content in an HTML-formatted popover on pages or modals.',
-        url: '/components/popover',
-        imports: {
-          '@skyux/popovers': [
-            'SkyDropdownModule',
-            'SkyPopoverModule'
-          ]
-        },
-        getCodeFiles: () => this.getDemoFiles('Popover')
+        url: '/components/popover'
       },
       {
         name: 'Progress indicator',
         icon: 'tasks',
         // tslint:disable-next-line
-        summary: 'The progress indicator component visually represents progress through a series of sequential steps toward a final goal.',
+        summary: 'The progress indicator module visually represents progress through sequential steps toward a goal.',
         url: '/components/progress-indicator',
         imports: {
           '@skyux/progress-indicator': [
@@ -876,7 +892,45 @@ export class SkyDemoComponentsService {
             'SkyPopoverModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('Progress Indicator')
+        getCodeFiles: () => this.getDemoFiles('Progress indicator'),
+        components: [
+          {
+            name: 'Progress indicator — waterfall',
+            icon: 'tasks',
+            summary: `The waterfall indicator walks users through discrete steps on a page.`,
+            url: '/components/progress-indicator/waterfall-progress-indicator',
+            imports: {
+              '@skyux/progress-indicator': [
+                'SkyProgressIndicatorModule'
+              ],
+              '@skyux/modals': [
+                'SkyModalModule'
+              ],
+              '@skyux/popovers': [
+                'SkyPopoverModule'
+              ]
+            },
+            getCodeFiles: () => this.getDemoFiles('Progress indicator — waterfall')
+          },
+          {
+            name: 'Progress indicator — passive',
+            icon: 'tasks',
+            summary: `The passive indicator represents steps outside of user control.`,
+            url: '/components/progress-indicator/passive-progress-indicator',
+            imports: {
+              '@skyux/progress-indicator': [
+                'SkyProgressIndicatorModule'
+              ],
+              '@skyux/modals': [
+                'SkyModalModule'
+              ],
+              '@skyux/popovers': [
+                'SkyPopoverModule'
+              ]
+            },
+            getCodeFiles: () => this.getDemoFiles('Progress indicator — passive')
+          }
+        ]
       },
       {
         name: 'Radio button',
@@ -1055,13 +1109,7 @@ export class SkyDemoComponentsService {
         name: 'Tabs',
         icon: 'folder-open-o',
         summary: `The tabs module renders tabs that divide large subsets of content on a page.`,
-        url: '/components/tabs',
-        imports: {
-          '@skyux/tabs': [
-            'SkyTabsModule'
-          ]
-        },
-        getCodeFiles: () => this.getDemoFiles('Tabs')
+        url: '/components/tabs'
       },
       {
         name: 'Text expand',

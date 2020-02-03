@@ -9,7 +9,9 @@
   "app": {
     "title": "Blackbaud SKY UX",
     "styles": [
-      "@skyux/theme/css/sky.css"
+      "@skyux/theme/css/sky.css",
+      "@skyux/docs-tools/css/docs-tools.css",
+      "@skyux/ag-grid/css/sky-ag-grid.css"
     ]
   },
   "appSettings": {

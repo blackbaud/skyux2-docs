@@ -91,6 +91,13 @@ export class CLICommandsActionButtonsComponent {
       summary: 'Runs any unit tests in the src/app folder.'
     },
     {
+      name: 'upgrade',
+      path: '/learn/reference/cli-commands/upgrade',
+      icon: 'wrench',
+      // tslint:disable-next-line
+      summary: 'Updates the dependencies for your SPA.'
+    },
+    {
       name: 'version',
       path: '/learn/reference/cli-commands/version',
       icon: 'info-circle',

@@ -8,10 +8,14 @@
   </stache-page-anchor>
 	
 	<p>
-    Use the following format for page titles: <span class="sky-emphasized">&lt;Page title&gt; — &lt;Company, product, or site identifier&gt;</span>. For example: <span class="sky-emphasized">Gifts list — Blackbaud</span>. On pages with tabbed subnavigation, use the following format: <span class="sky-emphasized">&lt;Tab title&gt; — &lt;Page title&gt; — &lt;Company, product, or site identifier&gt;</span>. For example: <span class="sky-emphasized">Portfolio — Work center — Blackbaud</span>.
+    Use the following format for page titles: <span class="sky-emphasized">&lt;Page title&gt; — &lt;Company, product, or site identifier&gt;</span>. For example, Blackbaud solutions use the company name after the page title: <span class="sky-emphasized">Gifts list — Blackbaud</span>.
   </p>
   <p>
-    In addition, page titles follow these general guidelines:
+    On pages with tabbed subnavigation, use the following format for tab titles: <span class="sky-emphasized">&lt;Tab title&gt; — &lt;Page title&gt; — &lt;Company, product, or site identifier&gt;</span>. For example, Blackbaud solutions use the company name after the tab title and page title: <span class="sky-emphasized">Portfolio — Work center — Blackbaud</span>.
+  </p>
+  
+  <p>
+    In addition, follow these general guidelines:
   </p>
 	<ul>
 		<li>Keep titles short.</li>
@@ -21,6 +25,9 @@
 	</ul>
   <p>
     To specify page titles, use <a href="https://angular.io/docs/ts/latest/cookbook/set-document-title.html">the Angular <sky-code>Title</sky-code> service</a> and <a stacheRouterLink="learn/reference/configuration" fragment="app">the SKY UX <sky-code>title</sky-code> configuration property</a>.
+  </p>
+  <p>
+    Blackbaud developers can also use <sky-code>SkyAppTitleService</sky-code> to set the window title as users navigate within a SPA. Documentation for  this service is available on the <a href="https://docs.blackbaud.com/engineering-system-docs/learn/spa/spa-title-service">Engineering System website</a>. This site is for Blackbaud internal use only and is not available to external developers.
   </p>
   
 	<stache-page-anchor>
