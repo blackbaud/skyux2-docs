@@ -4,7 +4,7 @@
 
   <sky-demo-page-summary>
     <p>
-      Passive progress indicators represent steps in a process outside of user control.
+      Passive progress indicators represent sequential steps in processes outside of user control.
     </p>
   </sky-demo-page-summary>
 
@@ -142,7 +142,7 @@
         <sky-demo-page-property
           propertyName="sky-progress-indicator-reset-button"
         >
-          Displays a button to mark all items in the progress indicator as incomplete and set the first progress item as the active item.
+          Displays a button to mark all items in the progress indicator as incomplete and set the first progress item as the active item. The steps after the active progress item remain incomplete until users reach them in their sequential order.
         </sky-demo-page-property>
         <sky-demo-page-property
           propertyName="sky-progress-indicator-title"
@@ -176,7 +176,7 @@
           propertyName="startingIndex"
           isOptional="true"
         >
-          Specifies the index for the first progress item to make active when the progress indicator loads. All steps that precede the first progress item are marked as complete. This property accepts <sky-code>number</sky-code> values.
+          Specifies the index for the first progress item to make active when the progress indicator loads. All steps that precede the active progress item are marked as complete, and all steps that follow the active progress item are marked as incomplete. This property accepts <sky-code>number</sky-code> values.
         </sky-demo-page-property>
       </sky-demo-page-properties>
 
