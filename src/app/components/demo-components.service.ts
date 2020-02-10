@@ -196,6 +196,12 @@ export class SkyDemoComponentsService {
         disableStackblitz: true
       },
       {
+        name: 'Date pipe',
+        icon: 'calendar',
+        summary: `The date pipe formats date values according to locale rules.`,
+        url: '/components/date-pipe'
+      },
+      {
         name: 'Datepicker',
         icon: 'calendar',
         summary: `The datepicker module contains directives to create an input and calendar picker for users select dates or fuzzy dates.`,
