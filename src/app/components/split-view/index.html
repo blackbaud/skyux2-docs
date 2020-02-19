@@ -29,22 +29,22 @@
           </sky-docs-visual-example-image>
         </sky-docs-visual-example>
       <h3 class="sky-text-danger">Don't use when</h3>
-        <div class="sky-text-block"><p>Don't use a split view when users are likely to interact with a small number of items in the list. Use a regular list instead, and follow the <a stacheRouterLink="/components/flyout" fragment="ux-guidelines">flyout</a> guidelines to determine whether to use a flyout or navigate to the selected record.</p></div>
+        <div class="sky-docs-text-block"><p>Don't use a split view when users are likely to interact with a small number of items in the list. Use a regular list instead, and follow the <a stacheRouterLink="/components/flyout" fragment="ux-guidelines">flyout</a> guidelines to determine whether to use a flyout or navigate to the selected record.</p></div>
     </sky-demo-page-content>
 
     <sky-demo-page-content sectionHeading="Anatomy">
       <h3>Large viewport</h3>
       <sky-docs-anatomy imagePath="~/assets/img/guidelines/split-view/anatomy-desktop.png">
-        <sky-docs-anatomy-item anatomyNumber="1">List panel</sky-docs-anatomy-item>
-        <sky-docs-anatomy-item anatomyNumber="2">Workspace panel</sky-docs-anatomy-item>
-        <sky-docs-anatomy-item anatomyNumber="3" isOptional="true">Summary action bar</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item>List panel</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item>Workspace panel</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item isOptional="true">Summary action bar</sky-docs-anatomy-item>
       </sky-docs-anatomy>
       <h3>Small viewport</h3>
       <sky-docs-anatomy imagePath="~/assets/img/guidelines/split-view/anatomy-mobile.png">
-        <sky-docs-anatomy-item anatomyNumber="1">List panel</sky-docs-anatomy-item>
-        <sky-docs-anatomy-item anatomyNumber="2">Responsive header bar</sky-docs-anatomy-item>
-        <sky-docs-anatomy-item anatomyNumber="3">Workspace panel</sky-docs-anatomy-item>
-        <sky-docs-anatomy-item anatomyNumber="4" isOptional="true">Summary action bar</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item>List panel</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item>Responsive header bar</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item>Workspace panel</sky-docs-anatomy-item>
+        <sky-docs-anatomy-item isOptional="true">Summary action bar</sky-docs-anatomy-item>
       </sky-docs-anatomy>
     </sky-demo-page-content>
 
@@ -97,7 +97,7 @@
 
     <sky-demo-page-content sectionHeading="Behavior and states">
       <h3>Automatically advance to the next item</h3>
-        <div class="sky-text-block">
+        <div class="sky-docs-text-block">
           <p>If users are likely to work through the list sequentially, automatically advance to the next item after users invoke the primary action in the workspace.</p>
         </div>
       <h3>Place focus in the workspace</h3>
@@ -183,8 +183,7 @@
       isOptional="true"
     >
       Sets the <sky-code>SkySplitViewMessage</sky-code> type. Currently, the only available type is <sky-code>SkySplitViewMessageType.FocusWorkspace</sky-code>, which places focus on the first focusable element in the workspace.
-        </li>
-      </ul>
+        
     </sky-demo-page-property>
   </sky-demo-page-properties>
 

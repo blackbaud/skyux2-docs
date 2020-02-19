@@ -5,32 +5,32 @@
   <sky-demo-page-summary>
     The datepicker module contains directives to create an input and calendar for users to select dates or fuzzy dates.
   </sky-demo-page-summary>
-  
+
   <sky-demo-page-example>
     <sky-datepicker-demo></sky-datepicker-demo>
     <sky-fuzzy-datepicker-demo></sky-fuzzy-datepicker-demo>
   </sky-demo-page-example>
 
 <sky-tabset id="content-tabs">
-	
+
 	<sky-tab
-		tabHeading="Design">	
+		tabHeading="Design">
 	<sky-demo-page-content sectionHeading="Usage">
 	<h3 class="sky-text-success">Use when</h3>
-    <p class="sky-text-block">Use datepickers when users need to enter valid dates.</p>
+    <p class="sky-docs-text-block">Use datepickers when users need to enter valid dates.</p>
   </sky-demo-page-content>
-  
+
   <sky-demo-page-content sectionHeading="Anatomy">
 		<sky-docs-anatomy imagePath="~/assets/img/guidelines/datepicker/anatomy.png">
-      <sky-docs-anatomy-item anatomyNumber="1">Input field</sky-docs-anatomy-item>
-      <sky-docs-anatomy-item anatomyNumber="2">Picker button</sky-docs-anatomy-item>
-      <sky-docs-anatomy-item anatomyNumber="3">Picker</sky-docs-anatomy-item>
+      <sky-docs-anatomy-item>Input field</sky-docs-anatomy-item>
+      <sky-docs-anatomy-item>Picker button</sky-docs-anatomy-item>
+      <sky-docs-anatomy-item>Picker</sky-docs-anatomy-item>
     </sky-docs-anatomy>
 	</sky-demo-page-content>
-	
+
 	<sky-demo-page-content sectionHeading="Options">
 		<h3>Fuzzy dates</h3>
-      <div class="sky-text-block">
+      <div class="sky-docs-text-block">
         <p>Fuzzy dates allow users to specify dates that are not complete. They enable partial dates when users are unsure of the complete date. For example, if users know the year but not the month or day, they can enter just the year. Supported formats include:</p>
         <ul>
           <li>Month, day, and year</li>
@@ -40,9 +40,9 @@
         </ul>
       </div>
 		<h3>Minimum and maximum dates</h3>
-			<p class="sky-text-block">You can specify minimum or maximum dates to prevent users from specifying dates before or after those thresholds.</p>
+			<p class="sky-docs-text-block">You can specify minimum or maximum dates to prevent users from specifying dates before or after those thresholds.</p>
 	</sky-demo-page-content>
-	
+
 	<sky-demo-page-content sectionHeading="Behavior & states">
 		<h3>Month string conversion for fuzzy dates</h3>
 			<sky-docs-visual-example>
@@ -60,18 +60,18 @@
       <sky-demo-page-component-state stateName="Date entered" imagePath="~/assets/img/guidelines/datepicker/state-filled.png"></sky-demo-page-component-state>
       <sky-demo-page-component-state stateName="Error" imagePath="~/assets/img/guidelines/datepicker/state-error.png"></sky-demo-page-component-state>
     </sky-demo-page-component-states>
-			
-	</sky-demo-page-content>  
-    
+
+	</sky-demo-page-content>
+
   <sky-demo-page-content sectionHeading="Related information">
 		<h3>Components</h3>
 			<ul>
 				<li><a routerLink="/components/date-range-picker">Date range picker</a></li>
 			</ul>
 	</sky-demo-page-content>
-    
+
   </sky-tab>
-  
+
   <sky-tab
 		tabHeading="Development">
 
@@ -85,7 +85,7 @@
   <p>
     To use the datepicker module, you must install <sky-code>SkyPopoverModule</sky-code> as a dependency to your project. For more information, see the <a routerLink="/components/popover">popover module</a>.
   </p>
-  
+
   <sky-demo-page-properties sectionHeading="Datepicker input directive properties">
     <sky-demo-page-property
       propertyName="skyDatepickerInput"
@@ -225,7 +225,7 @@
       Specifies the year in a fuzzy date. This property accepts <sky-code>number</sky-code> values.
     </sky-demo-page-property>
   </sky-demo-page-properties>
-  
+
   <sky-demo-page-example>
     <sky-datepicker-demo></sky-datepicker-demo>
     <sky-fuzzy-datepicker-demo></sky-fuzzy-datepicker-demo>
@@ -236,5 +236,5 @@
 
   </sky-tab>
 </sky-tabset>
-    
+
 </sky-tabbed-demo-page>
