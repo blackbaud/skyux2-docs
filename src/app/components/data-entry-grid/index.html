@@ -107,6 +107,10 @@
         To add the SKY UX styles for ag-Grid to your SPA, include <sky-code>"@skyux/ag-grid/css/sky-ag-grid.css"</sky-code> in the <sky-code>styles</sky-code> section of your <sky-code>skyuxconfig.json</sky-code>. For editable grids, include the class <sky-code>sky-ag-grid-editable</sky-code> on the <sky-code>ag-grid-angular</sky-code> element.
       </p>
 
+      <p>
+        To add ag-Grid modules alongside SKY UX modules, include <sky-code>SkyAgGridModule</sky-code> as an export in the <sky-code>app-sky.module.ts</sky-code> file. Next, in the <sky-code>app-extras.module.ts</sky-code> file, add <sky-code>AgGridModule.withComponents([])</sky-code> to the imports section and <sky-code>AgGridModule</sky-code> to the exports section.
+      </p>
+
       <sky-demo-page-properties
       sectionHeading="SkyAgGridService methods"
       >
