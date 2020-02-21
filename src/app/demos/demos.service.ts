@@ -203,6 +203,15 @@ export class SkyDocsDemoCodeService {
           fileContents: require('!!raw-loader!./inline-form/inline-form-demo.component.ts'),
           componentName: 'SkyInlineFormDemoComponent',
           bootstrapSelector: 'sky-inline-form-demo'
+        },
+        {
+          name: 'inline-form-demo-tile.component.html',
+          fileContents: require('!!raw-loader!./inline-form/inline-form-demo-tile.component.html')
+        },
+        {
+          name: 'inline-form-demo-tile.component.ts',
+          fileContents: require('!!raw-loader!./inline-form/inline-form-demo-tile.component.ts'),
+          componentName: 'SkyInlineFormDemoTileComponent'
         }
       ]
     },
