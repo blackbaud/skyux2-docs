@@ -157,7 +157,7 @@
     <sky-code>help</sky-code>
   </stache-page-anchor>
   <p>
-    The <sky-code>help</sky-code> configuration option indicates whether to automatically include the Help Widget in the application to identify the current page and display relevant help content. This property is for internal Blackbaud use only. By default, this property is set to <sky-code>false</sky-code>. For Blackbaud developers who want to include the Help Widget, <a href="https://docs.blackbaud.com/bb-help-docs/learn/configuration/recommended">the Help Widget configuration options documentation</a> describes the configuration object to set the <sky-code>help</sky-code> property to.
+    The <sky-code>help</sky-code> configuration option indicates whether to automatically include the Help Widget in the application to identify the current page and display relevant help content. This property is for internal Blackbaud use only. By default, this property is not set. For Blackbaud developers who want to include the Help Widget, <a href="https://docs.blackbaud.com/bb-help-docs/learn/configuration/recommended">the Help Widget configuration options documentation</a> describes the configuration object to set the <sky-code>help</sky-code> property to.
   </p>
 
   <stache-page-anchor>
@@ -167,6 +167,16 @@
     The <sky-code>host</sky-code> configuration option specifies configuration options for communication with SKY UX Host.
   </p>
   <ul>
+    <li>
+      <p>
+        <sky-code>bbCheckout</sky-code> — Specifies <sky-code>bbCheckout</sky-code> options for the Host service.
+      </p>
+    </li>
+    <li>
+      <p>
+        <sky-code>frameOptions</sky-code> — Specifies frame options for the Host service. This property is for internal Blackbaud use only. For Blackbaud developers, the <a href="https://docs.blackbaud.com/engineering-system-docs/learn/spa/spa-security-preferences">security preferences for embedded iframes</a> describes the available values to pass to this property.
+      </p>
+    </li>
     <li>
       <p>
         <sky-code>url</sky-code> — Specifies a base URL to pass information from <sky-code>skyux serve</sky-code> to the SKY UX Host. The default value is <sky-code>https://host.nxt.blackbaud.com</sky-code>.

@@ -12,18 +12,13 @@
 
   <sky-demo-page-properties sectionHeading="Tokens list properties">
     <sky-demo-page-property
-      propertyName="messageStream"
-    >
-      Specifies an observable of <sky-code>SkyTokensMessageType</sky-code> that can place focus on a particular token or remove the active token from the list.
-    </sky-demo-page-property>
-    <sky-demo-page-property
       propertyName="tokens"
     >
       Specifies an array of tokens to include in the list.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="disabled"
-      defaultValue="true"
+      defaultValue="false"
       isOptional="true"
     >
       Indicates whether to disable the tokens list to prevent users from selecting tokens, dismissing tokens, or navigating through the list with the arrow keys. When the tokens list is disabled, users can still place focus on items in the list using the Tab key.
@@ -48,6 +43,12 @@
       isOptional="true"
     >
       Indicates whether users can focus on items in the list using the Tab key. This does not affect the ability of users to select tokens, dismiss tokens, or navigate through the list with the arrow keys.
+    </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="messageStream"
+      isOptional="true"
+    >
+      Specifies an observable of <sky-code>SkyTokensMessageType</sky-code> that can place focus on a particular token or remove the active token from the list.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
