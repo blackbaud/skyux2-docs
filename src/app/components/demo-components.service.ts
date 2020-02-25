@@ -42,16 +42,7 @@ export class SkyDemoComponentsService {
         name: 'Alert',
         icon: 'bell',
         summary: 'The alert component displays a SKY UX-themed alert.',
-        url: '/components/alert',
-        imports: {
-          '@skyux/indicators': [
-            'SkyAlertModule'
-          ],
-          '@skyux/forms': [
-            'SkyCheckboxModule'
-          ]
-        },
-        getCodeFiles: () => this.getDemoFiles('Alert')
+        url: '/components/alert'
       },
       {
         name: 'Autocomplete',
