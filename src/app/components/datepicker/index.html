@@ -127,6 +127,13 @@
       defaultValue="0">
       Specifies the starting day of the week in the calendar, where <sky-code>0</sky-code> sets the starting day to Sunday. Place this attribute on the <sky-code>input</sky-code> element to override the default starting day in <a stacheRouterLink="." fragment="skydatepickerconfigservice-properties"><sky-code>SkyDatepickerConfigService</sky-code></a>. This property accepts <sky-code>number</sky-code> values.
     </sky-demo-page-property>
+    <sky-demo-page-property
+      propertyName="strict"
+      defaultValue="false"
+      isOptional="true"
+    >
+    Indicates whether the format of the date value must match the format from the <sky-code>dateFormat</sky-code> value. If this property is <sky-code>true</sky-code> and the datepicker input directive cannot find an exact match, then the input is marked as invalid. If this property is <sky-code>false</sky-code> and the datepicker input directive cannot find an exact match, then it attempts to format the string based on the <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 standard format</a>.
+    </sky-demo-page-property>
   </sky-demo-page-properties>
 
   <sky-demo-page-properties sectionHeading="Fuzzy datepicker input directive properties">
