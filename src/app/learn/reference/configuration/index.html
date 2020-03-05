@@ -152,6 +152,13 @@
   <p>
     The <sky-code>cssPath</sky-code> configuration option specifies a path to reference CSS styles. This property is specific to the SKY UX docs site and is for internal Blackbaud use only. To bundle CSS or SCSS files with your SPA, use the <sky-code>styles</sky-code> property of <a stacheRouterLink="." fragment="app">the <sky-code>app</sky-code> configuration option</a> instead.
   </p>
+  
+  <stache-page-anchor>
+    <sky-code>enableIvy</sky-code>
+  </stache-page-anchor>
+  <p>
+    This <sky-code>enableIvy</sky-code> configuration option indicates whether to run Angular Ivy alongside AOT compilation by default. <a href="https://angular.io/guide/ivy">Angular Ivy</a> reduces compile time and bundle size during <sky-code>skyux build</sky-code>. To disable this configuration during builds, set this property to <sky-code>false</sky-code>.
+  </p>
 
   <stache-page-anchor>
     <sky-code>help</sky-code>
