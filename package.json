@@ -59,7 +59,7 @@
     "@skyux/progress-indicator": "3.2.0",
     "@skyux/router": "3.1.1",
     "@skyux/select-field": "3.4.2",
-    "@skyux/split-view": "3.0.0-rc.0",
+    "@skyux/split-view": "3.0.0",
     "@skyux/tabs": "3.2.3",
     "@skyux/theme": "3.9.0",
     "@skyux/tiles": "3.2.0",
