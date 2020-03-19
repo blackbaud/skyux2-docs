@@ -7,13 +7,10 @@
     When you <a routerLink="/learn/get-started/basics/create-project">create a SKY UX project</a>, the SKY UX template provides a <sky-code>skyuxconfig.json</sky-code> file in your project's directory to enable you to configure settings for SKY UX. All properties in <sky-code>skyuxconfig.json</sky-code> are optional, and by default, the file only specifies values for the <sky-code>compileMode</sky-code> and <sky-code>mode</sky-code> settings.
   </p>
   <p>
-    SKY UX allows you to create additional configuration files as necessary <a routerLink="/learn/reference/configuration/additional-config-files">to apply settings to specific SKY UX CLI commands</a> using the <sky-code>skyuxconfig.[COMMAND].json</sky-code> naming convention. For example, you can create a file named <sky-code>skyuxconfig.serve.json</sky-code> that will be used to provide configuration settings when serving the SPA locally using the <strong>serve</strong> command.
+    SKY UX allows you to create additional configuration files as necessary <a routerLink="/learn/reference/configuration/additional-config-files">to apply settings to specific SKY UX CLI commands</a> using the <sky-code>skyuxconfig.[COMMAND].json</sky-code> naming convention. For example, to apply configuration settings when <sky-code>skyux serve</sky-code> runs, create <sky-code>skyuxconfig.serve.json</sky-code>.
   </p>
   <p>
     For ease of use and as a best practice, we recommend ordering configuration options alphabetically.
-  </p>
-  <p>
-    The configuration options that are available in the <sky-code>skyuxconfig.json</sky-code> file include:
   </p>
 
   <stache-page-anchor>
