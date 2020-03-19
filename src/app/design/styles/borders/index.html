@@ -3,7 +3,7 @@
   navTitle="Borders and shadows"
   windowTitle="Borders and shadows"
   showTableOfContents="true">
-  
+
   <p>
     SKY UX uses various line styles to bound, divide, and highlight content. The lines are designed to maintain visual hierarchy regardless of how complex pages become or how many nested containers they include.
   </p>
@@ -34,7 +34,11 @@
       </div>
       <div class="definition-code">
         <div class="sky-field-label">Code</div>
-        <sky-code>@include sky-border(light)</sky-code>
+        <ul>
+          <li><sky-code>class="sky-border-bottom-light"</sky-code></li>
+          <li><sky-code>class="sky-border-light"</sky-code></li>
+          <li><sky-code>@include sky-border(light)</sky-code></li>
+        </ul>
       </div>
       <div class="definition-styling">
         <div class="sky-field-label">Styling</div>
@@ -64,7 +68,11 @@
       </div>
       <div class="definition-code">
         <div class="sky-field-label">Code</div>
-        <sky-code>@include sky-border(dark)</sky-code>
+        <ul>
+          <li><sky-code>class="sky-border-bottom-dark"</sky-code></li>
+          <li><sky-code>class="sky-border-dark"</sky-code></li>
+          <li><sky-code>@include sky-border(dark)</sky-code></li>
+        </ul>
       </div>
       <div class="definition-styling">
         <div class="sky-field-label">Styling</div>
@@ -84,7 +92,10 @@
       </div>
       <div class="definition-code">
         <div class="sky-field-label">Code</div>
-        <sky-code>@include sky-border(row)</sky-code>
+        <ul>
+          <li><sky-code>class="sky-border-bottom-row"</sky-code></li>
+          <li><sky-code>@include sky-border(row)</sky-code></li>
+        </ul>
       </div>
       <div class="definition-styling">
         <div class="sky-field-label">Styling</div>
@@ -92,14 +103,14 @@
       </div>
     </div>
   </div>
-	
+
 	</div>
 
 	<div>
   <stache-page-anchor>
     Corners
   </stache-page-anchor>
-  
+
   <p>
     In general, the component should handle the style of corners. If you need to directly specify the corners of an element, the rule of thumb is to use rounded corners for interactive elements and square corners for containers.
   </p>
@@ -123,9 +134,9 @@
       </div>
     </div>
   </div>
-	
+
 	</div>
-  
+
 	<div>
   <stache-page-anchor>
     Shadows
@@ -134,7 +145,7 @@
   <p>
     In general, the component should handle the use of shadows. Interface designs should be flat aside from these components and use other techniques to create visual separation.
   </p>
-  
+
   <div class="definition-table definition-table-wide">
     <div class="definition-item">
       <div class="swatch sky-shadow" style="border: 1px solid #cdcfd2;"></div>
@@ -154,7 +165,7 @@
       </div>
     </div>
   </div>
-  
+
   <div class="definition-table definition-table-wide">
     <div class="definition-item">
       <div class="swatch" style="border: 1px solid #00b4f1; box-shadow: 0 0 8px rgba(0, 180, 241, 0.6);"></div>
@@ -178,8 +189,8 @@
 				<div>outline: none;</div>
       </div>
     </div>
-  </div>  
-	
+  </div>
+
 	<div class="definition-table definition-table-wide">
     <div class="definition-item">
       <div class="swatch" style="border: 1px solid #ef4044; box-shadow: 0 0 8px 0 rgba(239, 64, 68, 0.6);"></div>
@@ -205,7 +216,7 @@
       </div>
     </div>
   </div>
-		
+
 	</div>
-  
+
 </stache>
