@@ -4,17 +4,20 @@
   navOrder="3">
 
   <p>
-    When you <a routerLink="/learn/get-started/basics/create-project">create a SKY UX project</a>, the SKY UX template provides a <sky-code>skyuxconfig.json</sky-code> file in your project's directory to enable you to configure settings for SKY UX. All properties in <sky-code>skyuxconfig.json</sky-code> are optional, and by default, the file only specifies values for the <sky-code>mode</sky-code> and <sky-code>compileMode</sky-code> settings. SKY UX enables you to create additional configuration files as necessary <a routerLink="/learn/reference/configuration/additional-config-files">to apply settings to specific SKY UX CLI commands</a> using the <sky-code>skyuxconfig.[COMMAND].json</sky-code> naming convention.
+    When you <a routerLink="/learn/get-started/basics/create-project">create a SKY UX project</a>, the SKY UX template provides a <sky-code>skyuxconfig.json</sky-code> file in your project's directory to enable you to configure settings for SKY UX. All properties in <sky-code>skyuxconfig.json</sky-code> are optional, and by default, the file only specifies values for the <sky-code>compileMode</sky-code> and <sky-code>mode</sky-code> settings.
   </p>
   <p>
-    The configuration options that are available in the <sky-code>skyuxconfig.json</sky-code> file include:
+    SKY UX allows you to create additional configuration files as necessary <a routerLink="/learn/reference/configuration/additional-config-files">to apply settings to specific SKY UX CLI commands</a> using the <sky-code>skyuxconfig.[COMMAND].json</sky-code> naming convention. For example, to apply configuration settings when <sky-code>skyux serve</sky-code> runs, create <sky-code>skyuxconfig.serve.json</sky-code>.
+  </p>
+  <p>
+    For ease of use and as a best practice, we recommend ordering configuration options alphabetically.
   </p>
 
   <stache-page-anchor>
     <sky-code>$schema</sky-code>
   </stache-page-anchor>
   <p>
-    The <sky-code>$schema</sky-code> configuration option specifies the file that provides annotations and validation to the entire configuration file in your IDE. You should not modify this file.
+    The <sky-code>$schema</sky-code> configuration option specifies the file that provides annotations and validation to the entire configuration file in your IDE. You should not modify this file or configuration option.
   </p>
 
   <stache-page-anchor>
@@ -36,7 +39,7 @@
     </li>
     <li>
       <p>
-        <sky-code>externals</sky-code> — Dynamically injects CSS and JavaScript files into SKY UX Host for the <sky-code>skyux serve</sky-code> or <sky-code>skyux build</sky-code> commands. You should have a specific use-case for an external. For example, Office Addins require their library to load through CDN in the head. The <sky-code>before</sky-code> and <sky-code>after</sky-code> sections of an external indicate whether to include the external resource before or after the default SKY UX Builder resources. The <sky-code>head</sky-code> property, which only applies to JS resources, indicates whether to inject elements within the HTML <sky-code>head</sky-code> element or just before the closing <sky-code>body</sky-code> tag.
+        <sky-code>externals</sky-code> — Dynamically injects CSS and JavaScript files into SKY UX Host for the <sky-code>skyux serve</sky-code> or <sky-code>skyux build</sky-code> commands. You should have a specific use-case for an external. For example, Office Add-ins require their library to load through CDN in the head. The <sky-code>before</sky-code> and <sky-code>after</sky-code> sections of an external indicate whether to include the external resource before or after the default SKY UX Builder resources. The <sky-code>head</sky-code> property, which only applies to JS resources, indicates whether to inject elements within the HTML <sky-code>head</sky-code> element or just before the closing <sky-code>body</sky-code> tag.
       </p>
       <p>
         For Blackbaud-hosted SPAs, Blackbaud developers must whitelist all URLs in the <sky-code>externals</sky-code> property. If <sky-code>skyuxconfig.json</sky-code> includes externals that are not whitelisted, then the SPA won’t load. To whitelist externals, contact the SKY UX team.
@@ -126,7 +129,7 @@
   </p>
     <ul>
       <li>
-        <sky-code>none</sky-code>: 0 percent
+        <sky-code>none</sky-code>: 0 percent (default)
       </li>
       <li>
         <sky-code>standard</sky-code>: 80 percent
@@ -320,12 +323,12 @@
         <ul>
           <li>
             <p>
-              <sky-code>excludeFromRequests</sky-code> — Indicates whether to exclude the parameter from the query string. By default, <sky-code>SkyAuthHttp</sky-code> and <sky-code>SkyAuthHttpClient</sky-code> include any parameter with listed values in their requests. This parameter allows consumers to track the parameter without including it in the HTTP call.
+              <sky-code>excludeFromRequests</sky-code> — Indicates whether to exclude the parameter from the query string when building requests to backend services. By default, <sky-code>SkyAuthHttp</sky-code> and <sky-code>SkyAuthHttpClient</sky-code> include any parameter with listed values in their requests. This option allows consumers to track the parameter without including it in the HTTP call.
             </p>
           </li>
           <li>
             <p>
-              <sky-code>required</sky-code> — Indicates whether the parameter must be supplied to the application. For the <sky-code>envid</sky-code>, <sky-code>leid</sky-code>, and <sky-code>svcid</sky-code> parameters, <sky-code>@skyux-sdk/builder</sky-code> and <sky-code>@skyux-sdk/builder</sky-code> pass the <sky-code>required</sky-code> state to the <sky-code>auth-client</sky-code>, which attempts to resolve the default value if one is available, show the welcome screen if multiple are available, or show an error if none are available.</p>
+              <sky-code>required</sky-code> — Indicates whether the parameter must be supplied to the application. For the <sky-code>envid</sky-code>, <sky-code>leid</sky-code>, and <sky-code>svcid</sky-code> parameters, <sky-code>@skyux-sdk/builder</sky-code> will pass the <sky-code>required</sky-code> state to the <sky-code>auth-client</sky-code>, which attempts to resolve the default value if one is available, show the welcome screen if multiple are available, or show an error if none are available.</p>
             <p>
               For custom required parameters, no logic is applied, and users can use the <sky-code>SkyuxConfigParams</sky-code> class to interact with them.
             </p>
