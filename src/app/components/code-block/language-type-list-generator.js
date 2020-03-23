@@ -35,6 +35,7 @@ import { Component } from '@angular/core';
 export class LanguageTypeListComponent {
   public languageType: { label: string, values: string[] }[] = [${mapped.join(',')}
   ];
-}`;
+}
+`;
 
 fs.writeFileSync(`${__dirname}/language-type-list.component.ts`, content);
