@@ -5,7 +5,6 @@
     <p>
       The split view component displays a list alongside a workspace where users can view details for the selected item and take actions.
     </p>
-    <stache-include fileName="components/release-candidate-warning.html"></stache-include>
   </sky-demo-page-summary>
 
   <sky-demo-page-example>
@@ -183,7 +182,6 @@
       isOptional="true"
     >
       Sets the <sky-code>SkySplitViewMessage</sky-code> type. Currently, the only available type is <sky-code>SkySplitViewMessageType.FocusWorkspace</sky-code>, which places focus on the first focusable element in the workspace.
-        
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -221,6 +219,7 @@
     <sky-demo-page-property
       propertyName="width"
       isOptional="true"
+      defaultValue="320"
     >
       Sets the list panel's width in pixels. This property accepts <sky-code>numeric</sky-code> values.
     </sky-demo-page-property>

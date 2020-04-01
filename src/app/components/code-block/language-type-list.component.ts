@@ -1,3 +1,4 @@
+
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,610 +7,1298 @@ import { Component } from '@angular/core';
   styleUrls: ['./language-type-list.component.scss']
 })
 export class LanguageTypeListComponent {
-  public languageType: { label: string, value: string }[] = [
+  public languageType: { label: string, values: string[] }[] = [
     {
-      label: 'ABAP',
-      value: 'abap'
-    },
-    {
-      label: 'ActionScript',
-      value: 'actionscript'
-    },
-    {
-      label: 'Ada',
-      value: 'ada'
-    },
-    {
-      label: 'Apache Configuration',
-      value: 'apacheconf'
-    },
-    {
-      label: 'APL',
-      value: 'apl'
-    },
-    {
-      label: 'AppleScript',
-      value: 'applescript'
-    },
-    {
-      label: 'Arduino',
-      value: 'arduino'
-    },
-    {
-      label: 'ARFF',
-      value: 'arff'
-    },
-    {
-      label: 'AsciiDoc',
-      value: 'asciidoc'
-    },
-    {
-      label: '6502 Assembly',
-      value: 'asm6502'
-    },
-    {
-      label: 'ASP.NET (C#)',
-      value: 'aspnet'
-    },
-    {
-      label: 'AutoHotkey',
-      value: 'autohotkey'
-    },
-    {
-      label: 'AutoIt',
-      value: 'autoit'
-    },
-    {
-      label: 'Bash',
-      value: 'bash'
-    },
-    {
-      label: 'BASIC',
-      value: 'basic'
-    },
-    {
-      label: 'Batch',
-      value: 'batch'
-    },
-    {
-      label: 'Bison',
-      value: 'bison'
-    },
-    {
-      label: 'Bro',
-      value: 'bro'
-    },
-    {
-      label: 'C',
-      value: 'c'
-    },
-    {
-      label: 'C-like',
-      value: 'clike'
-    },
-    {
-      label: 'C#',
-      value: 'csharp'
-    },
-    {
-      label: 'C++',
-      value: 'cpp'
-    },
-    {
-      label: 'Clojure',
-      value: 'clojure'
-    },
-    {
-      label: 'CoffeeScript',
-      value: 'coffeescript'
-    },
-    {
-      label: 'Content-Security-Policy',
-      value: 'csp'
-    },
-    {
-      label: 'Crystal',
-      value: 'crystal'
+      label: 'Markup',
+      values: [
+        'markup',
+        'html',
+        'xml',
+        'svg',
+        'mathml'
+      ]
     },
     {
       label: 'CSS',
-      value: 'css'
+      values: [
+        'css'
+      ]
     },
     {
-      label: 'CSS Extras',
-      value: 'css-extras'
-    },
-    {
-      label: 'D',
-      value: 'd'
-    },
-    {
-      label: 'Dart',
-      value: 'dart'
-    },
-    {
-      label: 'Diff',
-      value: 'diff'
-    },
-    {
-      label: 'Django/Jinja2',
-      value: 'django'
-    },
-    {
-      label: 'Docker',
-      value: 'docker'
-    },
-    {
-      label: 'Eiffel',
-      value: 'eiffel'
-    },
-    {
-      label: 'Elixir',
-      value: 'elixir'
-    },
-    {
-      label: 'Elm',
-      value: 'elm'
-    },
-    {
-      label: 'ERB',
-      value: 'erb'
-    },
-    {
-      label: 'Erlang',
-      value: 'erlang'
-    },
-    {
-      label: 'F#',
-      value: 'fsharp'
-    },
-    {
-      label: 'Flow',
-      value: 'flow'
-    },
-    {
-      label: 'Fortran',
-      value: 'fortran'
-    },
-    {
-      label: 'GameMaker Language',
-      value: 'gml'
-    },
-    {
-      label: 'GEDCOM',
-      value: 'gedcom'
-    },
-    {
-      label: 'Gherkin',
-      value: 'gherkin'
-    },
-    {
-      label: 'Git',
-      value: 'git'
-    },
-    {
-      label: 'GLSL',
-      value: 'glsl'
-    },
-    {
-      label: 'Go',
-      value: 'go'
-    },
-    {
-      label: 'GraphQL',
-      value: 'graphql'
-    },
-    {
-      label: 'Groovy',
-      value: 'groovy'
-    },
-    {
-      label: 'Haml',
-      value: 'haml'
-    },
-    {
-      label: 'Handlebars',
-      value: 'handlebars'
-    },
-    {
-      label: 'Haskell',
-      value: 'haskell'
-    },
-    {
-      label: 'Haxe',
-      value: 'haxe'
-    },
-    {
-      label: 'HTTP',
-      value: 'http'
-    },
-    {
-      label: 'HTTP Public-Key-Pins',
-      value: 'hpkp'
-    },
-    {
-      label: 'HTTP Strict-Transport-Security',
-      value: 'hsts'
-    },
-    {
-      label: 'IchigoJam',
-      value: 'ichigojam'
-    },
-    {
-      label: 'Icon',
-      value: 'icon'
-    },
-    {
-      label: 'Inform 7',
-      value: 'inform7'
-    },
-    {
-      label: 'Ini',
-      value: 'ini'
-    },
-    {
-      label: 'Io',
-      value: 'io'
-    },
-    {
-      label: 'J',
-      value: 'j'
-    },
-    {
-      label: 'Java',
-      value: 'java'
+      label: 'C-like',
+      values: [
+        'clike'
+      ]
     },
     {
       label: 'JavaScript',
-      value: 'javascript'
+      values: [
+        'javascript',
+        'js'
+      ]
+    },
+    {
+      label: 'ABAP',
+      values: [
+        'abap'
+      ]
+    },
+    {
+      label: 'Augmented Backus–Naur form',
+      values: [
+        'abnf'
+      ]
+    },
+    {
+      label: 'ActionScript',
+      values: [
+        'actionscript'
+      ]
+    },
+    {
+      label: 'Ada',
+      values: [
+        'ada'
+      ]
+    },
+    {
+      label: 'ANTLR4',
+      values: [
+        'antlr4',
+        'g4'
+      ]
+    },
+    {
+      label: 'Apache Configuration',
+      values: [
+        'apacheconf'
+      ]
+    },
+    {
+      label: 'APL',
+      values: [
+        'apl'
+      ]
+    },
+    {
+      label: 'AppleScript',
+      values: [
+        'applescript'
+      ]
+    },
+    {
+      label: 'AQL',
+      values: [
+        'aql'
+      ]
+    },
+    {
+      label: 'Arduino',
+      values: [
+        'arduino'
+      ]
+    },
+    {
+      label: 'ARFF',
+      values: [
+        'arff'
+      ]
+    },
+    {
+      label: 'AsciiDoc',
+      values: [
+        'asciidoc',
+        'adoc'
+      ]
+    },
+    {
+      label: '6502 Assembly',
+      values: [
+        'asm6502'
+      ]
+    },
+    {
+      label: 'ASP.NET (C#)',
+      values: [
+        'aspnet'
+      ]
+    },
+    {
+      label: 'AutoHotkey',
+      values: [
+        'autohotkey'
+      ]
+    },
+    {
+      label: 'AutoIt',
+      values: [
+        'autoit'
+      ]
+    },
+    {
+      label: 'Bash',
+      values: [
+        'bash',
+        'shell'
+      ]
+    },
+    {
+      label: 'BASIC',
+      values: [
+        'basic'
+      ]
+    },
+    {
+      label: 'Batch',
+      values: [
+        'batch'
+      ]
+    },
+    {
+      label: 'BBcode',
+      values: [
+        'bbcode'
+      ]
+    },
+    {
+      label: 'Bison',
+      values: [
+        'bison'
+      ]
+    },
+    {
+      label: 'Backus–Naur form',
+      values: [
+        'bnf',
+        'rbnf'
+      ]
+    },
+    {
+      label: 'Brainfuck',
+      values: [
+        'brainfuck'
+      ]
+    },
+    {
+      label: 'BrightScript',
+      values: [
+        'brightscript'
+      ]
+    },
+    {
+      label: 'Bro',
+      values: [
+        'bro'
+      ]
+    },
+    {
+      label: 'C',
+      values: [
+        'c'
+      ]
+    },
+    {
+      label: 'Concurnas',
+      values: [
+        'concurnas',
+        'conc'
+      ]
+    },
+    {
+      label: 'C#',
+      values: [
+        'csharp',
+        'cs',
+        'dotnet'
+      ]
+    },
+    {
+      label: 'C++',
+      values: [
+        'cpp'
+      ]
+    },
+    {
+      label: 'CIL',
+      values: [
+        'cil'
+      ]
+    },
+    {
+      label: 'CoffeeScript',
+      values: [
+        'coffeescript',
+        'coffee'
+      ]
+    },
+    {
+      label: 'CMake',
+      values: [
+        'cmake'
+      ]
+    },
+    {
+      label: 'Clojure',
+      values: [
+        'clojure'
+      ]
+    },
+    {
+      label: 'Crystal',
+      values: [
+        'crystal'
+      ]
+    },
+    {
+      label: 'Content-Security-Policy',
+      values: [
+        'csp'
+      ]
+    },
+    {
+      label: 'CSS Extras',
+      values: [
+        'css-extras'
+      ]
+    },
+    {
+      label: 'D',
+      values: [
+        'd'
+      ]
+    },
+    {
+      label: 'Dart',
+      values: [
+        'dart'
+      ]
+    },
+    {
+      label: 'DAX',
+      values: [
+        'dax'
+      ]
+    },
+    {
+      label: 'Diff',
+      values: [
+        'diff'
+      ]
+    },
+    {
+      label: 'Django/Jinja2',
+      values: [
+        'django',
+        'jinja2'
+      ]
+    },
+    {
+      label: 'DNS zone file',
+      values: [
+        'dns-zone-file',
+        'dns-zone'
+      ]
+    },
+    {
+      label: 'Docker',
+      values: [
+        'docker',
+        'dockerfile'
+      ]
+    },
+    {
+      label: 'Extended Backus–Naur form',
+      values: [
+        'ebnf'
+      ]
+    },
+    {
+      label: 'Eiffel',
+      values: [
+        'eiffel'
+      ]
+    },
+    {
+      label: 'EJS',
+      values: [
+        'ejs'
+      ]
+    },
+    {
+      label: 'Elixir',
+      values: [
+        'elixir'
+      ]
+    },
+    {
+      label: 'Elm',
+      values: [
+        'elm'
+      ]
+    },
+    {
+      label: 'Embedded Lua templating',
+      values: [
+        'etlua'
+      ]
+    },
+    {
+      label: 'ERB',
+      values: [
+        'erb'
+      ]
+    },
+    {
+      label: 'Erlang',
+      values: [
+        'erlang'
+      ]
+    },
+    {
+      label: 'Excel Formula',
+      values: [
+        'excel-formula',
+        'xlsx',
+        'xls'
+      ]
+    },
+    {
+      label: 'F#',
+      values: [
+        'fsharp'
+      ]
+    },
+    {
+      label: 'Factor',
+      values: [
+        'factor'
+      ]
+    },
+    {
+      label: 'Firestore security rules',
+      values: [
+        'firestore-security-rules'
+      ]
+    },
+    {
+      label: 'Flow',
+      values: [
+        'flow'
+      ]
+    },
+    {
+      label: 'Fortran',
+      values: [
+        'fortran'
+      ]
+    },
+    {
+      label: 'FreeMarker Template Language',
+      values: [
+        'ftl'
+      ]
+    },
+    {
+      label: 'G-code',
+      values: [
+        'gcode'
+      ]
+    },
+    {
+      label: 'GDScript',
+      values: [
+        'gdscript'
+      ]
+    },
+    {
+      label: 'GEDCOM',
+      values: [
+        'gedcom'
+      ]
+    },
+    {
+      label: 'Gherkin',
+      values: [
+        'gherkin'
+      ]
+    },
+    {
+      label: 'Git',
+      values: [
+        'git'
+      ]
+    },
+    {
+      label: 'GLSL',
+      values: [
+        'glsl'
+      ]
+    },
+    {
+      label: 'GameMaker Language',
+      values: [
+        'gml',
+        'gamemakerlanguage'
+      ]
+    },
+    {
+      label: 'Go',
+      values: [
+        'go'
+      ]
+    },
+    {
+      label: 'GraphQL',
+      values: [
+        'graphql'
+      ]
+    },
+    {
+      label: 'Groovy',
+      values: [
+        'groovy'
+      ]
+    },
+    {
+      label: 'Haml',
+      values: [
+        'haml'
+      ]
+    },
+    {
+      label: 'Handlebars',
+      values: [
+        'handlebars'
+      ]
+    },
+    {
+      label: 'Haskell',
+      values: [
+        'haskell',
+        'hs'
+      ]
+    },
+    {
+      label: 'Haxe',
+      values: [
+        'haxe'
+      ]
+    },
+    {
+      label: 'HCL',
+      values: [
+        'hcl'
+      ]
+    },
+    {
+      label: 'HTTP',
+      values: [
+        'http'
+      ]
+    },
+    {
+      label: 'HTTP Public-Key-Pins',
+      values: [
+        'hpkp'
+      ]
+    },
+    {
+      label: 'HTTP Strict-Transport-Security',
+      values: [
+        'hsts'
+      ]
+    },
+    {
+      label: 'IchigoJam',
+      values: [
+        'ichigojam'
+      ]
+    },
+    {
+      label: 'Icon',
+      values: [
+        'icon'
+      ]
+    },
+    {
+      label: 'Inform 7',
+      values: [
+        'inform7'
+      ]
+    },
+    {
+      label: 'Ini',
+      values: [
+        'ini'
+      ]
+    },
+    {
+      label: 'Io',
+      values: [
+        'io'
+      ]
+    },
+    {
+      label: 'J',
+      values: [
+        'j'
+      ]
+    },
+    {
+      label: 'Java',
+      values: [
+        'java'
+      ]
+    },
+    {
+      label: 'JavaDoc',
+      values: [
+        'javadoc'
+      ]
+    },
+    {
+      label: 'JavaDoc-like',
+      values: [
+        'javadoclike'
+      ]
+    },
+    {
+      label: 'Java stack trace',
+      values: [
+        'javastacktrace'
+      ]
     },
     {
       label: 'Jolie',
-      value: 'jolie'
+      values: [
+        'jolie'
+      ]
+    },
+    {
+      label: 'JQ',
+      values: [
+        'jq'
+      ]
+    },
+    {
+      label: 'JSDoc',
+      values: [
+        'jsdoc'
+      ]
+    },
+    {
+      label: 'JS Extras',
+      values: [
+        'js-extras'
+      ]
+    },
+    {
+      label: 'JS Templates',
+      values: [
+        'js-templates'
+      ]
     },
     {
       label: 'JSON',
-      value: 'json'
+      values: [
+        'json'
+      ]
+    },
+    {
+      label: 'JSONP',
+      values: [
+        'jsonp'
+      ]
+    },
+    {
+      label: 'JSON5',
+      values: [
+        'json5'
+      ]
     },
     {
       label: 'Julia',
-      value: 'julia'
+      values: [
+        'julia'
+      ]
     },
     {
       label: 'Keyman',
-      value: 'keyman'
+      values: [
+        'keyman'
+      ]
     },
     {
       label: 'Kotlin',
-      value: 'kotlin'
+      values: [
+        'kotlin'
+      ]
     },
     {
       label: 'LaTeX',
-      value: 'latex'
+      values: [
+        'latex',
+        'tex',
+        'context'
+      ]
+    },
+    {
+      label: 'Latte',
+      values: [
+        'latte'
+      ]
     },
     {
       label: 'Less',
-      value: 'less'
+      values: [
+        'less'
+      ]
+    },
+    {
+      label: 'LilyPond',
+      values: [
+        'lilypond',
+        'ly'
+      ]
     },
     {
       label: 'Liquid',
-      value: 'liquid'
+      values: [
+        'liquid'
+      ]
     },
     {
       label: 'Lisp',
-      value: 'lisp'
+      values: [
+        'lisp',
+        'emacs',
+        'elisp',
+        'emacs-lisp'
+      ]
     },
     {
       label: 'LiveScript',
-      value: 'livescript'
+      values: [
+        'livescript'
+      ]
     },
     {
       label: 'LOLCODE',
-      value: 'lolcode'
+      values: [
+        'lolcode'
+      ]
     },
     {
       label: 'Lua',
-      value: 'lua'
+      values: [
+        'lua'
+      ]
     },
     {
       label: 'Makefile',
-      value: 'makefile'
+      values: [
+        'makefile'
+      ]
     },
     {
       label: 'Markdown',
-      value: 'markdown'
-    },
-    {
-      label: 'Markup',
-      value: 'markup'
+      values: [
+        'markdown',
+        'md'
+      ]
     },
     {
       label: 'Markup templating',
-      value: 'markup-templating'
+      values: [
+        'markup-templating'
+      ]
     },
     {
       label: 'MATLAB',
-      value: 'matlab'
+      values: [
+        'matlab'
+      ]
     },
     {
       label: 'MEL',
-      value: 'mel'
+      values: [
+        'mel'
+      ]
     },
     {
       label: 'Mizar',
-      value: 'mizar'
+      values: [
+        'mizar'
+      ]
     },
     {
       label: 'Monkey',
-      value: 'monkey'
+      values: [
+        'monkey'
+      ]
+    },
+    {
+      label: 'MoonScript',
+      values: [
+        'moonscript',
+        'moon'
+      ]
+    },
+    {
+      label: 'N1QL',
+      values: [
+        'n1ql'
+      ]
     },
     {
       label: 'N4JS',
-      value: 'n4js'
+      values: [
+        'n4js',
+        'n4jsd'
+      ]
+    },
+    {
+      label: 'Nand To Tetris HDL',
+      values: [
+        'nand2tetris-hdl'
+      ]
     },
     {
       label: 'NASM',
-      value: 'nasm'
+      values: [
+        'nasm'
+      ]
+    },
+    {
+      label: 'NEON',
+      values: [
+        'neon'
+      ]
     },
     {
       label: 'nginx',
-      value: 'nginx'
+      values: [
+        'nginx'
+      ]
     },
     {
       label: 'Nim',
-      value: 'nim'
+      values: [
+        'nim'
+      ]
     },
     {
       label: 'Nix',
-      value: 'nix'
+      values: [
+        'nix'
+      ]
     },
     {
       label: 'NSIS',
-      value: 'nsis'
+      values: [
+        'nsis'
+      ]
     },
     {
       label: 'Objective-C',
-      value: 'objectivec'
+      values: [
+        'objectivec'
+      ]
     },
     {
       label: 'OCaml',
-      value: 'ocaml'
+      values: [
+        'ocaml'
+      ]
     },
     {
       label: 'OpenCL',
-      value: 'opencl'
+      values: [
+        'opencl'
+      ]
     },
     {
       label: 'Oz',
-      value: 'oz'
+      values: [
+        'oz'
+      ]
     },
     {
       label: 'PARI/GP',
-      value: 'parigp'
+      values: [
+        'parigp'
+      ]
     },
     {
       label: 'Parser',
-      value: 'parser'
+      values: [
+        'parser'
+      ]
     },
     {
       label: 'Pascal',
-      value: 'pascal'
+      values: [
+        'pascal',
+        'objectpascal'
+      ]
+    },
+    {
+      label: 'Pascaligo',
+      values: [
+        'pascaligo'
+      ]
+    },
+    {
+      label: 'PC-Axis',
+      values: [
+        'pcaxis',
+        'px'
+      ]
     },
     {
       label: 'Perl',
-      value: 'perl'
+      values: [
+        'perl'
+      ]
     },
     {
       label: 'PHP',
-      value: 'php'
+      values: [
+        'php'
+      ]
+    },
+    {
+      label: 'PHPDoc',
+      values: [
+        'phpdoc'
+      ]
     },
     {
       label: 'PHP Extras',
-      value: 'php-extras'
+      values: [
+        'php-extras'
+      ]
     },
     {
       label: 'PL/SQL',
-      value: 'plsql'
+      values: [
+        'plsql'
+      ]
+    },
+    {
+      label: 'PowerQuery',
+      values: [
+        'powerquery',
+        'pq',
+        'mscript'
+      ]
     },
     {
       label: 'PowerShell',
-      value: 'powershell'
+      values: [
+        'powershell'
+      ]
     },
     {
       label: 'Processing',
-      value: 'processing'
+      values: [
+        'processing'
+      ]
     },
     {
       label: 'Prolog',
-      value: 'prolog'
+      values: [
+        'prolog'
+      ]
     },
     {
       label: '.properties',
-      value: 'properties'
+      values: [
+        'properties'
+      ]
     },
     {
       label: 'Protocol Buffers',
-      value: 'protobuf'
+      values: [
+        'protobuf'
+      ]
     },
     {
       label: 'Pug',
-      value: 'pug'
+      values: [
+        'pug'
+      ]
     },
     {
       label: 'Puppet',
-      value: 'puppet'
+      values: [
+        'puppet'
+      ]
     },
     {
       label: 'Pure',
-      value: 'pure'
+      values: [
+        'pure'
+      ]
     },
     {
       label: 'Python',
-      value: 'python'
+      values: [
+        'python',
+        'py'
+      ]
     },
     {
       label: 'Q (kdb+ database)',
-      value: 'q'
+      values: [
+        'q'
+      ]
+    },
+    {
+      label: 'QML',
+      values: [
+        'qml'
+      ]
     },
     {
       label: 'Qore',
-      value: 'qore'
+      values: [
+        'qore'
+      ]
     },
     {
       label: 'R',
-      value: 'r'
+      values: [
+        'r'
+      ]
     },
     {
       label: 'React JSX',
-      value: 'jsx'
+      values: [
+        'jsx'
+      ]
     },
     {
       label: 'React TSX',
-      value: 'tsx'
+      values: [
+        'tsx'
+      ]
+    },
+    {
+      label: 'Ren\'py',
+      values: [
+        'renpy'
+      ]
     },
     {
       label: 'Reason',
-      value: 'reason'
+      values: [
+        'reason'
+      ]
     },
     {
-      label: 'Renpy',
-      value: 'renpy'
+      label: 'Regex',
+      values: [
+        'regex'
+      ]
     },
     {
       label: 'reST (reStructuredText)',
-      value: 'rest'
+      values: [
+        'rest'
+      ]
     },
     {
       label: 'Rip',
-      value: 'rip'
+      values: [
+        'rip'
+      ]
     },
     {
       label: 'Roboconf',
-      value: 'roboconf'
+      values: [
+        'roboconf'
+      ]
+    },
+    {
+      label: 'Robot Framework',
+      values: [
+        'robotframework',
+        'robot'
+      ]
     },
     {
       label: 'Ruby',
-      value: 'ruby'
+      values: [
+        'ruby',
+        'rb'
+      ]
     },
     {
       label: 'Rust',
-      value: 'rust'
+      values: [
+        'rust'
+      ]
     },
     {
       label: 'SAS',
-      value: 'sas'
+      values: [
+        'sas'
+      ]
     },
     {
       label: 'Sass (Sass)',
-      value: 'sass'
+      values: [
+        'sass'
+      ]
     },
     {
       label: 'Sass (Scss)',
-      value: 'scss'
+      values: [
+        'scss'
+      ]
     },
     {
       label: 'Scala',
-      value: 'scala'
+      values: [
+        'scala'
+      ]
     },
     {
       label: 'Scheme',
-      value: 'scheme'
+      values: [
+        'scheme'
+      ]
+    },
+    {
+      label: 'Shell session',
+      values: [
+        'shell-session'
+      ]
     },
     {
       label: 'Smalltalk',
-      value: 'smalltalk'
+      values: [
+        'smalltalk'
+      ]
     },
     {
       label: 'Smarty',
-      value: 'smarty'
+      values: [
+        'smarty'
+      ]
+    },
+    {
+      label: 'Solidity (Ethereum)',
+      values: [
+        'solidity'
+      ]
+    },
+    {
+      label: 'Solution file',
+      values: [
+        'solution-file',
+        'sln'
+      ]
     },
     {
       label: 'Soy (Closure Template)',
-      value: 'soy'
+      values: [
+        'soy'
+      ]
+    },
+    {
+      label: 'SPARQL',
+      values: [
+        'sparql',
+        'rq'
+      ]
+    },
+    {
+      label: 'Splunk SPL',
+      values: [
+        'splunk-spl'
+      ]
+    },
+    {
+      label: 'SQF: Status Quo Function (Arma 3)',
+      values: [
+        'sqf'
+      ]
     },
     {
       label: 'SQL',
-      value: 'sql'
+      values: [
+        'sql'
+      ]
     },
     {
       label: 'Stylus',
-      value: 'stylus'
+      values: [
+        'stylus'
+      ]
     },
     {
       label: 'Swift',
-      value: 'swift'
+      values: [
+        'swift'
+      ]
     },
     {
       label: 'TAP',
-      value: 'tap'
+      values: [
+        'tap'
+      ]
     },
     {
       label: 'Tcl',
-      value: 'tcl'
-    },
-    {
-      label: 'Template Toolkit 2',
-      value: 'tt2'
+      values: [
+        'tcl'
+      ]
     },
     {
       label: 'Textile',
-      value: 'textile'
+      values: [
+        'textile'
+      ]
+    },
+    {
+      label: 'TOML',
+      values: [
+        'toml'
+      ]
+    },
+    {
+      label: 'Template Toolkit 2',
+      values: [
+        'tt2'
+      ]
+    },
+    {
+      label: 'Turtle',
+      values: [
+        'turtle',
+        'trig'
+      ]
     },
     {
       label: 'Twig',
-      value: 'twig'
+      values: [
+        'twig'
+      ]
     },
     {
       label: 'TypeScript',
-      value: 'typescript'
+      values: [
+        'typescript',
+        'ts'
+      ]
+    },
+    {
+      label: 'T4 Text Templates (C#)',
+      values: [
+        't4-cs',
+        't4'
+      ]
+    },
+    {
+      label: 'T4 Text Templates (VB)',
+      values: [
+        't4-vb'
+      ]
+    },
+    {
+      label: 'T4 templating',
+      values: [
+        't4-templating'
+      ]
+    },
+    {
+      label: 'Vala',
+      values: [
+        'vala'
+      ]
     },
     {
       label: 'VB.Net',
-      value: 'vbnet'
+      values: [
+        'vbnet'
+      ]
     },
     {
       label: 'Velocity',
-      value: 'velocity'
+      values: [
+        'velocity'
+      ]
     },
     {
       label: 'Verilog',
-      value: 'verilog'
+      values: [
+        'verilog'
+      ]
     },
     {
       label: 'VHDL',
-      value: 'vhdl'
+      values: [
+        'vhdl'
+      ]
     },
     {
       label: 'vim',
-      value: 'vim'
+      values: [
+        'vim'
+      ]
     },
     {
       label: 'Visual Basic',
-      value: 'visual-basic'
+      values: [
+        'visual-basic',
+        'vb'
+      ]
     },
     {
       label: 'WebAssembly',
-      value: 'wasm'
+      values: [
+        'wasm'
+      ]
     },
     {
       label: 'Wiki markup',
-      value: 'wiki'
+      values: [
+        'wiki'
+      ]
     },
     {
       label: 'Xeora',
-      value: 'xeora'
+      values: [
+        'xeora',
+        'xeoracube'
+      ]
     },
     {
       label: 'Xojo (REALbasic)',
-      value: 'xojo'
+      values: [
+        'xojo'
+      ]
     },
     {
       label: 'XQuery',
-      value: 'xquery'
+      values: [
+        'xquery'
+      ]
     },
     {
       label: 'YAML',
-      value: 'yam'
+      values: [
+        'yaml',
+        'yml'
+      ]
+    },
+    {
+      label: 'Zig',
+      values: [
+        'zig'
+      ]
     }
   ];
 }
