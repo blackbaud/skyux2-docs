@@ -2,17 +2,17 @@
     pageTitle="Form Design"
     navTitle="Form design"
     showTableOfContents="true">
-		
+
 		<stache-page-summary>
 			<p>
 				Form design patterns provide guidance to accommodate a wide variety scenarios and workflow requirements.
 			</p>
 		</stache-page-summary>
-		
+
 		<stache-page-anchor>
 			Form containers
 		</stache-page-anchor>
-		
+
 		<div class="sky-subsection-heading">
 			Inline panel
 		</div>
@@ -36,7 +36,7 @@
 				</p>
 			</li>
 		</ul>
-		
+
 		<div class="sky-subsection-heading">
 			Modal dialog
 		</div>
@@ -60,7 +60,7 @@
 				</p>
 			</li>
 		</ul>
-		
+
 		<div class="sky-subsection-heading">
 			Full-page modal
 		</div>
@@ -99,7 +99,7 @@
 				</p>
 			</li>
 	</ul>
-    
+
 	<div class="sky-subsection-heading">
 		Sectioned form
 	</div>
@@ -121,7 +121,7 @@
 	<p>
 		Sectioned forms are not appropriate when choices on one tab can affect other tabs because changes are potentially invisible or unpredictable to users.
 	</p>
-	
+
 	<div class="sky-subsection-heading">
 		Wizard
 	</div>
@@ -155,11 +155,11 @@
 			</p>
 		</li>
 	</ul>
-	
+
 	<stache-page-anchor>
 		Field layout
 	</stache-page-anchor>
-	
+
 	<div class="sky-subsection-heading">
 		General field layout
 	</div>
@@ -167,10 +167,10 @@
 		<sky-column screenSmall="6">
 			<p>
 				Fields should generally flow vertically. Wrap fields in <a routerLink="/components/form" fragment="form-group">the <sky-code>sky-form-group</sky-code> class</a> to provide the correct amount of vertical padding between fields.
-			</p> 
+			</p>
 			<p>
 				The most common exception is closely related fields such as first and last name fields that can flow horizontally. If you use a horizontal flow, use <a routerLink="/components/fluid-grid">a fluid grid layout</a> to ensure that the form scales properly to smaller viewports.
-			</p> 
+			</p>
 			<p>
 				Use these three column widths when designing a form:
 			</p>
@@ -197,21 +197,21 @@
 			<p>
 				Multi-line alphanumeric inputs, checkboxes, and radio buttons should generally be full width.
 			</p>
-			
+
 			<div class="sky-subsection-heading">
 				Subsections
 			</div>
 			<p>
 				To visually separate a small set of fields such as address fields from other fields, use 20px of vertical spacing and a subsection header with <a routerLink="/design/styles/typography">the <sky-code>sky-subsection-heading</sky-code> class</a>.
 			</p>
-			
+
 			<div class="sky-subsection-heading">
 				Tiles
 			</div>
 			<p>
 				If a form collects multiple facets of information and users need to fill out all of them, use tiles to group the fields of those facets.
 			</p>
-			
+
 			<div class="sky-subsection-heading">
 				Sub-forms
 			</div>
@@ -221,7 +221,7 @@
 			<p>
 				If you do not save sub-form data until users save the underlying form, then change the submit button's label from <span class="sky-emphasized">Save</span> to <span class="sky-emphasized">Done</span> to indicate that the data is not saved.
 			</p>
-			
+
 			<div class="sky-subsection-heading">
 				Conditionally applicable fields
 			</div>
@@ -235,7 +235,7 @@
 			</div>
 		</sky-column>
 	</sky-row>
-	
+
 	<stache-page-anchor>
 		Field usability
 	</stache-page-anchor>
@@ -257,14 +257,20 @@
 					<li>"Enter your Zip code"</li>
 					<li>"What is your Zip code?"</li>
 				</ul>
-			
+
 			<div class="sky-subsection-heading">
 				Placeholder text
 			</div>
 			<p>
-				You can use a small amount of placeholder text to help users with data entry. Do not use placeholder text in place of field labels.
-			</p>
-			
+        For fields where users need extra help, you can provide placeholder text. This text needs to be clear and concise, and it doesn't need to use complete sentences. For example, when a field requires a specific format, you can demonstrate the format with placeholder text.
+      </p>
+      <p>
+        Do not use placeholder text in place of field labels. However, when fields such as <a routerLink="/components/search">search fields</a> do not have labels, you can use placeholder text to help users.
+      </p>
+      <p>
+        Use placeholder text sparingly. In general, <a routerLink="/design/guidelines/user-assistance">persistent inline help</a> is more useful. Do not overuse placeholder text in fields where users don't need extra help because it loses its impact and clutters the page or form.
+      </p>
+
 			<div class="sky-subsection-heading">
 				Inline help
 			</div>
@@ -278,11 +284,11 @@
 			</div>
 		</sky-column>
 	</sky-row>
-	
+
 	<stache-page-anchor>
 		Selection inputs
 	</stache-page-anchor>
-	<p>You can take several different approaches to allow users to select items from a list of items.</p>	
+	<p>You can take several different approaches to allow users to select items from a list of items.</p>
 	<ul>
 		<li>The <a routerLink="/components/autocomplete">autocomplete</a> component provides a typeahead search input that is effective when users know what they are looking for and can select a single item.</li>
 		<li><a routerLink="/components/checkbox">Checkboxes</a> are effective when users can select multiple items from a short list of items.</li>
@@ -294,16 +300,16 @@
 	<p>
 		To provide a consistent experience when users select items from lists, follow these guidelines to determine which controls to use:
 	</p>
-	
+
 	<div class="screenshot screenshot-info">
 		<img src="~/assets/img/guidelines/formdesign/select-items-decision-tree.png" />
 	</div>
 
-		
+
 	<stache-page-anchor>
 		Validation and error handling
-	</stache-page-anchor>	
-	
+	</stache-page-anchor>
+
 	<div class="sky-subsection-heading">
 		Validation timing
 	</div>
@@ -327,7 +333,7 @@
 			</p>
 		</li>
 	</ol>
-	
+
 	<div class="sky-subsection-heading">
 		Required fields
 	</div>
@@ -337,14 +343,14 @@
 	<p>
 		The <a routerLink="/components/sectioned-form">sectioned form</a> component includes a property to display the red asterisk in the tab panel of tabs that contain required fields.
 	</p>
-	
+
 	<div class="sky-subsection-heading">
 		Other validation
 	</div>
 	<p>
 		Use the validation that is available in the <a routerLink="/components/datepicker">datepicker</a>, <a routerLink="/components/timepicker">timepicker</a>, <a routerLink="/components/email-validation">email validation</a>, and <a routerLink="/components/url-validation">URL validation</a> components when you collect those types of data. You can also create custom validation as necessary.
 	</p>
-	
+
 	<div class="sky-subsection-heading">
 		Error states
 	</div>
@@ -355,8 +361,8 @@
 			</p>
 			<p>
 				In addition to this validation, error messages are necessary to explain how to correct the errors. Generally, error messages employ one of two types, although other message types are necessary in some cases:
-			</p> 
-			<ol>	
+			</p>
+			<ol>
 				<li>
 					<p>
 						[Item] is required.
