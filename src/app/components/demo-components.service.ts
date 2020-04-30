@@ -421,7 +421,9 @@ export class SkyDemoComponentsService {
           ]
         },
         dependencies: {
-          '@skyux/list-builder-common': '*'
+          '@skyux/list-builder-common': '*',
+          'dragula': '3.7.2',
+          'ng2-dragula': '1.5.0'
         },
         getCodeFiles: () => this.getDemoFiles('Grid')
       },
@@ -1140,6 +1142,10 @@ export class SkyDemoComponentsService {
           '@skyux/tiles': [
             'SkyTilesModule'
           ]
+        },
+        dependencies: {
+          'dragula': '3.7.2',
+          'ng2-dragula': '1.5.0'
         },
         getCodeFiles: () => this.getDemoFiles('Tile')
       },
