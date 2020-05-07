@@ -1,0 +1,39 @@
+<sky-demo-page
+  pageTitle="Code"
+  navTitle="Code"
+  skyuxModule="SkyCodeModule"
+  packageName="@blackbaud/skyux-lib-code-block"
+>
+
+  <sky-demo-page-summary>
+    <p>
+      The code component formats text as a code snippet within larger blocks of text. Within the block of text, wrap <sky-code>sky-code</sky-code> tags around the code snippet. To format longer code snippets that stand alone as separate blocks of text, use the <a routerLink="/components/code-block">code block component</a> instead.
+    </p>
+    <p>
+      If a code snippet has text within <sky-code>&lt;</sky-code> and <sky-code>&gt;</sky-code> characters, then the component automatically appends a closing tag unless the code snippet is valid HTML. To prevent this, use "&#38;lt;" to escape <sky-code>&lt;</sky-code> and "&#38;gt;" to escape <sky-code>&gt;</sky-code>. For example, escape the <sky-code>&lt;</sky-code> and <sky-code>&gt;</sky-code> characters in the code snippet <sky-code>public Task&lt;Generic> MethodName()</sky-code> or the component automatically appends <sky-code>&lt;/Generic></sky-code> to the end: <sky-code>public Task&lt;Generic> MethodName()&lt;/Generic></sky-code>.
+    </p>
+    <p>
+      <sky-alert alertType="info">
+        To use the code component, you must set up the code block plugin. To install the plugin, run <sky-code>npm install @blackbaud/skyux-builder-plugin-code-block --save --save-exact</sky-code>. Then add the plugin to your <sky-code>skyuxconfig.json</sky-code> file: <sky-code>"plugins": ["@blackbaud/skyux-builder-plugin-code-block"]</sky-code>.
+      </sky-alert>
+    </p>
+  </sky-demo-page-summary>
+
+  <sky-demo-page-properties sectionHeading="Code properties">
+    <sky-demo-page-property
+      propertyName="escapeCharacters"
+      isOptional="true"
+      defaultValue="false"
+    >
+      Indicates whether to escape special characters such as <sky-code>{{ '{' }}</sky-code> and <sky-code>\</sky-code>. Escaping these characters renders them as text instead of code. Defaults to false.
+    </sky-demo-page-property>
+  </sky-demo-page-properties>
+
+  <sky-demo-page-example>
+    <sky-code-demo></sky-code-demo>
+    <sky-demo-page-code
+      demoName="Code">
+    </sky-demo-page-code>
+  </sky-demo-page-example>
+
+</sky-demo-page>
