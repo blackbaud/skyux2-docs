@@ -1004,8 +1004,7 @@ export class SkyDemoComponentsService {
             'SkyCheckboxModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('Sectioned form'),
-        disableStackblitz: true
+        getCodeFiles: () => this.getDemoFiles('Sectioned form')
       },
       {
         name: 'Select field',
