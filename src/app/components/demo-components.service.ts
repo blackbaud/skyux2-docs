@@ -399,10 +399,11 @@ export class SkyDemoComponentsService {
           '@skyux/lookup': '*',
           '@skyux/grids': '*',
           '@skyux/list-builder-view-checklist': '*',
-          '@skyux/inline-form': '*'
+          '@skyux/inline-form': '*',
+          'dragula': '3.7.2',
+          'ng2-dragula': '1.5.0'
         },
-        getCodeFiles: () => this.getDemoFiles('Flyout'),
-        disableStackblitz: true
+        getCodeFiles: () => this.getDemoFiles('Flyout')
       },
       {
         name: 'Form',
@@ -1252,8 +1253,7 @@ export class SkyDemoComponentsService {
             'SkyVerticalTabsetModule'
           ]
         },
-        getCodeFiles: () => this.getDemoFiles('Vertical tabs'),
-        disableStackblitz: true
+        getCodeFiles: () => this.getDemoFiles('Vertical tabs')
       },
       {
         name: 'Wait',
