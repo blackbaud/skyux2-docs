@@ -2,6 +2,7 @@ export * from './angular-tree-component';
 export * from './character-count';
 export * from './phone-field';
 export * from './summary-action-bar';
+export * from './code';
 export * from './code-block';
 export * from './copy-to-clipboard';
 export * from './data-entry-grid';
