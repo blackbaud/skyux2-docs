@@ -124,6 +124,24 @@ export class SkyDemoComponentsService {
         getCodeFiles: () => this.getDemoFiles('Checkbox')
       },
       {
+        name: 'Code',
+        icon: 'code',
+        summary: `The code component formats text as a code snippet within larger blocks of text.`,
+        url: '/components/code',
+        imports: {
+          '@blackbaud/skyux-lib-code-block': [
+            'SkyCodeModule'
+          ]
+        },
+        dependencies: {
+          '@blackbaud/skyux-lib-code-block': '*',
+          '@blackbaud/skyux-lib-clipboard': '*',
+          'prismjs': '*'
+        },
+        getCodeFiles: () => this.getDemoFiles('Code'),
+        disableStackblitz: true
+      },
+      {
         name: 'Code block',
         icon: 'code',
         summary: `The code block component formats a code block with syntax highlighting.`,
