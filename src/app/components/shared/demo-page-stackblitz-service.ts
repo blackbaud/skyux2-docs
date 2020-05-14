@@ -64,7 +64,7 @@ export class SkyDemoPageStackBlitzService {
     dependencies?: SkyDemoPageDependencies
   ) {
     const angularVersion = '^7.0.0';
-    const skyuxVersion = '*';
+    const skyuxVersion = '^3.0.0';
 
     const mergedDependencies: { [key: string]: string } = {
       '@angular/animations': angularVersion,
