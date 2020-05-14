@@ -36,7 +36,7 @@
     In the SPA for your library, create your components and services. SKY UX Builder ignores components in <sky-code>/src/app/public</sky-code>, so they are not automatically declared in <sky-code>SkyModule</sky-code>. This allows you to write Angular modules, components, and services outside of SKY UX's scope.
   </p>
   <p>
-    The entry point for the component library is <sky-code>/src/app/public/index.ts</sky-code>. This file is responsible for exporting any code that you want to make available to the bundler.
+    The entry point for the component library is <sky-code>/src/app/public/public_api.ts</sky-code>. This file is responsible for exporting any code that you want to make available to the bundler.
   </p>
   <p>
     To serve your SPA locally during development, you must configure the name and import and export your module.
@@ -186,7 +186,7 @@ export class AppExtrasModule { }
   </p>
 
   <p>
-    To create a testing module, add a <sky-code>testing</sky-code> directory to <sky-code>src/app/public</sky-code> and then add an <sky-code>index.ts</sky-code> file. The library exports the contents of the <sky-code>index.ts</sky-code> file to NPM as a testing module.
+    To create a testing module, add a <sky-code>testing</sky-code> directory to <sky-code>src/app/public</sky-code> and then add an <sky-code>public_api.ts</sky-code> file. The library exports the contents of the <sky-code>public_api.ts</sky-code> file to NPM as a testing module.
   </p>
 
 </stache>
