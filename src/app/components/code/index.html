@@ -14,7 +14,7 @@
     </p>
     <p>
       <sky-alert alertType="info">
-        To use the code component, you must set up the code block plugin. To install the plugin, run <sky-code>npm install @blackbaud/skyux-builder-plugin-code-block --save --save-exact</sky-code>. Then add the plugin to your <sky-code>skyuxconfig.json</sky-code> file: <sky-code>"plugins": ["@blackbaud/skyux-builder-plugin-code-block"]</sky-code>.
+        To use the code component, you must set up the code block plugin. To install the plugin, run <sky-code>npm install @blackbaud/skyux-builder-plugin-code-block --save --save-exact</sky-code>. Then add the plugin to your <sky-code>skyuxconfig.json</sky-code> file: <sky-code>"plugins": ["@blackbaud/skyux-builder-plugin-code-block"]</sky-code>. You must also add <sky-code>SkyCodeModule</sky-code> as an import to your <sky-code>app-sky.module.ts</sky-code> file.
       </sky-alert>
     </p>
   </sky-demo-page-summary>
@@ -25,7 +25,7 @@
       isOptional="true"
       defaultValue="false"
     >
-      Indicates whether to escape special characters such as <sky-code>{{ '{' }}</sky-code> and <sky-code>\</sky-code>. Escaping these characters renders them as text instead of code. Defaults to false.
+      Indicates whether to escape special characters such as <sky-code>{{ '{' }}</sky-code> and <sky-code>\</sky-code> to render them as text instead of code.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
