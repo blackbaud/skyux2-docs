@@ -6,25 +6,18 @@
     [sidebarRoutes]="sidebarRoutes">
 
     <stache-page-summary>
+
+      <!-- This markup looks bad, but makes the rendered version better -->
       <h4 *ngIf="skyuxModulesForDisplay && !installOnly">
-        <span class="sky-field-label">Defined in</span>
-        <span *ngFor="let moduleName of skyuxModulesForDisplay">
-          <sky-code>{{ moduleName }}</sky-code>
-        </span>
-        <ng-container *ngIf="packageName">
-          <span class="sky-field-label">in NPM package</span>
-          <a href="https://npmjs.org/{{ packageName }}">
-            <sky-code>{{ packageName }}</sky-code>
-          </a>
-        </ng-container>
+        <span class="sky-field-label">Defined in</span>&nbsp;<span *ngFor="let moduleName of skyuxModulesForDisplay"><sky-code>{{ moduleName }}</sky-code></span>&nbsp;<ng-container *ngIf="packageName"><span class="sky-field-label">in NPM package</span>&nbsp;<a href="https://npmjs.org/{{ packageName }}"><sky-code>{{ packageName }}</sky-code></a></ng-container>
       </h4>
+
+      <!-- This markup looks bad, but makes the rendered version better -->
       <h4 *ngIf="packageName && installOnly">
-        <span class="sky-field-label">Defined in NPM package</span>
-          <a href="https://npmjs.org/{{ packageName }}">
-            <sky-code>{{ packageName }}</sky-code>
-          </a>
+        <span class="sky-field-label">Defined in NPM package</span>&nbsp;<a href="https://npmjs.org/{{ packageName }}"><sky-code>{{ packageName }}</sky-code></a>
       </h4>
       <ng-content select="sky-demo-page-summary"></ng-content>
+
     </stache-page-summary>
 
     <ng-container *ngIf="npmInstall">
