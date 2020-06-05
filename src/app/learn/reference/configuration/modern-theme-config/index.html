@@ -1,0 +1,71 @@
+<stache
+  pageTitle="Modern theme"
+  navTitle="Modern theme"
+  showTableOfContents="true"
+  navOrder="3">
+
+  <stache-page-summary>
+
+  </stache-page-summary>
+
+  <stache-page-anchor>
+    Configure the modern theme
+  </stache-page-anchor>
+
+  <ol>
+    <li>
+      <p>
+        From the command prompt, <sky-code>cd</sky-code> into the root directory for your SPA.
+      </p>
+    </li>
+    <li>
+      <p>
+        Run <sky-code>skyux upgrade</sky-code> to update the SPA's dependencies with the versions of the SKY UX libraries that support theming.
+      </p>
+    </li>
+    <li>
+      <p>
+        In your SPA's <sky-code>skyuxconfig.json</sky-code>, add the <sky-code>theming</sky-code> property to the <sky-code>app</sky-code> section.
+      </p>
+    </li>
+
+      <sky-code-block languageType="json">
+        "app": {
+          "theming": {
+            "supportedThemes": ["modern"],
+            "theme": "modern"
+          }
+        }
+      </sky-code-block>
+
+  </ol>
+
+  <p>
+    To verify the theme update, run <sky-code>skyux serve</sky-code>. The page's background color should be an almost white shade of gray, and the default font size should be 16px.
+  </p>
+
+  <stache-page-anchor>
+    Themed components
+  </stache-page-anchor>
+
+  <p>
+    After you configure your SPA for the modern theme, you can use modern themed components by installing the libraries that support them as they become available. Currently, the modern theme only contains base styles, such as font and background colors, and CSS classes that enable use of the box component.
+  </p>
+
+  <stache-page-anchor>
+    Box component
+  </stache-page-anchor>
+
+  <p>
+    The box component is not an Angular component but a combination of CSS classes that you can apply to elements such as a <sky-code>div</sky-code>. This component is a common element in modern theme designs.
+  </p>
+
+  <p>
+    To add a rounded corners and a dropshadow to your element, create an element and add the <sky-code>sky-box</sky-code> and <sky-code>sky-elevation-1</sky-code> CSS classes to it. 
+  </p>
+
+  <p>
+    Example: <sky-code>&lt;div class="sky-box sky-elevation-1"&gt;I'm in a box&lt;/div&gt;</sky-code>
+  </p>
+
+  </stache>
