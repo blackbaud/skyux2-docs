@@ -113,6 +113,11 @@
         To add the SKY UX styles for ag-Grid to your SPA, include <sky-code>"@skyux/ag-grid/css/sky-ag-grid.css"</sky-code> in the <sky-code>styles</sky-code> section of your <sky-code>skyuxconfig.json</sky-code>. For editable grids, include the class <sky-code>sky-ag-grid-editable</sky-code> on the <sky-code>ag-grid-angular</sky-code> element.
       </p>
 
+      <h2>ag-Grid wrapper component</h2>
+      <p>
+        The <sky-code>sky-ag-grid-wrapper</sky-code> component should wrap all uses of <sky-code>ag-grid-angular</sky-code>. The wrapper provides WCAG adherent keyboard navigation and sticky column headers for grids using auto height. It does not constrain standard ag-Grid functionality.
+      </p>
+
       <sky-demo-page-properties
       sectionHeading="SkyAgGridService methods"
       >
@@ -233,6 +238,13 @@
         You can pass inputs to the SKY UX components used in cell editors via the <a href="https://www.ag-grid.com/javascript-grid-column-properties/">column definition's <sky-code>cellEditorParams</sky-code> property.</a> The component properties are nested under <sky-code>skyComponentProperties</sky-code>. All component properties should be supported, and you can see the defined types by importing <sky-code>SkyCellEditorDatepickerProperties</sky-code> or <sky-code>SkyCellEditorAutocompleteProperties</sky-code>. <sky-code>cellEditorParams</sky-code> can also be a function that returns a param object for dynamic editing params. See the demo for examples of using an object or a function.
       </p>
 
+      <h2>Using other SKY UX components in columns</h2>
+      <p>
+        There are some occasions where you need full control over the SKY UX component being rendered in the cell. In this case, you can create your own <a href="https://www.ag-grid.com/javascript-grid-cell-rendering-components/">cell renderer</a> and place a SKY UX component inside of it. Here are some cases where you will want to do this:
+      </p>
+      <ul>
+        <li>Context menu - Creating your own context menu component gives you full control over the text, menu options, and click actions. See the demo for an example.</li>
+      </ul>
       <sky-demo-page-example>
         <sky-data-entry-grid-demo>
         </sky-data-entry-grid-demo>
