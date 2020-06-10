@@ -73,7 +73,6 @@
     "microedge-rxstate": "3.0.0",
     "rxjs": "6.5.5",
     "rxjs-compat": "6.5.5",
-    "tslib": "2.0.0",
     "zone.js": "0.8.29"
   },
   "devDependencies": {
