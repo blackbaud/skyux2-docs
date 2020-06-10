@@ -29,6 +29,10 @@ import {
 } from './data-entry-grid-edit-modal.component';
 
 import {
+  SkyDataEntryGridContextMenuComponent
+} from './data-entry-grid-context-menu.component';
+
+import {
   SKY_AG_GRID_DEMO_DATA
 } from './data-entry-grid-demo-data';
 
@@ -41,10 +45,14 @@ export class SkyDataEntryGridDemoComponent implements OnInit {
   public columnDefs = [
     {
       field: 'selected',
+      type: SkyCellType.RowSelector
+    },
+    {
+      colId: 'context',
       headerName: '',
       maxWidth: 50,
       sortable: false,
-      type: SkyCellType.RowSelector
+      cellRendererFramework: SkyDataEntryGridContextMenuComponent
     },
     {
       field: 'name',

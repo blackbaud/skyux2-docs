@@ -18,7 +18,14 @@ import {
   SkyDataEntryGridEditModalComponent
 } from './data-entry-grid-edit-modal.component';
 
+import {
+  SkyDataEntryGridContextMenuComponent
+} from './data-entry-grid-context-menu.component';
+
 @NgModule({
+  imports: [
+    AgGridModule.withComponents([SkyDataEntryGridContextMenuComponent])
+  ],
   exports: [
     AgGridModule,
     SkyAgGridModule,
