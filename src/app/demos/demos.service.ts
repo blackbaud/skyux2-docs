@@ -6,6 +6,7 @@ import {
   SkyAngularTreeComponentDemoComponent,
   SkyCharacterCountDemoComponent,
   SkyCodeBlockDemoComponent,
+  SkyCodeDemoComponent,
   SkyCopyToClipboardDemoComponent,
   SkyDataEntryGridDemoComponent,
   SkyDateRangePickerDemoComponent,
@@ -140,6 +141,23 @@ export class SkyDocsDemoCodeService {
           name: 'summary-action-bar-modal-demo.ts',
           fileContents: require('!!raw-loader!./summary-action-bar/summary-action-bar-modal-demo.component.ts'),
           componentName: 'SkySummaryActionBarModalDemoComponent'
+        }
+      ]
+    },
+
+    {
+      name: 'Code',
+      component: SkyCodeDemoComponent,
+      files: [
+        {
+          name: 'code-demo.component.html',
+          fileContents: require('!!raw-loader!./code/code-demo.component.html')
+        },
+        {
+          name: 'code-demo.component.ts',
+          fileContents: require('!!raw-loader!./code/code-demo.component.ts'),
+          componentName: 'SkyCodeDemoComponent',
+          bootstrapSelector: 'sky-code-demo'
         }
       ]
     },

@@ -21,13 +21,6 @@ export class SkyUXStylesActionButtonsComponent {
       summary: 'Color guidelines provide base colors to convey meaning in backgrounds, borders, and text.'
     },
     {
-      name: 'Icons',
-      path: '/design/styles/icons',
-      icon: 'picture-o',
-      // tslint:disable-next-line
-      summary: 'SKY UX provides a dictionary of glyphic, mono-color icons to facilitate, guide, and inform users.'
-    },
-    {
       name: 'Motion',
       path: '/design/styles/motion',
       icon: 'film',
