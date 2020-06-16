@@ -9,7 +9,6 @@
 
       If you have never used ag-Grid before, <a href="https://www.ag-grid.com/angular-getting-started/">the Angular getting started</a> guide covers the basics. For more in depth information about ag-Grid and its capabilities, please reference <a href="https://www.ag-grid.com/documentation-main/documentation.php">the ag-Grid documentation.</a>
     </p>
-    <stache-include fileName="components/release-candidate-warning.html"></stache-include>
   </sky-demo-page-summary>
 
   <div class="sky-margin-stacked-content-section">
@@ -115,7 +114,7 @@
 
       <h2>ag-Grid wrapper component</h2>
       <p>
-        The <sky-code>sky-ag-grid-wrapper</sky-code> component provides WCAG compliant keyboard navigation and sticky column headers for grids using auto height. Use the <sky-code>sky-ag-grid-wrapper</sky-code>  component to wrap all uses of <sky-code>ag-grid-angular</sky-code>. The wrapper will not constrain standard ag-Grid functionality.
+        The <sky-code>sky-ag-grid-wrapper</sky-code> component provides WCAG-compliant keyboard navigation and sticky column headers for grids that use auto height. Use the <sky-code>sky-ag-grid-wrapper</sky-code>  component to wrap all instances of <sky-code>ag-grid-angular</sky-code>. The wrapper does not constrain standard ag-Grid functionality.
       </p>
 
       <sky-demo-page-properties
@@ -240,11 +239,8 @@
 
       <h2>Using other SKY UX components in columns</h2>
       <p>
-        If you need full control over the SKY UX component rendered in a cell, you can create your own <a href="https://www.ag-grid.com/javascript-grid-cell-rendering-components/">cell renderer</a> and place the SKY UX component inside of it. Here are some cases where you will want to do this:
+        For full control over a SKY UX component rendered in a cell, you can create your own <a href="https://www.ag-grid.com/javascript-grid-cell-rendering-components/">cell renderer</a> and place the component inside it. For example, to include a context menu in your grid, you create a cell renderer and place the context menu in the cell renderer. See the demo for an example.
       </p>
-      <ul>
-        <li>Context menu - Creating your own context menu component gives you full control over the text, menu options, and click actions. See the demo for an example.</li>
-      </ul>
       <sky-demo-page-example>
         <sky-data-entry-grid-demo>
         </sky-data-entry-grid-demo>
