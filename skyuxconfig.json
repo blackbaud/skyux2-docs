@@ -12,7 +12,14 @@
       "@skyux/theme/css/sky.css",
       "@skyux/docs-tools/css/docs-tools.css",
       "@skyux/ag-grid/css/sky-ag-grid.css"
-    ]
+    ],
+    "theming": {
+      "supportedThemes": [
+        "default",
+        "modern"
+      ],
+      "theme": "default"
+    }
   },
   "appSettings": {
     "stache": {

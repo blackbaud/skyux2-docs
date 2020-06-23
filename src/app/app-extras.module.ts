@@ -8,6 +8,9 @@ import {
   SkyRestrictedViewModule
 } from '@blackbaud/skyux-lib-restricted-view';
 import {
+  SkyDocsDemoModule
+} from '@skyux/docs-tools';
+import {
   SkyDemoComponentsModule
 } from './components/demo-components.module';
 import {
@@ -41,6 +44,7 @@ import {
     AppSkyModule,
     SkyDemoComponentsModule,
     SkyDocsAnatomyModule,
+    SkyDocsDemoModule,
     SkyDocsDemoPageModule,
     SkyDocsDesignGuidelinesModule,
     SkyRestrictedViewModule,
