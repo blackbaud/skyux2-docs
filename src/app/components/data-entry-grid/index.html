@@ -9,7 +9,6 @@
 
       If you have never used ag-Grid before, <a href="https://www.ag-grid.com/angular-getting-started/">the Angular getting started</a> guide covers the basics. For more in depth information about ag-Grid and its capabilities, please reference <a href="https://www.ag-grid.com/documentation-main/documentation.php">the ag-Grid documentation.</a>
     </p>
-    <stache-include fileName="components/release-candidate-warning.html"></stache-include>
   </sky-demo-page-summary>
 
   <div class="sky-margin-stacked-content-section">
@@ -111,6 +110,11 @@
       <h2>ag-Grid styles</h2>
       <p>
         To add the SKY UX styles for ag-Grid to your SPA, include <sky-code>"@skyux/ag-grid/css/sky-ag-grid.css"</sky-code> in the <sky-code>styles</sky-code> section of your <sky-code>skyuxconfig.json</sky-code>. For editable grids, include the class <sky-code>sky-ag-grid-editable</sky-code> on the <sky-code>ag-grid-angular</sky-code> element.
+      </p>
+
+      <h2>ag-Grid wrapper component</h2>
+      <p>
+        The <sky-code>sky-ag-grid-wrapper</sky-code> component provides WCAG-compliant keyboard navigation and sticky column headers for grids that use auto height. Use the <sky-code>sky-ag-grid-wrapper</sky-code>  component to wrap all instances of <sky-code>ag-grid-angular</sky-code>. The wrapper does not constrain standard ag-Grid functionality.
       </p>
 
       <sky-demo-page-properties
@@ -233,6 +237,10 @@
         You can pass inputs to the SKY UX components used in cell editors via the <a href="https://www.ag-grid.com/javascript-grid-column-properties/">column definition's <sky-code>cellEditorParams</sky-code> property.</a> The component properties are nested under <sky-code>skyComponentProperties</sky-code>. All component properties should be supported, and you can see the defined types by importing <sky-code>SkyCellEditorDatepickerProperties</sky-code> or <sky-code>SkyCellEditorAutocompleteProperties</sky-code>. <sky-code>cellEditorParams</sky-code> can also be a function that returns a param object for dynamic editing params. See the demo for examples of using an object or a function.
       </p>
 
+      <h2>Using other SKY UX components in columns</h2>
+      <p>
+        For full control over a SKY UX component rendered in a cell, you can create your own <a href="https://www.ag-grid.com/javascript-grid-cell-rendering-components/">cell renderer</a> and place the component inside it. For example, to include a context menu in your grid, you create a cell renderer and place the context menu in the cell renderer. See the demo for an example.
+      </p>
       <sky-demo-page-example>
         <sky-data-entry-grid-demo>
         </sky-data-entry-grid-demo>

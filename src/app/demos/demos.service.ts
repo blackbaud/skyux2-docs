@@ -44,8 +44,17 @@ export class SkyDocsDemoCodeService {
         {
           name: 'data-entry-grid-demo.component.ts',
           fileContents: require('!!raw-loader!./data-entry-grid/data-entry-grid-demo.component.ts'),
-          componentName: 'SkyAgGridDemoComponent',
+          componentName: 'SkyDataEntryGridDemoComponent',
           bootstrapSelector: 'sky-data-entry-grid-demo'
+        },
+        {
+          name: 'data-entry-grid-context-menu.component.html',
+          fileContents: require('!!raw-loader!./data-entry-grid/data-entry-grid-context-menu.component.html')
+        },
+        {
+          name: 'data-entry-grid-context-menu.component.ts',
+          fileContents: require('!!raw-loader!./data-entry-grid/data-entry-grid-context-menu.component.ts'),
+          componentName: 'SkyDataEntryGridContextMenuComponent'
         },
         {
           name: 'data-entry-grid-demo-data.ts',
@@ -62,7 +71,7 @@ export class SkyDocsDemoCodeService {
         {
           name: 'data-entry-grid-edit-modal.component.ts',
           fileContents: require('!!raw-loader!./data-entry-grid/data-entry-grid-edit-modal.component.ts'),
-          componentName: 'SkyAgGridEditModalComponent'
+          componentName: 'SkyDataEntryGridEditModalComponent'
         }
       ]
     },
