@@ -13,7 +13,7 @@
       To import the text classes, add <sky-code>@import '~@skyux/theme/scss/mixins';</sky-code> to the top of your SCSS file. Do not include <sky-code>node_modules</sky-code> in the path because the SKY UX package may not always be in the root of <sky-code>node_modules</sky-code> and <sky-code>~</sky-code> resolves the dependency in those cases.
     </p>
   </stache-page-summary>
-  
+
   <sky-restricted-view>
     <div style="margin-bottom: 30px;">
       <sky-docs-demo-control-panel-theme
@@ -213,7 +213,7 @@
 
     <div class="sky-margin-stacked-content-section">
     <h3 class="sky-font-heading-3">Body copy</h3>
-      <p>Body copy will generally make up the majority of text on a page.</p>
+      <p>Use body copy for the majority of the text on a page.</p>
 
       <div class="definition-table definition-table-wide">
         <div class="definition-item">
@@ -420,6 +420,10 @@
           <div class="sky-font-data-label">Data label</div>
         </div>
         <div class="definition-props">
+          <div class="definition-usage">
+            <div class="sky-field-label">Usage</div>
+            <div>This class formats labels for read-only data. It uses a muted color because the label that identifies the data is less important than the content.</div>
+          </div>
           <div class="definition-code">
             <div class="sky-field-label">Code</div>
             <sky-code>&lt;div class=&quot;sky-font-data-label&quot;&gt;Data label&lt;/div&gt;</sky-code>
@@ -435,13 +439,17 @@
           <div class="sky-font-deemphasized">De-emphasized</div>
         </div>
         <div class="definition-props">
+          <div class="definition-usage">
+            <div class="sky-field-label">Usage</div>
+            <div>This class formats text to de-emphasize ancillary information, such as persistent inline help text.</div>
+          </div>
           <div class="definition-code">
             <div class="sky-field-label">Code</div>
             <sky-code>&lt;div class=&quot;sky-font-deemphasized&quot;&gt;De-emphasized&lt;/div&gt;</sky-code>
           </div>
           <div class="definition-styling">
             <div class="sky-field-label">Styling</div>
-            <div><a href="https://sky.blackbaudcdn.net/skyux-fonts/1.0.1/blackbaud-sans-italic.woff">Blackbaud Sans Italic</a> 14px #686c73</div>
+            <div><a href="https://sky.blackbaudcdn.net/skyux-fonts/1.0.1/blackbaud-sans-italic.woff">Blackbaud Sans Italic</a> #686c73</div>
           </div>
         </div>
       </div>
