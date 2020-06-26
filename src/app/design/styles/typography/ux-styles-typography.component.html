@@ -23,7 +23,9 @@
   </sky-restricted-view>
 
 <div *ngIf="themeSettings?.theme?.name !== 'modern'">
-  <h2>Default theme</h2>  
+  <sky-restricted-view>
+    <h2>Default theme</h2>
+  </sky-restricted-view>
 
   <div class="definition-table definition-table-wide">
     <div class="definition-item">
