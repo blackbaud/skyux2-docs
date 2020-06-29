@@ -1,41 +1,41 @@
 <stache
-  navOrder="3"  
-  navTitle="Test"  
+  navOrder="3"
+  navTitle="Test"
   pageTitle="Test for Accessibility"
   showTableOfContents="true">
-  
+
   <stache-page-summary>
     <p>
       SKY UX employs several methods to test components for accessibility. You can use the same practices and tools to ensure your applications are highly accessible.
     </p>
   </stache-page-summary>
-  
+
   <stache-page-anchor>
     Run automated accessibility tests
   </stache-page-anchor>
-  
+
   <p>
     The <a stacheRouterLink="https://github.com/blackbaud/skyux-sdk-testing">SKY UX SDK testing library</a> provides methods to run <a stacheRouterLink="https://github.com/dequelabs/axe-core">aXe automated accessibility tests</a> in your unit tests. aXe includes 50-60 rules covering a subset of the W3C's WCAG 2.0 success criteria. For guidance on how to run accessibility checks in SKY UX unit tests, see <a stacheRouterLink="/learn/get-started/advanced/accessibility-unit-tests">accessibility tests</a>.
   </p>
   <p>
-    You can also use the deprecated <a stacheRouterLink="/learn/get-started/advanced/accessibility-analyzer">accessibility analyzer</a> to include accessibility checks for end-to-end tests. However, SKY UX recommends unit tests instead of end-to-end tests based on Angular's guidance on testing. Use e2e tests only as a last resort when you can't use Angular's testing framework to interact with the DOM.
+    <stache-include fileName="e2e-recommendation.html"></stache-include>
   </p>
-  
+
   <stache-page-anchor>
     Incorporate accessibility checks in a code review
   </stache-page-anchor>
-  
+
   <p>
     Perform a review using the following SKY UX accessibility code review checklist to identify potential accessibility problems that automated aXe testing can not evaluate.
   </p>
   <p>
     Complete the following checks when reviewing your application's markup code along with the user interface:
   </p>
-  
+
   <h3>
     Text equivalents for non-text elements
   </h3>
-  
+
   <ol>
     <li>
       <p>
@@ -53,50 +53,50 @@
       </p>
     </li>
   </ol>
-  
+
   <h3>
     Page order
   </h3>
-  
+
   <p>
     Ensure that the visual order of elements matches the DOM order of elements.
   </p>
-  
+
   <h3>
     Semantic markup
   </h3>
-  
+
   <p>
     Ensure that you use proper semantic HTML elements to describe the content of the page or component. For example, use <sky-code>&lt;ul&gt;</sky-code> for unordered lists, use <sky-code>&lt;h1&gt;</sky-code> through <sky-code>&lt;h6&gt;</sky-code> for headings, and use <sky-code>&lt;nav&gt;</sky-code> for navigation.
   </p>
   <p>
     For details of semantic markup, see <a href="http://learn.shayhowe.com/html-css/getting-to-know-html/">Getting to know HTML</a> and <a href="http://learn.shayhowe.com/advanced-html-css/semantics-accessibility/">Extending Semantics and Accessibility</a>.
   </p>
-  
+
   <h3>
     Custom controls
   </h3>
-  
+
   <p>
     For custom interactive controls that are used in ways that are not part of the HTML standard, ensure that the elements have the necessary ARIA roles, states, and properties. For information about how to make components and behaviors accessible with ARIA roles, states, and properties, see <a href="https://www.w3.org/TR/wai-aria-practices/">WAI-ARIA Authoring Practices 1.1</a>.
   </p>
-  
+
   <stache-page-anchor>
     Complete manual keyboard testing
   </stache-page-anchor>
-  
+
   <p>
     Follow the procedures below to ensure that people can use your feature with a keyboard only.
   </p>
-  
+
   <h3>
     Use the Tab key to move through a page or component
   </h3>
-  
+
   <p>
     Ensure that navigation with the Tab key meets the following criteria:
   </p>
-  
+
   <ol>
     <li>
       <p>
@@ -129,11 +129,11 @@
       </p>
     </li>
   </ol>
-  
+
   <h3>
     Use all interactive elements and controls
   </h3>
-  
+
   <ol>
     <li>
       <p>
@@ -183,15 +183,15 @@
       </ul>
     </li>
   </ol>
-  
+
   <h3>
     Use all modal dialogs
   </h3>
-  
+
   <p>
     Ensure that navigation with the Tab key meets the following criteria:
   </p>
-  
+
   <ol>
     <li>
       <p>
@@ -223,5 +223,5 @@
       </p>
     </li>
   </ol>
-  
+
 </stache>

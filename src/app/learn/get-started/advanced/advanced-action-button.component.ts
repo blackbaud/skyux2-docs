@@ -14,13 +14,6 @@ export class AdvancedActionButtonsComponent {
       summary: 'Run aXe automated accessibility tests in your unit tests.'
     },
     {
-      name: 'Accessibility analyzer',
-      path: '/learn/get-started/advanced/accessibility-analyzer',
-      icon: 'tachometer',
-      // tslint:disable-next-line
-      summary: 'Run aXe automated accessibility tests in your e2e tests.'
-    },
-    {
       name: 'Child routes',
       path: '/learn/get-started/advanced/child-routes',
       icon: 'compass',
