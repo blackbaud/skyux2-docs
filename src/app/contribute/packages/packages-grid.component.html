@@ -28,19 +28,14 @@
       {{ row.id }}
     </a>
   </div>
-  <div *ngIf="row.npm === false">
-    {{ row.id }}
-  </div>
 </ng-template>
 
 <ng-template
   let-row="row"
   #templateColumnVersion>
-  <img
-    *ngIf="row.npm !== false"
+  <img *ngIf="row.npm !== false"
     [src]="'https://img.shields.io/npm/v/' + row.id + '.svg'">
-  <span
-    *ngIf="row.npm === false"
+  <span *ngIf="row.npm === false"
     class="sky-deemphasized">
     NA
   </span>
