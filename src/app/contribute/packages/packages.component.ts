@@ -37,9 +37,34 @@ export class PackagesComponent {
       repo: 'blackbaud/skyux-action-bars'
     },
     {
+      id: '@skyux/ag-grid',
+      provider: 'github',
+      repo: 'blackbaud/skyux-ag-grid'
+    },
+    {
+      id: '@skyux/angular-tree-component',
+      provider: 'github',
+      repo: 'blackbaud/skyux-angular-tree-component'
+    },
+    {
       id: '@skyux/animations',
       provider: 'github',
       repo: 'blackbaud/skyux-animations'
+    },
+    {
+      id: '@skyux/assets',
+      provider: 'github',
+      repo: 'blackbaud/skyux-assets'
+    },
+    {
+      id: '@skyux/auth-client-factory',
+      provider: 'github',
+      repo: 'blackbaud/skyux-auth-client-factory'
+    },
+    {
+      id: '@skyux/autonumeric',
+      provider: 'github',
+      repo: 'blackbaud/skyux-autonumeric'
     },
     {
       id: '@skyux/avatar',
@@ -65,6 +90,11 @@ export class PackagesComponent {
       id: '@skyux/datetime',
       provider: 'github',
       repo: 'blackbaud/skyux-datetime'
+    },
+    {
+      id: '@skyux/docs-tools',
+      provider: 'github',
+      repo: 'blackbaud/skyux-docs-tools'
     },
     {
       id: '@skyux/errors',
@@ -100,6 +130,11 @@ export class PackagesComponent {
       id: '@skyux/indicators',
       provider: 'github',
       repo: 'blackbaud/skyux-indicators'
+    },
+    {
+      id: '@skyux/inline-form',
+      provider: 'github',
+      repo: 'blackbaud/skyux-inline-form'
     },
     {
       id: '@skyux/layout',
@@ -147,6 +182,11 @@ export class PackagesComponent {
       repo: 'blackbaud/skyux-modals'
     },
     {
+      id: '@skyux/omnibar-interop',
+      provider: 'github',
+      repo: 'blackbaud/skyux-omnibar-interop'
+    },
+    {
       id: '@skyux/phone-field',
       provider: 'github',
       repo: 'blackbaud/skyux-phone-field'
@@ -170,6 +210,11 @@ export class PackagesComponent {
       id: '@skyux/select-field',
       provider: 'github',
       repo: 'blackbaud/skyux-select-field'
+    },
+    {
+      id: '@skyux/split-view',
+      provider: 'github',
+      repo: 'blackbaud/skyux-split-view'
     },
     {
       id: '@skyux/tabs',
@@ -205,7 +250,7 @@ export class PackagesComponent {
       repo: 'blackbaud/skyux-sdk-builder'
     },
     {
-      id: '@skyux-sdk/builder-config',
+      id: 'blackbaud/skyux-sdk-builder-config',
       provider: 'github',
       repo: 'blackbaud/skyux-sdk-builder-config',
       npm: false
@@ -214,6 +259,11 @@ export class PackagesComponent {
       id: '@skyux-sdk/builder-plugin-migrate',
       provider: 'github',
       repo: 'blackbaud/skyux-sdk-builder-plugin-migrate'
+    },
+    {
+      id: '@skyux-sdk/builder-plugin-skyux',
+      provider: 'github',
+      repo: 'blackbaud/skyux-sdk-builder-plugin-skyux'
     },
     {
       id: '@skyux-sdk/cli',
@@ -229,6 +279,24 @@ export class PackagesComponent {
       id: '@skyux-sdk/pact',
       provider: 'github',
       repo: 'blackbaud/skyux-sdk-pact'
+    },
+    {
+      id: 'blackbaud/skyux-sdk-template',
+      provider: 'github',
+      repo: 'blackbaud/skyux-sdk-template',
+      npm: false
+    },
+    {
+      id: 'blackbaud/skyux-sdk-template-library',
+      provider: 'github',
+      repo: 'blackbaud/skyux-sdk-template-library',
+      npm: false
+    },
+    {
+      id: 'blackbaud/skyux-sdk-template-stache',
+      provider: 'github',
+      repo: 'blackbaud/skyux-sdk-template-stache',
+      npm: false
     },
     {
       id: '@skyux-sdk/testing',
@@ -252,6 +320,12 @@ export class PackagesComponent {
       id: '@blackbaud/skyux',
       provider: 'github',
       repo: 'blackbaud/skyux2'
+    },
+    {
+      id: 'blackbaud/skyux2-docs',
+      provider: 'github',
+      repo: 'blackbaud/skyux2-docs',
+      npm: false
     },
     {
       id: '@blackbaud/skyux-builder',
@@ -289,9 +363,34 @@ export class PackagesComponent {
       repo: 'blackbaud/skyux-design-tokens'
     },
     {
+      id: '@blackbaud/skyux-lib-clipboard',
+      provider: 'github',
+      repo: 'blackbaud/skyux-lib-clipboard'
+    },
+    {
+      id: '@blackbaud/skyux-lib-code-block',
+      provider: 'github',
+      repo: 'blackbaud/skyux-lib-code-block'
+    },
+    {
       id: '@blackbaud/skyux-lib-help',
       provider: 'github',
       repo: 'blackbaud/skyux-lib-help'
+    },
+    {
+      id: '@blackbaud/skyux-lib-media',
+      provider: 'github',
+      repo: 'blackbaud/skyux-lib-media'
+    },
+    {
+      id: '@blackbaud/skyux-lib-restricted-view',
+      provider: 'github',
+      repo: 'blackbaud/skyux-lib-restricted-view'
+    },
+    {
+      id: '@blackbaud/skyux-lib-testing',
+      provider: 'github',
+      repo: 'blackbaud/skyux-lib-testing'
     },
     {
       id: '@blackbaud/skyux-logger',
