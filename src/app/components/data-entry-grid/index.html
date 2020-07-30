@@ -119,7 +119,17 @@
 
       <h2>Data manager directive</h2>
       <p>
-        If you're using an ag-Grid within the <a routerLink="../../../skyux-data-manager/docs/data-manager">data manager component</a> there is a directive <sky-code>skyAgGridDataManagerAdapter</sky-code> that will manage some of the interactions between the grid and the data manager service that are typically the same across grid uses. The directive can be added to the <sky-code>sky-data-view</sky-code> element containing the grid. It will initialize and keep up to date the columns listed as visible in the data state, update the data state when the columns are moved or changed within the grid, initialize and keep up to date the selected rows from the data state, update the data state when row selection changes within the grid, and update the data state when the sort is changed within the grid.
+        If you're using a data entry grid component within the <a routerLink="../../../skyux-data-manager/docs/data-manager">data manager component</a> there is a directive <sky-code>skyAgGridDataManagerAdapter</sky-code> that will manage some of the standard interactions between the grid and the data manager service. The directive should be added to the <sky-code>sky-data-view</sky-code> element containing the grid. The directive will intialize properties in the grid from the data state and keep the grid and the data state in sync. When changes are made by the user in the grid, the data state will be updated. When the data state changes, the grid will respond to the changes. The properties that the directive will manage are:
+      </p>
+
+      <ul>
+        <li>column visibility and order</li>
+        <li>selected rows</li>
+        <li>the active sort state when selected by clicking a column header</li>
+      </ul>
+
+      <p>
+        Other properties of the data state like filters and applying the sort still need to be implemented for each use.
       </p>
 
       <sky-demo-page-properties
