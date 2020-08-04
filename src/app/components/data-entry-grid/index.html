@@ -117,6 +117,21 @@
         The <sky-code>sky-ag-grid-wrapper</sky-code> component provides WCAG-compliant keyboard navigation and sticky column headers for grids that use auto height. Use the <sky-code>sky-ag-grid-wrapper</sky-code>  component to wrap all instances of <sky-code>ag-grid-angular</sky-code>. The wrapper does not constrain standard ag-Grid functionality.
       </p>
 
+      <h2>Data manager directive</h2>
+      <p>
+        If you use a data entry grid within a <a routerLink="../../../skyux-data-manager/docs/data-manager">data manager component</a>, the <sky-code>skyAgGridDataManagerAdapter</sky-code> directive can manage some standard interactions between the data entry grid and the data manager service. Add the directive should to the <sky-code>sky-data-view</sky-code> element that contains the data entry grid to intialize properties from the data state and keep the data entry grid in sync with the data state. When the data entry grid changes, the data state is updated, and when the data state changes, the data entry grid responds to the changes. The directive manages:
+      </p>
+
+      <ul>
+        <li>column visibility and order</li>
+        <li>selected rows</li>
+        <li>active sort state when selected by column header</li>
+      </ul>
+
+      <p>
+        Other properties of the data state, such as filters and applying the sort, still need to be implemented for each use.
+      </p>
+
       <sky-demo-page-properties
       sectionHeading="SkyAgGridService methods"
       >
