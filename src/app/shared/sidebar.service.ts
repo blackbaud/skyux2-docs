@@ -99,7 +99,8 @@ export class SkyDemoSidebarService {
         path: url,
         name: component.name,
         icon: component.icon,
-        summary: component.summary
+        summary: component.summary,
+        restricted: component.restricted
       };
 
       if (component.children) {
