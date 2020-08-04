@@ -10,11 +10,39 @@
   </stache-page-summary>
 
   <stache-page-anchor>
+    Install dependencies
+  </stache-page-anchor>
+
+  <p>
+    Install the following packages as development dependencies:
+  </p>
+
+  <sky-code-block
+    languageType="powershell"
+  >
+    npm install --save-dev --save-exact @skyux-sdk/pact @skyux-sdk/builder-plugin-pact
+  </sky-code-block>
+
+  <p>
+    After the installation is complete, create or modify the <sky-code>skyuxconfig.pact.json</sky-code> file with the following contents:
+  </p>
+
+  <sky-code-block
+    languageType="json"
+  >
+    {
+      "plugins": [
+        "@skyux-sdk/builder-plugin-pact"
+      ]
+    }
+  </sky-code-block>
+
+  <stache-page-anchor>
     Configure pact settings
   </stache-page-anchor>
 
   <p>
-    The first step to implement pact testing for a SPA is to specify configuration options <a routerLink="/learn/reference/configuration">with the <sky-code>pacts</sky-code> property in the <sky-code>skyuxconfig.json</sky-code> file</a>. In this property, you create a separate entry for each provider to test. Settings are generally the same for each entry except for the <sky-code>provider</sky-code> setting. When you run <sky-code>skyux pact</sky-code>, the command reads the <sky-code>pacts</sky-code> setting and spins up an individual pact server for each provider service that you specify.
+    The first step to implement pact testing for a SPA is to specify configuration options <a routerLink="/learn/reference/configuration">with the <sky-code>pacts</sky-code> property in the <sky-code>skyuxconfig.pact.json</sky-code> file</a>. In this property, you create a separate entry for each provider to test. Settings are generally the same for each entry except for the <sky-code>provider</sky-code> setting. When you run <sky-code>skyux pact</sky-code>, the command reads the <sky-code>pacts</sky-code> setting and spins up an individual pact server for each provider service that you specify.
   </p>
   <p>
     For each service provider that you need to configure settings for, you can include the following properties:
