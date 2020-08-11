@@ -51,7 +51,7 @@
   </p>
   <p>
     We also strongly encourage you to create your own documentation for any feature you contribute because it can be useful to uncover issues. If you do not document your components or need assistance from a SKY UX writer, <a href="https://github.com/blackbaud/skyux2-docs/issues">file an issue in the SKY UX docs repo</a>. Component documentation should explain all features of your components, including all properties and events. In the SKY UX docs repo, you create subfolders for your components in the <sky-code>src/app/components</sky-code> folder and document them in <sky-code>index.html</sky-code> files. To create action buttons for the Components section landing page, you add entries in the <sky-code>demo-components.service.ts</sky-code> file.
-  </p> 
+  </p>
 
   <stache-page-anchor>
     Localization
@@ -84,6 +84,17 @@
   <p>
     Use the <sky-code>Sky</sky-code> prefix when naming all classes, directives, services, components, etc. The prefix indicates to other contributors that items are owned by SKY UX and not a third-party library. It also prevents potential class-name clashes with other libraries. Keep in mind that while we generally use the uppercase <sky-code>Sky</sky-code> prefix, we also use the <sky-code>sky-</sky-code> prefix in some cases, such as selector properties in components.
   </p>
+
+  <stache-page-anchor>
+    Test fixtures
+  </stache-page-anchor>
+  <p>
+    To deny access to public properties and methods on component classes, SKY UX does not export components from the exports API. This protects against potential breaking changes when the source code changes. Instead of querying against the component itself, consumers can use each component's companion test fixture, which is exported from the package's testing module.
+  </p>
+  <p>
+    When you create components, include test fixtures so that consumers can use them in unit tests to query against the components.
+  </p>
+
 
   <stache-page-anchor>
     Unit tests
