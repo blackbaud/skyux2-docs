@@ -100,7 +100,7 @@
       propertyName="width"
       isOptional="true"
     >
-    Specifies the width of the grid. This property accepts <sky-code>number</sky-code> values.
+    Specifies the width of the grid in pixels. This property accepts <sky-code>number</sky-code> values.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
@@ -167,12 +167,12 @@
     <sky-demo-page-property
       propertyName="description"
     >
-    Specifies a description for the column.
+    Specifies a description for the column. This property accepts <sky-code>string</sky-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="heading"
     >
-    Specifies text to display in the column header.
+    Specifies text to display in the column header. This property accepts <sky-code>string</sky-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="alignment"
@@ -185,20 +185,20 @@
       propertyName="field"
       isOptional="true"
     >
-    Specifies the property to retrieve cell information from an entry on the grid <sky-code>data</sky-code> array. You must provide either the <sky-code>id</sky-code> or <sky-code>field</sky-code> property for every column, but do not provide both. If <sky-code>id</sky-code> does not exist on a column, then <sky-code>field</sky-code> is the entry for the grid <sky-code>selectedColumnIds</sky-code> array.
+    Specifies the property to retrieve cell information from an entry on the grid <sky-code>data</sky-code> array. You must provide either the <sky-code>id</sky-code> or <sky-code>field</sky-code> property for every column, but do not provide both. If <sky-code>id</sky-code> does not exist on a column, then <sky-code>field</sky-code> is the entry for the grid <sky-code>selectedColumnIds</sky-code> array. This property accepts <sky-code>string</sky-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="hidden"
-      isOptional="true"
       defaultValue="false"
+      isOptional="true"
     >
-    Indicates whether the column is initially hidden when grid <sky-code>selectedColumnIds</sky-code> are not provided.
+    Indicates whether the column is initially hidden when grid <sky-code>selectedColumnIds</sky-code> are not provided. This property accepts <sky-code>boolean</sky-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="id"
       isOptional="true"
     >
-    Specifies a unique ID for the column. You must provide either the <sky-code>id</sky-code> or <sky-code>field</sky-code> property for every column, but do not provide both. If <sky-code>field</sky-code> does not exist on a column, then the <sky-code>id</sky-code> property retrieves cell information from an entry on the grid <sky-code>data</sky-code> array.
+    Specifies a unique ID for the column. You must provide either the <sky-code>id</sky-code> or <sky-code>field</sky-code> property for every column, but do not provide both. If <sky-code>field</sky-code> does not exist on a column, then the <sky-code>id</sky-code> property retrieves cell information from an entry on the grid <sky-code>data</sky-code> array. This property accepts <sky-code>string</sky-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="inlineHelpPopover"
@@ -211,14 +211,14 @@
       [isOptional]="true"
       defaultValue="true"
     >
-    Indicates whether the column sorts the grid when users click the column header.
+    Indicates whether the column sorts the grid when users click the column header. This property accepts <sky-code>boolean</sky-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="locked"
       isOptional="true"
       defaultValue="false"
     >
-    Indicates whether the column is locked. The intent is to display locked columns first on the left side of the grid. If set to <sky-code>true</sky-code>, then users cannot drag the column to another position and or drag other columns before the locked column.
+    Indicates whether the column is locked. The intent is to display locked columns first on the left side of the grid. If set to <sky-code>true</sky-code>, then users cannot drag the column to another position and or drag other columns before the locked column. This property accepts <sky-code>boolean</sky-code> values.
     </sky-demo-page-property>
     <sky-demo-page-property
       propertyName="search"
@@ -236,7 +236,7 @@
       propertyName="width"
       isOptional="true"
     >
-    Specifies the width of the column in pixels.
+    Specifies the width of the column in pixels. If undefined, the column width is evenly distributed. This property accepts <sky-code>number</sky-code> values.
     </sky-demo-page-property>
   </sky-demo-page-properties>
 
