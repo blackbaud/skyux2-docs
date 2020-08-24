@@ -91,8 +91,8 @@ export class SkyDemoSidebarService {
   private transform(components: SkyDocsComponentInfo[]): StacheNavLink[] {
     return components.map((component: SkyDocsComponentInfo) => {
 
-      // Make links relative if possible so Stache will use RouterLink, and remove URL params,
-      // as they only contain svcid params, which are automatically handled by the nav service.
+      // Make links relative so Stache will use RouterLink
+      // Remove URL params, as they only contain svcid params which are automatically handled by the nav service.
       let url = component.url;
       if (url.indexOf('https://developer.blackbaud.com/skyux/') === 0) {
         url = component.url.replace('https://developer.blackbaud.com/skyux/', '').split('?')[0];
