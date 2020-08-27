@@ -6,10 +6,10 @@
 
   <sky-demo-page-summary>
     <p>
-      A wizard guides users through a set of pre-defined steps in a particular order. It uses a <a routerLink="/components/progress-indicator">progress indicator component</a> within a <a routerLink="/components/modal">modal component</a> to represent a series of related decisions in a user’s direct workflow. Wizards illustrate the step-wise nature of tasks and reinforce the progress toward final goals as users complete steps. Wizards are most useful when users must perform steps in a particular order.
+      Wizards guide users through pre-defined steps in a particular order to represent a series of related decisions in a user’s direct workflow. Wizards illustrate the step-wise nature of tasks and reinforce progress toward final goals as users complete steps. Wizards are most useful when users must perform steps in a particular order.
     </p>
     <p>
-      To create a wizard, place a progress indicator inside a modal and set its <sky-code>displayMode</sky-code> property to <sky-code>Horizontal</sky-code>. For information about progress indicators, see the <a routerLink="/components/progress-indicator">progress indicator component</a>. And for information about modals, see the <a routerLink="/components/modal">modal component</a>.
+      To create a wizard,  place a <a routerLink="/components/progress-indicator">progress indicator</a> inside a <a routerLink="/components/modal">modal</a> and set its <sky-code>displayMode</sky-code> property to <sky-code>Horizontal</sky-code>.
     </p>
     <sky-alert alertType="info">
       This wizard implementation replaces a previous version that was deprecated because of limitations that interfered with complex configuration tasks. The deprecated wizard used the <a routerLink="/components/tabs">tabs module</a> within a modal component and set <sky-code>tabStyle="wizard"</sky-code> on the <sky-code>sky-tabset</sky-code> component to guide users through a set of pre-defined steps. We recommend that you create wizards with the progress indicator component instead of this deprectated implementation.

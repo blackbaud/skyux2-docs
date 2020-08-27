@@ -6,7 +6,7 @@
 
   <sky-demo-page-summary>
     <p>
-      The code block component formats a block of text as a code block with syntax highlighting. The code block's header can display a copy button and language type. To create a code block, wrap <sky-code>sky-code-block</sky-code> tags around the text.
+      The code block component formats text as a code block with syntax highlighting. The header can display a copy button and language type. For code snippets within blocks of text, use the <a routerLink="/components/code">code component</a>.
     </p>
     <p>
       If a code block has text within <sky-code>&lt;</sky-code> and <sky-code>&gt;</sky-code> characters, then the component automatically appends a closing tag unless the code snippet is valid HTML. To prevent this, use "&#38;lt;" to escape <sky-code>&lt;</sky-code> and "&#38;gt;" to escape <sky-code>&gt;</sky-code>. For example, escape the <sky-code>&lt;</sky-code> and <sky-code>&gt;</sky-code> characters in the code snippet <sky-code>public Task&lt;Generic> MethodName()</sky-code> or the component automatically appends <sky-code>&lt;/Generic></sky-code> to the end: <sky-code>public Task&lt;Generic> MethodName()&lt;/Generic></sky-code>.

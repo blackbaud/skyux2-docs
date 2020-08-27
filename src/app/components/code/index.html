@@ -6,7 +6,7 @@
 
   <sky-demo-page-summary>
     <p>
-      The code component formats text as a code snippet within larger blocks of text. Within the block of text, wrap <sky-code>sky-code</sky-code> tags around the code snippet. To format longer code snippets that stand alone as separate blocks of text, use the <a routerLink="/components/code-block">code block component</a> instead.
+      The code component formats text as a code snippet within a block of text. For standalone code blocks, use the <a routerLink="/components/code-block">code block component</a>.
     </p>
     <p>
       If a code snippet has text within <sky-code>&lt;</sky-code> and <sky-code>&gt;</sky-code> characters, then the component automatically appends a closing tag unless the code snippet is valid HTML. To prevent this, use "&#38;lt;" to escape <sky-code>&lt;</sky-code> and "&#38;gt;" to escape <sky-code>&gt;</sky-code>. For example, escape the <sky-code>&lt;</sky-code> and <sky-code>&gt;</sky-code> characters in the code snippet <sky-code>public Task&lt;Generic> MethodName()</sky-code> or the component automatically appends <sky-code>&lt;/Generic></sky-code> to the end: <sky-code>public Task&lt;Generic> MethodName()&lt;/Generic></sky-code>.
