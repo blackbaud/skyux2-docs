@@ -32,86 +32,52 @@
 
 
   <stache-page-anchor>
-    Import the <sky-code>expect</sky-code> function
+    Import the <sky-code>expectAsync</sky-code> function
   </stache-page-anchor>
 
   <p>
-    After you import the testing library, the next step to run accessibility checks in unit tests is to import the extended Jasmine <sky-code>expect</sky-code> function into <sky-code>.spec.ts</sky-code> files. At the top of the spec files for the components to test, import the function from the testing library:
+    After you import the testing library, the next step to run accessibility checks in unit tests is to import the extended Jasmine <sky-code>expectAsync</sky-code> function into <sky-code>.spec.ts</sky-code> files. At the top of the spec files for the components to test, import the function from the testing library:
   </p>
   <sky-code-block>
     import {
-      expect
+      expectAsync
     } from '@skyux-sdk/testing';
   </sky-code-block>
   <p>
-    After you import <sky-code>expect</sky-code> function, you can use it to run accessibility tests for components. For components that change state, you can insert the function into existing <sky-code>it</sky-code> blocks. And for components that don't change state, the function can stand alone to run accessibility checks from its own <sky-code>it</sky-code> block.
+    After you import <sky-code>expectAsync</sky-code> function, you can use it to run accessibility tests for components. For components that change state, you can insert the function into existing <sky-code>it</sky-code> blocks. And for components that don't change state, the function can stand alone to run accessibility checks from its own <sky-code>it</sky-code> block.
   </p>
 
   <stache-page-anchor>
-    Insert the <sky-code>expect</sky-code> function and <sky-code>toBeAccessible</sky-code> matcher
+    Insert the <sky-code>expectAsync</sky-code> function and <sky-code>toBeAccessible</sky-code> matcher
   </stache-page-anchor>
 
   <p>
-    After you import the <sky-code>expect</sky-code> function into spec files, the next step is to wrap the <sky-code>expect</sky-code> function around the elements to test for accessibility. Accessibility checks are asynchronous, so it's important to wrap your tests in Angular's <sky-code>async</sky-code> method. And to break the linear flow of control when using <sky-code>async</sky-code>, it's also important to wrap <sky-code>toBeAccessible</sky-code> in Angular's <sky-code>whenStable</sky-code> method.
+    After you import the <sky-code>expectAsync</sky-code> function into spec files, the next step is to wrap the <sky-code>expectAsync</sky-code> function around the elements to test for accessibility.
   </p>
 
   <sky-code-block>
-    it('should pass accessibility', async(() => {
-      fixture.whenStable().then(() => {
-        expect(element).toBeAccessible();
-      });
+    it('should pass accessibility', async () => {
+      await expectAsync(element).toBeAccessible();
     }));
-  </sky-code-block>
-
-  <p>
-    Keep in mind that <sky-code>async</sky-code> is also a native JavaScript declaration, so you need to explicitly import the Angular <sky-code>async</sky-code> method at the top of the unit test spec file.
-  </p>
-
-  <sky-code-block>
-    import { async } from ‘@angular/core/testing’;
   </sky-code-block>
 
   <stache-page-anchor>
-    Specify parameters for <sky-code>toBeAccessible</sky-code>
-  </stache-page-anchor>
-
-  <p>
-    Finally, you can specify two optional parameters within the <sky-code>toBeAccessible</sky-code> matcher. The first parameter is a callback that lets you execute code after accessibility checks run. The second parameter is an option that lets you overwrite <a href="https://github.com/blackbaud/skyux-sdk-testing/blob/master/src/app/public/a11y/a11y-analyzer.ts">the default accessibility checks that <sky-code>SkyA11yAnalyzerConfig</sky-code> specifies</a>.
-  </p>
-
-  <h3 class="sky-subsection-heading">
-    Callback
-  </h3>
-  <p>
-    In the first <sky-code>toBeAccessible</sky-code> parameter, you can specify logic to run after accessibility testing:
-  </p>
-  <sky-code-block>
-    it('should pass accessibility', async(() => {
-      fixture.whenStable().then(() => {
-        expect(element).toBeAccessible(() => {
-          // Do something else after the accessibility checks run...
-        });
-      });
-    }));
-  </sky-code-block>
-  <p>
-    For example, for components that change state, you can use this parameter to change state after accessibility checks and then run the accessibility checks again.
-  </p>
-
-  <h3 class="sky-subsection-heading">
     Overwrite accessibility checks
-  </h3>
+  </stache-page-anchor>
+
   <p>
-    In the second <sky-code>toBeAccessible</sky-code> parameter, you can adjust configuration settings to turn off accessibility checks. <a href="https://github.com/blackbaud/skyux-sdk-testing/blob/master/src/app/public/a11y/a11y-analyzer.ts">The <sky-code>SkyA11yAnalyzerConfig</sky-code> interface</a> specifies configuration settings, and it turns all checks on by default. To turn off accessibility checks, you set them to <sky-code>false</sky-code>:
+    You can specify an optional parameter within the <sky-code>toBeAccessible</sky-code> matcher to overwrite <a href="https://github.com/blackbaud/skyux-sdk-testing/blob/master/src/app/public/a11y/a11y-analyzer.ts">the default accessibility checks that <sky-code>SkyA11yAnalyzerConfig</sky-code> specifies</a>.
+  </p>
+
+  <p>
+    You adjust configuration settings to turn off accessibility checks. <a href="https://github.com/blackbaud/skyux-sdk-testing/blob/master/src/app/public/a11y/a11y-analyzer.ts">The <sky-code>SkyA11yAnalyzerConfig</sky-code> interface</a> specifies configuration settings, and it turns all checks on by default. To turn off accessibility checks, you set them to <sky-code>false</sky-code>:
   </p>
   <sky-code-block>
-    it('should pass accessibility', async(() => {
-      fixture.whenStable().then(() => {
-        expect(element).toBeAccessible(() => {}, {
-          rules: {
-            'color-contrast': {enabled: false }
-          }
-        });
+    it('should pass accessibility', async () => {
+      await expectAsync(element).toBeAccessible({
+        rules: {
+          'color-contrast': {enabled: false }
+        }
       });
     }));
   </sky-code-block>
@@ -148,12 +114,10 @@
     Finally, in the <sky-code>it</sky-code> blocks where you run accessibility checks, you inject <sky-code>SkyAppConfig</sky-code> in the <sky-code>async</sky-code> method and then reference the <sky-code>a11y</sky-code> configuration property in the second <sky-code>toBeAccessible</sky-code> parameter:
   </p>
   <sky-code-block>
-    it('should pass accessibility', async(
-      inject([SkyAppConfig], (appConfig: SkyAppConfig) => {
-        fixture.whenStable().then(() => {
-          expect(element).toBeAccessible(() => {}, config.skyux.a11y);
-        });
-      }))
+    it('should pass accessibility',
+      inject([SkyAppConfig], async (appConfig: SkyAppConfig) => {
+        await expectAsync(element).toBeAccessible(config.skyux.a11y);
+      })
     );
   </sky-code-block>
 
