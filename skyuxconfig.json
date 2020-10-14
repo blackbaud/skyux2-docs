@@ -4,12 +4,14 @@
   "mode": "easy",
   "compileMode": "aot",
   "host": {
-    "url": "https://developer.blackbaud.com"
+    "url": "https://developer.blackbaud.com",
+    "frameOptions": {
+      "none": true
+    }
   },
   "app": {
     "title": "Blackbaud SKY UX",
     "styles": [
-      "@skyux/theme/css/sky.css",
       "@skyux/docs-tools/css/docs-tools.css",
       "@skyux/ag-grid/css/sky-ag-grid.css"
     ]
@@ -31,9 +33,7 @@
       }
     }
   },
-  "omnibar": {
-    "experimental": true
-  },
+  "omnibar": {},
   "params": {
     "svcid": {
       "value": "skyux"

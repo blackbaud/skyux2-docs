@@ -12,12 +12,6 @@ import {
 } from '@angular/core';
 
 import {
-  Observable
-} from 'rxjs';
-
-import 'rxjs/operators/map';
-
-import {
   StacheNavLink
 } from '@blackbaud/skyux-lib-stache';
 
@@ -25,6 +19,14 @@ import {
   SkyDocsComponentInfo,
   SkyDocsSupportalService
 } from '@skyux/docs-tools';
+
+import {
+  Observable
+} from 'rxjs';
+
+import {
+  map
+} from 'rxjs/operators';
 
 @Injectable()
 export class SkyDemoSidebarService {
@@ -41,13 +43,13 @@ export class SkyDemoSidebarService {
     const nameUpperCase = name.toUpperCase();
 
     return this.skyDocsSupportalService
-      .getComponentsInfo()
-      .map((components: SkyDocsComponentInfo[]) => {
+      .getComponentsInfo().pipe(
+      map((components: SkyDocsComponentInfo[]) => {
         const match = components.find((component: SkyDocsComponentInfo) =>
           component.name.toUpperCase() === nameUpperCase);
         return match && match.children ? match.children : [];
-      })
-      .map((components: SkyDocsComponentInfo[]) => this.transform(components));
+      }),
+      map((components: SkyDocsComponentInfo[]) => this.transform(components)),);
   }
 
   /**
@@ -55,8 +57,8 @@ export class SkyDemoSidebarService {
    */
   public getRoutes(): Observable<StacheNavLink[]> {
     return this.skyDocsSupportalService
-      .getComponentsInfo()
-      .map((components: SkyDocsComponentInfo[]) => this.transform(components));
+      .getComponentsInfo().pipe(
+      map((components: SkyDocsComponentInfo[]) => this.transform(components)));
   }
 
   /**
@@ -64,13 +66,13 @@ export class SkyDemoSidebarService {
    */
   public getSidebar(): Observable<StacheNavLink[]> {
     return this.skyDocsSupportalService
-      .getComponentsInfo()
-      .map((components: SkyDocsComponentInfo[]) => this.transform(components))
-      .map((routes: StacheNavLink[]) => {
+      .getComponentsInfo().pipe(
+      map((components: SkyDocsComponentInfo[]) => this.transform(components)),
+      map((routes: StacheNavLink[]) => {
         const sidebar = this.getDefaultSidebar();
         sidebar[0].children = routes;
         return sidebar;
-      });
+      }),);
   }
 
   // Keeps the default stache sidebar from loading
