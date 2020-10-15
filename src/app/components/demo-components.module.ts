@@ -16,6 +16,10 @@ import {
   SkySummaryActionBarDemoModule
 } from '../demos';
 
+import {
+  SkyDemoComponentsService
+} from './demo-components.service';
+
 require('style-loader!prismjs/themes/prism.css');
 
 @NgModule({
@@ -32,6 +36,7 @@ require('style-loader!prismjs/themes/prism.css');
     SkySummaryActionBarDemoModule
   ],
   providers: [
+    SkyDemoComponentsService,
     SkyDocsDemoCodeService
   ]
 })
