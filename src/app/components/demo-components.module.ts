@@ -12,14 +12,8 @@ import {
 
 import {
   SkyAngularTreeViewDemoModule,
-  SkyCharacterCountDemoModule,
   SkyDataEntryGridDemoModule,
-  SkyInlineFormDemoModule,
-  SkyPhoneFieldDemoModule,
-  SkySingleFileAttachmentDemoModule,
-  SkySplitViewDemoModule,
-  SkySummaryActionBarDemoModule,
-  SkyToggleSwitchDemoModule
+  SkySummaryActionBarDemoModule
 } from '../demos';
 
 require('style-loader!prismjs/themes/prism.css');
@@ -27,27 +21,15 @@ require('style-loader!prismjs/themes/prism.css');
 @NgModule({
   imports: [
     SkyAngularTreeViewDemoModule,
-    SkyCharacterCountDemoModule,
     SkyDataEntryGridDemoModule,
     SkyDateRangePickerModule,
-    SkyInlineFormDemoModule,
-    SkyPhoneFieldDemoModule,
-    SkySingleFileAttachmentDemoModule,
-    SkySplitViewDemoModule,
-    SkySummaryActionBarDemoModule,
-    SkyToggleSwitchDemoModule
+    SkySummaryActionBarDemoModule
   ],
   exports: [
     SkyAngularTreeViewDemoModule,
-    SkyCharacterCountDemoModule,
     SkyDataEntryGridDemoModule,
     SkyDateRangePickerModule,
-    SkyInlineFormDemoModule,
-    SkyPhoneFieldDemoModule,
-    SkySingleFileAttachmentDemoModule,
-    SkySplitViewDemoModule,
-    SkySummaryActionBarDemoModule,
-    SkyToggleSwitchDemoModule
+    SkySummaryActionBarDemoModule
   ],
   providers: [
     SkyDocsDemoCodeService

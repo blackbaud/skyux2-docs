@@ -11,10 +11,6 @@ import {
 } from './components/demo-components.module';
 
 import {
-  SkyInlineFormDemoTileComponent
-} from './demos/inline-form/inline-form-demo-tile.component';
-
-import {
   SkyDemoSidebarService
 } from './shared/sidebar.service';
 
@@ -36,9 +32,6 @@ import {
 } from './app-sky.module';
 
 @NgModule({
-  entryComponents: [
-    SkyInlineFormDemoTileComponent
-  ],
   imports: [
     SkyDemoComponentsModule,
     StacheModule

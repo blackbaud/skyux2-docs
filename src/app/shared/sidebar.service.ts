@@ -49,7 +49,7 @@ export class SkyDemoSidebarService {
           component.name.toUpperCase() === nameUpperCase);
         return match && match.children ? match.children : [];
       }),
-      map((components: SkyDocsComponentInfo[]) => this.transform(components)),);
+      map((components: SkyDocsComponentInfo[]) => this.transform(components)));
   }
 
   /**
@@ -72,7 +72,7 @@ export class SkyDemoSidebarService {
         const sidebar = this.getDefaultSidebar();
         sidebar[0].children = routes;
         return sidebar;
-      }),);
+      }));
   }
 
   // Keeps the default stache sidebar from loading
