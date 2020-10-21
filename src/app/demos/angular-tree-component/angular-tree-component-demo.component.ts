@@ -1,7 +1,16 @@
 import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
+  OnInit,
   ViewChild
 } from '@angular/core';
+
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup
+} from '@angular/forms';
 
 import {
   ITreeOptions,
@@ -22,11 +31,13 @@ import {
       }
     }`
   ],
-  templateUrl: './angular-tree-component-demo.component.html'
+  templateUrl: './angular-tree-component-demo.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SkyAngularTreeComponentDemoComponent {
+export class SkyAngularTreeComponentDemoComponent implements OnInit {
 
-  // #region [For demonstration purposes only.]
+  public demoOptions: FormGroup;
+
   public set enableCascading(value: boolean) {
     this.resetSelection();
     this.treeOptions.useTriState = value;
@@ -42,8 +53,6 @@ export class SkyAngularTreeComponentDemoComponent {
   }
 
   public readOnly: boolean = false;
-
-  public selectedMode: string = 'navigation';
 
   public selectedSelectMode: string = 'multiSelect';
 
@@ -69,7 +78,6 @@ export class SkyAngularTreeComponentDemoComponent {
   private _enableCascading = false;
 
   private _selectLeafNodesOnly = false;
-  // #endregion
 
   public treeOptions: ITreeOptions = {
     animateExpand: true,
@@ -111,6 +119,75 @@ export class SkyAngularTreeComponentDemoComponent {
   @ViewChild(TreeModel)
   private tree: TreeModel;
 
+  constructor(
+    private changeRef: ChangeDetectorRef,
+    private formBuilder: FormBuilder
+  ) {}
+
+  public ngOnInit(): void {
+    this.demoOptions = this.formBuilder.group({
+      treeMode: new FormControl('navigation'),
+      selectMode: new FormControl('multiSelect'),
+      selectLeafNodesOnly: new FormControl(),
+      enableCascading: new FormControl(),
+      showToolbar: new FormControl(),
+      showContextMenus: new FormControl()
+    });
+
+    this.demoOptions.valueChanges.subscribe(value => {
+      if (value.treeMode) {
+        switch (value.treeMode) {
+          case 'selection':
+            this.readOnly = false;
+            this.enableSelection(true);
+            break;
+
+          case 'readOnly':
+            this.readOnly = true;
+            this.enableSelection(false);
+            break;
+
+          case 'navigation':
+            this.readOnly = false;
+            this.enableSelection(false);
+            break;
+
+          default:
+            break;
+        }
+      }
+
+      if (value.selectMode) {
+        switch (value.selectMode) {
+          case 'singleSelect':
+              this.resetSelection();
+              this.selectSingle = true;
+              this.enableCascading = false;
+            break;
+
+          case 'multiSelect':
+              this.resetSelection();
+              this.selectSingle = false;
+              this.enableCascading = false;
+            break;
+
+          default:
+            break;
+        }
+      }
+
+      if (!!value.enableCascading) {
+        this.enableCascading = value.enableCascading;
+      }
+
+      if (!!value.selectLeafNodesOnly) {
+        this.selectLeafNodesOnly = value.selectLeafNodesOnly;
+      }
+
+      this.changeRef.markForCheck();
+    });
+  }
+
   public actionClicked(name: string, node: TreeNode): void {
     // Add custom actions here.
     console.log(name + `: "${node.data.name}"`);
@@ -119,48 +196,6 @@ export class SkyAngularTreeComponentDemoComponent {
   public onTreeStateChange(treeModel: ITreeState): void {
     // Watch for tree state changes here.
     console.log(treeModel);
-  }
-
-  // #region [For demonstration purposes only.]
-  public onModeChange(event: any): void {
-    switch (event.value) {
-      case 'selection':
-          this.readOnly = false;
-        this.enableSelection(true);
-        break;
-
-      case 'readOnly':
-          this.readOnly = true;
-          this.enableSelection(false);
-        break;
-
-      case 'navigation':
-          this.readOnly = false;
-          this.enableSelection(false);
-        break;
-
-      default:
-        break;
-    }
-  }
-
-  public onSelectModeChange(event: any): void {
-    switch (event.value) {
-      case 'singleSelect':
-          this.resetSelection();
-          this.selectSingle = true;
-          this.enableCascading = false;
-        break;
-
-      case 'multiSelect':
-          this.resetSelection();
-          this.selectSingle = false;
-          this.enableCascading = false;
-        break;
-
-      default:
-        break;
-    }
   }
 
   private enableSelection(value: boolean): void {
@@ -174,5 +209,4 @@ export class SkyAngularTreeComponentDemoComponent {
     this.tree.selectedLeafNodeIds = {};
     this.tree.activeNodeIds = {};
   }
-  // #endregion
 }
