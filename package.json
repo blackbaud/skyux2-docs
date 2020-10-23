@@ -33,7 +33,7 @@
     "@skyux/data-manager": "4.0.0",
     "@skyux/datetime": "4.7.0",
     "@skyux/docs-tools": "4.7.3",
-    "@skyux/forms": "4.13.2",
+    "@skyux/forms": "4.13.3",
     "@skyux/grids": "4.0.6",
     "@skyux/http": "4.0.1",
     "@skyux/i18n": "4.0.3",
