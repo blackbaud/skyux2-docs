@@ -55,7 +55,6 @@ import {
 } from '@skyux/grids';
 
 import {
-  SkyAuthHttpModule,
   SkyAuthHttpClientModule
 } from '@skyux/http';
 
@@ -166,7 +165,6 @@ import {
     SkyAlertModule,
     SkyAppLinkModule,
     SkyAuthHttpClientModule,
-    SkyAuthHttpModule,
     SkyAutocompleteModule,
     SkyAvatarModule,
     SkyCardModule,

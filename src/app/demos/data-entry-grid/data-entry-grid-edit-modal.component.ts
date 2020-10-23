@@ -5,13 +5,10 @@ import {
 
 import {
   SkyAgGridService,
-  SkyCellType
-} from '@skyux/ag-grid';
-
-import {
   SkyAutocompleteProperties,
+  SkyCellType,
   SkyDatepickerProperties
-} from '@skyux/ag-grid/modules/ag-grid/types';
+} from '@skyux/ag-grid';
 
 import {
   SkyAutocompleteSelectionChange

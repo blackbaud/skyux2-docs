@@ -3,137 +3,143 @@
 >
 
   <!-- #region [Inputs are for demonstration purposes only.] -->
-  <sky-fluid-grid>
-    <sky-row>
-      <sky-column screenSmall="6">
-        <h4
-          id="sky-demo-modes"
-        >
-          Modes
-        </h4>
-        <ul
-          class="sky-list-unstyled"
-        >
-          <li>
-            <sky-radio
-              name="mode"
-              value="navigation"
-              (change)="onModeChange($event)"
-              [(ngModel)]="selectedMode"
-            >
-              <sky-radio-label>
-                Navigation
-              </sky-radio-label>
-            </sky-radio>
-          </li>
-          <li>
-              <sky-radio
-                name="mode"
-                value="readOnly"
-                (change)="onModeChange($event)"
-                [(ngModel)]="selectedMode"
-              >
-              <sky-radio-label>
-                Read-only
-              </sky-radio-label>
-            </sky-radio>
-          </li>
-          <li>
-            <sky-radio
-              name="mode"
-              value="selection"
-              (change)="onModeChange($event)"
-              [(ngModel)]="selectedMode"
-            >
-              <sky-radio-label>
-                Selection
-              </sky-radio-label>
-            </sky-radio>
+  <form
+    novalidate
+    [formGroup]="demoOptions"
+  >
+    <sky-fluid-grid>
+      <sky-row>
+        <sky-column screenSmall="6">
+          <h4
+            id="sky-demo-modes"
+          >
+            Modes
+          </h4>
+          <sky-radio-group
+            ariaLabel="Tree modes"
+            formControlName="treeMode"
+          >
             <ul
               class="sky-list-unstyled"
-              style="margin: 10px 0 10px 20px"
             >
               <li>
-                <sky-checkbox
-                  [disabled]="selectedMode !== 'selection' || enableCascading"
-                  [(ngModel)]="selectLeafNodesOnly"
-                >
-                  <sky-checkbox-label>
-                    Leaf-node selection only
-                  </sky-checkbox-label>
-                </sky-checkbox>
-              </li>
-              <li>
                 <sky-radio
-                  name="selectMode"
-                  value="singleSelect"
-                  [disabled]="selectedMode !== 'selection'"
-                  (change)="onSelectModeChange($event)"
-                  [(ngModel)]="selectedSelectMode"
+                  value="navigation"
                 >
                   <sky-radio-label>
-                    Single-select
+                    Navigation
                   </sky-radio-label>
                 </sky-radio>
               </li>
               <li>
                 <sky-radio
-                  name="selectMode"
-                  value="multiSelect"
-                  [disabled]="selectedMode !== 'selection'"
-                  (change)="onSelectModeChange($event)"
-                  [(ngModel)]="selectedSelectMode"
+                  value="readOnly"
                 >
                   <sky-radio-label>
-                    Multi-select
+                    Read-only
                   </sky-radio-label>
                 </sky-radio>
-                <ul
-                  class="sky-list-unstyled"
-                  style="margin: 10px 0 10px 20px"
+              </li>
+              <li>
+                <sky-radio
+                  value="selection"
                 >
-                  <li>
-                    <sky-checkbox
-                      [disabled]="selectedMode !== 'selection' || selectLeafNodesOnly || selectSingle"
-                      [(ngModel)]="enableCascading"
-                    >
-                      <sky-checkbox-label>
-                        Enable cascading
-                      </sky-checkbox-label>
-                    </sky-checkbox>
-                  </li>
-                </ul>
+                  <sky-radio-label>
+                    Selection
+                  </sky-radio-label>
+                </sky-radio>
               </li>
             </ul>
-          </li>
-        </ul>
-      </sky-column>
-      <sky-column screenSmall="6">
-        <ul
-          class="sky-list-unstyled"
-        >
-          <li>
-            <sky-checkbox
-              [(ngModel)]="showToolbar"
-            >
-              <sky-checkbox-label>
-                Include toolbar
-              </sky-checkbox-label>
-            </sky-checkbox>
-          </li>
-          <li>
-            <sky-checkbox
-              [(ngModel)]="showContextMenus"
-            >
-              <sky-checkbox-label>
-                Include context menus
-              </sky-checkbox-label>
-            </sky-checkbox>
-          </li>
-        </ul>
-      </sky-column>
-    </sky-row>
-  </sky-fluid-grid>
+          </sky-radio-group>
+          <ul
+            class="sky-list-unstyled"
+            style="margin: 10px 0 10px 20px"
+          >
+            <li>
+              <sky-checkbox
+                [disabled]="demoOptions.value.treeMode !== 'selection' || enableCascading"
+                formControlName="selectLeafNodesOnly"
+              >
+                <sky-checkbox-label>
+                  Leaf-node selection only
+                </sky-checkbox-label>
+              </sky-checkbox>
+            </li>
+            <li>
+              <sky-radio-group
+                ariaLabel="Select modes"
+                formControlName="selectMode"
+              >
+                <ul
+                  class="sky-list-unstyled"
+                >
+                  <li>
+                    <sky-radio
+                      value="singleSelect"
+                      [disabled]="demoOptions.value.treeMode !== 'selection'"
+                    >
+                      <sky-radio-label>
+                        Single-select
+                      </sky-radio-label>
+                    </sky-radio>
+                  </li>
+                  <li>
+                    <sky-radio
+                      value="multiSelect"
+                      [disabled]="demoOptions.value.treeMode !== 'selection'"
+                    >
+                      <sky-radio-label>
+                        Multi-select
+                      </sky-radio-label>
+                    </sky-radio>
+                    <ul
+                      class="sky-list-unstyled"
+                      style="margin: 10px 0 10px 20px"
+                    >
+                      <li>
+                        <sky-checkbox
+                          formControlName="enableCascading"
+                          [disabled]="demoOptions.value.treeMode !== 'selection' || selectLeafNodesOnly || selectSingle"
+                        >
+                          <sky-checkbox-label>
+                            Enable cascading
+                          </sky-checkbox-label>
+                        </sky-checkbox>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </sky-radio-group>
+            </li>
+          </ul>
+        </sky-column>
+        <sky-column screenSmall="6">
+          <ul
+            class="sky-list-unstyled"
+          >
+            <li>
+              <sky-checkbox
+                formControlName="showToolbar"
+              >
+                <sky-checkbox-label>
+                  Include toolbar
+                </sky-checkbox-label>
+              </sky-checkbox>
+            </li>
+            <li>
+              <sky-checkbox
+                formControlName="showContextMenus"
+              >
+                <sky-checkbox-label>
+                  Include context menus
+                </sky-checkbox-label>
+              </sky-checkbox>
+            </li>
+          </ul>
+        </sky-column>
+      </sky-row>
+    </sky-fluid-grid>
+  </form>
   <!-- #endregion -->
 
   <div
@@ -143,7 +149,7 @@
       [readOnly]="readOnly"
       [selectLeafNodesOnly]="selectLeafNodesOnly"
       [selectSingle]="selectSingle"
-      [showToolbar]="showToolbar"
+      [showToolbar]="demoOptions.value.showToolbar"
     >
       <tree-root
         [nodes]="nodes"
@@ -162,7 +168,7 @@
             [node]="node"
             [templates]="templates"
           >
-            <sky-dropdown *ngIf="showContextMenus"
+            <sky-dropdown *ngIf="demoOptions.value.showContextMenus"
               buttonType="context-menu"
             >
               <sky-dropdown-menu>
