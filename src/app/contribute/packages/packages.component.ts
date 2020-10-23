@@ -142,11 +142,6 @@ export class PackagesComponent {
       repo: 'blackbaud/skyux-layout'
     },
     {
-      id: '@skyux/link-records',
-      provider: 'github',
-      repo: 'blackbaud/skyux-link-records'
-    },
-    {
       id: '@skyux/list-builder',
       provider: 'github',
       repo: 'blackbaud/skyux-list-builder'

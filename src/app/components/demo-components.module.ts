@@ -3,10 +3,6 @@ import {
 } from '@angular/core';
 
 import {
-  SkyDemoModule
-} from '@blackbaud/skyux2-demos/dist/demo';
-
-import {
   SkyDateRangePickerModule
 } from '@skyux/datetime';
 
@@ -16,14 +12,8 @@ import {
 
 import {
   SkyAngularTreeViewDemoModule,
-  SkyCharacterCountDemoModule,
   SkyDataEntryGridDemoModule,
-  SkyInlineFormDemoModule,
-  SkyPhoneFieldDemoModule,
-  SkySingleFileAttachmentDemoModule,
-  SkySplitViewDemoModule,
-  SkySummaryActionBarDemoModule,
-  SkyToggleSwitchDemoModule
+  SkySummaryActionBarDemoModule
 } from '../demos';
 
 import {
@@ -35,29 +25,15 @@ require('style-loader!prismjs/themes/prism.css');
 @NgModule({
   imports: [
     SkyAngularTreeViewDemoModule,
-    SkyCharacterCountDemoModule,
     SkyDataEntryGridDemoModule,
     SkyDateRangePickerModule,
-    SkyDemoModule,
-    SkyInlineFormDemoModule,
-    SkyPhoneFieldDemoModule,
-    SkySingleFileAttachmentDemoModule,
-    SkySplitViewDemoModule,
-    SkySummaryActionBarDemoModule,
-    SkyToggleSwitchDemoModule
+    SkySummaryActionBarDemoModule
   ],
   exports: [
     SkyAngularTreeViewDemoModule,
-    SkyCharacterCountDemoModule,
     SkyDataEntryGridDemoModule,
     SkyDateRangePickerModule,
-    SkyDemoModule,
-    SkyInlineFormDemoModule,
-    SkyPhoneFieldDemoModule,
-    SkySingleFileAttachmentDemoModule,
-    SkySplitViewDemoModule,
-    SkySummaryActionBarDemoModule,
-    SkyToggleSwitchDemoModule
+    SkySummaryActionBarDemoModule
   ],
   providers: [
     SkyDemoComponentsService,
