@@ -7,6 +7,11 @@ import {
 } from'@blackbaud/skyux-lib-stache';
 
 import {
+  SkyDocsAnatomyModule,
+  SkyDocsSupportalService
+} from '@skyux/docs-tools';
+
+import {
   SkyDemoComponentsModule
 } from './components/demo-components.module';
 
@@ -18,30 +23,15 @@ import {
   SkyDemoTitleService
 } from './shared/title.service';
 
-require('style-loader!./styles.scss');
-
-import {
-  SkyDocsAnatomyModule,
-  SkyDocsDemoPageModule,
-  SkyDocsDesignGuidelinesModule,
-  SkyDocsSupportalService
-} from '@skyux/docs-tools';
-
 import {
   AppSkyModule
 } from './app-sky.module';
 
 @NgModule({
-  imports: [
-    SkyDemoComponentsModule,
-    StacheModule
-  ],
   exports: [
     AppSkyModule,
     SkyDemoComponentsModule,
     SkyDocsAnatomyModule,
-    SkyDocsDemoPageModule,
-    SkyDocsDesignGuidelinesModule,
     StacheModule
   ],
   providers: [
