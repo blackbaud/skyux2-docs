@@ -25,7 +25,8 @@ import {
 } from 'rxjs';
 
 import {
-  map
+  map,
+  share
 } from 'rxjs/operators';
 
 @Injectable()
@@ -43,13 +44,15 @@ export class SkyDemoSidebarService {
     const nameUpperCase = name.toUpperCase();
 
     return this.skyDocsSupportalService
-      .getComponentsInfo().pipe(
-      map((components: SkyDocsComponentInfo[]) => {
-        const match = components.find((component: SkyDocsComponentInfo) =>
-          component.name.toUpperCase() === nameUpperCase);
-        return match && match.children ? match.children : [];
-      }),
-      map((components: SkyDocsComponentInfo[]) => this.transform(components)));
+      .getComponentsInfo()
+      .pipe(
+        map(components => {
+          const match = components.find(c => c.name.toUpperCase() === nameUpperCase);
+          return (match && match.children) ? match.children : [];
+        }),
+        map(components => this.transform(components)),
+        share()
+      );
   }
 
   /**
@@ -57,8 +60,11 @@ export class SkyDemoSidebarService {
    */
   public getRoutes(): Observable<StacheNavLink[]> {
     return this.skyDocsSupportalService
-      .getComponentsInfo().pipe(
-      map((components: SkyDocsComponentInfo[]) => this.transform(components)));
+      .getComponentsInfo()
+      .pipe(
+        map(components => this.transform(components)),
+        share()
+      );
   }
 
   /**
@@ -66,13 +72,16 @@ export class SkyDemoSidebarService {
    */
   public getSidebar(): Observable<StacheNavLink[]> {
     return this.skyDocsSupportalService
-      .getComponentsInfo().pipe(
-      map((components: SkyDocsComponentInfo[]) => this.transform(components)),
-      map((routes: StacheNavLink[]) => {
-        const sidebar = this.getDefaultSidebar();
-        sidebar[0].children = routes;
-        return sidebar;
-      }));
+      .getComponentsInfo()
+      .pipe(
+        map(components => this.transform(components)),
+        map(routes => {
+          const sidebar = this.getDefaultSidebar();
+          sidebar[0].children = routes;
+          return sidebar;
+        }),
+        share()
+      );
   }
 
   // Keeps the default stache sidebar from loading
