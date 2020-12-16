@@ -55,8 +55,11 @@
   </stache-page-anchor>
 
   <p>
-    The SKY UX CLI provides a command line interface for the SKY UX Builder that builds the output for SKY UX applications. To install the CLI from the command line, run <sky-code>npm install -g @skyux-sdk/cli</sky-code>.
+    The <a href="https://github.com/blackbaud/skyux-sdk-cli">SKY UX CLI</a> provides a command line interface for the SKY UX Builder that builds the output for SKY UX applications. To install the CLI from the command line, run <sky-code>npm install -g @skyux-sdk/cli</sky-code>.
   </p>
+  <sky-alert alertType="info">
+    If you use PowerShell or PowerShell Core, a <a href="https://github.com/npm/cli/issues/470">known NPM CLI issue</a> may initially prevent it from running SKY UX CLI commands.
+  </sky-alert>
 
   <stache-page-anchor>
     SKY UX certificate
@@ -175,12 +178,10 @@
     </li>
   </ol>
 
-
-
   <stache-page-anchor>
     Recommended tools
   </stache-page-anchor>
 
-  <stache-include fileName="tslint-tool.html">
+  <stache-include fileName="tslint-tool.html"></stache-include>
 
 </stache>
