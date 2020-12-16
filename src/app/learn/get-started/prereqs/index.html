@@ -58,7 +58,7 @@
     The <a href="https://github.com/blackbaud/skyux-sdk-cli">SKY UX CLI</a> provides a command line interface for the SKY UX Builder that builds the output for SKY UX applications. To install the CLI from the command line, run <sky-code>npm install -g @skyux-sdk/cli</sky-code>.
   </p>
   <sky-alert alertType="info">
-    To enable SKY UX CLI commands in PowerShell, run the PowerShell <a href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.1#change-the-execution-policy"><sky-code>Set-ExecutionPolicy</sky-code> cmdlet</a>: <sky-code>Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser</sky-code>. Otherwise, SKY UX CLI commands in PowerShell may result in a <sky-code>skyux.ps1 cannot be loaded</sky-code> error.
+    If you use PowerShell or PowerShell Core, a <a href="https://github.com/npm/cli/issues/470">known NPM CLI issue</a> may initially prevent it from running SKY UX CLI commands.
   </sky-alert>
 
   <stache-page-anchor>
