@@ -18,6 +18,10 @@ import {
 } from '@blackbaud/skyux-lib-media';
 
 import {
+  SkyRestrictedViewModule
+} from '@blackbaud/skyux-lib-restricted-view';
+
+import {
   SkyNumericModule,
   SkyMediaQueryModule
 } from '@skyux/core';
@@ -134,6 +138,7 @@ import {
     SkyPopoverModule,
     SkyRadioModule,
     SkyRepeaterModule,
+    SkyRestrictedViewModule,
     SkySearchModule,
     SkySectionedFormModule,
     SkySortModule,
