@@ -21,7 +21,7 @@
     "@blackbaud/skyux-lib-clipboard": "4.0.0",
     "@blackbaud/skyux-lib-code-block": "4.0.1",
     "@blackbaud/skyux-lib-media": "4.0.0",
-    "@blackbaud/skyux-lib-restricted-view": "4.1.0",
+    "@blackbaud/skyux-lib-restricted-view": "4.2.0",
     "@blackbaud/skyux-lib-stache": "4.2.1",
     "@skyux/action-bars": "4.0.1",
     "@skyux/ag-grid": "4.2.0",
