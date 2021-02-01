@@ -102,7 +102,10 @@
     </li>
     <li>
       <p>
-        <sky-code>title</sky-code> — Controls the page title at the template level when you run <sky-code>skyux serve</sky-code> to serve a SPA. To control your SPA's page title outside of serving locally, use the <a href="https://angular.io/docs/ts/latest/cookbook/set-document-title.html">Angular <sky-code>Title</sky-code> service</a>. For Blackbaud developers, <sky-code>SkyAppTitleService</sky-code> is the preferred method to <a href="https://docs.blackbaud.com/engineering-system-docs/learn/spa/spa-title-service">set the page title in a SPA</a>. When you set page titles, follow the recommended format in the <a routerLink="/design/guidelines/page-layouts" fragment="page-titles">page design guidelines</a>.
+        <sky-code>title</sky-code> — Specifies the page title in the HTML file that is emitted during <sky-code>skyux build</sky-code> and served when you run <sky-code>skyux serve -local</sky-code>. The title is displayed while the application loads, but the <sky-code>title</sky-code> property has no effect when running <sky-code>skyux serve</sky-code> because the SKY UX Host service controls the page title while the SPA loads.
+      </p>
+      <p>
+        To control your SPA's page title after the SPA loads, you can use the <a href="https://angular.io/docs/ts/latest/cookbook/set-document-title.html">Angular <sky-code>Title</sky-code> service</a>. For Blackbaud developers, <sky-code>SkyAppTitleService</sky-code> is the preferred method to <a href="https://docs.blackbaud.com/engineering-system-docs/learn/spa/spa-title-service">set the page title in a SPA</a>. When you set page titles, follow the recommended format in the <a routerLink="/design/guidelines/page-layouts" fragment="page-titles">page design guidelines</a>.
       </p>
     </li>
   </ul>
