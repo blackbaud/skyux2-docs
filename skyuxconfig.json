@@ -131,6 +131,7 @@
     "components/fileattachments": "components/file-attachments",
     "learn/get-started/prereqs/ssl-certificate": "learn/get-started/prereqs",
     "learn/get-started/prereqs/initial-setup": "learn/get-started/prereqs",
-    "design/resources": "design"
+    "design/resources": "design",
+    "contribute/contribution-process/report-bugs": "contribute/contribution-process/file-issue"
   }
 }
