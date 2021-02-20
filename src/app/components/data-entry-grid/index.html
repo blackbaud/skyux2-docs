@@ -4,9 +4,9 @@
 
   <sky-demo-page-summary>
     <p>
-      The data entry grid provides a spreadsheet-like user interface for entering large amounts of data. The component itself is from the third party library ag-Grid. The SKY UX ag-Grid module provides styles, a service for default <sky-code>gridOptions,</sky-code> and SKY UX components for cell rendering and editing in ag-Grid.
+      The data entry grid provides a spreadsheet-like user interface to enter large amounts of data. The component is from the third-party AG Grid library. The SKY UX data entry grid module provides styles, a service for default <sky-code>gridOptions,</sky-code> and SKY UX components for cell rendering and editing in AG Grid.
 
-      If you have never used ag-Grid before, <a href="https://www.ag-grid.com/angular-getting-started/">the Angular getting started</a> guide covers the basics. For more in depth information about ag-Grid and its capabilities, please reference <a href="https://www.ag-grid.com/documentation-main/documentation.php">the ag-Grid documentation.</a>
+      If you have never used AG Grid, <a href="https://www.ag-grid.com/angular-getting-started/">the Angular getting started</a> guide covers the basics. For more in-depth information about AG Grid and its capabilities, see <a href="https://www.ag-grid.com/documentation-main/documentation.php">the AG Grid documentation.</a>
     </p>
   </sky-demo-page-summary>
 
@@ -104,17 +104,17 @@
         In addition to the <sky-code>@skyux/ag-grid</sky-code> package, you need to install the <a href="https://www.ag-grid.com/angular-grid/"><sky-code>ag-grid-angular</sky-code></a> and <a href="https://www.npmjs.com/package/ag-grid-community"><sky-code>ag-grid-community</sky-code></a> packages. After installation, you need to make any exports from <sky-code>SkyAgGridModule</sky-code> available to your SPA by adding the module to the <sky-code>exports</sky-code> section of your SPA's main module. For example, if you are using the SKY UX SDK, add <sky-code>SkyAgGridModule</sky-code> as an export in your <sky-code>app-sky.module.ts</sky-code> file. Next, in the <sky-code>app-extras.module.ts</sky-code> file, add <sky-code>AgGridModule.withComponents([])</sky-code> to the <sky-code>imports</sky-code> section and <sky-code>AgGridModule</sky-code> to the <sky-code>exports</sky-code> section. If you define your own cell editors or renderers, add them to the list passed to <a href="https://www.ag-grid.com/angular-more-details/#angular-components"><sky-code>withComponents()</sky-code></a>.
       </p>
       <sky-alert alertType="info">
-        If you use the data entry grid with <a href="https://www.ag-grid.com/documentation/angular/licensing/"></a>the enterprise version of ag-Grid instead of the free community version</a>, the data entry grid turns on all enterprise features by default.
+        If you use the data entry grid with <a href="https://www.ag-grid.com/documentation/angular/licensing/"></a>the enterprise version of AG Grid instead of the free community version</a>, the data entry grid turns on all enterprise features by default.
       </sky-alert>
 
-      <h2>ag-Grid styles</h2>
+      <h2>AG Grid styles</h2>
       <p>
-        To add the SKY UX styles for ag-Grid to your SPA, include <sky-code>"@skyux/ag-grid/css/sky-ag-grid.css"</sky-code> in the <sky-code>styles</sky-code> section of your <sky-code>skyuxconfig.json</sky-code>. For editable grids, include the class <sky-code>sky-ag-grid-editable</sky-code> on the <sky-code>ag-grid-angular</sky-code> element.
+        To add the SKY UX styles for AG Grid to your SPA, include <sky-code>"@skyux/ag-grid/css/sky-ag-grid.css"</sky-code> in the <sky-code>styles</sky-code> section of your <sky-code>skyuxconfig.json</sky-code>. For editable grids, include the class <sky-code>sky-ag-grid-editable</sky-code> on the <sky-code>ag-grid-angular</sky-code> element.
       </p>
 
-      <h2>ag-Grid wrapper component</h2>
+      <h2>AG Grid wrapper component</h2>
       <p>
-        The <sky-code>sky-ag-grid-wrapper</sky-code> component provides WCAG-compliant keyboard navigation and sticky column headers for grids that use auto height. Use the <sky-code>sky-ag-grid-wrapper</sky-code>  component to wrap all instances of <sky-code>ag-grid-angular</sky-code>. The wrapper does not constrain standard ag-Grid functionality.
+        The <sky-code>sky-ag-grid-wrapper</sky-code> component provides WCAG-compliant keyboard navigation and sticky column headers for grids that use auto height. Use the <sky-code>sky-ag-grid-wrapper</sky-code>  component to wrap all instances of <sky-code>ag-grid-angular</sky-code>. The wrapper does not constrain standard AG Grid functionality.
       </p>
 
       <h2>Data manager directive</h2>
@@ -136,19 +136,19 @@
       sectionHeading="SkyAgGridService methods"
       >
         <p>
-          <sky-code>SkyAgGridService</sky-code> provides methods to get ag-Grid <sky-code>gridOptions</sky-code> to ensure grids match SKY UX functionality. The <sky-code>gridOptions</sky-code> can be overridden, and include registered SKY UX column types.
+          <sky-code>SkyAgGridService</sky-code> provides methods to get AG Grid <sky-code>gridOptions</sky-code> to ensure grids match SKY UX functionality. The <sky-code>gridOptions</sky-code> can be overridden, and include registered SKY UX column types.
         </p>
         <sky-demo-page-property
           propertyName="getEditableGridOptions(args: SkyGetGridOptionsArgs)"
           isOptional="true"
         >
-          Returns <a href="https://www.ag-grid.com/javascript-grid-properties/">ag-Grid <sky-code>gridOptions</sky-code></a> with default SKY UX options, styling, and cell editors registered for editable grids.
+          Returns <a href="https://www.ag-grid.com/javascript-grid-properties/">AG Grid <sky-code>gridOptions</sky-code></a> with default SKY UX options, styling, and cell editors registered for editable grids.
         </sky-demo-page-property>
         <sky-demo-page-property
           propertyName="getGridOptions(args: SkyGetGridOptionsArgs)"
           isOptional="true"
         >
-          Returns <a href="https://www.ag-grid.com/javascript-grid-properties/">ag-Grid <sky-code>gridOptions</sky-code></a> with default SKY UX options, styling, and cell renderers registered for read-only grids.
+          Returns <a href="https://www.ag-grid.com/javascript-grid-properties/">AG Grid <sky-code>gridOptions</sky-code></a> with default SKY UX options, styling, and cell renderers registered for read-only grids.
         </sky-demo-page-property>
       </sky-demo-page-properties>
 
@@ -159,7 +159,7 @@
           propertyName="gridOptions"
           isOptional="false"
         >
-          Specifies the <a href="https://www.ag-grid.com/javascript-grid-properties/">ag-Grid <sky-code>gridOptions</sky-code></a> used to override default SKY UX gridOptions. SKY UX column types for components and column <sky-code>cellClassRules</sky-code> enforce required cell styling and cannot be overridden.
+          Specifies the <a href="https://www.ag-grid.com/javascript-grid-properties/">AG Grid <sky-code>gridOptions</sky-code></a> used to override default SKY UX gridOptions. SKY UX column types for components and column <sky-code>cellClassRules</sky-code> enforce required cell styling and cannot be overridden.
         </sky-demo-page-property>
         <sky-demo-page-property
           propertyName="locale"
@@ -173,7 +173,7 @@
       <sky-demo-page-properties
         sectionHeading="Registered columnTypes"
       >
-        <p>These column types can be used by setting the ag-Grid <a href="https://www.ag-grid.com/javascript-grid-column-properties/">column definition <sky-code>type</sky-code></a> to one of the following values.</p>
+        <p>These column types can be used by setting the AG Grid <a href="https://www.ag-grid.com/javascript-grid-column-properties/">column definition <sky-code>type</sky-code></a> to one of the following values.</p>
         <sky-demo-page-property
           propertyName="SkyCellType.Autocomplete"
           isOptional="true"
@@ -223,7 +223,7 @@
           isOptional="true"
         >
           <h4>Edit and read-only modes</h4>
-          Specifies that cells in the column will render as <a routerLink="../checkbox">SKY UX checkbox components.</a> It allows the user to select multiple rows, and adds a highlight to selected rows. The <a href="https://www.ag-grid.com/javascript-grid-row-node/">ag-Grid <sky-code>rowNode</sky-code></a> will be updated to reflect the selected state.
+          Specifies that cells in the column will render as <a routerLink="../checkbox">SKY UX checkbox components.</a> It allows the user to select multiple rows, and adds a highlight to selected rows. The <a href="https://www.ag-grid.com/javascript-grid-row-node/">Ag Grid <sky-code>rowNode</sky-code></a> will be updated to reflect the selected state.
         </sky-demo-page-property>
 
 
@@ -243,7 +243,7 @@
         </sky-demo-page-property>
 
         <p>
-          Any <a routerLink="..">SKY UX component</a> can be made into a <a href="https://www.ag-grid.com/javascript-grid-cell-editor/">cell editor</a> or <a href="https://www.ag-grid.com/javascript-grid-cell-rendering-components/">cell renderer</a> component. If you would like to use a component that does not have a column definition yet, please consider <a routerLink="../../contribute/contribution-process">contributing it</a> to the SKY UX ag-Grid module, or <a routerLink="../../contribute/contribution-process/file-issue">file an issue</a> in the <a href="https://github.com/blackbaud/skyux-ag-grid">@skyux/ag-grid repo.</a>
+          Any <a routerLink="..">SKY UX component</a> can be made into a <a href="https://www.ag-grid.com/javascript-grid-cell-editor/">cell editor</a> or <a href="https://www.ag-grid.com/javascript-grid-cell-rendering-components/">cell renderer</a> component. If you would like to use a component that does not have a column definition yet, please consider <a routerLink="../../contribute/contribution-process">contributing it</a> to the SKY UX data entry grid module, or <a routerLink="../../contribute/contribution-process/file-issue">file an issue</a> in the <a href="https://github.com/blackbaud/skyux-ag-grid">@skyux/ag-grid repo.</a>
         </p>
       </sky-demo-page-properties>
 
