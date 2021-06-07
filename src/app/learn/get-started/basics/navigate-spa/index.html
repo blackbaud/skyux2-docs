@@ -4,7 +4,16 @@
   showTableOfContents="true">
 
   <stache-page-summary>
-    SKY UX takes advantage of <a href="https://angular.io/api/router/Router">the Angular Router class</a> to enable navigation within a SPA, and you can use <a href="https://angular.io/api/router/RouterLink">Angular's <sky-code>RouterLink</sky-code> directive</a> to create links between pages in a SPA. In addition, SKY UX's <sky-code>SkyAppLink</sky-code> and <sky-code>SkyAppLinkExternal</sky-code> directives extend the <sky-code>RouterLink</sky-code> directive and allow you to create links that automatically include parameters in the URL.
+    <p>
+      SKY UX takes advantage of <a href="https://angular.io/api/router/Router">the Angular Router class</a> to enable navigation within a SPA, and you can use <a href="https://angular.io/api/router/RouterLink">Angular's <sky-code>RouterLink</sky-code> directive</a> to create links between pages in a SPA. In addition, SKY UX's <sky-code>SkyAppLink</sky-code> and <sky-code>SkyAppLinkExternal</sky-code> directives extend the <sky-code>RouterLink</sky-code> directive and allow you to create links that automatically include parameters in the URL.
+    </p>
+    <sky-restricted-view>
+      <sky-alert alertType="info">
+        ****Placeholder for note about <sky-code>skyHref</sky-code>.****
+      </sky-alert>
+    </sky-restricted-view>
+    <sky-restricted-content-alert></sky-restricted-content-alert>
+
   </stache-page-summary>
 
   <stache-page-anchor>
@@ -62,5 +71,63 @@
   <p>
     If this external SPA has a <sky-code>svcid</sky-code> of "abc" and an <sky-code>envid</sky-code> of "1234," the sample directs users to <sky-code>/another-spa/sample-route?svid=abc&envid=1234</sky-code>.
   </p>
+
+  <sky-restricted-view>
+    <stache-page-anchor>
+      Placeholder for skyHref section
+    </stache-page-anchor>
+
+    <p>
+      Like <sky-code>SkyAppLink</sky-code> and <sky-code>SkyAppLinkExternal</sky-code>, SKY UX's <sky-code>skyHref</sky-code> directive extends the <sky-code>RouterLink</sky-code> directive and allows you to create links that automatically include parameters in the URL. In addition, this directive checks permissions for the pages that you linke to and allows you to hide or disable links when users don't have rights to acess the targets.
+    </p>
+    <p>
+      If users have access to the target routes, then when the routes are passed in, the service calls translate them to completely new URLs. ***I'm not sure what else to say about this. John said it was the other key difference between <sky-code>skyHref</sky-code> and the existing directives, but I'm not completely clear on what this means or what else we need to
+    </p>
+
+    <h3 class="sky-subsection-heading">
+      Installation
+    </h3>
+    <p>
+      SKY UX defines the <sky-code>skyHref</sky-code> directive in <sky-code>****Module</sky-code> in the ***<sky-code>@skyux/router</sky-code>*** NPM package.
+    </p>
+    <p>
+      To use any exports from <sky-code>***Module</sky-code>, you must install it as a dependency to your project. In the command prompt, run the following command from your SPA's root directory:
+    </p>
+
+    <sky-code-block
+    >
+      npm install --save --save-exact @skyux/router
+    </sky-code-block>
+    <sky-code-block
+    >
+      npm install --save --save-exact @blackbaud-internal/skyux-lib-app-links
+    </sky-code-block>
+    <p>
+      After installation, you need to make any exports from <sky-code>***Module</sky-code> available to your SPA by adding the module to the exports section of your SPA's main module. If you are using the SKY UX SDK, add <sky-code>***Module</sky-code> as an export in your <sky-code>app-sky.module.ts</sky-code> file.
+    </p>
+      <p>
+      x
+    </p>
+
+    <h3 class="sky-subsection-heading">
+      Implementation
+    </h3>
+    <p>
+      ****You need to add routes to the referenced routes in the <sky-code>skyuxconfig.json</sky-code> file. This means referencing all pages you are going to link to.****
+    </p>
+    <p>
+      x
+    </p>
+    <sky-code-block>
+      placeholder for code sample
+    </sky-code-block>
+    <p>
+      x
+    </p>
+    <sky-code-block>
+      placeholder for code sample
+    </sky-code-block>
+
+  </sky-restricted-view>
 
 </stache>
