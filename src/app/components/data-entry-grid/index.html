@@ -80,7 +80,7 @@
       <h3>Validation</h3>
       <sky-docs-visual-example>
         <sky-docs-visual-example-text>
-          <p>You can enable validation to call attention to cell values that do not match business rules.</p>
+          <p>You can enable validation to call attention to cell values that don't have the correct format, such as incorrect dates or currency values.</p>
         </sky-docs-visual-example-text>
         <sky-docs-visual-example-image>
           <img src="~/assets/img/guidelines/data-grid/option-validation.png" />
@@ -204,12 +204,12 @@
         >
           <h4>Edit mode</h4>
           <p>
-            Specifies that cells in the column will be edited as a dollar amount.
+            Specifies that cells in the column will be edited as a currency amount.
           </p>
 
           <h4>Read-only mode</h4>
           <p>
-            Formats the display in dollars using <a routerLink="../numeric">SKY UX numeric components.</a>
+            Formats the display as currency using <a routerLink="../numeric">SKY UX numeric components.</a>
           </p>
         </sky-demo-page-property>
 
@@ -219,7 +219,7 @@
         >
           <h4>Edit and read-only modes</h4>
           <p>
-            Combines <sky-code>SkyCellType.Currency</sky-code> and <sky-code>SkyCellType.Validator</sky-code>, where the value is displayed as a currency and run through a validator function.
+            Combines <sky-code>SkyCellType.Currency</sky-code> and <sky-code>SkyCellType.Validator</sky-code>, where the value is displayed as a currency and passed to a validator function.
           </p>
         </sky-demo-page-property>
 
@@ -259,7 +259,7 @@
         >
           <h4>Edit and read-only modes</h4>
           <p>
-            Combines <sky-code>SkyCellType.Number</sky-code> and <sky-code>SkyCellType.Validator</sky-code>, where the value is displayed as a number and run through a validator function.
+            Combines <sky-code>SkyCellType.Number</sky-code> and <sky-code>SkyCellType.Validator</sky-code>, where the value is displayed as a number and passed to a validator function.
           </p>
         </sky-demo-page-property>
 
@@ -293,7 +293,7 @@
         >
           <h4>Edit and read-only modes</h4>
           <p>
-            Specifies cell in the column will be passed to through a validator function, allowing erroneous entries to be called out. You can set the validator function and message by passing them to <a href="https://www.ag-grid.com/javascript-grid-column-properties/">column definition's <sky-code>cellRendererParams</sky-code> property</a> as <sky-code>skyComponentProperties.validator</sky-code> and <sky-code>skyComponentProperties.validatorMessage</sky-code>. <sky-code>SkyCellType.Validator</sky-code> can be combined with other cell types, such as <sky-code>SkyCellType.Autocomplete</sky-code> or <sky-code>SkyCellType.Date</sky-code>, by using the array syntax for the <a href="https://www.ag-grid.com/javascript-grid-column-properties/">column definition's <sky-code>type</sky-code> property</a>.
+            Specifies cell in the column will be passed to a validator function which flags erroneous entries. You can set the validator function and message by passing them to <a href="https://www.ag-grid.com/javascript-grid-column-properties/">column definition's <sky-code>cellRendererParams</sky-code> property</a> as <sky-code>skyComponentProperties.validator</sky-code> and <sky-code>skyComponentProperties.validatorMessage</sky-code>. <sky-code>SkyCellType.Validator</sky-code> can be combined with other cell types, such as <sky-code>SkyCellType.Autocomplete</sky-code> or <sky-code>SkyCellType.Date</sky-code>, by using the array syntax for the <a href="https://www.ag-grid.com/javascript-grid-column-properties/">column definition's <sky-code>type</sky-code> property</a>.
           </p>
         </sky-demo-page-property>
 
