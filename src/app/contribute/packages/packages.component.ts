@@ -87,14 +87,14 @@ export class PackagesComponent {
       repo: 'blackbaud/skyux-core'
     },
     {
+      id: '@skyux/data-manager',
+      provider: 'github',
+      repo: 'blackbaud/skyux-data-manager'
+    },
+    {
       id: '@skyux/datetime',
       provider: 'github',
       repo: 'blackbaud/skyux-datetime'
-    },
-    {
-      id: '@skyux/docs-tools',
-      provider: 'github',
-      repo: 'blackbaud/skyux-docs-tools'
     },
     {
       id: '@skyux/errors',
@@ -180,6 +180,11 @@ export class PackagesComponent {
       id: '@skyux/omnibar-interop',
       provider: 'github',
       repo: 'blackbaud/skyux-omnibar-interop'
+    },
+    {
+      id: '@skyux/pages',
+      provider: 'github',
+      repo: 'blackbaud/skyux-pages'
     },
     {
       id: '@skyux/phone-field',
