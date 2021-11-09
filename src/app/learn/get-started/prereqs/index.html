@@ -16,7 +16,7 @@
     Node.js
   </stache-page-anchor>
   <p>
-    SKY UX requires a <a href="https://nodejs.org/en/download/releases/">current, active LTS, or maintenance LTS version of Node.js</a>. To check your version, run <sky-code>node –v</sky-code> from the command line.
+    SKY UX requires <a href="https://nodejs.org/en/download/releases/">version <sky-code>14.17.x</sky-code> of Node.js</a>. To check your version, run <sky-code>node –v</sky-code> from the command line.
   </p>
   <p>
     In addition, SKY UX recommends Node Version Manager (NVM) to wrap your Node.js installation. NVM installs Node.js in your user directory to avoid permissions-related issues, and it also allows you to easily upgrade and manage multiple Node.js versions.
@@ -36,16 +36,14 @@
   <stache-page-anchor>
     NPM
   </stache-page-anchor>
-
   <p>
-    We require at least version 6 of NPM. NPM is the default JavaScript package manager for Node.js. As of Node.js version 0.6.3, it is bundled and installed automatically with the environment. To check your version, run <sky-code>npm –v</sky-code> from the command line. To install a specific version, run <sky-code>npm install</sky-code> globally and specify the version. For example: <sky-code>npm install -g npm</sky-code>.
+    SKY UX requires version <sky-code>6.14.x</sky-code> of NPM, which is the default JavaScript package manager for Node.js. As of Node.js version 0.6.3, it is bundled and installed automatically with the environment. To check your version, run <sky-code>npm –v</sky-code> from the command line. To install a specific version, run <sky-code>npm install</sky-code> globally and specify the version. For example: <sky-code>npm install -g npm</sky-code>.
   </p>
   <stache-include fileName="npm-tip.html"></stache-include>
 
   <stache-page-anchor>
     Git
   </stache-page-anchor>
-
   <p>
     Install <a href="https://git-scm.com/">Git</a>. We do not require a specific version but recommend you install the latest version. To confirm you have Git, run <sky-code>git version</sky-code> from the command line.
   </p>
@@ -53,7 +51,6 @@
   <stache-page-anchor>
     SKY UX CLI
   </stache-page-anchor>
-
   <p>
     The <a href="https://github.com/blackbaud/skyux-sdk-cli">SKY UX CLI</a> provides a command line interface for the SKY UX Builder that builds the output for SKY UX applications. To install the CLI from the command line, run <sky-code>npm install -g @skyux-sdk/cli</sky-code>.
   </p>
@@ -64,7 +61,6 @@
   <stache-page-anchor>
     SKY UX certificate
   </stache-page-anchor>
-
   <p>
     For local development with SKY UX, you must install the self-signed certificate that enables your SPA to securely load local files. To add the certificate to your machine's list of trusted certificates and validate it, run the following command:
   </p>
@@ -72,7 +68,6 @@
   <sky-code-block>
     skyux certs install
   </sky-code-block>
-
   <p>
     The certificate is required to securely run <sky-code>skyux serve</sky-code>, <sky-code>skyux e2e</sky-code>, and <sky-code>skyux build --serve</sky-code>. For more information, see the <a routerLink="/learn/reference/cli-commands/certs"><sky-code>skyux certs</sky-code> documentation</a>.
   </p>
@@ -83,7 +78,6 @@
   <h3 class="sky-subsection-heading">
     Additional steps for Firefox
   </h3>
-
   <p>Choose one of the following techniques.</p>
 
   <h4>Option 1: Enable Firefox to automatically trust certificatesin the OS-level store</h4>
@@ -92,7 +86,6 @@
   </p>
 
   <h4>Option 2: Manually trust the SKY UX CA</h4>
-
   <ol>
     <li>
       <p>
@@ -134,7 +127,6 @@
   <h3 class="sky-subsection-heading">
     Additional steps for iOS Simulator on Mac
   </h3>
-
   <ol>
     <li>
       <p>
@@ -181,7 +173,6 @@
   <stache-page-anchor>
     Recommended tools
   </stache-page-anchor>
-
   <stache-include fileName="tslint-tool.html"></stache-include>
 
 </stache>
