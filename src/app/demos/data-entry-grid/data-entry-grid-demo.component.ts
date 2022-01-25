@@ -107,7 +107,7 @@ export class SkyDataEntryGridDemoComponent implements OnInit {
   public gridApi: GridApi;
   public gridOptions: GridOptions;
   public searchText: string;
-  public noRowsTemplate;
+  public noRowsTemplate: string;
 
   constructor(
     private agGridService: SkyAgGridService,
