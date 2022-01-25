@@ -107,11 +107,14 @@ export class SkyDataEntryGridDemoComponent implements OnInit {
   public gridApi: GridApi;
   public gridOptions: GridOptions;
   public searchText: string;
+  public noRowsTemplate;
 
   constructor(
     private agGridService: SkyAgGridService,
     private modalService: SkyModalService
-  ) { }
+  ) {
+    this.noRowsTemplate = `No results found`;
+  }
 
   public ngOnInit(): void {
     this.gridOptions = {
