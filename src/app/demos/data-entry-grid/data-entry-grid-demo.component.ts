@@ -113,7 +113,7 @@ export class SkyDataEntryGridDemoComponent implements OnInit {
     private agGridService: SkyAgGridService,
     private modalService: SkyModalService
   ) {
-    this.noRowsTemplate = `No results found.`;
+    this.noRowsTemplate = `<div class="sky-deemphasized">No results found.</div>`;
   }
 
   public ngOnInit(): void {
