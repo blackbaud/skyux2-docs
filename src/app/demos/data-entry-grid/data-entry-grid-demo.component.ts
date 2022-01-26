@@ -107,11 +107,14 @@ export class SkyDataEntryGridDemoComponent implements OnInit {
   public gridApi: GridApi;
   public gridOptions: GridOptions;
   public searchText: string;
+  public noRowsTemplate: string;
 
   constructor(
     private agGridService: SkyAgGridService,
     private modalService: SkyModalService
-  ) { }
+  ) {
+    this.noRowsTemplate = `<div class="sky-deemphasized">No results found.</div>`;
+  }
 
   public ngOnInit(): void {
     this.gridOptions = {
@@ -153,6 +156,15 @@ export class SkyDataEntryGridDemoComponent implements OnInit {
   public searchApplied(searchText: string): void {
     this.searchText = searchText;
     this.gridApi.setQuickFilter(searchText);
+    if (this.gridApi) {
+      this.gridApi.setQuickFilter(searchText);
+      let displayedRowCount = this.gridApi.getDisplayedRowCount();
+      if (displayedRowCount > 0) {
+        this.gridApi.hideOverlay();
+      } else {
+        this.gridApi.showNoRowsOverlay();
+      }
+    }
   }
 
   private endDateFormatter(params: ValueFormatterParams): string {
