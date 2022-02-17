@@ -42,7 +42,7 @@
         <sky-code>externals</sky-code> — Dynamically injects CSS and JavaScript files into SKY UX Host for the <sky-code>skyux serve</sky-code> or <sky-code>skyux build</sky-code> commands. You should have a specific use-case for an external. For example, Office Add-ins require their library to load through CDN in the head. The <sky-code>before</sky-code> and <sky-code>after</sky-code> sections of an external indicate whether to include the external resource before or after the default SKY UX Builder resources. The <sky-code>head</sky-code> property, which only applies to JS resources, indicates whether to inject elements within the HTML <sky-code>head</sky-code> element or just before the closing <sky-code>body</sky-code> tag.
       </p>
       <p>
-        For Blackbaud-hosted SPAs, Blackbaud developers must whitelist all URLs in the <sky-code>externals</sky-code> property. If <sky-code>skyuxconfig.json</sky-code> includes externals that are not whitelisted, then the SPA won’t load. To whitelist externals, contact the SKY UX team.
+        For Blackbaud-hosted SPAs, Blackbaud developers should add all URLs in the <sky-code>externals</sky-code> property to <a routerLink="/learn/overview" fragment="sky-ux-host">SKY UX Host's</a>&nbsp;<sky-code>AllowedScripts</sky-code> list. If <sky-code>skyuxconfig.json</sky-code> includes externals that are not on this list, then the SPA won’t load. Create a PR to <sky-code>skyux-host</sky-code> modifying the <sky-code>appsettings.externals.json</sky-code> to include any scripts that are not already present.
       </p>
       <p>
         The following example shows an external with all the configuration options:
