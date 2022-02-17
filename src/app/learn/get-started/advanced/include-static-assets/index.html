@@ -9,7 +9,7 @@
   </stache-page-summary>
 
   <stache-page-anchor>
-    Include a static asset on a page
+    Include a static asset from a component's template or style sheet
   </stache-page-anchor>
 
   <ol>
@@ -20,17 +20,14 @@
     </li>
     <li>
       <p>
-        On the file where you want to include the static asset, reference the static asset with <sky-code>&#126;/assets/</sky-code> before the filename and path.
-      </p>
-      <p>
-        References to static assets must start with <sky-code>&#126;/assets/</sky-code> for the <sky-code>SkyAppAssetsService</sky-code> to retrieve the assets from the <sky-code>src/assets</sky-code> folder because the filenames are updated at build time to include hashes that represent the content of the files.
+        On the file where you want to include the static asset, reference the static asset with a root-relative path, such as <sky-code>/assets/img/example.jpg</sky-code>.
       </p>
       <p>
         For example, you can display an image on a page.
       </p>
       <sky-code-block>
         <p>
-          <img src="&#126;/assets/img/example.jpg" alt="Photo" />
+          <img src="/assets/img/example.jpg" alt="Photo" />
         </p>
       </sky-code-block>
       <p>
@@ -38,12 +35,34 @@
       </p>
       <sky-code-block languageType="typescript">
         <div [ngStyle]="{
-          'background-image': 'url(&#126;/assets/img/example.jpg)',
+          'background-image': 'url(/assets/img/example.jpg)',
           'height': '500px',
           'width': '500px'
         }">
           Foreground content goes here
         </div>
+      </sky-code-block>
+    </li>
+  </ol>
+
+  <stache-page-anchor>
+    Include a static asset from a global style sheet
+  </stache-page-anchor>
+
+  <ol>
+    <li>
+      <p>
+        On the style sheet where you want to include the static asset, reference the static asset with a document-relative path, such as <sky-code>assets/img/example.jpg</sky-code>.
+      </p>
+      <p>
+        For example, you can display an image on a page.
+      </p>
+      <sky-code-block languageType="typescript">
+        .foo-global {
+          height: 500px;
+          width: 500px;
+          background-image: url(assets/img/example.jpeg);
+        }
       </sky-code-block>
     </li>
   </ol>
@@ -71,7 +90,7 @@
     </li>
     <li>
       <p>
-        In the <sky-code>getUrl</sky-code> method, specify the path and file name for the static asset. Do not include the <sky-code>~/assets</sky-code> prefix, and note that param is case-sensitive.
+        In the <sky-code>getUrl</sky-code> method, specify the path and file name for the static asset. Do not include the <sky-code>/assets</sky-code> prefix, and note that param is case-sensitive.
       </p>
       <sky-code-block>
         skyAppAssetsService.getUrl('json/example.json')
