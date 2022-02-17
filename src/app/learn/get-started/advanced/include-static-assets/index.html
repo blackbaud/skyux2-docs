@@ -9,7 +9,7 @@
   </stache-page-summary>
 
   <stache-page-anchor>
-    Include a static asset on a page
+    Include a static asset from a component's template or style sheet
   </stache-page-anchor>
 
   <ol>
@@ -20,10 +20,7 @@
     </li>
     <li>
       <p>
-        On the file where you want to include the static asset, reference the static asset with <sky-code>/assets/</sky-code> before the filename and path.
-      </p>
-      <p>
-        References to static assets must start with <sky-code>/assets/</sky-code> for the <sky-code>SkyAppAssetsService</sky-code> to retrieve the assets from the <sky-code>src/assets</sky-code> folder because the filenames are updated at build time to include hashes that represent the content of the files.
+        On the file where you want to include the static asset, reference the static asset with a root-relative path <sky-code>/assets/img/example.jpg</sky-code>.
       </p>
       <p>
         For example, you can display an image on a page.
@@ -44,6 +41,28 @@
         }">
           Foreground content goes here
         </div>
+      </sky-code-block>
+    </li>
+  </ol>
+
+  <stache-page-anchor>
+    Include a static asset from a global style sheet
+  </stache-page-anchor>
+
+  <ol>
+    <li>
+      <p>
+        On the style sheet where you want to include the static asset, reference the static asset with a document-relative path <sky-code>assets/img/example.jpg</sky-code>.
+      </p>
+      <p>
+        For example, you can display an image on a page.
+      </p>
+      <sky-code-block languageType="typescript">
+        .foo-global {
+          height: 500px;
+          width: 500px;
+          background-image: url(assets/img/example.jpeg);
+        }
       </sky-code-block>
     </li>
   </ol>
