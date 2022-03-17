@@ -1,3 +1,5 @@
+<stache-include fileName="v4-note.html"></stache-include>
+
 <stache
   pageTitle="Overview"
   navOrder="1"
@@ -48,7 +50,7 @@
       </p>
     </li>
   </ul>
-  
+
   <p>
     SKY UX components, services, and modules are open source and available to external developers in multiple GitHub repositories that target different areas of development, but some features are for internal Blackbaud use only. To learn how we organize these packages, see the <a routerLink="/contribute/packages">packages matrix.</a>
   </p>
@@ -56,11 +58,11 @@
   <stache-page-anchor>
     SKY UX Builder
   </stache-page-anchor>
-  
+
   <p>
     SKY UX Builder is cross-platform, command line developer tool to create, test, and run SPAs. It abstracts most of the tedious complexities of modern web development, including bundling configuration, unit test configuration, and routing/module configuration. This allows developers to focus on features, not infrastructure. And it enables developers to build, test, deploy, and host SPAs in a consistent way across an entire application. In addition, SKY UX Builder also:
   </p>
-  
+
   <ul>
     <li>
       <p>
@@ -88,15 +90,15 @@
       </p>
     </li>
   </ul>
-  
+
   <p>
     External developers can use SKY UX Builder to create, test, and run SKY UX SPAs, but some features are for internal Blackbaud use only.
   </p>
-  
+
   <stache-page-anchor>
     Continuous integration layer
   </stache-page-anchor>
-  
+
   <p>
     SKY UX's continuous integration layer runs unit tests, visual regression tests, and end-to-end tests in multiple platforms and browsers when SPA code changes or when a dependency releases a new version. It also handles staging SPAs for additional testing and validation.
   </p>
@@ -107,7 +109,7 @@
   <stache-page-anchor>
     SKY UX Host
   </stache-page-anchor>
-  
+
   <p>
     SKY UX Host is the gateway for requests to SKY UX SPAs. During local development, SKY UX Host loads local files. And for production, SKY UX Host loads bundled files from a CDN where SKY UX Builder stores them. SKY UX Host also creates a web service that:
   </p>
@@ -162,15 +164,15 @@
       </p>
     </li>
   </ul>
-  
+
   <p>
     SKY UX Host is primarily for internal Blackbaud use. When external developers use the SKY UX CLI to serve SKY UX SPAs locally, Host loads local files. However, Host is not open source like the components, services, and modules in <a routerLink="/contribute/packages">our GitHub repositories</a>.
   </p>
-  
+
   <stache-page-anchor>
     Browser support
   </stache-page-anchor>
-  
+
   <p>
     <stache-include fileName="supported-browsers.html"></stache-include>
   </p>
@@ -178,7 +180,7 @@
   <stache-page-anchor>
     Contributions
   </stache-page-anchor>
-  
+
   <p>
     To follow along development of SKY UX and make contributions, see <a routerLink="/contribute/packages">our GitHub repositories that target different areas of development</a>. For information about how to contribute, see the <a routerLink="/contribute/guidelines">contribution guidelines</a>. The documentation is also open source, so you can <a href="https://github.com/blackbaud/skyux2-docs">contribute to the documentation</a> as well.
   </p>

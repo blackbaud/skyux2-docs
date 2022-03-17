@@ -1,3 +1,5 @@
+<stache-include fileName="v4-note.html"></stache-include>
+
 <stache
   navOrder="3"
   pageTitle="Serve a SPA">
@@ -7,11 +9,11 @@
       After you <a routerLink="/learn/get-started/basics/create-project">create a SKY UX project</a>, you can serve the default single-page application. For more information about <sky-code>skyux serve</sky-code> and other SKY UX CLI commands, see <a routerLink="/learn/reference/cli-commands">the CLI commands reference</a>.
     </p>
   </stache-page-summary>
-  
+
   <p>
     Since <sky-code>skyux serve</sky-code> serves your single-page application over HTTPS, any additional requests from your code such as AJAX requests must also be over HTTPS.
   </p>
-  
+
   <ol>
     <li>
       <p>
@@ -58,7 +60,7 @@
       <p>
         To enable production mode, run <sky-code>skyux build --serve</sky-code>. This builds the current SPA into the <sky-code>dist/</sky-code> folder and then serves it. (Remove the <sky-code>dist</sky-code> directory if it already exists.)
       </p>
-    </li>    
+    </li>
   </ol>
 
 </stache>
