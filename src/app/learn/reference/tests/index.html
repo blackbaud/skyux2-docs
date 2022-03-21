@@ -1,3 +1,5 @@
+<stache-include fileName="v4-note.html"></stache-include>
+
 <stache
   pageTitle="Tests"
   showTableOfContents="true"
@@ -12,7 +14,7 @@
   <stache-page-anchor>
     Unit tests
   </stache-page-anchor>
-  
+
   <p>
     SKY UX automatically configures <a href="https://karma-runner.github.io">Karma</a> to run unit tests in the <sky-code>src/app</sky-code> folder that end with <sky-code>.spec.ts</sky-code>. Unit tests should follow <a href="https://angular.io/styleguide#!#naming">the Angular guidelines</a> for naming and storing spec files. Name tests after the components or services that they test, and place them in the same folders as their components or services. For example, the test file for <sky-code>foo/foo.component.ts</sky-code> should be <sky-code>foo/foo.component.spec.ts</sky-code>.
   </p>
@@ -38,7 +40,7 @@
   <stache-page-anchor>
     End-to-end (e2e) tests
   </stache-page-anchor>
-  
+
   <stache-include fileName="e2e-recommendation.html"></stache-include>
   <p>
     SKY UX automatically configures <a href="http://www.protractortest.org">Protractor</a> to run end-to-end tests in the <sky-code>e2e</sky-code> folder that end with <sky-code>.e2e-spec.ts</sky-code>. End-to-end tests should follow <a href="https://angular.io/styleguide#!#naming">the Angular guidelines</a> on naming and storing spec files. Name them after the components or services that they test, and place them in the <sky-code>e2e</sky-code> folder in the root of your project.
@@ -99,12 +101,12 @@
   <stache-page-anchor>
     Accessibility tests
   </stache-page-anchor>
-  
+
   <p>
     The <a href="https://github.com/blackbaud/skyux-sdk-testing">SKY UX SDK testing library</a> provides methods to run <a href="https://github.com/dequelabs/axe-core">aXe automated accessibility tests</a> in your unit tests. For information, see the <a stacheRouterLink="/learn/get-started/advanced/accessibility-unit-tests">guidance for accessibility tests</a>.
   </p>
   <p>
     We strongly recommend that you use unit tests instead of end-to-end tests based on <a href="https://angular.io/guide/testing">Angular’s guidance on testing</a>. SKY UX also includes a deprecated tool to run automated accessibility tests within e2e tests. For information , see the <a routerLink="/learn/get-started/advanced/accessibility-analyzer">e2e guidance for accessibility tests</a>.
   </p>
-  
+
 </stache>
