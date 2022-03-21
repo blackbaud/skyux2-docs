@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@skyux/config/skyuxconfig-schema.json",
-  "name": "skyux",
+  "name": "skyux-v4",
   "mode": "easy",
   "compileMode": "aot",
   "host": {
