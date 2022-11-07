@@ -63,7 +63,7 @@
     "@skyux-sdk/builder": "4.12.3",
     "@skyux-sdk/e2e": "4.1.0",
     "@skyux-sdk/testing": "4.3.0",
-    "@types/keyv": "4.2.0",
+    "@types/keyv": "3.1.4",
     "codelyzer": "5.2.2",
     "ts-node": "8.3.0",
     "tslint": "6.1.3",
