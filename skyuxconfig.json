@@ -26,6 +26,7 @@
       "footer": {},
       "searchConfig": {
         "is_internal": false,
+        "is_globally_searchable": false,
         "site_names": [
           "skyux",
           "bb-help-docs",
