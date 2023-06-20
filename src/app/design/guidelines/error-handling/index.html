@@ -1,0 +1,223 @@
+<stache-include fileName="v4-note.html"></stache-include>
+
+<stache
+  pageTitle="Error handling"
+  showTableOfContents="true">
+
+	<stache-page-summary>
+		<p>
+			Error handling patterns provide guidance on how to present error messages depending on the context.
+		</p>
+	</stache-page-summary>
+
+	<stache-page-anchor>
+		Style and tone
+	</stache-page-anchor>
+
+	<p>
+		Make error and warning messages short and succinct, and use a conversational, human-voice approach. When possible, offer a solution along with an explanation of why the error or warning is occurring. Use <a routerLink="/components/error">the error component</a> to provide a consistent user experience with error messages.
+	</p>
+	<p>
+		Errors can frustrate users and sometimes indicate serious problems, so be thoughtful and helpful with the wording. Limit the use of "please" and "sorry," be careful about how you use "can't" and "don't" (and avoid "you can't" and "you don't"), and avoid humor.
+	</p>
+
+	<stache-page-anchor>
+		Accessibility guidelines
+	</stache-page-anchor>
+
+	<p>
+		Don't rely on a single sensory characteristic of components such as shape, size, visual location, orientation, or sound to describe an error or offer a solution. "Above" and "below" are fine for referencing content in the appropriate reading order for the language used as long as the reference isn't ambiguous.
+	</p>
+	<p>
+		Error messages should be as specific as possible to help the user determine what is wrong.
+	</p>
+	<stache-page-anchor>
+		Error message images
+	</stache-page-anchor>
+
+ 	<p>
+		The error message images apply to different scenarios and should be used accordingly.
+	</p>
+
+ 	<sky-repeater expandMode="multiple">
+		<sky-repeater-item [isExpanded]="false">
+			<sky-repeater-item-title>Broken (Bird)</sky-repeater-item-title>
+			<sky-repeater-item-content>
+				<sky-image
+        		imageSource="~/assets/img/guidelines/errorhandling/bird.png">
+       		 	</sky-image>
+
+      			<p>
+					Use this image for:
+				</p>
+        		<ul>
+            		<li>Errors with the modal component such as when a modal can't launch a form, or the modal service is down on save.</li>
+            		<li>Errors loading list data such as when tab content doesn't load.
+            		<li>Errors with the list component such as when list content doesn't load.
+            		<li>500 errors.</li>
+        		</ul>
+    		</sky-repeater-item-content>
+ 		 </sky-repeater-item>
+
+ 	<sky-repeater expandMode="multiple">
+		<sky-repeater-item [isExpanded]="false">
+			<sky-repeater-item-title>Not found (Dinosaur)</sky-repeater-item-title>
+			<sky-repeater-item-content>
+				<sky-image
+        		imageSource="~/assets/img/guidelines/errorhandling/dinosaur.png">
+       		 	</sky-image>
+
+      			<p>
+					Use this image for:
+				</p>
+        		<ul>
+            		<li>Errors loading a page.</li>
+            		<li>400 errors.
+        		</ul>
+    		</sky-repeater-item-content>
+ 		 </sky-repeater-item>
+
+ 	<sky-repeater expandMode="multiple">
+		<sky-repeater-item [isExpanded]="false">
+			<sky-repeater-item-title>Construction (Beaver)</sky-repeater-item-title>
+			<sky-repeater-item-content>
+				<sky-image
+        		imageSource="~/assets/img/guidelines/errorhandling/beaver.png">
+       		 	</sky-image>
+
+      			<p>
+					Use this image for:
+				</p>
+        		<ul>
+            		<li>Errors syncing data.</li>
+            		<li>Planned downtime.
+        		</ul>
+    		</sky-repeater-item-content>
+ 		 </sky-repeater-item>
+
+ 	<sky-repeater expandMode="multiple">
+		<sky-repeater-item [isExpanded]="false">
+			<sky-repeater-item-title>Security/Access rights (Zebra)</sky-repeater-item-title>
+			<sky-repeater-item-content>
+				<sky-image
+        		imageSource="~/assets/img/guidelines/errorhandling/zebra.png">
+       		 	</sky-image>
+
+      			<p>
+					Use this image for:
+				</p>
+        		<ul>
+            		<li>Security rights such as when users don't have rights to a page.</li>
+        		</ul>
+    		</sky-repeater-item-content>
+ 		 </sky-repeater-item>
+
+ 	<sky-repeater expandMode="multiple">
+		<sky-repeater-item [isExpanded]="false">
+			<sky-repeater-item-title>Other errors (No animal)</sky-repeater-item-title>
+			<sky-repeater-item-content>
+     		<p>
+					Do <i>not</i> use an image for errors:
+				</p>
+        	<ul>
+            <li>With the tile component such as when a tile won't load.</li>
+					  <li>When users can't save changes such as when actions, like save or add, don't complete.</li>
+        	</ul>
+    		</sky-repeater-item-content>
+ 		</sky-repeater-item>
+
+
+	<stache-page-anchor>
+		Page errors
+	</stache-page-anchor>
+
+	<sky-row>
+		<sky-column screenSmall="6">
+			<p>
+				A variety of page-level errors can occur, usually due to system failures rather than user actions. <a routerLink="/components/error">The error component</a> includes default content that applies to most scenarios, and the content can be customized if necessary to be more precise or prescriptive.
+			</p>
+		</sky-column>
+		<sky-column screenSmall="6">
+			<div class="screenshot screenshot-info">
+				<img src="~/assets/img/guidelines/errorhandling/page-error.png" style="width: 100%;" />
+			</div>
+		</sky-column>
+	</sky-row>
+
+	<stache-page-anchor>
+		Page element errors
+	</stache-page-anchor>
+
+	<div class="sky-subsection-heading">
+		Forms
+	</div>
+	<p>
+		For information about validation and error handling on forms, see the <a routerLink="/design/guidelines/form-design" fragment="validation-and-error-handling">form design guidelines</a>.
+	</p>
+
+	<div class="sky-subsection-heading">
+		Modals
+	</div>
+	<sky-row>
+		<sky-column screenSmall="6">
+			<p>
+				Modals usually have plenty of space to display error messages, so use <a routerLink="/components/error">the error component</a>.
+			</p>
+		</sky-column>
+		<sky-column screenSmall="6">
+			<div class="screenshot screenshot-info">
+				<img src="~/assets/img/guidelines/errorhandling/modal-error.png" style="width: 100%;" />
+			</div>
+		</sky-column>
+	</sky-row>
+
+	<div class="sky-subsection-heading">
+		Tabs
+	</div>
+	<sky-row>
+		<sky-column screenSmall="6">
+			<p>
+				Tabs that are used as a secondary navigation usually have views with plenty of available space to display error messages, so use <a routerLink="/components/error">the error component</a>.
+			</p>
+		</sky-column>
+		<sky-column screenSmall="6">
+			<div class="screenshot screenshot-info">
+				<img src="~/assets/img/guidelines/errorhandling/tab-error.png" style="width: 100%;" />
+			</div>
+		</sky-column>
+	</sky-row>
+
+	<div class="sky-subsection-heading">
+		Tiles
+	</div>
+	<sky-row>
+		<sky-column screenSmall="6">
+			<p>
+				Tiles have limited space and may not be important to users' immediate tasks, so exclude the images and buttons and only display error messages in order to minimize the visual weight.
+			</p>
+		</sky-column>
+		<sky-column screenSmall="6">
+			<div class="screenshot screenshot-info">
+				<img src="~/assets/img/guidelines/errorhandling/tile-error.png" style="width: 100%;" />
+			</div>
+		</sky-column>
+	</sky-row>
+
+	<stache-page-anchor>
+		Background process errors
+	</stache-page-anchor>
+
+	<sky-row>
+		<sky-column screenSmall="6">
+			<p>
+				Since background processes run outside the current page context, use <a routerLink="/components/toast">toasts</a> to notify the user of an error with a background process. Toasts appear regardless of which page users are on and persist as they navigate through the system.
+			</p>
+		</sky-column>
+		<sky-column screenSmall="6">
+			<div class="screenshot screenshot-info">
+				<img src="~/assets/img/guidelines/errorhandling/background-error.png" style="width: 100%;" />
+			</div>
+		</sky-column>
+	</sky-row>
+
+</stache>

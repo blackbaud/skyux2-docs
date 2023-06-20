@@ -1,0 +1,295 @@
+<stache-include fileName="v4-note.html"></stache-include>
+
+<stache
+  pageTitle="Localization"
+  showTableOfContents="true">
+
+  <stache-page-summary>
+    <p>
+      SKY UX Builder provides two methods for localization: <sky-code>skyLibResources</sky-code> for libraries and <sky-code>skyAppResources</sky-code> for SPAs.
+    </p>
+  </stache-page-summary>
+
+  <stache-page-anchor>
+    Localization for SPAs
+  </stache-page-anchor>
+
+  <p>
+    SKY UX Builder enables you to declare localization strings <a routerLink="/learn/reference/naming-and-placement">in a JSON file </a> and then reference those strings throughout your SPA using the <sky-code>skyAppResources</sky-code> pipe or the <sky-code>SkyAppResourcesService</sky-code> service in <sky-code>@skyux/i18n</sky-code>.
+  </p>
+
+  <h3>
+    Declare and reference localization strings
+  </h3>
+
+  <ol>
+    <li>
+      <p>
+        In the <sky-code>src/assets/locales</sky-code> folder, declare localization strings to use throughout your SPA in the <sky-code>resources_en_US.json</sky-code> file. Use JSON structure to specify a string name, and then provide the string and a description.
+      </p>
+      <sky-code-block languageType="markup">
+        {
+          "string_name": {
+            "message": "The localization string",
+            "_description": "A description of the string for the translator."
+          }
+        }
+      </sky-code-block>
+    </li>
+    <li>
+      <p>
+        Reference the localization strings with the <sky-code>skyAppResources</sky-code> pipe or the <sky-code>SkyAppResourcesService</sky-code> service.
+      </p>
+
+      <ul>
+        <li>
+          <p>
+            For the <sky-code>skyAppResources</sky-code> pipe, pull the string into your template by name.
+          </p>
+          <sky-code-block>
+            {{ 'string_name' | skyAppResources }}
+          </sky-code-block>
+        </li>
+        <li>
+          <p>
+            For the <sky-code>SkyAppResourcesService</sky-code> service in <sky-code>@skyux/i18n</sky-code>, pull the string using <sky-code>getString</sky-code>.
+          </p>
+          <sky-code-block>
+            this.resources.getString('string_name')
+              .subscribe((value) => {
+                /*do something with the string*/
+            });
+          </sky-code-block></li>
+      </ul>
+    </li>
+  </ol>
+
+  <h3>
+    Use templated strings
+  </h3>
+
+  <ol>
+    <li>
+      <p>
+        In the <sky-code>src/assets/locales</sky-code> folder, open the <sky-code>resources_en_US.json</sky-code> file and declare templated localization strings with .NET-style tokens in the string that you can replace with dynamic values. For example:
+      </p>
+      <sky-code-block languageType="markup">
+        {
+          "string_name": {
+            "message": "{0} gave money to the {1} fund",
+            "_description": "A string with .NET-style tokens to replace with constituentName and fundName."
+          }
+        }
+      </sky-code-block>
+    </li>
+    <li>
+      <p>
+        Reference the localization string using the <sky-code>skyAppResources</sky-code> pipe or the <sky-code>SkyAppResourcesService</sky-code> service and supply values to replace the .NET-style tokens in the string.
+      </p>
+
+      <ul>
+        <li>
+          <p>
+            For the <sky-code>skyAppResources</sky-code> pipe, place <sky-code>{{ 'string_name' | skyAppResources }}</sky-code> in your template and insert values for the .NET-style tokens. For example:
+          </p>
+          <sky-code-block>
+            {{ 'string_name' | skyAppResources:constituentName:fundName }}
+          </sky-code-block>
+        </li>
+        <li>
+          <p>
+            For the <sky-code>SkyAppResourcesService</sky-code> service in <sky-code>@skyux/i18n</sky-code>, pull the string using <sky-code>getString</sky-code> and insert values for the .NET-style tokens. For example:
+          </p>
+          <sky-code-block>
+            this.resources.getString('string_name',constituentName,fundName)
+              .subscribe((value) => {
+                /*do something with the string*/
+            });
+          </sky-code-block>
+        </li>
+      </ul>
+    </li>
+  </ol>
+
+  <h3>
+    Use the default locale provider
+  </h3>
+
+  <p>
+    If you deploy your application through SKY UX Host and want to use the locale provided by the browser, no additional configuration is necessary.
+  </p>
+
+  <h3>
+    Provide a custom locale provider
+  </h3>
+
+  <p>
+    If your application determines the locale through a mechanism other than the browser's default, such as a setting stored in a database, you can provide a custom implementation of the <sky-code>SkyAppLocaleProvider</sky-code>.
+  </p>
+
+  <p>
+    For example, here is a sample <sky-code>app-extras.module.ts</sky-code> file:
+  </p>
+  <sky-code-block languageType="typescript">
+import { NgModule } from '@angular/core';
+import { TestLocaleProvider } from './test-locale-provider'
+
+@NgModule({
+  providers: [{
+    provide: SkyAppLocaleProvider,
+    useClass: TestLocaleProvider
+  }]
+})
+export class AppExtrasModule { }
+  </sky-code-block>
+  <p>
+    And here is a sample <sky-code>test-locale-provider.ts</sky-code> file:
+  </p>
+  <sky-code-block languageType="typescript">
+import { NgModule } from '@angular/core';
+import { SkyAppLocaleProvider } from '@skyux/i18n';
+import { of } from 'rxjs';
+
+export class TestLocaleProvider extends SkyAppLocaleProvider {
+  public getLocaleInfo(): Observable&lt;SkyAppLocaleInfo&gt; {
+    return of({
+      locale: 'en-GB'
+    });
+  }
+}
+  </sky-code-block>
+
+  <stache-page-anchor>
+    Localization for libraries
+  </stache-page-anchor>
+
+  <p>
+    You must set localization strings for libraries when publishing to NPM because libraries do not fetch them at runtime like SPAs. To set localization strings, follow the procedures below.
+  </p>
+
+  <h3>
+    Install SKY UX Builder
+  </h3>
+
+  <ol>
+    <li>
+      <p>
+        In the command prompt, run the following command from your library's root directory.
+      </p>
+        <sky-code-block>
+          npm install @skyux-sdk/builder-plugin-skyux --save-dev --save-exact
+        </sky-code-block>
+      </li>
+    <li>
+      <p>
+        Add the plugin to your <sky-code>skyuxconfig.json</sky-code> file.
+      </p>
+        <sky-code-block>
+          {
+            "plugins": [
+              "@skyux-sdk/builder-plugin-skyux"
+            ]
+          }
+        </sky-code-block>
+    </li>
+  </ol>
+
+  <h3>
+    Create a resources provider
+  </h3>
+
+    <ol>
+      <li>
+        <p>
+          Create a <sky-code>/src/app/public/plugin-resources</sky-code> directory. The name and location of the directory are important.
+        </p>
+      </li>
+      <li>
+        <p>
+          In the <sky-code>plugin-resources</sky-code> directory, create a file named <sky-code>my-library-resources-provider.ts</sky-code> where <sky-code>my-library</sky-code> is the name of your library.
+        </p>
+      </li>
+      <li>
+        <p>
+          In the new file, import <sky-code>SkyAppLocaleInfo</sky-code> and <sky-code>SkyLibResourcesProvider</sky-code> from the <sky-code>@skyux/i18n</sky-code> library and export a <sky-code>MyLibraryResourcesProvider</sky-code> class where <sky-code>MyLibrary</sky-code> is the name of your library.
+        </p>
+      </li>
+
+      <sky-code-block languageType="typescript">
+        import {
+          SkyAppLocaleInfo,
+          SkyLibResourcesProvider
+        } from '@skyux/i18n';
+
+        export class MyLibraryResourcesProvider implements SkyLibResourcesProvider {
+          public getString: (localeInfo: SkyAppLocaleInfo, name: string) => string;
+        }
+    </sky-code-block>
+
+    </ol>
+
+    <h3>
+      Create a resources module
+    </h3>
+
+    <p>
+      The resources module allows all the modules in your library to access the locale resources strings.
+    </p>
+
+    <p>
+      In a shared directory, create the following Angular module where <sky-code>MyLibrary</sky-code> is the name of your library.
+    </p>
+
+    <sky-code-block languageType="typescript">
+      import {
+        NgModule
+      } from '@angular/core';
+
+      import {
+        SkyI18nModule,
+        SKY_LIB_RESOURCES_PROVIDERS
+      } from '@skyux/i18n';
+
+      import {
+        MyLibraryResourcesProvider
+      } from '../../plugin-resources/my-library-resources-provider';
+
+      @NgModule({
+        providers: [{
+          provide: SKY_LIB_RESOURCES_PROVIDERS,
+          useClass: MyLibraryResourcesProvider,
+          multi: true
+        }],
+        exports: [
+          SkyI18nModule
+        ]
+      })
+      export class MyLibraryResourcesModule { }
+    </sky-code-block>
+
+    <h3>
+      Additional setup
+    </h3>
+
+    <p>
+      For modules that require access to locale resource strings, import <sky-code>MyLibraryResourcesModule</sky-code> where <sky-code>MyLibrary</sky-code> is the name of your library. This allows the modules to use the <sky-code>skyLibResources</sky-code> pipe and the <sky-code>SkyLibResourcesService</sky-code> service.
+    </p>
+
+    <sky-code-block languageType="typescript">
+      import {
+        MyLibraryResourcesModule
+      } from './shared/my-library-resources.module';
+
+      @NgModule({
+        // ...
+
+        imports: [
+          MyLibraryResourcesModule
+        ]
+
+        // ...
+      })
+      export class MyLibrarySomeOtherModule { }
+    </sky-code-block>
+
+  </stache>

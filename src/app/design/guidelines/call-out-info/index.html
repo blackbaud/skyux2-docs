@@ -1,0 +1,57 @@
+<stache-include fileName="v4-note.html"></stache-include>
+
+<stache
+  pageTitle="Call out information"
+  showTableOfContents="true">
+
+  <stache-page-summary>
+    <p>
+      The optimal method to highlight information depends on the content and its context.
+    </p>
+  </stache-page-summary>
+
+  <stache-page-anchor>
+    Critical messages
+  </stache-page-anchor>
+
+  <p>
+    To highlight critical information that users absolutely must see when visiting a page, use an <a routerLink="/components/alert">alert</a> component. If users only need to see an alert once, you can make it dismissible, although you might want to include a way for users to reopen it. Do not make an alert dismissible if it is important for users see every time or if it is triggered by underlying data.
+  </p>
+
+  <stache-page-anchor>
+    Summary data
+  </stache-page-anchor>
+
+  <p>
+    For dense sets of data, you can create summaries to highlight important points. To call out these points, use a <a routerLink="/components/key-info">key info</a> component. They draw user attention, and then users can decide whether to dig into the underlying data or rely on the high-level understanding.
+  </p>
+
+  <stache-page-anchor>
+    Status
+  </stache-page-anchor>
+
+	<p>
+		Statuses indicate a state or condition at a particular time and fall into four categories: info, success, warning, and danger. For example, a status can indicate that a submission is late, submitted, or awaiting approval.
+	</p>
+
+	<div class="sky-subsection-heading">Status importance</div>
+		<p>Some statuses are crucial to user tasks, while others are no more important than other information on a page. If statuses are crucial to user tasks, use <a routerLink="/components/label">labels</a> or <a routerLink="/components/status-indicator">status indicators</a>. If not, use regular text. Err on the side of too few labels and status indicators; if you use too many, they become distracting and lose their ability to grab user attention.</p>
+		<p>If one status in an area is crucial, that does not mean all statuses are. For example, in a list of invoices with a mix of paid, unpaid, and overdue invoices, it's likely that only overdue invoices require status indicators because they are the only items that require immediate attention.</p>
+
+
+	<div class="sky-subsection-heading">Placement</div>
+		<p>Use <a routerLink="/components/label">labels</a> in a summary context. For example, you can place a label in a page summary.</p>
+		<p>Use <a routerLink="/components/status-indicator">status indicators</a> inline to indicate that they are tied to specific pieces of data. For example, you can place a status indicator in a grid cell.</p>
+
+	<div class="sky-subsection-heading">Status presentation decision tree</div>
+		<div class="screenshot screenshot-info"><img src="~/assets/img/guidelines/calloutinfo/status-decision-tree.png" style="width: 100%;" /></div>
+
+  <stache-page-anchor>
+    Process updates
+  </stache-page-anchor>
+
+  <p>
+    To communicate a message that a background process triggers, use a <a routerLink="/components/toast">toast</a>. Background processes include processes that users initiate and system processes that users need to be aware of. Since toasts contain information the user must see, the user must manually dismiss the toast - the toast will not automatically close.
+  </p>
+
+</stache>

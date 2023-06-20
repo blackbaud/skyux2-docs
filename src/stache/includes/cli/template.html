@@ -1,0 +1,23 @@
+<sky-code>--template</sky-code> or <sky-code>-t</sky-code> — Specifies the base template to use to create items through the CLI. Supported values include:
+
+<ul>
+  <li>
+    <sky-code>-t addin</sky-code> — References the <a href="https://github.com/blackbaud/skyux-sdk-template-addin">SKY UX Add-in template</a> to create <a href="https://developer.blackbaud.com/skyapi/docs/addins">SKY Add-ins</a> that allow developers to build features that integrate with Blackbaud solutions.
+  </li>
+  <li>
+    <sky-code>-t barebones</sky-code> — References a <a href="https://github.com/blackbaud/skyux-sdk-template-barebones">pared-down version of the SKY UX Add-in template</a> to create <a href="https://developer.blackbaud.com/skyapi/docs/addins">SKY Add-ins</a> that allow developers to build features that integrate with Blackbaud solutions. This template eliminates folders, modules, and references to packages that are not required to build add-ins.
+  </li>
+  <li>
+    <sky-code>-t library</sky-code> — References the <a href="https://github.com/blackbaud/skyux-sdk-template-library">SKY UX Library template</a> to create <a href="https://developer.blackbaud.com/skyux/learn/reference/component-libraries">SKY UX libraries</a> that allow developers to build and publish reusable front-end libraries for other SPAs to consume.
+  </li>
+  <li>
+    <sky-code>-t stache</sky-code> — References the <a href="https://github.com/blackbaud/skyux-sdk-template-stache">Stache template</a> to create <a href="https://developer.blackbaud.com/stache/learn/get-started"><strong>public</strong> Stache sites</a> for technical documentation.
+  </li>
+  <li>
+    <sky-code>-t &lt;ANY-GIT-URL&gt;</sky-code> — Allows for complete flexibility by cloning any valid Git URL.
+  </li>
+</ul>
+
+<sky-alert>
+  The template's repo requires a versioned branch that the SKY UX CLI controls. It follows the <sky-code>[SKY UX CLI major version].x.x</sky-code> format. As of SKY UX 4, the <sky-code>4.x.x</sky-code> branch must exist.
+</sky-alert>

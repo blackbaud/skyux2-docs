@@ -1,0 +1,66 @@
+<stache-include fileName="v4-note.html"></stache-include>
+
+<stache
+  navOrder="3"
+  pageTitle="Serve a SPA">
+
+  <stache-page-summary>
+    <p>
+      After you <a routerLink="/learn/get-started/basics/create-project">create a SKY UX project</a>, you can serve the default single-page application. For more information about <sky-code>skyux serve</sky-code> and other SKY UX CLI commands, see <a routerLink="/learn/reference/cli-commands">the CLI commands reference</a>.
+    </p>
+  </stache-page-summary>
+
+  <p>
+    Since <sky-code>skyux serve</sky-code> serves your single-page application over HTTPS, any additional requests from your code such as AJAX requests must also be over HTTPS.
+  </p>
+
+  <ol>
+    <li>
+      <p>
+        From the command prompt, <sky-code>cd</sky-code> into the root directory for the SKY UX project from <a routerLink="/learn/get-started/basics/create-project">the previous tutorial</a>.
+      </p>
+    </li>
+    <li>
+      <p>
+        Enter <sky-code>skyux serve</sky-code> to launch the SPA in your default browser. By default, SKY UX Builder dynamically finds an available port starting with 8000, and the command opens the <sky-code>host</sky-code> endpoint and instructs SKY UX Host to pull files from the local machine instead of the CDN.
+      </p>
+      <p>
+        By default, <sky-code>skyux serve</sky-code> launches the Host URL, which means that it reaches out to SKY UX Host for an HTML page to host your local files. However, you can use the <sky-code>-l</sky-code> or <sky-code>--launch</sky-code> options to specify the URL to launch.
+      </p>
+      <ul>
+        <li>
+          <p>
+            <sky-code>skyux serve --launch local</sky-code> — Launches the local URL. This creates a local HTML page that is roughly the same as the HTML file that SKY UX Host builds for production. This option is useful for serving the SPA when you don't have Internet access.
+          </p>
+        </li>
+        <li>
+          <p>
+            <sky-code>skyux serve --launch none</sky-code> — Stops any URL from launching. This option is useful if you want to serve the SPA but do not want it to automatically open in the web browser.
+          </p>
+        </li>
+        <li>
+          <p>
+            <sky-code>skyux serve --launch host</sky-code> — <em>(Default.)</em> Launches the Host URL. This option provides the closest test to production because when <sky-code>skyux serve</sky-code> creates a local web server to launch the SPA, it reaches out to SKY UX Host for an HTML page to host your local files.
+          </p>
+        </li>
+      </ul>
+      <p>
+        By default, the SPA automatically opens in the default browser, but you can specify a different browser with the <sky-code>--browser</sky-code> option. This option is useful for cross-browser manual testing, and the available values are <sky-code>chrome</sky-code>, <sky-code>edge</sky-code>, <sky-code>firefox</sky-code>, <sky-code>iexplore</sky-code>, and <sky-code>safari</sky-code>. For example, <sky-code>skyux serve --browser firefox</sky-code>.
+      </p>
+      <p>
+        If you see the <sky-code>webpack: Failed to compile.</sky-code> error in the output in the command prompt, review the script console in your web browser for information about the specific files with errors.
+      </p>
+    </li>
+    <li>
+      <p>
+        <sky-code>skyux serve</sky-code> continues to run, and changes to your project are automatically displayed as you save them.
+      </p>
+    </li>
+    <li>
+      <p>
+        To enable production mode, run <sky-code>skyux build --serve</sky-code>. This builds the current SPA into the <sky-code>dist/</sky-code> folder and then serves it. (Remove the <sky-code>dist</sky-code> directory if it already exists.)
+      </p>
+    </li>
+  </ol>
+
+</stache>

@@ -1,0 +1,39 @@
+<section class="sky-demo-page-code">
+  <div class="sky-demo-page-code-header">
+    <stache-page-anchor>
+      Code
+    </stache-page-anchor>
+    <div
+      class="sky-demo-page-code-stackblitz"
+      *ngIf="!disableStackblitz && showStackblitzRunButton">
+      <button
+        type="button"
+        class="sky-btn sky-btn-default"
+        (click)="openProjectInStackBlitz()"
+      >
+        <i class="fa fa-pencil"></i>
+        Run in StackBlitz
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="sky-demo-page-code-stackblitz-embed"
+    *ngIf="!disableStackblitz && showStackblitzEmbed">
+    <div #stackblitzEmbed></div>
+  </div>
+
+  <div class="sky-demo-page-code-tabs-wrapper">
+    <sky-vertical-tabset>
+      <sky-vertical-tab
+        *ngFor="let codeFile of codeFilesForBinding"
+        [active]="codeFile.active"
+        [tabHeading]="codeFile.name">
+        <sky-code-block
+          [code]="codeFile.codeImports"
+          [languageType]="codeFile.language">
+        </sky-code-block>
+      </sky-vertical-tab>
+    </sky-vertical-tabset>
+  </div>
+</section>

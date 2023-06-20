@@ -1,0 +1,38 @@
+<stache-include fileName="v4-note.html"></stache-include>
+
+<stache
+  pageTitle="Route wildcards"
+  showTableofContents="true">
+
+  <stache-page-summary>
+    <p>
+      To gracefully handle requests to unknown routes within a SPA, SKY UX Builder creates a default <a href="https://angular.io/guide/router#wildcard-route">wildcard route</a> known as the 404 page. The component on the 404 page displays the "Errors SPA" in an iframe, ultimately using the <a routerLink="/components/error">error component</a> with an <sky-code>errorType</sky-code> of <sky-code>notfound</sky-code>.
+    </p>
+  </stache-page-summary>
+
+  <p>
+    To customize the wildcard route, you can create a <sky-code>not-found.component.ts</sky-code> file in <sky-code>src/app</sky-code>, import the <sky-code>Component</sky-code> class from Angular to provide functionality to the component, define the template for the component, and export the <sky-code>NotFoundComponent</sky-code> component class:
+  </p>
+
+  <sky-code-block languageType="typescript">
+import { Component } from '@angular/core';
+
+@Component({
+  templateUrl: './not-found.component.html'
+})
+export class NotFoundComponent {}
+  </sky-code-block>
+
+  <p>
+    You can then create a <sky-code>not-found.component.html</sky-code> file in <sky-code>src/app</sky-code> and provide the content for the wildcard route to display:
+  </p>
+
+  <sky-code-block languageType="markup">
+This is my custom 404 page.
+  </sky-code-block>
+
+  <p>
+    Please note that while the filename is technically not important to this functionality, the component name is crucial. The component must export <sky-code>NotFoundComponent</sky-code>.
+  </p>
+
+</stache>

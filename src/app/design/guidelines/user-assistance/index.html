@@ -1,0 +1,231 @@
+<stache-include fileName="v4-note.html"></stache-include>
+
+<stache
+  pageTitle="User assistance"
+  showTableOfContents="true">
+
+  <stache-page-summary>
+    <p>
+      When users perform tasks and explore functionality, they may require guidance. To determine how much guidance to provide, you must account for the complexity of the task, the complexity of the user interface, and the expected knowledge of users. User assistance design patterns help determine when and how to present help content to users.
+		</p>
+		<p>
+			SKY UX guidelines for UI text and help content provide a consistent experience for Blackbaud customers and those who interact with our customer's solutions, such as donors and students. Blackbaud developers can find additional guidance in the <a href="https://blackbaud.sharepoint.com/sites/hub/bb/Marketing%20%20Branding%20Assets/Blackbaud_StyleGuide.pdf">Blackbaud corporate style guide</a> and the <a href="https://docs.blackbaud.com/scd-team-docs/style">Strategic Content Development style guide</a>. Those resources are for Blackbaud internal users only and are not available to external developers.
+		</p>
+  </stache-page-summary>
+
+	<stache-page-anchor>
+		Usage
+	</stache-page-anchor>
+	<p>
+		SKY UX design patterns include four primary techniques to display help content: empty-state help, inline help, the preloaded Help Widget, and preloaded popovers. To determine the appropriate technique for user assistance, consider the complexity of the task and the expected knowledge of users. The chart below provides a matrix to determine the type of user assistance to provide in different scenarios. Do not overuse help content because it can overwhelm or inhibit users. For example, only preload the Help Widget or popovers when user research supports the need for those techniques. When in doubt, err on the side of empty-state help and inline help.
+	</p>
+	<div class="screenshot screenshot-info" style="margin-top: 20px;">
+		<img src="~/assets/img/guidelines/userassistance/help-chart.png" style="width: 100%;" />
+	</div>
+
+	<stache-page-anchor>
+		Empty-state help
+	</stache-page-anchor>
+
+	<sky-row>
+		<sky-column screenSmall="6">
+			<div class="sky-subsection-heading">Usage</div>
+			<p>
+				Empty-state help provides user assistance when content containers are not populated. The content can include a title, body copy, and buttons to take actions or access additional resources. The help content does not appear when content containers are populated.
+			</p>
+			<p>
+				Empty-state help content explains how users can take advantage of the functionality in question, and it follows these guidelines:
+			</p>
+			<ul>
+				<li>
+					Make help content unique to the content container in question. Empty-state help provides information that is specific to the current scenario, and it usually includes a specific call to action. Do not use empty-state help to display boilerplate content that you can modify and reuse in multiple scenarios.
+				</li>
+				<li>
+					In the title, use a conversational tone and explicitly state any call to action.
+				</li>
+				<li>
+					In the body copy, expand on the title as necessary and provide additional details that users need to know.
+				</li>
+				<li>
+					For the button, use the <a stacheRouterLink="/components/button">secondary button class</a> to open a modal where users can complete the experience inline. If users cannot complete the experience inline and must navigate elsewhere, use the <a stacheRouterLink="/components/button">link button class</a> instead. Secondary buttons indicate modals, while links indicate navigation.
+				</li>
+				<li>
+					For an empty container where a call to action does not apply, identify the container with centered, deemphasized text. Do not include other content such as controls or actions.
+				</li>
+				<li>
+					For Blackbaud designers and developers, we also recommend that you engage a writer on the Strategic Content Development team to help write or review the help content.
+				</li>
+			</ul>
+			<div class="sky-subsection-heading">Layout</div>
+				<p>
+					Center empty-state help in its content container.
+				</p>
+		</sky-column>
+		<sky-column screenSmall="6">
+			<div class="screenshot screenshot-info screenshot-margin-bottom">
+				<img src="~/assets/img/guidelines/userassistance/empty-state-call-to-action.png" />
+			</div>
+			<div class="screenshot screenshot-info screenshot-margin-bottom">
+				<img src="~/assets/img/guidelines/userassistance/empty-state-plain-1.png" />
+			</div>
+			<div class="screenshot screenshot-danger screenshot-margin-bottom">
+				<img src="~/assets/img/guidelines/userassistance/empty-state-bad-example-1.png" />
+			</div>
+		</sky-column>
+	</sky-row>
+
+	<stache-page-anchor>
+		Inline help
+	</stache-page-anchor>
+
+  <h3 class="sky-subsection-heading">
+    Invoked inline help
+  </h3>
+	<sky-row>
+		<sky-column screenSmall="6">
+			<div class="sky-emphasized" style="margin-top: 10px;">
+				Usage
+			</div>
+			<p>
+				Invoked inline help gives users access to help content when needed while avoiding most of the visual noise that comes with persistent inline help text. It is appropriate to use invoked inline help in cases where users may need initial assistance but:
+			</p>
+			<ul>
+				<li>The task is performed frequently.</li>
+				<li>Ramifications of mistakes are small.</li>
+			</ul>
+			<p>
+				In general, use a <a routerLink="/components/help-inline">help button</a> to invoke the help content. For more complex help content, you can also use a <a routerLink="/components/popover">popover</a> or the help panel.
+			</p>
+			<div class="sky-emphasized" style="margin-top: 10px;">
+				Layout
+			</div>
+			<sky-repeater expandMode="multiple">
+				<sky-repeater-item [isExpanded]="false">
+					<sky-repeater-item-title>Page-level and modal-level help</sky-repeater-item-title>
+					<sky-repeater-item-content>
+						<p>
+							For complex tasks where users require comprehensive documentation for the entire task, they invoke help at the page or modal level depending on the context.
+						</p>
+						<p>
+							In Blackbaud products, users can invoke the help service from the omnibar or a <a routerLink="/components/modal">modal</a> header bar. <stache-include fileName="help-widget.html"></stache-include>
+						</p>
+						</sky-repeater-item-content>
+				</sky-repeater-item>
+        <sky-repeater-item [isExpanded]="false">
+					<sky-repeater-item-title>Tile-level help</sky-repeater-item-title>
+					<sky-repeater-item-content>
+						<p>
+							For tasks where users require documentation for a <a routerLink="/components/tile">tile</a>, they invoke help from the tile header. If only a few items in the tile need explanation, use element-level help instead. In general, don't combine tile-level help and element-level help on items within the tile.
+						</p>
+						</sky-repeater-item-content>
+				</sky-repeater-item>
+				<sky-repeater-item [isExpanded]="false">
+					<sky-repeater-item-title>Element-level help</sky-repeater-item-title>
+					<sky-repeater-item-content>
+						<p>
+							Place the help button to the right of the label for the element that the help content supports.
+						</p>
+						</sky-repeater-item-content>
+				</sky-repeater-item>
+			</sky-repeater>
+		</sky-column>
+		<sky-column screenSmall="6">
+			<div class="screenshot screenshot-info">
+				<img src="~/assets/img/guidelines/userassistance/form-inline-help-button.png" />
+			</div>
+			<div class="screenshot screenshot-info" style="margin-top: 20px;">
+				<img src="~/assets/img/guidelines/userassistance/data-inline-help-button.png" style="width: 100%;" />
+			</div>
+		</sky-column>
+	</sky-row>
+
+  <h3 class="sky-subsection-heading">
+    Persistent inline help
+  </h3>
+	<sky-row>
+		<sky-column screenSmall="6">
+			<div class="sky-emphasized" style="margin-top: 10px;">
+				Usage
+			</div>
+			<p>
+				Sometimes a small amount of persistent inline text can help users understand tasks. It is appropriate to use persistent inline help in cases where:
+			</p>
+			<ul>
+				<li>The task is complex and  performed infrequently.</li>
+				<li>User actions have far-reaching consequences that are not obvious.</li>
+			</ul>
+			<p>
+				Use <a routerLink="/design/styles/typography">the <sky-code>sky-deemphasized</sky-code> class</a> for persistent inline help, and limit the content to one or two sentences to minimize the visual weight of the text.
+			</p>
+			<div class="sky-emphasized" style="margin-top: 10px;">
+				Layout
+			</div>
+			<p>The placement of persistent inline help text depends on the part of a task that it supports.</p>
+			<ul>
+				<li>Place help for an overarching task at the top of the form.</li>
+				<li>Place help for a particular section of the form below the section heading.</li>
+        <li>Place help for a specific field below the input.</li>
+        <li>In areas where a significant amount persistent inline help is necessary, you can place help to the right of sections and fields to fill in white space and avoid making forms too long.</li>
+			</ul>
+		</sky-column>
+		<sky-column screenSmall="6">
+			<div class="screenshot screenshot-info">
+				<img src="~/assets/img/guidelines/userassistance/form-inline-help-text.png" style="width: 100%;" />
+			</div>
+		</sky-column>
+	</sky-row>
+
+	<stache-page-anchor>
+		Preloaded popovers
+	</stache-page-anchor>
+
+	<sky-row>
+		<sky-column screenSmall="6">
+			<div class="sky-subsection-heading">Usage</div>
+			<p>
+				<a stacheRouterLink="/components/popover">Popovers</a> are a great way to display contextual content on pages or modals, and you can programmatically preload popovers to display user assistance when pages or modals load. This technique allows you to guide users toward subtle-but-important elements when tasks include complex or unfamiliar capabilities. It is appropriate to preload popovers with help content when:
+			</p>
+			<ul>
+				<li>
+					Elements are important but easily overlooked. For example, use preloaded popovers for new filter options, view switchers, or isolated context menus.
+				</li>
+				<li>
+					Elements requires special attention when they load because user research indicates problems with discoverability.
+				</li>
+			</ul>
+			<p>
+				Popovers are also useful <a stacheRouterLink="." fragment="inline-help">for invoked inline help</a>. For tasks with familiar or basic capabilities, they allow users to display contextual content when they interact with trigger elements.
+			</p>
+		</sky-column>
+		<sky-column screenSmall="6">
+			<div class="screenshot screenshot-info">
+				<img src="~/assets/img/guidelines/userassistance/popover-example.png" />
+			</div>
+		</sky-column>
+	</sky-row>
+
+	<stache-page-anchor>
+		Preloaded Help Widget
+	</stache-page-anchor>
+
+	<sky-row>
+		<sky-column screenSmall="6">
+			<div class="sky-subsection-heading">Usage</div>
+			<p>
+				<stache-include fileName="help-widget.html"></stache-include>
+			</p>
+			<p>
+				Blackbaud developers can preload the Help Widget to display user assistance when a page loads. This technique allows you to display help content that is tailored to the first time that users load the page. Use this technique to introduce users to new or novel functionality. Do not use it to walk users through processes.
+			</p>
+			<p>
+				The Help Widget is also useful <a stacheRouterLink="." fragment="inline-help">for invoked inline help</a>. For tasks with familiar or basic capabilities, it allows users to display context-sensitive help content.
+			</p>
+		</sky-column>
+		<sky-column screenSmall="6">
+			<div class="screenshot screenshot-info">
+				<img src="~/assets/img/guidelines/userassistance/help-flyout.png" />
+			</div>
+		</sky-column>
+	</sky-row>
+
+</stache>
