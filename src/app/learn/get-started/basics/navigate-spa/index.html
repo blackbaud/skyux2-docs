@@ -1,0 +1,75 @@
+<stache-include fileName="v4-note.html"></stache-include>
+
+<stache
+  navOrder="11"
+  pageTitle="Navigation"
+  showTableOfContents="true">
+
+  <stache-page-summary>
+    <p>
+      SKY UX takes advantage of <a href="https://angular.io/api/router/Router">the Angular Router class</a> to enable navigation within a SPA, and you can use <a href="https://angular.io/api/router/RouterLink">Angular's <sky-code>RouterLink</sky-code> directive</a> to create links between pages in a SPA. In addition, SKY UX's <sky-code>SkyAppLink</sky-code> and <sky-code>SkyAppLinkExternal</sky-code> directives extend the <sky-code>RouterLink</sky-code> directive and allow you to create links that automatically include parameters in the URL.
+    </p>
+    <sky-restricted-view>
+      <sky-alert alertType="info">
+        For links between SPAs, Blackbaud developers should use the SKY UX <sky-code>skyHref</sky-code> directive that extends the Angular <sky-code>RouterLink</sky-code> directive and automatically includes parameters in the URL. For more information, see <a href="https://docs.blackbaud.com/engineering-system-docs/learn/spa/spa-navigation/spa-to-spa-navigation">SPA-to-SPA navigation</a> on the Engineering System website. This site is for Blackbaud internal use only and is not available to external developers.
+      </sky-alert>
+    </sky-restricted-view>
+  </stache-page-summary>
+
+  <stache-page-anchor>
+    Installation
+  </stache-page-anchor>
+  <p>
+    SKY UX defines the <sky-code>SkyAppLink</sky-code> and <sky-code>SkyAppLinkExternal</sky-code> directives in <sky-code>SkyAppLinkModule</sky-code> in the <sky-code>@skyux/router</sky-code> NPM package.
+  </p>
+  <p>
+    To use any exports from <sky-code>SkyAppLinkModule</sky-code>, you must install it as a dependency to your project. In the command prompt, run the following command from your SPA's root directory:
+  </p>
+  <sky-code-block
+  >
+    npm install --save --save-exact @skyux/router
+  </sky-code-block>
+  <p>
+    After installation, you need to make any exports from <sky-code>SkyAppLinkModule</sky-code> available to your SPA by adding the module to the exports section of your SPA's main module. If you are using the SKY UX SDK, add <sky-code>SkyAppLinkModule</sky-code> as an export in your <sky-code>app-sky.module.ts</sky-code> file.
+  </p>
+
+  <stache-page-anchor>
+    Create internal links within a SPA
+  </stache-page-anchor>
+  <p>
+    To create links between pages in a SPA, use the standard HTML <sky-code>a</sky-code> element. If the SPA's URL includes <a stacheRouterLink="/learn/reference/configuration" fragment="params">parameters</a>, specify the path to link to with the SKY UX <sky-code>skyAppLink</sky-code> attribute. If not, use the Angular <sky-code>routerLink</sky-code> attribute.
+  </p>
+  <p>
+    The <sky-code>skyAppLink</sky-code> attribute automatically includes the SPA's parameters in the URL. The most common parameters are <sky-code>envid</sky-code> and <sky-code>svcid</sky-code>, but the URL can include any parameters that are provided to the SPA when it loads.
+  </p>
+  <sky-code-block>
+    <a skyAppLink="sample-route">Sample Link 2</a>
+  </sky-code-block>
+  <p>
+    If this SPA has a <sky-code>svcid</sky-code> of "abc" and an <sky-code>envid</sky-code> of "1234," the sample directs users to <sky-code>/sample-spa/sample-route?svcid=abc&envid=1234</sky-code>.
+  </p>
+  <p>
+    You can also use <sky-code>routerLink</sky-code> to specify the path to link to and then use the <sky-code>queryParams</sky-code> attribute to manually specify the SPA's parameters, but we recommend letting the <sky-code>SkyAppLink</sky-code> directive handle this for you. Keep in mind that if a parameter's current value is the same as the default value from <sky-code>skyuxconfig.json</sky-code>, the <sky-code>SkyAppLink</sky-code> directive does not include the parameter in the query string.
+  </p>
+
+  <stache-page-anchor>
+    Create external links to another SPA
+  </stache-page-anchor>
+  <sky-restricted-view>
+    <sky-alert alertType="info">
+      For links between SPAs, Blackbaud developers should use the SKY UX <sky-code>skyHref</sky-code> directive that extends the Angular <sky-code>RouterLink</sky-code> directive and automatically includes parameters in the URL. For more information, see <a href="https://docs.blackbaud.com/engineering-system-docs/learn/spa/spa-navigation/spa-to-spa-navigation">SPA-to-SPA navigation</a> on the Engineering System website. This site is for Blackbaud internal use only and is not available to external developers.
+    </sky-alert>
+  </sky-restricted-view>
+  <p>
+    To create links to other SPAs, use the standard HTML <sky-code>a</sky-code> element. If the external SPA URL includes parameters, specify the path to link to with the SKY UX <sky-code>skyAppLinkExternal</sky-code> attribute. If not, use the standard HTML <sky-code>href</sky-code> attribute.
+  </p>
+    The <sky-code>skyAppLinkExternal</sky-code> attribute automatically includes the external SPA's parameters in the URL. The most common parameters are <sky-code>envid</sky-code> and <sky-code>svcid</sky-code>, but the URL can include any parameters that are provided to the SPA when it loads.
+  </p>
+  <sky-code-block>
+    <a skyAppLinkExternal="/another-spa/sample-route">Sample Link 4</a>
+  </sky-code-block>
+  <p>
+    If this external SPA has a <sky-code>svcid</sky-code> of "abc" and an <sky-code>envid</sky-code> of "1234," the sample directs users to <sky-code>/another-spa/sample-route?svid=abc&envid=1234</sky-code>.
+  </p>
+
+</stache>

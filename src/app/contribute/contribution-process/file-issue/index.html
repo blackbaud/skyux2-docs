@@ -1,0 +1,66 @@
+<stache-include fileName="v4-note.html"></stache-include>
+
+<stache
+  pageTitle="File issues"
+  showTableOfContents="true"
+  layout="sidebar">
+
+  <stache-page-summary>
+    <p>
+      Before you start any work, file an issue. If an issue already exists, comment on it and tag the SKY UX team so that we know you intend to work on it. The sooner we discuss potential code changes, the better.
+    </p>
+  </stache-page-summary>
+
+  <ol>
+    <li>
+      <p>
+        Create an issue in the package's repo. Delete the default fields for reporting bugs, and describe the contribution and its potential code changes. SKY UX provides functionality through multiple repositories that target different areas of development, so use the <a stacheRouterLink="/contribute/packages">packages matrix</a> to find the appropriate repo to file your issue.
+      </p>
+      <sky-restricted-view>
+        <sky-alert alertType="info">
+          Blackbaud developers should file issues in ADO instead of GitHub. The SKY UX team uses ADO dashboards to manage work, but other than the location for filing issues, the process remains the same, including the availability of a template for <a href="https://blackbaud.visualstudio.com/Products/_workitems/create/Feature?templateId=553e8cbd-12ff-4e72-a44f-e47e2de5f0a8&ownerId=26bb0bf6-45ac-482d-b33e-02e252c297e3">requesting component features</a>.
+        </sky-alert>
+      </sky-restricted-view>
+    <sky-restricted-content-alert></sky-restricted-content-alert>
+    </li>
+    <li>
+      For new components and significant features, include design documents and requirements.
+    </li>
+    <li>
+      Subscribe to the issue to receive notifications.
+    </li>
+  </ol>
+
+  <stache-page-anchor>
+    Report bugs
+  </stache-page-anchor>
+
+  <p>
+    You can also file issues to report any bugs that you uncover while you work with a package. We use issues to track and assign work.
+  </p>
+<ol>
+    <li>
+      <p>
+        Create a GitHub issue in the <a stacheRouterLink="/contribute/packages">applicable repo</a>.
+      </p>
+      <sky-restricted-view>
+        <sky-alert alertType="info">
+          Blackbaud developers should report bugs in ADO instead of GitHub. The SKY UX team uses ADO dashboards to manage work, but other than the location for filing issues, the process remains the same, including the availability of a template for <a href="https://dev.azure.com/blackbaud/Products/_workitems/create/Bug?templateId=762f6a46-de2a-49ee-b2c4-c3bb0ef60de0&ownerId=26bb0bf6-45ac-482d-b33e-02e252c297e3">reporting bugs</a>.
+        </sky-alert>
+      </sky-restricted-view>
+    </li>
+    <li>
+      Fill out the template fields to explain:
+      <ul>
+        <li>The expected behavior</li>
+        <li>The actual behavior</li>
+        <li>Steps to reproduce</li>
+        <li>A StackBlitz example, if applicable</li>
+        <li>The severity</li>
+        <li>The impact</li>
+      </ul>
+    </li>
+    <li>Subscribe to the issue to receive notifications.</li>
+  </ol>
+
+</stache>

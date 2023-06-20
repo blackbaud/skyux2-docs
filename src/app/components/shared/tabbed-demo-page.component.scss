@@ -1,0 +1,40 @@
+@import '~@blackbaud/skyux-design-tokens/scss/mixins';
+
+.sky-demo-page-header {
+  display: flex;
+  align-items: center;
+
+  h1 {
+    flex-grow: 1;
+  }
+}
+
+// Override Stache layouts
+
+.tabbed-demo-page ::ng-deep .stache-layout-wrapper.stache-max-width-container {
+  max-width: none;
+  margin: 0;
+
+  ::ng-deep .stache-sidebar-content {
+    padding-right: 0 !important;
+  }
+}
+
+.tabbed-demo-page ::ng-deep .stache-sidebar {
+
+  .stache-nav-list-item.active > .stache-nav-anchor {
+    border-left-color: #00b4f1 !important; //$sky-background-color-neutral-light
+    background-color: #eeeeef; //$sky-highlight-color-info
+  }
+}
+
+.tabbed-demo-page ::ng-deep .stache-page-anchor {
+  border-bottom: none !important;
+}
+
+.tabbed-demo-page ::ng-deep sky-tabset#content-tabs .sky-tabset {
+  margin-left: -45px;
+  margin-right: -45px;
+  padding-left: 45px;
+  padding-right: 45px;
+}

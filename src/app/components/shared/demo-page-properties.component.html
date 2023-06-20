@@ -1,0 +1,11 @@
+<sky-demo-page-content [sectionHeading]="sectionHeading">
+  <ng-content></ng-content>
+  <div class="property-table" role="table">
+      <div class="property-table-row property-table-header" role="row">
+        <div class="property-name sky-padding-even-default" role="columnheader">Name</div>
+        <div class="property-description sky-padding-even-default" role="columnheader">Description</div>
+        <div class="property-default sky-padding-even-default" role="columnheader">Default value</div>
+      </div>
+      <ng-content select="sky-demo-page-property"></ng-content>
+  </div>
+</sky-demo-page-content>

@@ -1,0 +1,26 @@
+<stache-include fileName="v4-note.html"></stache-include>
+
+<stache
+  pageTitle="Testing"
+  showTableofContents="true"
+  navOrder="30">
+
+  <stache-page-anchor>
+    Unit tests
+  </stache-page-anchor>
+  <p>
+    To avoid external dependencies, either inject the default <sky-code>SkyUIConfigService</sky-code> in your <sky-code>TestBed</sky-code> configuration or provide your own class to return fake data.
+  </p>
+
+  <sky-code-block languageType="typescript">
+    TestBed.configureTestingModule({
+      providers: [
+        {
+          provide: SkyUIConfigService,
+          useClass: SkyUIConfigService
+        }
+      ]
+    });
+  </sky-code-block>
+
+</stache>

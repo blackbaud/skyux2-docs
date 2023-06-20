@@ -1,0 +1,49 @@
+<stache-include fileName="v4-note.html"></stache-include>
+
+<stache
+  navOrder="13"
+  pageTitle="Build and publish a SPA"
+  navTitle="Build and publish">
+
+  <stache-page-summary>
+    <p>
+      Before you build and publish your SPA, you must choose a web server to host your site. We recommend <a href="https://pages.github.com/">GitHub Pages</a>, a free tool suitable for front-end projects.
+    </p>
+    <sky-alert alertType="info">
+      Blackbaud developers create repos and provision applications through the SKY UX App Management Portal. Documentation on the SKY UX App Management Portal is available on <a href="https://docs.blackbaud.com/engineering-system-docs/learn/spa/spa-app-portal">the Engineering System website</a>. This site is for Blackbaud internal use only and is not available to external developers.
+    </sky-alert>
+  </stache-page-summary>
+
+  <ol>
+    <li>
+      <p>
+        From the command prompt, <sky-code>cd</sky-code> into the application's directory.
+      </p>
+    </li>
+    <li>
+      <p>
+        Run <sky-code>skyux build</sky-code> to build the SPA into the <sky-code>dist/</sky-code> folder.
+      </p>
+    </li>
+    <li>
+      <p>
+        Copy the contents of the <sky-code>dist/</sky-code> folder into a directory with the SPA name that you specified when you <a stacheRouterLink="/learn/get-started/basics/create-project">created the SPA</a>. For example, if you named the SPA <sky-code>my-spa</sky-code> when you ran <sky-code>skyux new</sky-code>, change the <sky-code>dist/</sky-code> folder to <sky-code>my-spa/</sky-code>.
+      </p>
+      <sky-alert alertType="info">To host your SPA at the root without a subfolder, set the <sky-code>base</sky-code> property to <sky-code>/</sky-code> in <a routerLink="/learn/reference/configuration" fragment="app">the <sky-code>app</sky-code> configuration section</a> in <sky-code>skyuxconfig.json</sky-code>.</sky-alert>
+    </li>
+    <li>
+      <p>
+        Host the <sky-code>my-spa/</sky-code> directory on your preferred web server.
+      </p>
+    </li>
+    <li>
+      <p>
+        In a browser, enter <sky-code>https://example.com/my-spa</sky-code> to view your SPA.
+      </p>
+      <p>
+        <sky-alert alertType="warning">SKY UX uses HTML5 push states for routing, so you must either configure your host to redirect all requests to the root <sky-code>index.html</sky-code> or enable <a routerLink="/learn/reference/configuration" fragment="usehashrouting">the <sky-code>useHashRouting</sky-code> configuration option</a>.</sky-alert>
+      </p>
+    </li>
+  </ol>
+
+</stache>

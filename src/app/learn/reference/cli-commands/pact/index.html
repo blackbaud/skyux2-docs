@@ -1,0 +1,24 @@
+<stache-include fileName="v4-note.html"></stache-include>
+
+<stache
+  pageTitle="pact">
+
+  <p>
+    <sky-code>skyux pact</sky-code> runs pact tests. Pact is a testing framework that you can use to test a SPA's integration with the services that it consumes. We recommend creating pact tests for all services that the SPA consumes to confirm that your SPA can call out to the provider services and vice versa. Karma is configured to run any files in the <sky-code>src/app</sky-code> folder with names that end in <sky-code>.pact-spec.ts</sky-code>. The <sky-code>pact</sky-code> command reads the <sky-code>pacts</sky-code> setting in the <sky-code>skyuxconfig.json</sky-code> configuration file and spins up an individual pact server for each provider service specified in the <sky-code>pacts</sky-code> property.</p>
+  <p>
+    The <sky-code>pact</sky-code> command also spins up a pact server for the proxy server. It acts as a handler for all pact server requests from the browser and runs them in the host and port specified in your <sky-code>pacts</sky-code> configuration settings. To fulfil CORS when requests are made to the pact server, the proxy server changes the <sky-code>Origin</sky-code> headers to the <sky-code>url</sky-code> value that the <sky-code>host</sky-code> property defines in <sky-code>skyuxconfig.json</sky-code>. This <sky-code>url</sky-code> specifies a base URL to pass information to SKY UX Host, and its default value is <sky-code>https://host.nxt.blackbaud.com</sky-code>. This ensures that pact tests accurately represent interactions between consumers and providers.
+  </p>
+  <p>
+    For information about how to configure the SPA for pact testing, see <a routerLink="/learn/reference/configuration">the configuration reference</a>. And for more information on configuration settings and guidance on how to write pact tests, see <a routerLink="/learn/get-started/advanced/pact-tests">the pact testing tutorial</a>.
+  </p>
+
+  <stache-page-anchor>
+    Options
+  </stache-page-anchor>
+
+  <ul>
+    <li><stache-include fileName="cli/no-lint.html"></stache-include></li>
+    <li><stache-include fileName="cli/watch.html"></stache-include></li>
+  </ul>
+
+</stache>

@@ -1,0 +1,194 @@
+<stache-include fileName="v4-note.html"></stache-include>
+
+<stache
+  pageTitle="Create and publish SKY UX libraries"
+  navTitle="Libraries"
+  showTableOfContents="true"
+  navOrder="11">
+
+  <stache-page-summary>
+    <p>
+      When you create components and services with SKY UX, you can organize them into reusable front-end libraries that you can publish for other SPAs to consume.
+    </p>
+  </stache-page-summary>
+
+  <sky-alert alertType="info">
+    Blackbaud developers must follow a different workflow to create internal Blackbaud libraries and publish them to an internal NPM stream. Documentation on this process is available on <a href="https://host.nxt.blackbaud.com/engineering-system-docs/learn/spa/spa-component-libraries">the Engineering System website</a>. This site is for Blackbaud internal use only and is not available to external developers.
+  </sky-alert>
+
+  <stache-page-anchor>
+    Install dependencies
+  </stache-page-anchor>
+
+  <p>
+    To create a SKY UX library, you must first create a SPA for the library and specify a base template with a starter module for front-end libraries. From the SKY UX CLI, run <sky-code>skyux new</sky-code> and use the <sky-code>--template</sky-code> option to specify the <sky-code>library</sky-code> template. This creates a SPA with the library template and places source files in <sky-code>/src/app/public</sky-code>.
+  </p>
+  <sky-code-block>
+    skyux new --template library
+  </sky-code-block>
+  <p>
+    After you specify the library template, follow the usual steps <a routerLink="/learn/get-started/basics/create-project">to set up a local SKY UX application</a>.
+  </p>
+
+  <stache-page-anchor>
+    Create the library
+  </stache-page-anchor>
+
+  <p>
+    In the SPA for your library, create your components and services. SKY UX Builder ignores components in <sky-code>/src/app/public</sky-code>, so they are not automatically declared in <sky-code>SkyModule</sky-code>. This allows you to write Angular modules, components, and services outside of SKY UX's scope.
+  </p>
+  <p>
+    The entry point for the component library is <sky-code>/src/app/public/public_api.ts</sky-code>. This file is responsible for exporting any code that you want to make available to the bundler.
+  </p>
+  <p>
+    To serve your SPA locally during development, you must configure the name and import and export your module.
+  </p>
+
+  <ul>
+    <li>
+      <p>
+        The <sky-code>name</sky-code> property in <sky-code>skyuxconfig.json</sky-code> specifies the name of the project when running in SKY UX Host. You must update this property to the name of your library. For more information about configuration options, see the <a routerLink="/learn/reference/configuration">configuration options reference</a>.
+      </p>
+      <sky-code-block>
+        "name": "your-library"
+      </sky-code-block>
+    </li>
+    <li>
+      <p>
+        The <sky-code>app-extras.module.ts</sky-code> file in <sky-code>/src/app</sky-code> handles tasks such as registering providers and entry components, and SKY UX Builder automatically imports it into the build process. You must import and export your module in this file.
+      </p>
+      <sky-code-block>
+import { NgModule } from '@angular/core';
+
+import { YourModule } from './public';
+
+@NgModule({
+  imports: [
+    YourModule
+  ],
+  exports: [
+    YourModule
+  ],
+  providers: [],
+  declarations: []
+})
+export class AppExtrasModule { }
+      </sky-code-block>
+    </li>
+  </ul>
+
+  <stache-page-anchor>
+    Localization
+  </stache-page-anchor>
+
+  <p>
+    SKY UX Builder provides two methods for localization: <sky-code>skyAppResources</sky-code> for SPAs and <sky-code>skyLibResources</sky-code> for libraries. For more information, see <a stacheRouterLink="/learn/get-started/advanced/localization">our localization guidance</a>.
+  </p>
+
+  <stache-page-anchor>
+    Bundle the library
+  </stache-page-anchor>
+
+  <p>
+    After you create your library, you are ready to bundle it into a consumable NPM module that you can publish to an NPM stream such as <a href="https://www.npmjs.com/">npmjs.org</a>. From the SKY UX CLI, run <sky-code>skyux build-public-library</sky-code>.
+  </p>
+  <sky-code-block>
+    skyux build-public-library
+  </sky-code-block>
+  <p>
+    This creates a bundle that is NPM-ready and places it in a <sky-code>/dist</sky-code> directory. It bundles the library's components and services in <sky-code>/src/app/public</sky-code> and ignores all other files, but it does not publish the component library.
+  </p>
+
+  <stache-page-anchor>
+    Publish the library
+  </stache-page-anchor>
+
+  <p>
+    After you bundle the library into a consumable NPM module, you can publish it to an NPM stream to allow other SKY UX SPAs to install the library. We recommend that you publish public libraries to <a href="https://www.npmjs.com/">npmjs.org</a>. You can use <a href="https://github.com/features/actions">GitHub Actions</a> to publish the component library to <a href="https://www.npmjs.com/">npmjs.org</a>.
+  </p>
+  <sky-alert alertType="info">
+    Blackbaud developers publish private libraries to an internal Blackbaud NPM stream using a process that is documented on <a href="https://host.nxt.blackbaud.com/engineering-system-docs/learn/spa/spa-component-libraries">the Engineering System website</a>. This site is for Blackbaud internal use only and is not available to external developers.
+  </sky-alert>
+
+  <stache-page-anchor>
+    Consume the library in another SPA
+  </stache-page-anchor>
+
+  <p>
+    After you publish a front-end library, other SKY UX SPAs can install it. To consume a SKY UX library, import the library into your SPA through <sky-code>/app/src/app-extras.module.ts</sky-code>
+  </p>
+  <sky-code-block languageType="typescript">
+    import { NgModule } from '@angular/core';
+
+    import { LibraryModule } from 'my-component-library';
+
+    @NgModule({
+      imports: [
+        LibraryModule
+      ],
+      exports: [
+        LibraryModule
+      ]
+    })
+    export class AppExtrasModule { }
+  </sky-code-block>
+
+  <stache-page-anchor>
+    Provide configuration for the library
+  </stache-page-anchor>
+
+  <p>
+    You can provide configuration for the library through the <sky-code>skyuxconfig.json</sky-code> file in the project's directory. In this file, the <sky-code>appSettings</sky-code> property specifies data that is available for reuse throughout the application, and you can use it to add any properties that are necessary for the library.
+  </p>
+  <sky-code-block languageType="json">
+    {
+      "appSettings": {
+        "myLibrary": {
+          "foo": "bar",
+          "baz": true
+        }
+      }
+    }
+  </sky-code-block>
+  <p>
+    After you add properties through <sky-code>appSettings</sky-code> for the library, you can access them in your components and services by injecting <sky-code>SkyAppConfig</sky-code> from <sky-code>@skyux/config</sky-code>.
+  </p>
+  <sky-code-block languageType="typescript">
+    import { SkyAppConfig } from '@skyux/config';
+
+    @Component({ ... })
+    export class MyLibraryComponent {
+      // The defaults for your library component:
+      private defaults: any = {
+        foo: 'baz'
+      };
+
+      private config: any = {};
+
+      constructor(
+        private appConfig: SkyAppConfig
+      ) {
+        Object.assign(
+          this.config,
+          this.defaults,
+          this.appConfig.skyux.appSettings.myLibrary
+        );
+
+        console.log(this.config.foo); // "bar"
+      }
+    }
+  </sky-code-block>
+
+  <stache-page-anchor>
+    Test modules
+  </stache-page-anchor>
+
+  <p>
+    Libraries can generate isolated test modules for consuming SPAs to use in unit tests. The testing module avoids cluttering the production module during Webpack builds.
+  </p>
+
+  <p>
+    To create a testing module, add a <sky-code>testing</sky-code> directory to <sky-code>src/app/public</sky-code> and then add an <sky-code>public_api.ts</sky-code> file. The library exports the contents of the <sky-code>public_api.ts</sky-code> file to NPM as a testing module.
+  </p>
+
+</stache>

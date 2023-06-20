@@ -1,0 +1,302 @@
+<stache-include fileName="v4-note.html"></stache-include>
+
+<stache
+  navOrder="7"
+  pageTitle="Edit a SPA"
+  showTableOfContents="true">
+
+  <stache-page-summary>
+    <p>
+      After you <a routerLink="/learn/get-started/basics/serve-project">serve the default single-page application</a>, you can edit the existing pages and components and add additional pages and components as necessary.
+    </p>
+  </stache-page-summary>
+
+
+  <stache-page-anchor>
+    Edit an existing page
+  </stache-page-anchor>
+
+  <ol>
+    <li>
+      <p>
+        With <sky-code>skyux serve</sky-code> running, navigate to the default site's About page in your web browser.
+      </p>
+    </li>
+    <li>
+      <p>
+        In a local editor, open the project's <sky-code>about.component.html</sky-code> file in the <sky-code>src/app/about</sky-code> folder.
+      </p>
+      <sky-code-block>
+        <app-nav></app-nav>
+        <h1>About our Team</h1>
+
+        <sky-alert alertType="warning">
+          <strong>Warning!</strong> We never check our email.
+        </sky-alert>
+
+        <div class="template-about-teams">
+          <div *ngFor="let member of team" class="template-about-team">
+            <sky-avatar [name]="member.name"></sky-avatar>
+            <sky-key-info [layout]="'horizontal'">
+              <sky-key-info-value>
+                {{ member.name }}
+              </sky-key-info-value>
+              <sky-key-info-label>
+                <a href="mailto:{{ member.email }}">
+                  {{ member.email }}
+                </a>
+              </sky-key-info-label>
+            </sky-key-info>
+          </div>
+        </div>
+      </sky-code-block>
+    </li>
+    <li>
+      <p>
+        At the top of the file before the warning, add a paragraph.
+      </p>
+      <sky-code-block languageType="markup">
+        <p>
+          This page provides contact information for members of our team.
+        </p>
+      </sky-code-block>
+    </li>
+    <li>
+      <p>
+        Save the changes. The <sky-code>skyux serve</sky-code> command refreshes the About page in the web browser to display the new paragraph.
+      </p>
+    </li>
+  </ol>
+
+  <stache-page-anchor>
+    Edit a component on an existing page
+  </stache-page-anchor>
+
+  <ol>
+    <li>
+      <p>
+        With <sky-code>skyux serve</sky-code> running, return to the project’s <sky-code>about.component.html</sky-code> file in a local editor.
+      </p>
+    </li>
+    <li>
+      <p>
+        Edit the type and message for the alert component. For example, in the <sky-code>alertType</sky-code> attribute, change the value to from <sky-code>warning</sky-code> to <sky-code>info</sky-code>. And in the <sky-code>sky-alert</sky-code> element, change the message to <sky-code>There may be a delay in responding to your email.</sky-code>
+      </p>
+      <sky-code-block languageType="markup">
+        <sky-alert alertType="info">
+          <strong>Note:</strong> There may be a delay in responding to your email.
+        </sky-alert>
+      </sky-code-block>
+    </li>
+    <li>
+      <p>
+        Save the changes. The <sky-code>skyux serve</sky-code> command refreshes the About page in the web browser to display the updated background color and text.
+      </p>
+    </li>
+  </ol>
+
+  <stache-page-anchor>
+    Add a component to an existing page
+  </stache-page-anchor>
+
+  <ol>
+    <li>
+      In the <sky-code>app</sky-code> folder, open the <sky-code>app-sky.module.ts</sky-code> file and add the <sky-code>SkyCardModule</sky-code> to both the import and export sections.
+    </li>
+    <li>
+      <p>
+        With <sky-code>skyux serve</sky-code> running, return to the project’s <sky-code>about.component.html</sky-code> file in a local editor.
+      </p>
+    </li>
+    <li>
+      <p>
+        Between the alert and avatar components, add a card component. Add the <sky-code>sky-card</sky-code> element, and then within that element, add the <sky-code>sky-card-title</sky-code> element for the header text, the <sky-code>sky-card-content</sky-code> element for the body content, and the <sky-code>sky-card-actions</sky-code> element for the button.
+      </p>
+      <sky-code-block languageType="markup">
+        <sky-card>
+          <sky-card-title>Large card</sky-card-title>
+          <sky-card-content>
+            This card demonstrates the amount of space that is available for a card that uses
+            the default large size. If the content does not require this much space, you can
+            set the card size to small. The type of content to display in the body of a card
+            varies based on what the card represents and whether it prompts users to action.
+            The content can consist of some combination of a graph, trend, status, summary
+            information, and guidance text.
+          </sky-card-content>
+          <sky-card-actions>
+            <button class="sky-btn sky-btn-default">Click me</button>
+          </sky-card-actions>
+        </sky-card>
+      </sky-code-block>
+    </li>
+    <li>
+      <p>
+        Save the changes. The <sky-code>skyux serve</sky-code> command refreshes the About page in the web browser to display the new card component between the alert and avatar components.
+      </p>
+    </li>
+  </ol>
+
+  <stache-page-anchor>
+    Create a page
+  </stache-page-anchor>
+
+  <p>
+    By default, SKY UX uses automatic route configuration based on the project's folder structure. So to create a page, you simply create a folder in the existing <sky-code>src/app</sky-code> folder and then create an <sky-code>index.html</sky-code> file in that folder.
+  </p>
+  <ol>
+    <li>
+      <p>
+        In a local editor, create a folder within <sky-code>src/app</sky-code> and name it <sky-code>demo</sky-code>. The folder name appears in the route for the page.
+      </p>
+    </li>
+    <li>
+      <p>
+        In the <sky-code>demo</sky-code> folder, create an <sky-code>index.html</sky-code> file.
+      </p>
+    </li>
+    <li>
+      <p>
+        In the new file, place the shared <sky-code>app-nav</sky-code> component at the top and then add hello world content such as <sky-code>&#60;h1&#62;Hello world!&#60;&#47;h1&#62;</sky-code>. The <sky-code>app-nav</sky-code> component is an example of a shared component. It manually creates top-level navigation within your app.
+      </p>
+      <sky-code-block languageType="markup">
+        <app-nav></app-nav>
+        <h1>Hello World!</h1>
+      </sky-code-block>
+    </li>
+    <li>
+      <p>
+        In the <sky-code>src/assets/locales</sky-code> folder, open the <sky-code>resources_en_US.json</sky-code> file and add a localization string for a top-level navigation item to access the Demo page.
+      </p>
+      <sky-code-block languageType="typescript">
+"app_nav_demo": {
+  "message": "Demo",
+  "_description": "The text for the Demo top-level navigation item"
+},
+      </sky-code-block>
+    </li>
+    <li>
+      <p>
+        In the <sky-code>src/app/shared</sky-code> folder, open the <sky-code>app-nav.component.ts</sky-code> file and add a path for the Demo page. Set <sky-code>titleKey</sky-code> to the localization string we just added to <sky-code>resources_en_US.json</sky-code>, and set <sky-code>path</sky-code> to "/demo." <sky-code>titleKey</sky-code> specifies a label for the menu, and <sky-code>path</sky-code> specifies the location of the folder.
+      </p>
+      <sky-code-block languageType="typescript">
+        import { Component } from '@angular/core';
+
+        @Component({
+          selector: 'app-nav',
+          templateUrl: './app-nav.component.html',
+          styleUrls: ['./app-nav.component.scss']
+        })
+        export class AppNavComponent {
+          public nav = [
+            {
+              titleKey: 'app_nav_home',
+              path: '/'
+            },
+            {
+              titleKey: 'app_nav_about',
+              path: '/about'
+            },
+            {
+              titleKey: 'app_nav_demo',
+              path: '/demo'
+            }
+          ];
+        }
+      </sky-code-block>
+    </li>
+    <li>
+      <p>
+        Save the changes. If <sky-code>skyux serve</sky-code> is running, it refreshes the SPA to display the Demo menu item. If not, enter <sky-code>skyux serve</sky-code> in the command prompt to launch the SPA.
+      </p>
+    </li>
+    <li>
+      <p>
+        Click <strong>Demo</strong> in the menu. The new page appears.
+      </p>
+    </li>
+  </ol>
+
+  <stache-page-anchor>
+    Create a component
+  </stache-page-anchor>
+
+  <p>
+    After you add basic content to your page, you may need more programmatic control over the contents of a page. For example, you might want to display dynamic data based on a web request or client-side logic written in TypeScript. To do that, you need to create your own component.
+  </p>
+  <stache-include fileName="small-components.html"></stache-include>
+  <p>
+    The SKY UX CLI makes it easy to create components from the command line. For this example, we'll create a component in the <sky-code>demo</sky-code> folder from the previous tutorial.
+  </p>
+  <ol>
+    <li>
+      <p>
+        From the command line, run <sky-code>skyux generate component demo/my-demo</sky-code> in the context of your project's root directory.  This creates the TypeScript, HTML, SCSS, and spec files to build and test your component.
+      </p>
+    </li>
+    <li>
+      <p>
+        In your code editor, navigate to the <sky-code>demo</sky-code> folder, and open the <sky-code>my-demo.component.ts</sky-code> file that includes boilerplate code to create your component.
+      </p>
+      <sky-code-block languageType="typescript">
+        import {
+          Component
+        } from '@angular/core';
+
+        @Component({
+          selector: 'app-my-demo',
+          templateUrl: './my-demo.component.html',
+          styleUrls: ['./my-demo.component.scss']
+        })
+        export class MyDemoComponent {
+
+        }
+      </sky-code-block>
+    </li>
+    <li>
+      <p>
+        We want our component to accept input from the host page. This requires a public property with the Angular <sky-code>@Input</sky-code> decorator. We can import this decorator from <sky-code>@angular/core</sky-code>. For this example, we'll add an input property called <sky-code>message</sky-code>.
+      </p>
+      <sky-code-block languageType="typescript">
+          import {
+            Component,
+            Input
+          } from '@angular/core';
+
+          @Component({
+            selector: 'app-my-demo',
+            templateUrl: './my-demo.component.html',
+            styleUrls: ['./my-demo.component.scss']
+          })
+          export class MyDemoComponent {
+            @Input()
+            public message: string;
+          }
+      </sky-code-block>
+    </li>
+    <li>
+      <p>
+        Now that the component accepts input, we can display input in the component's template. Open the <sky-code>my-demo.component.html</sky-code> file, and add the following code to display the message.
+      </p>
+      <sky-code-block languageType="markup">
+        {{ message }}
+      </sky-code-block>
+      <p>
+        The curly braces are the syntax to reference public properties of the component class.
+      </p>
+    </li>
+    <li>
+      <p>
+        Open the <sky-code>index.html</sky-code> file in the <sky-code>demo</sky-code> folder, and add the new <sky-code>app-my-demo</sky-code> component after the header. Set the value of the <sky-code>message</sky-code> attribute to "Hello!"
+      </p>
+      <sky-code-block languageType="markup">
+        <app-my-demo message="Hello!"></app-my-demo>
+      </sky-code-block>
+    </li>
+    <li>
+      <p>
+        Save the changes, then return to the command prompt and run <sky-code>skyux serve</sky-code> to launch the SPA in your default browser. On the SPA's Demo page, the "Hello!" message is rendered after the header.
+      </p>
+    </li>
+  </ol>
+
+</stache>

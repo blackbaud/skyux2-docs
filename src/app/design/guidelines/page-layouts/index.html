@@ -1,0 +1,285 @@
+<stache-include fileName="v4-note.html"></stache-include>
+
+<stache
+  pageTitle="Page design"
+  showTableOfContents="true">
+
+	<stache-page-anchor>
+    Page titles
+  </stache-page-anchor>
+
+	<p>
+    Use the following format for page titles: <span class="sky-emphasized">&lt;Page title&gt; — &lt;Company, product, or site identifier&gt;</span>. For example, Blackbaud solutions use the company name after the page title: <span class="sky-emphasized">Gifts — Blackbaud</span>.
+  </p>
+  <p>
+    On pages with tabbed subnavigation, use the following format for tab titles: <span class="sky-emphasized">&lt;Tab title&gt; — &lt;Page title&gt; — &lt;Company, product, or site identifier&gt;</span>. For example, Blackbaud solutions use the company name after the tab title and page title: <span class="sky-emphasized">Portfolio — Work center — Blackbaud</span>.
+  </p>
+
+  <p>
+    In addition, follow these general guidelines:
+  </p>
+	<ul>
+		<li>Keep titles short.</li>
+		<li>Make titles unique.</li>
+		<li>Provide concise descriptions of a page's content or purpose. Titles should stand on their own and make sense out of context.</li>
+		<li>Start with the most meaningful, differentiating terms for users to scan in browser tabs, window lists, and browser bookmarks.</li>
+	</ul>
+  <p>
+    To specify page titles, you can use <a href="https://angular.io/docs/ts/latest/cookbook/set-document-title.html">the Angular <sky-code>Title</sky-code> service</a> and <a stacheRouterLink="learn/reference/configuration" fragment="app">the SKY UX <sky-code>title</sky-code> configuration property</a>.
+  </p>
+  <p>
+    Blackbaud developers should instead use <sky-code>SkyAppTitleService</sky-code> to set the window title as users navigate within a SPA. Documentation for  this service is available on the <a href="https://docs.blackbaud.com/engineering-system-docs/learn/spa/spa-title-service">Engineering System website</a>. This site is for Blackbaud internal use only and is not available to external developers.
+  </p>
+
+	<stache-page-anchor>
+    Grid system
+  </stache-page-anchor>
+
+  <p>
+    SKY UX layouts use a <a routerLink="/components/fluid-grid">fluid grid</a> system that can respond as the size of devices or viewports change. Our grid columns have 15px in padding on both sides to create 30px gutters between columns and 15px gutters at the edges of the grid. The columns are fluid, but the gutters remain constant.
+  </p>
+  <p>
+    This grid system allows for a variety of page layouts but still conforms to our design and coding standards.
+  </p>
+
+  <stache-page-anchor>
+    Responsive design
+  </stache-page-anchor>
+
+  <p>
+    We rely on the column drop pattern to create responsive designs. This pattern utilizes a multi-column layout and the full width of the screen. The column drop pattern displays columns horizontally at full width and then stacks columns vertically when the screen width becomes too narrow for the content. When and how to stack columns at different breakpoints depends on the content.
+  </p>
+	<p>
+		As an example, a tile-based page with column-based content layout within the tiles would respond as follows:
+	</p>
+
+	<div class="sky-subsection-heading">Tile-based page</div>
+
+	<sky-row>
+		<sky-column screenSmall="8">
+			<p class="sky-emphasized">Large viewport</p>
+			<div class="screenshot screenshot-info">
+				<img src="~/assets/img/guidelines/spacing/page-two-column-desktop.png" style="width: 100%;" />
+			</div>
+		</sky-column>
+		<sky-column screenSmall="4">
+			<p class="sky-emphasized">Small viewport</p>
+			<div class="screenshot screenshot-info">
+				<img src="~/assets/img/guidelines/spacing/page-two-column-mobile.png" style="width: 100%;" />
+			</div>
+		</sky-column>
+	</sky-row>
+
+	<div class="sky-subsection-heading">Tile content</div>
+
+	<sky-row>
+		<sky-column screenSmall="8">
+			<p class="sky-emphasized">Large viewport</p>
+			<div class="screenshot screenshot-info">
+				<img src="~/assets/img/guidelines/spacing/tile-multi-column-desktop.png" style="width: 100%;" />
+			</div>
+		</sky-column>
+		<sky-column screenSmall="4">
+			<p class="sky-emphasized">Small viewport</p>
+			<div class="screenshot screenshot-info">
+				<img src="~/assets/img/guidelines/spacing/tile-multi-column-mobile.png" style="width: 100%;" />
+			</div>
+		</sky-column>
+	</sky-row>
+
+  <stache-page-anchor>
+    Page layout templates
+  </stache-page-anchor>
+
+  <p>
+    SKY UX is a flexible system that allows for a variety of page layouts to solve workflow needs while maintaining a consistent feel across an application.
+  </p>
+  <p>
+    The following sections describe the standard SKY UX page layouts. These layouts show how to package components to suit a variety of user needs, but the system can accommodate alternate layouts as necessary.
+  </p>
+
+  <div class="sky-subsection-heading" style="margin-top: 20px;">
+    Sectioned page
+  </div>
+
+  <p>
+    The sectioned page layout provides a simple way to organize page contents into categories and groups. You can divide pages into vertical sections with typography and spacing, and you can divide pages into horizontal sections with the <a routerLink="/components/fluid-grid">fluid grid</a> component. Sectioned pages can use content containers such as page summaries, tabs, repeaters, and cards. Limit the number of sections to 5 or fewer. If you need more than 5 sections, break content up into tabs or the tile-based work center layout.
+  </p>
+  <div class="screenshot screenshot-info">
+    <img src="~/assets/img/guidelines/pagelayout/sectionedpage.png" alt="Sectioned page wireframe" style="width: 100%" />
+  </div>
+
+  <div class="sky-subsection-heading" style="margin-top: 20px;">
+    Work center
+  </div>
+
+  <p>
+    The work center layout provides a <a routerLink="/components/tiles">tile-based</a> page that surfaces time-sensitive information and allows users to quickly navigate to the most recent information in an application. It can contain a <a routerLink="/components/page-summary">page summary</a> to highlight the most important information and a <a routerLink="/components/tabs">tabbed layout</a> to support different tasks.
+  </p>
+  <div class="screenshot screenshot-info">
+    <img src="~/assets/img/guidelines/pagelayout/workcenter.png" alt="Work center page wireframe" style="width: 100%" />
+  </div>
+
+  <div class="sky-subsection-heading" style="margin-top: 20px;">
+    List page
+  </div>
+
+  <p>
+    The list page layout provides a page that displays a list of related data. Common controls allow users to select the columns to display, sort the list, filter the list, search, and switch views. List pages can use tabs to display multiple lists or pre-filtered instances of a single list.
+  </p>
+  <div class="screenshot screenshot-info">
+    <img src="~/assets/img/guidelines/pagelayout/list.png" alt="List page wireframe" style="width: 100%" />
+  </div>
+
+  <div class="sky-subsection-heading" style="margin-top: 20px;">
+    Record page
+  </div>
+
+  <p>
+    The record page layout provides a <a routerLink="/components/tiles">tile-based</a> page that displays a <a routerLink="/components/page-summary">page summary</a> and a main content area. The page summary at the top of the page provides an overview of a record. The main content area usually consists of two columns of tiles (or one column on extra small screens) that display information about the record in logical sections. The content to include in each area depends on the page's use case.
+  </p>
+  <div class="screenshot screenshot-info">
+    <img src="~/assets/img/guidelines/pagelayout/record.png" alt="Record page wireframe" style="width: 100%" />
+  </div>
+
+  <stache-page-anchor>
+    Primary action guidelines
+  </stache-page-anchor>
+
+  <p>
+    No matter the page layout, SKY UX designs should follow consistent guidelines for the placement and styling of primary actions.
+  </p>
+
+  <ul>
+    <li>Primary actions belong in the top-left of pages underneath the page titles.</li>
+      <ul>
+        <li>For some page types, primary actions are placed within containers on the page. For details, see "How to use primary actions" below.</li>
+      </ul>
+    <li>Pages should only include 1 primary action so that it stands out.</li>
+      <ul>
+        <li>The primary action should be the most important or most frequently used action on a page.</li>
+          <ul>
+            <li>Common examples include adding a new child record, or performing an important status change on a record page.</li>
+          </ul>
+        <li>If pages have child records with important actions, don't expose all of them as primary actions. Even if actions are primary to child records, they cannot all be primary to the parent record.</li>
+        <li>Many pages have no primary action.</li>
+          <ul>
+            <li>Don't force it - if it isn't fairly obvious what a page's primary action should be, it probably doesn't have one.</li>
+          </ul>
+        <li>If users can accomplish a primary action in multiple ways, don't expose all of them as primary actions.</li>
+          <ul>
+            <li>Instead, present that decision after the user has started taking the primary action (see <a routerLink="/components/action-button">Action button</a>).</li>
+          </ul>
+        <li>Use SKY iconography when appropriate.</li>
+      </ul>
+  </ul>
+
+  <header><div class="sky-subsection-heading">How to use primary actions</div></header>
+
+  <sky-row>
+    <sky-column screenSmall="6">
+      <p>
+        For work centers or other pages that do not have page summaries, primary actions belong in the top-left under page titles and above all other content.
+      </p>
+    </sky-column>
+    <sky-column screenSmall="6">
+      <div class="screenshot screenshot-success">
+				<img src="~/assets/img/guidelines/pagelayout/primary-action-outside-summary.png" style="width: 100%;" />
+      </div>
+    </sky-column>
+  </sky-row>
+
+  <sky-row>
+    <sky-column screenSmall="6">
+      <p>
+        For work centers or other pages with page summaries, primary actions belong under page titles inside the summary. Other content in the summary belongs to the right or under the primary action.
+      </p>
+    </sky-column>
+    <sky-column screenSmall="6">
+      <div class="screenshot screenshot-success">
+				<img src="~/assets/img/guidelines/pagelayout/primary-action-in-summary.png" style="width: 100%;" />
+      </div>
+    </sky-column>
+  </sky-row>
+
+  <sky-row>
+    <sky-column screenSmall="6">
+      <p>
+        For work centers or other pages with page summaries and page-level toolbars, primary actions belong in the leftmost position inside the page toolbar.
+      </p>
+    </sky-column>
+    <sky-column screenSmall="6">
+      <div class="screenshot screenshot-success">
+				<img src="~/assets/img/guidelines/pagelayout/primary-action-in-toolbar.png" style="width: 100%;" />
+      </div>
+    </sky-column>
+  </sky-row>
+
+  <sky-row>
+    <sky-column screenSmall="6">
+      <p>
+        For list pages that contain a single list, primary actions belong in the leftmost position inside the list toolbar. Likewise, if pages consist entirely of tabs and have no other content, primary actions on tabs that contain a single list belong in the leftmost position inside the list toolbar.
+      </p>
+    </sky-column>
+    <sky-column screenSmall="6">
+      <div class="screenshot screenshot-success">
+				<img src="~/assets/img/guidelines/pagelayout/primary-action-on-list-page.png" style="width: 100%;" />
+      </div>
+    </sky-column>
+  </sky-row>
+
+  <header><div class="sky-subsection-heading">How not to use primary actions</div></header>
+
+  <sky-row>
+    <sky-column screenSmall="6">
+      <p>
+        Do not use multiple primary actions on pages.
+      </p>
+    </sky-column>
+    <sky-column screenSmall="6">
+      <div class="screenshot screenshot-danger">
+				<img src="~/assets/img/guidelines/pagelayout/multiple-primary-actions-dont.png" style="width: 100%;" />
+      </div>
+    </sky-column>
+  </sky-row>
+
+  <sky-row>
+    <sky-column screenSmall="6">
+      <p>
+        Do not use primary actions for child-specific actions on parent pages. The only exception is for adding child records.
+      </p>
+    </sky-column>
+    <sky-column screenSmall="6">
+      <div class="screenshot screenshot-danger">
+				<img src="~/assets/img/guidelines/pagelayout/primary-actions-on-children-dont.png" style="width: 100%;" />
+      </div>
+    </sky-column>
+  </sky-row>
+
+  <sky-row>
+    <sky-column screenSmall="6">
+      <p>
+        Do not use other button styles or arrangements to represent primary actions.
+      </p>
+    </sky-column>
+    <sky-column screenSmall="6">
+      <div class="screenshot screenshot-danger">
+				<img src="~/assets/img/guidelines/pagelayout/primary-action-in-other-styles-dont.png" style="width: 100%;" />
+      </div>
+    </sky-column>
+  </sky-row>
+
+  <sky-row>
+    <sky-column screenSmall="6">
+      <p>
+        Do not use primary buttons outside of page-level toolbars when pages include them.
+      </p>
+    </sky-column>
+    <sky-column screenSmall="6">
+      <div class="screenshot screenshot-danger">
+				<img src="~/assets/img/guidelines/pagelayout/primary-action-outside-toolbar-dont.png" style="width: 100%;" />
+      </div>
+    </sky-column>
+  </sky-row>
+
+</stache>

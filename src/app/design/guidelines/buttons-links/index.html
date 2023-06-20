@@ -1,0 +1,160 @@
+<stache-include fileName="v4-note.html"></stache-include>
+
+<stache
+  pageTitle="Buttons and links"
+  showTableOfContents="true">
+
+  <stache-page-summary>
+    <p>
+      Two interacting principles guide SKY UX hyperlinks and <a routerLink="/components/button">buttons</a>: style and implementation. Style determines the appropriate appearance of an affordance to the user, while implementation involves the core HTML decision to use the <sky-code>&lt;a&gt;</sky-code> element or the <sky-code>&lt;button&gt;</sky-code> element. In SKY UX, these guidelines overlap and interact: Differences in styling do not need to correspond to the use of different tags.
+    </p>
+  </stache-page-summary>
+
+  <stache-page-anchor>
+    Style
+  </stache-page-anchor>
+
+  <p>
+    SKY UX uses several styles for hyperlinks and buttons. The differences in appearance carry meaning about roles in the system, distinguish between navigation and action, or convey different levels of emphasis or priority.
+  </p>
+
+  <h3 class="sky-subsection-heading">
+    Primary actions
+  </h3>
+
+  <p>
+    The style for a primary action is a bold, saturated color that conveys importance and drives user workflows. Only use one primary action in any given system state. Use primary actions for the most important action on a page, the most frequently used action on a page, or the progressive terminal action on a dialogue (such as 'Save' or 'Done'). For information about how to use primary actions, see the <a routerLink="/design/guidelines/page-layouts" fragment="primary-action-guidelines">primary action guidelines</a>.
+  </p>
+
+  <h3 class="sky-subsection-heading">
+    Secondary actions
+  </h3>
+
+  <p>
+    Secondary actions are less important or less frequently used than primary actions, so SKY UX reduces the visual weight to make them noticeable but not attention-drawing. Use secondary actions for:
+  </p>
+
+  <ul>
+    <li>
+      <p>
+        Toolbar or action bar buttons
+      </p>
+    </li>
+    <li>
+      <p>
+        Actions that are relevant to only part of a page’s content, such as actions in <a routerLink="/components/card">cards</a> or <a routerLink="/components/tile">tiles</a>
+      </p>
+    </li>
+  </ul>
+
+  <h3 class="sky-subsection-heading">
+    Tertiary actions
+  </h3>
+
+  <p>
+    Tertiary actions receive a lighter visual weight but invisibly occupy the same amount of space as primary and secondary actions. Use tertiary actions for:
+  </p>
+
+  <ul>
+    <li>
+      <p>
+        Infrequently used actions or options on a page
+      </p>
+    </li>
+    <li>
+      <p>
+        The “regressive” action on a dialogue, such as a cancel action
+      </p>
+    </li>
+  </ul>
+
+  <h3 class="sky-subsection-heading">
+    Inline links
+  </h3>
+
+  <p>
+    Inline links receive the least visual weight and appear inline with text instead of in their own rectangular space. They have no button padding or spacing and should not be used in groups with other buttons. Do not “stack” multiple inline links too close together because this creates a usability risk of mis-clicks or mis-touches. Use inline links for pure navigation:
+  </p>
+
+  <ul>
+    <li>
+      <p>
+        Parent-to-parent
+      </p>
+    </li>
+    <li>
+      <p>
+        Parent-to-child
+      </p>
+    </li>
+    <li>
+      <p>
+        Links to external applications or services, such as a street address that links to a map application
+      </p>
+    </li>
+  </ul>
+
+  <stache-page-anchor>
+    Implementation
+  </stache-page-anchor>
+
+  <p>
+    While SKY UX styling properties allow <sky-code>&lt;a&gt;</sky-code> and <sky-code>&lt;button&gt;</sky-code> elements to appear interchangeable, subtle differences in their behavior make it important to select the correct implementation. Most notably, these elements differ in:
+  </p>
+
+  <ul>
+    <li>
+      <p>
+        Right-click options
+      </p>
+    </li>
+    <li>
+      <p>
+        Long-touch and force-touch behaviors for mobile browsers
+      </p>
+    </li>
+    <li>
+      <p>
+        Keyboard shortcuts
+      </p>
+    </li>
+    <li>
+      <p>
+        Behavior with screen readers and other accessibility software
+      </p>
+    </li>
+  </ul>
+
+  <p>
+    To determine the correct HTML tag for an affordance in SKY UX, follow this guidance:
+  </p>
+
+  <ol>
+    <li>
+      <p>
+        If the ONLY result when users click, tap, or select the affordance is loading a new URL in the browser, then implement the affordance as an <sky-code>&lt;a&gt;</sky-code> element.
+      </p>
+    </li>
+    <li>
+      <p>
+        Otherwise, implement the affordance as a <sky-code>&lt;button&gt;</sky-code> element.
+      </p>
+    </li>
+  </ol>
+
+  <p>
+    In other words, <sky-code>&lt;a&gt;</sky-code> elements are only appropriate when an affordance changes nothing about the state of the system and the only result is that the user traverses from one view of content to another. For example, a record page may contain an affordance to delete the record. If a user activates this affordance, the browser redirects to a new URL because the existing page presumably ceases to exist. However, since this also impacts the system by deleting data, you should implement the affordance as a <sky-code>&lt;button&gt;</sky-code> element.
+  </p>
+
+  <stache-page-anchor>
+    Tooltips
+  </stache-page-anchor>
+
+  <p>
+    For buttons that use <a routerLink="/components/icon">icons</a> without labels and buttons that are not intuitive, you can provide tooltips as necessary to define the button actions. However, we recommend that you rely on button labels whenever possible while also taking design patterns into account. Do not arbitrarily replace button labels with tooltips.
+  </p>
+  <p>
+    Tooltip text needs to be clear and concise, and it doesn't need to use complete sentences. Use tooltips sparingly, and do not restate button labels or provide extraneous information. Do not use tooltips in place of <a routerLink="/components/popover">popovers</a>.
+  </p>
+
+</stache>

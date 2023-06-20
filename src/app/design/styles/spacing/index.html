@@ -1,0 +1,249 @@
+<stache-include fileName="v4-note.html"></stache-include>
+
+<stache
+  pageTitle="Spacing"
+  windowTitle="Spacing"
+  showTableOfContents="true">
+
+<stache-page-summary>
+	SKY UX provides two spacing approaches that can be used together when laying out content: <a routerLink="/components/fluid-grid">fluid grid</a> and spacing classes. Fluid grid works well when laying out containers and sections within containers, and the spacing classes work well when laying out content within sections.
+</stache-page-summary>
+
+<stache-page-anchor>Pages</stache-page-anchor>
+<p>
+	You should use fluid grid layouts when placing containers on a page. A common example of a one-column layout is a list page, where the list takes up the full width. A common example of a two-column layout is a record page with two columns of tiles.
+</p>
+
+<sky-row>
+	<sky-column screenSmall="6">
+		<p class="sky-emphasized">One column</p>
+		<div class="screenshot screenshot-info">
+			<img src="~/assets/img/guidelines/spacing/page-one-column.png" style="width: 100%;" />
+		</div>
+	</sky-column>
+	<sky-column screenSmall="6">
+		<p class="sky-emphasized">Two column</p>
+		<div class="screenshot screenshot-info">
+			<img src="~/assets/img/guidelines/spacing/page-two-column-desktop.png" style="width: 100%;" />
+		</div>
+	</sky-column>
+</sky-row>
+
+<stache-page-anchor>Containers</stache-page-anchor>
+<div>
+	<p>
+		Containers require padding to set their content away from the container edge. The amount of padding differs based on the size of the container. In general, SKY UX components handle padding for you.
+	</p>
+
+  <div class="definition-table definition-table-wide">
+    <div class="definition-item">
+      <div class="sky-subsection-heading" style="border: 15px solid #c1e8fb; box-sizing: border-box; width: 50px; height: 50px;"></div>
+    </div>
+    <div class="definition-props">
+      <div class="definition-usage">
+        <div class="sky-field-label">Usage</div>
+        <div>Large containers often run near the edge of the viewport, so significant padding is necessary to prevent the content from feeling crunched. Examples include:</div>
+        <ul>
+          <li>Pages</li>
+          <li><a routerLink="/components/modal">Modals</a></li>
+					<li><a routerLink="/components/tile">Tiles</a></li>
+					<li><a routerLink="/components/sectioned-form">Sectioned forms</a></li>
+        </ul>
+      </div>
+      <div class="definition-code">
+        <div class="sky-field-label">Code</div>
+        <div><sky-code>class="sky-padding-even-large"</sky-code></div>
+      </div>
+      <div class="definition-styling">
+        <div class="sky-field-label">Styling</div>
+				<div>padding: 15px</div>
+      </div>
+    </div>
+	</div>
+	<div class="definition-table definition-table-wide">
+		<div class="definition-item">
+      <div class="sky-subsection-heading" style="border: 10px solid #c1e8fb; box-sizing: border-box; width: 50px; height: 50px;"></div>
+    </div>
+    <div class="definition-props">
+      <div class="definition-usage">
+        <div class="sky-field-label">Usage</div>
+        <div>Small containers within larger containers require less padding to set the content apart from its surroundings because the larger containers already have padding. Examples include:</div>
+        <ul>
+          <li><a routerLink="/components/alert">Alerts</a></li>
+					<li><a routerLink="/components/card">Cards</a></li>
+					<li><a routerLink="/components/popover">Popovers</a></li>
+					<li><a routerLink="/components/repeater">Repeaters</a></li>
+        </ul>
+      </div>
+      <div class="definition-code">
+        <div class="sky-field-label">Code</div>
+        <div><sky-code>class="sky-padding-even-default"</sky-code></div>
+      </div>
+      <div class="definition-styling">
+        <div class="sky-field-label">Styling</div>
+				<div>padding: 10px</div>
+      </div>
+    </div>
+	</div>
+</div>
+
+<stache-page-anchor>Content</stache-page-anchor>
+<div style="margin-bottom: 20px;">
+	<div class="sky-subsection-heading">Vertically arranged content</div>
+
+  <div class="definition-table definition-table-wide">
+    <div class="definition-item">
+      <div class="sky-subsection-heading sky-margin-stacked-compact" style="background-color: #c1e8fb; width: 50px; height: 25px;"></div>
+			<div class="sky-subsection-heading" style="background-color: #c1e8fb; width: 50px; height: 25px;"></div>
+    </div>
+    <div class="definition-props">
+      <div class="definition-usage">
+        <div class="sky-field-label">Usage</div>
+        <div>Closely related elements have a small amount of margin between them to stay visually linked. Examples include:</div>
+        <ul>
+          <li><a routerLink="/components/form" fragment="control-label">Form fields and their labels</a></li>
+					<li>Section headers and the first elements in sections</li>
+        </ul>
+      </div>
+      <div class="definition-code">
+        <div class="sky-field-label">Code</div>
+        <div><sky-code>class="sky-margin-stacked-compact"</sky-code></div>
+      </div>
+      <div class="definition-styling">
+        <div class="sky-field-label">Styling</div>
+				<div>margin-bottom: 5px</div>
+      </div>
+    </div>
+	</div>
+
+	<div class="definition-table definition-table-wide">
+    <div class="definition-item">
+      <div class="sky-subsection-heading sky-margin-stacked-default" style="background-color: #c1e8fb; width: 50px; height: 25px;"></div>
+			<div class="sky-subsection-heading" style="background-color: #c1e8fb; width: 50px; height: 25px;"></div>
+    </div>
+    <div class="definition-props">
+      <div class="definition-usage">
+        <div class="sky-field-label">Usage</div>
+        <div>Multiple related elements need enough vertical spacing to be distinguished from each other but still visually linked. Examples include:</div>
+        <ul>
+					<li><a routerLink="/components/form">Form inputs</a></li>
+        </ul>
+      </div>
+      <div class="definition-code">
+        <div class="sky-field-label">Code</div>
+        <div><sky-code>class="sky-margin-stacked-default"</sky-code></div>
+      </div>
+      <div class="definition-styling">
+        <div class="sky-field-label">Styling</div>
+				<div>margin-bottom: 10px</div>
+      </div>
+    </div>
+	</div>
+
+	<div class="definition-table definition-table-wide">
+    <div class="definition-item">
+      <div class="sky-subsection-heading sky-margin-stacked-separate" style="background-color: #c1e8fb; width: 50px; height: 25px;"></div>
+			<div class="sky-subsection-heading" style="background-color: #c1e8fb; width: 50px; height: 25px;"></div>
+    </div>
+    <div class="definition-props">
+      <div class="definition-usage">
+        <div class="sky-field-label">Usage</div>
+        <div>Sections of loosely related content require extra vertical spacing to prevent them from running together visually.</div>
+      </div>
+      <div class="definition-code">
+        <div class="sky-field-label">Code</div>
+        <div><sky-code>class="sky-margin-stacked-separate"</sky-code></div>
+      </div>
+      <div class="definition-styling">
+        <div class="sky-field-label">Styling</div>
+				<div>margin-bottom: 20px</div>
+      </div>
+    </div>
+	</div>
+</div>
+
+<div>
+	<div class="sky-subsection-heading">Horizontally arranged content</div>
+
+  <div class="definition-table definition-table-wide">
+    <div class="definition-item">
+      <div class="sky-subsection-heading sky-margin-inline-compact" style="display: inline-block; background-color: #c1e8fb; width: 25px; height: 50px;"></div>
+			<div class="sky-subsection-heading" style="display: inline-block; background-color: #c1e8fb; width: 25px; height: 50px;"></div>
+    </div>
+    <div class="definition-props">
+      <div class="definition-usage">
+        <div class="sky-field-label">Usage</div>
+        <div>Closely related elements have a small amount of margin between them to stay visually linked. Examples include:</div>
+        <ul>
+					<li><a routerLink="/components/status-indicator">Status indicator icons and labels</a></li>
+					<li><a routerLink="/components/form" fragment="required-field">Required form field indicators</a></li>
+					<li>Button icons and labels</li>
+        </ul>
+      </div>
+      <div class="definition-code">
+        <div class="sky-field-label">Code</div>
+        <div><sky-code>class="sky-margin-inline-compact"</sky-code></div>
+      </div>
+      <div class="definition-styling">
+        <div class="sky-field-label">Styling</div>
+				<div>margin-right: 5px</div>
+      </div>
+    </div>
+	</div>
+
+	<div class="definition-table definition-table-wide">
+    <div class="definition-item">
+      <div class="sky-subsection-heading sky-margin-inline-default" style="display: inline-block; background-color: #c1e8fb; width: 25px; height: 50px;"></div>
+			<div class="sky-subsection-heading" style="display: inline-block; background-color: #c1e8fb; width: 25px; height: 50px;"></div>
+    </div>
+    <div class="definition-props">
+      <div class="definition-usage">
+        <div class="sky-field-label">Usage</div>
+        <div>Multiple related elements need enough horizontal spacing to be distinguished from each other but still visually linked. Examples include:</div>
+        <ul>
+          <li><a routerLink="/components/toolbar">Toolbar buttons</a></li>
+					<li>Related form fields, such as "First name" and "Last name"</li>
+        </ul>
+      </div>
+      <div class="definition-code">
+        <div class="sky-field-label">Code</div>
+        <div><sky-code>class="sky-margin-inline-default"</sky-code></div>
+      </div>
+      <div class="definition-styling">
+        <div class="sky-field-label">Styling</div>
+				<div>margin-right: 10px</div>
+      </div>
+    </div>
+	</div>
+
+	<div class="definition-table definition-table-wide">
+    <div class="definition-item">
+			<div style="width: 75px;">
+      <sky-row>
+				<sky-column screenSmall="6">
+					<div class="sky-subsection-heading" style="background-color: #c1e8fb; width: 25px; height: 50px;"></div>
+				</sky-column>
+				<sky-column screenSmall="6">
+					<div class="sky-subsection-heading" style="background-color: #c1e8fb; width: 25px; height: 50px;"></div>
+				</sky-column>
+			</sky-row>
+			</div>
+    </div>
+    <div class="definition-props">
+      <div class="definition-usage">
+        <div class="sky-field-label">Usage</div>
+        <div>Use a fluid grid to lay out loosely related content sections horizontally so that they are responsive on smaller viewports. The sections should switch from a horizontal to vertical layout when there is not enough horizontal space to accommodate the width of the content.</div>
+      </div>
+      <div class="definition-code">
+        <div class="sky-field-label">Code</div>
+        <div><a routerLink="/components/fluid-grid">Fluid grid</a></div>
+      </div>
+      <div class="definition-styling">
+        <div class="sky-field-label">Styling</div>
+				<div>Not applicable</div>
+      </div>
+    </div>
+	</div>
+</div>
+
+</stache>
